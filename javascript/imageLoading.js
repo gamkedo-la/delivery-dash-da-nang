@@ -28,49 +28,49 @@ function loadImages()
 	{
 		scooterImageLoaded = true;
 	}
-	scooterImage.src = 'scooter-auto-spritesheet-16.png';
+	scooterImage.src = 'images/raw/Scooter/scooter-auto-spritesheet-16.png';
 
 	roadImage.onload = function()
 	{
 		roadImageLoaded = true;
 	}
-	roadImage.src = 'road.png';
+	roadImage.src = 'images/raw/Placeholder/Road/road.png';
 
 	roadWithHorizontalDashImage.onload = function()
 	{
 		roadWithHorizontalDashImageLoaded = true;
 	}
-	roadWithHorizontalDashImage.src = 'road_with_horizontal_dash.png';
+	roadWithHorizontalDashImage.src = 'images/raw/Placeholder/Road/road_with_horizontal_dash.png';
 
 	roadWithHorizontalDashImage.onload = function()
 	{
 		sidewalkImageLoaded = true;
 	}
-	sidewalkImage.src = 'sidewalk.png';
+	sidewalkImage.src = 'images/raw/Placeholder/Road/sidewalk.png';
 
 	roadWithVerticalDashImage.onload = function()
 	{
 		roadWithVerticalDashImageLoaded = true;
 	}
-	roadWithVerticalDashImage.src = 'road_with_vertical_dash.png';
+	roadWithVerticalDashImage.src = 'images/raw/Placeholder/Road/road_with_vertical_dash.png';
 
 	hannahsImage.onload = function()
 	{
 		hannahsImageLoaded = true;
 	}
-	hannahsImage.src = 'hannahs.png';
+	hannahsImage.src = 'images/raw/Placeholder/Buildings/hannahs.png';
 
 	seasandImage.onload = function()
 	{
 		seasandImageLoaded = true;
 	}
-	seasandImage.src = 'seasand.png';
+	seasandImage.src = 'images/raw/Placeholder/Buildings/seasand.png';
 
 	randoBuildingImage.onload = function()
 	{
 		randoBuildingImageLoaded = true;
 	}
-	randoBuildingImage.src = 'randoBuilding.png';
+	randoBuildingImage.src = 'images/raw/Placeholder/Buildings/randoBuilding.png';
 }
 
 //scooter spritesheet source dimensions
