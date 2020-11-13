@@ -1,6 +1,9 @@
 var scooterImage = document.createElement("img");
 var scooterImageLoaded = false;
 
+var cubScooterImage = document.createElement("img");
+var cubScooterImageLoaded = false;
+
 var roadImage = document.createElement("img");
 var roadImageLoaded = false;
 
@@ -22,6 +25,10 @@ var seasandImageLoaded = false;
 var randoBuildingImage = document.createElement("img");
 var randoBuildingImageLoaded = false;
 
+var funeSushiImage = document.createElement("img");
+var funeSushiImageLoaded = false;
+
+
 function loadImages()
 {
 	scooterImage.onload = function()
@@ -29,6 +36,12 @@ function loadImages()
 		scooterImageLoaded = true;
 	}
 	scooterImage.src = 'images/raw/Scooter/scooter-auto-spritesheet-16.png';
+
+	cubScooterImage.onload = function()
+	{
+		cubScooterImageLoaded = true;
+	}
+	cubScooterImage.src = 'images/raw/scooter-auto/scooter-cub-top-spritesheet-16.png';
 
 	roadImage.onload = function()
 	{
@@ -71,6 +84,12 @@ function loadImages()
 		randoBuildingImageLoaded = true;
 	}
 	randoBuildingImage.src = 'images/raw/Placeholder/Buildings/randoBuilding.png';
+
+	funeSushiImage.onload = function()
+	{
+		funeSushiImageLoaded = true;
+	}
+	funeSushiImage.src = 'images/raw/Placeholder/Buildings/fune.png';
 }
 
 //scooter spritesheet source dimensions

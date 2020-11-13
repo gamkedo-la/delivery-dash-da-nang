@@ -25,6 +25,18 @@ function initializeGame()
 	scooter = new Scooter();
 	scooter.initialize();
 
+	npcScooter1 = new NPCScooter(NPCSCOOTER1_STARTING_TILE,PLAIN_ROAD_TILE, 'right');
+	npcScooter1.initialize();
+
+	npcScooter2 = new NPCScooter(NPCSCOOTER2_STARTING_TILE,PLAIN_ROAD_TILE, 'left');
+	npcScooter2.initialize();
+
+	npcScooter3 = new NPCScooter(NPCSCOOTER3_STARTING_TILE,PLAIN_ROAD_TILE, 'up');
+	npcScooter3.initialize();
+
+	npcScooter4 = new NPCScooter(NPCSCOOTER4_STARTING_TILE,PLAIN_ROAD_TILE, 'down');
+	npcScooter4.initialize();
+
 	pickupAndDeliveryManager = new PickupAndDeliveryManager();
 
 	snatchApp = new SnatchApp();
@@ -41,6 +53,10 @@ function initializeGame()
 
 function updateEverything()
 {
+	npcScooter1.update();
+	npcScooter2.update();
+	npcScooter3.update();
+	npcScooter4.update();
 	scooter.update();
 	camera.follow(canvas, scooter);
 	pickupAndDeliveryManager.checkForWaypointArrivals();
@@ -54,12 +70,18 @@ function drawEverything()
 	
 	canvasContext.translate(-scooter.centerX + canvas.width/2,-scooter.centerY + canvas.height/2);
 	trackGrid.draw();
+	npcScooter1.draw();
+	npcScooter2.draw();
+	npcScooter3.draw();
+	npcScooter4.draw();
 	pickupAndDeliveryManager.drawWaypoints();
+
 	canvasContext.restore();
 	// camera.endPan(canvasContext);
 	
 	snatchApp.drawMessage();
 	scooter.draw();
+	
 
 	if (debugOn)
 	{
