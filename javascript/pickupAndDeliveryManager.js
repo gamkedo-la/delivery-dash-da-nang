@@ -19,7 +19,7 @@ function PickupAndDeliveryManager()
 				if (trackGrid.grid[columnIndex + rowIndex*NUMBER_OF_COLUMNS] === tileNumber)
 				{
 					let waypointCoordinates = {x: TRACK_WIDTH*columnIndex,y: TRACK_HEIGHT*rowIndex};
-
+					
 					return {x: TRACK_WIDTH*columnIndex,y: TRACK_HEIGHT*rowIndex};
 
 				}
@@ -30,8 +30,9 @@ function PickupAndDeliveryManager()
 	this.shouldBeDrawingPickupWayPointBox = true;
 	this.drawNorthOfBuildingPickUpWaypointBox = function()
 	{
-		let pickupBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentPickupTile);
 
+		let pickupBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentPickupTile);
+		
 		let placeholderHorizontalSidewalkHeight = 120;
 		let placeholderHannahsHorizontalLength = 1200;
 

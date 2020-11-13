@@ -5,8 +5,6 @@ window.onload = function()
 	canvas = document.getElementById('gameCanvas');
 	canvasContext = canvas.getContext('2d');
 
-	console.log(window.innerWidth);
-	
 	loadImages();
 	initializeGame();
 }
@@ -37,9 +35,31 @@ function initializeGame()
 	npcScooter4 = new NPCScooter(NPCSCOOTER4_STARTING_TILE,PLAIN_ROAD_TILE, 'down');
 	npcScooter4.initialize();
 
+	npcScooter5 = new NPCScooter(NPCSCOOTER5_STARTING_TILE,PLAIN_ROAD_TILE, 'right');
+	npcScooter5.initialize();
+
+	car1 = new Car(CAR1_STARTING_TILE,PLAIN_ROAD_TILE, 'down');
+	car1.initialize();
+
+	car2 = new Car(CAR2_STARTING_TILE,PLAIN_ROAD_TILE, 'right');
+	car2.initialize();
+
+	car3 = new Car(CAR3_STARTING_TILE,PLAIN_ROAD_TILE, 'left');
+	car3.initialize();
+
+	car4 = new Car(CAR4_STARTING_TILE,PLAIN_ROAD_TILE, 'up');
+	car4.initialize();
+
+	sarahWhitecotton = new Customer('Sarah Whitecotton', 'Chips', CHIPS_STARTING_TILE, 'Veggie Pasta Marinara', 'Veggie Sushi');
+	josephRoberts = new Customer('Joseph Roberts', 'Seasand', SEASAND_STARTING_TILE, 'Crumble Chicken', 'Philly Roll');
+
+	hannahs = new Restaurant('Hannahs', HANNAHS_STARTING_TILE);
+	fune = new Restaurant('Fune', FUNE_STARTING_TILE);
+
 	pickupAndDeliveryManager = new PickupAndDeliveryManager();
 
 	snatchApp = new SnatchApp();
+	snatchApp.initialize();
 	snatchApp.startOrderCycle();
 
 	canvas.addEventListener('mousemove', updateMousePosition);
@@ -57,6 +77,11 @@ function updateEverything()
 	npcScooter2.update();
 	npcScooter3.update();
 	npcScooter4.update();
+	npcScooter5.update();
+	car1.update();
+	car2.update();
+	car3.update();
+	car4.update();
 	scooter.update();
 	camera.follow(canvas, scooter);
 	pickupAndDeliveryManager.checkForWaypointArrivals();
@@ -67,15 +92,19 @@ function drawEverything()
 	background.draw();
 	// camera.startPan(canvasContext);
 	canvasContext.save();
-	
 	canvasContext.translate(-scooter.centerX + canvas.width/2,-scooter.centerY + canvas.height/2);
+
 	trackGrid.draw();
+	pickupAndDeliveryManager.drawWaypoints();
 	npcScooter1.draw();
 	npcScooter2.draw();
 	npcScooter3.draw();
 	npcScooter4.draw();
-	pickupAndDeliveryManager.drawWaypoints();
-
+	npcScooter5.draw();
+	car1.draw();
+	car2.draw();
+	car3.draw();
+	car4.draw();
 	canvasContext.restore();
 	// camera.endPan(canvasContext);
 	

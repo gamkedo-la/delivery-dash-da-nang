@@ -1,6 +1,6 @@
-var npcScooter1, npcScooter2, npcScooter3, npcScooter4, npcScooter5;
+var car1, car2, car3, car4;
 
-function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
+function Car(startingTile,tileUnderStartingTile, movementDirection)
 {
 	this.startingTile = startingTile;
 	this.tileUnderStartingTile = tileUnderStartingTile;
@@ -22,7 +22,7 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 	this.isMovingUp = undefined;
 	this.isMovingDown = undefined;
 
-	this.imageSourceColIndex = undefined;
+	this.image = undefined;
 
 	this.angle;
 	
@@ -37,8 +37,8 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 	{
 		this.startingTileX = undefined;
 		this.startingTileY = undefined;
-		this.width = 135;
-		this.height = 120;
+		this.width = undefined;
+		this.height = undefined;
 		this.angle = 0;
 		this.speed = 0;
 
@@ -105,22 +105,30 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 
 		if (this.movementDirection === 'right')
 		{
-			this.imageSourceColIndex = 8;
+			this.image = carFacingRightImage;
+			this.width = 250;
+			this.height = 140;
 			this.isMovingRight = true;
 		}
 		else if (this.movementDirection === 'left')
 		{
-			this.imageSourceColIndex = 0;
+			this.image = carFacingLeftImage;
+			this.width = 250;
+			this.height = 140;
 			this.isMovingLeft = true;
 		}
 		else if (this.movementDirection === 'up')
 		{
-			this.imageSourceColIndex = 4;
+			this.image = carFacingUpImage;
+			this.width = 140;
+			this.height = 250;
 			this.isMovingUp = true;
 		}
 		else if (this.movementDirection === 'down')
 		{
-			this.imageSourceColIndex = 12;
+			this.image = carFacingDownImage;
+			this.width = 140;
+			this.height = 250;
 			this.isMovingDown = true;
 		}
 
@@ -185,24 +193,7 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 
 	this.draw = function()
 	{
-		
-		if (cubScooterImageLoaded)
-		{
-			let scooterImageRotationPivotX = this.centerX;
-			let scooterImageRotationPivotY = this.centerY;
-			
-			//scooter spritesheet source dimensions
-			//total width: 3232, individual frame: 202
-			//height: 197
-			//(image, sourceX,sourceY, sourceWidth,sourceHeight, destinationX,destinationY,
-			// destinationWidth,destinationHeight, pivotX,pivotY, angle)
-			
-			canvasContext.drawImage(cubScooterImage, 352*this.imageSourceColIndex,0, 352,350, this.startingDrawX,this.startingDrawY, this.width,this.height);
-			// drawImageAfterPivotedRotation(cubScooterImage, 202*4,0, 202,197, this.startingDrawX,this.startingDrawY,
-			// this.width,this.height, canvas.width/2,canvas.height/2, this.angle);	
-
-			//canvasContext.drawImage(scooterImage, 202*4,0, 202,197, tempStartingDrawX,tempStartingDrawY, this.width,this.height);					  	
-		}
+			canvasContext.drawImage(this.image, this.startingDrawX,this.startingDrawY, this.width,this.height);
 	}
 
 	this.updateProperties = function()
@@ -222,7 +213,7 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 		{
 			if (this.rightEdge < RIGHT_EDGE_OF_MAP)
 			{
-				this.centerX += 7;
+				this.centerX += 2;
 			}
 			else 
 			{
@@ -235,7 +226,7 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 		{
 			if (this.leftEdge > 0)
 			{
-				this.centerX -= 7;
+				this.centerX -= 2;
 			}
 			else 
 			{
@@ -248,7 +239,7 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 		{
 			if (this.topEdge > 0)
 			{
-				this.centerY -= 7;
+				this.centerY -= 2;
 			}
 			else 
 			{
@@ -260,7 +251,7 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 		{
 			if (this.bottomEdge < BOTTOM_EDGE_OF_MAP)
 			{
-				this.centerY += 7;
+				this.centerY += 2;
 			}
 			else 
 			{

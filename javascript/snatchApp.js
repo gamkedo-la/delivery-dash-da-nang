@@ -2,9 +2,39 @@ var snatchApp;
 
 function SnatchApp()
 {
+	this.arrayOfCustomers = [];
+	this.arrayOfRestaurants = [];
+
+	this.currentCustomer = undefined;
+	this.currentRestaurant = undefined;
+
+	this.initialize = function()
+	{
+		this.arrayOfCustomers.push(sarahWhitecotton,josephRoberts);
+		this.arrayOfRestaurants.push(hannahs,fune);
+		this.pickACustomer();
+		this.pickARestaurant();
+	}
+
+	this.pickACustomer = function()
+	{
+		let randomCustomerIndex = getRandomInt(0, this.arrayOfCustomers.length - 1);
+		this.currentCustomer = this.arrayOfCustomers[randomCustomerIndex];
+	}
+
+	this.pickARestaurant = function()
+	{
+		let randomRestaurantIndex = getRandomInt(0, this.arrayOfRestaurants.length - 1);
+		this.currentRestaurant = this.arrayOfRestaurants[randomRestaurantIndex];
+	}
+
+	this.randomizeAnOrder = function()
+	{
+		this.pickACustomer();
+		this.pickARestaurant();
+	}
+
 	this.waitingMessage = 'Waiting for an order';
-	this.currentOrderMessageLine1 = 'Joseph Roberts wants Crumble Chicken from Hannahs.';
-	this.currentOrderMessageLine2 = ' Dropoff at Seasand Apartments.';
 
 	this.currentMessageLine1 = this.waitingMessage;
 	this.currentMessageLine2 = undefined;
@@ -14,13 +44,14 @@ function SnatchApp()
 	this.startOrderCycle = function()
 	{
 		let timeToNextOrder = getRandomInt(3000, 5000);
-		console.log(timeToNextOrder);
+		this.randomizeAnOrder();
+		console.log('this.currentCustomer: ' + this.currentCustomer);
 		setTimeout( 
 			function() 
 			{
 				snatchApp.status = 'picking up';
-				snatchApp.currentMessageLine1 = snatchApp.currentOrderMessageLine1;
-				snatchApp.currentMessageLine2 = snatchApp.currentOrderMessageLine2;
+				snatchApp.currentMessageLine1 = this.currentCustomer.currentOrderMessageLine1;
+				snatchApp.currentMessageLine2 = this.currentCustomer.currentOrderMessageLine2;
 				orderAlertSFXAudioTag.play();
 			}, 
 			timeToNextOrder);

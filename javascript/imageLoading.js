@@ -28,6 +28,21 @@ var randoBuildingImageLoaded = false;
 var funeSushiImage = document.createElement("img");
 var funeSushiImageLoaded = false;
 
+var carFacingRightImage = document.createElement("img");
+var carFacingRightImageLoaded = false;
+
+var carFacingLeftImage = document.createElement("img");
+var carFacingRightImageLoaded = false;
+
+var carFacingDownImage = document.createElement("img");
+var carFacingRightImageLoaded = false;
+
+var carFacingUpImage = document.createElement("img");
+var carFacingRightImageLoaded = false;
+
+var chipsImage = document.createElement("img");
+var chipsImageLoaded = false;
+
 
 function loadImages()
 {
@@ -90,6 +105,36 @@ function loadImages()
 		funeSushiImageLoaded = true;
 	}
 	funeSushiImage.src = 'images/raw/Placeholder/Buildings/fune.png';
+
+	carFacingRightImage.onload = function()
+	{
+		carFacingRightImageLoaded = true;
+	}
+	carFacingRightImage.src = 'images/raw/Placeholder/Vehicles/carFacingRight.png';
+
+	carFacingLeftImage.onload = function()
+	{
+		carFacingLeftImageLoaded = true;
+	}
+	carFacingLeftImage.src = 'images/raw/Placeholder/Vehicles/carFacingLeft.png';
+
+	carFacingDownImage.onload = function()
+	{
+		carFacingDownImageLoaded = true;
+	}
+	carFacingDownImage.src = 'images/raw/Placeholder/Vehicles/carFacingDown.png';
+
+	carFacingUpImage.onload = function()
+	{
+		carFacingUpImageLoaded = true;
+	}
+	carFacingUpImage.src = 'images/raw/Placeholder/Vehicles/carFacingUp.png';
+
+	chipsImage.onload = function()
+	{
+		chipsImageLoaded = true;
+	}
+	chipsImage.src = 'images/raw/Placeholder/Buildings/chips.png';
 }
 
 //scooter spritesheet source dimensions
