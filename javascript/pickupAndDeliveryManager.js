@@ -209,7 +209,7 @@ function PickupAndDeliveryManager()
 				snatchApp.status = 'dropping off';
 				currentWaypointReferenceTile = snatchApp.currentCustomer.apartmentBuildingTile;
 				snatchApp.currentWaypoint = snatchApp.currentCustomer;
-				pickupOrDropoffSFXAudioTag.play();
+				pickupSFXAudioTag.play();
 			}
 		}
 		else if (snatchApp.status === 'dropping off') 
@@ -223,7 +223,7 @@ function PickupAndDeliveryManager()
 				snatchApp.currentMessageLine1 = snatchApp.waitingMessage;
 				snatchApp.currentMessageLine2 = undefined;
 				snatchApp.startOrderCycle();
-				pickupOrDropoffSFXAudioTag.play();
+				chachingDropoffSFXAudioTag.play();
 			}
 		}
 
