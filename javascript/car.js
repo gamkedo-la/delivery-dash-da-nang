@@ -106,29 +106,29 @@ function Car(startingTile,tileUnderStartingTile, movementDirection)
 		if (this.movementDirection === 'right')
 		{
 			this.image = carFacingRightImage;
-			this.width = 250;
-			this.height = 140;
+			this.width = 125;
+			this.height = 70;
 			this.isMovingRight = true;
 		}
 		else if (this.movementDirection === 'left')
 		{
 			this.image = carFacingLeftImage;
-			this.width = 250;
-			this.height = 140;
+			this.width = 125;
+			this.height = 70;
 			this.isMovingLeft = true;
 		}
 		else if (this.movementDirection === 'up')
 		{
 			this.image = carFacingUpImage;
-			this.width = 140;
-			this.height = 250;
+			this.width = 70;
+			this.height = 125;
 			this.isMovingUp = true;
 		}
 		else if (this.movementDirection === 'down')
 		{
 			this.image = carFacingDownImage;
-			this.width = 140;
-			this.height = 250;
+			this.width = 70;
+			this.height = 125;
 			this.isMovingDown = true;
 		}
 

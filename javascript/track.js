@@ -1,6 +1,5 @@
-const TRACK_WIDTH = 40;
-const TRACK_HEIGHT = 40;
-const TRACK_GAP = 2;
+const TRACK_WIDTH = 20;
+const TRACK_HEIGHT = 20;
 
 const NUMBER_OF_ROWS = 93;
 const NUMBER_OF_COLUMNS = 107;
@@ -173,23 +172,23 @@ function TrackGrid()
 				}
 				if (this.grid[arrayIndex] === 7 || this.grid[arrayIndex] === 8)
 				{
-					canvasContext.drawImage(randoBuildingImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 1200,320);
+					canvasContext.drawImage(randoBuildingImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 600,160);
 				}
 				if (this.grid[arrayIndex] === 9)
 				{
-					canvasContext.drawImage(hannahsImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 1200,320);
+					canvasContext.drawImage(hannahsImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 600,160);
 				}
 				if (this.grid[arrayIndex] === 10)
 				{
-					canvasContext.drawImage(seasandImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 350,285);
+					canvasContext.drawImage(seasandImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 175,142);
 				}
 				if (this.grid[arrayIndex] === 15)
 				{
-					canvasContext.drawImage(funeSushiImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 240,240);
+					canvasContext.drawImage(funeSushiImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 120,120);
 				}
 				if (this.grid[arrayIndex] === 21)
 				{
-					canvasContext.drawImage(chipsImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 240,240);
+					canvasContext.drawImage(chipsImage, TRACK_WIDTH*columnIndex,TRACK_HEIGHT*rowIndex, 120,120);
 				}
 
 				//end of tile check

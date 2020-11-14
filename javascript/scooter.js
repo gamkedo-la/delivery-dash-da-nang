@@ -26,8 +26,8 @@ function Scooter()
 	{
 		this.startingTileX = undefined;
 		this.startingTileY = undefined;
-		this.width = 90;
-		this.height = 125;
+		this.width = 45;
+		this.height = 62;
 		this.angle = 0;
 		this.speed = 0;
 

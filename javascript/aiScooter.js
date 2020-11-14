@@ -37,8 +37,8 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 	{
 		this.startingTileX = undefined;
 		this.startingTileY = undefined;
-		this.width = 135;
-		this.height = 120;
+		this.width = 67;
+		this.height = 60;
 		this.angle = 0;
 		this.speed = 0;
 

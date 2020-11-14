@@ -30,7 +30,7 @@ function PickupAndDeliveryManager()
 	{
 		let waypointBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentWaypointReferenceTile);
 
-		let placeholderHorizontalSidewalkHeight = 120;
+		let placeholderHorizontalSidewalkHeight = 60;
 		let waypointBuildingWidth = snatchApp.currentWaypoint.width;
 
 		let waypointBoxStartingY = waypointBoxCoordinatesReferencePoint.y - placeholderHorizontalSidewalkHeight;
@@ -41,16 +41,16 @@ function PickupAndDeliveryManager()
 		this.currentWaypointBottomY = waypointBoxStartingY + placeholderHorizontalSidewalkHeight;
 
 		canvasContext.strokeStyle = 'green';
-		canvasContext.lineWidth = 10;
+		canvasContext.lineWidth = 5;
 		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x,waypointBoxStartingY, 
 								 waypointBuildingWidth,placeholderHorizontalSidewalkHeight);
 
-		canvasContext.font = '75px Helvetica';
+		canvasContext.font = '37px Helvetica';
 		
 		let waypointBoxMessageWidth = canvasContext.measureText(waypointBoxMessage).width;
 		let waypointBoxCenterX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth/2;
 		let waypointBoxMessageStartingX = waypointBoxCenterX - waypointBoxMessageWidth/2;
-		let waypointBoxMessageStartingY = waypointBoxStartingY + 75;
+		let waypointBoxMessageStartingY = waypointBoxStartingY + 37;
 		canvasContext.fillText(waypointBoxMessage, waypointBoxMessageStartingX,waypointBoxMessageStartingY);
 	}
 
@@ -58,13 +58,13 @@ function PickupAndDeliveryManager()
 	{
 		let waypointBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentWaypointReferenceTile);
 
-		let placeholderSidewalkWidth = 120;
+		let placeholderSidewalkWidth = 60;
 		let waypointBuildingWidth = snatchApp.currentWaypoint.width;
 		let waypointBuildingHeight = snatchApp.currentWaypoint.height;
 
 		canvasContext.strokeStyle = 'green';
-		canvasContext.lineWidth = 10;
-		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth - 30,
+		canvasContext.lineWidth = 5;
+		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth - 15,
 								 waypointBoxCoordinatesReferencePoint.y, 
 								 placeholderSidewalkWidth,waypointBuildingHeight);
 
@@ -73,7 +73,7 @@ function PickupAndDeliveryManager()
 		this.currentWaypointTopY = waypointBoxCoordinatesReferencePoint.y;
 		this.currentWaypointBottomY = waypointBoxCoordinatesReferencePoint.y + waypointBuildingHeight;
 
-		canvasContext.font = '40px Helvetica';
+		canvasContext.font = '20px Helvetica';
 		
 		let waypointBoxMessageWidth = canvasContext.measureText(waypointBoxMessage).width;
 		let waypointBoxCenterX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth + placeholderSidewalkWidth/2;
@@ -95,13 +95,13 @@ function PickupAndDeliveryManager()
 	{
 		let waypointBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentWaypointReferenceTile);
 
-		let placeholderSidewalkWidth = 120;
+		let placeholderSidewalkWidth = 60;
 		let waypointBuildingWidth = snatchApp.currentWaypoint.width;
 		let waypointBuildingHeight = snatchApp.currentWaypoint.height;
 
 		canvasContext.strokeStyle = 'green';
-		canvasContext.lineWidth = 10;
-		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x - placeholderSidewalkWidth - 30,
+		canvasContext.lineWidth = 5;
+		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x - placeholderSidewalkWidth - 15,
 								 waypointBoxCoordinatesReferencePoint.y, 
 								 placeholderSidewalkWidth,waypointBuildingHeight);
 
@@ -110,7 +110,7 @@ function PickupAndDeliveryManager()
 		this.currentWaypointTopY = waypointBoxCoordinatesReferencePoint.y;
 		this.currentWaypointBottomY = waypointBoxCoordinatesReferencePoint.y + waypointBuildingWidth;
 
-		canvasContext.font = '40px Helvetica';
+		canvasContext.font = '20px Helvetica';
 		
 		let waypointBoxMessageWidth = canvasContext.measureText(waypointBoxMessage).width;
 		let waypointBoxCenterX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth + placeholderSidewalkWidth/2;
