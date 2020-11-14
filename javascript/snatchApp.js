@@ -7,31 +7,52 @@ function SnatchApp()
 
 	this.currentCustomer = undefined;
 	this.currentRestaurant = undefined;
+	this.currentWaypoint = undefined;
 
 	this.initialize = function()
 	{
 		this.arrayOfCustomers.push(sarahWhitecotton,josephRoberts);
 		this.arrayOfRestaurants.push(hannahs,fune);
-		this.pickACustomer();
-		this.pickARestaurant();
+		this.startOrderCycle();
 	}
 
 	this.pickACustomer = function()
 	{
-		let randomCustomerIndex = getRandomInt(0, this.arrayOfCustomers.length - 1);
+		let randomCustomerIndex = getRandomInt(0, this.arrayOfCustomers.length);
 		this.currentCustomer = this.arrayOfCustomers[randomCustomerIndex];
 	}
 
 	this.pickARestaurant = function()
 	{
-		let randomRestaurantIndex = getRandomInt(0, this.arrayOfRestaurants.length - 1);
+		let randomRestaurantIndex = getRandomInt(0, this.arrayOfRestaurants.length);
 		this.currentRestaurant = this.arrayOfRestaurants[randomRestaurantIndex];
+		currentWaypointReferenceTile = this.currentRestaurant.startingTile;
+	}
+
+	this.setCustomerOrderBasedOnRestaurant = function()
+	{
+		console.log('inside call to set order');
+		if (this.currentRestaurant.name === 'Hannahs')
+		{
+			console.log('should be setting hannahs order');
+			console.log('this.currentCustomer.orderFromHannahs: ' + this.currentCustomer.orderFromHannahs);
+			this.currentCustomer.currentOrder = this.currentCustomer.orderFromHannahs;
+		}
+		else if (this.currentRestaurant.name === 'Fune')
+		{
+			console.log('should be setting fune order');
+			console.log('this.currentCustomer.orderFromFune: ' + this.currentCustomer.orderFromFune);
+			this.currentCustomer.currentOrder = this.currentCustomer.orderFromFune;
+		}
 	}
 
 	this.randomizeAnOrder = function()
 	{
-		this.pickACustomer();
 		this.pickARestaurant();
+		this.pickACustomer();
+		this.setCustomerOrderBasedOnRestaurant();
+		this.currentCustomer.defineOrderMessagesForSnatchApp();
+		this.currentWaypoint = this.currentRestaurant;
 	}
 
 	this.waitingMessage = 'Waiting for an order';
@@ -50,8 +71,8 @@ function SnatchApp()
 			function() 
 			{
 				snatchApp.status = 'picking up';
-				snatchApp.currentMessageLine1 = this.currentCustomer.currentOrderMessageLine1;
-				snatchApp.currentMessageLine2 = this.currentCustomer.currentOrderMessageLine2;
+				snatchApp.currentMessageLine1 = snatchApp.currentCustomer.currentOrderMessageLine1;
+				snatchApp.currentMessageLine2 = snatchApp.currentCustomer.currentOrderMessageLine2;
 				orderAlertSFXAudioTag.play();
 			}, 
 			timeToNextOrder);

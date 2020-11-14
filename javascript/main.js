@@ -50,17 +50,16 @@ function initializeGame()
 	car4 = new Car(CAR4_STARTING_TILE,PLAIN_ROAD_TILE, 'up');
 	car4.initialize();
 
-	sarahWhitecotton = new Customer('Sarah Whitecotton', 'Chips', CHIPS_STARTING_TILE, 'Veggie Pasta Marinara', 'Veggie Sushi');
-	josephRoberts = new Customer('Joseph Roberts', 'Seasand', SEASAND_STARTING_TILE, 'Crumble Chicken', 'Philly Roll');
+	sarahWhitecotton = new Customer('Sarah Whitecotton', 'Chips', CHIPS_STARTING_TILE, 240,240, 'west', 'Veggie Pasta Marinara', 'Veggie Sushi');
+	josephRoberts = new Customer('Joseph Roberts', 'Seasand', SEASAND_STARTING_TILE, 350,285, 'east', 'Crumble Chicken', 'Philly Roll');
 
-	hannahs = new Restaurant('Hannahs', HANNAHS_STARTING_TILE);
-	fune = new Restaurant('Fune', FUNE_STARTING_TILE);
+	hannahs = new Restaurant('Hannahs', HANNAHS_STARTING_TILE, 'north', 1200,120);
+	fune = new Restaurant('Fune', FUNE_STARTING_TILE, 'east', 240,240);
 
 	pickupAndDeliveryManager = new PickupAndDeliveryManager();
 
 	snatchApp = new SnatchApp();
 	snatchApp.initialize();
-	snatchApp.startOrderCycle();
 
 	canvas.addEventListener('mousemove', updateMousePosition);
 	document.addEventListener('keydown', handleKeyPress);

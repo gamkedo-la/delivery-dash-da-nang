@@ -1,5 +1,4 @@
-let currentPickupTile = 9;
-let currentDeliveryTile = 10;
+let currentWaypointReferenceTile = undefined;
 
 var pickupAndDeliveryManager;
 
@@ -27,87 +26,168 @@ function PickupAndDeliveryManager()
 		}
 	}
 
-	this.shouldBeDrawingPickupWayPointBox = true;
-	this.drawNorthOfBuildingPickUpWaypointBox = function()
+	this.drawNorthOfBuildingWaypointBox = function(waypointBoxMessage)
 	{
+		let waypointBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentWaypointReferenceTile);
 
-		let pickupBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentPickupTile);
-		
 		let placeholderHorizontalSidewalkHeight = 120;
-		let placeholderHannahsHorizontalLength = 1200;
+		let waypointBuildingWidth = snatchApp.currentWaypoint.width;
 
-		let pickupBoxStartingY = pickupBoxCoordinatesReferencePoint.y - placeholderHorizontalSidewalkHeight;
+		let waypointBoxStartingY = waypointBoxCoordinatesReferencePoint.y - placeholderHorizontalSidewalkHeight;
 
-		this.currentWaypointLeftX = pickupBoxCoordinatesReferencePoint.x;
-		this.currentWaypointRightX = pickupBoxCoordinatesReferencePoint.x + placeholderHannahsHorizontalLength;
-		this.currentWaypointTopY = pickupBoxStartingY;
-		this.currentWaypointBottomY = pickupBoxStartingY + placeholderHorizontalSidewalkHeight;
+		this.currentWaypointLeftX = waypointBoxCoordinatesReferencePoint.x;
+		this.currentWaypointRightX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth;
+		this.currentWaypointTopY = waypointBoxStartingY;
+		this.currentWaypointBottomY = waypointBoxStartingY + placeholderHorizontalSidewalkHeight;
 
 		canvasContext.strokeStyle = 'green';
 		canvasContext.lineWidth = 10;
-		canvasContext.strokeRect(pickupBoxCoordinatesReferencePoint.x,pickupBoxStartingY, 
-								 placeholderHannahsHorizontalLength,placeholderHorizontalSidewalkHeight);
+		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x,waypointBoxStartingY, 
+								 waypointBuildingWidth,placeholderHorizontalSidewalkHeight);
 
 		canvasContext.font = '75px Helvetica';
-		let pickupMessage = 'Pickup Here';
-		let pickupMessageWidth = canvasContext.measureText(pickupMessage).width;
-		let waypointBoxCenterX = pickupBoxCoordinatesReferencePoint.x + placeholderHannahsHorizontalLength/2;
-		let pickupMessageStartingX = waypointBoxCenterX - pickupMessageWidth/2;
-		let pickupMessageStartingY = pickupBoxStartingY + 75;
-		canvasContext.fillText(pickupMessage, pickupMessageStartingX, pickupMessageStartingY);
+		
+		let waypointBoxMessageWidth = canvasContext.measureText(waypointBoxMessage).width;
+		let waypointBoxCenterX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth/2;
+		let waypointBoxMessageStartingX = waypointBoxCenterX - waypointBoxMessageWidth/2;
+		let waypointBoxMessageStartingY = waypointBoxStartingY + 75;
+		canvasContext.fillText(waypointBoxMessage, waypointBoxMessageStartingX,waypointBoxMessageStartingY);
 	}
 
-	this.shoudlBeDrawingDropoffWaypointBox = true;
-	this.drawEastOfBuildingDropoffWaypointBox = function()
+	this.drawEastOfBuildingWaypointBox = function(waypointBoxMessage)
 	{
-		let dropoffBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentDeliveryTile);
-		
-		let placeholderVerticalSidewalkWidth = 120;
-		let placeholderSeasandWidth = 310;
-		let placeholderSeasandHeight = 280;
+		let waypointBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentWaypointReferenceTile);
+
+		let placeholderSidewalkWidth = 120;
+		let waypointBuildingWidth = snatchApp.currentWaypoint.width;
+		let waypointBuildingHeight = snatchApp.currentWaypoint.height;
 
 		canvasContext.strokeStyle = 'green';
 		canvasContext.lineWidth = 10;
-		canvasContext.strokeRect(dropoffBoxCoordinatesReferencePoint.x + placeholderSeasandWidth - 30,
-								 dropoffBoxCoordinatesReferencePoint.y, 
-								 placeholderVerticalSidewalkWidth,placeholderSeasandHeight);
+		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth - 30,
+								 waypointBoxCoordinatesReferencePoint.y, 
+								 placeholderSidewalkWidth,waypointBuildingHeight);
 
-		this.currentWaypointLeftX = dropoffBoxCoordinatesReferencePoint.x + placeholderSeasandWidth - 30;
-		this.currentWaypointRightX = dropoffBoxCoordinatesReferencePoint.x + placeholderSeasandWidth - 30 + placeholderSeasandWidth;
-		this.currentWaypointTopY = dropoffBoxCoordinatesReferencePoint.y;
-		this.currentWaypointBottomY = dropoffBoxCoordinatesReferencePoint.y + placeholderSeasandHeight;
+		this.currentWaypointLeftX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth;
+		this.currentWaypointRightX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth + placeholderSidewalkWidth;
+		this.currentWaypointTopY = waypointBoxCoordinatesReferencePoint.y;
+		this.currentWaypointBottomY = waypointBoxCoordinatesReferencePoint.y + waypointBuildingHeight;
 
 		canvasContext.font = '40px Helvetica';
-		let dropoffMessage = 'Dropoff Here';
-		let dropoffMessageWidth = canvasContext.measureText(dropoffMessage).width;
-		let waypointBoxCenterX = dropoffBoxCoordinatesReferencePoint.x + placeholderSeasandWidth + placeholderVerticalSidewalkWidth/2;
-		let seasandSidewalkHeight = 285;
-		let waypointBoxCenterY = dropoffBoxCoordinatesReferencePoint.y + seasandSidewalkHeight/2;
 		
-		let dropoffMessageStartingX = waypointBoxCenterX - dropoffMessageWidth/2;
-		let dropoffMessageStartingY = waypointBoxCenterY;
+		let waypointBoxMessageWidth = canvasContext.measureText(waypointBoxMessage).width;
+		let waypointBoxCenterX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth + placeholderSidewalkWidth/2;
+		
+		let waypointBoxCenterY = waypointBoxCoordinatesReferencePoint.y + waypointBuildingHeight/2;
+		
+		let waypointBoxMessageStartingX = waypointBoxCenterX - waypointBoxMessageWidth/2;
+		let waypointBoxMessageStartingY = waypointBoxCenterY;
 
 		canvasContext.save();
-		canvasContext.translate(dropoffMessageStartingX + dropoffMessageWidth/2,dropoffMessageStartingY);
+		canvasContext.translate(waypointBoxMessageStartingX + waypointBoxMessageWidth/2,waypointBoxMessageStartingY);
 		canvasContext.rotate(-1.5708);
-		canvasContext.translate(-dropoffMessageStartingX - dropoffMessageWidth/2,-dropoffMessageStartingY)
-		canvasContext.fillText(dropoffMessage, dropoffMessageStartingX , dropoffMessageStartingY);
+		canvasContext.translate(-waypointBoxMessageStartingX - waypointBoxMessageWidth/2,-waypointBoxMessageStartingY)
+		canvasContext.fillText(waypointBoxMessage, waypointBoxMessageStartingX,waypointBoxMessageStartingY);
 		canvasContext.restore();
+	}
+
+	this.drawWestOfBuildingWaypointBox = function(waypointBoxMessage)
+	{
+		let waypointBoxCoordinatesReferencePoint = this.getWaypointBoxStartingTileCoordinatesReferencePoint(currentWaypointReferenceTile);
+
+		let placeholderSidewalkWidth = 120;
+		let waypointBuildingWidth = snatchApp.currentWaypoint.width;
+		let waypointBuildingHeight = snatchApp.currentWaypoint.height;
+
+		canvasContext.strokeStyle = 'green';
+		canvasContext.lineWidth = 10;
+		canvasContext.strokeRect(waypointBoxCoordinatesReferencePoint.x - placeholderSidewalkWidth - 30,
+								 waypointBoxCoordinatesReferencePoint.y, 
+								 placeholderSidewalkWidth,waypointBuildingHeight);
+
+		this.currentWaypointLeftX = waypointBoxCoordinatesReferencePoint.x - placeholderSidewalkWidth;
+		this.currentWaypointRightX = waypointBoxCoordinatesReferencePoint.x;
+		this.currentWaypointTopY = waypointBoxCoordinatesReferencePoint.y;
+		this.currentWaypointBottomY = waypointBoxCoordinatesReferencePoint.y + waypointBuildingWidth;
+
+		canvasContext.font = '40px Helvetica';
+		
+		let waypointBoxMessageWidth = canvasContext.measureText(waypointBoxMessage).width;
+		let waypointBoxCenterX = waypointBoxCoordinatesReferencePoint.x + waypointBuildingWidth + placeholderSidewalkWidth/2;
+		
+		let waypointBoxCenterY = waypointBoxCoordinatesReferencePoint.y + waypointBuildingHeight/2;
+		
+		let waypointBoxMessageStartingX = waypointBoxCenterX - (2.2*(waypointBoxMessageWidth));
+		let waypointBoxMessageStartingY = waypointBoxCenterY;
+
+		canvasContext.save();
+		canvasContext.translate(waypointBoxMessageStartingX + waypointBoxMessageWidth/2,waypointBoxMessageStartingY);
+		canvasContext.rotate(1.5708);
+		canvasContext.translate(-waypointBoxMessageStartingX - waypointBoxMessageWidth/2,-waypointBoxMessageStartingY)
+		canvasContext.fillText(waypointBoxMessage, waypointBoxMessageStartingX,waypointBoxMessageStartingY);
+		canvasContext.restore();
+	}
+
+	this.drawSouthOfBuildingWaypointBox = function(waypointBoxMessage)
+	{
+
 	}
 
 	this.drawWaypoints = function()
 	{
+		let waypointBoxMessage = undefined;
+		if (snatchApp.status === 'picking up')
+		{
+			waypointBoxMessage = 'Pickup Here';
+		}
+		else if (snatchApp.status === 'dropping off')
+		{
+			waypointBoxMessage = 'Dropoff Here';
+		}
+
 		if (snatchApp.status === 'waiting')
 		{
 			return;
 		}
 		else if (snatchApp.status === 'picking up')
 		{
-			this.drawNorthOfBuildingPickUpWaypointBox();
+			if (snatchApp.currentRestaurant.waypointBoxDirection === 'north')
+			{
+				this.drawNorthOfBuildingWaypointBox(waypointBoxMessage);
+			}
+			else if (snatchApp.currentRestaurant.waypointBoxDirection === 'east')
+			{
+				
+				this.drawEastOfBuildingWaypointBox(waypointBoxMessage);
+			}
+			else if (snatchApp.currentRestaurant.waypointBoxDirection === 'south')
+			{
+				this.drawSouthOfBuildingWaypointBox(waypointBoxMessage);
+			}
+			else if (snatchApp.currentRestaurant.waypointBoxDirection === 'west')
+			{
+				this.drawWestOfBuildingWaypointBox(waypointBoxMessage);
+			}
+			
 		}
 		else if (snatchApp.status === 'dropping off')
 		{
-			this.drawEastOfBuildingDropoffWaypointBox();
+			if (snatchApp.currentCustomer.waypointBoxDirection === 'north')
+			{
+				this.drawNorthOfBuildingWaypointBox(waypointBoxMessage)
+			}
+			else if (snatchApp.currentCustomer.waypointBoxDirection === 'east')
+			{
+				this.drawEastOfBuildingWaypointBox(waypointBoxMessage)
+			}
+			else if (snatchApp.currentCustomer.waypointBoxDirection === 'south')
+			{
+				this.drawSouthOfBuildingWaypointBox(waypointBoxMessage)
+			}
+			else if (snatchApp.currentCustomer.waypointBoxDirection === 'west')
+			{
+				this.drawWestOfBuildingWaypointBox(waypointBoxMessage)
+			}
 		}
 	}
 
@@ -122,17 +202,21 @@ function PickupAndDeliveryManager()
 		{
 
 			if (scooter.centerX > this.currentWaypointLeftX && scooter.centerX < this.currentWaypointRightX &&
-				scooter.centerY > this.currentWaypointTopY && scooter.centerY < this.currentWaypointBottomY)
+				scooter.centerY > this.currentWaypointTopY && scooter.centerY < this.currentWaypointBottomY &&
+				scooter.speed === 0)
 			{
 				console.log('pick up arrival detected');
 				snatchApp.status = 'dropping off';
+				currentWaypointReferenceTile = snatchApp.currentCustomer.apartmentBuildingTile;
+				snatchApp.currentWaypoint = snatchApp.currentCustomer;
 				pickupOrDropoffSFXAudioTag.play();
 			}
 		}
 		else if (snatchApp.status === 'dropping off') 
 		{
 			if (scooter.centerX > this.currentWaypointLeftX && scooter.centerX < this.currentWaypointRightX &&
-				scooter.centerY > this.currentWaypointTopY && scooter.centerY < this.currentWaypointBottomY)
+				scooter.centerY > this.currentWaypointTopY && scooter.centerY < this.currentWaypointBottomY &&
+				scooter.speed === 0)
 			{
 				console.log('drop off arrival detected');
 				snatchApp.status = 'waiting';
