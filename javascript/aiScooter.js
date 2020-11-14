@@ -1,4 +1,5 @@
 var npcScooter1, npcScooter2, npcScooter3, npcScooter4, npcScooter5;
+var arrayOfNPCScooters = [];
 
 function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 {
@@ -46,7 +47,7 @@ function NPCScooter(startingTile,tileUnderStartingTile, movementDirection)
 		this.resetPosition();
 
 		this.initializeProperties();
-
+		arrayOfNPCScooters.push(this);
 	}
 
 	this.defineStartingIndexOnMap = function()

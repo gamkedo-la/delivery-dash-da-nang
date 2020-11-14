@@ -26,6 +26,7 @@ function initializeGame()
 	npcScooter1 = new NPCScooter(NPCSCOOTER1_STARTING_TILE,PLAIN_ROAD_TILE, 'right');
 	npcScooter1.initialize();
 
+
 	npcScooter2 = new NPCScooter(NPCSCOOTER2_STARTING_TILE,PLAIN_ROAD_TILE, 'left');
 	npcScooter2.initialize();
 
@@ -38,6 +39,7 @@ function initializeGame()
 	npcScooter5 = new NPCScooter(NPCSCOOTER5_STARTING_TILE,PLAIN_ROAD_TILE, 'right');
 	npcScooter5.initialize();
 
+	
 	car1 = new Car(CAR1_STARTING_TILE,PLAIN_ROAD_TILE, 'down');
 	car1.initialize();
 
@@ -57,6 +59,11 @@ function initializeGame()
 	fune = new Restaurant('Fune', FUNE_STARTING_TILE, 'east', 120,120);
 
 	pickupAndDeliveryManager = new PickupAndDeliveryManager();
+
+	centerSquareColliderBox = new BuildingColliderBox(CHIPS_STARTING_TILE, 73,42);
+	arrayOfBuildingColliderBoxes.push(centerSquareColliderBox);
+	southernSquareColliderBox = new BuildingColliderBox(HANNAHS_STARTING_TILE, 73,16);
+	arrayOfBuildingColliderBoxes.push(southernSquareColliderBox);
 
 	snatchApp = new SnatchApp();
 	snatchApp.initialize();
@@ -104,6 +111,10 @@ function drawEverything()
 	car2.draw();
 	car3.draw();
 	car4.draw();
+	if (debugOn)
+	{
+		drawDebugStuff();
+	}
 	canvasContext.restore();
 	// camera.endPan(canvasContext);
 	
@@ -111,10 +122,7 @@ function drawEverything()
 	scooter.draw();
 	
 
-	if (debugOn)
-	{
-		drawDebugStuff();
-	}
+	
 }
 
 function gameLoop()

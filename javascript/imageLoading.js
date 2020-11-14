@@ -43,6 +43,8 @@ var carFacingRightImageLoaded = false;
 var chipsImage = document.createElement("img");
 var chipsImageLoaded = false;
 
+var randoBuilding2Image = document.createElement("img");
+var randoBuilding2ImageLoaded = false;
 
 function loadImages()
 {
@@ -135,6 +137,12 @@ function loadImages()
 		chipsImageLoaded = true;
 	}
 	chipsImage.src = 'images/raw/Placeholder/Buildings/chips.png';
+
+	randoBuilding2Image.onload = function()
+	{
+		randoBuilding2ImageLoaded = true;
+	}
+	randoBuilding2Image.src = 'images/raw/Placeholder/Buildings/randoBuilding2.png';
 }
 
 //scooter spritesheet source dimensions

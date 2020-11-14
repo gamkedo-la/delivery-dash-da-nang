@@ -78,55 +78,103 @@ function Scooter()
 	this.handleWallCollisions = function()
 	{
 
-		let currentScooterTopEdgeColumnIndex = Math.floor( (this.startingDrawX + this.width/2)/TRACK_WIDTH );
-		let currentScooterTopEdgeRowIndex = Math.floor(this.startingDrawY/TRACK_HEIGHT);
+		// let currentScooterTopEdgeColumnIndex = Math.floor( (this.startingDrawX + this.width/2)/TRACK_WIDTH );
+		// let currentScooterTopEdgeRowIndex = Math.floor(this.startingDrawY/TRACK_HEIGHT);
 
-		let currentScooterRightEdgeColumnIndex = Math.floor( (this.startingDrawX + this.width)/TRACK_WIDTH );
-		let currentScooterRightEdgeRowIndex = Math.floor( (this.startingDrawY + this.height/2)/TRACK_HEIGHT );
+		// let currentScooterRightEdgeColumnIndex = Math.floor( (this.startingDrawX + this.width)/TRACK_WIDTH );
+		// let currentScooterRightEdgeRowIndex = Math.floor( (this.startingDrawY + this.height/2)/TRACK_HEIGHT );
 
-		let currentScooterBottomEdgeColumnIndex = Math.floor( (this.startingDrawX + this.width/2)/TRACK_WIDTH );
-		let currentScooterBottomEdgeRowIndex = Math.floor( (this.startingDrawY + this.height)/TRACK_HEIGHT );
+		// let currentScooterBottomEdgeColumnIndex = Math.floor( (this.startingDrawX + this.width/2)/TRACK_WIDTH );
+		// let currentScooterBottomEdgeRowIndex = Math.floor( (this.startingDrawY + this.height)/TRACK_HEIGHT );
 
-		let currentScooterLefttEdgeColumnIndex = Math.floor(this.startingDrawX/TRACK_WIDTH);
-		let currentScooterLefttEdgeRowIndex = Math.floor( (this.startingDrawY + this.height/2)/TRACK_HEIGHT );
+		// let currentScooterLefttEdgeColumnIndex = Math.floor(this.startingDrawX/TRACK_WIDTH);
+		// let currentScooterLefttEdgeRowIndex = Math.floor( (this.startingDrawY + this.height/2)/TRACK_HEIGHT );
 
-		let currentTopEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterTopEdgeColumnIndex,currentScooterTopEdgeRowIndex);
-		let currentRightEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterRightEdgeColumnIndex,currentScooterRightEdgeRowIndex);
-		let currentBottomEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterBottomEdgeColumnIndex,currentScooterBottomEdgeRowIndex);
-		let currentLeftEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterLefttEdgeColumnIndex,currentScooterLefttEdgeRowIndex);
+		// let currentTopEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterTopEdgeColumnIndex,currentScooterTopEdgeRowIndex);
+		// let currentRightEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterRightEdgeColumnIndex,currentScooterRightEdgeRowIndex);
+		// let currentBottomEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterBottomEdgeColumnIndex,currentScooterBottomEdgeRowIndex);
+		// let currentLeftEdgeGridIndexUnderScooter = convertRowsAndColumnsToGridIndex(currentScooterLefttEdgeColumnIndex,currentScooterLefttEdgeRowIndex);
 
-		let topEdgeScooterWallCollision = (currentTopEdgeGridIndexUnderScooter >= 0 && currentTopEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentTopEdgeGridIndexUnderScooter] === 1 );
-		let rightEdgeScooterWallCollision = (currentRightEdgeGridIndexUnderScooter >= 0 && currentRightEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentRightEdgeGridIndexUnderScooter] === 1 );
-		let bottomEdgeScooterWallCollision = (currentBottomEdgeGridIndexUnderScooter >= 0 && currentBottomEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentBottomEdgeGridIndexUnderScooter] === 1 );
-		let leftEdgeScooterWallCollision = (currentLeftEdgeGridIndexUnderScooter >= 0 && currentLeftEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentLeftEdgeGridIndexUnderScooter] === 1 );
+		// let topEdgeScooterWallCollision = (currentTopEdgeGridIndexUnderScooter >= 0 && currentTopEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentTopEdgeGridIndexUnderScooter] === 1 );
+		// let rightEdgeScooterWallCollision = (currentRightEdgeGridIndexUnderScooter >= 0 && currentRightEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentRightEdgeGridIndexUnderScooter] === 1 );
+		// let bottomEdgeScooterWallCollision = (currentBottomEdgeGridIndexUnderScooter >= 0 && currentBottomEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentBottomEdgeGridIndexUnderScooter] === 1 );
+		// let leftEdgeScooterWallCollision = (currentLeftEdgeGridIndexUnderScooter >= 0 && currentLeftEdgeGridIndexUnderScooter < TRACK_COUNT && trackGrid.grid[currentLeftEdgeGridIndexUnderScooter] === 1 );
 		
-		if (topEdgeScooterWallCollision)
-		{
-			console.log('topEdge Wall Collision');
-		}
-		else if (rightEdgeScooterWallCollision)
-		{
-			console.log('rightEdgeScooterWallCollision');
-		}
-		else if (bottomEdgeScooterWallCollision)
-		{
-			console.log('bottomEdgeScooterWallCollision');
-		}
-		else if (leftEdgeScooterWallCollision)
-		{
-			console.log('leftEdgeScooterWallCollision');
-		}
+		// if (topEdgeScooterWallCollision)
+		// {
+		// 	console.log('topEdge Wall Collision');
+		// }
+		// else if (rightEdgeScooterWallCollision)
+		// {
+		// 	console.log('rightEdgeScooterWallCollision');
+		// }
+		// else if (bottomEdgeScooterWallCollision)
+		// {
+		// 	console.log('bottomEdgeScooterWallCollision');
+		// }
+		// else if (leftEdgeScooterWallCollision)
+		// {
+		// 	console.log('leftEdgeScooterWallCollision');
+		// }
 
-		if ( topEdgeScooterWallCollision || rightEdgeScooterWallCollision || bottomEdgeScooterWallCollision || leftEdgeScooterWallCollision)	
-		{
+		// if ( topEdgeScooterWallCollision || rightEdgeScooterWallCollision || bottomEdgeScooterWallCollision || leftEdgeScooterWallCollision)	
+		// {
 			
-			var previousX = this.startingDrawX - this.speed;
-			var previousY = this.startingDrawY - this.speed;
-			this.startingDrawX = previousX;
-			this.startingDrawY = previousY;
-			this.speed = -3;
+			// var previousX = this.startingDrawX - this.speed;
+			// var previousY = this.startingDrawY - this.speed;
+			// this.startingDrawX = previousX;
+			// this.startingDrawY = previousY;
+			// this.speed = -3;
+		// }
+
+		for (let i = 0; i < arrayOfBuildingColliderBoxes.length; i++)
+		{
+			// A.X < B.X + B.Width
+			// A.X + A.Width > B.X
+			// A.Y < B.Y + B.Height
+			// A.Y + A.Height > B.Y
+			if (this.leftEdge < arrayOfBuildingColliderBoxes[i].rightEdge &&
+				this.rightEdge > arrayOfBuildingColliderBoxes[i].leftEdge &&
+				this.topEdge < arrayOfBuildingColliderBoxes[i].bottomEdge &&
+				this.bottomEdge > arrayOfBuildingColliderBoxes[i].topEdge)
+			{
+				var previousX = this.startingDrawX - this.speed;
+				var previousY = this.startingDrawY - this.speed;
+				this.startingDrawX = previousX;
+				this.startingDrawY = previousY;
+				this.speed = -3;
+			}
+		}
+
+		for (let i = 0; i < arrayOfNPCScooters.length; i++)
+		{
+			if (this.leftEdge < arrayOfNPCScooters[i].rightEdge &&
+				this.rightEdge > arrayOfNPCScooters[i].leftEdge &&
+				this.topEdge < arrayOfNPCScooters[i].bottomEdge &&
+				this.bottomEdge > arrayOfNPCScooters[i].topEdge)
+			{
+				var previousX = this.startingDrawX - this.speed;
+				var previousY = this.startingDrawY - this.speed;
+				this.startingDrawX = previousX;
+				this.startingDrawY = previousY;
+				this.speed = -3;
+			}
 		}
 		
+		for (let i = 0; i < arrayOfCars.length; i++)
+		{
+			if (this.leftEdge < arrayOfCars[i].rightEdge &&
+				this.rightEdge > arrayOfCars[i].leftEdge &&
+				this.topEdge < arrayOfCars[i].bottomEdge &&
+				this.bottomEdge > arrayOfCars[i].topEdge)
+			{
+				var previousX = this.startingDrawX - this.speed;
+				var previousY = this.startingDrawY - this.speed;
+				this.startingDrawX = previousX;
+				this.startingDrawY = previousY;
+				this.speed = -3;
+			}
+		}
 	}
 
 

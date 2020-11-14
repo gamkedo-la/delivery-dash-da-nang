@@ -31,17 +31,12 @@ function SnatchApp()
 
 	this.setCustomerOrderBasedOnRestaurant = function()
 	{
-		console.log('inside call to set order');
 		if (this.currentRestaurant.name === 'Hannahs')
 		{
-			console.log('should be setting hannahs order');
-			console.log('this.currentCustomer.orderFromHannahs: ' + this.currentCustomer.orderFromHannahs);
 			this.currentCustomer.currentOrder = this.currentCustomer.orderFromHannahs;
 		}
 		else if (this.currentRestaurant.name === 'Fune')
 		{
-			console.log('should be setting fune order');
-			console.log('this.currentCustomer.orderFromFune: ' + this.currentCustomer.orderFromFune);
 			this.currentCustomer.currentOrder = this.currentCustomer.orderFromFune;
 		}
 	}
@@ -66,7 +61,6 @@ function SnatchApp()
 	{
 		let timeToNextOrder = getRandomInt(3000, 5000);
 		this.randomizeAnOrder();
-		console.log('this.currentCustomer: ' + this.currentCustomer);
 		setTimeout( 
 			function() 
 			{

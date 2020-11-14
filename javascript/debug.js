@@ -5,6 +5,10 @@ function drawDebugStuff()
 	drawMouseCoordinates();
 	drawTrackRowAndColumnUnderMouse();
 	drawGridIndexUnderMouse();
+	for (let i = 0; i < arrayOfBuildingColliderBoxes.length; i++)
+	{
+		arrayOfBuildingColliderBoxes[i].draw();
+	}
 }
 
 function drawMouseCoordinates()

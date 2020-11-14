@@ -1,4 +1,5 @@
 var car1, car2, car3, car4;
+var arrayOfCars = [];
 
 function Car(startingTile,tileUnderStartingTile, movementDirection)
 {
@@ -46,7 +47,7 @@ function Car(startingTile,tileUnderStartingTile, movementDirection)
 		this.resetPosition();
 
 		this.initializeProperties();
-
+		arrayOfCars.push(this);
 	}
 
 	this.defineStartingIndexOnMap = function()
