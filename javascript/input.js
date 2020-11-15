@@ -86,3 +86,16 @@ function handleKeyRelease(builtInEventObject)
 		break;
 	}
 }
+
+function handleClick(builtInEventObject)
+{
+	if (splashscreenShouldBeShowing)
+	{
+		initializeGame();
+		splashscreenShouldBeShowing = false;
+	}
+	else
+	{
+		return;
+	}
+}

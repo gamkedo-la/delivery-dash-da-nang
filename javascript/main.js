@@ -5,8 +5,10 @@ window.onload = function()
 	canvas = document.getElementById('gameCanvas');
 	canvasContext = canvas.getContext('2d');
 
+	document.addEventListener('click', handleClick);
+	drawSplashScreen();
 	loadImages();
-	initializeGame();
+	//initializeGame();
 }
 
 function initializeGame()
@@ -73,6 +75,8 @@ function initializeGame()
 	document.addEventListener('keyup', handleKeyRelease);
 
 	camera = new Camera();
+
+	sampleBackgroundMusicAudioTag.play();
 
 	setInterval(gameLoop, frameRate);
 }
