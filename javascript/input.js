@@ -38,7 +38,9 @@ function handleKeyPress(builtInEventObject)
 		break;
 
 		case LEFT_ARROW_KEY:
+		builtInEventObject.preventDefault();
 		scooter.keyHeld_TurnLeft = true;
+
 		break;
 
 		case F_KEY:
@@ -46,18 +48,21 @@ function handleKeyPress(builtInEventObject)
 		break;
 
 		case RIGHT_ARROW_KEY:
+		builtInEventObject.preventDefault();
 		scooter.keyHeld_TurnRight = true;
 		break;
 
 		case SPACEBAR_KEY:
+		builtInEventObject.preventDefault();
 		scooter.keyHeld_HandBrake = true;
 		break;
 
 		case DOWN_ARROW_KEY:
+		builtInEventObject.preventDefault();
 		scooter.keyHeld_WalkBack = true;
 		break;
 
-		builtInEventObject.preventDefault();
+		
 	}
 }
 
