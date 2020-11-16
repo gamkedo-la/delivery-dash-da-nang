@@ -218,9 +218,9 @@ function Scooter()
 		else if (this.keyHeld_Gas && this.speed < 40 && !this.keyHeld_HandBrake)
 		{
 			this.speed += 0.25;
-			if (this.speed > 40)
+			if (this.speed > 18)
 			{
-				this.speed = 40;
+				this.speed = 18;
 			}
 		}
 		else if (!this.keyHeld_Gas && this.speed > 0)
