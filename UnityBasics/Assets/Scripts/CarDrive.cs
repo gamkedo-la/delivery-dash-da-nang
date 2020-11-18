@@ -4,32 +4,42 @@ using UnityEngine;
 
 public class CarDrive : MonoBehaviour
 {
-    float currentSpeed;
-    float forwardSpeed;
-    float backwardSpeed;
-    float coastToStopSpeed;
-    float maxSpeed;
+    public float currentSpeed;
+    public float forwardSpeed;
+    public float backwardSpeed;
+    public float coastToStopSpeed;
+    public float maxSpeed;
 
-    float turnAngle;
-    float turnAngleRate;
+    public float currentTurnAngle;
+    public float turnAngleRate;
+    public float maxTurnAngle;
 
-    float brakeSpeed;
+    public float brakeSpeed;
+
+    public Transform restartAt;
 
     // Start is called before the first frame update
     void Start()
     {
+        RestartAtSpawn();
+
         currentSpeed = 0.0f;
-        forwardSpeed = Time.deltaTime * 1.0f;
-        brakeSpeed = Time.deltaTime * 0.5f;
-        coastToStopSpeed = Time.deltaTime * 0.35f;
+        forwardSpeed = 1.0f;
+        brakeSpeed = 0.5f;
+        coastToStopSpeed = 0.35f;
         maxSpeed = 1.0f;
 
-        backwardSpeed = Time.deltaTime * 0.1f;
+        backwardSpeed = 0.1f;
 
-        turnAngle = 0.0f;
-        turnAngleRate = 8.0f * Time.deltaTime;
+        currentTurnAngle = 0.0f;
+        turnAngleRate = 2.0f;
+        maxTurnAngle = 8.0f;
+    }
 
-        
+    public void RestartAtSpawn()
+    {
+        transform.position = restartAt.position;
+        transform.rotation = restartAt.rotation;
     }
 
     void MoveBikeForwardOrBackward()
@@ -39,7 +49,7 @@ public class CarDrive : MonoBehaviour
 
     void TurnBikeLeftOrRight()
     {
-        transform.Rotate(Vector3.up, turnAngle);
+        transform.Rotate(Vector3.up, currentTurnAngle);
     }
 
     void HandleControlKeys()
@@ -47,7 +57,7 @@ public class CarDrive : MonoBehaviour
         //forward and backwards
         if (Input.GetKey(KeyCode.F))
         {
-            currentSpeed += forwardSpeed * Input.GetAxisRaw("Vertical");
+            currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
             if (currentSpeed > maxSpeed)
             {
                 currentSpeed = maxSpeed;
@@ -55,7 +65,7 @@ public class CarDrive : MonoBehaviour
         }
         else if (!Input.GetKey(KeyCode.F) && currentSpeed > 0)
         {
-            currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical");
+            currentSpeed += Time.deltaTime * brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
             {
                 currentSpeed = 0;
@@ -63,21 +73,29 @@ public class CarDrive : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.F))
         {
-            currentSpeed -= backwardSpeed;
+            currentSpeed -= Time.deltaTime * backwardSpeed;
         }
 
         //turns
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            turnAngle += turnAngleRate * Input.GetAxisRaw("Horizontal");
+            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
+            if (currentTurnAngle > maxTurnAngle)
+            {
+                currentTurnAngle = maxTurnAngle;
+            }
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            turnAngle += turnAngleRate * Input.GetAxisRaw("Horizontal");
+            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
+            if (currentTurnAngle < -maxTurnAngle)
+            {
+                currentTurnAngle = -maxTurnAngle;
+            }
         }
         if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
         {
-            turnAngle = 0;
+            currentTurnAngle = 0;
         }
 
         //brake
@@ -93,7 +111,7 @@ public class CarDrive : MonoBehaviour
         //coasting to stop
         if (Input.GetKey(KeyCode.Space) == false && Input.GetKey(KeyCode.F) == false)
         {
-            currentSpeed -= coastToStopSpeed;
+            currentSpeed -= Time.deltaTime * coastToStopSpeed;
             if (currentSpeed < 0)
             {
                 currentSpeed = 0;
