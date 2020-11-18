@@ -1,0 +1,19 @@
+ACTUAL SCOOTER 1 Dimensions
+
+x 0.4 meters
+y 1.1 meters
+z 1.6 meters
+
+
+CURRENT IN GAME SCOOTER 1 Dimensions
+
+x 1
+y 1.6
+z 1.1
+
+
+ACTUAL TRASH BIN Dimensions
+
+x 0.4 meters
+y 0.8 meters
+z 0.6 meters
