@@ -17,6 +17,7 @@ public class CarDrive : MonoBehaviour
     public float brakeSpeed;
 
     public Transform restartAt;
+    Rigidbody scootersRigidbodyComponent;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +35,27 @@ public class CarDrive : MonoBehaviour
         currentTurnAngle = 0.0f;
         turnAngleRate = 2.0f;
         maxTurnAngle = 8.0f;
+
+        scootersRigidbodyComponent = gameObject.GetComponent<Rigidbody>();
+        if (scootersRigidbodyComponent == null)
+        {
+            Debug.Log("Car setup incorrectly, no rigidbody found");
+        }
     }
 
     public void RestartAtSpawn()
     {
         transform.position = restartAt.position;
         transform.rotation = restartAt.rotation;
+
+        stopScooterMovement();
+    }
+
+    void stopScooterMovement()
+    {
+        scootersRigidbodyComponent.angularVelocity = Vector3.zero;
+        currentSpeed = 0.0f;
+        currentTurnAngle = 0.0f;
     }
 
     void MoveBikeForwardOrBackward()

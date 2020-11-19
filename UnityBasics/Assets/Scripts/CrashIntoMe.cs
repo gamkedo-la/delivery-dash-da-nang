@@ -14,8 +14,8 @@ public class CrashIntoMe : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Player")
         {
-            CarDrive CrashIntoMeScript = collision.collider.gameObject.GetComponent<CarDrive>();
-            CrashIntoMeScript.RestartAtSpawn();
+            CarDrive CarDriveScript = collision.collider.gameObject.GetComponent<CarDrive>();
+            CarDriveScript.RestartAtSpawn();
             Debug.Log("Player crashed!");
         }
         else
