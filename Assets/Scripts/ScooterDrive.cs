@@ -22,7 +22,7 @@ public class ScooterDrive : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RestartAtSpawn();
+        //RestartAtSpawn();
 
         currentSpeed = 0.0f;
         forwardSpeed = 0.3f;
