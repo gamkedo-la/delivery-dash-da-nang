@@ -3515,7 +3515,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 778.5
+      value: -75.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
@@ -3525,7 +3525,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 450
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
@@ -3535,7 +3535,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
@@ -3545,7 +3545,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
@@ -3560,7 +3560,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f3065e2f5d71be04da9c180bb0044c6d,
         type: 3}
@@ -13536,6 +13536,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583209029}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &585342041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 07d0544d4be510b40823433f791b08c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 651192842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &585342042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585342041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebddf4d482930e42afd8e8cbfa4a5e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &591384529 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8ae43841f3d1cd4594cd82ae977d685,
@@ -22973,10 +22991,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HannahsWaypointBox: {fileID: 1649667607}
   FuneWaypointBox: {fileID: 1649667607}
-  restaurants: []
+  ListOfRestaurants: []
   SeasandWaypointBox: {fileID: 1391514778}
   ChipsWaypointBox: {fileID: 522507306}
-  customers: []
+  ListOfCustomers: []
+  CurrentRestaurant: {fileID: 0}
+  CurrentCustomer: {fileID: 0}
+  CurrentOrderMessage: 
+  currentCustomerScript: {fileID: 0}
 --- !u!4 &960711263
 Transform:
   m_ObjectHideFlags: 0
@@ -29446,7 +29468,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 754a2c07ca5397b40bc1f7c26e1f7bd2,
         type: 3}
       propertyPath: m_Name
-      value: ChipsApartment
+      value: Chips Homestay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 754a2c07ca5397b40bc1f7c26e1f7bd2, type: 3}
@@ -38476,7 +38498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a794972c8ec6f42b305b29e482978d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Sarah Whitecotton
+  customerName: 
   orderFromHannahs: Veggie Pasta Marinara
   orderFromFune: Veggie Sushi
   home: {fileID: 881724650}
@@ -45956,9 +45978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a794972c8ec6f42b305b29e482978d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Joseph Roberts
+  customerName: 
   orderFromHannahs: Crumble Chicken
-  orderFromFune: Philly Roll
+  orderFromFune: a Philly Roll
   home: {fileID: 708713870}
   placeholderEmptyGameObject: {fileID: 1876743469}
 --- !u!1 &1878259247
@@ -49574,7 +49596,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ea01a9ff7a044ec458f87a7296cf6f5f,
         type: 3}
       propertyPath: m_Name
-      value: seasand-3
+      value: Seasand Apartments
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea01a9ff7a044ec458f87a7296cf6f5f, type: 3}
@@ -50804,7 +50826,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8e1e4ec5698e64b4cbaef027669a29fe,
         type: 3}
       propertyPath: m_Name
-      value: FuneSushi
+      value: Fune Sushi
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8e1e4ec5698e64b4cbaef027669a29fe,
         type: 3}
