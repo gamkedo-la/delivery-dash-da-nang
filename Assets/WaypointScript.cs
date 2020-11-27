@@ -5,6 +5,8 @@ using UnityEngine;
 public class WaypointScript : MonoBehaviour
 {
     public bool listeningForPlayerSpeed = false;
+    public bool waitingForPickup = false;
+    public bool waitingForDropoff = false;
     public GameObject player;
 
     public GameObject snatchApp;
@@ -23,6 +25,7 @@ public class WaypointScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("entered trigger zone");
         if (other.tag == "Player")
         {
             listeningForPlayerSpeed = true;
@@ -36,26 +39,32 @@ public class WaypointScript : MonoBehaviour
             if (player.GetComponent<ScooterDrive>().currentSpeed == 0)
             {
                 Debug.Log("delivery or drop off detected");
-                listeningForPlayerSpeed = false;
-                if (snatchAppScript.CurrentRestaurant.transform.Find("Waypoint Box").gameObject.activeSelf)
+                
+                if (gameObject.activeSelf && snatchAppScript.SnatchAppStatus == "waiting for pickup")
                 {
+                    Debug.Log("pickup detected");
                     snatchAppScript.CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(false);
                     currentCustomerScript = snatchAppScript.CurrentCustomer.GetComponent<Customer>();
-                    var currentApartment = currentCustomerScript.home;
-                    Debug.Log("currentApartment: " + currentApartment.name);
+                    var currentApartment = currentCustomerScript.home;            
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");
-                    Debug.Log("currentWaypointBox: " + currentWaypointBox);
                     currentWaypointBox.gameObject.SetActive(true);
+                    listeningForPlayerSpeed = false;
+                    snatchAppScript.SnatchAppStatus = "waiting for dropoff";
                 }
-                else
+                else if (gameObject.activeSelf && snatchAppScript.SnatchAppStatus == "waiting for dropoff")
                 {
+                    Debug.Log("dropoff detected");
                     currentCustomerScript = snatchAppScript.CurrentCustomer.GetComponent<Customer>();
                     var currentApartment = currentCustomerScript.home;
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");
                     currentWaypointBox.gameObject.SetActive(false);
+
+                    snatchAppScript.startANewOrder();
+                    listeningForPlayerSpeed = false;
                 }
             }
         }
+        
     }
 
     // Update is called once per frame

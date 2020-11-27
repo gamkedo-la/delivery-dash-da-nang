@@ -39,7 +39,6 @@ public class DebugManager : MonoBehaviour
     void Start()
     {
         scooterDriveScript = GameObject.Find("scooter").GetComponent<ScooterDrive>();
-        Debug.Log("anything");
     }
 
     // Update is called once per frame

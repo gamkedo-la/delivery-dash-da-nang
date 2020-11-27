@@ -24,16 +24,26 @@ public class SnatchAppScript : MonoBehaviour
 
     public Customer currentCustomerScript;
 
+    public string SnatchAppStatus;
+
     // Start is called before the first frame update
     void Start()
     {
         ListOfCustomers = GameObject.FindGameObjectsWithTag("Customer");
         ListOfRestaurants = GameObject.FindGameObjectsWithTag("Restaurant");
 
+        startANewOrder();
+    }
+
+    public void startANewOrder()
+    {
+        Debug.Log("starting a new order");
         pickARandomRestaurant();
         pickARandomCustomer();
         setDeliveryMessages();
         activateRestaurantWaypointBox();
+
+        SnatchAppStatus = "waiting for pickup";
     }
 
     void pickARandomRestaurant()
@@ -50,10 +60,7 @@ public class SnatchAppScript : MonoBehaviour
     }
 
     void setDeliveryMessages()
-    {
-        Debug.Log("Current customer: " + CurrentCustomer.name);
-        Debug.Log("Current restaurant: " + CurrentRestaurant.name);
-        
+    {        
         if (CurrentRestaurant.name == "Hannahs")
         {
             CurrentOrderMessage = CurrentCustomer.name + " wants " + currentCustomerScript.orderFromHannahs + " from " + CurrentRestaurant.name + ". Drop off at " + currentCustomerScript.home.name;
@@ -67,7 +74,6 @@ public class SnatchAppScript : MonoBehaviour
 
     void activateRestaurantWaypointBox()
     {
-        Debug.Log("inside activate restaurant waypoint box   ");
         CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(true);
     }
 
