@@ -30,6 +30,8 @@ public class SnatchAppScript : MonoBehaviour
     public Canvas DisplayMessageCanvas;
     public Text DisplayMessageTextBox;
 
+    public SFXScript sfxScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,7 @@ public class SnatchAppScript : MonoBehaviour
 
         startANewOrder();
 
-        
+        sfxScript = GameObject.Find("Main Camera").GetComponent<SFXScript>();
     }
 
     public void startANewOrder()
@@ -48,7 +50,7 @@ public class SnatchAppScript : MonoBehaviour
         pickARandomCustomer();
         setDeliveryMessages();
         activateRestaurantWaypointBox();
-
+        sfxScript.orderAlertSFX.Play();
         SnatchAppStatus = "waiting for pickup";
     }
 

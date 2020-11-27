@@ -14,6 +14,8 @@ public class WaypointScript : MonoBehaviour
 
     public Customer currentCustomerScript;
 
+    public SFXScript sfxScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class WaypointScript : MonoBehaviour
 
         snatchApp = GameObject.Find("SnatchApp");
         snatchAppScript = snatchApp.GetComponent<SnatchAppScript>();
+
+        sfxScript = GameObject.Find("Main Camera").GetComponent<SFXScript>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,6 +53,7 @@ public class WaypointScript : MonoBehaviour
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");
                     currentWaypointBox.gameObject.SetActive(true);
                     listeningForPlayerSpeed = false;
+                    sfxScript.pickupSFX.Play();
                     snatchAppScript.SnatchAppStatus = "waiting for dropoff";
                 }
                 else if (gameObject.activeSelf && snatchAppScript.SnatchAppStatus == "waiting for dropoff")
@@ -58,7 +63,7 @@ public class WaypointScript : MonoBehaviour
                     var currentApartment = currentCustomerScript.home;
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");
                     currentWaypointBox.gameObject.SetActive(false);
-
+                    sfxScript.chachingSFX.Play();
                     snatchAppScript.startANewOrder();
                     listeningForPlayerSpeed = false;
                 }
