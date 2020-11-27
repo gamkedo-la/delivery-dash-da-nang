@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SnatchAppScript : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class SnatchAppScript : MonoBehaviour
 
     public string SnatchAppStatus;
 
+    public Canvas DisplayMessageCanvas;
+    public Text DisplayMessageTextBox;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,8 @@ public class SnatchAppScript : MonoBehaviour
         ListOfRestaurants = GameObject.FindGameObjectsWithTag("Restaurant");
 
         startANewOrder();
+
+        
     }
 
     public void startANewOrder()
@@ -70,6 +76,7 @@ public class SnatchAppScript : MonoBehaviour
             CurrentOrderMessage = CurrentCustomer.name + " wants " + currentCustomerScript.orderFromFune + " from " + CurrentRestaurant.name + ". Drop off at " + currentCustomerScript.home.name;
         }
         Debug.Log("Current Order Message: " + CurrentOrderMessage);
+        DisplayMessageTextBox.text = CurrentOrderMessage;
     }
 
     void activateRestaurantWaypointBox()
