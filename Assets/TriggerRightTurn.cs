@@ -15,12 +15,12 @@ public class TriggerRightTurn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("anything");
+
     }
     private void OnTriggerExit(Collider other)
     {
         other.GetComponent<NPCScooterDrive>().turnRight();
-        Debug.Log("detected right turn");
+
         //NPCScooterDriveScript.turnRight();
     }
 

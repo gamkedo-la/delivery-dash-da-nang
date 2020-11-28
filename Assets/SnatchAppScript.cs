@@ -38,9 +38,9 @@ public class SnatchAppScript : MonoBehaviour
         ListOfCustomers = GameObject.FindGameObjectsWithTag("Customer");
         ListOfRestaurants = GameObject.FindGameObjectsWithTag("Restaurant");
 
-        startANewOrder();
-
         sfxScript = GameObject.Find("Main Camera").GetComponent<SFXScript>();
+
+        startANewOrder();
     }
 
     public void startANewOrder()
