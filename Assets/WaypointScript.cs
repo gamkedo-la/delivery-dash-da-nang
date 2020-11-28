@@ -64,7 +64,7 @@ public class WaypointScript : MonoBehaviour
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");
                     currentWaypointBox.gameObject.SetActive(false);
                     sfxScript.chachingSFX.Play();
-                    snatchAppScript.startANewOrder();
+                    snatchAppScript.StartANewOrder();
                     listeningForPlayerSpeed = false;
                 }
             }

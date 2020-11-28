@@ -32,6 +32,8 @@ public class SnatchAppScript : MonoBehaviour
 
     public SFXScript sfxScript;
 
+    private IEnumerator waitForOrderIEnumerator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,18 +42,33 @@ public class SnatchAppScript : MonoBehaviour
 
         sfxScript = GameObject.Find("Main Camera").GetComponent<SFXScript>();
 
-        startANewOrder();
+        StartANewOrder();
     }
 
-    public void startANewOrder()
+    private IEnumerator WaitToOrder(float waitTime)
     {
-        Debug.Log("starting a new order");
+        yield return new WaitForSeconds(waitTime);
+    }
+
+    public IEnumerator DefineANewOrder()
+    {
+        var randomAmountOfTimeToWait = Random.Range(2.0f, 4.0f);
+        yield return new WaitForSeconds(randomAmountOfTimeToWait);
         pickARandomRestaurant();
         pickARandomCustomer();
         setDeliveryMessages();
         activateRestaurantWaypointBox();
         sfxScript.orderAlertSFX.Play();
         SnatchAppStatus = "waiting for pickup";
+    }
+
+    public void StartANewOrder()
+    {
+        var randomAmountOfTimeToWait = Random.Range(10.0f, 14.0f);
+        Debug.Log("randomAmountOfTimeToWait: " + randomAmountOfTimeToWait);
+        StartCoroutine(WaitToOrder(randomAmountOfTimeToWait));
+        Debug.Log("starting a new order");
+        StartCoroutine(DefineANewOrder());
     }
 
     void pickARandomRestaurant()
