@@ -16,8 +16,12 @@ public class ScooterDrive : MonoBehaviour
 
     public float brakeSpeed;
 
+    public GameObject brakeLights;
+
     public Transform restartAt;
     Rigidbody scootersRigidbodyComponent;
+
+    public GameObject bikeModel;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +34,7 @@ public class ScooterDrive : MonoBehaviour
         coastToStopSpeed = 0.35f;
         maxSpeed = 1.0f;
 
-        backwardSpeed = 0.1f;
+        backwardSpeed = -0.1f;
 
         currentTurnAngle = 0.0f;
         turnAngleRate = 2.0f;
@@ -95,6 +99,7 @@ public class ScooterDrive : MonoBehaviour
         //turns
         if (Input.GetKey(KeyCode.RightArrow))
         {
+         //   bikeModel.transform.Rotate(Vector3.right * Time.deltaTime);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle > maxTurnAngle)
             {
@@ -103,6 +108,7 @@ public class ScooterDrive : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+          //  bikeModel.transform.Rotate(-Vector3.right * Time.deltaTime);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle < -maxTurnAngle)
             {
@@ -112,6 +118,7 @@ public class ScooterDrive : MonoBehaviour
         if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
         {
             currentTurnAngle = 0;
+           // bikeModel.transform.rotation = Quaternion.Euler(0,-90,0);
         }
 
         //brake
@@ -120,6 +127,19 @@ public class ScooterDrive : MonoBehaviour
             currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
             {
+                brakeLights.SetActive(true);
+                currentSpeed = backwardSpeed;
+            }
+            else
+            {
+                brakeLights.SetActive(false);
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (currentSpeed < 0)
+            {
+                brakeLights.SetActive(false);
                 currentSpeed = 0;
             }
         }
