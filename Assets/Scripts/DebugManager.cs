@@ -38,7 +38,7 @@ public class DebugManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scooterDriveScript = GameObject.Find("scooter").GetComponent<ScooterDrive>();
+        scooterDriveScript = GameObject.Find("PlayerScooter").GetComponent<ScooterDrive>();
     }
 
     // Update is called once per frame

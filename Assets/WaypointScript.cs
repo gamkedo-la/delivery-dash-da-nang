@@ -19,7 +19,7 @@ public class WaypointScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("scooter");
+        player = GameObject.Find("PlayerScooter");
 
         snatchApp = GameObject.Find("SnatchApp");
         snatchAppScript = snatchApp.GetComponent<SnatchAppScript>();
