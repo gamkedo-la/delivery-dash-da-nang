@@ -5,16 +5,16 @@ using UnityEngine;
 public class ScooterDrive : MonoBehaviour
 {
     public float currentSpeed;
-    public float forwardSpeed;
-    public float backwardSpeed;
-    public float coastToStopSpeed;
-    public float maxSpeed;
+    public float forwardSpeed = 0.3f;
+    public float backwardSpeed = -.1f;
+    public float coastToStopSpeed = 0.35f;
+    public float maxSpeed = 2.0f;
 
-    public float currentTurnAngle;
-    public float turnAngleRate;
-    public float maxTurnAngle;
+    public float currentTurnAngle = 0;
+    public float turnAngleRate = 2f;
+    public float maxTurnAngle = 15f;
 
-    public float brakeSpeed;
+    public float brakeSpeed = 0.5f;
 
     public GameObject brakeLights;
 
@@ -27,18 +27,6 @@ public class ScooterDrive : MonoBehaviour
     void Start()
     {
         //RestartAtSpawn();
-
-        currentSpeed = 0.0f;
-        forwardSpeed = 0.3f;
-        brakeSpeed = 0.5f;
-        coastToStopSpeed = 0.35f;
-        maxSpeed = 1.0f;
-
-        backwardSpeed = -0.1f;
-
-        currentTurnAngle = 0.0f;
-        turnAngleRate = 2.0f;
-        maxTurnAngle = 8.0f;
 
         scootersRigidbodyComponent = gameObject.GetComponent<Rigidbody>();
         if (scootersRigidbodyComponent == null)
