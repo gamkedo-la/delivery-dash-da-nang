@@ -65,9 +65,7 @@ public class SnatchAppScript : MonoBehaviour
     public void StartANewOrder()
     {
         var randomAmountOfTimeToWait = Random.Range(10.0f, 14.0f);
-        Debug.Log("randomAmountOfTimeToWait: " + randomAmountOfTimeToWait);
         StartCoroutine(WaitToOrder(randomAmountOfTimeToWait));
-        Debug.Log("starting a new order");
         StartCoroutine(DefineANewOrder());
     }
 
@@ -94,7 +92,6 @@ public class SnatchAppScript : MonoBehaviour
         {
             CurrentOrderMessage = CurrentCustomer.name + " wants " + currentCustomerScript.orderFromFune + " from " + CurrentRestaurant.name + ". Drop off at " + currentCustomerScript.home.name;
         }
-        Debug.Log("Current Order Message: " + CurrentOrderMessage);
         DisplayMessageTextBox.text = CurrentOrderMessage;
     }
 

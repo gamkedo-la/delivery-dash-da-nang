@@ -32,6 +32,7 @@ public class WaypointScript : MonoBehaviour
         Debug.Log("entered trigger zone");
         if (other.tag == "Player")
         {
+            Debug.Log("player entered waypoint box");
             listeningForPlayerSpeed = true;
         }
     }
