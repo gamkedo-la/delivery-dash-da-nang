@@ -23,6 +23,9 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject bikeModel;
 
+    public Animator phone;
+    bool phoneToggle; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,21 @@ public class ScooterDrive : MonoBehaviour
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
     }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        HandleControlKeys();
+        MoveBikeForwardOrBackward();
+        TurnBikeLeftOrRight();
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            phoneToggle = !phoneToggle;
+            PhoneActivation();
+        }
+    }// end of update(){}
 
     public void RestartAtSpawn()
     {
@@ -63,7 +81,7 @@ public class ScooterDrive : MonoBehaviour
     void HandleControlKeys()
     {
         //forward and backwards
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.Space))
         {
             currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
             if (currentSpeed > maxSpeed)
@@ -71,7 +89,7 @@ public class ScooterDrive : MonoBehaviour
                 currentSpeed = maxSpeed;
             }
         }
-        else if (!Input.GetKey(KeyCode.F) && currentSpeed > 0)
+        else if (!Input.GetKey(KeyCode.Space) && currentSpeed > 0)
         {
             currentSpeed += Time.deltaTime * brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
@@ -79,13 +97,13 @@ public class ScooterDrive : MonoBehaviour
                 currentSpeed = 0;
             }
         }
-        if (Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Space))
         {
             currentSpeed -= Time.deltaTime * backwardSpeed;
         }
 
         //turns
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
          //   bikeModel.transform.Rotate(Vector3.right * Time.deltaTime);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
@@ -94,7 +112,7 @@ public class ScooterDrive : MonoBehaviour
                 currentTurnAngle = maxTurnAngle;
             }
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
           //  bikeModel.transform.Rotate(-Vector3.right * Time.deltaTime);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
@@ -103,14 +121,14 @@ public class ScooterDrive : MonoBehaviour
                 currentTurnAngle = -maxTurnAngle;
             }
         }
-        if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             currentTurnAngle = 0;
            // bikeModel.transform.rotation = Quaternion.Euler(0,-90,0);
         }
 
         //brake
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
@@ -123,7 +141,7 @@ public class ScooterDrive : MonoBehaviour
                 brakeLights.SetActive(false);
             }
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             if (currentSpeed < 0)
             {
@@ -133,7 +151,7 @@ public class ScooterDrive : MonoBehaviour
         }
 
         //coasting to stop
-        if (Input.GetKey(KeyCode.Space) == false && Input.GetKey(KeyCode.F) == false)
+        if (Input.GetKey(KeyCode.LeftShift) == false && Input.GetKey(KeyCode.Space) == false)
         {
             currentSpeed -= Time.deltaTime * coastToStopSpeed;
             if (currentSpeed < 0)
@@ -143,11 +161,16 @@ public class ScooterDrive : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void PhoneActivation()
     {
-        HandleControlKeys();
-        MoveBikeForwardOrBackward();
-        TurnBikeLeftOrRight();
-    }// end of update(){}
+        if (phoneToggle)
+        {
+            phone.SetBool("PhoneOn", true);
+        }
+
+        if (!phoneToggle)
+        {
+            phone.SetBool("PhoneOn", false);
+        }
+    }
 }
