@@ -9,7 +9,7 @@ public class DebugManager : MonoBehaviour
 
     void HandleControlKeys()
     {
-        if (Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.M))
         {
             toggleDebugManager();
         }
