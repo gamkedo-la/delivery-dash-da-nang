@@ -128,7 +128,7 @@ public class ScooterDrive : MonoBehaviour
         }
 
         //brake
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K))
         {
             currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
