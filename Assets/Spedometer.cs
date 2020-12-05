@@ -18,6 +18,11 @@ public class Spedometer : MonoBehaviour
     void Update()
     {
         float speedDisplay = ScooterDrive.playerCurrentSpeed * 20;
+
+        if (ScooterDrive.playerCurrentSpeed == ScooterDrive.maxSpeed)
+        {
+            speedDisplay = (ScooterDrive.playerCurrentSpeed * 20) + Random.Range(-.5f, .5f);
+        }
         speed.text = speedDisplay.ToString("F2") + " km/h";
 
         SpedometerFill.fillAmount = speedDisplay / (ScooterDrive.maxSpeed * 20 * 1.4f);
