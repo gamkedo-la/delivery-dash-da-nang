@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SnatchAppScript : MonoBehaviour
+public class DashAppScript : MonoBehaviour
 {
     //list of restaurants
     public GameObject HannahsWaypointBox;
@@ -25,7 +25,7 @@ public class SnatchAppScript : MonoBehaviour
 
     public Customer currentCustomerScript;
 
-    public string SnatchAppStatus;
+    public string DashAppStatus;
 
     public Canvas DisplayMessageCanvas;
     public Text DisplayMessageTextBox;
@@ -59,7 +59,7 @@ public class SnatchAppScript : MonoBehaviour
         setDeliveryMessages();
         activateRestaurantWaypointBox();
         sfxScript.orderAlertSFX.Play();
-        SnatchAppStatus = "waiting for pickup";
+        DashAppStatus = "waiting for pickup";
     }
 
     public void StartANewOrder()

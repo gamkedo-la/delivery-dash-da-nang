@@ -9,8 +9,8 @@ public class WaypointScript : MonoBehaviour
     public bool waitingForDropoff = false;
     public GameObject player;
 
-    public GameObject snatchApp;
-    public SnatchAppScript snatchAppScript;
+    public GameObject DashApp;
+    public DashAppScript dashAppScript;
 
     public Customer currentCustomerScript;
 
@@ -21,8 +21,8 @@ public class WaypointScript : MonoBehaviour
     {
         player = GameObject.Find("PlayerScooter");
 
-        snatchApp = GameObject.Find("SnatchApp");
-        snatchAppScript = snatchApp.GetComponent<SnatchAppScript>();
+        DashApp = GameObject.Find("DashApp");
+        dashAppScript = DashApp.GetComponent<DashAppScript>();
 
         sfxScript = GameObject.Find("Main Camera").GetComponent<SFXScript>();
     }
@@ -45,27 +45,27 @@ public class WaypointScript : MonoBehaviour
             {
                 Debug.Log("delivery or drop off detected");
                 
-                if (gameObject.activeSelf && snatchAppScript.SnatchAppStatus == "waiting for pickup")
+                if (gameObject.activeSelf && dashAppScript.DashAppStatus == "waiting for pickup")
                 {
                     Debug.Log("pickup detected");
-                    snatchAppScript.CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(false);
-                    currentCustomerScript = snatchAppScript.CurrentCustomer.GetComponent<Customer>();
+                    dashAppScript.CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(false);
+                    currentCustomerScript = dashAppScript.CurrentCustomer.GetComponent<Customer>();
                     var currentApartment = currentCustomerScript.home;            
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");
                     currentWaypointBox.gameObject.SetActive(true);
                     listeningForPlayerSpeed = false;
                     sfxScript.pickupSFX.Play();
-                    snatchAppScript.SnatchAppStatus = "waiting for dropoff";
+                    dashAppScript.DashAppStatus = "waiting for dropoff";
                 }
-                else if (gameObject.activeSelf && snatchAppScript.SnatchAppStatus == "waiting for dropoff")
+                else if (gameObject.activeSelf && dashAppScript.DashAppStatus == "waiting for dropoff")
                 {
                     Debug.Log("dropoff detected");
-                    currentCustomerScript = snatchAppScript.CurrentCustomer.GetComponent<Customer>();
+                    currentCustomerScript = dashAppScript.CurrentCustomer.GetComponent<Customer>();
                     var currentApartment = currentCustomerScript.home;
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");
                     currentWaypointBox.gameObject.SetActive(false);
                     sfxScript.chachingSFX.Play();
-                    snatchAppScript.StartANewOrder();
+                    dashAppScript.StartANewOrder();
                     listeningForPlayerSpeed = false;
                 }
             }
