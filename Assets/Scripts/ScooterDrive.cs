@@ -6,12 +6,12 @@ public class ScooterDrive : MonoBehaviour
 {
     //this variable is used to determine how much force to apply to enviornment objects after collision
     public static float playerCurrentSpeed;
+    public static float maxSpeed = 2.0f;
 
     public float currentSpeed;
     public float forwardSpeed = 0.3f;
     public float backwardSpeed = -.1f;
     public float coastToStopSpeed = 0.35f;
-    public float maxSpeed = 2.0f;
 
     public float currentTurnAngle = 0;
     public float turnAngleRate = 2f;
