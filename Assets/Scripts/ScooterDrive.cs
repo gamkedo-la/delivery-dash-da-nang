@@ -37,8 +37,6 @@ public class ScooterDrive : MonoBehaviour
     public float previousX;// east/west
     public float previousZ;// north/south
 
-
-    // Start is called before the first frame update
     void Start()
     {
         //RestartAtSpawn();
@@ -151,7 +149,7 @@ public class ScooterDrive : MonoBehaviour
         //turns
         if (Input.GetKey(KeyCode.D))
         {
-         //   bikeModel.transform.Rotate(Vector3.right * Time.deltaTime);
+            bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 10);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle > maxTurnAngle)
             {
@@ -160,7 +158,7 @@ public class ScooterDrive : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-          //  bikeModel.transform.Rotate(-Vector3.right * Time.deltaTime);
+            bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 10);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle < -maxTurnAngle)
             {
@@ -170,7 +168,7 @@ public class ScooterDrive : MonoBehaviour
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             currentTurnAngle = 0;
-           // bikeModel.transform.rotation = Quaternion.Euler(0,-90,0);
+            bikeModel.transform.rotation = this.transform.rotation;
         }
 
         //brake
