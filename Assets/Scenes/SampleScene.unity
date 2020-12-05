@@ -14107,6 +14107,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d355615495e525f478dca6fc2abd56c0, type: 3}
+--- !u!1 &444971274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3630543173429144926, guid: 9d26db96235eb894daed008a054b9cd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 4841059495347414182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &445696974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1189689758625489324, guid: fb80252bf613baa489178275be894b7d,
@@ -44010,7 +44016,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375209246}
   m_LocalRotation: {x: 0.18301274, y: 0.18301274, z: 0.6830127, w: 0.6830127}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: 0, y: 0, z: -454}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 1103242694}
@@ -67344,6 +67350,11 @@ PrefabInstance:
       propertyPath: phone
       value: 
       objectReference: {fileID: 1375209248}
+    - target: {fileID: 4841059496152381648, guid: 9d26db96235eb894daed008a054b9cd7,
+        type: 3}
+      propertyPath: bikeModel
+      value: 
+      objectReference: {fileID: 444971274}
     - target: {fileID: 4946180043679567677, guid: 9d26db96235eb894daed008a054b9cd7,
         type: 3}
       propertyPath: m_LocalPosition.x
