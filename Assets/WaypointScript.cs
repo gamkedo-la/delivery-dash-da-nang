@@ -29,10 +29,8 @@ public class WaypointScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered trigger zone");
         if (other.tag == "Player")
         {
-            Debug.Log("player entered waypoint box");
             listeningForPlayerSpeed = true;
         }
     }
@@ -42,12 +40,9 @@ public class WaypointScript : MonoBehaviour
         if (listeningForPlayerSpeed)
         {
             if (player.GetComponent<ScooterDrive>().currentSpeed == 0)
-            {
-                Debug.Log("delivery or drop off detected");
-                
+            {                
                 if (gameObject.activeSelf && dashAppScript.DashAppStatus == "waiting for pickup")
                 {
-                    Debug.Log("pickup detected");
                     dashAppScript.CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(false);
                     currentCustomerScript = dashAppScript.CurrentCustomer.GetComponent<Customer>();
                     var currentApartment = currentCustomerScript.home;            
@@ -59,7 +54,6 @@ public class WaypointScript : MonoBehaviour
                 }
                 else if (gameObject.activeSelf && dashAppScript.DashAppStatus == "waiting for dropoff")
                 {
-                    Debug.Log("dropoff detected");
                     currentCustomerScript = dashAppScript.CurrentCustomer.GetComponent<Customer>();
                     var currentApartment = currentCustomerScript.home;
                     var currentWaypointBox = currentApartment.gameObject.transform.Find("Waypoint Box");

@@ -174,7 +174,7 @@ public class ScooterDrive : MonoBehaviour
         }
 
         //brake
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K))
+        if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K)) && Input.GetKey(KeyCode.Space))
         {
             currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
@@ -187,8 +187,22 @@ public class ScooterDrive : MonoBehaviour
                 brakeLights.SetActive(false);
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        else if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K)) && !Input.GetKey(KeyCode.Space))
         {
+            currentSpeed += (brakeSpeed/12) * Input.GetAxisRaw("Vertical");
+            if (currentSpeed < 0)
+            {
+                brakeLights.SetActive(true);
+                currentSpeed = backwardSpeed;
+            }
+            else
+            {
+                brakeLights.SetActive(false);
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey(KeyCode.K))
+        {
+            
             if (currentSpeed < 0)
             {
                 brakeLights.SetActive(false);

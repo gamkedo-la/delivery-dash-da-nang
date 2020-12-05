@@ -64,6 +64,7 @@ public class DashAppScript : MonoBehaviour
 
     public void StartANewOrder()
     {
+        DisplayMessageTextBox.text = "Waiting for an order.";
         var randomAmountOfTimeToWait = Random.Range(10.0f, 14.0f);
         StartCoroutine(WaitToOrder(randomAmountOfTimeToWait));
         StartCoroutine(DefineANewOrder());
