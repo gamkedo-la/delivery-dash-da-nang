@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ScooterDrive : MonoBehaviour
 {
+    //this variable is used to determine how much force to apply to enviornment objects after collision
+    public static float playerCurrentSpeed;
+
     public float currentSpeed;
     public float forwardSpeed = 0.3f;
     public float backwardSpeed = -.1f;
@@ -51,6 +54,8 @@ public class ScooterDrive : MonoBehaviour
             phoneToggle = !phoneToggle;
             PhoneActivation();
         }
+
+        playerCurrentSpeed = currentSpeed;
     }// end of update(){}
 
     public void RestartAtSpawn()
