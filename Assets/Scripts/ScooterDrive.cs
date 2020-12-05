@@ -27,7 +27,16 @@ public class ScooterDrive : MonoBehaviour
     public GameObject bikeModel;
 
     public Animator phone;
-    bool phoneToggle; 
+    bool phoneToggle;
+
+    public static bool isMovingNorth = false;
+    public static bool isMovingEast = false;
+    public static bool isMovingSouth = false;
+    public static bool isMovingWest = false;
+
+    public float previousX;// east/west
+    public float previousZ;// north/south
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,9 +54,12 @@ public class ScooterDrive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         HandleControlKeys();
         MoveBikeForwardOrBackward();
         TurnBikeLeftOrRight();
+
+        updateDirectionBools();
 
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -56,7 +68,36 @@ public class ScooterDrive : MonoBehaviour
         }
 
         playerCurrentSpeed = currentSpeed;
+
+        previousX = gameObject.transform.position.x;
+        previousZ = gameObject.transform.position.z;
+
     }// end of update(){}
+
+    public void updateDirectionBools()
+    {
+        if (gameObject.transform.position.z > previousZ)
+        {
+            isMovingNorth = true;
+            isMovingSouth = false;
+        }
+        else 
+        {
+            isMovingSouth = true;
+            isMovingNorth = false;
+        }
+
+        if (gameObject.transform.position.x > previousX)
+        {
+            isMovingWest = false;
+            isMovingEast = true;
+        }
+        else
+        {
+            isMovingWest = true;
+            isMovingEast = false;
+        }
+    }
 
     public void RestartAtSpawn()
     {
