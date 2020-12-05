@@ -179,35 +179,36 @@ public class ScooterDrive : MonoBehaviour
             currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
             {
-                brakeLights.SetActive(true);
+                //brakeLights.SetActive(true);
                 currentSpeed = backwardSpeed;
             }
             else
             {
-                brakeLights.SetActive(false);
+                //brakeLights.SetActive(false);
             }
         }
         else if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K)) && !Input.GetKey(KeyCode.Space))
         {
             currentSpeed += (brakeSpeed/12) * Input.GetAxisRaw("Vertical");
+            brakeLights.SetActive(true);
             if (currentSpeed < 0)
             {
-                brakeLights.SetActive(true);
+                //brakeLights.SetActive(true);
                 currentSpeed = backwardSpeed;
             }
             else
             {
-                brakeLights.SetActive(false);
+                //brakeLights.SetActive(false);
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKey(KeyCode.K))
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K))
         {
-            
-            if (currentSpeed < 0)
-            {
-                brakeLights.SetActive(false);
-                currentSpeed = 0;
-            }
+            brakeLights.SetActive(true);
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.K))
+        {
+                brakeLights.SetActive(false);   
         }
 
         //coasting to stop
