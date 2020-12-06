@@ -150,6 +150,10 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 10);
+            if (bikeModel.transform.localRotation.z > 45.0f)
+            {
+                bikeModel.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45.0f);
+            }
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle > maxTurnAngle)
             {
@@ -159,6 +163,10 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 10);
+            if (bikeModel.transform.localRotation.z < -45.0f)
+            {
+                bikeModel.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45.0f);
+            }
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle < -maxTurnAngle)
             {
