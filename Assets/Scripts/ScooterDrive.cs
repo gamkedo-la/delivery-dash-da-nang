@@ -168,7 +168,21 @@ public class ScooterDrive : MonoBehaviour
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             currentTurnAngle = 0;
-            bikeModel.transform.rotation = this.transform.rotation;
+            if (bikeModel.transform.rotation.z > 0)
+            {
+                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -40);
+            }
+            else if (bikeModel.transform.rotation.z < 0)
+            {
+                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 40);
+            }
+
+            if ( (bikeModel.transform.rotation.z < 0.01 && bikeModel.transform.rotation.z > -0.01) )
+            {
+                Debug.Log("bikeModel.transform.rotation.z: " + bikeModel.transform.rotation.z);
+                bikeModel.transform.rotation = this.transform.rotation;
+            }
+
         }
 
         //brake
