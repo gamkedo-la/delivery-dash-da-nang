@@ -13,10 +13,15 @@ public class PhysicsOnPlayer : MonoBehaviour
     bool hasBeenKnockedOver;
 
     public float lifetimeAfterKnockedOver = 10;
+    public Material transparent;
+    public MeshRenderer DestObject;
+    float transformMaterial;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        transformMaterial = lifetimeAfterKnockedOver * .2f;
+        print(transformMaterial);
     }
 
     private void Update()
@@ -24,6 +29,11 @@ public class PhysicsOnPlayer : MonoBehaviour
         if (hasBeenKnockedOver)
         {
             lifetimeAfterKnockedOver -= Time.deltaTime;
+        }
+
+        if (lifetimeAfterKnockedOver <= transformMaterial)
+        {
+            DestObject.material = transparent;
         }
 
         if (lifetimeAfterKnockedOver <= 0)
