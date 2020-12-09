@@ -37,6 +37,8 @@ public class ScooterDrive : MonoBehaviour
     public float previousX;// east/west
     public float previousZ;// north/south
 
+    public GameObject collisionParticle;
+
     void Start()
     {
         //RestartAtSpawn();
@@ -253,6 +255,14 @@ public class ScooterDrive : MonoBehaviour
         if (!phoneToggle)
         {
             phone.SetBool("PhoneOn", false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "DestEnv")
+        {
+            Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
         }
     }
 }
