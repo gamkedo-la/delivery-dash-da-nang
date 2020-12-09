@@ -74164,6 +74164,17 @@ PrefabInstance:
       propertyPath: restartAt
       value: 
       objectReference: {fileID: 144926615}
+    - target: {fileID: 4841059496152381648, guid: 9d26db96235eb894daed008a054b9cd7,
+        type: 3}
+      propertyPath: collisionParticle
+      value: 
+      objectReference: {fileID: 1100322013448296798, guid: 80b978401bf124f4f86ef3e630874b49,
+        type: 3}
+    - target: {fileID: 4841059496152381648, guid: 9d26db96235eb894daed008a054b9cd7,
+        type: 3}
+      propertyPath: speedPenaltyPercent
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4946180043679567677, guid: 9d26db96235eb894daed008a054b9cd7,
         type: 3}
       propertyPath: m_RootOrder

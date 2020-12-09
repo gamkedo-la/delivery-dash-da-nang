@@ -10,9 +10,26 @@ public class PhysicsOnPlayer : MonoBehaviour
     float RandForceZ;
     float RandForceX;
 
+    bool hasBeenKnockedOver;
+
+    public float lifetimeAfterKnockedOver = 10;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if (hasBeenKnockedOver)
+        {
+            lifetimeAfterKnockedOver -= Time.deltaTime;
+        }
+
+        if (lifetimeAfterKnockedOver <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,11 +57,10 @@ public class PhysicsOnPlayer : MonoBehaviour
             {
                 RandForceX = Random.Range(ScooterDrive.playerCurrentSpeed / 4 ,ScooterDrive.playerCurrentSpeed / 8);
             }
-            
-            
 
             GetComponent<Rigidbody>().AddForce(new Vector3(RandForceX, ScooterDrive.playerCurrentSpeed, RandForceZ), ForceMode.Impulse);
             this.transform.rotation = Quaternion.Euler(RandX, RandY, RandZ);
+            hasBeenKnockedOver = true;
         }
     }
 }

@@ -38,6 +38,7 @@ public class ScooterDrive : MonoBehaviour
     public float previousZ;// north/south
 
     public GameObject collisionParticle;
+    public float speedPenaltyPercent = 15;
 
     void Start()
     {
@@ -263,6 +264,8 @@ public class ScooterDrive : MonoBehaviour
         if (other.tag == "DestEnv")
         {
             Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
+            playerCurrentSpeed -= speedPenaltyPercent;
+            print(playerCurrentSpeed);
         }
     }
 }
