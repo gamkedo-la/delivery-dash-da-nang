@@ -73,6 +73,7 @@ public class ScooterDrive : MonoBehaviour
         previousX = gameObject.transform.position.x;
         previousZ = gameObject.transform.position.z;
 
+        Debug.Log(bikeModel.transform.localRotation.z);
     }// end of update(){}
 
     public void updateDirectionBools()
@@ -146,7 +147,6 @@ public class ScooterDrive : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("s key is down");
             currentSpeed += Time.deltaTime * backwardSpeed;
         }
 
@@ -154,9 +154,9 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 10);
-            if (bikeModel.transform.localRotation.z > 45.0f)
+            if (bikeModel.transform.localRotation.z < -0.45f)
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, 45.0f);
+                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, -0.45f);
             }
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle > maxTurnAngle)
@@ -164,12 +164,14 @@ public class ScooterDrive : MonoBehaviour
                 currentTurnAngle = maxTurnAngle;
             }
         }
+        
         if (Input.GetKey(KeyCode.A))
         {
             bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 10);
-            if (bikeModel.transform.localRotation.z < -45.0f)
+            
+            if (bikeModel.transform.localRotation.z > 0.45f)
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0.0f, 0.0f, -45.0f);
+                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.45f);
             }
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
             if (currentTurnAngle < -maxTurnAngle)
@@ -180,19 +182,18 @@ public class ScooterDrive : MonoBehaviour
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             currentTurnAngle = 0;
-            if (bikeModel.transform.rotation.z > 0)
+            if (bikeModel.transform.localRotation.z > 0)
             {
                 bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -40);
             }
-            else if (bikeModel.transform.rotation.z < 0)
+            else if (bikeModel.transform.localRotation.z < 0)
             {
                 bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 40);
             }
 
-            if ( (bikeModel.transform.rotation.z < 0.01 && bikeModel.transform.rotation.z > -0.01) )
+            if ( (bikeModel.transform.localRotation.z < 0.01 && bikeModel.transform.localRotation.z > -0.01) )
             {
-                Debug.Log("bikeModel.transform.rotation.z: " + bikeModel.transform.rotation.z);
-                bikeModel.transform.rotation = this.transform.rotation;
+                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.0f);
             }
 
         }

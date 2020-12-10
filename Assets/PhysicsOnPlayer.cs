@@ -21,7 +21,7 @@ public class PhysicsOnPlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         transformMaterial = lifetimeAfterKnockedOver * .2f;
-        print(transformMaterial);
+        //print(transformMaterial);
     }
 
     private void Update()
