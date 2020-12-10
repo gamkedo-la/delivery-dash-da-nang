@@ -72,8 +72,6 @@ public class ScooterDrive : MonoBehaviour
 
         previousX = gameObject.transform.position.x;
         previousZ = gameObject.transform.position.z;
-
-        Debug.Log(bikeModel.transform.localRotation.z);
     }// end of update(){}
 
     public void updateDirectionBools()
