@@ -416,7 +416,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5759976550381770119}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1a67241521f9efe4d943dfa775072ae0, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
@@ -438,7 +438,6 @@ MonoBehaviour:
   forwardSpeed: 0.3
   backwardSpeed: -0.1
   coastToStopSpeed: 0.35
-  maxSpeed: 1.5
   currentTurnAngle: 0
   turnAngleRate: 2
   maxTurnAngle: 15
@@ -447,6 +446,10 @@ MonoBehaviour:
   restartAt: {fileID: 0}
   bikeModel: {fileID: 0}
   phone: {fileID: 0}
+  previousX: 0
+  previousZ: 0
+  collisionParticle: {fileID: 0}
+  speedPenaltyPercent: 15
 --- !u!195 &4841059496152381660
 NavMeshAgent:
   m_ObjectHideFlags: 0
