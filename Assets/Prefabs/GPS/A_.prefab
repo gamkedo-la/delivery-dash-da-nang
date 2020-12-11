@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78d8297f4d8bbb643a6ab0381bc5265b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  undriveableMask:
+  driveableMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
   gridWorldSize: {x: 1000, y: 800}
-  nodeRadius: 10
+  nodeRadius: 30

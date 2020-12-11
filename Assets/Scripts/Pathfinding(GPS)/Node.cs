@@ -4,7 +4,7 @@ using UnityEngine;
 
 //Pathfinding based on Sebasian Lague's A* Pathfinding series
 
-public class Node : MonoBehaviour
+public class Node
 {
 
     public bool driveable;
