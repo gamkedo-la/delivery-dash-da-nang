@@ -2547,7 +2547,7 @@ GameObject:
   - component: {fileID: 87738923}
   - component: {fileID: 87738922}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (9)
+  m_Name: Moon Milk Road Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2561,7 +2561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87738920}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 63, y: -161.4, z: 1323.6}
+  m_LocalPosition: {x: -115, y: -161.4, z: 1349.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -2575,9 +2575,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87738920}
-  m_Text: THIS IS A ROAD
+  m_Text: Moon Milk Road Center
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -4011,7 +4011,7 @@ GameObject:
   - component: {fileID: 131182598}
   - component: {fileID: 131182597}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (13)
+  m_Name: AH17 South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4025,7 +4025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131182595}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -977, y: -161.4, z: -371}
+  m_LocalPosition: {x: -1004.5, y: -161.4, z: -371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -4039,9 +4039,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131182595}
-  m_Text: THIS IS A ROAD
+  m_Text: AH17 South
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -4533,7 +4533,7 @@ GameObject:
   - component: {fileID: 136244445}
   - component: {fileID: 136244444}
   m_Layer: 0
-  m_Name: THIS IS A ROAD
+  m_Name: An Thuong 34 West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4547,7 +4547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136244442}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -168, y: -161.4, z: -32.6}
+  m_LocalPosition: {x: -318, y: -161.4, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -4561,9 +4561,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136244442}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 34 West
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -7239,7 +7239,7 @@ GameObject:
   - component: {fileID: 210390431}
   - component: {fileID: 210390430}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (7)
+  m_Name: Phan Tu East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7253,7 +7253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210390428}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 657, y: -161.4, z: -693.2}
+  m_LocalPosition: {x: 657, y: -161.4, z: -660.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -7267,9 +7267,11 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210390428}
-  m_Text: THIS IS A ROAD
+  m_Text: 'Phan Tu East
+
+'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -10521,7 +10523,7 @@ GameObject:
   - component: {fileID: 313639194}
   - component: {fileID: 313639193}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (24)
+  m_Name: An Thuong 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10535,7 +10537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313639191}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -153, y: -161.4, z: -608}
+  m_LocalPosition: {x: -169, y: -161.4, z: -653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -10549,9 +10551,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313639191}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 6
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -12909,7 +12911,7 @@ GameObject:
   - component: {fileID: 387360864}
   - component: {fileID: 387360863}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (23)
+  m_Name: Le Quang Dao South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16420,7 +16422,7 @@ GameObject:
   - component: {fileID: 508103022}
   - component: {fileID: 508103021}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (1)
+  m_Name: Hoang Ke Viem West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16434,7 +16436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508103019}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -168, y: -161.4, z: -193}
+  m_LocalPosition: {x: -360, y: -161.4, z: -161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -16448,9 +16450,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508103019}
-  m_Text: THIS IS A ROAD
+  m_Text: Hoang Ke Viem West
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -18212,7 +18214,7 @@ GameObject:
   - component: {fileID: 574757089}
   - component: {fileID: 574757088}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (15)
+  m_Name: An Thuong 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18226,7 +18228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574757086}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -332, y: -161.4, z: -383.2}
+  m_LocalPosition: {x: -351, y: -161.4, z: -427}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -18240,9 +18242,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574757086}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 15
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -21449,7 +21451,7 @@ GameObject:
   - component: {fileID: 674930238}
   - component: {fileID: 674930237}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (8)
+  m_Name: Moon Milk Road East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21463,7 +21465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674930235}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 657, y: -161.4, z: 1323.6}
+  m_LocalPosition: {x: 657, y: -161.4, z: 1350.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -21477,9 +21479,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674930235}
-  m_Text: THIS IS A ROAD
+  m_Text: Moon Milk Road East
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -21999,7 +22001,7 @@ GameObject:
   - component: {fileID: 690284788}
   - component: {fileID: 690284787}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (22)
+  m_Name: Le Quang Dao North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22027,7 +22029,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690284785}
-  m_Text: THIS IS A ROAD
+  m_Text: 'Le Quang Dao North
+
+'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -22710,7 +22714,7 @@ GameObject:
   - component: {fileID: 705700490}
   - component: {fileID: 705700489}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (5)
+  m_Name: Hoang Ke Viem East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22724,7 +22728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705700487}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 657, y: -161.4, z: -193}
+  m_LocalPosition: {x: 657, y: -161.4, z: -161.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -22738,9 +22742,11 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705700487}
-  m_Text: THIS IS A ROAD
+  m_Text: 'Hoang Ke Viem East
+
+'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -28209,7 +28215,7 @@ GameObject:
   - component: {fileID: 864817964}
   - component: {fileID: 864817963}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (18)
+  m_Name: An Thuong 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28223,7 +28229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864817961}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 363, y: -161.4, z: -383.2}
+  m_LocalPosition: {x: 347, y: -161.4, z: -415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -28237,9 +28243,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864817961}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 4
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -29050,7 +29056,7 @@ GameObject:
   - component: {fileID: 886949179}
   - component: {fileID: 886949178}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (12)
+  m_Name: AH 17 Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29064,7 +29070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886949176}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -977, y: -161.4, z: 386}
+  m_LocalPosition: {x: -1004.6, y: -161.4, z: 386}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -29078,9 +29084,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886949176}
-  m_Text: THIS IS A ROAD
+  m_Text: AH 17 Center
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -29349,7 +29355,7 @@ GameObject:
   - component: {fileID: 901684338}
   - component: {fileID: 901684337}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (11)
+  m_Name: AH 17 North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29363,7 +29369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901684335}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -977, y: -161.4, z: 1018}
+  m_LocalPosition: {x: -1004.4, y: -161.4, z: 1018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -29377,9 +29383,11 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901684335}
-  m_Text: THIS IS A ROAD
+  m_Text: 'AH 17 North
+
+'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -30744,7 +30752,7 @@ GameObject:
   - component: {fileID: 934737362}
   - component: {fileID: 934737361}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (17)
+  m_Name: An Thuong 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30758,7 +30766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934737359}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 5, y: -161.4, z: -383.2}
+  m_LocalPosition: {x: -37, y: -188, z: -414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -30772,9 +30780,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934737359}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 12
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -33203,7 +33211,7 @@ GameObject:
   - component: {fileID: 993874984}
   - component: {fileID: 993874983}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (26)
+  m_Name: Beach Road South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33217,7 +33225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993874981}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 1144, y: -161.4, z: -435}
+  m_LocalPosition: {x: 1119, y: -161.4, z: -435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -33231,9 +33239,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993874981}
-  m_Text: THIS IS A ROAD
+  m_Text: Beach Road South
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -34400,7 +34408,7 @@ GameObject:
   - component: {fileID: 1047436100}
   - component: {fileID: 1047436099}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (6)
+  m_Name: Ngo Thi Si East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34414,7 +34422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047436097}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 657, y: -161.4, z: -444}
+  m_LocalPosition: {x: 657, y: -161.4, z: -414.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -34428,9 +34436,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047436097}
-  m_Text: THIS IS A ROAD
+  m_Text: Ngo Thi Si East
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -36145,7 +36153,7 @@ GameObject:
   - component: {fileID: 1086924532}
   - component: {fileID: 1086924531}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (16)
+  m_Name: An Thuong 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36159,7 +36167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086924529}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -110, y: -161.4, z: -383.2}
+  m_LocalPosition: {x: -129, y: -161.4, z: -423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -36173,9 +36181,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086924529}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 14
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -37119,7 +37127,7 @@ GameObject:
   - component: {fileID: 1111886688}
   - component: {fileID: 1111886687}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (27)
+  m_Name: Beach Road Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37133,7 +37141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111886685}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 1144, y: -161.4, z: 116}
+  m_LocalPosition: {x: 1119, y: -161.4, z: 116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -37147,9 +37155,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111886685}
-  m_Text: THIS IS A ROAD
+  m_Text: Beach Road Center
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -37595,7 +37603,7 @@ GameObject:
   - component: {fileID: 1132848914}
   - component: {fileID: 1132848913}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (14)
+  m_Name: Church Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37609,7 +37617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132848911}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -491, y: -161.4, z: -383.2}
+  m_LocalPosition: {x: -522, y: -161.4, z: -383.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -37623,9 +37631,11 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132848911}
-  m_Text: THIS IS A ROAD
+  m_Text: 'Church Road
+
+'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -37777,7 +37787,7 @@ GameObject:
   - component: {fileID: 1135265490}
   - component: {fileID: 1135265489}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (25)
+  m_Name: NOT An Thuong 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37791,7 +37801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135265487}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -254, y: -161.4, z: -608}
+  m_LocalPosition: {x: -267, y: -161.4, z: -690}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -37805,9 +37815,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135265487}
-  m_Text: THIS IS A ROAD
+  m_Text: NOT An Thuong 6
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -40240,7 +40250,7 @@ GameObject:
   - component: {fileID: 1195507673}
   - component: {fileID: 1195507672}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (20)
+  m_Name: An Thuong 32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40254,7 +40264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195507670}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 515, y: -161.4, z: 119}
+  m_LocalPosition: {x: 506, y: -161.4, z: 119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -40268,9 +40278,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195507670}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 32
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -43328,7 +43338,7 @@ GameObject:
   - component: {fileID: 1302108574}
   - component: {fileID: 1302108573}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (2)
+  m_Name: Ngo Thi Si West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43342,7 +43352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302108571}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -270.7, y: -161.4, z: -434.4}
+  m_LocalPosition: {x: -303, y: -161.4, z: -422}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -43356,9 +43366,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302108571}
-  m_Text: THIS IS A ROAD
+  m_Text: Ngo Thi Si West
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -45052,7 +45062,7 @@ GameObject:
   - component: {fileID: 1355196216}
   - component: {fileID: 1355196215}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (10)
+  m_Name: Moon Milk Road West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45066,7 +45076,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355196213}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -680, y: -161.4, z: 1323.6}
+  m_LocalPosition: {x: -830, y: -161.4, z: 1349.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -45080,9 +45090,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355196213}
-  m_Text: THIS IS A ROAD
+  m_Text: Moon Milk Road West
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -47386,7 +47396,7 @@ GameObject:
   - component: {fileID: 1431438453}
   - component: {fileID: 1431438452}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (19)
+  m_Name: An Thuong 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47400,7 +47410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431438450}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 489.5, y: -149.5, z: -383.2}
+  m_LocalPosition: {x: 489.5, y: -149.5, z: -413}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -47414,11 +47424,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431438450}
-  m_Text: 'TILE TEST STREET
-
-'
+  m_Text: An Thuong 5
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -55271,7 +55279,7 @@ GameObject:
   - component: {fileID: 1648380111}
   - component: {fileID: 1648380110}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (28)
+  m_Name: Beach Road North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55285,7 +55293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648380108}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 1144, y: -161.4, z: 745}
+  m_LocalPosition: {x: 1118, y: -161.4, z: 745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -55299,9 +55307,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648380108}
-  m_Text: THIS IS A ROAD
+  m_Text: Beach Road North
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -59778,7 +59786,7 @@ GameObject:
   - component: {fileID: 1783503043}
   - component: {fileID: 1783503042}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (4)
+  m_Name: An Thuong 34 East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59792,7 +59800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783503040}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 657, y: -161.4, z: -32.6}
+  m_LocalPosition: {x: 657, y: -161.4, z: 1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -59806,9 +59814,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783503040}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 34
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -65734,7 +65742,7 @@ GameObject:
   - component: {fileID: 1977638186}
   - component: {fileID: 1977638185}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (21)
+  m_Name: An Thuong 33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65748,7 +65756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977638183}
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 365, y: -161.4, z: 119}
+  m_LocalPosition: {x: 354, y: -161.4, z: 119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -65762,9 +65770,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977638183}
-  m_Text: THIS IS A ROAD
+  m_Text: An Thuong 33
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 1.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -66315,7 +66323,7 @@ GameObject:
   - component: {fileID: 1992781544}
   - component: {fileID: 1992781543}
   m_Layer: 0
-  m_Name: THIS IS A ROAD (3)
+  m_Name: Phan Tu West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66329,7 +66337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992781541}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -168, y: -161.4, z: -693.2}
+  m_LocalPosition: {x: -168, y: -161.4, z: -668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 828544018}
@@ -66343,9 +66351,11 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992781541}
-  m_Text: THIS IS A ROAD
+  m_Text: 'Phan Tu West
+
+'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 2.5
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
