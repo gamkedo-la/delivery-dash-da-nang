@@ -10,10 +10,25 @@ public class Node
     public bool driveable;
     public Vector3 worldPosition;
 
-    public Node(bool _driveable, Vector3 _worldPos)
+    public int gCost;
+    public int hCost;
+
+    public int gridX;
+    public int gridY;
+
+    public Node parent;
+
+    public Node(bool _driveable, Vector3 _worldPos, int _gridX, int _gridY)
     {
         driveable = _driveable;
         worldPosition = _worldPos;
+        gridX = _gridX;
+        gridY = _gridY;
+    }
+
+    public int fCost
+    {
+       get { return gCost + hCost; }
     }
 
 }
