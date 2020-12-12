@@ -31,34 +31,38 @@ public class Pathfinding : MonoBehaviour
 
         while(openSet.Count > 0)
         {
-            Node currentNode = openSet[0];
+            Node node = openSet[0];
             for (int i = 1; i < openSet.Count; i++)
             {
-                if(openSet[i].fCost < currentNode.fCost || openSet[i].fCost == currentNode.fCost && openSet[i].hCost < currentNode.hCost)
+                if(openSet[i].fCost < node.fCost || openSet[i].fCost == node.fCost)
                 {
-                    currentNode = openSet[i];
+                    if(openSet[i].hCost < node.hCost)
+                    {
+                        node = openSet[i];
+                    }
                 }
             }
-            openSet.Remove(currentNode);
-            closedSet.Add(currentNode);
 
-            if(currentNode == targetNode)
+            openSet.Remove(node);
+            closedSet.Add(node);
+
+            if(node == targetNode)
             {
                 RetracePath(startNode, targetNode);
                 return;
             }
 
-            foreach (Node neighbor in grid.GetNeighbors(currentNode)){
-                if(neighbor.driveable || closedSet.Contains(neighbor)){
+            foreach (Node neighbor in grid.GetNeighbors(node)){
+                if(!neighbor.driveable || closedSet.Contains(neighbor)){
                     continue;
                 }
 
-                int newMovementCostToNeighbor = currentNode.gCost + GetDistance(currentNode, neighbor);
+                int newMovementCostToNeighbor = node.gCost + GetDistance(node, neighbor);
                 if(newMovementCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
                 {
                     neighbor.gCost = newMovementCostToNeighbor;
                     neighbor.hCost = GetDistance(neighbor, targetNode);
-                    neighbor.parent = currentNode;
+                    neighbor.parent = node;
 
                     if (!openSet.Contains(neighbor))
                     {
@@ -95,5 +99,6 @@ public class Pathfinding : MonoBehaviour
         path.Reverse();
 
         grid.path = path;
+        Debug.Log(path);
     }
 }
