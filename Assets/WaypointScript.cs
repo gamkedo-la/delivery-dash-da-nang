@@ -19,7 +19,7 @@ public class WaypointScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("PlayerScooter");
+        player = GameObject.Find("player-scooter-1-Scooter");
 
         DashApp = GameObject.Find("DashApp");
         dashAppScript = DashApp.GetComponent<DashAppScript>();
@@ -31,6 +31,7 @@ public class WaypointScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Debug.Log("entered waypoint box");
             listeningForPlayerSpeed = true;
         }
     }
@@ -40,7 +41,7 @@ public class WaypointScript : MonoBehaviour
         if (listeningForPlayerSpeed)
         {
             if (player.GetComponent<ScooterDrive>().currentSpeed == 0)
-            {                
+            {
                 if (gameObject.activeSelf && dashAppScript.DashAppStatus == "waiting for pickup")
                 {
                     dashAppScript.CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(false);

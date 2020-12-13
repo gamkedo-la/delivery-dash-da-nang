@@ -264,7 +264,7 @@ public class ScooterDrive : MonoBehaviour
         {
             Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
             playerCurrentSpeed -= speedPenaltyPercent;
-            print(playerCurrentSpeed);
+            //print(playerCurrentSpeed);
         }
     }
 }
