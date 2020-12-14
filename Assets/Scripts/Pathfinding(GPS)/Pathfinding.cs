@@ -99,6 +99,10 @@ public class Pathfinding : MonoBehaviour
         path.Reverse();
 
         grid.path = path;
-        Debug.Log(path);
+        Debug.Log(path.Count);
+        for (int i = 0; i < path.Count; i++)
+        {
+            Debug.Log("X: " + path[i].gridX + " Y:" + path[i].gridY);
+        }
     }
 }

@@ -10,6 +10,9 @@ public class Grid : MonoBehaviour
     public float nodeRadius;
     Node[,] grid;
 
+    [SerializeField]
+    public List<Node> path;
+
     float nodeDiameter;
     int gridSizeX, gridSizeY;
 
@@ -73,7 +76,7 @@ public class Grid : MonoBehaviour
         return grid[x, y];
     }
 
-    public List<Node> path;
+
 
     void OnDrawGizmos()
     {
