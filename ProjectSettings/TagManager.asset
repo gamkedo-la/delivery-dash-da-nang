@@ -8,6 +8,8 @@ TagManager:
   - Restaurant
   - DestEnv
   - Ground
+  - WayPointBox
+  - WayPointCustomer
   layers:
   - Default
   - TransparentFX

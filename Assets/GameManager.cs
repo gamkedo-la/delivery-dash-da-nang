@@ -13,6 +13,16 @@ public class GameManager : MonoBehaviour
 
     public GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
 
+    //some of these are in the ScooterDrive.cs
+    public static bool player1OrderPickedUp;
+    public static bool player1OrderDelivered;
+
+    private void Start()
+    {
+        player1OrderPickedUp = false;
+        player1OrderDelivered = false;
+    }
+
     private void Update()
     {
         if (Player1RestaurantWayPoint != null && Player1ApartmentWayPoint != null)

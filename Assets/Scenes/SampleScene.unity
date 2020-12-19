@@ -1231,7 +1231,7 @@ GameObject:
   - component: {fileID: 29597032}
   m_Layer: 0
   m_Name: WayPointBox - Restaurant
-  m_TagString: Untagged
+  m_TagString: WayPointBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1304,7 +1304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29597031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 535.2339, y: 34.66153, z: 469.66626}
+  m_LocalPosition: {x: 535.2339, y: -37.2, z: 469.66626}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20793,6 +20793,7 @@ MonoBehaviour:
   collisionParticle: {fileID: 1100322013448296798, guid: 80b978401bf124f4f86ef3e630874b49,
     type: 3}
   speedPenaltyPercent: 15
+  physicalOrder: {fileID: 860014048}
 --- !u!54 &510050266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36360,7 +36361,7 @@ GameObject:
   - component: {fileID: 889576265}
   m_Layer: 0
   m_Name: WayPointBox - Customer
-  m_TagString: Untagged
+  m_TagString: WayPointCustomer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36433,7 +36434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889576264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 535.2339, y: 34.66153, z: 469.66626}
+  m_LocalPosition: {x: 535.2339, y: -37.2, z: 469.66626}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54750,7 +54751,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 96970ec506aae324abd1a2f8112ea1b0,
         type: 3}
       propertyPath: m_Name
-      value: player-scooter-1-Scooter
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96970ec506aae324abd1a2f8112ea1b0,
         type: 3}

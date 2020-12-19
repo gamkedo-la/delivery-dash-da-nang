@@ -40,6 +40,8 @@ public class ScooterDrive : MonoBehaviour
     public GameObject collisionParticle;
     public float speedPenaltyPercent = 15;
 
+    public GameObject physicalOrder;
+
     void Start()
     {
         //RestartAtSpawn();
@@ -265,6 +267,24 @@ public class ScooterDrive : MonoBehaviour
             Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
             playerCurrentSpeed -= speedPenaltyPercent;
             //print(playerCurrentSpeed);
+        }
+
+        if (other.tag == "WayPointBox")
+        {
+            GameManager.player1OrderPickedUp = true;
+            physicalOrder.SetActive(true);
+        }
+
+        if (other.tag == "WayPointCustomer")
+        {
+            if (GameManager.player1OrderPickedUp)
+            {
+                GameManager.player1OrderDelivered = true;
+                physicalOrder.SetActive(false);
+
+                //display score
+                //turn off player1OrderPickedUp and player1OrderDelivered
+            }
         }
     }
 }
