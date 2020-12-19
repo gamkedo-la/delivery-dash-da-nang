@@ -26,7 +26,7 @@ public class PhoneScript : MonoBehaviour
 
     public void RatingsBack()
     {
-        RatingsScreen.SetActive(false);
         HomeScreen.SetActive(true);
+        RatingsScreen.SetActive(false);
     }
 }
