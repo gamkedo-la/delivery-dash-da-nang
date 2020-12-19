@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static string Player1RestaurantName, Player1ApartmentName, Player1CustomerName, Player1CustomerItemOrdered;
     public static Transform Player1RestaurantWayPoint, Player1ApartmentWayPoint;
     public static bool Player1OrderSelected;
+    public static float player1Distance;
 
     public GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
 

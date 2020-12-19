@@ -55,6 +55,8 @@ public class PrefabOrder : MonoBehaviour
 
         player1RestaurantWayPoint.transform.position = restaurantLocations[restaurantSelected].transform.position;
         player1ApartmentWayPoint.transform.position = apartmentLocations[customerLocation].transform.position;
+
+        GameManager.player1Distance = Vector3.Distance(player1RestaurantWayPoint.transform.position, player1ApartmentWayPoint.transform.position);
     }
 
     public void OrderDeclined()

@@ -22,6 +22,8 @@ public class DashAppScript : MonoBehaviour
     public Text orderUI;
     public Text countDownTimer;
 
+    float distanceBetweenTargetAndDestination; // used to calculate time
+
     public void Update()
     {
         OrderDuration -= Time.deltaTime;
@@ -37,7 +39,9 @@ public class DashAppScript : MonoBehaviour
 
             GameManager.Player1OrderSelected = false;
 
-            OrderDuration = 100; //remove this later, just for testing
+            distanceBetweenTargetAndDestination = (GameManager.player1Distance / 50);
+            OrderDuration = distanceBetweenTargetAndDestination;
+
             // startingOrderDuration = distance between restaurant selected and customer selected (this does not change)
             // OrderDuration = distance between restaurant selected and customer selected
 
