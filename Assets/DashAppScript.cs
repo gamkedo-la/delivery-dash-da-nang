@@ -33,8 +33,7 @@ public class DashAppScript : MonoBehaviour
 
         if (GameManager.Player1OrderSelected)
         {
-            WayPointBoxRestaurant.transform.position = restaurantSelection[restaurantSelected].transform.position;
-            WayPointCustomer.transform.position = customerLocations[restaurantSelected].transform.position;
+            //move waypoint boxes
 
             GameManager.Player1OrderSelected = false;
 

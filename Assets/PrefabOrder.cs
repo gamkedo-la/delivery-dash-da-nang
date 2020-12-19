@@ -10,6 +10,9 @@ public class PrefabOrder : MonoBehaviour
     public string[] customerNames;
     public string[] orderedItems;
 
+    public Transform[] restaurantLocations;
+    public Transform[] apartmentLocations;
+
     public int restaurantSelected;
     public int customerLocation;
     public int customerName;
@@ -22,8 +25,13 @@ public class PrefabOrder : MonoBehaviour
 
     public GameObject accept, decline;
 
+    GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
+
     private void Start()
     {
+        player1RestaurantWayPoint = GameObject.Find("WayPointBox - Restaurant");
+        player1ApartmentWayPoint = GameObject.Find("WayPointBox - Customer");
+
         restaurantSelected = Random.Range(0, restaurantName.Length);
         customerName = Random.Range(0, customerNames.Length);
         customerLocation = Random.Range(0, apartmentName.Length);
@@ -44,7 +52,9 @@ public class PrefabOrder : MonoBehaviour
         GameManager.Player1ApartmentName = apartmentName[customerLocation].ToString();
         GameManager.Player1CustomerName = customerNames[customerName].ToString();
         GameManager.Player1RestaurantName = restaurantName[restaurantSelected].ToString();
-        //display ui order for the player
+
+        player1RestaurantWayPoint.transform.position = restaurantLocations[restaurantSelected].transform.position;
+        player1ApartmentWayPoint.transform.position = apartmentLocations[customerLocation].transform.position;
     }
 
     public void OrderDeclined()
