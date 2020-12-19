@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public static bool player1OrderPickedUp;
     public static bool player1OrderDelivered;
 
+    public static float player1ScoreOnOrder;
+    public static float player1ScoreTotal;
+
     private void Start()
     {
         player1OrderPickedUp = false;

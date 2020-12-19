@@ -43,6 +43,8 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject physicalOrder;
 
+    public GameObject TotalScore, star1, star2, star3, star4, star5;
+
     void Start()
     {
         //RestartAtSpawn();
@@ -284,9 +286,48 @@ public class ScooterDrive : MonoBehaviour
                 GameManager.player1OrderDelivered = true;
                 physicalOrder.SetActive(false);
 
+                //food health / 100
+                float tempFoodHealthScore = FoodHealth.currentHealth / 100;
+                //time remaining / total time
+                float tempTimeScore = DashAppScript.totalTimeRemaining;
+                // (% + %) / 2
+                float tempTotalScore = (tempFoodHealthScore + tempTimeScore) / 2;
+                //total score displayed in stars
+                GameManager.player1ScoreOnOrder = tempTotalScore;
+                //total score added to macrototal score
+                TotalScore.SetActive(true);
+                if (GameManager.player1ScoreOnOrder < .2)
+                {
+                    star1.SetActive(true);
+                }
+                else if (GameManager.player1ScoreOnOrder < .4)
+                {
+                    star2.SetActive(true);
+                }
+                else if (GameManager.player1ScoreOnOrder < .6)
+                {
+                    star3.SetActive(true);
+                }
+                else if (GameManager.player1ScoreOnOrder < .8)
+                {
+                    star4.SetActive(true);
+                }
+                else if (GameManager.player1ScoreOnOrder > .8)
+                {
+                    star5.SetActive(true);
+                }
+                StartCoroutine(Waiting());
                 //display score
                 //turn off player1OrderPickedUp and player1OrderDelivered
+                //turn off waypoint boxes
+                //close app line for the order
             }
         }
+    }
+
+    IEnumerator Waiting()
+    {
+        yield return new WaitForSeconds(2);
+        TotalScore.SetActive(false);
     }
 }

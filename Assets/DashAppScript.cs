@@ -17,6 +17,9 @@ public class DashAppScript : MonoBehaviour
 
     public float OrderDuration = 3f;
     public float startingOrderDuration; //used for determining score
+    public static float totalTimeRemaining;
+
+
     bool orderSelected;
 
     public Text orderUI;
@@ -28,6 +31,10 @@ public class DashAppScript : MonoBehaviour
     {
         OrderDuration -= Time.deltaTime;
 
+        if (!GameManager.player1OrderDelivered)
+        {
+            totalTimeRemaining = OrderDuration / distanceBetweenTargetAndDestination;
+        }
         if (OrderDuration <= 0)
         {
             orderSelected = true;
