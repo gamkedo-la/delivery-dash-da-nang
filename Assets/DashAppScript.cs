@@ -7,13 +7,9 @@ public class DashAppScript : MonoBehaviour
 {
     public GameObject WayPointBoxRestaurant;
     public GameObject WayPointCustomer;
-    public Transform[] restaurantSelection;
-    public string[] restaurantName;
-    public string[] productName;
 
+    public Transform[] restaurantSelection;
     public Transform[] customerLocations;
-    public string[] apartmentName;
-    public string[] customerNames;
 
     public int restaurantSelected;
     public int customerLocation;
@@ -35,22 +31,20 @@ public class DashAppScript : MonoBehaviour
             orderSelected = true;
         }
 
-        if (orderSelected)
+        if (GameManager.Player1OrderSelected)
         {
-            restaurantSelected = Random.Range(0, restaurantSelection.Length);
-            customerName = Random.Range(0, customerNames.Length);
-            customerLocation = Random.Range(0, customerLocations.Length);
             WayPointBoxRestaurant.transform.position = restaurantSelection[restaurantSelected].transform.position;
             WayPointCustomer.transform.position = customerLocations[restaurantSelected].transform.position;
+
+            GameManager.Player1OrderSelected = false;
 
             OrderDuration = 100; //remove this later, just for testing
             // startingOrderDuration = distance between restaurant selected and customer selected (this does not change)
             // OrderDuration = distance between restaurant selected and customer selected
-            orderSelected = false;
-
 
             //This is the UI to tell you the order -> Deliver "Product" from "Restaurant" to "CustomerName" at "CustomerLocation"
-            orderUI.text = "Deliver " + productName[restaurantSelected].ToString() + " from " + $"<color=green>{restaurantName[restaurantSelected].ToString()}</color>" + " to " + customerNames[customerName].ToString() + " at " + $"<color=yellow>{apartmentName[customerLocation].ToString()}</color>";
+
+            orderUI.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " from " + $"<color=green>{GameManager.Player1RestaurantName}</color>" + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";
         }
 
         //UI

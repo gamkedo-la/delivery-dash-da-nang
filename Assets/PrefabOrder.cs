@@ -8,6 +8,7 @@ public class PrefabOrder : MonoBehaviour
     public string[] restaurantName;
     public string[] apartmentName;
     public string[] customerNames;
+    public string[] orderedItems;
 
     public int restaurantSelected;
     public int customerLocation;
@@ -27,7 +28,7 @@ public class PrefabOrder : MonoBehaviour
         customerName = Random.Range(0, customerNames.Length);
         customerLocation = Random.Range(0, apartmentName.Length);
 
-        orderText.text = customerNames[customerName].ToString() + " ordered from " + restaurantName[restaurantSelected].ToString() + " to deliver to " + apartmentName[customerLocation].ToString();
+        orderText.text = customerNames[customerName].ToString() + " ordered " + orderedItems[restaurantSelected] + " from " + restaurantName[restaurantSelected].ToString() + " to deliver to " + apartmentName[customerLocation].ToString();
     }
 
     public void OrderAccepted()
@@ -36,6 +37,13 @@ public class PrefabOrder : MonoBehaviour
         accept.SetActive(false);
         decline.SetActive(true);
         orderCondition.color = Color.green;
+
+        GameManager.Player1OrderSelected = true;
+
+        GameManager.Player1CustomerItemOrdered = orderedItems[restaurantSelected].ToString();
+        GameManager.Player1ApartmentName = apartmentName[customerLocation].ToString();
+        GameManager.Player1CustomerName = customerNames[customerName].ToString();
+        GameManager.Player1RestaurantName = restaurantName[restaurantSelected].ToString();
         //display ui order for the player
     }
 
