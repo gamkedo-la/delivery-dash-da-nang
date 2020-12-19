@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScooterDrive : MonoBehaviour
 {
@@ -266,6 +267,7 @@ public class ScooterDrive : MonoBehaviour
         {
             Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
             playerCurrentSpeed -= speedPenaltyPercent;
+            FoodHealth.currentHealth -= 5f;
             //print(playerCurrentSpeed);
         }
 
