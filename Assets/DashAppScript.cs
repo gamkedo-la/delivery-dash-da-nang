@@ -5,120 +5,47 @@ using UnityEngine.UI;
 
 public class DashAppScript : MonoBehaviour
 {
-    //list of restaurants
-    public GameObject HannahsWaypointBox;
-    public GameObject FuneWaypointBox;
+    public GameObject WayPointBox;
+    public Transform[] restaurantSelection;
+    public string[] restaurantName;
+    public string[] productName;
+    public int restaurantSelected;
 
-    public GameObject[] ListOfRestaurants;
+    public float OrderDuration = 3f;
+    bool orderSelected;
 
-    //list of Apartments
-    public GameObject SeasandWaypointBox;
-    public GameObject ChipsWaypointBox;
+    public Text orderUI;
+    public Text countDownTimer;
 
-    public GameObject[] ListOfCustomers;
-
-    //current app settings
-    public GameObject CurrentRestaurant;
-    public GameObject CurrentCustomer;
-
-    public string CurrentOrderMessage;
-
-    public Customer currentCustomerScript;
-
-    public string DashAppStatus;
-
-    public Canvas DisplayMessageCanvas;
-    public Text DisplayMessageTextBox;
-
-    public SFXScript sfxScript;
-
-    private IEnumerator waitForOrderIEnumerator;
-
-    // Start is called before the first frame update
-    void Start()
+    public void Update()
     {
-        ListOfCustomers = GameObject.FindGameObjectsWithTag("Customer");
-        ListOfRestaurants = GameObject.FindGameObjectsWithTag("Restaurant");
+        OrderDuration -= Time.deltaTime;
 
-        sfxScript = GameObject.Find("Main Camera").GetComponent<SFXScript>();
-
-        StartANewOrder();
-    }
-
-    private IEnumerator WaitToOrder(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-    }
-
-    public IEnumerator DefineANewOrder()
-    {
-        var randomAmountOfTimeToWait = Random.Range(2.0f, 4.0f);
-        yield return new WaitForSeconds(randomAmountOfTimeToWait);
-        pickARandomRestaurant();
-        pickARandomCustomer();
-        setDeliveryMessages();
-        activateRestaurantWaypointBox();
-        sfxScript.orderAlertSFX.Play();
-        DashAppStatus = "waiting for pickup";
-    }
-
-    public void StartANewOrder()
-    {
-        DisplayMessageTextBox.text = "Waiting for an order.";
-        var randomAmountOfTimeToWait = Random.Range(10.0f, 14.0f);
-        StartCoroutine(WaitToOrder(randomAmountOfTimeToWait));
-        StartCoroutine(DefineANewOrder());
-    }
-
-    void pickARandomRestaurant()
-    {
-        var RandomIndex = Random.Range(0, ListOfRestaurants.Length);
-        CurrentRestaurant = ListOfRestaurants[RandomIndex];
-    }
-
-    void pickARandomCustomer()
-    {
-        var RandomIndex = Random.Range(0, ListOfCustomers.Length);
-        CurrentCustomer = ListOfCustomers[RandomIndex];
-        currentCustomerScript = CurrentCustomer.GetComponent<Customer>();
-    }
-
-    void setDeliveryMessages()
-    {        
-        if (CurrentRestaurant.name == "Hannahs")
+        if (OrderDuration <= 0)
         {
-            CurrentOrderMessage = CurrentCustomer.name + " wants " + currentCustomerScript.orderFromHannahs + " from " + CurrentRestaurant.name + ". Drop off at " + currentCustomerScript.home.name;
+            orderSelected = true;
         }
-        else if (CurrentRestaurant.name == "Fune Sushi")
+
+        if (orderSelected)
         {
-            CurrentOrderMessage = CurrentCustomer.name + " wants " + currentCustomerScript.orderFromFune + " from " + CurrentRestaurant.name + ". Drop off at " + currentCustomerScript.home.name;
+            restaurantSelected = Random.Range(0, restaurantSelection.Length);
+            WayPointBox.transform.position = restaurantSelection[restaurantSelected].transform.position;
+            print(restaurantSelection[restaurantSelected]);
+            OrderDuration = 100; //remove this later, just for testing
+            // OrderDuration = distance between restaurant selected and customer selected
+            orderSelected = false;
+            orderUI.text = "Deliver " + productName[restaurantSelected].ToString() + " from " + $"<color=green>{restaurantName[restaurantSelected].ToString()}</color>" + " to " + $"<color=yellow>{"THIS WILL BE CUSTOMER NAME"}</color>";
         }
-        DisplayMessageTextBox.text = CurrentOrderMessage;
-    }
 
-    void activateRestaurantWaypointBox()
-    {
-        CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(true);
-    }
+        //UI
+        if (OrderDuration > 0)
+        {
+            countDownTimer.text = OrderDuration.ToString("F2");
+        }
 
-    void deactivateRestaurantWaypointBox()
-    {
-        CurrentRestaurant.transform.Find("Waypoint Box").gameObject.SetActive(false);
-    }
-
-    void activateCustomersHomeWaypointBox()
-    {
-        currentCustomerScript.home.transform.Find("Waypoint Box").gameObject.SetActive(true);
-    }
-
-    void deactivateCustomersHomeWaypointBox()
-    {
-        currentCustomerScript.home.transform.Find("Waypoint Box").gameObject.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        else
+        {
+            countDownTimer.text = "";
+        }
     }
 }

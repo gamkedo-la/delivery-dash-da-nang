@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaypointScript : MonoBehaviour
 {
-    public bool listeningForPlayerSpeed = false;
+   /* public bool listeningForPlayerSpeed = false;
     public bool waitingForPickup = false;
     public bool waitingForDropoff = false;
     public GameObject player;
@@ -72,5 +72,5 @@ public class WaypointScript : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }
