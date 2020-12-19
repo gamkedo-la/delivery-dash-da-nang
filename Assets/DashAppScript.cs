@@ -5,13 +5,22 @@ using UnityEngine.UI;
 
 public class DashAppScript : MonoBehaviour
 {
-    public GameObject WayPointBox;
+    public GameObject WayPointBoxRestaurant;
+    public GameObject WayPointCustomer;
     public Transform[] restaurantSelection;
     public string[] restaurantName;
     public string[] productName;
+
+    public Transform[] customerLocations;
+    public string[] apartmentName;
+    public string[] customerNames;
+
     public int restaurantSelected;
+    public int customerLocation;
+    public int customerName;
 
     public float OrderDuration = 3f;
+    public float startingOrderDuration; //used for determining score
     bool orderSelected;
 
     public Text orderUI;
@@ -29,12 +38,19 @@ public class DashAppScript : MonoBehaviour
         if (orderSelected)
         {
             restaurantSelected = Random.Range(0, restaurantSelection.Length);
-            WayPointBox.transform.position = restaurantSelection[restaurantSelected].transform.position;
-            print(restaurantSelection[restaurantSelected]);
+            customerName = Random.Range(0, customerNames.Length);
+            customerLocation = Random.Range(0, customerLocations.Length);
+            WayPointBoxRestaurant.transform.position = restaurantSelection[restaurantSelected].transform.position;
+            WayPointCustomer.transform.position = customerLocations[restaurantSelected].transform.position;
+
             OrderDuration = 100; //remove this later, just for testing
+            // startingOrderDuration = distance between restaurant selected and customer selected (this does not change)
             // OrderDuration = distance between restaurant selected and customer selected
             orderSelected = false;
-            orderUI.text = "Deliver " + productName[restaurantSelected].ToString() + " from " + $"<color=green>{restaurantName[restaurantSelected].ToString()}</color>" + " to " + $"<color=yellow>{"THIS WILL BE CUSTOMER NAME"}</color>";
+
+
+            //This is the UI to tell you the order -> Deliver "Product" from "Restaurant" to "CustomerName" at "CustomerLocation"
+            orderUI.text = "Deliver " + productName[restaurantSelected].ToString() + " from " + $"<color=green>{restaurantName[restaurantSelected].ToString()}</color>" + " to " + customerNames[customerName].ToString() + " at " + $"<color=yellow>{apartmentName[customerLocation].ToString()}</color>";
         }
 
         //UI
