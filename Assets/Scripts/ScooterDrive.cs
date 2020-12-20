@@ -329,5 +329,10 @@ public class ScooterDrive : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         TotalScore.SetActive(false);
+        star1.SetActive(false);
+        star2.SetActive(false);
+        star3.SetActive(false);
+        star4.SetActive(false);
+        star5.SetActive(false);
     }
 }
