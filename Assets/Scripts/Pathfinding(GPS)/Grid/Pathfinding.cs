@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class Pathfinding : MonoBehaviour
 {
@@ -17,21 +18,26 @@ public class Pathfinding : MonoBehaviour
 
     void Update()
     {
-        FindPath(seeker.position, target.position);
+        if (Input.GetButtonDown("Jump"))
+        {
+            FindPath(seeker.position, target.position);
+        }
     }
 
     void FindPath(Vector3 startPosition, Vector3 targetPosition)
     {
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
         Node startNode = grid.NodeFromWorldPoint(startPosition);
         Node targetNode = grid.NodeFromWorldPoint(targetPosition);
 
-        List<Node> openSet = new List<Node>();
+        Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
         HashSet<Node> closedSet = new HashSet<Node>();
         openSet.Add(startNode);
 
         while(openSet.Count > 0)
         {
-            Node node = openSet[0];
+            /*Node node = openSet[0];
             for (int i = 1; i < openSet.Count; i++)
             {
                 if(openSet[i].fCost < node.fCost || openSet[i].fCost == node.fCost)
@@ -43,11 +49,14 @@ public class Pathfinding : MonoBehaviour
                 }
             }
 
-            openSet.Remove(node);
+            openSet.Remove(node);*/
+            Node node = openSet.RemoveFirst();
             closedSet.Add(node);
 
             if(node == targetNode)
             {
+                sw.Stop();
+                print("Path found: " + sw.ElapsedMilliseconds +" ms");
                 RetracePath(startNode, targetNode);
                 return;
             }
@@ -99,10 +108,10 @@ public class Pathfinding : MonoBehaviour
         path.Reverse();
 
         grid.path = path;
-        Debug.Log(path.Count);
+        UnityEngine.Debug.Log(path.Count);
         for (int i = 0; i < path.Count; i++)
         {
-            Debug.Log("X: " + path[i].gridX + " Y:" + path[i].gridY);
+            UnityEngine.Debug.Log("X: " + path[i].gridX + " Y:" + path[i].gridY);
         }
     }
 }
