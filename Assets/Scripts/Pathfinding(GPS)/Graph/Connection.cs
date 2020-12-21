@@ -13,6 +13,10 @@ public class Connection : MonoBehaviour
         get { return Vector3.Distance(nodeA.worldPosition, nodeB.worldPosition); }
     }
 
-
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(nodeA.worldPosition, nodeB.worldPosition);
+    }
 
 }

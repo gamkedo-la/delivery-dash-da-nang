@@ -8,6 +8,8 @@ public class GraphPathfinding : MonoBehaviour
 
     public GraphNode targetNode;
 
+    public List<GraphNode> path;
+
     void FindPath(Vector3 startPosition, GraphNode targetNode)
     {
         GraphNode startNode = new GraphNode(startPosition); //Construct new node or simply find nearest node and start from there?
@@ -39,23 +41,43 @@ public class GraphPathfinding : MonoBehaviour
             }
 
             //Loop through connections to find shortest path
-            foreach(GraphNode neighbor in node.neighbors)
+            foreach(GraphNode neighbor in node.GetNeighbors())
             {
                 if (closedSet.Contains(neighbor))
                 {
                     continue;
                 }
 
-                float newMovementCostToNeighbor = GetDistance(node, neighbor);
+                int newMovementCostToNeighbor = node.gCost + GetDistance(node, neighbor);
+                if(newMovementCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
+                {
+                    neighbor.gCost = newMovementCostToNeighbor;
+                    neighbor.hCost = GetDistance(neighbor, targetNode);
+                    neighbor.parent = node;
 
-                //Do I make this into the new gCost? 
+                    if (!openSet.Contains(neighbor))
+                    {
+                        openSet.Add(neighbor);
+                    }
+                }                
             }
-
         }
+    }
 
-        float GetDistance(GraphNode nodeA, GraphNode nodeB)
+    int GetDistance(GraphNode nodeA, GraphNode nodeB)
+    {
+        return (int)Vector3.Distance(nodeA.worldPosition, nodeB.worldPosition);
+    }
+
+    void RetracePath(GraphNode startNode, GraphNode endNode)
+    {
+        GraphNode currentNode = endNode;
+        while(currentNode != startNode)
         {
-            return Vector3.Distance(nodeA.worldPosition, nodeB.worldPosition);
+            path.Add(currentNode);
+            currentNode = currentNode.parent;
         }
+        path.Reverse();
+
     }
 }

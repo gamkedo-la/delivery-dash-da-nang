@@ -12,6 +12,8 @@ public class GraphNode : MonoBehaviour
     public int gCost;
     public int hCost;
 
+    public GraphNode parent;
+
     public GraphNode(Vector3 _worldPos)
     {
         worldPosition = _worldPos;
@@ -20,6 +22,11 @@ public class GraphNode : MonoBehaviour
     public int fCost
     {
         get { return gCost + hCost; }
+    }
+
+    void Awake()
+    {
+        worldPosition = gameObject.transform.position;
     }
 
     public List<GraphNode> GetNeighbors()
