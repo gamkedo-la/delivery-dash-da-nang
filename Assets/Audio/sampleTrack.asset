@@ -10,10 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff02eda213aa47847ac8223d4595ac17, type: 3}
-  m_Name: MusicTrack
+  m_Name: sampleTrack
   m_EditorClassIdentifier: 
   intros:
-  - clip: {fileID: 0}
-    cues: []
-  tracks: []
-  transitions: []
+  - clip: {fileID: 8300000, guid: ac83c4fe683fe75479a58be8802f02f1, type: 3}
+    cues:
+  tracks:
+  - clip: {fileID: 8300000, guid: 47991e99b75e7de4d8e6fad4c72c5e1e, type: 3}
+    cues:
+    - 16
+    - 32
+    - 48
+    - 64
+  transitions:
+  - clip: {fileID: 8300000, guid: 973450043426e484eb9d67333e53947e, type: 3}
+    cues:
+    - 2
