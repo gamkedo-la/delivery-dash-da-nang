@@ -10,6 +10,11 @@ public class GraphPathfinding : MonoBehaviour
 
     public List<GraphNode> path;
 
+    private void Update()
+    {
+        FindPath(seeker.position, targetNode);
+    }
+
     void FindPath(Vector3 startPosition, GraphNode targetNode)
     {
         GraphNode startNode = new GraphNode(startPosition); //Construct new node or simply find nearest node and start from there?
@@ -36,7 +41,7 @@ public class GraphPathfinding : MonoBehaviour
 
             if(node == targetNode)
             {
-                //trace path
+                RetracePath(startNode, targetNode);
                 return;
             }
 
@@ -78,6 +83,17 @@ public class GraphPathfinding : MonoBehaviour
             currentNode = currentNode.parent;
         }
         path.Reverse();
+    }
 
+    private void OnDrawGizmos()
+    {
+        if(path != null)
+        {
+            for (int i = 0; i < path.Count; i++)
+            {
+                Gizmos.color = Color.black;
+                Gizmos.DrawLine(path[i].worldPosition, path[i + 1].worldPosition);
+            }
+        }
     }
 }
