@@ -76,6 +76,7 @@ public class MusicManager : MonoBehaviour {
 		if (nextTrack == currentTrack) nextTrack = null;
 		
 		if (isPlaying && nextTrack != null) {
+			nextCueIndex--;
 			nextTrackIndex = Random.Range(0, nextTrack.transitions.Count);
 			nextSchedual = startingTime + currentCues[nextCueIndex] - nextTrack.transitions[nextTrackIndex].cues[0] - bufferTime;
 			nextCueTime = startingTime + currentCues[nextCueIndex];
@@ -112,7 +113,7 @@ public class MusicManager : MonoBehaviour {
 	}
 
 	IEnumerator WaitAndFadeOutAndStop(AudioSource source, double startTime, float fadeTime) {
-		while (AudioSettings.dspTime < startingTime) {
+		while (AudioSettings.dspTime < startTime) {
 			yield return null;
 		}
 		StartCoroutine(FadeOutAndStop(source, fadeTime));
