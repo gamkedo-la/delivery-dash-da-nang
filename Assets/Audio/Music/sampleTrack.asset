@@ -17,7 +17,7 @@ MonoBehaviour:
     cues:
     - 24
   tracks:
-  - clip: {fileID: 8300000, guid: 47991e99b75e7de4d8e6fad4c72c5e1e, type: 3}
+  - clip: {fileID: 8300000, guid: ca28200d63abcb245a70fe46614703c7, type: 3}
     cues:
     - 16
     - 32
