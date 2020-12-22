@@ -4,23 +4,43 @@ using UnityEngine;
 
 public class GraphPathfinding : MonoBehaviour
 {
-    public Transform seeker;
+    private GraphNode solvedForStart, solvedForTarget;
+
+    public GraphNode seeker;
 
     public GraphNode targetNode;
 
+    private List<GraphNode> allNodes;
+
     public List<GraphNode> path;
+
+    private void Awake()
+    {
+        GameObject[] waypointGoes = GameObject.FindGameObjectsWithTag("GraphNode");
+        allNodes = new List<GraphNode>();
+        for (int i = 0; i < waypointGoes.Length; i++)
+        {
+            allNodes.Add(waypointGoes[i].GetComponent<GraphNode>());
+        }
+    }
 
     private void Update()
     {
-        FindPath(seeker.position, targetNode);
+        FindPath(seeker, targetNode);
     }
 
-    void FindPath(Vector3 startPosition, GraphNode targetNode)
+    void FindPath(GraphNode startNode, GraphNode targetNode)
     {
-        GraphNode startNode = new GraphNode(startPosition); //Construct new node or simply find nearest node and start from there?
+        if(startNode == solvedForStart && targetNode == solvedForTarget)
+        {
+            return;
+        }
+       // GraphNode startNode = new GraphNode(startNode); //Construct new node or simply find nearest node and start from there?
 
         List<GraphNode> openSet = new List<GraphNode>();
         List<GraphNode> closedSet = new List<GraphNode>();
+        //openSet := {start}
+        openSet.Add(startNode);
 
         while(openSet.Count > 0)
         {
@@ -41,20 +61,24 @@ public class GraphPathfinding : MonoBehaviour
 
             if(node == targetNode)
             {
+                solvedForStart = startNode;
+                solvedForTarget = targetNode;
                 RetracePath(startNode, targetNode);
                 return;
             }
 
             //Loop through connections to find shortest path
-            foreach(GraphNode neighbor in node.GetNeighbors())
+            //for each neighbor of current
+            foreach (GraphNode neighbor in node.GetNeighbors())
             {
                 if (closedSet.Contains(neighbor))
                 {
                     continue;
                 }
-
+                //tentative_gScore := gScore[current] + d(current, neighbor)
                 int newMovementCostToNeighbor = node.gCost + GetDistance(node, neighbor);
-                if(newMovementCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
+                //if tentative_gScore < gScore[neighbor]
+                if (newMovementCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
                 {
                     neighbor.gCost = newMovementCostToNeighbor;
                     neighbor.hCost = GetDistance(neighbor, targetNode);
@@ -76,6 +100,7 @@ public class GraphPathfinding : MonoBehaviour
 
     void RetracePath(GraphNode startNode, GraphNode endNode)
     {
+        path.Clear();
         GraphNode currentNode = endNode;
         while(currentNode != startNode)
         {

@@ -27,6 +27,7 @@ public class GraphNode : MonoBehaviour
     void Awake()
     {
         worldPosition = gameObject.transform.position;
+        GetNeighbors();
     }
 
     public List<GraphNode> GetNeighbors()
@@ -35,11 +36,17 @@ public class GraphNode : MonoBehaviour
         {
             if(this == connections[i].nodeA)
             {
-                neighbors.Add(connections[i].nodeB);
+                if (neighbors.Contains(connections[i].nodeB) == false)
+                {
+                    neighbors.Add(connections[i].nodeB);
+                }
             }
             else
             {
-                neighbors.Add(connections[i].nodeA);
+                if(neighbors.Contains(connections[i].nodeA) == false)
+                {
+                    neighbors.Add(connections[i].nodeA);
+                }
             }
         }
         return neighbors;
