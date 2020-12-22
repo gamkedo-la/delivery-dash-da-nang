@@ -95,7 +95,7 @@ public class GraphPathfinding : MonoBehaviour
 
     int GetDistance(GraphNode nodeA, GraphNode nodeB)
     {
-        return (int)Vector3.Distance(nodeA.worldPosition, nodeB.worldPosition);
+        return nodeA.distTo(nodeB);
     }
 
     void RetracePath(GraphNode startNode, GraphNode endNode)

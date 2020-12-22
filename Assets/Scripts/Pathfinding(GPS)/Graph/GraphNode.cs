@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GraphNode : MonoBehaviour
 {
+    Dictionary<GraphNode, int> distCosts;
+
     public List<Connection> connections;
     public Vector3 worldPosition;
 
@@ -18,6 +20,25 @@ public class GraphNode : MonoBehaviour
     {
         worldPosition = _worldPos;
     }
+    public int distTo(GraphNode dest)
+    {
+        if (distCosts.ContainsKey(dest) == false)
+        {
+            int dist = (int)Vector3.Distance(worldPosition, dest.worldPosition);
+            distCosts.Add(dest, dist);
+            dest.LearnDist(this, dist);
+        }
+        return distCosts[dest];
+    }
+
+    public void LearnDist(GraphNode from, int cost)
+    {
+        if (distCosts.ContainsKey(from) == false)
+        {
+            distCosts.Add(from, cost);
+        }
+
+    }
 
     public int fCost
     {
@@ -26,6 +47,7 @@ public class GraphNode : MonoBehaviour
 
     void Awake()
     {
+        distCosts = new Dictionary<GraphNode, int>();
         worldPosition = gameObject.transform.position;
         GetNeighbors();
     }
