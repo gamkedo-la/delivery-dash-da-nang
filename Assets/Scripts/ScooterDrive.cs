@@ -45,6 +45,8 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject TotalScore, star1, star2, star3, star4, star5;
 
+    public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource;
+
     void Start()
     {
         //RestartAtSpawn();
@@ -148,6 +150,12 @@ public class ScooterDrive : MonoBehaviour
             {
                 currentSpeed = maxSpeed;
             }
+
+            if (!bikeAccelleratingAudioSource.isPlaying)
+            {
+                bikeIdleAudioSource.Stop();
+                bikeAccelleratingAudioSource.Play();
+            } 
         }
         else if (!Input.GetKey(KeyCode.Space) && currentSpeed > 0)
         {
@@ -217,6 +225,12 @@ public class ScooterDrive : MonoBehaviour
                 bikeModel.transform.localRotation = Quaternion.identity;
             }
 
+        }
+
+        if (currentSpeed == 0 && !bikeIdleAudioSource.isPlaying)
+        {
+            bikeAccelleratingAudioSource.Stop();
+            bikeIdleAudioSource.Play();
         }
 
         //brake
