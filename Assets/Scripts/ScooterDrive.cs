@@ -54,6 +54,8 @@ public class ScooterDrive : MonoBehaviour
         {
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
+
+        Debug.Log("Player1: " + gameObject);
     }
 
 
@@ -114,7 +116,7 @@ public class ScooterDrive : MonoBehaviour
 
     void stopScooterMovement()
     {
-        //scootersRigidbodyComponent.angularVelocity = Vector3.zero;
+        scootersRigidbodyComponent.angularVelocity = Vector3.zero;
         currentSpeed = 0.0f;
         currentTurnAngle = 0.0f;
     }
@@ -157,6 +159,7 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 10);
+            Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z < -0.45f)
             {
                 bikeModel.transform.localRotation = Quaternion.Euler(0, 0, -0.45f);
@@ -171,7 +174,7 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 10);
-            
+            Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z > 0.45f)
             {
                 bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.45f);
@@ -185,6 +188,7 @@ public class ScooterDrive : MonoBehaviour
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             currentTurnAngle = 0;
+            Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z > 0)
             {
                 bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -40);
@@ -194,9 +198,10 @@ public class ScooterDrive : MonoBehaviour
                 bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 40);
             }
 
-            if ( (bikeModel.transform.localRotation.z < 0.01 && bikeModel.transform.localRotation.z > -0.01) )
+            if ( bikeModel.transform.localRotation.z < 0.02 && bikeModel.transform.localRotation.z > -0.02 )
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.0f);
+                // bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.0f);
+                bikeModel.transform.localRotation = Quaternion.identity;
             }
 
         }
@@ -208,7 +213,8 @@ public class ScooterDrive : MonoBehaviour
             if (currentSpeed < 0)
             {
                 //brakeLights.SetActive(true);
-                currentSpeed = backwardSpeed;
+                //currentSpeed = backwardSpeed;
+                currentSpeed = 0;
             }
             else
             {
