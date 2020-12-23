@@ -2632,7 +2632,7 @@ GameObject:
   - component: {fileID: 81510824}
   - component: {fileID: 81510825}
   m_Layer: 0
-  m_Name: Connection (11)
+  m_Name: Connection A1-A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2645,8 +2645,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81510823}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 137.7, y: 0, z: 211.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1530769776}
@@ -2666,6 +2666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1530769775}
   nodeB: {fileID: 1862855783}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1 &84780317
 GameObject:
   m_ObjectHideFlags: 0
@@ -13319,7 +13320,7 @@ GameObject:
   - component: {fileID: 374772134}
   - component: {fileID: 374772133}
   m_Layer: 0
-  m_Name: GE
+  m_Name: B1
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -17552,7 +17553,7 @@ GameObject:
   - component: {fileID: 501061317}
   - component: {fileID: 501061318}
   m_Layer: 0
-  m_Name: Connection (1)
+  m_Name: Connection B2-B1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17586,6 +17587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1268095386}
   nodeB: {fileID: 374772133}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1 &503986853
 GameObject:
   m_ObjectHideFlags: 0
@@ -17726,6 +17728,7 @@ MonoBehaviour:
   seeker: {fileID: 1862855783}
   targetNode: {fileID: 1693566910}
   path: []
+  showGridConnections: 1
 --- !u!1 &504518022
 GameObject:
   m_ObjectHideFlags: 0
@@ -18046,6 +18049,8 @@ MonoBehaviour:
   star3: {fileID: 0}
   star4: {fileID: 0}
   star5: {fileID: 0}
+  bikeIdleAudioSource: {fileID: 0}
+  bikeAccelleratingAudioSource: {fileID: 0}
 --- !u!54 &510050266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24659,7 +24664,7 @@ GameObject:
   - component: {fileID: 706580297}
   - component: {fileID: 706580296}
   m_Layer: 0
-  m_Name: Connection (1)
+  m_Name: Connection A2-B2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24679,6 +24684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1862855783}
   nodeB: {fileID: 1268095386}
+  graphPathfinding: {fileID: 504485289}
 --- !u!4 &706580297
 Transform:
   m_ObjectHideFlags: 0
@@ -30851,7 +30857,7 @@ GameObject:
   - component: {fileID: 865837247}
   - component: {fileID: 865837248}
   m_Layer: 0
-  m_Name: Connection (4)
+  m_Name: Connection C1-C1.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30885,6 +30891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1313594939}
   nodeB: {fileID: 2064768962}
+  graphPathfinding: {fileID: 504485289}
 --- !u!4 &866463075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8ae43841f3d1cd4594cd82ae977d685,
@@ -37971,7 +37978,7 @@ GameObject:
   - component: {fileID: 1061853276}
   - component: {fileID: 1061853277}
   m_Layer: 0
-  m_Name: 'Connection '
+  m_Name: Connection B2-A2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38005,6 +38012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1268095386}
   nodeB: {fileID: 1862855783}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1 &1062475249
 GameObject:
   m_ObjectHideFlags: 0
@@ -40537,7 +40545,7 @@ GameObject:
   - component: {fileID: 1125140608}
   - component: {fileID: 1125140607}
   m_Layer: 0
-  m_Name: Connection
+  m_Name: Connection A2-A1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40557,6 +40565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1862855783}
   nodeB: {fileID: 1530769775}
+  graphPathfinding: {fileID: 504485289}
 --- !u!4 &1125140608
 Transform:
   m_ObjectHideFlags: 0
@@ -42868,7 +42877,7 @@ GameObject:
   - component: {fileID: 1185895026}
   - component: {fileID: 1185895027}
   m_Layer: 0
-  m_Name: Connection (3)
+  m_Name: Connection B1-B2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42902,6 +42911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 374772133}
   nodeB: {fileID: 1268095386}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1001 &1186366646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45627,7 +45637,7 @@ GameObject:
   - component: {fileID: 1268095387}
   - component: {fileID: 1268095386}
   m_Layer: 0
-  m_Name: GB
+  m_Name: B2
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45669,7 +45679,7 @@ Transform:
   - {fileID: 501061317}
   - {fileID: 1891596458}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269879691
 GameObject:
@@ -47460,7 +47470,7 @@ GameObject:
   - component: {fileID: 1313594940}
   - component: {fileID: 1313594939}
   m_Layer: 0
-  m_Name: GF
+  m_Name: C1
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -47498,7 +47508,7 @@ Transform:
   m_Children:
   - {fileID: 865837247}
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1315103970
 GameObject:
@@ -50687,7 +50697,7 @@ GameObject:
   - component: {fileID: 1397134440}
   - component: {fileID: 1397134441}
   m_Layer: 0
-  m_Name: Connection (7)
+  m_Name: Connection C2-C1.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50721,6 +50731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1693566910}
   nodeB: {fileID: 2064768962}
+  graphPathfinding: {fileID: 504485289}
 --- !u!4 &1403659756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d355615495e525f478dca6fc2abd56c0,
@@ -55338,7 +55349,7 @@ GameObject:
   - component: {fileID: 1527948448}
   - component: {fileID: 1527948449}
   m_Layer: 0
-  m_Name: Connection (10)
+  m_Name: Connection C3-C2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55372,6 +55383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 2136535944}
   nodeB: {fileID: 1693566910}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1 &1528340380
 GameObject:
   m_ObjectHideFlags: 0
@@ -55443,7 +55455,7 @@ GameObject:
   - component: {fileID: 1530769776}
   - component: {fileID: 1530769775}
   m_Layer: 0
-  m_Name: GI
+  m_Name: A1
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -55481,7 +55493,7 @@ Transform:
   m_Children:
   - {fileID: 81510824}
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1531213648
 PrefabInstance:
@@ -58124,7 +58136,7 @@ GameObject:
   - component: {fileID: 1589848866}
   - component: {fileID: 1589848867}
   m_Layer: 0
-  m_Name: Connection (6)
+  m_Name: Connection C1.5-C2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58158,6 +58170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 2064768962}
   nodeB: {fileID: 1693566910}
+  graphPathfinding: {fileID: 504485289}
 --- !u!4 &1594597968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8ae43841f3d1cd4594cd82ae977d685,
@@ -61845,7 +61858,7 @@ GameObject:
   - component: {fileID: 1693566911}
   - component: {fileID: 1693566910}
   m_Layer: 0
-  m_Name: GC
+  m_Name: C2
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -61887,7 +61900,7 @@ Transform:
   - {fileID: 1756191888}
   - {fileID: 2085324080}
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1693923271
 Transform:
@@ -64104,7 +64117,7 @@ GameObject:
   - component: {fileID: 1756191888}
   - component: {fileID: 1756191889}
   m_Layer: 0
-  m_Name: Connection (8)
+  m_Name: Connection C2-C3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64138,6 +64151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1693566910}
   nodeB: {fileID: 2136535944}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1001 &1759003747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64990,7 +65004,7 @@ GameObject:
   - component: {fileID: 1782116350}
   - component: {fileID: 1782116351}
   m_Layer: 0
-  m_Name: Connection (5)
+  m_Name: Connection C1.5-C1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65024,6 +65038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 2064768962}
   nodeB: {fileID: 1313594939}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1 &1783503040
 GameObject:
   m_ObjectHideFlags: 0
@@ -67811,7 +67826,7 @@ GameObject:
   - component: {fileID: 1862855784}
   - component: {fileID: 1862855783}
   m_Layer: 0
-  m_Name: GA B I
+  m_Name: A2
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -67851,7 +67866,7 @@ Transform:
   - {fileID: 1125140608}
   - {fileID: 706580297}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863200575 stripped
 GameObject:
@@ -68642,7 +68657,7 @@ GameObject:
   - component: {fileID: 1891596458}
   - component: {fileID: 1891596459}
   m_Layer: 0
-  m_Name: Connection (2)
+  m_Name: Connection B2-C2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68676,6 +68691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1268095386}
   nodeB: {fileID: 1693566910}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1 &1891808590
 GameObject:
   m_ObjectHideFlags: 0
@@ -74259,7 +74275,7 @@ GameObject:
   - component: {fileID: 2064768963}
   - component: {fileID: 2064768962}
   m_Layer: 0
-  m_Name: GG
+  m_Name: C1.5
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -74299,7 +74315,7 @@ Transform:
   - {fileID: 1782116350}
   - {fileID: 1589848866}
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2072436207 stripped
 Transform:
@@ -74518,7 +74534,7 @@ GameObject:
   - component: {fileID: 2085324080}
   - component: {fileID: 2085324081}
   m_Layer: 0
-  m_Name: Connection (9)
+  m_Name: Connection C2-B2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74552,6 +74568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeA: {fileID: 1693566910}
   nodeB: {fileID: 1268095386}
+  graphPathfinding: {fileID: 504485289}
 --- !u!1 &2092854730
 GameObject:
   m_ObjectHideFlags: 0
@@ -75758,7 +75775,7 @@ GameObject:
   - component: {fileID: 2136535945}
   - component: {fileID: 2136535944}
   m_Layer: 0
-  m_Name: GH
+  m_Name: C3
   m_TagString: GraphNode
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -75796,7 +75813,7 @@ Transform:
   m_Children:
   - {fileID: 1527948448}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2137766091
 PrefabInstance:

@@ -14,6 +14,9 @@ public class GraphPathfinding : MonoBehaviour
 
     public List<GraphNode> path;
 
+    public bool showGridConnections = true;
+
+
     private void Awake()
     {
         GameObject[] waypointGoes = GameObject.FindGameObjectsWithTag("GraphNode");
@@ -107,6 +110,7 @@ public class GraphPathfinding : MonoBehaviour
             path.Add(currentNode);
             currentNode = currentNode.parent;
         }
+        path.Add(startNode);
         path.Reverse();
     }
 
