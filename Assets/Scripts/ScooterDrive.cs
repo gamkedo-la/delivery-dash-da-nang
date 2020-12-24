@@ -45,7 +45,7 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject TotalScore, star1, star2, star3, star4, star5;
 
-    public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource;
+    public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource;
 
     void Start()
     {
@@ -84,6 +84,12 @@ public class ScooterDrive : MonoBehaviour
 
         previousX = gameObject.transform.position.x;
         previousZ = gameObject.transform.position.z;
+
+        if (bikeLetOffGasAudioSource.time == bikeLetOffGasAudioSource.clip.length)
+        {
+            bikeLetOffGasAudioSource.time = 0;
+            bikeIdleAudioSource.Play();
+        }
     }// end of update(){}
 
     public void updateDirectionBools()
@@ -168,6 +174,17 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Space))
         {
             currentSpeed += Time.deltaTime * backwardSpeed;
+        }
+
+        //let off gas sfx
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (bikeAccelleratingAudioSource.isPlaying)
+            {
+                bikeAccelleratingAudioSource.Stop();
+            }
+            Debug.Log("bike let off gas sfx length: " + bikeLetOffGasAudioSource.clip.length);
+            bikeLetOffGasAudioSource.Play();
         }
 
         //turns

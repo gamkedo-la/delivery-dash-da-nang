@@ -103,6 +103,7 @@ public class MusicManager : MonoBehaviour {
 
 	private AudioSource PlayNewClip(AudioClip clip, double startTime) {
 		AudioSource freshSource = Instantiate(musicPrefab).GetComponent<AudioSource>();
+        freshSource.volume = 0.66f;
 		freshSource.gameObject.transform.parent = gameObject.transform;
 		freshSource.clip = clip;
 		freshSource.PlayScheduled(startTime);
@@ -122,6 +123,7 @@ public class MusicManager : MonoBehaviour {
 	IEnumerator FadeOutAndStop(AudioSource source, float fadeTime) {
 		float startTime = Time.time;
 		float currentTime = 0f;
+        
 		float startVolume = source.volume;
 
 		while (startTime + fadeTime > Time.time) {
