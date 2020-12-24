@@ -45,7 +45,7 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject TotalScore, star1, star2, star3, star4, star5;
 
-    public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource;
+    public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource;
 
     void Start()
     {
@@ -155,9 +155,19 @@ public class ScooterDrive : MonoBehaviour
             if (currentSpeed > maxSpeed)
             {
                 currentSpeed = maxSpeed;
+                //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
+                //{
+                    Debug.Log("inside play top speed check");
+                if (bikeTopSpeedAudioSource.isPlaying == false)
+                {
+                    bikeAccelleratingAudioSource.Stop();
+                    bikeTopSpeedAudioSource.Play();
+                }
+                    
+                //}
             }
 
-            if (!bikeAccelleratingAudioSource.isPlaying)
+            if (!bikeAccelleratingAudioSource.isPlaying && currentSpeed < maxSpeed)
             {
                 bikeIdleAudioSource.Stop();
                 bikeAccelleratingAudioSource.Play();
@@ -182,6 +192,10 @@ public class ScooterDrive : MonoBehaviour
             if (bikeAccelleratingAudioSource.isPlaying)
             {
                 bikeAccelleratingAudioSource.Stop();
+            }
+            else if (bikeTopSpeedAudioSource.isPlaying)
+            {
+                bikeTopSpeedAudioSource.Stop();
             }
             Debug.Log("bike let off gas sfx length: " + bikeLetOffGasAudioSource.clip.length);
             bikeLetOffGasAudioSource.Play();
