@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7126049020349023575
+--- !u!1 &4569279648292187976
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7126049020349023574}
-  - component: {fileID: 472259189706647094}
-  - component: {fileID: 2325148600103628666}
+  - component: {fileID: 4569279648292187975}
+  - component: {fileID: 4569279648292187974}
   m_Layer: 0
-  m_Name: A_
+  m_Name: A-star Graph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7126049020349023574
+--- !u!4 &4569279648292187975
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7126049020349023575}
+  m_GameObject: {fileID: 4569279648292187976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,34 +31,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &472259189706647094
+--- !u!114 &4569279648292187974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7126049020349023575}
+  m_GameObject: {fileID: 4569279648292187976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d8297f4d8bbb643a6ab0381bc5265b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  driveableMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  gridWorldSize: {x: 1000, y: 800}
-  nodeRadius: 30
---- !u!114 &2325148600103628666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7126049020349023575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7a22599b1d3b3f4ca783d78054d1c66, type: 3}
+  m_Script: {fileID: 11500000, guid: 49d5b26ea58835149bb47350cf1e3f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   seeker: {fileID: 0}
-  target: {fileID: 0}
+  targetNode: {fileID: 0}
+  path: []
+  showGridConnections: 1
