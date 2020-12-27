@@ -72,5 +72,10 @@ public class PhysicsOnPlayer : MonoBehaviour
             this.transform.rotation = Quaternion.Euler(RandX, RandY, RandZ);
             hasBeenKnockedOver = true;
         }
+
+        if (gameObject.GetComponentInChildren(typeof(AudioSource)) != null)
+        {
+            gameObject.GetComponentInChildren<AudioSource>().Play();
+        }
     }
 }
