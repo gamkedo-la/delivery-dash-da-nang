@@ -57,7 +57,7 @@ public class ScooterDrive : MonoBehaviour
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
 
-        Debug.Log("Player1: " + gameObject);
+        
     }
 
 
@@ -70,7 +70,7 @@ public class ScooterDrive : MonoBehaviour
         TurnBikeLeftOrRight();
         if (currentTurnAngle != 0)
         {
-            Debug.Log("currentTurnAngle: " + currentTurnAngle);
+            
         }
         updateDirectionBools();
 
@@ -142,7 +142,7 @@ public class ScooterDrive : MonoBehaviour
         if (currentTurnAngle != 0)
         {
             transform.Rotate(Vector3.up, currentTurnAngle);
-            Debug.Log("currentTurnAngle is not equal to zero and therefore the bike is turning");
+            
         }
     }
 
@@ -157,12 +157,12 @@ public class ScooterDrive : MonoBehaviour
                 currentSpeed = maxSpeed;
                 //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
                 //{
-                    Debug.Log("inside play top speed check");
-                if (bikeTopSpeedAudioSource.isPlaying == false)
-                {
-                    bikeAccelleratingAudioSource.Stop();
-                    bikeTopSpeedAudioSource.Play();
-                }
+                    
+                //if (bikeTopSpeedAudioSource.isPlaying == false)
+                //{
+               //     bikeAccelleratingAudioSource.Stop();
+               //     bikeTopSpeedAudioSource.Play();
+               // }
                     
                 //}
             }
@@ -197,7 +197,7 @@ public class ScooterDrive : MonoBehaviour
             {
                 bikeTopSpeedAudioSource.Stop();
             }
-            Debug.Log("bike let off gas sfx length: " + bikeLetOffGasAudioSource.clip.length);
+            
             bikeLetOffGasAudioSource.Play();
         }
 

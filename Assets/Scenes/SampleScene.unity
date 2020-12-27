@@ -13608,7 +13608,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 77e74698bbb0c9c4bbc44b688f13afcb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.324
+  m_Volume: 0.242
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -56664,7 +56664,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96970ec506aae324abd1a2f8112ea1b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -163
+      value: -153.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96970ec506aae324abd1a2f8112ea1b0,
         type: 3}
@@ -56674,7 +56674,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 96970ec506aae324abd1a2f8112ea1b0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 132
+      value: 114.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 96970ec506aae324abd1a2f8112ea1b0,
         type: 3}
@@ -58105,7 +58105,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 277aacf6ed37a6f43a27a79fee60989a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.174
+  m_Volume: 0.106
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -79805,7 +79805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 60, y: 169}
+  m_AnchoredPosition: {x: 59.99997, y: 169}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0, y: 1}
 --- !u!95 &1824769597
