@@ -125,4 +125,29 @@ public class GraphPathfinding : MonoBehaviour
             }
         }
     }
+
+    private void FindNearestNode(Transform transform)
+    {
+        GraphNode nearestNode;
+        float checkRadius = 10f;
+        LayerMask nodeLayer = LayerMask.GetMask("Node");
+        for (int i = 0; i < 100; i++)
+        {
+            Collider[] nodeColliders = Physics.OverlapSphere(transform.position, checkRadius, nodeLayer);
+            if (nodeColliders[0] != null)
+            {
+                nearestNode = nodeColliders[0].GetComponent<GraphNode>();
+                if (path.Contains(nearestNode))
+                {
+                    return;
+                }
+                else
+                {
+                    path.Add(nearestNode);
+                    return;
+                }
+            }
+        }
+        
+    }
 }
