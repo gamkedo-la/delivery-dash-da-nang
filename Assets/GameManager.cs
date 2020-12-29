@@ -77,10 +77,10 @@ public class GameManager : MonoBehaviour
             RoundOverObject.SetActive(true);
             playerScores.Sort();
             playerScores.Reverse();
-            player1ScoreText.text = playerScores[0].ToString("F0");
-            player2ScoreText.text = playerScores[1].ToString("F0");
-            player3ScoreText.text = playerScores[2].ToString("F0");
-            player4ScoreText.text = playerScores[3].ToString("F0");
+            player1ScoreText.text = player1ScoreText.name.ToString() + "     " + playerScores[0].ToString("F0");
+            player2ScoreText.text = player2ScoreText.name.ToString() + "     " + playerScores[1].ToString("F0");
+            player3ScoreText.text = player3ScoreText.name.ToString() + "     " + playerScores[2].ToString("F0");
+            player4ScoreText.text = player4ScoreText.name.ToString() + "     " + playerScores[3].ToString("F0");
         }
     }
 }

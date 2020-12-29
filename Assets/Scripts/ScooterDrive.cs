@@ -356,6 +356,7 @@ public class ScooterDrive : MonoBehaviour
                 float tempTimeScore = DashAppScript.totalTimeRemaining;
                 // (% + %) / 2
                 float tempTotalScore = (tempFoodHealthScore + tempTimeScore) / 2;
+
                 //total score displayed in stars
                 GameManager.player1ScoreOnOrder = tempTotalScore;
                 //total score added to macrototal score
@@ -380,6 +381,9 @@ public class ScooterDrive : MonoBehaviour
                 {
                     star5.SetActive(true);
                 }
+
+                print(GameManager.player1ScoreOnOrder);
+
                 StartCoroutine(Waiting());
                 //display score
                 //turn off player1OrderPickedUp and player1OrderDelivered
