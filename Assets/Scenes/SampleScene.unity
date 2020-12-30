@@ -6374,7 +6374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
+  m_Text: 'Press C to check your phone for orders.
 
 '
 --- !u!222 &157928435
@@ -22005,6 +22005,7 @@ MonoBehaviour:
   bikeAccelleratingAudioSource: {fileID: 319211781}
   bikeLetOffGasAudioSource: {fileID: 1121356870}
   bikeTopSpeedAudioSource: {fileID: 20916965}
+  textTip: {fileID: 157928432}
 --- !u!54 &510050266
 Rigidbody:
   m_ObjectHideFlags: 0
