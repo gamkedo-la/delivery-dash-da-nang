@@ -47,6 +47,8 @@ public class ScooterDrive : MonoBehaviour
 
     public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource;
 
+    public GameObject textTip;
+
     void Start()
     {
         //RestartAtSpawn();
@@ -77,6 +79,7 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             phoneToggle = !phoneToggle;
+            textTip.SetActive(phoneToggle == false);
             PhoneActivation();
         }
 
