@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.65882355, g: 0.7725491, b: 0.8745099, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
@@ -2046,7 +2046,7 @@ GameObject:
   - component: {fileID: 47958064}
   - component: {fileID: 47958066}
   - component: {fileID: 47958065}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2139,7 +2139,7 @@ GameObject:
   - component: {fileID: 50141944}
   - component: {fileID: 50141946}
   - component: {fileID: 50141945}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tran Bach Dang North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3413,7 +3413,7 @@ GameObject:
   - component: {fileID: 87122030}
   - component: {fileID: 87122032}
   - component: {fileID: 87122031}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3506,7 +3506,7 @@ GameObject:
   - component: {fileID: 87738921}
   - component: {fileID: 87738923}
   - component: {fileID: 87738922}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Moon Milk Road Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3762,7 +3762,7 @@ GameObject:
   - component: {fileID: 101432917}
   - component: {fileID: 101432919}
   - component: {fileID: 101432918}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Fune
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4133,7 +4133,7 @@ GameObject:
   - component: {fileID: 111310030}
   - component: {fileID: 111310032}
   - component: {fileID: 111310031}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Do Ba East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4792,7 +4792,7 @@ GameObject:
   - component: {fileID: 131182596}
   - component: {fileID: 131182598}
   - component: {fileID: 131182597}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: AH17 South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +4885,7 @@ GameObject:
   - component: {fileID: 131530553}
   - component: {fileID: 131530555}
   - component: {fileID: 131530554}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 35 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5259,7 +5259,7 @@ GameObject:
   - component: {fileID: 136244443}
   - component: {fileID: 136244445}
   - component: {fileID: 136244444}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 34 West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5434,7 +5434,7 @@ GameObject:
   - component: {fileID: 137782856}
   - component: {fileID: 137782858}
   - component: {fileID: 137782857}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5773,7 +5773,7 @@ GameObject:
   - component: {fileID: 147043567}
   - component: {fileID: 147043569}
   - component: {fileID: 147043568}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'An Thuong 37 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6374,7 +6374,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Waiting for an order.
+  m_Text: '
 
 '
 --- !u!222 &157928435
@@ -7610,7 +7610,7 @@ GameObject:
   - component: {fileID: 187104099}
   - component: {fileID: 187104101}
   - component: {fileID: 187104100}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8676,6 +8676,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1171996567}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &209594089
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (13)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!1 &210390428
 GameObject:
   m_ObjectHideFlags: 0
@@ -8687,7 +8756,7 @@ GameObject:
   - component: {fileID: 210390429}
   - component: {fileID: 210390431}
   - component: {fileID: 210390430}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Phan Tu East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8969,7 +9038,7 @@ GameObject:
   - component: {fileID: 223974227}
   - component: {fileID: 223974229}
   - component: {fileID: 223974228}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9064,7 +9133,7 @@ GameObject:
   - component: {fileID: 225463666}
   - component: {fileID: 225463668}
   - component: {fileID: 225463667}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Ton Than Thiep '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9494,7 +9563,7 @@ GameObject:
   - component: {fileID: 228861949}
   - component: {fileID: 228861951}
   - component: {fileID: 228861950}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10141,7 +10210,7 @@ GameObject:
   - component: {fileID: 248297114}
   - component: {fileID: 248297116}
   - component: {fileID: 248297115}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 21 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13178,7 +13247,7 @@ GameObject:
   - component: {fileID: 313063279}
   - component: {fileID: 313063281}
   - component: {fileID: 313063280}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13273,7 +13342,7 @@ GameObject:
   - component: {fileID: 313639192}
   - component: {fileID: 313639194}
   - component: {fileID: 313639193}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14103,7 +14172,7 @@ GameObject:
   - component: {fileID: 327349733}
   - component: {fileID: 327349735}
   - component: {fileID: 327349734}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Phan Ton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16769,7 +16838,7 @@ GameObject:
   - component: {fileID: 387360862}
   - component: {fileID: 387360864}
   - component: {fileID: 387360863}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Le Quang Dao South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17145,7 +17214,7 @@ GameObject:
   - component: {fileID: 396607830}
   - component: {fileID: 396607832}
   - component: {fileID: 396607831}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 22 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17337,7 +17406,7 @@ GameObject:
   - component: {fileID: 404812627}
   - component: {fileID: 404812629}
   - component: {fileID: 404812628}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: K72 Nguyen Van Thoai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17430,7 +17499,7 @@ GameObject:
   - component: {fileID: 407794090}
   - component: {fileID: 407794092}
   - component: {fileID: 407794091}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18518,7 +18587,7 @@ GameObject:
   - component: {fileID: 426422734}
   - component: {fileID: 426422736}
   - component: {fileID: 426422735}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19489,7 +19558,7 @@ GameObject:
   - component: {fileID: 457799961}
   - component: {fileID: 457799963}
   - component: {fileID: 457799962}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20076,7 +20145,7 @@ GameObject:
   - component: {fileID: 464993490}
   - component: {fileID: 464993492}
   - component: {fileID: 464993491}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hannahs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20247,6 +20316,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8ae43841f3d1cd4594cd82ae977d685,
     type: 3}
   m_PrefabInstance: {fileID: 1438138964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &468932817 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 922270383}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &471059722
 PrefabInstance:
@@ -21753,7 +21828,7 @@ GameObject:
   - component: {fileID: 508103020}
   - component: {fileID: 508103022}
   - component: {fileID: 508103021}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hoang Ke Viem West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22500,6 +22575,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 519956683}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &523606365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1084518173}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &524370039
 GameObject:
   m_ObjectHideFlags: 0
@@ -22896,6 +22977,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ae43841f3d1cd4594cd82ae977d685, type: 3}
+--- !u!4 &543988038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1110899700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &544725321
 GameObject:
   m_ObjectHideFlags: 0
@@ -22907,7 +22994,7 @@ GameObject:
   - component: {fileID: 544725322}
   - component: {fileID: 544725324}
   - component: {fileID: 544725323}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong  8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23245,6 +23332,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550102568}
   m_CullTransparentMesh: 0
+--- !u!1001 &550110539
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-6-street-a2 (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 770b14600d9e249d1892e97ceb1fba72, type: 3}
 --- !u!1 &554006519
 GameObject:
   m_ObjectHideFlags: 0
@@ -23419,6 +23575,12 @@ Transform:
   m_Father: {fileID: 1878259248}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &555275028 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2086469051}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &557009248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23590,7 +23752,7 @@ GameObject:
   - component: {fileID: 558624664}
   - component: {fileID: 558624666}
   - component: {fileID: 558624665}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Halina Hotel And Apartment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23990,7 +24152,7 @@ GameObject:
   - component: {fileID: 565350682}
   - component: {fileID: 565350684}
   - component: {fileID: 565350683}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Le Quang Dao Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24556,7 +24718,7 @@ GameObject:
   - component: {fileID: 574757087}
   - component: {fileID: 574757089}
   - component: {fileID: 574757088}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25765,6 +25927,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1514690696}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &602604480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -59.928223
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.900482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -61.52649
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-2-sidewalk-a7 (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ce892cc9cf074757a854a5b4f9f914d, type: 3}
 --- !u!1 &602607430
 GameObject:
   m_ObjectHideFlags: 0
@@ -26700,7 +26931,7 @@ GameObject:
   - component: {fileID: 622774329}
   - component: {fileID: 622774331}
   - component: {fileID: 622774330}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27065,6 +27296,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626736109}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &626818585 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+    type: 3}
+  m_PrefabInstance: {fileID: 1072615098}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &631817019
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -45.52826
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.900482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 29.173492
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-2-sidewalk-a7 (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ce892cc9cf074757a854a5b4f9f914d, type: 3}
 --- !u!1001 &631916351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28151,6 +28457,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1479056945}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &668397581
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.72
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-6-street-a2 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 770b14600d9e249d1892e97ceb1fba72, type: 3}
 --- !u!1 &671166457
 GameObject:
   m_ObjectHideFlags: 0
@@ -28360,7 +28735,7 @@ GameObject:
   - component: {fileID: 674930236}
   - component: {fileID: 674930238}
   - component: {fileID: 674930237}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Moon Milk Road East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28453,7 +28828,7 @@ GameObject:
   - component: {fileID: 676894179}
   - component: {fileID: 676894181}
   - component: {fileID: 676894180}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28726,7 +29101,7 @@ GameObject:
   - component: {fileID: 683877801}
   - component: {fileID: 683877803}
   - component: {fileID: 683877802}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Ngo Thi Si West '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29085,7 +29460,7 @@ GameObject:
   - component: {fileID: 690284786}
   - component: {fileID: 690284788}
   - component: {fileID: 690284787}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Le Quang Dao North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29359,7 +29734,7 @@ GameObject:
   - component: {fileID: 692588999}
   - component: {fileID: 692589001}
   - component: {fileID: 692589000}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29540,7 +29915,7 @@ GameObject:
   - component: {fileID: 698559641}
   - component: {fileID: 698559643}
   - component: {fileID: 698559642}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hoang Ke Viem Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29971,7 +30346,7 @@ GameObject:
   - component: {fileID: 705700488}
   - component: {fileID: 705700490}
   - component: {fileID: 705700489}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Hoang Ke Viem East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30194,7 +30569,7 @@ GameObject:
   - component: {fileID: 710708264}
   - component: {fileID: 710708266}
   - component: {fileID: 710708265}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ung Van Khiem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30846,6 +31221,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 542633640}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &724327051 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 1119772317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &724958736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d355615495e525f478dca6fc2abd56c0,
@@ -31436,6 +31817,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733463327}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &734534473 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 1793459291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &735583183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2052102437491771127, guid: 9b564c41fb06a114c88f3cfffc141844,
@@ -33027,6 +33414,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d355615495e525f478dca6fc2abd56c0, type: 3}
+--- !u!4 &765582844 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+    type: 3}
+  m_PrefabInstance: {fileID: 550110539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765858300
 GameObject:
   m_ObjectHideFlags: 0
@@ -34530,7 +34923,7 @@ GameObject:
   - component: {fileID: 816286646}
   - component: {fileID: 816286648}
   - component: {fileID: 816286647}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34937,7 +35330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 828544018}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: TURNOFF BEFORE BUILD - MapRoadNames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35351,7 +35744,7 @@ GameObject:
   - component: {fileID: 836720148}
   - component: {fileID: 836720150}
   - component: {fileID: 836720149}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37554,7 +37947,7 @@ GameObject:
   - component: {fileID: 886949177}
   - component: {fileID: 886949179}
   - component: {fileID: 886949178}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: AH 17 Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37815,7 +38208,7 @@ GameObject:
   - component: {fileID: 894855063}
   - component: {fileID: 894855065}
   - component: {fileID: 894855064}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Phan Thuc Duyen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38069,7 +38462,7 @@ GameObject:
   - component: {fileID: 901684336}
   - component: {fileID: 901684338}
   - component: {fileID: 901684337}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: AH 17 North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38153,6 +38546,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!4 &903187140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1597869009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &903529282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39044,6 +39443,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72cee90d37e12d64a8cbe3386c21fc4f, type: 3}
+--- !u!1001 &922270383
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!4 &922296667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d355615495e525f478dca6fc2abd56c0,
@@ -39061,7 +39529,7 @@ GameObject:
   - component: {fileID: 924280942}
   - component: {fileID: 924280944}
   - component: {fileID: 924280943}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Do Bi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39243,6 +39711,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1676248319}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &927969780
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (11)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!1 &930367945 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b304b20920e4ece419305c94e260a6d9,
@@ -39482,7 +40019,7 @@ GameObject:
   - component: {fileID: 934737360}
   - component: {fileID: 934737362}
   - component: {fileID: 934737361}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41082,6 +41619,7 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
+  - component: {fileID: 963194232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -41128,7 +41666,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 7991
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -41260,6 +41798,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &963194232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef01a0786d9d6264ba083d36a61209f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &965323665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41610,7 +42160,7 @@ GameObject:
   - component: {fileID: 974254366}
   - component: {fileID: 974254368}
   - component: {fileID: 974254367}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42185,7 +42735,7 @@ GameObject:
   - component: {fileID: 986889153}
   - component: {fileID: 986889155}
   - component: {fileID: 986889154}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: K72 Nguyen Van Thoai (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42513,6 +43063,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72cee90d37e12d64a8cbe3386c21fc4f, type: 3}
+--- !u!1001 &993477107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-6-street-a2 (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 770b14600d9e249d1892e97ceb1fba72, type: 3}
 --- !u!1 &993874981
 GameObject:
   m_ObjectHideFlags: 0
@@ -42524,7 +43143,7 @@ GameObject:
   - component: {fileID: 993874982}
   - component: {fileID: 993874984}
   - component: {fileID: 993874983}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Beach Road South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43209,7 +43828,7 @@ GameObject:
   - component: {fileID: 1015188427}
   - component: {fileID: 1015188429}
   - component: {fileID: 1015188428}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Do Ba West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43785,7 +44404,7 @@ GameObject:
   - component: {fileID: 1027879685}
   - component: {fileID: 1027879687}
   - component: {fileID: 1027879686}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44065,7 +44684,7 @@ GameObject:
   - component: {fileID: 1034007740}
   - component: {fileID: 1034007742}
   - component: {fileID: 1034007741}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Church Road Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44480,7 +45099,7 @@ GameObject:
   - component: {fileID: 1047436098}
   - component: {fileID: 1047436100}
   - component: {fileID: 1047436099}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ngo Thi Si East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45736,6 +46355,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7d154d8c5373a742a994302d551cd65, type: 3}
+--- !u!1001 &1072615098
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.69
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 770b14600d9e249d1892e97ceb1fba72,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-6-street-a2 (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 770b14600d9e249d1892e97ceb1fba72, type: 3}
 --- !u!1 &1073438258
 GameObject:
   m_ObjectHideFlags: 0
@@ -45747,7 +46435,7 @@ GameObject:
   - component: {fileID: 1073438259}
   - component: {fileID: 1073438261}
   - component: {fileID: 1073438260}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tran Bach Dang Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46049,7 +46737,7 @@ GameObject:
   - component: {fileID: 1080131890}
   - component: {fileID: 1080131892}
   - component: {fileID: 1080131891}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tran Bach Dang South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46231,6 +46919,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d355615495e525f478dca6fc2abd56c0, type: 3}
+--- !u!4 &1082276629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 1271159953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1082890895
 GameObject:
   m_ObjectHideFlags: 0
@@ -46511,6 +47205,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b304b20920e4ece419305c94e260a6d9, type: 3}
+--- !u!1001 &1084518173
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 65.27176
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.900482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -37.426514
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-2-sidewalk-a7 (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ce892cc9cf074757a854a5b4f9f914d, type: 3}
 --- !u!1 &1086924529
 GameObject:
   m_ObjectHideFlags: 0
@@ -46522,7 +47285,7 @@ GameObject:
   - component: {fileID: 1086924530}
   - component: {fileID: 1086924532}
   - component: {fileID: 1086924531}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46844,7 +47607,7 @@ GameObject:
   - component: {fileID: 1100805833}
   - component: {fileID: 1100805835}
   - component: {fileID: 1100805834}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47146,7 +47909,7 @@ GameObject:
   - component: {fileID: 1104941938}
   - component: {fileID: 1104941940}
   - component: {fileID: 1104941939}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 18 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47683,6 +48446,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110573169}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1110899700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.546997
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -35.926666
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3c0cccf852ad439b8bda6a1832655a3,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-7-street-a3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c3c0cccf852ad439b8bda6a1832655a3, type: 3}
 --- !u!1 &1111086916
 GameObject:
   m_ObjectHideFlags: 0
@@ -47772,7 +48604,7 @@ GameObject:
   - component: {fileID: 1111886686}
   - component: {fileID: 1111886688}
   - component: {fileID: 1111886687}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Beach Road Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48199,6 +49031,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d355615495e525f478dca6fc2abd56c0, type: 3}
+--- !u!1001 &1119772317
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -42.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (12)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!1 &1120569229
 GameObject:
   m_ObjectHideFlags: 0
@@ -48587,6 +49488,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125037577}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1126248264 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 209594089}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1128000953
 GameObject:
   m_ObjectHideFlags: 0
@@ -48770,7 +49677,7 @@ GameObject:
   - component: {fileID: 1129887682}
   - component: {fileID: 1129887684}
   - component: {fileID: 1129887683}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48956,7 +49863,7 @@ GameObject:
   - component: {fileID: 1132848912}
   - component: {fileID: 1132848914}
   - component: {fileID: 1132848913}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Church Road South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49138,7 +50045,7 @@ GameObject:
   - component: {fileID: 1134058381}
   - component: {fileID: 1134058383}
   - component: {fileID: 1134058382}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Do Ba Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49231,7 +50138,7 @@ GameObject:
   - component: {fileID: 1135265488}
   - component: {fileID: 1135265490}
   - component: {fileID: 1135265489}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: NOT An Thuong 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50591,7 +51498,7 @@ GameObject:
   - component: {fileID: 1171849582}
   - component: {fileID: 1171849584}
   - component: {fileID: 1171849583}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Phan Tu West (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51050,7 +51957,7 @@ GameObject:
   - component: {fileID: 1176717291}
   - component: {fileID: 1176717293}
   - component: {fileID: 1176717292}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52225,7 +53132,7 @@ GameObject:
   - component: {fileID: 1195507671}
   - component: {fileID: 1195507673}
   - component: {fileID: 1195507672}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52417,7 +53324,7 @@ GameObject:
   - component: {fileID: 1199067567}
   - component: {fileID: 1199067569}
   - component: {fileID: 1199067568}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tu Quan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53408,7 +54315,7 @@ GameObject:
   - component: {fileID: 1226295848}
   - component: {fileID: 1226295850}
   - component: {fileID: 1226295849}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54229,7 +55136,7 @@ GameObject:
   - component: {fileID: 1247909215}
   - component: {fileID: 1247909217}
   - component: {fileID: 1247909216}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tu Quan (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54474,7 +55381,7 @@ Transform:
   m_GameObject: {fileID: 1255255191}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0011249591, y: 0, z: -0.5052693}
-  m_LocalScale: {x: 1.09945, y: 2, z: 0.18499355}
+  m_LocalScale: {x: 0.27103642, y: 2, z: 0.18499355}
   m_Children:
   - {fileID: 1258366285}
   m_Father: {fileID: 375243893}
@@ -54785,7 +55692,7 @@ GameObject:
   - component: {fileID: 1264375149}
   - component: {fileID: 1264375151}
   - component: {fileID: 1264375150}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Church Road North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55040,6 +55947,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ae43841f3d1cd4594cd82ae977d685, type: 3}
+--- !u!4 &1269860195 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 1539548256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1269879691
 GameObject:
   m_ObjectHideFlags: 0
@@ -55133,6 +56046,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269879691}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1271159953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.0999937
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!1001 &1271309887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55748,6 +56730,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1287072173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1287072174}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1287072174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287072173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -580.3, y: 0.3392705, z: 409.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 138
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1287307810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56288,7 +57300,7 @@ GameObject:
   - component: {fileID: 1302108572}
   - component: {fileID: 1302108574}
   - component: {fileID: 1302108573}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Ngo Thi Si Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56462,6 +57474,75 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1189689758625489322, guid: fb80252bf613baa489178275be894b7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb80252bf613baa489178275be894b7d, type: 3}
+--- !u!1001 &1304148301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 59.071777
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.900482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -57.2265
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1878c62095c5f44e297c004dc9905578,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-9-sidewalk-a2 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1878c62095c5f44e297c004dc9905578, type: 3}
 --- !u!1001 &1304328591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56552,7 +57633,7 @@ GameObject:
   - component: {fileID: 1307313399}
   - component: {fileID: 1307313401}
   - component: {fileID: 1307313400}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tranh Khanh Du
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57391,6 +58472,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332053147}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1332853422 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1365171015}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1335310618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58329,7 +59416,7 @@ GameObject:
   - component: {fileID: 1354624471}
   - component: {fileID: 1354624473}
   - component: {fileID: 1354624472}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: La Xuan Xoai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58501,7 +59588,7 @@ GameObject:
   - component: {fileID: 1355196214}
   - component: {fileID: 1355196216}
   - component: {fileID: 1355196215}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Moon Milk Road West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58782,6 +59869,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d355615495e525f478dca6fc2abd56c0, type: 3}
+--- !u!1001 &1365171015
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 59.171753
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.900482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -34.326508
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cb20daf415b94f328820908f098b0dd,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-0-sidewalk-a4 (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6cb20daf415b94f328820908f098b0dd, type: 3}
 --- !u!1001 &1365274225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61837,7 +62993,7 @@ GameObject:
   - component: {fileID: 1435522977}
   - component: {fileID: 1435522979}
   - component: {fileID: 1435522978}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 21 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62197,6 +63353,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e3dcdb6f687474db55a6e217a1626c, type: 3}
+--- !u!4 &1443094048 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 927969780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1444452265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d355615495e525f478dca6fc2abd56c0,
@@ -62214,7 +63376,7 @@ GameObject:
   - component: {fileID: 1446464117}
   - component: {fileID: 1446464119}
   - component: {fileID: 1446464118}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Kebab Ngon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62296,6 +63458,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!4 &1448646809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+    type: 3}
+  m_PrefabInstance: {fileID: 631817019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1448724428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62376,7 +63544,7 @@ GameObject:
   - component: {fileID: 1449335388}
   - component: {fileID: 1449335390}
   - component: {fileID: 1449335389}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63918,7 +65086,7 @@ GameObject:
   - component: {fileID: 1483464794}
   - component: {fileID: 1483464796}
   - component: {fileID: 1483464795}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Le Lo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65470,7 +66638,7 @@ GameObject:
   - component: {fileID: 1518984594}
   - component: {fileID: 1518984596}
   - component: {fileID: 1518984595}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 29 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65883,6 +67051,12 @@ Transform:
   m_Father: {fileID: 1878259248}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1529536488 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+    type: 3}
+  m_PrefabInstance: {fileID: 668397581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1530698186
 GameObject:
   m_ObjectHideFlags: 0
@@ -66362,6 +67536,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7d154d8c5373a742a994302d551cd65, type: 3}
+--- !u!1001 &1539548256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.8502502
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.47351
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!1001 &1540795513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66847,7 +68090,7 @@ GameObject:
   - component: {fileID: 1552508224}
   - component: {fileID: 1552508226}
   - component: {fileID: 1552508225}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 29 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67102,7 +68345,7 @@ GameObject:
   - component: {fileID: 1561970440}
   - component: {fileID: 1561970442}
   - component: {fileID: 1561970441}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Naruto Ramen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67555,7 +68798,7 @@ GameObject:
   - component: {fileID: 1565804356}
   - component: {fileID: 1565804358}
   - component: {fileID: 1565804357}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 21 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68914,7 +70157,7 @@ GameObject:
   - component: {fileID: 1589479474}
   - component: {fileID: 1589479476}
   - component: {fileID: 1589479475}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thoung 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69217,6 +70460,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1597869009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.4282227
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -58.02649
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2b94eb01e6b03436984515c709e3ba58,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-8-street-a1 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b94eb01e6b03436984515c709e3ba58, type: 3}
 --- !u!1 &1598672480
 GameObject:
   m_ObjectHideFlags: 0
@@ -69483,7 +70795,7 @@ GameObject:
   - component: {fileID: 1602106319}
   - component: {fileID: 1602106321}
   - component: {fileID: 1602106320}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Phan Liem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70856,7 +72168,7 @@ GameObject:
   - component: {fileID: 1631152902}
   - component: {fileID: 1631152904}
   - component: {fileID: 1631152903}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chips Homestay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71820,7 +73132,7 @@ GameObject:
   - component: {fileID: 1648380109}
   - component: {fileID: 1648380111}
   - component: {fileID: 1648380110}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Beach Road North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72282,6 +73594,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 79
   m_LocalEulerAnglesHint: {x: 0, y: -18, z: 0}
+--- !u!1001 &1667232038
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.055023
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -50.636475
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-10-street-a4 (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b9c98b9b7bb467e8caabe2934c0fb4, type: 3}
 --- !u!1 &1667760076
 GameObject:
   m_ObjectHideFlags: 0
@@ -74781,7 +76162,7 @@ GameObject:
   - component: {fileID: 1714657034}
   - component: {fileID: 1714657036}
   - component: {fileID: 1714657035}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: The 28 Apartment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76451,6 +77832,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb80252bf613baa489178275be894b7d, type: 3}
+--- !u!1001 &1740671096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.871765
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.900482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -45.2565
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 644c0f26fb61448dba8e2374985f0535,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-1-sidewalk-a3 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 644c0f26fb61448dba8e2374985f0535, type: 3}
 --- !u!4 &1743229773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a8ae43841f3d1cd4594cd82ae977d685,
@@ -77102,7 +78552,7 @@ GameObject:
   - component: {fileID: 1766710898}
   - component: {fileID: 1766710900}
   - component: {fileID: 1766710899}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: La Xuan Xoai (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78005,7 +79455,7 @@ GameObject:
   - component: {fileID: 1783503041}
   - component: {fileID: 1783503043}
   - component: {fileID: 1783503042}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 34 East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78840,6 +80290,75 @@ Transform:
   m_Father: {fileID: 1878259248}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1793459291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.600006
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!4 &1796792693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 07d0544d4be510b40823433f791b08c1,
@@ -78939,6 +80458,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797089151}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1798410454
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.675482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67b4569757447419eb9a028bcf75e834,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-11-street-a5 (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b4569757447419eb9a028bcf75e834, type: 3}
 --- !u!1 &1798769746
 GameObject:
   m_ObjectHideFlags: 0
@@ -79174,7 +80762,7 @@ GameObject:
   - component: {fileID: 1803766239}
   - component: {fileID: 1803766241}
   - component: {fileID: 1803766240}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chau Thi Vinh Te South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79998,6 +81586,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b564c41fb06a114c88f3cfffc141844, type: 3}
+--- !u!4 &1821214926 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1878c62095c5f44e297c004dc9905578,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304148301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1824556905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80281,6 +81875,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d355615495e525f478dca6fc2abd56c0, type: 3}
+--- !u!1 &1830504084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830504085}
+  m_Layer: 0
+  m_Name: TestIntersection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1830504085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830504084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -529.87177, y: 8.900482, z: 380.2265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1082276629}
+  - {fileID: 1269860195}
+  - {fileID: 1893018308}
+  - {fileID: 1529536488}
+  - {fileID: 543988038}
+  - {fileID: 903187140}
+  - {fileID: 1945012904}
+  - {fileID: 555275028}
+  - {fileID: 1448646809}
+  - {fileID: 523606365}
+  - {fileID: 1891029791}
+  - {fileID: 1898016346}
+  - {fileID: 1821214926}
+  - {fileID: 1332853422}
+  - {fileID: 468932817}
+  - {fileID: 734534473}
+  - {fileID: 1443094048}
+  - {fileID: 724327051}
+  - {fileID: 1126248264}
+  - {fileID: 626818585}
+  - {fileID: 765582844}
+  - {fileID: 2061814814}
+  m_Father: {fileID: 0}
+  m_RootOrder: 139
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1831144017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d355615495e525f478dca6fc2abd56c0,
@@ -82053,6 +83699,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8ae43841f3d1cd4594cd82ae977d685, type: 3}
+--- !u!4 &1891029791 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+    type: 3}
+  m_PrefabInstance: {fileID: 602604480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1893018308 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b4569757447419eb9a028bcf75e834,
+    type: 3}
+  m_PrefabInstance: {fileID: 1798410454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1893636077
 GameObject:
   m_ObjectHideFlags: 0
@@ -82449,6 +84107,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 74da73f0a6116cf4e94806a7c1ad4403, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b820e9e57ba1de4fb3a95aec432370b, type: 3}
+--- !u!4 &1898016346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 644c0f26fb61448dba8e2374985f0535,
+    type: 3}
+  m_PrefabInstance: {fileID: 1740671096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1899152921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84249,6 +85913,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &1945012904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64b9c98b9b7bb467e8caabe2934c0fb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1667232038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1952523499
 GameObject:
   m_ObjectHideFlags: 0
@@ -85520,7 +87190,7 @@ GameObject:
   - component: {fileID: 1977638184}
   - component: {fileID: 1977638186}
   - component: {fileID: 1977638185}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86006,7 +87676,7 @@ GameObject:
   - component: {fileID: 1992781542}
   - component: {fileID: 1992781544}
   - component: {fileID: 1992781543}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Phan Tu West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86511,7 +88181,7 @@ GameObject:
   - component: {fileID: 1999333191}
   - component: {fileID: 1999333193}
   - component: {fileID: 1999333192}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87279,7 +88949,7 @@ GameObject:
   - component: {fileID: 2032794349}
   - component: {fileID: 2032794351}
   - component: {fileID: 2032794350}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Seasand Apartments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87936,7 +89606,7 @@ GameObject:
   - component: {fileID: 2050711761}
   - component: {fileID: 2050711763}
   - component: {fileID: 2050711762}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Street going north_south off phan tu near Tu Quan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88407,6 +90077,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058497390}
   m_CullTransparentMesh: 0
+--- !u!4 &2061814814 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 770b14600d9e249d1892e97ceb1fba72,
+    type: 3}
+  m_PrefabInstance: {fileID: 993477107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2069667194
 GameObject:
   m_ObjectHideFlags: 0
@@ -88418,7 +90094,7 @@ GameObject:
   - component: {fileID: 2069667195}
   - component: {fileID: 2069667197}
   - component: {fileID: 2069667196}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: An Thuong 39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88994,6 +90670,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c655f0d8449cd8c4784052e75a9ee736, type: 3}
+--- !u!1001 &2086469051
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1830504085}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 65.871765
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.900482
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.473511
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000032782552
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ce892cc9cf074757a854a5b4f9f914d,
+        type: 3}
+      propertyPath: m_Name
+      value: TILES-2-sidewalk-a7 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ce892cc9cf074757a854a5b4f9f914d, type: 3}
 --- !u!1 &2092854730
 GameObject:
   m_ObjectHideFlags: 0
@@ -89881,7 +91626,7 @@ GameObject:
   - component: {fileID: 2107005482}
   - component: {fileID: 2107005484}
   - component: {fileID: 2107005483}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Chau Thi Vinh Te North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
