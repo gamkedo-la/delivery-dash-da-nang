@@ -11,6 +11,7 @@ TagManager:
   - WayPointBox
   - WayPointCustomer
   - GraphNode
+  - AICar
   layers:
   - Default
   - TransparentFX
