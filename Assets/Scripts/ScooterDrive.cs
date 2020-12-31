@@ -49,6 +49,10 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject textTip;
 
+    bool canBeCollided;
+    public float collisionPercent;
+    public GameObject bike, playerModel;
+
     void Start()
     {
         //RestartAtSpawn();
@@ -92,6 +96,16 @@ public class ScooterDrive : MonoBehaviour
         {
             bikeLetOffGasAudioSource.time = 0;
             bikeIdleAudioSource.Play();
+        }
+
+        if (currentSpeed >= ((collisionPercent / 100) * maxSpeed))
+        {
+            canBeCollided = true;
+        }
+
+        else
+        {
+            canBeCollided = false;
         }
     }// end of update(){}
 
@@ -346,6 +360,15 @@ public class ScooterDrive : MonoBehaviour
             physicalOrder.SetActive(true);
         }
 
+        if (other.tag == "AICar" && canBeCollided)
+        {
+            print("playerFallsOffBike");
+            currentSpeed = 0;
+            playerModel.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
+            canBeCollided = false;
+            StartCoroutine(FallingOffBike());
+        }
+
         if (other.tag == "WayPointCustomer")
         {
             if (GameManager.player1OrderPickedUp)
@@ -405,5 +428,12 @@ public class ScooterDrive : MonoBehaviour
         star3.SetActive(false);
         star4.SetActive(false);
         star5.SetActive(false);
+    }
+
+    IEnumerator FallingOffBike()
+    {
+        yield return new WaitForSeconds(1);
+        playerModel.transform.localPosition = new Vector3(0.1207f, 0f, .6239f);
+        playerModel.transform.localRotation = Quaternion.identity;
     }
 }
