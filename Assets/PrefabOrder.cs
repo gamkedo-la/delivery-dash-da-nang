@@ -47,6 +47,7 @@ public class PrefabOrder : MonoBehaviour
         orderCondition.color = Color.green;
 
         GameManager.Player1OrderSelected = true;
+        print(GameManager.Player1OrderSelected);
 
         GameManager.Player1CustomerItemOrdered = orderedItems[restaurantSelected].ToString();
         GameManager.Player1ApartmentName = apartmentName[customerLocation].ToString();
