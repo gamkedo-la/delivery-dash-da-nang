@@ -10,8 +10,8 @@ public class PrefabOrder : MonoBehaviour
     public string[] customerNames;
     public string[] orderedItems;
 
-    public Transform[] restaurantLocations;
-    public Transform[] apartmentLocations;
+    Transform[] restaurantLocations;
+    Transform[] apartmentLocations;
 
     public int restaurantSelected;
     public int customerLocation;
@@ -23,12 +23,28 @@ public class PrefabOrder : MonoBehaviour
     public bool orderHasBeenTaken;
     public Image orderCondition;
 
-    public GameObject accept, decline, pointer;
+    public GameObject accept, decline;
+    GameObject pointer;
 
     GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
 
     private void Start()
     {
+        restaurantLocations = new Transform[3];
+
+        restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
+        restaurantLocations[1] = GameObject.Find("RamenWayPoint").transform;
+        restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
+
+        apartmentLocations = new Transform[4];
+
+        apartmentLocations[0] = GameObject.Find("ChipsWayPoint").transform;
+        apartmentLocations[1] = GameObject.Find("SeasandWayPoint").transform;
+        apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
+        apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
+
+        pointer = GameObject.Find("Pointer");
+
         player1RestaurantWayPoint = GameObject.Find("WayPointBox - Restaurant");
         player1ApartmentWayPoint = GameObject.Find("WayPointBox - Customer");
 
