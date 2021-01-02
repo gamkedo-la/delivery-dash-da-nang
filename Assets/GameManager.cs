@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     //This is the macro game timer
     public float TimeRemaining;
     public Text TimeUI;
-    public GameObject RoundOverObject;
+    public GameObject RoundOverObject, restuarantWaypointBox;
 
     private void Start()
     {
@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         if (Player1RestaurantWayPoint != null && Player1ApartmentWayPoint != null)
         {
             player1RestaurantWayPoint.transform.position = Player1RestaurantWayPoint.transform.position;
+            
             player1ApartmentWayPoint.transform.position = Player1ApartmentWayPoint.transform.position;
         }
 
