@@ -20,10 +20,10 @@ public class PrefabOrder : MonoBehaviour
     public Text orderText;
     public Text orderState;
 
-    bool orderHasBeenTaken;
+    public bool orderHasBeenTaken;
     public Image orderCondition;
 
-    public GameObject accept, decline;
+    public GameObject accept, decline, pointer;
 
     GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
 
@@ -45,6 +45,8 @@ public class PrefabOrder : MonoBehaviour
         accept.SetActive(false);
         decline.SetActive(true);
         orderCondition.color = Color.green;
+
+        pointer.SetActive(true);
 
         GameManager.Player1OrderSelected = true;
         print(GameManager.Player1OrderSelected);
@@ -68,6 +70,8 @@ public class PrefabOrder : MonoBehaviour
             accept.SetActive(true);
             decline.SetActive(false);
             orderCondition.color = Color.yellow;
+
+            pointer.SetActive(false);
         }
     }
 }

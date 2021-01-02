@@ -20,7 +20,7 @@ public class DashAppScript : MonoBehaviour
     public static float totalTimeRemaining;
 
 
-    bool orderSelected;
+    public bool orderSelected;
 
     public Text orderUI;
     public Text countDownTimer;
