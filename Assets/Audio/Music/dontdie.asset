@@ -26,6 +26,22 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: d4f99514c18c9404fb0a8bde1dd698fa, type: 3}
     cues:
     - 6.5
+  - clip: {fileID: 8300000, guid: 6350ec739b0c77d40946e295050cd850, type: 3}
+    cues:
+    - 6.5
+    - 13
+  - clip: {fileID: 8300000, guid: 4ad608353a87a5148bc500a949fb059f, type: 3}
+    cues:
+    - 6
+    - 12
+  - clip: {fileID: 8300000, guid: ed71a903552aad74cb04b8b847dc7858, type: 3}
+    cues:
+    - 6.5
+    - 13
+  - clip: {fileID: 8300000, guid: 57da3fafb547fd14fa4ca70c7ba51166, type: 3}
+    cues:
+    - 6
+    - 12
   transitions:
   - clip: {fileID: 8300000, guid: 5aa77c44c8d98fc409f4b636071b9f73, type: 3}
     cues:

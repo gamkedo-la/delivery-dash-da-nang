@@ -31,6 +31,18 @@ MonoBehaviour:
     cues:
     - 8
     - 16
+  - clip: {fileID: 8300000, guid: b31c13ed2e63a8945a65c24057008bf9, type: 3}
+    cues:
+    - 8
+    - 16
+    - 24
+    - 32
+  - clip: {fileID: 8300000, guid: 43dc78ac8426bbe44b37b267978aacfa, type: 3}
+    cues:
+    - 8
+    - 16
+    - 24
+    - 32
   transitions:
   - clip: {fileID: 8300000, guid: a0eea7e233bea27408cefdf5563845e7, type: 3}
     cues:
