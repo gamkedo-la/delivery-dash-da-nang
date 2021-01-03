@@ -192,7 +192,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5305432066845944295}
   m_HandleRect: {fileID: 5305432066845944292}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5305432064779731656}
   m_HandleRect: {fileID: 5305432064779731657}
   m_Direction: 2
-  m_Value: 1.0000004
+  m_Value: 1
   m_Size: 0.73523986
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -441,6 +441,18 @@ MonoBehaviour:
   ratingUI: {fileID: 8232903222372972385, guid: 7b24fdee298a105468d07fa3a0d1adfe,
     type: 3}
   ratings: []
+  oneStarReviews:
+  - Terrible food, terrible service.
+  twoStarReviews:
+  - Canned two-star review.
+  threeStarReviews:
+  - Canned three-star review
+  fourStarReviews:
+  - I loved the food but my dog barked at it so I think something might have been
+    wrong.
+  fiveStarReviews:
+  - Food was like manna from heaven.
+  - Impeccible delivery service!
 --- !u!1 &5305432066188554640
 GameObject:
   m_ObjectHideFlags: 0

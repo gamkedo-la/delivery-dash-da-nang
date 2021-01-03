@@ -1,12 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class RatingsManager : MonoBehaviour
 {
     [SerializeField] private RectTransform ratingsContainer;
     [SerializeField] private GameObject ratingUI;
     [SerializeField] private List<CustomerRating> ratings;
+
+    [SerializeField] private string[] oneStarReviews;
+    [SerializeField] private string[] twoStarReviews;
+    [SerializeField] private string[] threeStarReviews;
+    [SerializeField] private string[] fourStarReviews;
+    [SerializeField] private string[] fiveStarReviews;
 
     public void AddRating(CustomerRating rating)
     {
@@ -28,7 +36,32 @@ public class RatingsManager : MonoBehaviour
         var rating = ScriptableObject.CreateInstance<CustomerRating>();
         rating.rating = stars;
         rating.customerName = "Franklin D.";
-        rating.customerMessage = "I had the marguerita pizza today for lunch. It was terrible.";
+
+        var rand = new Random();
+        var i = 0;
+        switch (stars)
+        {
+            case 1:
+                i = rand.Next(0, oneStarReviews.Length - 1);
+                rating.customerMessage = oneStarReviews[i];
+                break;
+            case 2:
+                i = rand.Next(0, twoStarReviews.Length - 1);
+                rating.customerMessage = twoStarReviews[i];
+                break;
+            case 3:
+                i = rand.Next(0, threeStarReviews.Length - 1);
+                rating.customerMessage = threeStarReviews[i];
+                break;
+            case 4:
+                i = rand.Next(0, fourStarReviews.Length - 1);
+                rating.customerMessage = fourStarReviews[i];
+                break;
+            case 5:
+                i = rand.Next(0, fiveStarReviews.Length - 1);
+                rating.customerMessage = fiveStarReviews[i];
+                break;
+        }
         return rating;
     }
 
