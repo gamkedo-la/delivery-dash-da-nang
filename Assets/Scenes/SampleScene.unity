@@ -67443,6 +67443,7 @@ MonoBehaviour:
   isPlaying: 0
   bufferTime: 0.25
   fadeOutTime: 0.15
+  noCountTransition: {fileID: 8300000, guid: c865a73f2e0a94a4abdf662e35ab0032, type: 3}
 --- !u!1001 &1577111640
 PrefabInstance:
   m_ObjectHideFlags: 0

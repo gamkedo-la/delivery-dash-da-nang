@@ -14,6 +14,7 @@ public class MusicManager : MonoBehaviour {
 	private double nextCueTime = 0;
 	private double nextSchedual = 0;
 	private float timeNow = 0f;
+	private float countDown = 0f;
 
 	private int nextCueIndex = 0;
 	private int nextTrackIndex = 0;
@@ -25,6 +26,8 @@ public class MusicManager : MonoBehaviour {
 	public float bufferTime = 0.5f;
 	public float fadeOutTime = 0.15f;
 
+	public AudioClip noCountTransition;
+
 
 	void Awake() {
 		if (Instance == null) Instance = this;
@@ -35,13 +38,17 @@ public class MusicManager : MonoBehaviour {
 
 	void Update() {
 		timeNow = (float)AudioSettings.dspTime;
+		countDown = (float)nextCueTime - timeNow;
 
 		if (AudioSettings.dspTime >= nextSchedual) {
 			if (isPlaying && nextTrack != null) {
 				PlayNewClip(nextTrack.transitions[nextTrackIndex].clip, nextCueTime - nextTrack.transitions[nextTrackIndex].cues[0]);
-				if (nextCueIndex < currentCues.Count) StartCoroutine(WaitAndFadeOutAndStop(currentAudioSource, nextCueTime, fadeOutTime));
+				if (nextCueIndex < currentCues.Count) {
+					StartCoroutine(WaitAndFadeOutAndStop(currentAudioSource, nextCueTime, fadeOutTime));
+				}
 				currentTrack = nextTrack;
 				nextTrack = null;
+				nextTrackIndex = Random.Range(0, currentTrack.tracks.Count);
 				currentAudioSource = PlayNewClip(currentTrack.tracks[nextTrackIndex].clip, nextCueTime);
 
 				startingTime = nextCueTime;
@@ -93,6 +100,7 @@ public class MusicManager : MonoBehaviour {
 			nextTrack = null;
 			startingTime = AudioSettings.dspTime + bufferTime;
 			currentAudioSource = PlayNewClip(currentTrack.intros[nextTrackIndex].clip, startingTime);
+			nextTrackIndex = Random.Range(0, currentTrack.tracks.Count);
 			nextSchedual = startingTime + currentCues[nextCueIndex] - bufferTime;
 			nextCueTime = startingTime + currentCues[nextCueIndex];
 			nextCueIndex++;
@@ -107,12 +115,14 @@ public class MusicManager : MonoBehaviour {
 		freshSource.clip = clip;
 		freshSource.PlayScheduled(startTime);
 
+		freshSource.name = clip.name;
 		Destroy(freshSource.gameObject, clip.length + (float)(AudioSettings.dspTime - startTime) + fadeOutTime);
 
 		return freshSource;
 	}
 
 	IEnumerator WaitAndFadeOutAndStop(AudioSource source, double startTime, float fadeTime) {
+		//Debug.Log("Waiting");
 		while (AudioSettings.dspTime < startTime) {
 			yield return null;
 		}

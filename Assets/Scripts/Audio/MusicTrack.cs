@@ -34,9 +34,23 @@ public class MusicTrackEditor : Editor {
 		if (musicTrack.intros.Count <= 0) musicTrack.intros.Add(new ClipAndCues());
 		for (int i = 0; i < musicTrack.intros.Count; i++) {
 			musicTrack.intros[i].clip = (AudioClip)EditorGUILayout.ObjectField(musicTrack.intros[i].clip, typeof(AudioClip), false);
-			
+
+			EditorGUILayout.BeginHorizontal();
+			EditorGUILayout.LabelField(" ");
+			if (GUILayout.Button("-") && musicTrack.intros[i].cues.Count > 1) { musicTrack.intros[i].cues.RemoveAt(musicTrack.intros.Count-1); }
+			if (GUILayout.Button("+")) { musicTrack.intros[i].cues.Add(0); }
+			EditorGUILayout.EndHorizontal();
+
+			EditorGUILayout.BeginHorizontal();
 			if (musicTrack.intros[i].cues.Count <= 0) musicTrack.intros[i].cues.Add(0);
-			musicTrack.intros[i].cues[0] = EditorGUILayout.FloatField(musicTrack.intros[i].cues[0]);
+			for (int j = 0; j < musicTrack.intros[i].cues.Count; j++) {
+				musicTrack.intros[i].cues[j] = EditorGUILayout.FloatField(musicTrack.intros[i].cues[j]);
+				if ((j + 1) % 5 == 0) {
+					EditorGUILayout.EndHorizontal();
+					EditorGUILayout.BeginHorizontal();
+				}
+			}
+			EditorGUILayout.EndHorizontal();
 
 			EditorGUILayout.Space();
 		}

@@ -15,17 +15,14 @@ MonoBehaviour:
   intros:
   - clip: {fileID: 8300000, guid: 63e5bc844a9774447b3b8757d9f4cc8b, type: 3}
     cues:
+    - 8
     - 24
   tracks:
   - clip: {fileID: 8300000, guid: 44e9b61b062db0342967b3aecf8f2e0c, type: 3}
     cues:
-    - 8
     - 16
-    - 24
     - 32
-    - 40
     - 48
-    - 56
     - 64
   - clip: {fileID: 8300000, guid: 5d5a1503a1e908943926e13c704cada8, type: 3}
     cues:
@@ -46,4 +43,4 @@ MonoBehaviour:
   transitions:
   - clip: {fileID: 8300000, guid: a0eea7e233bea27408cefdf5563845e7, type: 3}
     cues:
-    - 2
+    - 1.5
