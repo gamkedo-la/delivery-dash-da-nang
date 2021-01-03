@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[ExecuteInEditMode]
 public class Connection : MonoBehaviour
 {
 
@@ -22,6 +22,12 @@ public class Connection : MonoBehaviour
             Gizmos.DrawLine(nodeA.gameObject.transform.position, nodeB.gameObject.transform.position);
         }
 
+    }
+
+    private void Awake()
+    {
+        nodeA = GetComponentInParent<GraphNode>();
+        graphPathfinding = FindObjectOfType<GraphPathfinding>();
     }
 
 }

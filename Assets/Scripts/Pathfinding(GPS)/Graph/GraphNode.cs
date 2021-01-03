@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GraphNode : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class GraphNode : MonoBehaviour
     {
         distCosts = new Dictionary<GraphNode, int>();
         worldPosition = gameObject.transform.position;
+        connections = GetComponentsInChildren<Connection>().ToList();
         GetNeighbors();
     }
 
