@@ -44,6 +44,7 @@ public class ScooterDrive : MonoBehaviour
     public GameObject physicalOrder;
 
     public GameObject TotalScore, star1, star2, star3, star4, star5;
+    public RatingsManager ratingsManager;
 
     public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource;
 
@@ -385,28 +386,38 @@ public class ScooterDrive : MonoBehaviour
 
                 //total score displayed in stars
                 GameManager.player1ScoreOnOrder = tempTotalScore;
+                int starsAwarded = 0;
+                
                 //total score added to macrototal score
                 TotalScore.SetActive(true);
                 if (GameManager.player1ScoreOnOrder < .2)
                 {
                     star1.SetActive(true);
+                    starsAwarded++;
                 }
-                else if (GameManager.player1ScoreOnOrder < .4)
+                if (GameManager.player1ScoreOnOrder < .4)
                 {
                     star2.SetActive(true);
+                    starsAwarded++;
                 }
-                else if (GameManager.player1ScoreOnOrder < .6)
+                if (GameManager.player1ScoreOnOrder < .6)
                 {
                     star3.SetActive(true);
+                    starsAwarded++;
                 }
-                else if (GameManager.player1ScoreOnOrder < .8)
+                if (GameManager.player1ScoreOnOrder < .8)
                 {
                     star4.SetActive(true);
+                    starsAwarded++;
                 }
-                else if (GameManager.player1ScoreOnOrder > .8)
+                if (GameManager.player1ScoreOnOrder > .8)
                 {
                     star5.SetActive(true);
+                    starsAwarded++;
                 }
+                
+                var rating = ratingsManager.CreateRating(starsAwarded);
+                ratingsManager.AddRating(rating);
 
                 print(GameManager.player1ScoreOnOrder);
 

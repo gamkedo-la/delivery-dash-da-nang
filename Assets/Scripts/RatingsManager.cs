@@ -23,6 +23,15 @@ public class RatingsManager : MonoBehaviour
         ratingInstance.GetComponent<CustomerRatingDisplayMapper>()?.SetCustomerRating(rating);
     }
 
+    public CustomerRating CreateRating(int stars)
+    {
+        var rating = ScriptableObject.CreateInstance<CustomerRating>();
+        rating.rating = stars;
+        rating.customerName = "Franklin D.";
+        rating.customerMessage = "I had the marguerita pizza today for lunch. It was terrible.";
+        return rating;
+    }
+
     private void ClearRatings()
     {
         var childCount = ratingsContainer.childCount;
