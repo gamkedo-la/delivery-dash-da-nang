@@ -21,10 +21,12 @@ public class PointToObjective : MonoBehaviour
             Debug.Log("inisde order selected bool check");
             if (GameManager.player1OrderPickedUp)
             {
+                Debug.Log("inside order picked up");
                 this.transform.LookAt(customerWayPoint.position);
             }
             else
             {
+                Debug.Log("inside order not picked up");
                 this.transform.LookAt(restaurantWayPoint.position);
             }
         } 
