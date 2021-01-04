@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class GraphPathfinding : MonoBehaviour
 
     public bool showGridConnections = true;
 
+    private Transform playerLocation;
+    public GraphNode nearestNode = null;
 
     private void Awake()
     {
@@ -25,11 +28,18 @@ public class GraphPathfinding : MonoBehaviour
         {
             allNodes.Add(waypointGoes[i].GetComponent<GraphNode>());
         }
+
+        playerLocation = FindObjectOfType<ScooterDrive>().GetComponent<Transform>();
+
     }
 
     private void Update()
     {
         FindPath(seeker, targetNode);
+        if (Input.GetMouseButtonDown(0))
+        {
+            nearestNode = FindNearestNode(playerLocation);
+        }
     }
 
     void FindPath(GraphNode startNode, GraphNode targetNode)
@@ -38,7 +48,6 @@ public class GraphPathfinding : MonoBehaviour
         {
             return;
         }
-       // GraphNode startNode = new GraphNode(startNode); //Construct new node or simply find nearest node and start from there?
 
         List<GraphNode> openSet = new List<GraphNode>();
         List<GraphNode> closedSet = new List<GraphNode>();
@@ -126,28 +135,34 @@ public class GraphPathfinding : MonoBehaviour
         }
     }
 
-    private void FindNearestNode(Transform transform)
+    public GraphNode FindNearestNode(Transform transform)
     {
-        GraphNode nearestNode;
+        
         float checkRadius = 10f;
         LayerMask nodeLayer = LayerMask.GetMask("Node");
-        for (int i = 0; i < 100; i++)
+        Collider[] nodeColliders = Physics.OverlapSphere(transform.position, checkRadius, nodeLayer);
+        
+        while (nearestNode == null)
         {
-            Collider[] nodeColliders = Physics.OverlapSphere(transform.position, checkRadius, nodeLayer);
+            Debug.Log("looping at " + checkRadius);
+
             if (nodeColliders[0] != null)
             {
                 nearestNode = nodeColliders[0].GetComponent<GraphNode>();
-                if (path.Contains(nearestNode))
+                Debug.Log(nodeColliders[0]);   
+                return nearestNode;
+
+                /*if (path.Contains(nearestNode))
                 {
-                    return;
+                    return nearestNode;
                 }
                 else
                 {
-                    path.Add(nearestNode);
-                    return;
-                }
+                    path.Add(nearestNode);                    
+                }*/
             }
+            checkRadius ++;
         }
-        
+        return nearestNode;
     }
 }
