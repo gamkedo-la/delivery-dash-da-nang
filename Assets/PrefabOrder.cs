@@ -27,6 +27,8 @@ public class PrefabOrder : MonoBehaviour
 
     GameObject player1RestaurantWayPoint, player1ApartmentWayPoint, pointer;
 
+    PointToObjective pointToObjectiveScript;
+
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
@@ -64,6 +66,9 @@ public class PrefabOrder : MonoBehaviour
 
         pointer = GameObject.Find("Canvas - Display Orders").transform.GetChild(2).gameObject;
         pointer.SetActive(true);
+        pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
+        pointToObjectiveScript.customerOrder = gameObject;
+        Debug.Log("restaurant name: " + restaurantName);
 
         
 

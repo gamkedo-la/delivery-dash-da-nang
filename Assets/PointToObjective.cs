@@ -14,11 +14,12 @@ public class PointToObjective : MonoBehaviour
 
         if (customerOrder.GetComponent<PrefabOrder>().orderHasBeenTaken == true)
         {
-            gameObject.SetActive(true);
+            
+            //gameObject.SetActive(true);
             restaurantWaypointBox.SetActive(true);
-            GameManager.player1OrderPickedUp = true;
+            //GameManager.player1OrderPickedUp = true;
 
-            Debug.Log("inisde order selected bool check");
+            print("customer order restaurant name: " + customerOrder.GetComponent<PrefabOrder>().restaurantName);
             if (GameManager.player1OrderPickedUp)
             {
                 Debug.Log("inside order picked up");
