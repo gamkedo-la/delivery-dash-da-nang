@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     //This is the macro game timer
     public float TimeRemaining;
     public Text TimeUI;
-    public GameObject RoundOverObject, restuarantWaypointBox;
+    public GameObject RoundOverObject, restuarantWaypointBox, pointer, displayOrdersText;
 
     private void Start()
     {

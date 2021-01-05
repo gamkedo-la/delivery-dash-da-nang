@@ -23,13 +23,15 @@ public class PrefabOrder : MonoBehaviour
     public bool orderHasBeenTaken;
     public Image orderCondition;
 
-    public GameObject accept, decline;
-    GameObject pointer;
+    public GameObject accept, decline, displayOrdersText, gameManager;
 
-    GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
+    GameObject player1RestaurantWayPoint, player1ApartmentWayPoint, pointer;
 
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager");
+        Debug.Log(gameManager);
+
         restaurantLocations = new Transform[3];
 
         restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
@@ -42,8 +44,6 @@ public class PrefabOrder : MonoBehaviour
         apartmentLocations[1] = GameObject.Find("SeasandWayPoint").transform;
         apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
         apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
-
-        pointer = GameObject.Find("Pointer");
 
         player1RestaurantWayPoint = GameObject.Find("WayPointBox - Restaurant");
         player1ApartmentWayPoint = GameObject.Find("WayPointBox - Customer");
@@ -62,7 +62,10 @@ public class PrefabOrder : MonoBehaviour
         decline.SetActive(true);
         orderCondition.color = Color.green;
 
+        pointer = GameObject.Find("Canvas - Display Orders").transform.GetChild(2).gameObject;
         pointer.SetActive(true);
+
+        
 
         GameManager.Player1OrderSelected = true;
         print(GameManager.Player1OrderSelected);
@@ -88,7 +91,7 @@ public class PrefabOrder : MonoBehaviour
             decline.SetActive(false);
             orderCondition.color = Color.yellow;
 
-            pointer.SetActive(false);
+            //pointer.SetActive(false);
         }
     }
 }

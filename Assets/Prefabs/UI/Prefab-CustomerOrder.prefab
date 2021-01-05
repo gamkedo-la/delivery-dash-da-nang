@@ -566,15 +566,6 @@ MonoBehaviour:
   - sandwiches
   - ramen
   - sushi
-  restaurantLocations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  apartmentLocations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   restaurantSelected: 0
   customerLocation: 0
   customerName: 0
@@ -584,7 +575,6 @@ MonoBehaviour:
   orderCondition: {fileID: 418377964016264065}
   accept: {fileID: 418377964675836635}
   decline: {fileID: 418377964853494590}
-  pointer: {fileID: 0}
 --- !u!1 &418377965484148914
 GameObject:
   m_ObjectHideFlags: 0
