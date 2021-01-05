@@ -28,6 +28,10 @@ public class Connection : MonoBehaviour
     {
         nodeA = GetComponentInParent<GraphNode>();
         graphPathfinding = FindObjectOfType<GraphPathfinding>();
+        if(nodeB != null)
+        {
+            gameObject.name = ("Connection " + nodeA.name + "-" + nodeB.name);
+        }
     }
 
 }
