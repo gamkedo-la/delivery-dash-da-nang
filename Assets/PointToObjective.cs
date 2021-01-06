@@ -16,7 +16,7 @@ public class PointToObjective : MonoBehaviour
         {
             
             //gameObject.SetActive(true);
-            restaurantWaypointBox.SetActive(true);
+            //restaurantWaypointBox.SetActive(true);
             //GameManager.player1OrderPickedUp = true;
 
             print("customer order restaurant name: " + customerOrder.GetComponent<PrefabOrder>().restaurantName);
