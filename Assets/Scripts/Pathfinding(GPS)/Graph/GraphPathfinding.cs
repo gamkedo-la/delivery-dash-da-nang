@@ -144,7 +144,7 @@ public class GraphPathfinding : MonoBehaviour
         
         while (nearestNode == null)
         {
-            Debug.Log("looping at " + checkRadius);
+            //Debug.Log("looping at " + checkRadius);
 
             if (nodeColliders[0] != null)
             {

@@ -19,15 +19,15 @@ public class PointToObjective : MonoBehaviour
             //restaurantWaypointBox.SetActive(true);
             //GameManager.player1OrderPickedUp = true;
 
-            print("customer order restaurant name: " + customerOrder.GetComponent<PrefabOrder>().restaurantName);
+            //print("customer order restaurant name: " + customerOrder.GetComponent<PrefabOrder>().restaurantName);
             if (GameManager.player1OrderPickedUp)
             {
-                Debug.Log("inside order picked up");
+                //Debug.Log("inside order picked up");
                 this.transform.LookAt(customerWayPoint.position);
             }
             else
             {
-                Debug.Log("inside order not picked up");
+                //Debug.Log("inside order not picked up");
                 this.transform.LookAt(restaurantWayPoint.position);
             }
         } 
