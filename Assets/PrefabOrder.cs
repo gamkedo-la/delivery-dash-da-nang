@@ -32,13 +32,13 @@ public class PrefabOrder : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
-        Debug.Log(gameManager);
+        //Debug.Log(gameManager);
 
         restaurantLocations = new Transform[3];
 
         restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
-        restaurantLocations[1] = GameObject.Find("RamenWayPoint").transform;
-        restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
+       // restaurantLocations[1] = GameObject.Find("RamenWayPoint").transform;
+       // restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
 
         apartmentLocations = new Transform[4];
 
@@ -68,12 +68,12 @@ public class PrefabOrder : MonoBehaviour
         pointer.SetActive(true);
         pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
         pointToObjectiveScript.customerOrder = gameObject;
-        Debug.Log("restaurant name: " + restaurantName);
+        //Debug.Log("restaurant name: " + restaurantName);
 
         
 
         GameManager.Player1OrderSelected = true;
-        print(GameManager.Player1OrderSelected);
+        //print(GameManager.Player1OrderSelected);
 
         GameManager.Player1CustomerItemOrdered = orderedItems[restaurantSelected].ToString();
         GameManager.Player1ApartmentName = apartmentName[customerLocation].ToString();
@@ -81,6 +81,7 @@ public class PrefabOrder : MonoBehaviour
         GameManager.Player1RestaurantName = restaurantName[restaurantSelected].ToString();
 
         player1RestaurantWayPoint.transform.position = restaurantLocations[restaurantSelected].transform.position;
+        //Debug.Log("restaurant selected: " + restaurantSelected);
         
         player1ApartmentWayPoint.transform.position = apartmentLocations[customerLocation].transform.position;
 

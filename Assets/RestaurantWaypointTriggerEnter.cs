@@ -10,13 +10,13 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered");
+        //Debug.Log("entered");
         if (other.tag == "Player" /*&& GameManager.Player1OrderSelected*/)
         {
             orderPickedUpSFX.Play();
             gameObject.SetActive(false);
             customerWaypointBox.SetActive(true);
-            Debug.Log("restaurant box entered");
+            //Debug.Log("restaurant box entered");
         }
     }
 }
