@@ -35,10 +35,11 @@ public class GraphPathfinding : MonoBehaviour
 
     private void Update()
     {
-        FindPath(seeker, targetNode);
+        
         if (Input.GetMouseButtonDown(0))
         {
             nearestNode = FindNearestNode(playerLocation);
+            FindPath(nearestNode, targetNode);
         }
     }
 
@@ -127,6 +128,7 @@ public class GraphPathfinding : MonoBehaviour
     {
         if(path != null)
         {
+            Gizmos.DrawLine(playerLocation.position, path[0].worldPosition);
             for (int i = 0; i < path.Count; i++)
             {
                 Gizmos.color = Color.black;
@@ -137,32 +139,24 @@ public class GraphPathfinding : MonoBehaviour
 
     public GraphNode FindNearestNode(Transform transform)
     {
-        
-        float checkRadius = 10f;
-        LayerMask nodeLayer = LayerMask.GetMask("Node");
-        Collider[] nodeColliders = Physics.OverlapSphere(transform.position, checkRadius, nodeLayer);
-        
-        while (nearestNode == null)
+        GraphNode nearestNode = null;
+        float closestDistancesqr = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach(GraphNode potentialClosestNode in allNodes)
         {
-            Debug.Log("looping at " + checkRadius);
+            Vector3 directionToTarget = potentialClosestNode.transform.position - currentPosition;
+            float directionSqrtoTarget = directionToTarget.sqrMagnitude;
 
-            if (nodeColliders[0] != null)
+            if(directionSqrtoTarget < closestDistancesqr)
             {
-                nearestNode = nodeColliders[0].GetComponent<GraphNode>();
-                Debug.Log(nodeColliders[0]);   
-                return nearestNode;
-
-                /*if (path.Contains(nearestNode))
-                {
-                    return nearestNode;
-                }
-                else
-                {
-                    path.Add(nearestNode);                    
-                }*/
+                closestDistancesqr = directionSqrtoTarget;
+                nearestNode = potentialClosestNode;
             }
-            checkRadius ++;
         }
-        return nearestNode;
+
+        return nearestNode;       
+
+        
     }
 }
