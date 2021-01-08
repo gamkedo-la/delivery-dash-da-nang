@@ -10,15 +10,15 @@ public class ScooterDrive : MonoBehaviour
     public static float maxSpeed = 16f;
 
     public float currentSpeed;
-    public float forwardSpeed = 4f;
+    public float forwardSpeed = 8f;
     public float backwardSpeed = -0.1f;
     public float coastToStopSpeed = 0.35f;
 
     public float currentTurnAngle = 0;
-    public float turnAngleRate = 40f;
+    public float turnAngleRate = 80f;
     public float maxTurnAngle = 80f;
 
-    public float brakeSpeed = 2f;
+    public float brakeSpeed = 4f;
 
     public GameObject brakeLights;
 
