@@ -84,6 +84,10 @@ public class PrefabOrder : MonoBehaviour
         Player1RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
         Player1ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
 
+        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) / 20;
+        RestaurantWaypointTriggerEnter.player1TimeScore = dist;
+        RestaurantWaypointTriggerEnter.player1TimeScoreMax = dist;
+
         player1WayPoint.transform.position = Player1RestaurantTransform.transform.position;
 
         RestaurantWaypointTriggerEnter.player1OrderPickedUp = false;
@@ -94,7 +98,7 @@ public class PrefabOrder : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
         Destroy(this.gameObject);
     }
 }

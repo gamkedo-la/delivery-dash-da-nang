@@ -10,8 +10,10 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     public static bool player1OrderPickedUp;
     public static bool player1OrderDelivered;
 
+    public static float player1TimeScore, player1TimeScoreMax;
+
     public GameObject pointer;
-    public Text orders;
+    public Text orders, timer;
     public GameObject food;
 
     private void OnTriggerEnter(Collider other)
@@ -50,13 +52,21 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
             orders.text = "Press C to check your phone for orders.";
             StartCoroutine(Waiting());
         }
+
+        if (PrefabOrder.orderHasBeenTaken)
+        {
+            player1TimeScore -= Time.deltaTime;
+            timer.text = player1TimeScore.ToString("F2");
+        }
     }
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.25f);
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
         PrefabOrder.orderHasBeenTaken = false;
+        float score = (player1TimeScore / player1TimeScoreMax) * 100;
+        timer.text = score.ToString("F2") + "%";
     }
 }
