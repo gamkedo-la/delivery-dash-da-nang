@@ -20,13 +20,13 @@ public class PrefabOrder : MonoBehaviour
     public Text orderText;
     public Text orderState;
 
-    public bool orderHasBeenTaken;
+    public static bool orderHasBeenTaken;
     public Image orderCondition;
 
     public GameObject accept, decline, displayOrdersText, gameManager;
 
     GameObject player1WayPoint, pointer;
-    GameObject Player1RestaurantTransform, Player1ApartmentTransform;
+    Transform Player1RestaurantTransform, Player1ApartmentTransform;
 
     PointToObjective pointToObjectiveScript;
 
@@ -34,6 +34,8 @@ public class PrefabOrder : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager");
         //Debug.Log(gameManager);
+        Player1RestaurantTransform = GameObject.Find("Player1Restaurant").transform;
+        Player1ApartmentTransform = GameObject.Find("Player1Apartment").transform;
 
         restaurantLocations = new Transform[3];
 
@@ -78,8 +80,6 @@ public class PrefabOrder : MonoBehaviour
         GameManager.Player1ApartmentName = apartmentName[customerLocation].ToString();
         GameManager.Player1CustomerName = customerNames[customerName].ToString();
         GameManager.Player1RestaurantName = restaurantName[restaurantSelected].ToString();
-
-        //moving Boxes to help player locations
 
         Player1RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
         Player1ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;

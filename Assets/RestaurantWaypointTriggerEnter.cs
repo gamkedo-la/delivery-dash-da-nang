@@ -12,6 +12,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
     public GameObject pointer;
     public Text orders;
+    public GameObject food;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,30 +20,32 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         if (other.tag == "Player")
         {
             orderPickedUpSFX.Play();
-
-            if (player1OrderPickedUp && !player1OrderDelivered)
+            if (PrefabOrder.orderHasBeenTaken)
             {
-                player1OrderDelivered = true;
-            }
+                if (player1OrderPickedUp && !player1OrderDelivered)
+                {
+                    player1OrderDelivered = true;
+                }
 
-            if (!player1OrderPickedUp)
-            {
-                player1OrderPickedUp = true;
-                this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
+                if (!player1OrderPickedUp)
+                {
+                    player1OrderPickedUp = true;
+                    this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
+                }
             }
-
         }
 
     }
 
     private void Update()
     {
-        if (player1OrderPickedUp && player1OrderDelivered)
+        if (PrefabOrder.orderHasBeenTaken && player1OrderPickedUp && player1OrderDelivered)
         {
+            food.SetActive(false);
             print("Order Completed");
             pointer.SetActive(false);
             //Just getting the box out of the way
-            transform.position = new Vector3(-10000, -10000, -10000);
+            this.transform.position = new Vector3(-10000, -10000, -10000);
             orders.text = "";
             orders.text = "Press C to check your phone for orders.";
             StartCoroutine(Waiting());
@@ -54,5 +57,6 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
+        PrefabOrder.orderHasBeenTaken = false;
     }
 }
