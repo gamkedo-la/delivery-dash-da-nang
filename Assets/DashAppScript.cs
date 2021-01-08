@@ -33,7 +33,7 @@ public class DashAppScript : MonoBehaviour
 
         if (!GameManager.player1OrderDelivered)
         {
-            totalTimeRemaining = OrderDuration / distanceBetweenTargetAndDestination;
+            totalTimeRemaining = (OrderDuration / distanceBetweenTargetAndDestination) * 2;
         }
         if (OrderDuration <= 0)
         {
