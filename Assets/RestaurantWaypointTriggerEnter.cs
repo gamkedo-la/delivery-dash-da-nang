@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RestaurantWaypointTriggerEnter : MonoBehaviour
 {
-    public AudioSource orderPickedUpSFX;
+    public AudioSource orderPickedUpSFX, chachingSFX;
 
     public static bool player1OrderPickedUp;
     public static bool player1OrderDelivered;
@@ -14,26 +14,29 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
     public GameObject pointer;
     public Text orders, timer;
-    public GameObject food;
+    public GameObject food, player;
 
     float finalScore;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
 
         if (other.tag == "Player")
         {
-            orderPickedUpSFX.Play();
+            
             if (PrefabOrder.orderHasBeenTaken)
             {
-                if (player1OrderPickedUp && !player1OrderDelivered)
+                if (player1OrderPickedUp && !player1OrderDelivered && player.GetComponent<ScooterDrive>().currentSpeed == 0)
                 {
                     player1OrderDelivered = true;
+                    chachingSFX.Play();
+                    GameManager.Player1OrderSelected = false;
                 }
 
-                if (!player1OrderPickedUp)
+                if (!player1OrderPickedUp && player.GetComponent<ScooterDrive>().currentSpeed == 0)
                 {
                     player1OrderPickedUp = true;
+                    orderPickedUpSFX.Play();
                     this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
                 }
             }

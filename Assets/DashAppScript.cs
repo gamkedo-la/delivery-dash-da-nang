@@ -33,7 +33,7 @@ public class DashAppScript : MonoBehaviour
 
         if (!GameManager.player1OrderDelivered)
         {
-            totalTimeRemaining = (OrderDuration / distanceBetweenTargetAndDestination) * 2;
+            totalTimeRemaining = (OrderDuration / distanceBetweenTargetAndDestination) * 4;
         }
         if (OrderDuration <= 0)
         {
@@ -46,7 +46,7 @@ public class DashAppScript : MonoBehaviour
 
             GameManager.Player1OrderSelected = false;
 
-            distanceBetweenTargetAndDestination = (GameManager.player1Distance / 50);
+            distanceBetweenTargetAndDestination = (GameManager.player1Distance);
             OrderDuration = distanceBetweenTargetAndDestination;
 
             // startingOrderDuration = distance between restaurant selected and customer selected (this does not change)

@@ -18,7 +18,7 @@ public class ScooterDrive : MonoBehaviour
     public float turnAngleRate = 80f;
     public float maxTurnAngle = 80f;
 
-    public float brakeSpeed = 4f;
+    public float brakeSpeed = 15f;
 
     public GameObject brakeLights;
 
