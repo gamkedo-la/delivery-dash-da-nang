@@ -84,7 +84,7 @@ public class PrefabOrder : MonoBehaviour
         Player1RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
         Player1ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
 
-        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) / 50;
+        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) / 40;
         RestaurantWaypointTriggerEnter.player1TimeScore = dist;
         RestaurantWaypointTriggerEnter.player1TimeScoreMax = dist;
 
