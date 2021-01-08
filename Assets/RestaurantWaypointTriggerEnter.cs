@@ -16,6 +16,8 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     public Text orders, timer;
     public GameObject food;
 
+    float finalScore;
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -43,15 +45,16 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     {
         if (PrefabOrder.orderHasBeenTaken && player1OrderPickedUp && player1OrderDelivered)
         {
-            PrefabOrder.orderHasBeenTaken = false;
             float score = (player1TimeScore / player1TimeScoreMax) * 100;
-            timer.text = score.ToString("F2") + "%";
+            float score2 = FoodHealth.currentHealth;
+            finalScore = (score + score2) / 2;
+            timer.text = finalScore.ToString("F2") + "%";
             food.SetActive(false);
             pointer.SetActive(false);
             //Just getting the box out of the way
             this.transform.position = new Vector3(-10000, -10000, -10000);
             orders.text = "Order Completed";
-
+            timer.text = "";
             StartCoroutine(Waiting());
         }
 
@@ -65,13 +68,30 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         {
             //Order failed on Time
             orders.text = "Order Not Delivered in Time. Transaction Cancelled.";
-            float score = (player1TimeScore / player1TimeScoreMax) * 100;
+            float score = 0;
             timer.text = score.ToString("F2") + "%";
             PrefabOrder.orderHasBeenTaken = false;
             food.SetActive(false);
             this.transform.position = new Vector3(-10000, -10000, -10000);
             player1TimeScore = 0;
             pointer.SetActive(false);
+            timer.text = "";
+            StartCoroutine(Waiting());
+
+        }
+
+        if (FoodHealth.currentHealth < 0)
+        {
+            //Order failed on Time
+            orders.text = "Order Destroyed in Transit. Transaction Cancelled.";
+            float score = 0;
+            timer.text = score.ToString("F2") + "%";
+            PrefabOrder.orderHasBeenTaken = false;
+            food.SetActive(false);
+            this.transform.position = new Vector3(-10000, -10000, -10000);
+            player1TimeScore = 0;
+            pointer.SetActive(false);
+            timer.text = "";
             StartCoroutine(Waiting());
 
         }
@@ -80,9 +100,10 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(1.5f);
+        PrefabOrder.orderHasBeenTaken = false;
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
-
+        timer.text = finalScore.ToString("F0") + "%";
         orders.text = "Press C to check your phone for orders.";
     }
 }
