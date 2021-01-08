@@ -26,6 +26,7 @@ public class PrefabOrder : MonoBehaviour
     public GameObject accept, decline, displayOrdersText, gameManager;
 
     GameObject player1WayPoint, pointer;
+    GameObject Player1RestaurantTransform, Player1ApartmentTransform;
 
     PointToObjective pointToObjectiveScript;
 
@@ -78,10 +79,16 @@ public class PrefabOrder : MonoBehaviour
         GameManager.Player1CustomerName = customerNames[customerName].ToString();
         GameManager.Player1RestaurantName = restaurantName[restaurantSelected].ToString();
 
-        player1WayPoint.transform.position = restaurantLocations[restaurantSelected].transform.position;
-        //Debug.Log("restaurant selected: " + restaurantSelected);
+        //moving Boxes to help player locations
 
-        //   GameManager.player1Distance = Vector3.Distance(player1RestaurantWayPoint.transform.position, player1ApartmentWayPoint.transform.position);
+        Player1RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
+        Player1ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
+
+        player1WayPoint.transform.position = Player1RestaurantTransform.transform.position;
+
+        RestaurantWaypointTriggerEnter.player1OrderPickedUp = false;
+        RestaurantWaypointTriggerEnter.player1OrderDelivered = false;
+
         StartCoroutine(Waiting());
     }
 

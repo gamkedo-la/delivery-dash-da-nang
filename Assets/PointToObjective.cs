@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PointToObjective : MonoBehaviour
 {
-    public GameObject physicalArrow;
     public GameObject player1WayPointBox;
 
     public bool isPlayer1;
