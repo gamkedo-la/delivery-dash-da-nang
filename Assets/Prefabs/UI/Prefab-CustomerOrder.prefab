@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -571,10 +571,11 @@ MonoBehaviour:
   customerName: 0
   orderText: {fileID: 418377965484148915}
   orderState: {fileID: 418377965205956641}
-  orderHasBeenTaken: 0
   orderCondition: {fileID: 418377964016264065}
   accept: {fileID: 418377964675836635}
   decline: {fileID: 418377964853494590}
+  displayOrdersText: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!1 &418377965484148914
 GameObject:
   m_ObjectHideFlags: 0

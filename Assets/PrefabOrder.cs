@@ -20,12 +20,13 @@ public class PrefabOrder : MonoBehaviour
     public Text orderText;
     public Text orderState;
 
-    public bool orderHasBeenTaken;
+    public static bool orderHasBeenTaken;
     public Image orderCondition;
 
     public GameObject accept, decline, displayOrdersText, gameManager;
 
-    GameObject player1RestaurantWayPoint, player1ApartmentWayPoint, pointer;
+    GameObject player1WayPoint, pointer;
+    Transform Player1RestaurantTransform, Player1ApartmentTransform;
 
     PointToObjective pointToObjectiveScript;
 
@@ -33,12 +34,14 @@ public class PrefabOrder : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager");
         //Debug.Log(gameManager);
+        Player1RestaurantTransform = GameObject.Find("Player1Restaurant").transform;
+        Player1ApartmentTransform = GameObject.Find("Player1Apartment").transform;
 
         restaurantLocations = new Transform[3];
 
         restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
-       // restaurantLocations[1] = GameObject.Find("RamenWayPoint").transform;
-       // restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
+        restaurantLocations[1] = GameObject.Find("RamenWayPoint").transform;
+        restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
 
         apartmentLocations = new Transform[4];
 
@@ -47,8 +50,8 @@ public class PrefabOrder : MonoBehaviour
         apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
         apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
 
-        player1RestaurantWayPoint = GameObject.Find("WayPointBox - Restaurant");
-        player1ApartmentWayPoint = GameObject.Find("WayPointBox - Customer");
+        player1WayPoint = GameObject.Find("WayPointBox - Restaurant");
+       // player1ApartmentWayPoint = GameObject.Find("WayPointBox - Customer");
 
         restaurantSelected = Random.Range(0, restaurantName.Length);
         customerName = Random.Range(0, customerNames.Length);
@@ -60,14 +63,12 @@ public class PrefabOrder : MonoBehaviour
     public void OrderAccepted()
     {
         orderHasBeenTaken = true;
-        accept.SetActive(false);
-        decline.SetActive(true);
         orderCondition.color = Color.green;
 
         pointer = GameObject.Find("Canvas - Display Orders").transform.GetChild(2).gameObject;
         pointer.SetActive(true);
         pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
-        pointToObjectiveScript.customerOrder = gameObject;
+    //    pointToObjectiveScript.customerOrder = gameObject;
         //Debug.Log("restaurant name: " + restaurantName);
 
         
@@ -80,24 +81,24 @@ public class PrefabOrder : MonoBehaviour
         GameManager.Player1CustomerName = customerNames[customerName].ToString();
         GameManager.Player1RestaurantName = restaurantName[restaurantSelected].ToString();
 
-        player1RestaurantWayPoint.transform.position = restaurantLocations[restaurantSelected].transform.position;
-        //Debug.Log("restaurant selected: " + restaurantSelected);
-        
-        player1ApartmentWayPoint.transform.position = apartmentLocations[customerLocation].transform.position;
+        Player1RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
+        Player1ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
 
-        GameManager.player1Distance = Vector3.Distance(player1RestaurantWayPoint.transform.position, player1ApartmentWayPoint.transform.position);
+        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) / 20;
+        RestaurantWaypointTriggerEnter.player1TimeScore = dist;
+        RestaurantWaypointTriggerEnter.player1TimeScoreMax = dist;
+
+        player1WayPoint.transform.position = Player1RestaurantTransform.transform.position;
+
+        RestaurantWaypointTriggerEnter.player1OrderPickedUp = false;
+        RestaurantWaypointTriggerEnter.player1OrderDelivered = false;
+
+        StartCoroutine(Waiting());
     }
 
-    public void OrderDeclined()
+    IEnumerator Waiting()
     {
-        if (orderHasBeenTaken)
-        {
-            orderHasBeenTaken = false;
-            accept.SetActive(true);
-            decline.SetActive(false);
-            orderCondition.color = Color.yellow;
-
-            //pointer.SetActive(false);
-        }
+        yield return new WaitForSeconds(.5f);
+        Destroy(this.gameObject);
     }
 }
