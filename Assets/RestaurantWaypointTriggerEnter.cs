@@ -43,13 +43,15 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     {
         if (PrefabOrder.orderHasBeenTaken && player1OrderPickedUp && player1OrderDelivered)
         {
+            PrefabOrder.orderHasBeenTaken = false;
+            float score = (player1TimeScore / player1TimeScoreMax) * 100;
+            timer.text = score.ToString("F2") + "%";
             food.SetActive(false);
-            print("Order Completed");
             pointer.SetActive(false);
             //Just getting the box out of the way
             this.transform.position = new Vector3(-10000, -10000, -10000);
-            orders.text = "";
-            orders.text = "Press C to check your phone for orders.";
+            orders.text = "Order Completed";
+
             StartCoroutine(Waiting());
         }
 
@@ -58,15 +60,29 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
             player1TimeScore -= Time.deltaTime;
             timer.text = player1TimeScore.ToString("F2");
         }
+
+        if (player1TimeScore < 0)
+        {
+            //Order failed on Time
+            orders.text = "Order Not Delivered in Time. Transaction Cancelled.";
+            float score = (player1TimeScore / player1TimeScoreMax) * 100;
+            timer.text = score.ToString("F2") + "%";
+            PrefabOrder.orderHasBeenTaken = false;
+            food.SetActive(false);
+            this.transform.position = new Vector3(-10000, -10000, -10000);
+            player1TimeScore = 0;
+            pointer.SetActive(false);
+            StartCoroutine(Waiting());
+
+        }
     }
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(1.5f);
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
-        PrefabOrder.orderHasBeenTaken = false;
-        float score = (player1TimeScore / player1TimeScoreMax) * 100;
-        timer.text = score.ToString("F2") + "%";
+
+        orders.text = "Press C to check your phone for orders.";
     }
 }
