@@ -57,7 +57,7 @@ public class MusicManager : MonoBehaviour {
 				nextTrackIndex = Random.Range(0, currentTrack.tracks.Count);
 
 				PlanNextSchedual();
-			} else if (isPlaying && nextTrack == null) {
+			} else if (isPlaying) {
 				if (nextCueIndex >= currentCues.Count) {
 					currentAudioSource = PlayNewClip(currentTrack.tracks[nextTrackIndex].clip, nextCueTime);
 
@@ -88,7 +88,7 @@ public class MusicManager : MonoBehaviour {
 			nextSchedual = startingTime + currentCues[nextCueIndex] - nextTrack.transitions[nextTrackIndex].cues[0] - bufferTime;
 			nextCueTime = startingTime + currentCues[nextCueIndex];
 			nextCueIndex++;
-		} else if (isPlaying && nextTrack == null) {
+		} else if (isPlaying) {
 			nextSchedual = startingTime + currentCues[nextCueIndex] - bufferTime;
 			nextCueTime = startingTime + currentCues[nextCueIndex];
 			nextCueIndex++;
@@ -116,7 +116,7 @@ public class MusicManager : MonoBehaviour {
 		freshSource.PlayScheduled(startTime);
 
 		freshSource.name = clip.name;
-		Destroy(freshSource.gameObject, clip.length + (float)(AudioSettings.dspTime - startTime) + fadeOutTime);
+		Destroy(freshSource.gameObject, clip.length + (float)(startTime - AudioSettings.dspTime) + fadeOutTime);
 
 		return freshSource;
 	}
