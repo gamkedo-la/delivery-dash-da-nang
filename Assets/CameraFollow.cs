@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     private void LateUpdate()
     {
         Vector3 desiredPosition = target[viewWindowCount].transform.position;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed[viewWindowCount]);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed[viewWindowCount]*2);
         transform.position = smoothedPosition;
 
         this.gameObject.transform.LookAt(lookAtTarget[viewWindowCount].transform.position);

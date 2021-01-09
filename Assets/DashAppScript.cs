@@ -15,7 +15,7 @@ public class DashAppScript : MonoBehaviour
     public int customerLocation;
     public int customerName;
 
-    public float OrderDuration = 3f;
+    public float OrderDuration = 10000f;
     public float startingOrderDuration; //used for determining score
     public static float totalTimeRemaining;
 
@@ -33,7 +33,7 @@ public class DashAppScript : MonoBehaviour
 
         if (!GameManager.player1OrderDelivered)
         {
-            totalTimeRemaining = (OrderDuration / distanceBetweenTargetAndDestination) * 4;
+            totalTimeRemaining = (OrderDuration / distanceBetweenTargetAndDestination);
         }
         if (OrderDuration <= 0)
         {

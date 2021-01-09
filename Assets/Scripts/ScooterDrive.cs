@@ -7,16 +7,16 @@ public class ScooterDrive : MonoBehaviour
 {
     //this variable is used to determine how much force to apply to enviornment objects after collision
     public static float playerCurrentSpeed;
-    public static float maxSpeed = 16f;
+    public static float maxSpeed = 80f;
 
     public float currentSpeed;
-    public float forwardSpeed = 8f;
-    public float backwardSpeed = -0.1f;
+    public float forwardSpeed = 100f;
+    public float backwardSpeed = -10.1f;
     public float coastToStopSpeed = 0.35f;
 
     public float currentTurnAngle = 0;
-    public float turnAngleRate = 80f;
-    public float maxTurnAngle = 80f;
+    public float turnAngleRate = 150f;
+    public float maxTurnAngle = 1000f;
 
     public float brakeSpeed = 15f;
 
@@ -152,7 +152,7 @@ public class ScooterDrive : MonoBehaviour
 
     void MoveBikeForwardOrBackward()
     {
-        transform.position += transform.forward * currentSpeed;
+        transform.position += transform.forward * currentSpeed * 3;
     }
 
     void TurnBikeLeftOrRight()
@@ -222,7 +222,7 @@ public class ScooterDrive : MonoBehaviour
         //turns
         if (Input.GetKey(KeyCode.D))
         {
-            bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 10);
+            bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 20);
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z < -0.45f)
             {
@@ -230,7 +230,7 @@ public class ScooterDrive : MonoBehaviour
             }
 
             //Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
+            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal") * 3;
             if (currentTurnAngle > maxTurnAngle)
             {
                 currentTurnAngle = maxTurnAngle;
@@ -239,7 +239,7 @@ public class ScooterDrive : MonoBehaviour
         
         if (Input.GetKey(KeyCode.A))
         {
-            bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 10);
+            bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 20);
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z > 0.45f)
             {
@@ -247,7 +247,7 @@ public class ScooterDrive : MonoBehaviour
             }
 
            // Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal");
+            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal") * 3;
             if (currentTurnAngle < -maxTurnAngle)
             {
                 currentTurnAngle = -maxTurnAngle;
@@ -259,11 +259,11 @@ public class ScooterDrive : MonoBehaviour
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z > 0)
             {
-                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -40);
+                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -60);
             }
             else if (bikeModel.transform.localRotation.z < 0)
             {
-                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 40);
+                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 60);
             }
 
             //Debug.Log("currentTurnAngle: " + currentTurnAngle);
@@ -285,7 +285,7 @@ public class ScooterDrive : MonoBehaviour
         //brake
         if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K)) && Input.GetKey(KeyCode.Space))
         {
-            currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical");
+            currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical") * 3;
             if (currentSpeed < 0)
             {
                 //brakeLights.SetActive(true);
@@ -299,7 +299,7 @@ public class ScooterDrive : MonoBehaviour
         }
         else if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K) ) && !Input.GetKey(KeyCode.Space))
         {
-            currentSpeed += (brakeSpeed/12) * Input.GetAxisRaw("Vertical");
+            currentSpeed += (brakeSpeed/12) * Input.GetAxisRaw("Vertical") * 3;
             brakeLights.SetActive(true);
             if (currentSpeed < 0)
             {
@@ -324,7 +324,7 @@ public class ScooterDrive : MonoBehaviour
         //coasting to stop
         if (Input.GetKey(KeyCode.LeftShift) == false && Input.GetKey(KeyCode.Space) == false && Input.GetKey(KeyCode.S) == false)
         {
-            currentSpeed -= Time.deltaTime * coastToStopSpeed;
+            currentSpeed -= Time.deltaTime * coastToStopSpeed * 2;
             if (currentSpeed < 0)
             {
                 currentSpeed = 0;
