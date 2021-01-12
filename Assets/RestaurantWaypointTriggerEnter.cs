@@ -13,8 +13,10 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     public static float player1TimeScore, player1TimeScoreMax;
 
     public GameObject pointer;
-    public Text orders, timer;
+    public Text  timer;
     public GameObject food, player;
+
+    public Text orders; // UI element that displays orders on the top of the list
 
     float finalScore;
 
@@ -38,6 +40,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                     player1OrderPickedUp = true;
                     orderPickedUpSFX.Play();
                     this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
+                    orders.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";
                 }
             }
         }

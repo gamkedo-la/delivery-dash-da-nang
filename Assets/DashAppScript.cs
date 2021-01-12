@@ -54,7 +54,8 @@ public class DashAppScript : MonoBehaviour
 
             //This is the UI to tell you the order -> Deliver "Product" from "Restaurant" to "CustomerName" at "CustomerLocation"
 
-            orderUI.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " from " + $"<color=green>{GameManager.Player1RestaurantName}</color>" + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";
+            //orderUI.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " from " + $"<color=green>{GameManager.Player1RestaurantName}</color>" + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";
+            orderUI.text = "Get " + GameManager.Player1CustomerItemOrdered + " from " + $"<color=green>{GameManager.Player1RestaurantName}</color>";
         }
 
         //UI
