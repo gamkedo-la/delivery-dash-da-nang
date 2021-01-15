@@ -13,6 +13,8 @@ public class PrefabOrder : MonoBehaviour
     Transform[] restaurantLocations;
     Transform[] apartmentLocations;
 
+    Transform playerLocation;
+
     public int restaurantSelected;
     public int customerLocation;
     public int customerName;
@@ -29,6 +31,8 @@ public class PrefabOrder : MonoBehaviour
     Transform Player1RestaurantTransform, Player1ApartmentTransform;
 
     PointToObjective pointToObjectiveScript;
+    private GraphPathfinding gpsScript;
+    private GraphNode restaurantNode;
 
     private void Start()
     {
@@ -56,6 +60,8 @@ public class PrefabOrder : MonoBehaviour
         restaurantSelected = Random.Range(0, restaurantName.Length);
         customerName = Random.Range(0, customerNames.Length);
         customerLocation = Random.Range(0, apartmentName.Length);
+
+        gpsScript = FindObjectOfType<GraphPathfinding>();
 
         orderText.text = customerNames[customerName].ToString() + " ordered " + orderedItems[restaurantSelected] + " from " + restaurantName[restaurantSelected].ToString() + " to deliver to " + apartmentName[customerLocation].ToString();
     }
@@ -96,12 +102,17 @@ public class PrefabOrder : MonoBehaviour
         RestaurantWaypointTriggerEnter.player1OrderPickedUp = false;
         RestaurantWaypointTriggerEnter.player1OrderDelivered = false;
 
+        playerLocation = FindObjectOfType<ScooterDrive>().transform;
+        Debug.Log(restaurantSelected);
+        restaurantNode = restaurantLocations[restaurantSelected].GetComponent<GraphNode>();
+        gpsScript.FindPath(gpsScript.FindNearestNode(playerLocation), restaurantNode);
+
         StartCoroutine(Waiting());
     }
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
     }
 }

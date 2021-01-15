@@ -36,14 +36,14 @@ public class GraphPathfinding : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             nearestNode = FindNearestNode(playerLocation);
             FindPath(nearestNode, targetNode);
-        }
+        }*/
     }
 
-    void FindPath(GraphNode startNode, GraphNode targetNode)
+    public void FindPath(GraphNode startNode, GraphNode targetNode)
     {
         if(startNode == solvedForStart && targetNode == solvedForTarget)
         {
