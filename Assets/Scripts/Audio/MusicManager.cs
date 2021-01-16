@@ -172,7 +172,7 @@ public class MusicManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator FadeTo(AudioSource source, float newVolume ,float fadeTime) {
+	IEnumerator FadeTo(AudioSource source, float newVolume, float fadeTime) {
 		float startTime = Time.time;
 		float currentTime = 0f;
 		float startVolume = source.volume;
