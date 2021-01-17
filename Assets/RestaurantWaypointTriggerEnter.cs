@@ -20,6 +20,15 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
     float finalScore;
 
+    private GraphPathfinding gpsScript;
+    private GraphNode customerNode;
+    private GraphNode nodeNearestToPlayer;
+
+    private void Start()
+    {
+        gpsScript = FindObjectOfType<GraphPathfinding>();
+    }
+
     private void OnTriggerStay(Collider other)
     {
 
@@ -33,6 +42,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                     player1OrderDelivered = true;
                     chachingSFX.Play();
                     GameManager.Player1OrderSelected = false;
+
                 }
 
                 if (!player1OrderPickedUp && player.GetComponent<ScooterDrive>().currentSpeed == 0)
@@ -41,6 +51,9 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                     orderPickedUpSFX.Play();
                     this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
                     orders.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";
+                    customerNode = gpsScript.FindNearestNode(gameObject.transform);
+                    nodeNearestToPlayer = gpsScript.FindNearestNode(player.transform);
+                    gpsScript.FindPath(nodeNearestToPlayer, customerNode);
                 }
             }
         }

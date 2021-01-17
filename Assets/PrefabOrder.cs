@@ -103,7 +103,6 @@ public class PrefabOrder : MonoBehaviour
         RestaurantWaypointTriggerEnter.player1OrderDelivered = false;
 
         playerLocation = FindObjectOfType<ScooterDrive>().transform;
-        Debug.Log(restaurantSelected);
         restaurantNode = restaurantLocations[restaurantSelected].GetComponent<GraphNode>();
         gpsScript.FindPath(gpsScript.FindNearestNode(playerLocation), restaurantNode);
 
