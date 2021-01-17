@@ -17,6 +17,10 @@ public class ScooterDrive : MonoBehaviour
     public float currentTurnAngle = 0;
     public float turnAngleRate = 150f;
     public float maxTurnAngle = 1000f;
+    public float bikeTiltAngle = 0.45f;
+    public float bikeStraightenSpeed = 60f;
+    public float bikeMaxTiltAngle = 0.02f;
+    public float bikeCrashWithAICarBumbForce = 5.0f;
 
     public float brakeSpeed = 15f;
 
@@ -44,6 +48,10 @@ public class ScooterDrive : MonoBehaviour
     public GameObject physicalOrder;
 
     public GameObject TotalScore, star1, star2, star3, star4, star5;
+    public double star2threshold = .2;
+    public double star3threshold = .4;
+    public double star4threshold = .6;
+    public double star5threshold = .8;
     public RatingsManager ratingsManager;
 
     public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource;
@@ -224,9 +232,9 @@ public class ScooterDrive : MonoBehaviour
         {
             bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 20);
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            if (bikeModel.transform.localRotation.z < -0.45f)
+            if (bikeModel.transform.localRotation.z < -bikeTiltAngle)
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, -0.45f);
+                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, -bikeTiltAngle);
             }
 
             //Debug.Log("currentTurnAngle: " + currentTurnAngle);
@@ -241,9 +249,9 @@ public class ScooterDrive : MonoBehaviour
         {
             bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 20);
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            if (bikeModel.transform.localRotation.z > 0.45f)
+            if (bikeModel.transform.localRotation.z > bikeTiltAngle)
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.45f);
+                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, bikeTiltAngle);
             }
 
            // Debug.Log("currentTurnAngle: " + currentTurnAngle);
@@ -259,15 +267,15 @@ public class ScooterDrive : MonoBehaviour
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z > 0)
             {
-                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -60);
+                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -bikeStraightenSpeed);
             }
             else if (bikeModel.transform.localRotation.z < 0)
             {
-                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 60);
+                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * bikeStraightenSpeed);
             }
 
             //Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            if ( bikeModel.transform.localRotation.z < 0.02 && bikeModel.transform.localRotation.z > -0.02 )
+            if ( bikeModel.transform.localRotation.z < bikeMaxTiltAngle && bikeModel.transform.localRotation.z > -bikeMaxTiltAngle)
             {
                 //Debug.Log("local rotation being manipulated");
                 // bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.0f);
@@ -365,7 +373,7 @@ public class ScooterDrive : MonoBehaviour
         {
             print("playerFallsOffBike");
             currentSpeed = 0;
-            playerModel.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
+            playerModel.GetComponent<Rigidbody>().AddForce(transform.up * bikeCrashWithAICarBumbForce, ForceMode.Impulse);
             canBeCollided = false;
             StartCoroutine(FallingOffBike());
         }
@@ -390,27 +398,27 @@ public class ScooterDrive : MonoBehaviour
                 
                 //total score added to macrototal score
                 TotalScore.SetActive(true);
-                if (GameManager.player1ScoreOnOrder < .2)
+                if (GameManager.player1ScoreOnOrder < star2threshold)
                 {
                     star1.SetActive(true);
                     starsAwarded++;
                 }
-                if (GameManager.player1ScoreOnOrder < .4)
+                if (GameManager.player1ScoreOnOrder < star3threshold)
                 {
                     star2.SetActive(true);
                     starsAwarded++;
                 }
-                if (GameManager.player1ScoreOnOrder < .6)
+                if (GameManager.player1ScoreOnOrder < star4threshold)
                 {
                     star3.SetActive(true);
                     starsAwarded++;
                 }
-                if (GameManager.player1ScoreOnOrder < .8)
+                if (GameManager.player1ScoreOnOrder < star5threshold)
                 {
                     star4.SetActive(true);
                     starsAwarded++;
                 }
-                if (GameManager.player1ScoreOnOrder > .8)
+                if (GameManager.player1ScoreOnOrder > star5threshold)
                 {
                     star5.SetActive(true);
                     starsAwarded++;
