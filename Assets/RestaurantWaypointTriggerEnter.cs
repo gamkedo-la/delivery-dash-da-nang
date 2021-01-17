@@ -42,7 +42,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                     player1OrderDelivered = true;
                     chachingSFX.Play();
                     GameManager.Player1OrderSelected = false;
-
+                    gpsScript.ClearPath();
                 }
 
                 if (!player1OrderPickedUp && player.GetComponent<ScooterDrive>().currentSpeed == 0)

@@ -159,4 +159,9 @@ public class GraphPathfinding : MonoBehaviour
 
         
     }
+
+    public void ClearPath()
+    {
+        path.Clear();
+    }
 }
