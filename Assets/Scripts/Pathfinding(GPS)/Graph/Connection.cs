@@ -4,8 +4,9 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Connection : MonoBehaviour
 {
-
+    [HideInInspector]
     public GraphNode nodeA;
+
     public GraphNode nodeB;
     public GraphPathfinding graphPathfinding;
 
