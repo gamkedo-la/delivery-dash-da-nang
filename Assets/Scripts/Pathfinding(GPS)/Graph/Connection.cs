@@ -33,6 +33,10 @@ public class Connection : MonoBehaviour
         {
             gameObject.name = ("Connection " + nodeA.name + "-" + nodeB.name);
         }
+        else
+        {
+            gameObject.name = "null connection";
+        }
     }
 
 }
