@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
 
         //This is for testing, remove later
-        player1ScoreTotal = Random.Range(0, 100);
+      //  player1ScoreTotal = Random.Range(0, 100);
         player2ScoreTotal = Random.Range(0, 100);
         player3ScoreTotal = Random.Range(0, 100);
         player4ScoreTotal = Random.Range(0, 100);
