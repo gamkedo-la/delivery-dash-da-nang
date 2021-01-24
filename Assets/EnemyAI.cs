@@ -17,6 +17,8 @@ public class EnemyAI : MonoBehaviour
     public NavMeshAgent agent;
     float dist;
 
+    public GameObject target;
+
     void Start() {
 
         Restaurants = new Transform[3];
@@ -38,32 +40,38 @@ public class EnemyAI : MonoBehaviour
     {
         if (!orderSelected)
         {
-            int Rselection = Random.Range(0, Restaurants.Length);
-            int Aselection = Random.Range(0, Apartments.Length);
+            int Rselection = Random.Range(0, Restaurants.Length -1);
+            int Aselection = Random.Range(0, Apartments.Length - 1);
 
             restaurantToGoTo = Restaurants[Rselection];
             apartmentToGoTo = Apartments[Aselection];
             orderSelected = true;
 
+            print(Restaurants[Rselection].transform.position);
+            print(Apartments[Aselection].transform.position);
+            Vector3 offset = new Vector3(0, -3, 0);
+            target.transform.position = restaurantToGoTo.transform.position + offset;
             TravelToRestaurant();
         }
     }
 
     void TravelToRestaurant() {
-        agent.destination = restaurantToGoTo.transform.position;
+        agent.destination = target.transform.position;
         dist = agent.remainingDistance;
-        if (dist <= 2)
+        if (dist <= 3f)
         {
             print("Order PickedUp");
+            Vector3 offset = new Vector3(0, -3, 0);
+            target.transform.position = apartmentToGoTo.transform.position + offset;
             TravelToApartment();
         }
     }
 
     void TravelToApartment()
     {
-        agent.destination = apartmentToGoTo.transform.position;
+        agent.destination = target.transform.position;
         dist = agent.remainingDistance;
-        if (dist <= 2)
+        if (dist <= 3f)
         {
             print("Order Completed");
             Waiting();
