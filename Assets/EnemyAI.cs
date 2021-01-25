@@ -13,13 +13,21 @@ public class EnemyAI : MonoBehaviour
     Transform restaurantToGoTo;
 
     bool orderSelected;
+    bool orderPickedUp;
+    bool orderDelivered;
 
     public NavMeshAgent agent;
     float dist;
 
     public GameObject target;
 
+    Rigidbody rb;
+    Vector3 previousPosition;
+    float curSpeed;
+
     void Start() {
+
+        rb = GetComponent<Rigidbody>(); 
 
         Restaurants = new Transform[3];
 
@@ -53,34 +61,52 @@ public class EnemyAI : MonoBehaviour
             target.transform.position = restaurantToGoTo.transform.position + offset;
             TravelToRestaurant();
         }
+
+        Vector3 curMove = transform.position - previousPosition;
+        curSpeed = curMove.magnitude / Time.deltaTime;
+        previousPosition = transform.position;
     }
 
     void TravelToRestaurant() {
         agent.destination = target.transform.position;
-        dist = agent.remainingDistance;
-        if (dist <= 3f)
-        {
-            print("Order PickedUp");
-            Vector3 offset = new Vector3(0, -3, 0);
-            target.transform.position = apartmentToGoTo.transform.position + offset;
-            TravelToApartment();
-        }
+        dist = Vector3.Distance(agent.transform.position, target.transform.position);
     }
 
     void TravelToApartment()
     {
         agent.destination = target.transform.position;
-        dist = agent.remainingDistance;
-        if (dist <= 3f)
-        {
-            print("Order Completed");
-            Waiting();
-        }
+        dist = Vector3.Distance(agent.transform.position, target.transform.position);
     }
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(Random.Range(0,5));
+        yield return new WaitForSeconds(Random.Range(3,5));
+        orderPickedUp = false;
         orderSelected = false;
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "AITarget")
+        {
+            if (curSpeed <= .01f)
+            {
+                if (!orderPickedUp)
+                {
+                    print("Order PickedUp");
+                    Vector3 offset = new Vector3(0, -3, 0);
+                    target.transform.position = apartmentToGoTo.transform.position + offset;
+                    TravelToApartment();
+                    orderPickedUp = true;
+                }
+
+                else
+                {
+                    print("Order Delivered");
+                    StartCoroutine(Waiting());
+                    Vector3 offset = new Vector3(0, -3, 0);
+                }
+            }
+        }
     }
 }
