@@ -25,6 +25,8 @@ public class EnemyAI : MonoBehaviour
     Vector3 previousPosition;
     float curSpeed;
 
+    public GameObject toGoBox;
+
     void Start() {
 
         rb = GetComponent<Rigidbody>(); 
@@ -94,6 +96,7 @@ public class EnemyAI : MonoBehaviour
                 if (!orderPickedUp)
                 {
                     print("Order PickedUp");
+                    toGoBox.SetActive(true);
                     Vector3 offset = new Vector3(0, -3, 0);
                     target.transform.position = apartmentToGoTo.transform.position + offset;
                     TravelToApartment();
@@ -103,6 +106,7 @@ public class EnemyAI : MonoBehaviour
                 else
                 {
                     print("Order Delivered");
+                    toGoBox.SetActive(false);
                     StartCoroutine(Waiting());
                     Vector3 offset = new Vector3(0, -3, 0);
                 }
