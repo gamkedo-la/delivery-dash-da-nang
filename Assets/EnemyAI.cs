@@ -27,6 +27,8 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject toGoBox;
 
+    float orderScore;
+
     void Start() {
 
         rb = GetComponent<Rigidbody>(); 
@@ -57,12 +59,26 @@ public class EnemyAI : MonoBehaviour
             apartmentToGoTo = Apartments[Aselection];
             orderSelected = true;
 
-            print(Restaurants[Rselection].transform.position);
-            print(Apartments[Aselection].transform.position);
+            orderScore = 100;
+
             Vector3 offset = new Vector3(0, -3, 0);
             target.transform.position = restaurantToGoTo.transform.position + offset;
             TravelToRestaurant();
         }
+
+        if (orderSelected)
+        {
+            orderScore -= Time.deltaTime;
+        }
+
+        //if(orderScore<= 0)
+        //{ 
+        // cancel the order
+        // score = 0
+        // bools are reset to false
+        // waiting for 3-5 seconds
+        // new order is selected
+        //}
 
         Vector3 curMove = transform.position - previousPosition;
         curSpeed = curMove.magnitude / Time.deltaTime;
@@ -106,6 +122,8 @@ public class EnemyAI : MonoBehaviour
                 else
                 {
                     print("Order Delivered");
+                    //AddScoreToGameManagerTotal
+                    //OrderScore = 0;
                     toGoBox.SetActive(false);
                     StartCoroutine(Waiting());
                     Vector3 offset = new Vector3(0, -3, 0);
