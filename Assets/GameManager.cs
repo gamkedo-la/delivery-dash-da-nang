@@ -30,11 +30,45 @@ public class GameManager : MonoBehaviour
     public Text TimeUI;
     public GameObject RoundOverObject, restuarantWaypointBox, pointer, displayOrdersText;
 
+    public bool easy, medium, hard;
+    public static bool Easy, Medium, Hard;
+
+    public GameObject Enemy2, Enemy3, Enemy4;
+
     private void Start()
     {
+        if (easy)
+        {
+            Easy = true;
+            Medium = false;
+            Hard = false;
+        }
+
+        if (medium)
+        {
+            Easy = false;
+            Medium = true;
+            Hard = false;
+
+            Enemy2.GetComponent<EnemyAI>().enabled = false;
+            Enemy3.GetComponent<EnemyAI>().enabled = false;
+            Enemy4.GetComponent<EnemyAI>().enabled = false;
+        }
+
+        if (hard)
+        {
+            Easy = false;
+            Medium = false;
+            Hard = true;
+
+            Enemy2.GetComponent<EnemyAI>().enabled = false;
+            Enemy3.GetComponent<EnemyAI>().enabled = false;
+            Enemy4.GetComponent<EnemyAI>().enabled = false;
+        }
+
 
         //This is for testing, remove later
-      //  player1ScoreTotal = Random.Range(0, 100);
+        //  player1ScoreTotal = Random.Range(0, 100);
         player2ScoreTotal = Random.Range(0, 100);
         player3ScoreTotal = Random.Range(0, 100);
         player4ScoreTotal = Random.Range(0, 100);
