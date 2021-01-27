@@ -29,4 +29,16 @@ public class PhoneScript : MonoBehaviour
         HomeScreen.SetActive(true);
         RatingsScreen.SetActive(false);
     }
+
+    public void GPSButtonPressed()
+    {
+        HomeScreen.SetActive(false);
+        GPSMenu.SetActive(true);
+    }
+
+    public void GPSButtonBack()
+    {
+        GPSMenu.SetActive(false);
+        HomeScreen.SetActive(true);
+    }
 }
