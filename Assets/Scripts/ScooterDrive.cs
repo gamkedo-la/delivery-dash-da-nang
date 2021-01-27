@@ -17,7 +17,12 @@ public class ScooterDrive : MonoBehaviour
     public float currentTurnAngle = 0;
     public float turnAngleRate = 150f;
     public float maxTurnAngle = 1000f;
-    public float bikeTiltAngle = 0.45f;
+
+    public float maxTiltAngle = 45f;
+    public float currentBikeTiltAngle = 0.0f;
+    bool maxRightTurnHeld = false;
+    bool maxLeftTurnHeld = false;
+
     public float bikeStraightenSpeed = 60f;
     public float bikeMaxTiltAngle = 0.02f;
     public float bikeCrashWithAICarBumbForce = 5.0f;
@@ -231,12 +236,23 @@ public class ScooterDrive : MonoBehaviour
         //turns
         if (Input.GetKey(KeyCode.D))
         {
-            bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 20);
-            //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            if (bikeModel.transform.localRotation.z < -bikeTiltAngle)
+            if (maxLeftTurnHeld || maxRightTurnHeld)
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, -bikeTiltAngle);
+                return;
             }
+
+            //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
+            //Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
+
+            currentBikeTiltAngle = bikeModel.transform.localRotation.z;
+            if (currentBikeTiltAngle < (-maxTiltAngle*10))
+            {
+                Debug.Log("currentBikeTiltAngle: " + currentBikeTiltAngle);
+                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle*100);
+                maxRightTurnHeld = true;
+            }
+
+            bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 20);
 
             //Debug.Log("currentTurnAngle: " + currentTurnAngle);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal") * 3;
@@ -248,14 +264,25 @@ public class ScooterDrive : MonoBehaviour
         
         if (Input.GetKey(KeyCode.A))
         {
-            bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 20);
-            //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            if (bikeModel.transform.localRotation.z > bikeTiltAngle)
+            if (maxLeftTurnHeld || maxRightTurnHeld)
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, bikeTiltAngle);
+                return;
             }
 
-           // Debug.Log("currentTurnAngle: " + currentTurnAngle);
+            //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
+            //Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
+
+            currentBikeTiltAngle = bikeModel.transform.localRotation.z;
+            if (currentBikeTiltAngle > (maxTiltAngle * 10))
+            {
+                Debug.Log("currentBikeTiltAngle: " + currentBikeTiltAngle);
+                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle * 100);
+                maxLeftTurnHeld = true;
+            }
+
+            bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 20);
+
+            // Debug.Log("currentTurnAngle: " + currentTurnAngle);
             currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal") * 3;
             if (currentTurnAngle < -maxTurnAngle)
             {
@@ -264,6 +291,9 @@ public class ScooterDrive : MonoBehaviour
         }
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
+            maxRightTurnHeld = false;
+            maxLeftTurnHeld = false;
+
             currentTurnAngle = 0;
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
             if (bikeModel.transform.localRotation.z > 0)
