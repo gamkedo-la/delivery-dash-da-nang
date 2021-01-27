@@ -38,6 +38,15 @@ public class PrefabOrder : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager");
         //Debug.Log(gameManager);
+        GameObject masterKeyWaypoint = GameObject.Find("Player1Restaurant");
+
+        if (masterKeyWaypoint == null)
+        {
+            Debug.Log("masterKeyWaypoint not found, bailing on prefab orders");
+            this.enabled = false;
+            return;
+        }
+
         Player1RestaurantTransform = GameObject.Find("Player1Restaurant").transform;
         Player1ApartmentTransform = GameObject.Find("Player1Apartment").transform;
 
