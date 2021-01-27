@@ -27,7 +27,11 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject toGoBox;
 
-    float orderScore;
+    public float orderScore;
+
+    public bool enemy2, enemy3, enemy4;
+
+    public float enemyScore;
 
     void Start() {
 
@@ -71,14 +75,12 @@ public class EnemyAI : MonoBehaviour
             orderScore -= Time.deltaTime;
         }
 
-        //if(orderScore<= 0)
-        //{ 
-        // cancel the order
-        // score = 0
-        // bools are reset to false
-        // waiting for 3-5 seconds
-        // new order is selected
-        //}
+        if(orderScore<= 0)
+        {
+            // cancel the order if you have taken too long
+            toGoBox.SetActive(false);
+            StartCoroutine(Waiting());
+        }
 
         Vector3 curMove = transform.position - previousPosition;
         curSpeed = curMove.magnitude / Time.deltaTime;
@@ -107,7 +109,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (other.tag == "AITarget")
         {
-            if (curSpeed <= .01f)
+            if (curSpeed <= 1f)
             {
                 if (!orderPickedUp)
                 {
@@ -122,8 +124,24 @@ public class EnemyAI : MonoBehaviour
                 else
                 {
                     print("Order Delivered");
-                    //AddScoreToGameManagerTotal
-                    //OrderScore = 0;
+
+                    if (enemy2)
+                    {
+                        GameManager.enemy2ScoreTotal += orderScore;
+                        orderScore = 0;
+                    }
+                    else if (enemy3)
+                    {
+                        GameManager.enemy3ScoreTotal += orderScore;
+                        orderScore = 0;
+                    }
+                    else if (enemy4)
+                    {
+                        GameManager.enemy4ScoreTotal += orderScore;
+                        orderScore = 0;
+                    }
+                    enemyScore += orderScore;
+
                     toGoBox.SetActive(false);
                     StartCoroutine(Waiting());
                     Vector3 offset = new Vector3(0, -3, 0);
