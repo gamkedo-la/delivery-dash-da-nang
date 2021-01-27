@@ -67,12 +67,22 @@ public class EnemyAI : MonoBehaviour
 
             Vector3 offset = new Vector3(0, -3, 0);
             target.transform.position = restaurantToGoTo.transform.position + offset;
-            TravelToRestaurant();
+
         }
 
         if (orderSelected)
         {
             orderScore -= Time.deltaTime;
+        }
+
+        if (orderSelected && !orderPickedUp)
+        {
+            TravelToRestaurant();
+        }
+
+        if(orderPickedUp && orderSelected)
+        {
+            TravelToApartment();
         }
 
         if(orderScore<= 0)
@@ -114,10 +124,9 @@ public class EnemyAI : MonoBehaviour
                 if (!orderPickedUp)
                 {
                     print("Order PickedUp");
-                    toGoBox.SetActive(true);
                     Vector3 offset = new Vector3(0, -3, 0);
                     target.transform.position = apartmentToGoTo.transform.position + offset;
-                    TravelToApartment();
+                    toGoBox.SetActive(true);
                     orderPickedUp = true;
                 }
 
