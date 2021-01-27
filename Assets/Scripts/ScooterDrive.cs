@@ -174,6 +174,7 @@ public class ScooterDrive : MonoBehaviour
 
     void HandleControlKeys()
     {
+        Debug.Log("HandleControlKeys reached");
         //forward and backwards
         if (Input.GetKey(KeyCode.Space))
         {
