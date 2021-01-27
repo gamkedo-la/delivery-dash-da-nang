@@ -1,0 +1,33 @@
+{
+    "name": "Player Controls",
+    "maps": [
+        {
+            "name": "Game Play",
+            "id": "0610ce19-76bd-47ba-8b24-669820581245",
+            "actions": [
+                {
+                    "name": "Accelerate",
+                    "type": "Button",
+                    "id": "6d33f34e-d35b-4997-b4fc-87d157f617ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "142ec0fc-caf0-4c47-a734-80151827d5b6",
+                    "path": "<HID::Logitech Logitech Dual Action>/button2",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

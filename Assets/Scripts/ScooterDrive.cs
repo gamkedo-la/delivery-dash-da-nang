@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class ScooterDrive : MonoBehaviour
 {
+
+    PlayerControls controls;
+
     //this variable is used to determine how much force to apply to enviornment objects after collision
     public static float playerCurrentSpeed;
     public static float maxSpeed = 80f;
@@ -66,6 +70,23 @@ public class ScooterDrive : MonoBehaviour
     bool canBeCollided;
     public float collisionPercent;
     public GameObject bike, playerModel;
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+
+        controls.GamePlay.Accelerate.performed += context => accelerate();
+    }
+
+    private void OnEnable()
+    {
+        controls.GamePlay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.GamePlay.Disable();
+    }
 
     void Start()
     {
@@ -174,6 +195,33 @@ public class ScooterDrive : MonoBehaviour
         {
             transform.Rotate(Vector3.up, currentTurnAngle);
             
+        }
+    }
+
+    void accelerate()
+    {
+        Debug.Log("accelerate function reached");
+
+        currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
+        if (currentSpeed > maxSpeed)
+        {
+            currentSpeed = maxSpeed;
+            //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
+            //{
+
+            //if (bikeTopSpeedAudioSource.isPlaying == false)
+            //{
+            //     bikeAccelleratingAudioSource.Stop();
+            //     bikeTopSpeedAudioSource.Play();
+            // }
+
+            //}
+        }
+
+        if (!bikeAccelleratingAudioSource.isPlaying && currentSpeed < maxSpeed)
+        {
+            bikeIdleAudioSource.Stop();
+            bikeAccelleratingAudioSource.Play();
         }
     }
 
