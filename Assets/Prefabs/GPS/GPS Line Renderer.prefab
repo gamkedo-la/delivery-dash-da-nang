@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2819259993148379523}
   - component: {fileID: 2819259993148379522}
   - component: {fileID: 2819259993148379521}
-  m_Layer: 5
+  m_Layer: 14
   m_Name: GPS Line Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 5
     widthCurve:
       serializedVersion: 2
       m_Curve:
