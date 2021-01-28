@@ -124,13 +124,12 @@ public class EnemyAI : MonoBehaviour
                 if (!orderPickedUp)
                 {
                     print("Order PickedUp");
-                    Vector3 offset = new Vector3(0, -3, 0);
-                    target.transform.position = apartmentToGoTo.transform.position + offset;
+                    target.transform.position = apartmentToGoTo.transform.position;
                     toGoBox.SetActive(true);
                     orderPickedUp = true;
                 }
 
-                else
+                if(orderPickedUp)
                 {
                     print("Order Delivered");
 

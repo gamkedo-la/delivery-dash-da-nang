@@ -45,11 +45,12 @@ public class GraphPathfinding : MonoBehaviour
 
     public void FindPath(GraphNode startNode, GraphNode targetNode)
     {
+        Debug.Log("Starting Find Path");
         if(startNode == solvedForStart && targetNode == solvedForTarget)
         {
             return;
         }
-
+        Debug.Log("Actuallty starting");
         List<GraphNode> openSet = new List<GraphNode>();
         List<GraphNode> closedSet = new List<GraphNode>();
         //openSet := {start}
@@ -122,6 +123,7 @@ public class GraphPathfinding : MonoBehaviour
         }
         path.Add(startNode);
         path.Reverse();
+        Debug.Log(path);
     }
 
     private void OnDrawGizmos()

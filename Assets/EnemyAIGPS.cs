@@ -29,6 +29,10 @@ public class EnemyAIGPS : MonoBehaviour
 
     GraphPathfinding graphPathfinding;
 
+    public List<Vector3> activePath;
+    public int currentPathNode = 0;
+
+
     void Start()
     {
 
@@ -38,16 +42,16 @@ public class EnemyAIGPS : MonoBehaviour
 
         Restaurants = new Transform[3];
 
-        Restaurants[0] = GameObject.Find("HannahsWayPoint").transform;
-        Restaurants[1] = GameObject.Find("RamenWayPoint").transform;
-        Restaurants[2] = GameObject.Find("SushiWayPoint").transform;
+    //    Restaurants[0] = GameObject.Find("HannahsWayPoint").transform;
+    //    Restaurants[1] = GameObject.Find("RamenWayPoint").transform;
+        Restaurants[0] = GameObject.Find("SushiWayPoint").transform;
 
         Apartments = new Transform[4];
 
-        Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
-        Apartments[1] = GameObject.Find("SeasandWayPoint").transform;
-        Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
-        Apartments[3] = GameObject.Find("Halina WayPoint").transform;
+     //   Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
+       Apartments[0] = GameObject.Find("SeasandWayPoint").transform;
+      //  Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
+      //  Apartments[3] = GameObject.Find("Halina WayPoint").transform;
     }
 
 
@@ -55,8 +59,8 @@ public class EnemyAIGPS : MonoBehaviour
     {
         if (!orderSelected)
         {
-            int Rselection = Random.Range(0, Restaurants.Length - 1);
-            int Aselection = Random.Range(0, Apartments.Length - 1);
+            int Rselection = 0;//Random.Range(0, Restaurants.Length);
+            int Aselection = 0; //Random.Range(0, Apartments.Length);
 
             restaurantToGoTo = Restaurants[Rselection];
             apartmentToGoTo = Apartments[Aselection];
@@ -72,6 +76,15 @@ public class EnemyAIGPS : MonoBehaviour
         if (orderSelected)
         {
             orderScore -= Time.deltaTime;
+            if (onValidPath())
+            {
+                float distToNext = Vector3.Distance(activePath[currentPathNode], transform.position);
+                if (distToNext < 10)
+                {
+                    currentPathNode++;
+                    NextPathStep();
+                }
+            }
         }
 
         //if(orderScore<= 0)
@@ -94,16 +107,52 @@ public class EnemyAIGPS : MonoBehaviour
         graphPathfinding.FindPath(graphPathfinding.FindNearestNode(restaurantToGoTo.transform), graphPathfinding.FindNearestNode(this.gameObject.transform));
         Debug.Log(graphPathfinding.FindNearestNode(target.transform));
         Debug.Log(graphPathfinding.FindNearestNode(this.gameObject.transform));
-        float step = .000010f * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(target.transform.position, this.gameObject.transform.position, step);
-        //agent.destination = target.transform.position;
+
+        currentPathNode = 0;
+        activePath = new List<Vector3>();
+
+        activePath.Add(restaurantToGoTo.transform.position);
+
+        for (int i = 0; i < graphPathfinding.path.Count; i++)
+        {
+            activePath.Add(graphPathfinding.path[i].transform.position);
+        }
+
+        activePath.Add(this.gameObject.transform.position);
+
+     //   float step = .000010f * Time.deltaTime;
+     //   transform.position = Vector3.MoveTowards(target.transform.position, this.gameObject.transform.position, step);
+        agent.destination = activePath[currentPathNode];
         //dist = Vector3.Distance(agent.transform.position, target.transform.position);
     }
 
-    void TravelToApartment()
+    private void OnDrawGizmos()
     {
-        agent.destination = target.transform.position;
-        dist = Vector3.Distance(agent.transform.position, target.transform.position);
+        if (onValidPath())
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, activePath[currentPathNode]);
+            Gizmos.color = Color.red;
+            for (int i = 0; i < activePath.Count-1; i++)
+            {
+                Gizmos.DrawLine(activePath[i], activePath[i + 1]);
+            }
+        }
+    }
+
+    bool onValidPath()
+    {
+        return activePath != null && activePath.Count > 0 && currentPathNode < activePath.Count;
+    }
+
+
+    void NextPathStep()
+    {
+        if (onValidPath())
+        {
+            agent.destination = activePath[currentPathNode];
+            dist = Vector3.Distance(agent.transform.position, target.transform.position);
+        }
     }
 
     IEnumerator Waiting()
@@ -117,7 +166,7 @@ public class EnemyAIGPS : MonoBehaviour
     {
         if (other.tag == "AITarget")
         {
-            if (curSpeed <= .01f)
+            if (curSpeed <= 5)
             {
                 if (!orderPickedUp)
                 {
@@ -125,7 +174,7 @@ public class EnemyAIGPS : MonoBehaviour
                     toGoBox.SetActive(true);
                     Vector3 offset = new Vector3(0, -3, 0);
                     target.transform.position = apartmentToGoTo.transform.position + offset;
-                    TravelToApartment();
+                    NextPathStep();
                     orderPickedUp = true;
                 }
 
