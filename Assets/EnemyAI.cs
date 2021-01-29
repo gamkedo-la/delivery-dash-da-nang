@@ -64,7 +64,6 @@ public class EnemyAI : MonoBehaviour
         apartmentToGoTo = Apartments[Aselection];
         orderSelected = true;
 
-        orderScore = 100;
         target.transform.position = restaurantToGoTo.transform.position;
     }
 
@@ -128,7 +127,9 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(Random.Range(3,5));
+        yield return new WaitForSeconds(3);
+
+        orderScore = 100;
         ChooseAnOrder();
     }
 
@@ -137,6 +138,36 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(1);
         toGoBox.SetActive(true);
         orderPickedUp = true;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "AITarget")
+        {
+            if (orderPickedUp)
+            {
+                target.transform.position = new Vector3(-10000, -10000, -10000);
+                print("Order Delivered");
+
+                if (enemy2)
+                {
+                    GameManager.enemy2ScoreTotal += orderScore;
+                    orderScore = 0;
+                }
+                else if (enemy3)
+                {
+                    GameManager.enemy3ScoreTotal += orderScore;
+                    orderScore = 0;
+                }
+                else if (enemy4)
+                {
+                    GameManager.enemy4ScoreTotal += orderScore;
+                    orderScore = 0;
+                }
+                toGoBox.SetActive(false);
+                StartCoroutine(Waiting());
+            }
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -150,32 +181,7 @@ public class EnemyAI : MonoBehaviour
                     print("Order PickedUp");
                     target.transform.position = apartmentToGoTo.transform.position;
                     StartCoroutine(Waiting2());
-                }
-
-                if(orderPickedUp)
-                {
-                    print("Order Delivered");
-
-                    if (enemy2)
-                    {
-                        GameManager.enemy2ScoreTotal += orderScore;
-                        orderScore = 0;
-                    }
-                    else if (enemy3)
-                    {
-                        GameManager.enemy3ScoreTotal += orderScore;
-                        orderScore = 0;
-                    }
-                    else if (enemy4)
-                    {
-                        GameManager.enemy4ScoreTotal += orderScore;
-                        orderScore = 0;
-                    }
-                    enemyScore += orderScore;
-                    target.transform.position = new Vector3(-10000, -10000, -10000);
-                    toGoBox.SetActive(false);
-                    StartCoroutine(Waiting());
-                }
+                }                
             }
         }
     }
