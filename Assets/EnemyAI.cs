@@ -49,40 +49,58 @@ public class EnemyAI : MonoBehaviour
         Apartments[1] = GameObject.Find("SeasandWayPoint").transform;
         Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
         Apartments[3] = GameObject.Find("Halina WayPoint").transform;
+        ChooseAnOrder();
+    }
+
+    void ChooseAnOrder()
+    {
+        orderPickedUp = false;
+        orderSelected = false;
+
+        int Rselection = Random.Range(0, Restaurants.Length - 1);
+        int Aselection = Random.Range(0, Apartments.Length - 1);
+
+        restaurantToGoTo = Restaurants[Rselection];
+        apartmentToGoTo = Apartments[Aselection];
+        orderSelected = true;
+
+        orderScore = 100;
+        target.transform.position = restaurantToGoTo.transform.position;
     }
 
 
     void Update()
     {
-        if (!orderSelected)
+        if (enemy2)
         {
-            int Rselection = Random.Range(0, Restaurants.Length -1);
-            int Aselection = Random.Range(0, Apartments.Length - 1);
-
-            restaurantToGoTo = Restaurants[Rselection];
-            apartmentToGoTo = Apartments[Aselection];
-            orderSelected = true;
-
-            orderScore = 100;
-
-            Vector3 offset = new Vector3(0, -3, 0);
-            target.transform.position = restaurantToGoTo.transform.position + offset;
-
+            enemyScore = GameManager.enemy2ScoreTotal;
         }
+        else if (enemy3)
+        {
+            enemyScore = GameManager.enemy3ScoreTotal;
+        }
+        else if (enemy4)
+        {
+            enemyScore = GameManager.enemy4ScoreTotal;
+        }
+
+
 
         if (orderSelected)
         {
             orderScore -= Time.deltaTime;
         }
 
-        if (orderSelected && !orderPickedUp)
+        if (orderSelected)
         {
-            TravelToRestaurant();
-        }
-
-        if(orderPickedUp && orderSelected)
-        {
-            TravelToApartment();
+            if (!orderPickedUp)
+            {
+                TravelToRestaurant();
+            }
+            if (orderPickedUp)
+            {
+                TravelToApartment();
+            }
         }
 
         if(orderScore<= 0)
@@ -111,8 +129,14 @@ public class EnemyAI : MonoBehaviour
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(Random.Range(3,5));
-        orderPickedUp = false;
-        orderSelected = false;
+        ChooseAnOrder();
+    }
+
+    IEnumerator Waiting2()
+    {
+        yield return new WaitForSeconds(1);
+        toGoBox.SetActive(true);
+        orderPickedUp = true;
     }
 
     void OnTriggerStay(Collider other)
@@ -125,8 +149,7 @@ public class EnemyAI : MonoBehaviour
                 {
                     print("Order PickedUp");
                     target.transform.position = apartmentToGoTo.transform.position;
-                    toGoBox.SetActive(true);
-                    orderPickedUp = true;
+                    StartCoroutine(Waiting2());
                 }
 
                 if(orderPickedUp)
@@ -149,10 +172,9 @@ public class EnemyAI : MonoBehaviour
                         orderScore = 0;
                     }
                     enemyScore += orderScore;
-
+                    target.transform.position = new Vector3(-10000, -10000, -10000);
                     toGoBox.SetActive(false);
                     StartCoroutine(Waiting());
-                    Vector3 offset = new Vector3(0, -3, 0);
                 }
             }
         }
