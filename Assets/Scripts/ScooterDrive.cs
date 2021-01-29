@@ -203,7 +203,7 @@ public class ScooterDrive : MonoBehaviour
         Debug.Log("accelerate function reached");
 
         currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
-        if (currentSpeed > maxSpeed)
+        /*if (currentSpeed > maxSpeed)
         {
             currentSpeed = maxSpeed;
             //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
@@ -222,7 +222,7 @@ public class ScooterDrive : MonoBehaviour
         {
             bikeIdleAudioSource.Stop();
             bikeAccelleratingAudioSource.Play();
-        }
+        }*/
     }
 
     void HandleControlKeys()
