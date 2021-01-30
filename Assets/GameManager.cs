@@ -21,16 +21,19 @@ public class GameManager : MonoBehaviour
     public static float player1ScoreOnOrder;
     public static float player1ScoreTotal, player2ScoreTotal, player3ScoreTotal, player4ScoreTotal, enemy2ScoreTotal, enemy3ScoreTotal, enemy4ScoreTotal;
 
+    public float player1ScoreTotalDisplay, player2ScoreTotalDisplay, player3ScoreTotalDisplay, player4ScoreTotalDisplay, enemy2ScoreTotalDisplay, enemy3ScoreTotalDisplay, enemy4ScoreTotalDisplay;
+
     public List<float> playerScores = new List<float>(); 
 
-    public Text player1ScoreText, player2ScoreText, player3ScoreText, player4ScoreText, enemy2ScoreText, enemy3ScoreText, enemy4ScoreText;
+    public Text first, second, third, fourth, fifth, sixth, seventh;
+    public string[] playerNames; 
 
     //This is the macro game timer
     public float TimeRemaining;
     public Text TimeUI;
     public GameObject RoundOverObject, restuarantWaypointBox, pointer, displayOrdersText;
 
-    public bool easy, medium, hard;
+    public bool easy, hard;
     public static bool Easy, Medium, Hard;
 
     public GameObject Enemy2, Enemy3, Enemy4;
@@ -44,17 +47,6 @@ public class GameManager : MonoBehaviour
             Hard = false;
         }
 
-        if (medium)
-        {
-            Easy = false;
-            Medium = true;
-            Hard = false;
-
-            Enemy2.GetComponent<EnemyAI>().enabled = false;
-            Enemy3.GetComponent<EnemyAI>().enabled = false;
-            Enemy4.GetComponent<EnemyAI>().enabled = false;
-        }
-
         if (hard)
         {
             Easy = false;
@@ -66,12 +58,14 @@ public class GameManager : MonoBehaviour
             Enemy4.GetComponent<EnemyAI>().enabled = false;
         }
 
-
         //This is for testing, remove later
-        //  player1ScoreTotal = Random.Range(0, 100);
-        player2ScoreTotal = Random.Range(0,1);
-        player3ScoreTotal = Random.Range(0,1);
-        player4ScoreTotal = Random.Range(0,1);
+        player1ScoreTotal = Random.Range(0, 100);
+        player2ScoreTotal = Random.Range(0,100);
+        player3ScoreTotal = Random.Range(0,100);
+        player4ScoreTotal = Random.Range(0,100);
+        enemy2ScoreTotal = Random.Range(0, 100);
+        enemy3ScoreTotal = Random.Range(0, 100);
+        enemy4ScoreTotal = Random.Range(0, 100);
 
         playerScores.Add(player1ScoreTotal);
         playerScores.Add(player2ScoreTotal);
@@ -80,7 +74,6 @@ public class GameManager : MonoBehaviour
         playerScores.Add(enemy2ScoreTotal);
         playerScores.Add(enemy3ScoreTotal);
         playerScores.Add(enemy4ScoreTotal);
-
 
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
@@ -112,17 +105,29 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            RoundOverObject.SetActive(true);
-            playerScores.Sort();
-            playerScores.Reverse();
-            player1ScoreText.text = player1ScoreText.name.ToString() + "     " + playerScores[0].ToString("F0");
-            player2ScoreText.text = player2ScoreText.name.ToString() + "     " + playerScores[1].ToString("F0");
-            player3ScoreText.text = player3ScoreText.name.ToString() + "     " + playerScores[2].ToString("F0");
-            player4ScoreText.text = player4ScoreText.name.ToString() + "     " + playerScores[3].ToString("F0");
-            enemy2ScoreText.text = enemy2ScoreText.name.ToString() + "     " + playerScores[4].ToString("F0");
-            enemy3ScoreText.text = enemy3ScoreText.name.ToString() + "     " + playerScores[5].ToString("F0");
-            enemy4ScoreText.text = enemy4ScoreText.name.ToString() + "     " + playerScores[6].ToString("F0");
 
+            RoundOverObject.SetActive(true);
+
+            first.text = playerNames[0] + "     " + playerScores[0].ToString("F0");
+            second.text = playerNames[1] + "     " + playerScores[1].ToString("F0");
+            third.text = playerNames[2] + "     " + playerScores[2].ToString("F0");
+            fourth.text = playerNames[3] + "     " + playerScores[3].ToString("F0");
+            fifth.text = playerNames[4] + "     " + playerScores[4].ToString("F0");
+            sixth.text = playerNames[5]+ "     " + playerScores[5].ToString("F0");
+            seventh.text = playerNames[6] + "     " + playerScores[6].ToString("F0");
+
+
+
+
+          //  SortScores();
+            print(playerScores[0]);
         }
+    }
+
+    void SortScores()
+    {
+
+        playerScores.Sort();
+        playerScores.Reverse();
     }
 }

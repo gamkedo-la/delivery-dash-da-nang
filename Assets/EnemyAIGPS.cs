@@ -73,6 +73,7 @@ public class EnemyAIGPS : MonoBehaviour
             TravelToRestaurant();
         }
 
+
         if (orderSelected)
         {
             orderScore -= Time.deltaTime;
