@@ -127,6 +127,8 @@ MonoBehaviour:
   lifetimeAfterKnockedOver: 10
   transparent: {fileID: 0}
   DestObject: {fileID: 0}
+  hitSound:
+  - {fileID: 8300000, guid: a08b84af1d9399f478301ae58b6d4aad, type: 3}
 --- !u!1001 &3915547824685919661
 PrefabInstance:
   m_ObjectHideFlags: 0

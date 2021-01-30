@@ -17,6 +17,8 @@ public class PhysicsOnPlayer : MonoBehaviour
     public MeshRenderer DestObject;
     float transformMaterial;
 
+	public AudioClip[] hitSound;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -73,9 +75,9 @@ public class PhysicsOnPlayer : MonoBehaviour
             hasBeenKnockedOver = true;
         }
 
-        if (gameObject.GetComponentInChildren(typeof(AudioSource)) != null)
+        if (hitSound != null)
         {
-            gameObject.GetComponentInChildren<AudioSource>().Play();
+			AudioManager.Instance.PlaySoundSFX(hitSound[Random.Range(0, hitSound.Length)], gameObject);
         }
     }
 }
