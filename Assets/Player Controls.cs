@@ -31,8 +31,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""142ec0fc-caf0-4c47-a734-80151827d5b6"",
-                    ""path"": ""<HID::Logitech Logitech Dual Action>/button2"",
-                    ""interactions"": ""Hold"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Accelerate"",

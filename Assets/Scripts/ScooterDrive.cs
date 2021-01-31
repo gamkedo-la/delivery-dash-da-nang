@@ -71,11 +71,15 @@ public class ScooterDrive : MonoBehaviour
     public float collisionPercent;
     public GameObject bike, playerModel;
 
+    //Input Controls
+    private bool isAccelerating;
+
     private void Awake()
     {
         controls = new PlayerControls();
 
-        controls.GamePlay.Accelerate.performed += context => accelerate();
+        controls.GamePlay.Accelerate.performed += context => isAccelerating = true;
+        controls.GamePlay.Accelerate.canceled += context => isAccelerating = false;
     }
 
     private void OnEnable()
@@ -416,6 +420,11 @@ public class ScooterDrive : MonoBehaviour
             {
                 currentSpeed = 0;
             }
+        }
+
+        if (isAccelerating)
+        {
+            accelerate();
         }
     }
 
