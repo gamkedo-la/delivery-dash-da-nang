@@ -9,7 +9,7 @@ public class GraphPathfinding : MonoBehaviour
 
     public GraphNode seeker;
 
-    public GraphNode targetNode;
+    public GraphNode objectiveNode;
 
     private List<GraphNode> allNodes;
 
@@ -45,6 +45,9 @@ public class GraphPathfinding : MonoBehaviour
 
     public void FindPath(GraphNode startNode, GraphNode targetNode)
     {
+        seeker = startNode;
+        objectiveNode = targetNode;
+
         Debug.Log("Starting Find Path");
         if(startNode == solvedForStart && targetNode == solvedForTarget)
         {

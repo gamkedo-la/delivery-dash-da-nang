@@ -62,7 +62,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 35.98
+  m_Radius: 35
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &700338163166413972
 PrefabInstance:
@@ -75,7 +75,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nodeA
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7444511199100636076}
     - target: {fileID: 8280901371122232777, guid: ba2864bdc460e8e45af084be1104b8a6,
         type: 3}
       propertyPath: graphPathfinding
@@ -84,7 +84,7 @@ PrefabInstance:
     - target: {fileID: 8433551032826373493, guid: ba2864bdc460e8e45af084be1104b8a6,
         type: 3}
       propertyPath: m_Name
-      value: Connection XX
+      value: null connection
       objectReference: {fileID: 0}
     - target: {fileID: 8534541042793799972, guid: ba2864bdc460e8e45af084be1104b8a6,
         type: 3}
