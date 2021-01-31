@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
     public float enemyScore;
 
     void Start() {
-
+        #region Testing Score
         if (enemy2)
         {
             GameManager.enemy2ScoreTotal = Random.Range(0, 100);
@@ -51,9 +51,10 @@ public class EnemyAI : MonoBehaviour
             GameManager.enemy4ScoreTotal = Random.Range(0, 100);
             enemyScore = GameManager.enemy4ScoreTotal;
         }
+        #endregion
+        rb = GetComponent<Rigidbody>();
 
-        rb = GetComponent<Rigidbody>(); 
-
+        #region Setting locations
         Restaurants = new Transform[3];
 
         Restaurants[0] = GameObject.Find("HannahsWayPoint").transform;
@@ -66,6 +67,8 @@ public class EnemyAI : MonoBehaviour
         Apartments[1] = GameObject.Find("SeasandWayPoint").transform;
         Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
         Apartments[3] = GameObject.Find("Halina WayPoint").transform;
+
+        #endregion
         ChooseAnOrder();
     }
 
@@ -73,12 +76,15 @@ public class EnemyAI : MonoBehaviour
     {
         orderPickedUp = false;
         orderSelected = false;
+        toGoBox.SetActive(false);
 
-        int Rselection = Random.Range(0, Restaurants.Length - 1);
-        int Aselection = Random.Range(0, Apartments.Length - 1);
+        int Rselection = Random.Range(0, Restaurants.Length);
+        int Aselection = Random.Range(0, Apartments.Length);
 
         restaurantToGoTo = Restaurants[Rselection];
         apartmentToGoTo = Apartments[Aselection];
+
+        orderScore = 100; 
         orderSelected = true;
 
         target.transform.position = restaurantToGoTo.transform.position;
@@ -130,14 +136,15 @@ public class EnemyAI : MonoBehaviour
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(3);
-
-        orderScore = 100;
+        curSpeed = 0;
+        target.GetComponent<BoxCollider>().enabled = true;
         ChooseAnOrder();
     }
 
     IEnumerator Waiting2()
     {
         yield return new WaitForSeconds(1);
+        curSpeed = 0;
         toGoBox.SetActive(true);
         orderPickedUp = true;
     }
@@ -148,7 +155,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (orderPickedUp)
             {
-                target.transform.position = new Vector3(-10000, -10000, -10000);
+                target.GetComponent<BoxCollider>().enabled = false; 
                 print("Order Delivered");
 
                 if (enemy2)
@@ -166,7 +173,6 @@ public class EnemyAI : MonoBehaviour
                     GameManager.enemy4ScoreTotal += orderScore;
                     orderScore = 0;
                 }
-                toGoBox.SetActive(false);
                 StartCoroutine(Waiting());
             }
         }
