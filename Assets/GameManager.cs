@@ -59,13 +59,10 @@ public class GameManager : MonoBehaviour
         }
 
         //This is for testing, remove later
-        player1ScoreTotal = Random.Range(0, 100);
+        player1ScoreTotal = Random.Range(0,100);
         player2ScoreTotal = Random.Range(0,100);
         player3ScoreTotal = Random.Range(0,100);
         player4ScoreTotal = Random.Range(0,100);
-        enemy2ScoreTotal = Random.Range(0, 100);
-        enemy3ScoreTotal = Random.Range(0, 100);
-        enemy4ScoreTotal = Random.Range(0, 100);
 
         playerScores.Add(player1ScoreTotal);
         playerScores.Add(player2ScoreTotal);
@@ -74,6 +71,8 @@ public class GameManager : MonoBehaviour
         playerScores.Add(enemy2ScoreTotal);
         playerScores.Add(enemy3ScoreTotal);
         playerScores.Add(enemy4ScoreTotal);
+
+        playerScores[5] = enemy3ScoreTotal;
 
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
@@ -105,6 +104,8 @@ public class GameManager : MonoBehaviour
 
         else
         {
+            print(enemy3ScoreTotal);
+            print(playerScores[5]);
 
             RoundOverObject.SetActive(true);
 
@@ -113,14 +114,10 @@ public class GameManager : MonoBehaviour
             third.text = playerNames[2] + "     " + playerScores[2].ToString("F0");
             fourth.text = playerNames[3] + "     " + playerScores[3].ToString("F0");
             fifth.text = playerNames[4] + "     " + playerScores[4].ToString("F0");
-            sixth.text = playerNames[5]+ "     " + playerScores[5].ToString("F0");
+            sixth.text = playerNames[5] + "     " + playerScores[5].ToString("F0");
             seventh.text = playerNames[6] + "     " + playerScores[6].ToString("F0");
 
-
-
-
           //  SortScores();
-            print(playerScores[0]);
         }
     }
 

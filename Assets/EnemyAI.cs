@@ -35,6 +35,23 @@ public class EnemyAI : MonoBehaviour
 
     void Start() {
 
+        if (enemy2)
+        {
+            GameManager.enemy2ScoreTotal = Random.Range(0, 100);
+            enemyScore = GameManager.enemy2ScoreTotal;
+        }
+        else if (enemy3)
+        {
+            GameManager.enemy3ScoreTotal = Random.Range(0, 100);
+            enemyScore = GameManager.enemy3ScoreTotal;
+        }
+
+        else if (enemy4)
+        {
+            GameManager.enemy4ScoreTotal = Random.Range(0, 100);
+            enemyScore = GameManager.enemy4ScoreTotal;
+        }
+
         rb = GetComponent<Rigidbody>(); 
 
         Restaurants = new Transform[3];
@@ -70,21 +87,6 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        if (enemy2)
-        {
-            enemyScore = GameManager.enemy2ScoreTotal;
-        }
-        else if (enemy3)
-        {
-            enemyScore = GameManager.enemy3ScoreTotal;
-        }
-        else if (enemy4)
-        {
-            enemyScore = GameManager.enemy4ScoreTotal;
-        }
-
-
-
         if (orderSelected)
         {
             orderScore -= Time.deltaTime;
