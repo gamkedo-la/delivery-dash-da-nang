@@ -543,4 +543,14 @@ public class ScooterDrive : MonoBehaviour
         playerModel.transform.localPosition = new Vector3(0.1207f, 0f, .6239f);
         playerModel.transform.localRotation = Quaternion.identity;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("any collision detected");
+        if (collision.gameObject.tag == "building")
+        {
+            Debug.Log("collided with object with building tag");
+            currentSpeed = 0;
+        }
+    }
 }

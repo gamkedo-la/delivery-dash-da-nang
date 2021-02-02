@@ -13,6 +13,7 @@ TagManager:
   - GraphNode
   - AICar
   - AITarget
+  - building
   layers:
   - Default
   - TransparentFX
