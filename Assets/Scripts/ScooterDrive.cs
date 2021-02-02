@@ -11,7 +11,7 @@ public class ScooterDrive : MonoBehaviour
 
     //this variable is used to determine how much force to apply to enviornment objects after collision
     public static float playerCurrentSpeed;
-    public static float maxSpeed = 60f;
+    public static float maxSpeed = 30f;
 
     public float currentSpeed;
     public float forwardSpeed = 100f;
@@ -236,9 +236,11 @@ public class ScooterDrive : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
-            if (currentSpeed > maxSpeed)
+            Debug.Log("currentSpeed: " + currentSpeed);
+            if (currentSpeed > 1.25f)
             {
-                currentSpeed = maxSpeed;
+                Debug.Log("should be limiting max speed");
+                currentSpeed = 1.25f;
                 //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
                 //{
                     
