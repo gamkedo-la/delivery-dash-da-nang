@@ -383,25 +383,22 @@ public class ScooterDrive : MonoBehaviour
         }
         else if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K) ) && !Input.GetKey(KeyCode.Space))
         {
-
-            if (currentSpeed > 0 && !backingUp)
+            if (currentSpeed < 0 && !backingUp)
             {
-                currentSpeed += (brakeSpeed / 12) * Input.GetAxisRaw("Vertical") * 3;
-                return;
-            }
-            else if (currentSpeed < 0 && !backingUp)
-            {
-                Debug.Log("should be zeroing out backward speed");
+                Debug.Log("inside current speed less than 0 check");
                 currentSpeed = 0;
                 return;
             }
-            else if (!backingUp && currentSpeed == 0)
+            else if (currentSpeed > 0 && !backingUp)
             {
-                backingUp = true;
+                currentSpeed += (brakeSpeed / 12) * Input.GetAxisRaw("Vertical") * 3;
+                
+                return;
             }
 
             if (backingUp)
             {
+                Debug.Log("inside backing up check");
                 currentSpeed = backwardSpeed;
                 return;
             }
@@ -409,6 +406,10 @@ public class ScooterDrive : MonoBehaviour
             brakeLights.SetActive(true);
         }
 
+        if (Input.GetKeyDown(KeyCode.K) && currentSpeed == 0 && !Input.GetKey(KeyCode.Space))
+        {
+            backingUp = true;
+        }
         if (Input.GetKeyUp(KeyCode.K))
         {
             backingUp = false;
