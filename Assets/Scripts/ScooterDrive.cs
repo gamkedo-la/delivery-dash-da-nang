@@ -16,6 +16,7 @@ public class ScooterDrive : MonoBehaviour
     public float currentSpeed;
     public float forwardSpeed = 100f;
     public float backwardSpeed = -10.1f;
+    public bool backingUp = false;
     public float coastToStopSpeed = 0.35f;
 
     public float currentTurnAngle = 0;
@@ -267,10 +268,7 @@ public class ScooterDrive : MonoBehaviour
                 currentSpeed = 0;
             }
         }
-        if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.Space))
-        {
-            currentSpeed += Time.deltaTime * backwardSpeed;
-        }
+        
 
         //let off gas sfx
         if (Input.GetKeyUp(KeyCode.Space))
@@ -392,17 +390,34 @@ public class ScooterDrive : MonoBehaviour
         }
         else if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K) ) && !Input.GetKey(KeyCode.Space))
         {
-            currentSpeed += (brakeSpeed/12) * Input.GetAxisRaw("Vertical") * 3;
-            brakeLights.SetActive(true);
-            if (currentSpeed < 0)
+
+            if (currentSpeed > 0)
             {
-                //brakeLights.SetActive(true);
+                currentSpeed += (brakeSpeed / 12) * Input.GetAxisRaw("Vertical") * 3;
+                return;
+            }
+            else if (currentSpeed < 0 && !backingUp)
+            {
+                currentSpeed = 0;
+                return;
+            }
+            else if (!backingUp && currentSpeed == 0)
+            {
+                backingUp = true;
+            }
+
+            if (backingUp)
+            {
                 currentSpeed = backwardSpeed;
+                return;
             }
-            else
-            {
-                //brakeLights.SetActive(false);
-            }
+
+            brakeLights.SetActive(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            backingUp = false;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K))

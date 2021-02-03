@@ -114,7 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSpeed: 0
   forwardSpeed: 0.5
-  backwardSpeed: -0.15
+  backwardSpeed: -0.125
+  backingUp: 0
   coastToStopSpeed: 0.35
   currentTurnAngle: 0
   turnAngleRate: 4
@@ -2859,7 +2860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.006515503}
+  m_AnchoredPosition: {x: 0, y: -0.0043945312}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4511287510058140885
@@ -5990,7 +5991,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4511287510617943672}
   m_HandleRect: {fileID: 4511287510617943673}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.99999934
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7686,7 +7687,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4511287509789452387}
   m_HandleRect: {fileID: 4511287509789452396}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
