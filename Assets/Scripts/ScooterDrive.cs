@@ -296,10 +296,10 @@ public class ScooterDrive : MonoBehaviour
             }
 
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            //Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
+            Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
 
             currentBikeTiltAngle = bikeModel.transform.localRotation.z;
-            if (currentBikeTiltAngle < (-maxTiltAngle*10))
+            if (currentBikeTiltAngle < (-maxTiltAngle))
             {
                 Debug.Log("currentBikeTiltAngle: " + currentBikeTiltAngle);
                 bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle*100);
@@ -327,7 +327,7 @@ public class ScooterDrive : MonoBehaviour
             //Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
 
             currentBikeTiltAngle = bikeModel.transform.localRotation.z;
-            if (currentBikeTiltAngle > (maxTiltAngle * 10))
+            if (currentBikeTiltAngle > (maxTiltAngle))
             {
                 Debug.Log("currentBikeTiltAngle: " + currentBikeTiltAngle);
                 bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle * 100);
