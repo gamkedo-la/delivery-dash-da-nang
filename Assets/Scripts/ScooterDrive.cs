@@ -205,7 +205,6 @@ public class ScooterDrive : MonoBehaviour
 
     void accelerate()
     {
-        Debug.Log("accelerate function reached");
 
         currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
         /*if (currentSpeed > maxSpeed)
@@ -232,15 +231,12 @@ public class ScooterDrive : MonoBehaviour
 
     void HandleControlKeys()
     {
-        Debug.Log("HandleControlKeys reached");
         //forward and backwards
         if (Input.GetKey(KeyCode.Space))
         {
             currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
-            Debug.Log("currentSpeed: " + currentSpeed);
             if (currentSpeed > 1.25f)
             {
-                Debug.Log("should be limiting max speed");
                 currentSpeed = 1.25f;
                 //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
                 //{
@@ -294,12 +290,10 @@ public class ScooterDrive : MonoBehaviour
             }
 
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
 
             currentBikeTiltAngle = bikeModel.transform.localRotation.z;
             if (currentBikeTiltAngle < (-maxTiltAngle))
             {
-                Debug.Log("currentBikeTiltAngle: " + currentBikeTiltAngle);
                 bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle*100);
                 maxRightTurnHeld = true;
             }
@@ -327,7 +321,6 @@ public class ScooterDrive : MonoBehaviour
             currentBikeTiltAngle = bikeModel.transform.localRotation.z;
             if (currentBikeTiltAngle > (maxTiltAngle))
             {
-                Debug.Log("currentBikeTiltAngle: " + currentBikeTiltAngle);
                 bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle * 100);
                 maxLeftTurnHeld = true;
             }
@@ -391,13 +384,14 @@ public class ScooterDrive : MonoBehaviour
         else if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K) ) && !Input.GetKey(KeyCode.Space))
         {
 
-            if (currentSpeed > 0)
+            if (currentSpeed > 0 && !backingUp)
             {
                 currentSpeed += (brakeSpeed / 12) * Input.GetAxisRaw("Vertical") * 3;
                 return;
             }
             else if (currentSpeed < 0 && !backingUp)
             {
+                Debug.Log("should be zeroing out backward speed");
                 currentSpeed = 0;
                 return;
             }
@@ -563,10 +557,10 @@ public class ScooterDrive : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("any collision detected");
+        
         if (collision.gameObject.tag == "building")
         {
-            Debug.Log("collided with object with building tag");
+            
             currentSpeed = 0;
         }
     }
