@@ -147,10 +147,12 @@ MonoBehaviour:
   star4threshold: 0.6
   star5threshold: 0.8
   ratingsManager: {fileID: 0}
-  bikeIdleAudioSource: {fileID: 4511287511245708447}
-  bikeAccelleratingAudioSource: {fileID: 4511287509802300264}
-  bikeLetOffGasAudioSource: {fileID: 4511287510443810468}
-  bikeTopSpeedAudioSource: {fileID: 4511287510086674642}
+  bikeIdleAudioClip: {fileID: 8300000, guid: 277aacf6ed37a6f43a27a79fee60989a, type: 3}
+  bikeAccelleratingAudioClip: {fileID: 8300000, guid: 77e74698bbb0c9c4bbc44b688f13afcb,
+    type: 3}
+  bikeLetOffGasAudioClip: {fileID: 8300000, guid: e390b0ceb176bb14aba5bd5ee7f732e0,
+    type: 3}
+  bikeTopSpeedClip: {fileID: 8300000, guid: 28d9b1610c32b9f4dbfa6b73f444d0e7, type: 3}
   textTip: {fileID: 4511287509890472377}
   collisionPercent: 25
   bike: {fileID: 5753333299199372205}
@@ -1880,7 +1882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4511287509802300265
 Transform:
   m_ObjectHideFlags: 0
@@ -2860,7 +2862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0043945312}
+  m_AnchoredPosition: {x: 0, y: 0.010772705}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4511287510058140885
@@ -3009,7 +3011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4511287510086674643
 Transform:
   m_ObjectHideFlags: 0
@@ -4993,7 +4995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4511287510443810469
 Transform:
   m_ObjectHideFlags: 0
@@ -5991,8 +5993,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4511287510617943672}
   m_HandleRect: {fileID: 4511287510617943673}
   m_Direction: 0
-  m_Value: 1
-  m_Size: 0.99999934
+  m_Value: -2.6818182
+  m_Size: 0.999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7111,7 +7113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4511287511245708440
 Transform:
   m_ObjectHideFlags: 0

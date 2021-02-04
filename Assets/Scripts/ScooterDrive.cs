@@ -64,9 +64,10 @@ public class ScooterDrive : MonoBehaviour
     public double star5threshold = .8;
     public RatingsManager ratingsManager;
 
-    public AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource;
+	public AudioClip bikeIdleAudioClip, bikeAccelleratingAudioClip, bikeLetOffGasAudioClip, bikeTopSpeedClip;
+	private AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource;
 
-    public GameObject textTip;
+	public GameObject textTip;
 
     bool canBeCollided;
     public float collisionPercent;
@@ -103,8 +104,16 @@ public class ScooterDrive : MonoBehaviour
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
 
-        
-    }
+		bikeIdleAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
+		bikeAccelleratingAudioSource = AudioManager.Instance.PlaySoundSFX(bikeAccelleratingAudioClip, gameObject, loop: true, volume: 0.25f);
+		bikeAccelleratingAudioSource.Stop();
+		bikeLetOffGasAudioSource = AudioManager.Instance.PlaySoundSFX(bikeLetOffGasAudioClip, gameObject, loop: true, volume: 0.5f);
+		bikeLetOffGasAudioSource.Stop();
+		bikeLetOffGasAudioSource.loop = false;
+		bikeTopSpeedAudioSource = AudioManager.Instance.PlaySoundSFX(bikeTopSpeedClip, gameObject, loop: true, volume: 0.5f);
+		bikeTopSpeedAudioSource.Stop();
+
+	}
 
 
     // Update is called once per frame
