@@ -67,7 +67,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
             float score = (player1TimeScore / player1TimeScoreMax) * 100;
             float score2 = FoodHealth.currentHealth;
             finalScore = (score + score2) / 2;
-            GameManager.player1ScoreTotal += finalScore * 100;
+            GameManager.player1ScoreTotal += (int) finalScore * 100;
             timer.text = finalScore.ToString("F2") + "%";
             food.SetActive(false);
             pointer.SetActive(false);

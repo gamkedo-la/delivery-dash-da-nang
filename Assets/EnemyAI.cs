@@ -31,7 +31,7 @@ public class EnemyAI : MonoBehaviour
 
     public bool enemy2, enemy3, enemy4;
 
-    public float enemyScore;
+    public int enemyScore;
 
     void Start() {
         #region Testing Score
@@ -40,13 +40,13 @@ public class EnemyAI : MonoBehaviour
             GameManager.enemy2ScoreTotal = Random.Range(0, 100);
             enemyScore = GameManager.enemy2ScoreTotal;
         }
-        else if (enemy3)
+        if (enemy3)
         {
             GameManager.enemy3ScoreTotal = Random.Range(0, 100);
             enemyScore = GameManager.enemy3ScoreTotal;
         }
 
-        else if (enemy4)
+        if (enemy4)
         {
             GameManager.enemy4ScoreTotal = Random.Range(0, 100);
             enemyScore = GameManager.enemy4ScoreTotal;
@@ -160,17 +160,17 @@ public class EnemyAI : MonoBehaviour
 
                 if (enemy2)
                 {
-                    GameManager.enemy2ScoreTotal += orderScore;
+                    GameManager.enemy2ScoreTotal += (int)orderScore;
                     orderScore = 0;
                 }
                 else if (enemy3)
                 {
-                    GameManager.enemy3ScoreTotal += orderScore;
+                    GameManager.enemy3ScoreTotal += (int) orderScore;
                     orderScore = 0;
                 }
                 else if (enemy4)
                 {
-                    GameManager.enemy4ScoreTotal += orderScore;
+                    GameManager.enemy4ScoreTotal += (int)orderScore;
                     orderScore = 0;
                 }
                 StartCoroutine(Waiting());

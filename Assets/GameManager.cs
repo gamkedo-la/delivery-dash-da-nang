@@ -36,9 +36,9 @@ public class GameManager : MonoBehaviour
     public static bool player1OrderDelivered;
 
     public static float player1ScoreOnOrder;
-    public static float player1ScoreTotal, player2ScoreTotal, player3ScoreTotal, player4ScoreTotal, enemy2ScoreTotal, enemy3ScoreTotal, enemy4ScoreTotal;
+    public static int player1ScoreTotal, player2ScoreTotal, player3ScoreTotal, player4ScoreTotal, enemy2ScoreTotal, enemy3ScoreTotal, enemy4ScoreTotal;
 
-    public float player1ScoreTotalDisplay, player2ScoreTotalDisplay, player3ScoreTotalDisplay, player4ScoreTotalDisplay, enemy2ScoreTotalDisplay, enemy3ScoreTotalDisplay, enemy4ScoreTotalDisplay;
+    //public float player1ScoreTotalDisplay, player2ScoreTotalDisplay, player3ScoreTotalDisplay, player4ScoreTotalDisplay, enemy2ScoreTotalDisplay, enemy3ScoreTotalDisplay, enemy4ScoreTotalDisplay;
 
     public List<float> playerScores = new List<float>();
 
@@ -96,6 +96,21 @@ public class GameManager : MonoBehaviour
         tempNew = new ScoreEntry();
         tempNew.name = "Player 4";
         tempNew.score = 88;
+        ScoreList.Add(tempNew);
+
+        tempNew = new ScoreEntry();
+        tempNew.name = "Enemy 2";
+        tempNew.score = enemy2ScoreTotal;
+        ScoreList.Add(tempNew);
+
+        tempNew = new ScoreEntry();
+        tempNew.name = "Enemy 3";
+        tempNew.score = enemy3ScoreTotal;
+        ScoreList.Add(tempNew);
+
+        tempNew = new ScoreEntry();
+        tempNew.name = "Enemy 4";
+        tempNew.score = enemy4ScoreTotal;
         ScoreList.Add(tempNew);
 
         player1OrderPickedUp = false;
