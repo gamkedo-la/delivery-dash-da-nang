@@ -1,7 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+
+public class ScoreEntry : IComparable<ScoreEntry>
+{
+    public string name;
+    public int score;
+
+    public int CompareTo(ScoreEntry toCompare)
+    {
+        int ComparisonResult = score.CompareTo(toCompare.score);
+        if (ComparisonResult == 0)
+        {
+            return name.CompareTo(toCompare.name);
+        }
+        return ComparisonResult;
+    }
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -23,9 +40,12 @@ public class GameManager : MonoBehaviour
 
     public float player1ScoreTotalDisplay, player2ScoreTotalDisplay, player3ScoreTotalDisplay, player4ScoreTotalDisplay, enemy2ScoreTotalDisplay, enemy3ScoreTotalDisplay, enemy4ScoreTotalDisplay;
 
-    public List<float> playerScores = new List<float>(); 
+    public List<float> playerScores = new List<float>();
 
-    public Text first, second, third, fourth, fifth, sixth, seventh;
+    public List<ScoreEntry> ScoreList = new List<ScoreEntry>();
+
+    public Text[] rankUIText;
+
     public string[] playerNames; 
 
     //This is the macro game timer
@@ -58,21 +78,25 @@ public class GameManager : MonoBehaviour
             Enemy4.GetComponent<EnemyAI>().enabled = false;
         }
 
-        //This is for testing, remove later
-        player1ScoreTotal = Random.Range(0,100);
-        player2ScoreTotal = Random.Range(0,100);
-        player3ScoreTotal = Random.Range(0,100);
-        player4ScoreTotal = Random.Range(0,100);
+        ScoreEntry tempNew = new ScoreEntry();
+        tempNew.name = "Player 1";
+        tempNew.score = 28;
+        ScoreList.Add(tempNew);
 
-        playerScores.Add(player1ScoreTotal);
-        playerScores.Add(player2ScoreTotal);
-        playerScores.Add(player3ScoreTotal);
-        playerScores.Add(player4ScoreTotal);
-        playerScores.Add(enemy2ScoreTotal);
-        playerScores.Add(enemy3ScoreTotal);
-        playerScores.Add(enemy4ScoreTotal);
+        tempNew = new ScoreEntry();
+        tempNew.name = "Player 2";
+        tempNew.score = 66;
+        ScoreList.Add(tempNew);
 
-        playerScores[5] = enemy3ScoreTotal;
+        tempNew = new ScoreEntry();
+        tempNew.name = "Player 3";
+        tempNew.score = 28;
+        ScoreList.Add(tempNew);
+
+        tempNew = new ScoreEntry();
+        tempNew.name = "Player 4";
+        tempNew.score = 88;
+        ScoreList.Add(tempNew);
 
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
@@ -104,27 +128,21 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            print(enemy3ScoreTotal);
-            print(playerScores[5]);
 
             RoundOverObject.SetActive(true);
 
-            first.text = playerNames[0] + "     " + playerScores[0].ToString("F0");
-            second.text = playerNames[1] + "     " + playerScores[1].ToString("F0");
-            third.text = playerNames[2] + "     " + playerScores[2].ToString("F0");
-            fourth.text = playerNames[3] + "     " + playerScores[3].ToString("F0");
-            fifth.text = playerNames[4] + "     " + playerScores[4].ToString("F0");
-            sixth.text = playerNames[5] + "     " + playerScores[5].ToString("F0");
-            seventh.text = playerNames[6] + "     " + playerScores[6].ToString("F0");
+            SortScores();
 
-          //  SortScores();
+            for (int i = 0; i < ScoreList.Count; i++)
+            {
+                rankUIText[i].text = ScoreList[i].name + "     " + ScoreList[i].score.ToString("F0");
+            }
         }
     }
 
     void SortScores()
     {
-
-        playerScores.Sort();
-        playerScores.Reverse();
+        ScoreList.Sort();
+        ScoreList.Reverse();
     }
 }
