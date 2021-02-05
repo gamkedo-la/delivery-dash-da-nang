@@ -80,8 +80,10 @@ public class ScooterDrive : MonoBehaviour
     {
         controls = new PlayerControls();
 
-        controls.GamePlay.Accelerate.performed += context => isAccelerating = true;
-        controls.GamePlay.Accelerate.canceled += context => isAccelerating = false;
+        //controls.GamePlay.Accelerate.performed += ctx => Debug.Log(ctx.ReadValueAsObject());
+        //controls.GamePlay.Accelerate.canceled += ctx => Debug.Log(ctx.ReadValueAsObject());
+        controls.GamePlay.Accelerate.performed += ctx => Debug.Log("anything");
+        controls.GamePlay.Brake.performed += ctx => Debug.Log("anything");
     }
 
     private void OnEnable()

@@ -7,10 +7,18 @@
             "actions": [
                 {
                     "name": "Accelerate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "6d33f34e-d35b-4997-b4fc-87d157f617ff",
+                    "expectedControlType": "Vector2",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "Brake",
+                    "type": "Button",
+                    "id": "ce31eaac-89cb-43ff-9d85-35e52a0d003f",
                     "expectedControlType": "Button",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "interactions": ""
                 }
             ],
@@ -18,11 +26,22 @@
                 {
                     "name": "",
                     "id": "142ec0fc-caf0-4c47-a734-80151827d5b6",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97cdcc78-c364-48e6-a313-1ad5857e1d40",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

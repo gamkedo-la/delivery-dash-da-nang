@@ -20,10 +20,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Accelerate"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""6d33f34e-d35b-4997-b4fc-87d157f617ff"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Brake"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce31eaac-89cb-43ff-9d85-35e52a0d003f"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
                 }
             ],
@@ -31,11 +39,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""142ec0fc-caf0-4c47-a734-80151827d5b6"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Accelerate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97cdcc78-c364-48e6-a313-1ad5857e1d40"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Brake"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -59,6 +78,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Game Play
         m_GamePlay = asset.FindActionMap("Game Play", throwIfNotFound: true);
         m_GamePlay_Accelerate = m_GamePlay.FindAction("Accelerate", throwIfNotFound: true);
+        m_GamePlay_Brake = m_GamePlay.FindAction("Brake", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -109,11 +129,13 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_GamePlay;
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
     private readonly InputAction m_GamePlay_Accelerate;
+    private readonly InputAction m_GamePlay_Brake;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
         public GamePlayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Accelerate => m_Wrapper.m_GamePlay_Accelerate;
+        public InputAction @Brake => m_Wrapper.m_GamePlay_Brake;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -126,6 +148,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Accelerate.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
                 @Accelerate.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
                 @Accelerate.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
+                @Brake.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrake;
+                @Brake.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrake;
+                @Brake.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrake;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -133,6 +158,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Accelerate.started += instance.OnAccelerate;
                 @Accelerate.performed += instance.OnAccelerate;
                 @Accelerate.canceled += instance.OnAccelerate;
+                @Brake.started += instance.OnBrake;
+                @Brake.performed += instance.OnBrake;
+                @Brake.canceled += instance.OnBrake;
             }
         }
     }
@@ -149,5 +177,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IGamePlayActions
     {
         void OnAccelerate(InputAction.CallbackContext context);
+        void OnBrake(InputAction.CallbackContext context);
     }
 }
