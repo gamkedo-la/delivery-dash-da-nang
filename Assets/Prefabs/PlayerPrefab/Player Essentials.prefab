@@ -146,7 +146,7 @@ MonoBehaviour:
   star3threshold: 0.4
   star4threshold: 0.6
   star5threshold: 0.8
-  ratingsManager: {fileID: 0}
+  ratingsManager: {fileID: 1894087330471606791}
   bikeIdleAudioClip: {fileID: 8300000, guid: 277aacf6ed37a6f43a27a79fee60989a, type: 3}
   bikeAccelleratingAudioClip: {fileID: 8300000, guid: 77e74698bbb0c9c4bbc44b688f13afcb,
     type: 3}
@@ -2862,7 +2862,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.011672974}
+  m_AnchoredPosition: {x: 0, y: -0.023406982}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4511287510058140885
@@ -5993,8 +5993,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4511287510617943672}
   m_HandleRect: {fileID: 4511287510617943673}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.99999934
+  m_Value: 1
+  m_Size: 0.9999991
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7689,7 +7689,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4511287509789452387}
   m_HandleRect: {fileID: 4511287509789452396}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -8344,12 +8344,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96970ec506aae324abd1a2f8112ea1b0, type: 3}
---- !u!1 &5753333299199372205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 96970ec506aae324abd1a2f8112ea1b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 4511287509725621797}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3558368556278773910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1151388028547126963, guid: 96970ec506aae324abd1a2f8112ea1b0,
@@ -8365,6 +8359,12 @@ GameObject:
 --- !u!4 &4112324584402274766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 96970ec506aae324abd1a2f8112ea1b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4511287509725621797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5753333299199372205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 96970ec506aae324abd1a2f8112ea1b0,
     type: 3}
   m_PrefabInstance: {fileID: 4511287509725621797}
   m_PrefabAsset: {fileID: 0}
@@ -8602,6 +8602,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a387a1291917ab49986ea063c1af3ff, type: 3}
+--- !u!114 &1894087330471606791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2653313366040606908, guid: 0a387a1291917ab49986ea063c1af3ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 4511287509828141755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8591740318012000433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d8c7aa90dee044babacd15f9ec90bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8591740318012000433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5305432065959217674, guid: 0a387a1291917ab49986ea063c1af3ff,

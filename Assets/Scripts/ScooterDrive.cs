@@ -464,6 +464,62 @@ public class ScooterDrive : MonoBehaviour
         }
     }
 
+    public void AssignStars()
+    {
+        GameManager.player1OrderDelivered = true;
+        physicalOrder.SetActive(false);
+
+        //food health / 100
+        float tempFoodHealthScore = FoodHealth.currentHealth / 100;
+        //time remaining / total time
+        float tempTimeScore = DashAppScript.totalTimeRemaining;
+        // (% + %) / 2
+        float tempTotalScore = (tempFoodHealthScore + tempTimeScore) / 2;
+
+        //total score displayed in stars
+        GameManager.player1ScoreOnOrder = tempTotalScore;
+        int starsAwarded = 0;
+
+        //total score added to macrototal score
+        TotalScore.SetActive(true);
+        if (GameManager.player1ScoreOnOrder < star2threshold)
+        {
+            star1.SetActive(true);
+            starsAwarded++;
+        }
+        if (GameManager.player1ScoreOnOrder < star3threshold)
+        {
+            star2.SetActive(true);
+            starsAwarded++;
+        }
+        if (GameManager.player1ScoreOnOrder < star4threshold)
+        {
+            star3.SetActive(true);
+            starsAwarded++;
+        }
+        if (GameManager.player1ScoreOnOrder < star5threshold)
+        {
+            star4.SetActive(true);
+            starsAwarded++;
+        }
+        if (GameManager.player1ScoreOnOrder > star5threshold)
+        {
+            star5.SetActive(true);
+            starsAwarded++;
+        }
+
+        var rating = ratingsManager.CreateRating(starsAwarded);
+        ratingsManager.AddRating(rating);
+
+        print(GameManager.player1ScoreOnOrder);
+
+        StartCoroutine(Waiting());
+        //display score
+        //turn off player1OrderPickedUp and player1OrderDelivered
+        //turn off waypoint boxes
+        //close app line for the order
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "DestEnv")
@@ -487,65 +543,6 @@ public class ScooterDrive : MonoBehaviour
             playerModel.GetComponent<Rigidbody>().AddForce(transform.up * bikeCrashWithAICarBumbForce, ForceMode.Impulse);
             canBeCollided = false;
             StartCoroutine(FallingOffBike());
-        }
-
-        if (other.tag == "WayPointCustomer")
-        {
-            if (GameManager.player1OrderPickedUp)
-            {
-                GameManager.player1OrderDelivered = true;
-                physicalOrder.SetActive(false);
-
-                //food health / 100
-                float tempFoodHealthScore = FoodHealth.currentHealth / 100;
-                //time remaining / total time
-                float tempTimeScore = DashAppScript.totalTimeRemaining;
-                // (% + %) / 2
-                float tempTotalScore = (tempFoodHealthScore + tempTimeScore) / 2;
-
-                //total score displayed in stars
-                GameManager.player1ScoreOnOrder = tempTotalScore;
-                int starsAwarded = 0;
-                
-                //total score added to macrototal score
-                TotalScore.SetActive(true);
-                if (GameManager.player1ScoreOnOrder < star2threshold)
-                {
-                    star1.SetActive(true);
-                    starsAwarded++;
-                }
-                if (GameManager.player1ScoreOnOrder < star3threshold)
-                {
-                    star2.SetActive(true);
-                    starsAwarded++;
-                }
-                if (GameManager.player1ScoreOnOrder < star4threshold)
-                {
-                    star3.SetActive(true);
-                    starsAwarded++;
-                }
-                if (GameManager.player1ScoreOnOrder < star5threshold)
-                {
-                    star4.SetActive(true);
-                    starsAwarded++;
-                }
-                if (GameManager.player1ScoreOnOrder > star5threshold)
-                {
-                    star5.SetActive(true);
-                    starsAwarded++;
-                }
-                
-                var rating = ratingsManager.CreateRating(starsAwarded);
-                ratingsManager.AddRating(rating);
-
-                print(GameManager.player1ScoreOnOrder);
-
-                StartCoroutine(Waiting());
-                //display score
-                //turn off player1OrderPickedUp and player1OrderDelivered
-                //turn off waypoint boxes
-                //close app line for the order
-            }
         }
     }
 

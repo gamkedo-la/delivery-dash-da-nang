@@ -43,6 +43,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                     chachingSFX.Play();
                     GameManager.Player1OrderSelected = false;
                     gpsScript.ClearPath();
+                    player.GetComponent<ScooterDrive>().AssignStars();
                 }
 
                 if (!player1OrderPickedUp && player.GetComponent<ScooterDrive>().currentSpeed == 0)
