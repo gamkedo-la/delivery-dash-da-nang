@@ -74,16 +74,25 @@ public class ScooterDrive : MonoBehaviour
     public GameObject bike, playerModel;
 
     //Input Controls
-    private bool isAccelerating;
+    private bool isAccelerating = false;
+    private bool acceleratingCompleted = false;
+    private bool turnLeft = false;
+    private bool turnRight = false;
+    private bool isBraking = false;
+    private bool isBrakingCompleted = false;
 
     private void Awake()
     {
         controls = new PlayerControls();
 
-        //controls.GamePlay.Accelerate.performed += ctx => Debug.Log(ctx.ReadValueAsObject());
-        //controls.GamePlay.Accelerate.canceled += ctx => Debug.Log(ctx.ReadValueAsObject());
-        controls.GamePlay.Accelerate.performed += ctx => Debug.Log("anything");
-        controls.GamePlay.Brake.performed += ctx => Debug.Log("anything");
+        controls.GamePlay.Accelerate.performed += context => isAccelerating = true;
+        controls.GamePlay.Accelerate.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
+        controls.GamePlay.TurnLeft.performed += context => turnLeft = true;
+        controls.GamePlay.TurnLeft.canceled += context => turnLeft = false;
+        controls.GamePlay.TurnRight.performed += context => turnRight = true;
+        controls.GamePlay.TurnRight.canceled += context => turnRight = false;
+        controls.GamePlay.Brake.performed += context => { isBraking = true; isBrakingCompleted = true;};
+        controls.GamePlay.Brake.performed += context => isBraking = false;
     }
 
     private void OnEnable()
@@ -243,7 +252,7 @@ public class ScooterDrive : MonoBehaviour
     void HandleControlKeys()
     {
         //forward and backwards
-        if (Input.GetKey(KeyCode.Space))
+        if (isAccelerating)
         {
             currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
             if (currentSpeed > 1.25f)
@@ -267,7 +276,7 @@ public class ScooterDrive : MonoBehaviour
                 bikeAccelleratingAudioSource.Play();
             } 
         }
-        else if (!Input.GetKey(KeyCode.Space) && currentSpeed > 0)
+        else if (!isAccelerating && currentSpeed > 0)
         {
             currentSpeed += Time.deltaTime * brakeSpeed * Input.GetAxisRaw("Vertical");
             if (currentSpeed < 0)
@@ -278,7 +287,7 @@ public class ScooterDrive : MonoBehaviour
         
 
         //let off gas sfx
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (acceleratingCompleted)
         {
             if (bikeAccelleratingAudioSource.isPlaying)
             {
@@ -290,10 +299,11 @@ public class ScooterDrive : MonoBehaviour
             }
             
             bikeLetOffGasAudioSource.Play();
+            acceleratingCompleted = false;
         }
 
         //turns
-        if (Input.GetKey(KeyCode.D))
+        if (turnRight)
         {
             if (maxLeftTurnHeld || maxRightTurnHeld)
             {
@@ -319,7 +329,7 @@ public class ScooterDrive : MonoBehaviour
             }
         }
         
-        if (Input.GetKey(KeyCode.A))
+        if (turnLeft)
         {
             if (maxLeftTurnHeld || maxRightTurnHeld)
             {
@@ -345,7 +355,7 @@ public class ScooterDrive : MonoBehaviour
                 currentTurnAngle = -maxTurnAngle;
             }
         }
-        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        if (!turnRight && !turnLeft)
         {
             maxRightTurnHeld = false;
             maxLeftTurnHeld = false;
@@ -378,7 +388,7 @@ public class ScooterDrive : MonoBehaviour
         }
 
         //brake
-        if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K)) && Input.GetKey(KeyCode.Space))
+        if ( (isBraking || Input.GetKey(KeyCode.K)) && isAccelerating)
         {
             currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical") * 3;
             if (currentSpeed < 0)
@@ -392,7 +402,7 @@ public class ScooterDrive : MonoBehaviour
                 //brakeLights.SetActive(false);
             }
         }
-        else if ( (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.K) ) && !Input.GetKey(KeyCode.Space))
+        else if ( (isBraking || Input.GetKey(KeyCode.K) ) && !isAccelerating)
         {
             if (currentSpeed < 0 && !backingUp)
             {
@@ -417,7 +427,7 @@ public class ScooterDrive : MonoBehaviour
             brakeLights.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && currentSpeed == 0 && !Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.K) && currentSpeed == 0 && !isAccelerating)
         {
             backingUp = true;
         }
@@ -426,17 +436,17 @@ public class ScooterDrive : MonoBehaviour
             backingUp = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.K))
+        if (isBraking || Input.GetKeyDown(KeyCode.K))
         {
             brakeLights.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.K))
+        if (isBraking || Input.GetKeyUp(KeyCode.K))
         {
-                brakeLights.SetActive(false);   
+            brakeLights.SetActive(false);
         }
 
         //coasting to stop
-        if (Input.GetKey(KeyCode.LeftShift) == false && Input.GetKey(KeyCode.Space) == false && Input.GetKey(KeyCode.S) == false)
+        if (!isBraking && !isAccelerating && Input.GetKey(KeyCode.S) == false)
         {
             currentSpeed -= Time.deltaTime * coastToStopSpeed * 2;
             if (currentSpeed < 0)
@@ -445,10 +455,10 @@ public class ScooterDrive : MonoBehaviour
             }
         }
 
-        if (isAccelerating)
-        {
-            accelerate();
-        }
+        //if (isAccelerating)
+        //{
+        //    accelerate();
+        //}
     }
 
     void PhoneActivation()
