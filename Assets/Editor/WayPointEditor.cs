@@ -35,7 +35,7 @@ public class WayPointEditor
 
         if (waypoint.nextWayPoint != null)
         {
-            Gizmos.color = Color.green;
+            Gizmos.color = Color.blue;
             Vector3 offset = waypoint.transform.right * -waypoint.width / 2f;
             Vector3 offsetTo = waypoint.nextWayPoint.transform.right * -waypoint.nextWayPoint.width / 2f;
 
