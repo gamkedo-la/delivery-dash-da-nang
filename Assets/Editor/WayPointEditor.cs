@@ -18,7 +18,7 @@ public class WayPointEditor
             Gizmos.color = Color.yellow * .5f;
         }
 
-        Gizmos.DrawSphere(waypoint.transform.position, 1f);
+        Gizmos.DrawSphere(waypoint.transform.position, 2f);
 
         Gizmos.color = Color.white;
         Gizmos.DrawLine(waypoint.transform.position + (waypoint.transform.right * waypoint.width / 2f),
