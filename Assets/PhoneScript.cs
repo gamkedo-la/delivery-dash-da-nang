@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhoneScript : MonoBehaviour
 {
-    public GameObject HomeScreen, OrdersMenu, GPSMenu, AlertsMenu, RatingsScreen;
+    public GameObject HomeScreen, OrdersMenu, GPSMenu, AlertsMenu, RatingsScreen, CurrentScores;
 
     public void OrdersButtonPressed()
     {
@@ -40,5 +40,17 @@ public class PhoneScript : MonoBehaviour
     {
         GPSMenu.SetActive(false);
         HomeScreen.SetActive(true);
+    }
+
+    public void CustomerScoresPressed()
+    {
+        HomeScreen.SetActive(false);
+        CurrentScores.SetActive(true);
+    }
+
+    public void CustomerScoresBack()
+    {
+        HomeScreen.SetActive(true);
+        CurrentScores.SetActive(false);
     }
 }

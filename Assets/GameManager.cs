@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public List<ScoreEntry> ScoreList = new List<ScoreEntry>();
 
     public Text[] rankUIText;
+    public Text[] rankUITextInGame;
 
     public string[] playerNames; 
 
@@ -127,6 +128,7 @@ public class GameManager : MonoBehaviour
         }
 
         TimeRemainingInRound();
+
     }
 
     void TimeRemainingInRound()
@@ -139,6 +141,13 @@ public class GameManager : MonoBehaviour
             float seconds = Mathf.FloorToInt(TimeRemaining % 60);
 
             TimeUI.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+            SortScores();
+
+            for (int i = 0; i < ScoreList.Count; i++)
+            {
+                rankUITextInGame[i].text = ScoreList[i].name + "     " + ScoreList[i].score.ToString("F0");
+            }
         }
 
         else
