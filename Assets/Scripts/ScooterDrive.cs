@@ -64,8 +64,8 @@ public class ScooterDrive : MonoBehaviour
     public double star5threshold = .8;
     public RatingsManager ratingsManager;
 
-	public AudioClip bikeIdleAudioClip, bikeAccelleratingAudioClip, bikeLetOffGasAudioClip, bikeTopSpeedClip;
-	private AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource;
+	public AudioClip bikeIdleAudioClip, bikeAccelleratingAudioClip, bikeLetOffGasAudioClip, bikeTopSpeedClip, phoneInOutAudioClip;
+    private AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource, phoneInOutAudioSource;
 
 	public GameObject textTip;
 
@@ -123,8 +123,9 @@ public class ScooterDrive : MonoBehaviour
 		bikeLetOffGasAudioSource.loop = false;
 		bikeTopSpeedAudioSource = AudioManager.Instance.PlaySoundSFX(bikeTopSpeedClip, gameObject, loop: true, volume: 0.5f);
 		bikeTopSpeedAudioSource.Stop();
-
-	}
+        phoneInOutAudioSource = AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject, loop: false, volume: 0.5f);
+        phoneInOutAudioSource.Stop();
+    }
 
 
     // Update is called once per frame
@@ -142,6 +143,7 @@ public class ScooterDrive : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
+            phoneInOutAudioSource.Play();
             phoneToggle = !phoneToggle;
             textTip.SetActive(phoneToggle == false);
             PhoneActivation();
