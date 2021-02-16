@@ -19,7 +19,6 @@ public class AudioManager : MonoBehaviour {
 
 	public AudioSource PlaySoundSFX(AudioClip clip, GameObject objectToPlayOn, float volume = 1f, float pitch = 1f, float blend = 1f, bool loop = false) {
 		AudioSource freshAudioSource = PlaySoundSFX(clip, objectToPlayOn.transform.position, volume, pitch, blend, loop);
-		freshAudioSource.gameObject.transform.parent = objectToPlayOn.transform;
 
 		freshAudioSource.GetComponent<VirtualAudioSource>().CalculateClosestListener(objectToPlayOn);
 
@@ -28,6 +27,7 @@ public class AudioManager : MonoBehaviour {
 
 	public AudioSource PlaySoundSFX(AudioClip clip, Vector3 positionToPlayAt, float volume = 1f, float pitch = 1f, float blend = 1f, bool loop = false) {
 		AudioSource freshAudioSource = Instantiate(audioSourcePrefab).GetComponent<AudioSource>();
+		freshAudioSource.gameObject.transform.parent = gameObject.transform;
 		freshAudioSource.gameObject.transform.position = positionToPlayAt;
 		freshAudioSource.pitch = pitch;
 		freshAudioSource.volume = volume;
@@ -44,7 +44,9 @@ public class AudioManager : MonoBehaviour {
 		return freshAudioSource;
 	}
 
-	public void StopSound(AudioSource source, float fadeTime) {
+	public void StopSound(AudioSource source, float fadeTime = 0.15f) {
+		if (source == null) { return; }
+
 		StartCoroutine(FadeOut(source, fadeTime));
 		if (loopingSounds.Contains(source)) loopingSounds.Remove(source);
 	}
