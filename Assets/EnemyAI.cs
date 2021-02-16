@@ -65,7 +65,7 @@ public class EnemyAI : MonoBehaviour
 
         Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
         Apartments[1] = GameObject.Find("SeasandWayPoint").transform;
-        Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
+        //Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
         Apartments[3] = GameObject.Find("Halina WayPoint").transform;
 
         #endregion
