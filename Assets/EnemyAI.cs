@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour
         Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
         Apartments[1] = GameObject.Find("SeasandWayPoint").transform;
         //Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
-        Apartments[3] = GameObject.Find("Halina WayPoint").transform;
+        //Apartments[2] = GameObject.Find("Halina WayPoint").transform;
         // FIXME: some of the above objects do not exist
 
         #endregion
@@ -188,7 +188,9 @@ public class EnemyAI : MonoBehaviour
                 if (!orderPickedUp)
                 {
                     print("Order PickedUp");
+                    //This line is a problem child, I'll (Cass) look into it more
                     target.transform.position = apartmentToGoTo.transform.position;
+                    //
                     StartCoroutine(Waiting2());
                 }                
             }
