@@ -134,8 +134,10 @@ public class ScooterDrive : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-			AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject, volume: 0.5f);
-			phoneToggle = !phoneToggle;
+            Debug.Log("anything");
+			//AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject, volume: 0.5f);
+            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
+            phoneToggle = !phoneToggle;
             textTip.SetActive(phoneToggle == false);
             PhoneActivation();
         }
