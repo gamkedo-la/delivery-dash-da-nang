@@ -34,8 +34,14 @@ public class PrefabOrder : MonoBehaviour
     private GraphPathfinding gpsScript;
     private GraphNode restaurantNode;
 
+    private AudioClip phoneButtonPressedAudioClip;
+    private PhoneScript phoneScript;
+
     private void Start()
     {
+        phoneScript = GameObject.Find("Canvas - PlayerPhone").GetComponent<PhoneScript>();
+        phoneButtonPressedAudioClip = phoneScript.phoneButtonPressedAudioClip;
+
         gameManager = GameObject.Find("GameManager");
         //Debug.Log(gameManager);
         GameObject masterKeyWaypoint = GameObject.Find("Player1Restaurant");
@@ -77,6 +83,8 @@ public class PrefabOrder : MonoBehaviour
 
     public void OrderAccepted()
     {
+        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+
         orderHasBeenTaken = true;
         orderCondition.color = Color.green;
 
