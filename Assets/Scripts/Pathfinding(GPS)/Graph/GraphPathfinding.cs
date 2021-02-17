@@ -131,7 +131,7 @@ public class GraphPathfinding : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if(path != null)
+        if(path != null && playerLocation != null && path != null && path[0] != null)
         {
             Gizmos.DrawLine(playerLocation.position, path[0].worldPosition);
             for (int i = 0; i < path.Count; i++)

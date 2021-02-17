@@ -65,7 +65,7 @@ public class ScooterDrive : MonoBehaviour
     public RatingsManager ratingsManager;
 
 	public AudioClip bikeIdleAudioClip, bikeAccelleratingAudioClip, bikeLetOffGasAudioClip, bikeTopSpeedClip, phoneInOutAudioClip;
-    private AudioSource bikeIdleAudioSource, bikeAccelleratingAudioSource, bikeLetOffGasAudioSource, bikeTopSpeedAudioSource, phoneInOutAudioSource;
+    private AudioSource bikeCurrentAudioSource;
 
 	public GameObject textTip;
 
@@ -115,16 +115,7 @@ public class ScooterDrive : MonoBehaviour
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
 
-		bikeIdleAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
-		bikeAccelleratingAudioSource = AudioManager.Instance.PlaySoundSFX(bikeAccelleratingAudioClip, gameObject, loop: true, volume: 0.25f);
-		bikeAccelleratingAudioSource.Stop();
-		bikeLetOffGasAudioSource = AudioManager.Instance.PlaySoundSFX(bikeLetOffGasAudioClip, gameObject, loop: true, volume: 0.5f);
-		bikeLetOffGasAudioSource.Stop();
-		bikeLetOffGasAudioSource.loop = false;
-		bikeTopSpeedAudioSource = AudioManager.Instance.PlaySoundSFX(bikeTopSpeedClip, gameObject, loop: true, volume: 0.5f);
-		bikeTopSpeedAudioSource.Stop();
-        phoneInOutAudioSource = AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject, loop: false, volume: 0.5f);
-        phoneInOutAudioSource.Stop();
+		bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
     }
 
 
@@ -143,8 +134,8 @@ public class ScooterDrive : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            phoneInOutAudioSource.Play();
-            phoneToggle = !phoneToggle;
+			AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject, volume: 0.5f);
+			phoneToggle = !phoneToggle;
             textTip.SetActive(phoneToggle == false);
             PhoneActivation();
         }
@@ -153,12 +144,6 @@ public class ScooterDrive : MonoBehaviour
 
         previousX = gameObject.transform.position.x;
         previousZ = gameObject.transform.position.z;
-
-        if (bikeLetOffGasAudioSource.time == bikeLetOffGasAudioSource.clip.length)
-        {
-            bikeLetOffGasAudioSource.time = 0;
-            bikeIdleAudioSource.Play();
-        }
 
         if (currentSpeed >= ((collisionPercent / 100) * maxSpeed))
         {
@@ -225,31 +210,22 @@ public class ScooterDrive : MonoBehaviour
         }
     }
 
-    void accelerate()
+    /*void Accelerate()
     {
-
         currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
-        /*if (currentSpeed > maxSpeed)
+        if (currentSpeed > maxSpeed)
         {
             currentSpeed = maxSpeed;
-            //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
-            //{
-
-            //if (bikeTopSpeedAudioSource.isPlaying == false)
-            //{
-            //     bikeAccelleratingAudioSource.Stop();
-            //     bikeTopSpeedAudioSource.Play();
-            // }
-
-            //}
+            if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) {
+				AudioManager.Instance.StopSound(bikeCurrentAudioSource);
+				bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeTopSpeedClip, gameObject, loop: true, volume: 0.25f);
+            }
         }
-
-        if (!bikeAccelleratingAudioSource.isPlaying && currentSpeed < maxSpeed)
-        {
-            bikeIdleAudioSource.Stop();
-            bikeAccelleratingAudioSource.Play();
-        }*/
-    }
+		else if (currentSpeed < maxSpeed && bikeCurrentAudioSource.clip != bikeAccelleratingAudioClip) {
+			AudioManager.Instance.StopSound(bikeCurrentAudioSource);
+			bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeAccelleratingAudioClip, gameObject, loop: true, volume: 0.25f);
+		}
+    }*/
 
     void HandleControlKeys()
     {
@@ -260,24 +236,18 @@ public class ScooterDrive : MonoBehaviour
             if (currentSpeed > 1.25f)
             {
                 currentSpeed = 1.25f;
-                //if (bikeAccelleratingAudioSource.isPlaying && bikeAccelleratingAudioSource.time == bikeAccelleratingAudioSource.clip.length)
-                //{
-                    
-                //if (bikeTopSpeedAudioSource.isPlaying == false)
-                //{
-               //     bikeAccelleratingAudioSource.Stop();
-               //     bikeTopSpeedAudioSource.Play();
-               // }
-                    
-                //}
-            }
-
-            if (!bikeAccelleratingAudioSource.isPlaying && currentSpeed < maxSpeed)
-            {
-                bikeIdleAudioSource.Stop();
-                bikeAccelleratingAudioSource.Play();
-            } 
-        }
+				if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
+				{
+					AudioManager.Instance.StopSound(bikeCurrentAudioSource);
+					bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeTopSpeedClip, gameObject, loop: true, volume: 0.25f);
+				}
+			}
+			else if (currentSpeed < 1.25f && bikeCurrentAudioSource.clip != bikeAccelleratingAudioClip) 
+			{
+				AudioManager.Instance.StopSound(bikeCurrentAudioSource);
+				bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeAccelleratingAudioClip, gameObject, loop: true, volume: 0.25f);
+			}
+		}
         else if (!isAccelerating && currentSpeed > 0)
         {
             currentSpeed += Time.deltaTime * brakeSpeed * Input.GetAxisRaw("Vertical");
@@ -291,17 +261,11 @@ public class ScooterDrive : MonoBehaviour
         //let off gas sfx
         if (acceleratingCompleted)
         {
-            if (bikeAccelleratingAudioSource.isPlaying)
-            {
-                bikeAccelleratingAudioSource.Stop();
-            }
-            else if (bikeTopSpeedAudioSource.isPlaying)
-            {
-                bikeTopSpeedAudioSource.Stop();
-            }
-            
-            bikeLetOffGasAudioSource.Play();
-            acceleratingCompleted = false;
+			AudioManager.Instance.StopSound(bikeCurrentAudioSource);
+			bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
+			AudioManager.Instance.PlaySoundSFX(bikeLetOffGasAudioClip, gameObject, volume: 0.25f);
+
+			acceleratingCompleted = false;
         }
 
         //turns
@@ -383,14 +347,13 @@ public class ScooterDrive : MonoBehaviour
 
         }
 
-        if (currentSpeed == 0 && !bikeIdleAudioSource.isPlaying)
-        {
-            bikeAccelleratingAudioSource.Stop();
-            bikeIdleAudioSource.Play();
-        }
+        if (currentSpeed == 0 && bikeCurrentAudioSource.clip != bikeIdleAudioClip) {
+			AudioManager.Instance.StopSound(bikeCurrentAudioSource);
+			bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
+		}
 
-        //brake
-        if ( (isBraking || Input.GetKey(KeyCode.K)) && isAccelerating)
+		//brake
+		if ( (isBraking || Input.GetKey(KeyCode.K)) && isAccelerating)
         {
             currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical") * 3;
             if (currentSpeed < 0)

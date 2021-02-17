@@ -174,6 +174,9 @@ public class EnemyAIGPS : MonoBehaviour
                     print("Order PickedUp");
                     toGoBox.SetActive(true);
                     Vector3 offset = new Vector3(0, -3, 0);
+                    if (!target || !apartmentToGoTo) {
+                        Debug.Log("ERROR: enemy AI has a blank target/goto");
+                    }
                     target.transform.position = apartmentToGoTo.transform.position + offset;
                     NextPathStep();
                     orderPickedUp = true;
