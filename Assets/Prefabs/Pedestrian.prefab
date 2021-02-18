@@ -189,6 +189,7 @@ MonoBehaviour:
   minSpeed: 3.5
   maxSpeed: 4.5
   movementSpeed: 4
+  danielleScream1: {fileID: 8300000, guid: af9953df5bc28ef4198cdca8c9f8e84d, type: 3}
 --- !u!114 &6148647872672295213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
+  danielleScreamAudioClip: {fileID: 0}
 --- !u!135 &2377050194742961316
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -210,7 +212,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6148647872672295210}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

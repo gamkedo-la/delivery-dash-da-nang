@@ -8,6 +8,8 @@ public class WaypointNavigation : MonoBehaviour
     public Waypoint currentWaypoint;
     int direction;
 
+    public AudioClip danielleScreamAudioClip;
+
     private void Awake()
     {
         controller = GetComponent<PedestrianCharacterController>();

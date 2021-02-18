@@ -8,7 +8,9 @@ public class AudioManager : MonoBehaviour {
 
 	private List<AudioSource> loopingSounds = new List<AudioSource>();
 
-	void Awake() {
+    public AudioClip danielleScream;
+
+    void Awake() {
 		if (Instance == null) {
 			Instance = this;
 			DontDestroyOnLoad(gameObject);

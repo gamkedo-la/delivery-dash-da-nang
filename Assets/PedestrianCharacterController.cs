@@ -13,6 +13,9 @@ public class PedestrianCharacterController : MonoBehaviour
     public float movementSpeed;
     Vector3 velocity;
 
+    public AudioClip danielleScream1;
+
+
     private void Start()
     {
         movementSpeed = Random.Range(minSpeed, maxSpeed);
@@ -51,5 +54,13 @@ public class PedestrianCharacterController : MonoBehaviour
     {
         this.destination = destination;
         reachedDestination = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            AudioManager.Instance.PlaySoundSFX(danielleScream1, gameObject, volume: 0.5f);
+        }
     }
 }
