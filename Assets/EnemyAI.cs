@@ -61,7 +61,7 @@ public class EnemyAI : MonoBehaviour
         Restaurants[1] = GameObject.Find("RamenWayPoint").transform;
         Restaurants[2] = GameObject.Find("SushiWayPoint").transform;
 
-        Apartments = new Transform[4];
+        Apartments = new Transform[2];
 
         Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
         Apartments[1] = GameObject.Find("SeasandWayPoint").transform;
@@ -84,6 +84,7 @@ public class EnemyAI : MonoBehaviour
 
         restaurantToGoTo = Restaurants[Rselection];
         apartmentToGoTo = Apartments[Aselection];
+        Debug.Log("apartmentToGoTo: " + apartmentToGoTo);
 
         orderScore = 100; 
         orderSelected = true;
@@ -157,7 +158,7 @@ public class EnemyAI : MonoBehaviour
             if (orderPickedUp)
             {
                 target.GetComponent<BoxCollider>().enabled = false; 
-                print("Order Delivered");
+                //print("Order Delivered");
 
                 if (enemy2)
                 {
@@ -189,11 +190,12 @@ public class EnemyAI : MonoBehaviour
                 {
                     print("Order PickedUp");
                     //This line is a problem child, I'll (Cass) look into it more
-                    print("This is the target   " + target);
-                    print("This is the apt to go to   " + apartmentToGoTo);
+                    print("This is the target (restaurant to go to)  " + target.name);
+                    print("This is the apt to go to   " + apartmentToGoTo.name);
                     target.transform.position = apartmentToGoTo.transform.position;
                     //
                     StartCoroutine(Waiting2());
+                    orderPickedUp = true;
                 }                
             }
         }
