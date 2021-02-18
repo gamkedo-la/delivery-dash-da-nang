@@ -66,8 +66,8 @@ public class PrefabOrder : MonoBehaviour
 
         apartmentLocations[0] = GameObject.Find("ChipsWayPoint").transform;
         apartmentLocations[1] = GameObject.Find("SeasandWayPoint").transform;
-        apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
-        apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
+      //  apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
+      //  apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
 
         player1WayPoint = GameObject.Find("WayPointBox - Restaurant");
        // player1ApartmentWayPoint = GameObject.Find("WayPointBox - Customer");

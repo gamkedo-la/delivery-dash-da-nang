@@ -189,6 +189,8 @@ public class EnemyAI : MonoBehaviour
                 {
                     print("Order PickedUp");
                     //This line is a problem child, I'll (Cass) look into it more
+                    print("This is the target   " + target);
+                    print("This is the apt to go to   " + apartmentToGoTo);
                     target.transform.position = apartmentToGoTo.transform.position;
                     //
                     StartCoroutine(Waiting2());
