@@ -8,13 +8,18 @@ public class WaypointNavigation : MonoBehaviour
     public Waypoint currentWaypoint;
     int direction;
 
-    public AudioClip danielleScreamAudioClip;
+    //public AudioClip danielleScreamAudioClip, scream2, scream3, scream4;
+    //public List<AudioClip> listOfScreams = new List<AudioClip>();
 
     private void Awake()
     {
         controller = GetComponent<PedestrianCharacterController>();
     }
 
+    void playRandomScream()
+    {
+
+    }
 
     void Start()
     {

@@ -12,9 +12,10 @@ public class PedestrianCharacterController : MonoBehaviour
     public float minSpeed, maxSpeed;
     public float movementSpeed;
     Vector3 velocity;
-
-    public AudioClip danielleScream1;
-
+    
+    public AudioClip danielleScreamAudioClip, scream2, scream3, scream4;
+    public List<AudioClip> listOfScreams = new List<AudioClip>(4);
+    //balal;kgha;oirghoiwrjg
 
     private void Start()
     {
@@ -60,7 +61,13 @@ public class PedestrianCharacterController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            AudioManager.Instance.PlaySoundSFX(danielleScream1, gameObject, volume: 0.5f);
+            playRandomScream();
         }
+    }
+
+    private void playRandomScream()
+    {
+        var randomScreamListIndex = Random.Range(0, 3);
+        AudioManager.Instance.PlaySoundSFX(listOfScreams[randomScreamListIndex], gameObject, volume: 0.5f);
     }
 }

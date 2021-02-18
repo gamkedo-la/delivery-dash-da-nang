@@ -189,7 +189,15 @@ MonoBehaviour:
   minSpeed: 3.5
   maxSpeed: 4.5
   movementSpeed: 4
-  danielleScream1: {fileID: 8300000, guid: af9953df5bc28ef4198cdca8c9f8e84d, type: 3}
+  danielleScreamAudioClip: {fileID: 0}
+  scream2: {fileID: 0}
+  scream3: {fileID: 0}
+  scream4: {fileID: 0}
+  listOfScreams:
+  - {fileID: 8300000, guid: af9953df5bc28ef4198cdca8c9f8e84d, type: 3}
+  - {fileID: 8300000, guid: f4b96a516ebc4b044928e21c037cffce, type: 3}
+  - {fileID: 8300000, guid: e4244c15fc3e6e44a9f9c766326d3b13, type: 3}
+  - {fileID: 8300000, guid: 211030a877d111b40a8753b82aa3185c, type: 3}
 --- !u!114 &6148647872672295213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWaypoint: {fileID: 0}
-  danielleScreamAudioClip: {fileID: 0}
 --- !u!135 &2377050194742961316
 SphereCollider:
   m_ObjectHideFlags: 0
