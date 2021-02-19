@@ -12,6 +12,8 @@ public class PedestrianCharacterController : MonoBehaviour
     public float minSpeed, maxSpeed;
     public float movementSpeed;
     Vector3 velocity;
+
+    private bool hasScreamedThisCollision = false;
     
     public AudioClip danielleScreamAudioClip, scream2, scream3, scream4;
     public List<AudioClip> listOfScreams = new List<AudioClip>(4);
@@ -61,14 +63,27 @@ public class PedestrianCharacterController : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playRandomScream();
+            if (!hasScreamedThisCollision)
+            {
+                playRandomScream();
+            }
         }
     }
 
     private void playRandomScream()
     {
-        var randomScreamListIndex = Random.Range(1, 4);
+        var randomScreamListIndex = Random.Range(0, listOfScreams.Count);
         Debug.Log("randomScreamListIndex: " + randomScreamListIndex);
         AudioManager.Instance.PlaySoundSFX(listOfScreams[randomScreamListIndex], gameObject, volume: 0.5f);
+        hasScreamedThisCollision = true;
+
+        StartCoroutine(delayPotentialForSecondScream());
+    }
+
+    IEnumerator delayPotentialForSecondScream()
+    {
+        yield return new WaitForSeconds(1);
+
+        hasScreamedThisCollision = false;
     }
 }
