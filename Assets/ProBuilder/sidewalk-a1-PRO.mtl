@@ -1,0 +1,5 @@
+newmtl sidewalk-a1
+map_Kd -o 0 0 -s 1 1 sidewalk-a1.png
+Kd 1 1 1
+d 1
+
