@@ -84,7 +84,7 @@ public class EnemyAI : MonoBehaviour
 
         restaurantToGoTo = Restaurants[Rselection];
         apartmentToGoTo = Apartments[Aselection];
-        Debug.Log("apartmentToGoTo: " + apartmentToGoTo);
+        //Debug.Log("apartmentToGoTo: " + apartmentToGoTo);
 
         orderScore = 100; 
         orderSelected = true;
@@ -188,10 +188,10 @@ public class EnemyAI : MonoBehaviour
             {
                 if (!orderPickedUp)
                 {
-                    print("Order PickedUp");
+                    //print("Order PickedUp");
                     //This line is a problem child, I'll (Cass) look into it more
-                    print("This is the target (restaurant to go to)  " + target.name);
-                    print("This is the apt to go to   " + apartmentToGoTo.name);
+                    //print("This is the target (restaurant to go to)  " + target.name);
+                    //print("This is the apt to go to   " + apartmentToGoTo.name);
                     target.transform.position = apartmentToGoTo.transform.position;
                     //
                     StartCoroutine(Waiting2());

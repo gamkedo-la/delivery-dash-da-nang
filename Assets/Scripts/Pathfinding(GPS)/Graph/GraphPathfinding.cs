@@ -48,12 +48,12 @@ public class GraphPathfinding : MonoBehaviour
         seeker = startNode;
         objectiveNode = targetNode;
 
-        Debug.Log("Starting Find Path");
+        //Debug.Log("Starting Find Path");
         if(startNode == solvedForStart && targetNode == solvedForTarget)
         {
             return;
         }
-        Debug.Log("Actuallty starting");
+        //Debug.Log("Actuallty starting");
         List<GraphNode> openSet = new List<GraphNode>();
         List<GraphNode> closedSet = new List<GraphNode>();
         //openSet := {start}
@@ -86,27 +86,31 @@ public class GraphPathfinding : MonoBehaviour
 
             //Loop through connections to find shortest path
             //for each neighbor of current
-            foreach (GraphNode neighbor in node.GetNeighbors())
+            if (startNode != null)
             {
-                if (closedSet.Contains(neighbor))
+                foreach (GraphNode neighbor in node.GetNeighbors())
                 {
-                    continue;
-                }
-                //tentative_gScore := gScore[current] + d(current, neighbor)
-                int newMovementCostToNeighbor = node.gCost + GetDistance(node, neighbor);
-                //if tentative_gScore < gScore[neighbor]
-                if (newMovementCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
-                {
-                    neighbor.gCost = newMovementCostToNeighbor;
-                    neighbor.hCost = GetDistance(neighbor, targetNode);
-                    neighbor.parent = node;
-
-                    if (!openSet.Contains(neighbor))
+                    if (closedSet.Contains(neighbor))
                     {
-                        openSet.Add(neighbor);
+                        continue;
                     }
-                }                
+                    //tentative_gScore := gScore[current] + d(current, neighbor)
+                    int newMovementCostToNeighbor = node.gCost + GetDistance(node, neighbor);
+                    //if tentative_gScore < gScore[neighbor]
+                    if (newMovementCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
+                    {
+                        neighbor.gCost = newMovementCostToNeighbor;
+                        neighbor.hCost = GetDistance(neighbor, targetNode);
+                        neighbor.parent = node;
+
+                        if (!openSet.Contains(neighbor))
+                        {
+                            openSet.Add(neighbor);
+                        }
+                    }
+                }
             }
+            
         }
     }
 

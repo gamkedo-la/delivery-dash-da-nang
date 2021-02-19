@@ -371,7 +371,7 @@ public class ScooterDrive : MonoBehaviour
         {
             if (currentSpeed < 0 && !backingUp)
             {
-                Debug.Log("inside current speed less than 0 check");
+                //Debug.Log("inside current speed less than 0 check");
                 currentSpeed = 0;
                 return;
             }

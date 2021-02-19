@@ -67,7 +67,8 @@ public class PedestrianCharacterController : MonoBehaviour
 
     private void playRandomScream()
     {
-        var randomScreamListIndex = Random.Range(0, 3);
+        var randomScreamListIndex = Random.Range(1, 4);
+        Debug.Log("randomScreamListIndex: " + randomScreamListIndex);
         AudioManager.Instance.PlaySoundSFX(listOfScreams[randomScreamListIndex], gameObject, volume: 0.5f);
     }
 }
