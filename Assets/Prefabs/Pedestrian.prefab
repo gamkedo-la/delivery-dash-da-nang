@@ -189,10 +189,11 @@ MonoBehaviour:
   minSpeed: 3.5
   maxSpeed: 4.5
   movementSpeed: 4
-  danielleScreamAudioClip: {fileID: 0}
-  scream2: {fileID: 0}
-  scream3: {fileID: 0}
-  scream4: {fileID: 0}
+  danielleScreamAudioClip: {fileID: 8300000, guid: af9953df5bc28ef4198cdca8c9f8e84d,
+    type: 3}
+  scream2: {fileID: 8300000, guid: f4b96a516ebc4b044928e21c037cffce, type: 3}
+  scream3: {fileID: 8300000, guid: e4244c15fc3e6e44a9f9c766326d3b13, type: 3}
+  scream4: {fileID: 8300000, guid: 211030a877d111b40a8753b82aa3185c, type: 3}
   listOfScreams:
   - {fileID: 8300000, guid: af9953df5bc28ef4198cdca8c9f8e84d, type: 3}
   - {fileID: 8300000, guid: f4b96a516ebc4b044928e21c037cffce, type: 3}
