@@ -236,11 +236,12 @@ public class ScooterDrive : MonoBehaviour
             if (currentSpeed > 1.25f)
             {
                 currentSpeed = 1.25f;
-				if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
+                //** BELOW TO BE USED WHEN WE HAVE A BETTER TOP SPEED SOUND
+				/*if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
 				{
 					AudioManager.Instance.StopSound(bikeCurrentAudioSource);
 					bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeTopSpeedClip, gameObject, loop: true, volume: 0.25f);
-				}
+				}*/
 			}
 			else if (currentSpeed < 1.25f && bikeCurrentAudioSource.clip != bikeAccelleratingAudioClip) 
 			{
