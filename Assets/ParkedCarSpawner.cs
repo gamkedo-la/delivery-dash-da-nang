@@ -19,15 +19,5 @@ public class ParkedCarSpawner : MonoBehaviour
         GameObject clone = Instantiate(parkedCar1, RandomPosition, Quaternion.identity);*/
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

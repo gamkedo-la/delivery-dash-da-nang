@@ -42,13 +42,13 @@ public class EnemyAIGPS : MonoBehaviour
 
         Restaurants = new Transform[3];
 
-    //    Restaurants[0] = GameObject.Find("HannahsWayPoint").transform;
-    //    Restaurants[1] = GameObject.Find("RamenWayPoint").transform;
+        Restaurants[0] = GameObject.Find("HannahsWayPoint").transform;
+        Restaurants[1] = GameObject.Find("RamenWayPoint").transform;
         Restaurants[0] = GameObject.Find("SushiWayPoint").transform;
 
         Apartments = new Transform[4];
 
-     //   Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
+        Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
        Apartments[0] = GameObject.Find("SeasandWayPoint").transform;
       //  Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
       //  Apartments[3] = GameObject.Find("Halina WayPoint").transform;
@@ -104,10 +104,10 @@ public class EnemyAIGPS : MonoBehaviour
 
     void TravelToRestaurant()
     {
-        Debug.Log("TravelToRestaurant");
+        //Debug.Log("TravelToRestaurant");
         graphPathfinding.FindPath(graphPathfinding.FindNearestNode(restaurantToGoTo.transform), graphPathfinding.FindNearestNode(this.gameObject.transform));
-        Debug.Log(graphPathfinding.FindNearestNode(target.transform));
-        Debug.Log(graphPathfinding.FindNearestNode(this.gameObject.transform));
+        //Debug.Log(graphPathfinding.FindNearestNode(target.transform));
+        //Debug.Log(graphPathfinding.FindNearestNode(this.gameObject.transform));
 
         currentPathNode = 0;
         activePath = new List<Vector3>();
@@ -171,7 +171,7 @@ public class EnemyAIGPS : MonoBehaviour
             {
                 if (!orderPickedUp)
                 {
-                    print("Order PickedUp");
+                    //print("Order PickedUp");
                     toGoBox.SetActive(true);
                     Vector3 offset = new Vector3(0, -3, 0);
                     if (!target || !apartmentToGoTo) {
@@ -184,7 +184,7 @@ public class EnemyAIGPS : MonoBehaviour
 
                 else
                 {
-                    print("Order Delivered");
+                   // print("Order Delivered");
                     //AddScoreToGameManagerTotal
                     //OrderScore = 0;
                     toGoBox.SetActive(false);

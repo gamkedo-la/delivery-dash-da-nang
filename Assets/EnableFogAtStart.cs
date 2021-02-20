@@ -8,6 +8,6 @@ public class EnableFogAtStart : MonoBehaviour
     void Start()
     {
         RenderSettings.fog = true;
-        Debug.Log("Script turning on fog so it's not obstructing editor view");
+        //Debug.Log("Script turning on fog so it's not obstructing editor view");
     }
 }
