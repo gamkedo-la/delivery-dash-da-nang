@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class ScooterDrive : MonoBehaviour
 {
@@ -76,23 +77,60 @@ public class ScooterDrive : MonoBehaviour
     //Input Controls
     private bool isAccelerating = false;
     private bool acceleratingCompleted = false;
+    private bool isAcceleratingFromStick = false;
     private bool turnLeft = false;
     private bool turnRight = false;
     private bool isBraking = false;
     private bool isBrakingCompleted = false;
+    private bool isReversing = false;
+    private bool isReversingCompleted = false;
+    private float accelerateValue = 0;
 
     private void Awake()
     {
         controls = new PlayerControls();
 
-        controls.GamePlay.Accelerate.performed += context => isAccelerating = true;
-        controls.GamePlay.Accelerate.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
+        controls.GamePlay.AccelerateKeyboard.performed += context => { isAccelerating = true; isAcceleratingFromStick = false; };
+        controls.GamePlay.AccelerateKeyboard.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
+        controls.GamePlay.AccelerateStick.performed += context =>
+        {
+            if (controls.GamePlay.AccelerateStick.ReadValue<Vector2>().y > 0)
+            {
+                isAccelerating = true; 
+                isAcceleratingFromStick = true;
+                acceleratingCompleted = false;
+                isReversing = false; 
+                isReversingCompleted = true;
+                accelerateValue = controls.GamePlay.AccelerateStick.ReadValue<Vector2>().y;
+            }
+            else if (controls.GamePlay.AccelerateStick.ReadValue<Vector2>().y < 0)
+            {
+                isAccelerating = false; 
+                acceleratingCompleted = true;
+                isAcceleratingFromStick = true;
+                isReversing = true;
+                isReversingCompleted = false;
+                accelerateValue = controls.GamePlay.AccelerateStick.ReadValue<Vector2>().y;
+            }
+            else
+            {
+                isAccelerating = false;
+                acceleratingCompleted = true;
+                isAcceleratingFromStick = false;
+                isReversing = false;
+                isReversingCompleted = true;
+                accelerateValue = 0;
+            }
+        };
+        controls.GamePlay.AccelerateStick.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
         controls.GamePlay.TurnLeft.performed += context => turnLeft = true;
         controls.GamePlay.TurnLeft.canceled += context => turnLeft = false;
         controls.GamePlay.TurnRight.performed += context => turnRight = true;
         controls.GamePlay.TurnRight.canceled += context => turnRight = false;
-        controls.GamePlay.Brake.performed += context => { isBraking = true; isBrakingCompleted = true;};
-        controls.GamePlay.Brake.performed += context => isBraking = false;
+        controls.GamePlay.Brake.performed += context => isBraking = true;
+        controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
+        controls.GamePlay.ReverseKeyboard.performed += context => { isReversing = true; isReversingCompleted = false; };
+        controls.GamePlay.ReverseKeyboard.canceled += context => { isReversing = false; isReversingCompleted = true; };
     }
 
     private void OnEnable()
@@ -229,10 +267,38 @@ public class ScooterDrive : MonoBehaviour
 
     void HandleControlKeys()
     {
+        if (isAcceleratingFromStick)
+        {
+            if (isAccelerating && (isReversing || isBraking))
+            {
+                accelerateValue = 0;
+            }
+        }
+        else
+        {
+            if (isAccelerating && (isReversing || isBraking))
+            {
+                accelerateValue = 0;
+            }
+            else if (isAccelerating)
+            {
+                accelerateValue = 1;
+            }
+            else if (!isAccelerating && (isReversing || isBraking))
+            {
+                accelerateValue = -1;
+            }
+            else
+            {
+                accelerateValue = 0;
+            }
+        }
+
         //forward and backwards
         if (isAccelerating)
         {
-            currentSpeed += forwardSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
+
+            currentSpeed += forwardSpeed * Time.deltaTime * accelerateValue;
             if (currentSpeed > 1.25f)
             {
                 currentSpeed = 1.25f;
@@ -251,7 +317,7 @@ public class ScooterDrive : MonoBehaviour
 		}
         else if (!isAccelerating && currentSpeed > 0)
         {
-            currentSpeed += Time.deltaTime * brakeSpeed * Input.GetAxisRaw("Vertical");
+            currentSpeed += Time.deltaTime * brakeSpeed * accelerateValue;
             if (currentSpeed < 0)
             {
                 currentSpeed = 0;
@@ -354,9 +420,9 @@ public class ScooterDrive : MonoBehaviour
 		}
 
 		//brake
-		if ( (isBraking || Input.GetKey(KeyCode.K)) && isAccelerating)
+		if ( (isBraking || isReversing) && isAccelerating)
         {
-            currentSpeed += brakeSpeed * Input.GetAxisRaw("Vertical") * 3;
+            currentSpeed += brakeSpeed * accelerateValue * 3;
             if (currentSpeed < 0)
             {
                 //brakeLights.SetActive(true);
@@ -368,7 +434,7 @@ public class ScooterDrive : MonoBehaviour
                 //brakeLights.SetActive(false);
             }
         }
-        else if ( (isBraking || Input.GetKey(KeyCode.K) ) && !isAccelerating)
+        else if ( (isBraking || isReversing ) && !isAccelerating)
         {
             if (currentSpeed < 0 && !backingUp)
             {
@@ -378,7 +444,7 @@ public class ScooterDrive : MonoBehaviour
             }
             else if (currentSpeed > 0 && !backingUp)
             {
-                currentSpeed += (brakeSpeed / 12) * Input.GetAxisRaw("Vertical") * 3;
+                currentSpeed += (brakeSpeed / 12) * accelerateValue * 3;
                 
                 return;
             }
@@ -393,26 +459,26 @@ public class ScooterDrive : MonoBehaviour
             brakeLights.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && currentSpeed == 0 && !isAccelerating)
+        if (isReversing && currentSpeed == 0 && !isAccelerating)
         {
             backingUp = true;
         }
-        if (Input.GetKeyUp(KeyCode.K))
+        if (isReversingCompleted)
         {
             backingUp = false;
         }
 
-        if (isBraking || Input.GetKeyDown(KeyCode.K))
+        if (isBraking || isReversing)
         {
             brakeLights.SetActive(true);
         }
-        if (isBraking || Input.GetKeyUp(KeyCode.K))
+        if (isBrakingCompleted || isReversingCompleted)
         {
             brakeLights.SetActive(false);
         }
 
         //coasting to stop
-        if (!isBraking && !isAccelerating && Input.GetKey(KeyCode.S) == false)
+        if (!isBraking && !isAccelerating && !isReversing)
         {
             currentSpeed -= Time.deltaTime * coastToStopSpeed * 2;
             if (currentSpeed < 0)

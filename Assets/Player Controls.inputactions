@@ -6,11 +6,11 @@
             "id": "0610ce19-76bd-47ba-8b24-669820581245",
             "actions": [
                 {
-                    "name": "Accelerate",
-                    "type": "Button",
+                    "name": "AccelerateStick",
+                    "type": "Value",
                     "id": "6d33f34e-d35b-4997-b4fc-87d157f617ff",
-                    "expectedControlType": "Button",
-                    "processors": "StickDeadzone",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
                     "interactions": ""
                 },
                 {
@@ -36,35 +36,40 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "AccelerateKeyboard",
+                    "type": "Button",
+                    "id": "3727ef0b-e495-4341-aaae-8dce1e5fbce2",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "ReverseKeyboard",
+                    "type": "Button",
+                    "id": "dd5e320a-bd1d-4b7f-bac2-c370ddecf212",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "142ec0fc-caf0-4c47-a734-80151827d5b6",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone(min=0.8,max=0.97)",
                     "groups": "",
-                    "action": "Accelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ed03b390-63a4-4ff6-8581-65f987fa392b",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Accelerate",
+                    "action": "AccelerateStick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "97cdcc78-c364-48e6-a313-1ad5857e1d40",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -124,6 +129,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "TurnLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "302dcfa9-688f-44ef-aafb-d5c3810bf505",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AccelerateKeyboard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9691cff-6abf-428c-97e0-dffbbb591c22",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReverseKeyboard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
