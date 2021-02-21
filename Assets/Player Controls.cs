@@ -71,7 +71,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""142ec0fc-caf0-4c47-a734-80151827d5b6"",
-                    ""path"": ""<Gamepad>/leftStick"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone(min=0.8,max=0.97)"",
                     ""groups"": """",
@@ -82,7 +82,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""97cdcc78-c364-48e6-a313-1ad5857e1d40"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/button6"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
@@ -115,7 +115,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9f04fbcb-fcea-470c-ad17-3872889d20f7"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -126,7 +126,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d4085755-5504-467d-8028-4472db514335"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/left"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
