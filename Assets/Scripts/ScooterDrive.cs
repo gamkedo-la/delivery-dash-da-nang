@@ -129,7 +129,7 @@ public class ScooterDrive : MonoBehaviour
         controls.GamePlay.TurnLeft.canceled += context => { Debug.Log("left stick recognized"); turnLeft = false; };
         controls.GamePlay.TurnRight.performed += context => { Debug.Log("left stick recognized"); turnRight = true; };
         controls.GamePlay.TurnRight.canceled += context => { Debug.Log("left stick recognized"); turnRight = false; };
-        controls.GamePlay.Brake.performed += context => { Debug.Log("right trigger is recognized"; isBraking = true; };
+        controls.GamePlay.Brake.performed += context => { Debug.Log("right trigger is recognized"); isBraking = true; };
         controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
         controls.GamePlay.ReverseKeyboard.performed += context => { isReversing = true; isReversingCompleted = false; };
         controls.GamePlay.ReverseKeyboard.canceled += context => { isReversing = false; isReversingCompleted = true; };
