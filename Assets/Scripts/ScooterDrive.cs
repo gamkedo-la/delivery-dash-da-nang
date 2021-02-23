@@ -96,7 +96,7 @@ public class ScooterDrive : MonoBehaviour
         {
             if (controls.GamePlay.AccelerateStick.ReadValue<Vector2>().y > 0)
             {
-                Debug.Log("left stick recognized");
+                //Debug.Log("left stick recognized");
                 isAccelerating = true; 
                 isAcceleratingFromStick = true;
                 acceleratingCompleted = false;
@@ -106,7 +106,7 @@ public class ScooterDrive : MonoBehaviour
             }
             else if (controls.GamePlay.AccelerateStick.ReadValue<Vector2>().y < 0)
             {
-                Debug.Log("left stick recognized");
+                //Debug.Log("left stick recognized");
                 isAccelerating = false; 
                 acceleratingCompleted = true;
                 isAcceleratingFromStick = true;
@@ -125,10 +125,10 @@ public class ScooterDrive : MonoBehaviour
             }
         };
         controls.GamePlay.AccelerateStick.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
-        controls.GamePlay.TurnLeft.performed += context => { Debug.Log("left stick recognized"); turnLeft = true; } ;
-        controls.GamePlay.TurnLeft.canceled += context => { Debug.Log("left stick recognized"); turnLeft = false; };
-        controls.GamePlay.TurnRight.performed += context => { Debug.Log("left stick recognized"); turnRight = true; };
-        controls.GamePlay.TurnRight.canceled += context => { Debug.Log("left stick recognized"); turnRight = false; };
+        controls.GamePlay.TurnLeft.performed += context => { /*Debug.Log("left stick recognized");*/ turnLeft = true; } ;
+        controls.GamePlay.TurnLeft.canceled += context => { /*Debug.Log("left stick recognized");*/ turnLeft = false; };
+        controls.GamePlay.TurnRight.performed += context => { /*Debug.Log("left stick recognized");*/ turnRight = true; };
+        controls.GamePlay.TurnRight.canceled += context => { /*Debug.Log("left stick recognized");*/ turnRight = false; };
         controls.GamePlay.Brake.performed += context => { Debug.Log("right trigger is recognized"); isBraking = true; };
         controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
         controls.GamePlay.ReverseKeyboard.performed += context => { isReversing = true; isReversingCompleted = false; };
@@ -342,6 +342,7 @@ public class ScooterDrive : MonoBehaviour
         {
             if (maxLeftTurnHeld || maxRightTurnHeld)
             {
+                Debug.Log("maxTurnReached");
                 return;
             }
 
@@ -453,7 +454,7 @@ public class ScooterDrive : MonoBehaviour
 
             if (backingUp)
             {
-                Debug.Log("inside backing up check");
+                //Debug.Log("inside backing up check");
                 currentSpeed = backwardSpeed;
                 return;
             }

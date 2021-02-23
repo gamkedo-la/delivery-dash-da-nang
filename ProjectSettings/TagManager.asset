@@ -14,6 +14,7 @@ TagManager:
   - AICar
   - AITarget
   - building
+  - Building
   layers:
   - Default
   - TransparentFX
