@@ -123,6 +123,7 @@ public class ScooterDrive : MonoBehaviour
                 isReversingCompleted = true;
                 accelerateValue = 0;
             }
+            
         };
         controls.GamePlay.AccelerateStick.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
         controls.GamePlay.TurnLeft.performed += context => { /*Debug.Log("left stick recognized");*/ turnLeft = true; } ;
