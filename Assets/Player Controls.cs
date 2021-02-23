@@ -70,22 +70,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""142ec0fc-caf0-4c47-a734-80151827d5b6"",
-                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick"",
-                    ""interactions"": """",
-                    ""processors"": ""StickDeadzone(min=0.8,max=0.97)"",
-                    ""groups"": """",
-                    ""action"": ""AccelerateStick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""97cdcc78-c364-48e6-a313-1ad5857e1d40"",
-                    ""path"": ""<HID::Logitech Logitech Dual Action>/button6"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Brake"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -115,10 +104,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9f04fbcb-fcea-470c-ad17-3872889d20f7"",
-                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/right"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""TurnRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -126,10 +115,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d4085755-5504-467d-8028-4472db514335"",
-                    ""path"": ""<HID::Logitech Logitech Dual Action>/stick/left"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""TurnLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -164,6 +153,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ReverseKeyboard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""142ec0fc-caf0-4c47-a734-80151827d5b6"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone(min=0.8,max=0.97)"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""AccelerateStick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
