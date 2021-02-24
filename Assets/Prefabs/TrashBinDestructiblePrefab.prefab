@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3009662686178334613}
   - component: {fileID: 3009662686178334612}
   - component: {fileID: 3009662686178334617}
+  - component: {fileID: 5899940061708929653}
   m_Layer: 0
   m_Name: TrashBinDestructiblePrefab
   m_TagString: DestEnv
@@ -129,6 +130,30 @@ MonoBehaviour:
   DestObject: {fileID: 7468998147778999647}
   hitSound:
   - {fileID: 8300000, guid: a08b84af1d9399f478301ae58b6d4aad, type: 3}
+--- !u!205 &5899940061708929653
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3009662686178334615}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1001 &8191816879369338418
 PrefabInstance:
   m_ObjectHideFlags: 0
