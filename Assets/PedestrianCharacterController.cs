@@ -13,6 +13,9 @@ public class PedestrianCharacterController : MonoBehaviour
     public float movementSpeed;
     Vector3 velocity;
 
+    public bool isCar;
+    bool hasCollided;
+
     private bool hasScreamedThisCollision = false;
     
     public AudioClip danielleScreamAudioClip, scream2, scream3, scream4;
@@ -25,31 +28,34 @@ public class PedestrianCharacterController : MonoBehaviour
     }
     private void Update()
     {
-        if (transform.position != destination)
+        if (!hasCollided)
         {
-            Vector3 destinationDirection = destination - transform.position;
-            destinationDirection.y = 0;
-
-            float destinationDistance = destinationDirection.magnitude;
-
-            if (destinationDistance >= stopDistance)
+            if (transform.position != destination)
             {
-                reachedDestination = false;
-                Quaternion targetRotation = Quaternion.LookRotation(destinationDirection);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-                transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
-            }
-            else
-            {
-                reachedDestination = true;
-            }
+                Vector3 destinationDirection = destination - transform.position;
+                destinationDirection.y = 0;
 
-            velocity = (transform.position - lastPosition) / Time.deltaTime;
-            velocity.y = 0;
-            var velocityMagnitude = velocity.magnitude;
-            velocity = velocity.normalized;
-            var fwdDotProduct = Vector3.Dot(transform.forward, velocity);
-            var rightDotProduct = Vector3.Dot(transform.right, velocity);
+                float destinationDistance = destinationDirection.magnitude;
+
+                if (destinationDistance >= stopDistance)
+                {
+                    reachedDestination = false;
+                    Quaternion targetRotation = Quaternion.LookRotation(destinationDirection);
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                    transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    reachedDestination = true;
+                }
+
+                velocity = (transform.position - lastPosition) / Time.deltaTime;
+                velocity.y = 0;
+                var velocityMagnitude = velocity.magnitude;
+                velocity = velocity.normalized;
+                var fwdDotProduct = Vector3.Dot(transform.forward, velocity);
+                var rightDotProduct = Vector3.Dot(transform.right, velocity);
+            }
         }
     }
 
@@ -61,14 +67,30 @@ public class PedestrianCharacterController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !isCar)
         {
             if (!hasScreamedThisCollision)
             {
                 playRandomScream();
             }
+
+            if (isCar)
+            {
+                print("im colliding now");
+                hasCollided = true;
+            }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player" && isCar)
+        {
+           hasCollided = false;
+        }
+    }
+
+
 
     private void playRandomScream()
     {

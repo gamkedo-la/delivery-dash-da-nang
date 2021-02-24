@@ -582,13 +582,17 @@ public class ScooterDrive : MonoBehaviour
             physicalOrder.SetActive(true);
         }
 
-        if (other.tag == "AICar" && canBeCollided)
+        if (other.tag == "AICar")
         {
-            print("playerFallsOffBike");
             currentSpeed = 0;
-            playerModel.GetComponent<Rigidbody>().AddForce(transform.up * bikeCrashWithAICarBumbForce, ForceMode.Impulse);
-            canBeCollided = false;
-            StartCoroutine(FallingOffBike());
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "AICar")
+        {
+            currentSpeed = 0;
         }
     }
 
