@@ -126,5 +126,6 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         player1OrderDelivered = false;
         timer.text = finalScore.ToString("F0") + "%";
         orders.text = "Press C to check your phone for orders.";
+        pointer.SetActive(false);
     }
 }
