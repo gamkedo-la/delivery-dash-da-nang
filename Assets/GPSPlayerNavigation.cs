@@ -13,7 +13,7 @@ public class GPSPlayerNavigation : MonoBehaviour
         GraphNode currentObjective = graphPathfinding.objectiveNode;
         if (other.CompareTag("GraphNode") && currentObjective!=null)
         {
-            Debug.Log("collide with " + other.gameObject);
+            //Debug.Log("collide with " + other.gameObject);
 
             GraphNode node;
             node = other.gameObject.GetComponent<GraphNode>();
