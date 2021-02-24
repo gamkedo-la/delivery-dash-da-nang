@@ -181,6 +181,8 @@ MonoBehaviour:
   carToChoose:
   - {fileID: 4337797495290799591}
   - {fileID: 1427208646251516341}
+  - {fileID: 8824251642304384109, guid: 77a257f9f3136be4f8c25c67f6e2c7d2, type: 3}
+  - {fileID: 938563367751465964, guid: b1b6bed31dd8caf48af133111dde168f, type: 3}
 --- !u!65 &7978933635715060261
 BoxCollider:
   m_ObjectHideFlags: 0
