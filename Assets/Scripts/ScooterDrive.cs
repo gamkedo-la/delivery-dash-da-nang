@@ -590,6 +590,13 @@ public class ScooterDrive : MonoBehaviour
             physicalOrder.SetActive(true);
         }
 
+        if (other.tag == "Building")
+        {
+            Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
+            currentSpeed = 0;
+            //FoodHealth.currentHealth -= 5f;
+        }
+
         if (other.tag == "AICar")
         {
             currentSpeed = 0;
