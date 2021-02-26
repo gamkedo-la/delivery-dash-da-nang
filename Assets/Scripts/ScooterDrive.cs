@@ -576,6 +576,14 @@ public class ScooterDrive : MonoBehaviour
             //print(playerCurrentSpeed);
         }
 
+        if (other.tag == "Pedestrian")
+        {
+            Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
+           // playerCurrentSpeed -= speedPenaltyPercent;
+            FoodHealth.currentHealth -= 5f;
+            //print(playerCurrentSpeed);
+        }
+
         if (other.tag == "WayPointBox")
         {
             GameManager.player1OrderPickedUp = true;
@@ -585,6 +593,7 @@ public class ScooterDrive : MonoBehaviour
         if (other.tag == "AICar")
         {
             currentSpeed = 0;
+            FoodHealth.currentHealth -= 5f;
         }
     }
 

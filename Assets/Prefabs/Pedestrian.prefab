@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2377050194742961316}
   m_Layer: 0
   m_Name: Pedestrian
-  m_TagString: Untagged
+  m_TagString: Pedestrian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,6 +221,7 @@ MonoBehaviour:
   minSpeed: 3.5
   maxSpeed: 4.5
   movementSpeed: 4
+  isCar: 0
   danielleScreamAudioClip: {fileID: 8300000, guid: af9953df5bc28ef4198cdca8c9f8e84d,
     type: 3}
   scream2: {fileID: 8300000, guid: f4b96a516ebc4b044928e21c037cffce, type: 3}
