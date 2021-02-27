@@ -589,7 +589,7 @@ public class ScooterDrive : MonoBehaviour
 
         if (other.tag == "Pedestrian")
         {
-            //currentSpeed = 0;
+            currentSpeed = 0;
             FoodHealth.currentHealth -= 5f;
         }
 
