@@ -582,8 +582,15 @@ public class ScooterDrive : MonoBehaviour
             physicalOrder.SetActive(true);
         }
 
+        if (other.tag == "Pedestrian")
+        {
+            currentSpeed = 0;
+            FoodHealth.currentHealth -= 5f;
+        }
+
         if (other.tag == "AICar")
         {
+            FoodHealth.currentHealth -= 5f;
             currentSpeed = 0;
         }
     }
