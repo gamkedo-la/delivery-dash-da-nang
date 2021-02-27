@@ -15,6 +15,7 @@ TagManager:
   - AITarget
   - building
   - Building
+  - Pedestrian
   layers:
   - Default
   - TransparentFX

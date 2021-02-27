@@ -582,6 +582,11 @@ public class ScooterDrive : MonoBehaviour
             physicalOrder.SetActive(true);
         }
 
+        if (other.tag == "Building")
+        {
+            currentSpeed = 0;
+        }
+
         if (other.tag == "Pedestrian")
         {
             currentSpeed = 0;
