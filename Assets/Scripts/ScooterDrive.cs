@@ -35,7 +35,7 @@ public class ScooterDrive : MonoBehaviour
 
     public float brakeSpeed = 0;
     public float brakeMaxSpeed = 15f;
-    private float brakeAccelerating = 0.05f; //Change this if you want to tweak braking.
+    private float brakeAccelerating = 0.025f; //Change this if you want to tweak braking.
 
     public GameObject brakeLights;
 
