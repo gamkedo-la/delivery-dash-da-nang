@@ -13,7 +13,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     public static float player1TimeScore, player1TimeScoreMax;
 
     public GameObject pointer;
-    public Text  timer;
+    public Text timer;
     public GameObject food, player;
 
     public Text orders; // UI element that displays orders on the top of the list
@@ -34,7 +34,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            
+
             if (PrefabOrder.orderHasBeenTaken)
             {
                 if (player1OrderPickedUp && !player1OrderDelivered && player.GetComponent<ScooterDrive>().currentSpeed == 0)
@@ -68,8 +68,14 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
             float score = (player1TimeScore / player1TimeScoreMax) * 100;
             float score2 = FoodHealth.currentHealth;
             finalScore = (score + score2) / 2;
-            GameManager.player1ScoreTotal += (int) finalScore * 100;
-            timer.text = finalScore.ToString("F2") + "%";
+            GameManager.player1ScoreTotal += (int)finalScore;
+            GameManager.player1TotalOrders++;
+
+            print(GameManager.player1ScoreTotal + "/" + GameManager.player1TotalOrders);
+            DisplayScore();
+            PrefabOrder.orderHasBeenTaken = false;
+            player1OrderPickedUp = false;
+            player1OrderDelivered = false;
             food.SetActive(false);
             pointer.SetActive(false);
             //Just getting the box out of the way
@@ -118,6 +124,12 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         }
     }
 
+    void DisplayScore()
+    {
+        timer.text = finalScore.ToString("F2") + "%";
+        StartCoroutine(Waiting2());
+    }
+
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(1.5f);
@@ -127,5 +139,11 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         timer.text = finalScore.ToString("F0") + "%";
         orders.text = "Press C to check your phone for orders.";
         pointer.SetActive(false);
+    }
+
+    IEnumerator Waiting2()
+    {
+        yield return new WaitForSeconds(1.5f);
+        timer.text = finalScore.ToString("F0") + "%";
     }
 }

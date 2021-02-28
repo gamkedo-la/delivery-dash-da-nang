@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public static bool player1OrderPickedUp;
     public static bool player1OrderDelivered;
 
+    public static int player1TotalOrders;
     public static float player1ScoreOnOrder;
     public static int player1ScoreTotal, player2ScoreTotal, player3ScoreTotal, player4ScoreTotal, enemy2ScoreTotal, enemy3ScoreTotal, enemy4ScoreTotal;
 
@@ -81,7 +82,7 @@ public class GameManager : MonoBehaviour
 
         ScoreEntry tempNew = new ScoreEntry();
         tempNew.name = "Player 1";
-        tempNew.score = 28;
+        tempNew.score = 0;
         ScoreList.Add(tempNew);
 
         tempNew = new ScoreEntry();
@@ -129,6 +130,10 @@ public class GameManager : MonoBehaviour
 
         TimeRemainingInRound();
 
+        if (ScoreList[0].score >= 0)
+        {
+            ScoreList[0].score = Mathf.RoundToInt(player1ScoreTotal / player1TotalOrders);
+        }
     }
 
     void TimeRemainingInRound()
