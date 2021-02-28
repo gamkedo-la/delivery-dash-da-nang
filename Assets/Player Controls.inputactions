@@ -6,14 +6,6 @@
             "id": "0610ce19-76bd-47ba-8b24-669820581245",
             "actions": [
                 {
-                    "name": "AccelerateStick",
-                    "type": "Value",
-                    "id": "6d33f34e-d35b-4997-b4fc-87d157f617ff",
-                    "expectedControlType": "Stick",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Brake",
                     "type": "Button",
                     "id": "ce31eaac-89cb-43ff-9d85-35e52a0d003f",
@@ -38,17 +30,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "AccelerateKeyboard",
+                    "name": "Accelerate",
                     "type": "Button",
                     "id": "3727ef0b-e495-4341-aaae-8dce1e5fbce2",
-                    "expectedControlType": "Button",
-                    "processors": "StickDeadzone",
-                    "interactions": ""
-                },
-                {
-                    "name": "ReverseKeyboard",
-                    "type": "Button",
-                    "id": "dd5e320a-bd1d-4b7f-bac2-c370ddecf212",
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
@@ -70,6 +54,17 @@
                     "name": "",
                     "id": "53e92038-22f9-47c0-8e0c-776dc7a42af1",
                     "path": "<Keyboard>/leftShift",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0c759c9-d82f-4873-98f2-21778f461c89",
+                    "path": "<Keyboard>/k",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
@@ -128,29 +123,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AccelerateKeyboard",
+                    "action": "Accelerate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "b9691cff-6abf-428c-97e0-dffbbb591c22",
-                    "path": "<Keyboard>/k",
+                    "id": "f017667d-9462-4578-b980-849d38168b2a",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "ReverseKeyboard",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "142ec0fc-caf0-4c47-a734-80151827d5b6",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "StickDeadzone(min=0.5,max=0.97)",
                     "groups": "Gamepad",
-                    "action": "AccelerateStick",
+                    "action": "Accelerate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
