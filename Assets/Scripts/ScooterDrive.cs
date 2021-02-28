@@ -35,7 +35,7 @@ public class ScooterDrive : MonoBehaviour
 
     public float brakeSpeed = 0;
     public float brakeMaxSpeed = 15f;
-    private float brakeAccelerating = 0.1f; //Change this if you want to tweak braking.
+    private float brakeAccelerating = 0.05f; //Change this if you want to tweak braking.
 
     public GameObject brakeLights;
 
@@ -287,7 +287,7 @@ public class ScooterDrive : MonoBehaviour
         if (isAccelerating)
         {
 
-            currentSpeed += /*forwardSpeed */ 0.25f * Time.deltaTime /* * (accelerateValue) */; 
+            currentSpeed += /*forwardSpeed */ 0.2f * Time.deltaTime /* * (accelerateValue) */; 
             Debug.Log("current speed: " + currentSpeed);
             if (currentSpeed > 0.75f)
             {
