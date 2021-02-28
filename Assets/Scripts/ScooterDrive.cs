@@ -12,10 +12,10 @@ public class ScooterDrive : MonoBehaviour
 
     //this variable is used to determine how much force to apply to enviornment objects after collision
     public static float playerCurrentSpeed;
-    public static float maxSpeed = 55f;
+    public static float maxSpeed = 15f;
 
     public float currentSpeed;
-    public float forwardSpeed = 100f;
+    public float forwardSpeed = 0.001f;
     public float backwardSpeed = -10.1f;
     public bool backingUp = false;
     public float coastToStopSpeed = 0.35f;
@@ -247,7 +247,7 @@ public class ScooterDrive : MonoBehaviour
         }
         else if (isAccelerating)
         {
-            accelerateValue = 1;
+            //accelerateValue = 1;
         }
         else if (!isAccelerating && (isReversing || isBraking))
         {
@@ -287,10 +287,11 @@ public class ScooterDrive : MonoBehaviour
         if (isAccelerating)
         {
 
-            currentSpeed += forwardSpeed * Time.deltaTime * accelerateValue;
-            if (currentSpeed > 1.25f)
+            currentSpeed += /*forwardSpeed */ 0.25f * Time.deltaTime /* * (accelerateValue) */; 
+            Debug.Log("current speed: " + currentSpeed);
+            if (currentSpeed > 0.75f)
             {
-                currentSpeed = 1.25f;
+                currentSpeed = 0.75f;
                 //** BELOW TO BE USED WHEN WE HAVE A BETTER TOP SPEED SOUND
 				/*if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
 				{
@@ -303,6 +304,11 @@ public class ScooterDrive : MonoBehaviour
 				AudioManager.Instance.StopSound(bikeCurrentAudioSource);
 				bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeAccelleratingAudioClip, gameObject, loop: true, volume: 0.25f);
 			}
+
+            //if (currentSpeed > maxSpeed)
+            //{
+             //   currentSpeed = maxSpeed;
+            //}    
 		}
         else if (!isAccelerating && currentSpeed > 0)
         {
