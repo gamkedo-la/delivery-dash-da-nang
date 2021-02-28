@@ -30,17 +30,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 78506f8f9e3e88f498bbf005325b551f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 373.25092
+      value: 549.27216
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 78506f8f9e3e88f498bbf005325b551f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32500005
+      value: 0.12500003
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 78506f8f9e3e88f498bbf005325b551f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 352.26364
+      value: 843.3811
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 78506f8f9e3e88f498bbf005325b551f,
         type: 3}
@@ -80,9 +80,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 78506f8f9e3e88f498bbf005325b551f,
         type: 3}
       propertyPath: m_Name
-      value: cub_stacked_styrofoam
+      value: cub_stacked_styrofoam (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2699092741681021261, guid: 78506f8f9e3e88f498bbf005325b551f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 78506f8f9e3e88f498bbf005325b551f, type: 3}
 --- !u!4 &248766499936905474 stripped
 Transform:
