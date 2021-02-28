@@ -359,7 +359,7 @@ public class ScooterDrive : MonoBehaviour
             bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 20);
 
             //Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal") * 3;
+            currentTurnAngle += Time.deltaTime * turnAngleRate;
             if (currentTurnAngle > maxTurnAngle)
             {
                 currentTurnAngle = maxTurnAngle;
@@ -386,7 +386,7 @@ public class ScooterDrive : MonoBehaviour
             bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 20);
 
             // Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            currentTurnAngle += Time.deltaTime * turnAngleRate * Input.GetAxisRaw("Horizontal") * 3;
+            currentTurnAngle += -Time.deltaTime * turnAngleRate;
             if (currentTurnAngle < -maxTurnAngle)
             {
                 currentTurnAngle = -maxTurnAngle;

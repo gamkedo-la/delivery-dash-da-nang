@@ -161,7 +161,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""id"": ""142ec0fc-caf0-4c47-a734-80151827d5b6"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone(min=0.8,max=0.97)"",
+                    ""processors"": ""StickDeadzone(min=0.5,max=0.97)"",
                     ""groups"": ""Gamepad"",
                     ""action"": ""AccelerateStick"",
                     ""isComposite"": false,
