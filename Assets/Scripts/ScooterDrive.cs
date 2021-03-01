@@ -294,9 +294,9 @@ public class ScooterDrive : MonoBehaviour
 
             currentSpeed += /*forwardSpeed */ 0.2f * Time.deltaTime /* * (accelerateValue) */; 
             Debug.Log("current speed: " + currentSpeed);
-            if (currentSpeed > 0.75f)
+            if (currentSpeed > 0.45f)
             {
-                currentSpeed = 0.75f;
+                currentSpeed = 0.45f;
                 //** BELOW TO BE USED WHEN WE HAVE A BETTER TOP SPEED SOUND
 				/*if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
 				{
