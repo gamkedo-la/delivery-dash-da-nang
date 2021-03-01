@@ -57,6 +57,38 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""navigateUIUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""00534eff-b106-4ac2-82fb-ffb0a478a9bc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""navigateUIRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""1525414c-0015-4ced-98c9-67114093a332"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""navigateUIDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""49fc7d99-dcd2-4fff-adbe-1101ff5d2dca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""navigateUILeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""96e3032c-1def-4351-bf52-8f3fe9d90c13"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -169,6 +201,50 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""PhoneOutIn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba289ce8-3860-407a-95e8-3c0cfe0d53fb"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""navigateUIUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94d90e01-94e8-4f31-ab0a-25bdddb81148"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""navigateUIRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f68ec0c8-82ae-4cf0-a4e6-c85699da66d9"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""navigateUIDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""98ce9792-4f43-4e59-8fba-8a8857e6ebd1"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""navigateUILeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -194,6 +270,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_TurnLeft = m_GamePlay.FindAction("TurnLeft", throwIfNotFound: true);
         m_GamePlay_Accelerate = m_GamePlay.FindAction("Accelerate", throwIfNotFound: true);
         m_GamePlay_PhoneOutIn = m_GamePlay.FindAction("PhoneOutIn", throwIfNotFound: true);
+        m_GamePlay_navigateUIUp = m_GamePlay.FindAction("navigateUIUp", throwIfNotFound: true);
+        m_GamePlay_navigateUIRight = m_GamePlay.FindAction("navigateUIRight", throwIfNotFound: true);
+        m_GamePlay_navigateUIDown = m_GamePlay.FindAction("navigateUIDown", throwIfNotFound: true);
+        m_GamePlay_navigateUILeft = m_GamePlay.FindAction("navigateUILeft", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -248,6 +328,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_TurnLeft;
     private readonly InputAction m_GamePlay_Accelerate;
     private readonly InputAction m_GamePlay_PhoneOutIn;
+    private readonly InputAction m_GamePlay_navigateUIUp;
+    private readonly InputAction m_GamePlay_navigateUIRight;
+    private readonly InputAction m_GamePlay_navigateUIDown;
+    private readonly InputAction m_GamePlay_navigateUILeft;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -257,6 +341,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @TurnLeft => m_Wrapper.m_GamePlay_TurnLeft;
         public InputAction @Accelerate => m_Wrapper.m_GamePlay_Accelerate;
         public InputAction @PhoneOutIn => m_Wrapper.m_GamePlay_PhoneOutIn;
+        public InputAction @navigateUIUp => m_Wrapper.m_GamePlay_navigateUIUp;
+        public InputAction @navigateUIRight => m_Wrapper.m_GamePlay_navigateUIRight;
+        public InputAction @navigateUIDown => m_Wrapper.m_GamePlay_navigateUIDown;
+        public InputAction @navigateUILeft => m_Wrapper.m_GamePlay_navigateUILeft;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -281,6 +369,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @PhoneOutIn.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
                 @PhoneOutIn.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
                 @PhoneOutIn.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
+                @navigateUIUp.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUp;
+                @navigateUIUp.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUp;
+                @navigateUIUp.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUp;
+                @navigateUIRight.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRight;
+                @navigateUIRight.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRight;
+                @navigateUIRight.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRight;
+                @navigateUIDown.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDown;
+                @navigateUIDown.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDown;
+                @navigateUIDown.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDown;
+                @navigateUILeft.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
+                @navigateUILeft.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
+                @navigateUILeft.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -300,6 +400,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @PhoneOutIn.started += instance.OnPhoneOutIn;
                 @PhoneOutIn.performed += instance.OnPhoneOutIn;
                 @PhoneOutIn.canceled += instance.OnPhoneOutIn;
+                @navigateUIUp.started += instance.OnNavigateUIUp;
+                @navigateUIUp.performed += instance.OnNavigateUIUp;
+                @navigateUIUp.canceled += instance.OnNavigateUIUp;
+                @navigateUIRight.started += instance.OnNavigateUIRight;
+                @navigateUIRight.performed += instance.OnNavigateUIRight;
+                @navigateUIRight.canceled += instance.OnNavigateUIRight;
+                @navigateUIDown.started += instance.OnNavigateUIDown;
+                @navigateUIDown.performed += instance.OnNavigateUIDown;
+                @navigateUIDown.canceled += instance.OnNavigateUIDown;
+                @navigateUILeft.started += instance.OnNavigateUILeft;
+                @navigateUILeft.performed += instance.OnNavigateUILeft;
+                @navigateUILeft.canceled += instance.OnNavigateUILeft;
             }
         }
     }
@@ -320,5 +432,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnTurnLeft(InputAction.CallbackContext context);
         void OnAccelerate(InputAction.CallbackContext context);
         void OnPhoneOutIn(InputAction.CallbackContext context);
+        void OnNavigateUIUp(InputAction.CallbackContext context);
+        void OnNavigateUIRight(InputAction.CallbackContext context);
+        void OnNavigateUIDown(InputAction.CallbackContext context);
+        void OnNavigateUILeft(InputAction.CallbackContext context);
     }
 }

@@ -45,7 +45,7 @@ public class ScooterDrive : MonoBehaviour
     public GameObject bikeModel;
 
     public Animator phone;
-    bool phoneToggle;
+    static bool phoneToggle;
 
     public static bool isMovingNorth = false;
     public static bool isMovingEast = false;
@@ -86,8 +86,14 @@ public class ScooterDrive : MonoBehaviour
     private bool isReversingCompleted = false;
     private int accelerateValue;
 
+    private GameObject homeScreen;
+    public bool phoneActive = false;
+
     private void Awake()
     {
+        homeScreen = GameObject.Find("HomeScreen");
+        
+
         controls = new PlayerControls();
 
         controls.GamePlay.Accelerate.performed += context => { isAccelerating = true; };
@@ -99,13 +105,29 @@ public class ScooterDrive : MonoBehaviour
         //        acceleratingCompleted = false;
         //};
         //controls.GamePlay.AccelerateStick.canceled += context => { isAccelerating = false; acceleratingCompleted = true; isAcceleratingFromStick = false; };
-        controls.GamePlay.TurnLeft.performed += context => { /*Debug.Log("left stick recognized");*/ turnLeft = true; } ;
+        controls.GamePlay.TurnLeft.performed += context => { /*Debug.Log("left stick recognized");*/ turnLeft = true;  } ;
         controls.GamePlay.TurnLeft.canceled += context => { /*Debug.Log("left stick recognized");*/ turnLeft = false; };
         controls.GamePlay.TurnRight.performed += context => { /*Debug.Log("left stick recognized");*/ turnRight = true; };
         controls.GamePlay.TurnRight.canceled += context => { /*Debug.Log("left stick recognized");*/ turnRight = false; };
         controls.GamePlay.Brake.performed += context => { Debug.Log("right trigger is recognized"); isBraking = true; };
         controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
         controls.GamePlay.PhoneOutIn.performed += context => { PhoneOutIn(); };
+
+        controls.GamePlay.navigateUIUp.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadUpPressed = true;
+            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
+        };
+
+        controls.GamePlay.navigateUIRight.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadRightPressed = true; 
+            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
+        };
+
+        controls.GamePlay.navigateUIDown.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadDownPressed = true; 
+            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
+        };
+
+        controls.GamePlay.navigateUILeft.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadLeftPressed = true;
+            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
+        };
     }
 
     private void OnEnable()
@@ -499,12 +521,19 @@ public class ScooterDrive : MonoBehaviour
         if (phoneToggle)
         {
             phone.SetBool("PhoneOn", true);
+            phoneActive = true;
         }
 
         if (!phoneToggle)
         {
             phone.SetBool("PhoneOn", false);
+            phoneActive = false;
         }
+    }
+
+    void CheckIfPhoneIsActive()
+    {
+        Debug.Log(phone.GetBool("PhoneOn"));
     }
 
     public void AssignStars()

@@ -44,6 +44,38 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "navigateUIUp",
+                    "type": "Button",
+                    "id": "00534eff-b106-4ac2-82fb-ffb0a478a9bc",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "navigateUIRight",
+                    "type": "Button",
+                    "id": "1525414c-0015-4ced-98c9-67114093a332",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "navigateUIDown",
+                    "type": "Button",
+                    "id": "49fc7d99-dcd2-4fff-adbe-1101ff5d2dca",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "navigateUILeft",
+                    "type": "Button",
+                    "id": "96e3032c-1def-4351-bf52-8f3fe9d90c13",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -154,6 +186,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "PhoneOutIn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba289ce8-3860-407a-95e8-3c0cfe0d53fb",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "navigateUIUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94d90e01-94e8-4f31-ab0a-25bdddb81148",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "navigateUIRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f68ec0c8-82ae-4cf0-a4e6-c85699da66d9",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "navigateUIDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98ce9792-4f43-4e59-8fba-8a8857e6ebd1",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "navigateUILeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
