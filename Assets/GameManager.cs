@@ -132,7 +132,11 @@ public class GameManager : MonoBehaviour
 
         if (ScoreList[0].score >= 0)
         {
-            ScoreList[0].score = Mathf.RoundToInt(player1ScoreTotal / player1TotalOrders);
+            if (player1TotalOrders > 0)
+            {
+                ScoreList[0].score = Mathf.RoundToInt(player1ScoreTotal / player1TotalOrders);
+
+            }
         }
     }
 

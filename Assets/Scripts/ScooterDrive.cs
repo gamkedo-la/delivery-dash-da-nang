@@ -105,6 +105,7 @@ public class ScooterDrive : MonoBehaviour
         controls.GamePlay.TurnRight.canceled += context => { /*Debug.Log("left stick recognized");*/ turnRight = false; };
         controls.GamePlay.Brake.performed += context => { Debug.Log("right trigger is recognized"); isBraking = true; };
         controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
+        controls.GamePlay.PhoneOutIn.performed += context => { PhoneOutIn(); };
     }
 
     private void OnEnable()
@@ -130,6 +131,13 @@ public class ScooterDrive : MonoBehaviour
 		bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
     }
 
+    void PhoneOutIn()
+    {
+        AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
+        phoneToggle = !phoneToggle;
+        textTip.SetActive(phoneToggle == false);
+        PhoneActivation();
+    }
 
     // Update is called once per frame
     void Update()
@@ -146,10 +154,7 @@ public class ScooterDrive : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
-            phoneToggle = !phoneToggle;
-            textTip.SetActive(phoneToggle == false);
-            PhoneActivation();
+            PhoneOutIn();
         }
 
         playerCurrentSpeed = currentSpeed;

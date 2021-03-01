@@ -49,6 +49,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PhoneOutIn"",
+                    ""type"": ""Button"",
+                    ""id"": ""81db9e80-2761-43b8-9d3f-fa8c82f8c2ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -150,6 +158,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Accelerate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61f993ba-1a0f-444d-af9f-e3d7c686f06c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PhoneOutIn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -174,6 +193,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_TurnRight = m_GamePlay.FindAction("TurnRight", throwIfNotFound: true);
         m_GamePlay_TurnLeft = m_GamePlay.FindAction("TurnLeft", throwIfNotFound: true);
         m_GamePlay_Accelerate = m_GamePlay.FindAction("Accelerate", throwIfNotFound: true);
+        m_GamePlay_PhoneOutIn = m_GamePlay.FindAction("PhoneOutIn", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +247,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_TurnRight;
     private readonly InputAction m_GamePlay_TurnLeft;
     private readonly InputAction m_GamePlay_Accelerate;
+    private readonly InputAction m_GamePlay_PhoneOutIn;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -235,6 +256,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @TurnRight => m_Wrapper.m_GamePlay_TurnRight;
         public InputAction @TurnLeft => m_Wrapper.m_GamePlay_TurnLeft;
         public InputAction @Accelerate => m_Wrapper.m_GamePlay_Accelerate;
+        public InputAction @PhoneOutIn => m_Wrapper.m_GamePlay_PhoneOutIn;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -256,6 +278,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Accelerate.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
                 @Accelerate.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
                 @Accelerate.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
+                @PhoneOutIn.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
+                @PhoneOutIn.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
+                @PhoneOutIn.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -272,6 +297,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Accelerate.started += instance.OnAccelerate;
                 @Accelerate.performed += instance.OnAccelerate;
                 @Accelerate.canceled += instance.OnAccelerate;
+                @PhoneOutIn.started += instance.OnPhoneOutIn;
+                @PhoneOutIn.performed += instance.OnPhoneOutIn;
+                @PhoneOutIn.canceled += instance.OnPhoneOutIn;
             }
         }
     }
@@ -291,5 +319,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnTurnRight(InputAction.CallbackContext context);
         void OnTurnLeft(InputAction.CallbackContext context);
         void OnAccelerate(InputAction.CallbackContext context);
+        void OnPhoneOutIn(InputAction.CallbackContext context);
     }
 }

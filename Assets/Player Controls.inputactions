@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "PhoneOutIn",
+                    "type": "Button",
+                    "id": "81db9e80-2761-43b8-9d3f-fa8c82f8c2ba",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -135,6 +143,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "61f993ba-1a0f-444d-af9f-e3d7c686f06c",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PhoneOutIn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
