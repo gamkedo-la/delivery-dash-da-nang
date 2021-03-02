@@ -25,7 +25,10 @@ public class WaypointNavigation : MonoBehaviour
     {
         direction = Mathf.RoundToInt(Random.Range(0f, 1f));
         //Debug.Log(currentWaypoint);
-        controller.SetDestination(currentWaypoint.GetPosition());
+        if (currentWaypoint != null)
+        {
+            controller.SetDestination(currentWaypoint.GetPosition());
+        }
     }
 
 
