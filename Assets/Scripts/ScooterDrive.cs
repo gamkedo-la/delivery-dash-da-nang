@@ -109,7 +109,7 @@ public class ScooterDrive : MonoBehaviour
         controls.GamePlay.TurnLeft.canceled += context => { /*Debug.Log("left stick recognized");*/ turnLeft = false; };
         controls.GamePlay.TurnRight.performed += context => { /*Debug.Log("left stick recognized");*/ turnRight = true; };
         controls.GamePlay.TurnRight.canceled += context => { /*Debug.Log("left stick recognized");*/ turnRight = false; };
-        controls.GamePlay.Brake.performed += context => { Debug.Log("right trigger is recognized"); isBraking = true; };
+        controls.GamePlay.Brake.performed += context => { /*Debug.Log("right trigger is recognized");*/ isBraking = true; };
         controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
         controls.GamePlay.PhoneOutIn.performed += context => { PhoneOutIn(); };
 
@@ -315,7 +315,7 @@ public class ScooterDrive : MonoBehaviour
         {
 
             currentSpeed += /*forwardSpeed */ 0.2f * Time.deltaTime /* * (accelerateValue) */; 
-            Debug.Log("current speed: " + currentSpeed);
+            //Debug.Log("current speed: " + currentSpeed);
             if (currentSpeed > 0.45f)
             {
                 currentSpeed = 0.45f;

@@ -20,7 +20,10 @@ public class Connection : MonoBehaviour
         if(graphPathfinding.showGridConnections)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawLine(nodeA.gameObject.transform.position, nodeB.gameObject.transform.position);
+            if (nodeA != null & nodeB != null)
+            {
+                Gizmos.DrawLine(nodeA.gameObject.transform.position, nodeB.gameObject.transform.position);
+            }
         }
 
     }
