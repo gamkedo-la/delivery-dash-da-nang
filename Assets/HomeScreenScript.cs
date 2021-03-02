@@ -41,9 +41,10 @@ public class HomeScreenScript : MonoBehaviour
     {
         if (scooter.GetComponent<ScooterDrive>().phoneActive)
         {
+            Debug.Log("Phone screen active reached");
             if (homeScreen.active)
             {
-                
+                Debug.Log("Home Screen active reached");
             }
         }
         
