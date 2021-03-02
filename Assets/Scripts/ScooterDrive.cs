@@ -18,7 +18,7 @@ public class ScooterDrive : MonoBehaviour
     public float forwardSpeed = 0.001f;
     public float backwardSpeed = -10.1f;
     public bool backingUp = false;
-    public float coastToStopSpeed = 0.35f;
+    public float coastToStopSpeed = 0.25f;
 
     public float currentTurnAngle = 0;
     public float turnAngleRate = 150f;
@@ -270,7 +270,7 @@ public class ScooterDrive : MonoBehaviour
     {
         if (isAccelerating && (isReversing || isBraking))
         {
-            accelerateValue = 0;
+            accelerateValue = 1;
         }
         else if (isAccelerating)
         {
@@ -443,43 +443,35 @@ public class ScooterDrive : MonoBehaviour
 		}
 
 		//brake
-		if ( (isBraking || isReversing) && isAccelerating)
+		if (isBraking && isAccelerating)
+        {
+            //brakeSpeed is currently 0.025f * Time.deltaTime 
+            currentSpeed += brakeSpeed * currentSpeed;
+            if (currentSpeed < 0)
+            {
+                currentSpeed = 0;
+            }
+        }
+        else if (isBraking && !isAccelerating)
         {
             currentSpeed += brakeSpeed * accelerateValue * 3;
             if (currentSpeed < 0)
             {
-                //brakeLights.SetActive(true);
-                //currentSpeed = backwardSpeed;
-                currentSpeed = 0;
-            }
-            else
-            {
-                //brakeLights.SetActive(false);
-            }
-        }
-        else if ( (isBraking || isReversing ) && !isAccelerating)
-        {
-            if (currentSpeed < 0 && !backingUp)
-            {
                 //Debug.Log("inside current speed less than 0 check");
                 currentSpeed = 0;
-                return;
-            }
-            else if (currentSpeed > 0 && !backingUp)
-            {
-                currentSpeed += (brakeSpeed / 12) * accelerateValue * 3;
-                
-                return;
-            }
-
-            if (backingUp)
-            {
-                //Debug.Log("inside backing up check");
-                currentSpeed = backwardSpeed;
+                isBrakingCompleted = true;
                 return;
             }
 
             brakeLights.SetActive(true);
+        }
+
+        if (backingUp)
+        {
+            //Debug.Log("inside backing up check");
+            currentSpeed = backwardSpeed;
+            brakeLights.SetActive(true);
+            return;
         }
 
         if (isReversing && currentSpeed == 0 && !isAccelerating)
@@ -501,9 +493,9 @@ public class ScooterDrive : MonoBehaviour
         }
 
         //coasting to stop
-        if ((!isBraking && !isAccelerating && !isReversing) || (isAccelerating && isBraking))
+        if ((!isBraking && !isAccelerating && !isReversing))
         {
-            currentSpeed -= Time.deltaTime * coastToStopSpeed * 2;
+            currentSpeed -= Time.deltaTime * coastToStopSpeed;
             if (currentSpeed < 0)
             {
                 currentSpeed = 0;
