@@ -7469,7 +7469,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6de742e87d76b84185ad0a1f7700a3d, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8199,6 +8199,7 @@ GameObject:
   - component: {fileID: 919693368751168339}
   - component: {fileID: 1552412753975505719}
   - component: {fileID: 1552412753975505712}
+  - component: {fileID: 906759460684708527}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -8308,6 +8309,7 @@ MonoBehaviour:
   bikeMaxTiltAngle: 0.02
   bikeCrashWithAICarBumbForce: 5
   brakeSpeed: 0.5
+  brakeMaxSpeed: 15
   brakeLights: {fileID: 1552412755093697317}
   restartAt: {fileID: 0}
   bikeModel: {fileID: 7262024837220054690}
@@ -8340,6 +8342,7 @@ MonoBehaviour:
   collisionPercent: 25
   bike: {fileID: 7262024837220054690}
   playerModel: {fileID: 1822320664379010611}
+  phoneActive: 0
 --- !u!195 &1552412753975505712
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8362,6 +8365,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!114 &906759460684708527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822320664954261115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e54442f8b5c7f4281e5b67fa3c121e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: 
+  score: 0
 --- !u!1 &2719617212279380729
 GameObject:
   m_ObjectHideFlags: 0

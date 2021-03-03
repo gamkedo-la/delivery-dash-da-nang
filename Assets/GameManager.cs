@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     public Text[] rankUIText;
     public Text[] rankUITextInGame;
 
-    public string[] playerNames; 
+    public List<DeliveryDriver> driverList= new List<DeliveryDriver>(); 
 
     //This is the macro game timer
     public float TimeRemaining;
@@ -80,40 +80,13 @@ public class GameManager : MonoBehaviour
             Enemy4.GetComponent<EnemyAI>().enabled = false;
         }
 
-        ScoreEntry tempNew = new ScoreEntry();
-        tempNew.name = "Player 1";
-        tempNew.score = 0;
-        ScoreList.Add(tempNew);
-
-        tempNew = new ScoreEntry();
-        tempNew.name = "Player 2";
-        tempNew.score = 66;
-        ScoreList.Add(tempNew);
-
-        tempNew = new ScoreEntry();
-        tempNew.name = "Player 3";
-        tempNew.score = 28;
-        ScoreList.Add(tempNew);
-
-        tempNew = new ScoreEntry();
-        tempNew.name = "Player 4";
-        tempNew.score = 88;
-        ScoreList.Add(tempNew);
-
-        tempNew = new ScoreEntry();
-        tempNew.name = "Enemy 2";
-        tempNew.score = enemy2ScoreTotal;
-        ScoreList.Add(tempNew);
-
-        tempNew = new ScoreEntry();
-        tempNew.name = "Enemy 3";
-        tempNew.score = enemy3ScoreTotal;
-        ScoreList.Add(tempNew);
-
-        tempNew = new ScoreEntry();
-        tempNew.name = "Enemy 4";
-        tempNew.score = enemy4ScoreTotal;
-        ScoreList.Add(tempNew);
+        for (int i = 0; i < driverList.Count; i++)
+        {
+            ScoreEntry tempNew = new ScoreEntry();
+            tempNew.name = driverList[i].characterName;
+            tempNew.score = driverList[i].score;
+            ScoreList.Add(tempNew);
+        }
 
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
@@ -129,8 +102,8 @@ public class GameManager : MonoBehaviour
         }
 
         TimeRemainingInRound();
-        //
-        int playerEntryIndex = entryForName("Player 1");
+        /*
+        int playerEntryIndex = entryForName("Player1");
         if (playerEntryIndex != -1 && ScoreList[playerEntryIndex].score >= 0)
         {
             if (player1TotalOrders > 0 )
@@ -138,7 +111,7 @@ public class GameManager : MonoBehaviour
                 ScoreList[playerEntryIndex].score = Mathf.RoundToInt(player1ScoreTotal / player1TotalOrders);
             }
         }
-        //
+        */
     }
 
     int entryForName(string nameToMatch)
@@ -167,9 +140,9 @@ public class GameManager : MonoBehaviour
 
             SortScores();
 
-            for (int i = 0; i < ScoreList.Count; i++)
+            for (int i = 0; i < driverList.Count; i++)
             {
-                rankUITextInGame[i].text = ScoreList[i].name + "     " + ScoreList[i].score.ToString("F0");
+                rankUITextInGame[i].text = driverList[i].characterName + "     " + driverList[i].score.ToString("F0");
             }
         }
 
@@ -180,16 +153,16 @@ public class GameManager : MonoBehaviour
 
             SortScores();
 
-            for (int i = 0; i < ScoreList.Count; i++)
+            for (int i = 0; i < driverList.Count; i++)
             {
-                rankUIText[i].text = ScoreList[i].name + "     " + ScoreList[i].score.ToString("F0");
+                rankUIText[i].text = driverList[i].characterName + "     " + driverList[i].score.ToString("F0");
             }
         }
     }
 
     void SortScores()
     {
-        ScoreList.Sort();
-        ScoreList.Reverse();
+        driverList.Sort();
+        driverList.Reverse();
     }
 }
