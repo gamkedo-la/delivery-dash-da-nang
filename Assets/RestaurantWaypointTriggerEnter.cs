@@ -24,6 +24,8 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     private GraphNode customerNode;
     private GraphNode nodeNearestToPlayer;
 
+    private DeliveryDriver receivedDriver;
+
     private void Start()
     {
         gpsScript = FindObjectOfType<GraphPathfinding>();
@@ -34,7 +36,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
         if (other.tag == "Player")
         {
-
+            receivedDriver = other.GetComponent<DeliveryDriver>();
             if (PrefabOrder.orderHasBeenTaken)
             {
                 if (player1OrderPickedUp && !player1OrderDelivered && player.GetComponent<ScooterDrive>().currentSpeed == 0)
@@ -69,10 +71,18 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
             float score2 = FoodHealth.currentHealth;
             finalScore = (score + score2) / 2;
             //
-            GameManager.player1ScoreTotal += (int)finalScore;
-            GameManager.player1TotalOrders++;
-            
-            print(GameManager.player1ScoreTotal + "/" + GameManager.player1TotalOrders);
+            if (receivedDriver != null)
+            {
+                receivedDriver.IncreaseOrderTotal((int)finalScore);
+            }
+            else
+            {                
+                Debug.LogWarning("The driver can't be found"); 
+            }
+            //   GameManager.player1ScoreTotal += (int)finalScore;
+            //   GameManager.player1TotalOrders++;
+
+            //  print(GameManager.player1ScoreTotal + "/" + GameManager.player1TotalOrders);
             //
             DisplayScore();
             PrefabOrder.orderHasBeenTaken = false;

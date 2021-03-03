@@ -33,7 +33,11 @@ public class EnemyAI : MonoBehaviour
 
     public int enemyScore;
 
+    private DeliveryDriver myDriver;
+
     void Start() {
+        myDriver = GetComponent<DeliveryDriver>();
+
         #region Testing Score
         if (enemy2)
         {
@@ -157,26 +161,12 @@ public class EnemyAI : MonoBehaviour
         {
             if (orderPickedUp)
             {
-                target.GetComponent<BoxCollider>().enabled = false; 
+                target.GetComponent<BoxCollider>().enabled = false;
                 //print("Order Delivered");
+                myDriver.IncreaseOrderTotal((int)orderScore);
 
-                if (enemy2)
-                {
-                    //
-                    GameManager.enemy2ScoreTotal += (int)orderScore;
-                    //
-                    orderScore = 0;
-                }
-                else if (enemy3)
-                {
-                    GameManager.enemy3ScoreTotal += (int) orderScore;
-                    orderScore = 0;
-                }
-                else if (enemy4)
-                {
-                    GameManager.enemy4ScoreTotal += (int)orderScore;
-                    orderScore = 0;
-                }
+                orderScore = 0;
+
                 StartCoroutine(Waiting());
             }
         }
