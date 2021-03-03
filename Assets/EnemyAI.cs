@@ -162,7 +162,9 @@ public class EnemyAI : MonoBehaviour
 
                 if (enemy2)
                 {
+                    //
                     GameManager.enemy2ScoreTotal += (int)orderScore;
+                    //
                     orderScore = 0;
                 }
                 else if (enemy3)

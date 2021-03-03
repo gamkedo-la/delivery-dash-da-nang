@@ -68,10 +68,12 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
             float score = (player1TimeScore / player1TimeScoreMax) * 100;
             float score2 = FoodHealth.currentHealth;
             finalScore = (score + score2) / 2;
+            //
             GameManager.player1ScoreTotal += (int)finalScore;
             GameManager.player1TotalOrders++;
-
+            
             print(GameManager.player1ScoreTotal + "/" + GameManager.player1TotalOrders);
+            //
             DisplayScore();
             PrefabOrder.orderHasBeenTaken = false;
             player1OrderPickedUp = false;
