@@ -57,17 +57,28 @@ public class PrefabOrder : MonoBehaviour
         Player1ApartmentTransform = GameObject.Find("Player1Apartment").transform;
 
         restaurantLocations = new Transform[3];
+        
+                restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
+        restaurantLocations[0].position = new Vector3(1450f, 2.1f, 250.9f);
 
-        restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
         restaurantLocations[1] = GameObject.Find("RamenWayPoint").transform;
+
+        restaurantLocations[1].position = new Vector3(1450f, 2.1f, 250.9f);
+
         restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
+
+        restaurantLocations[2].position = new Vector3(1450f, 2.1f, 250.9f);
+
 
         apartmentLocations = new Transform[2];
 
         apartmentLocations[0] = GameObject.Find("ChipsWayPoint").transform;
         apartmentLocations[1] = GameObject.Find("SeasandWayPoint").transform;
-      //  apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
-      //  apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
+
+        apartmentLocations[0].position = new Vector3(1550f, 2.1f, 250.9f);
+        apartmentLocations[1].position = new Vector3(1550f, 2.1f, 250.9f);
+        //  apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
+        //  apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
 
         player1WayPoint = GameObject.Find("WayPointBox - Restaurant");
        // player1ApartmentWayPoint = GameObject.Find("WayPointBox - Customer");
@@ -110,7 +121,7 @@ public class PrefabOrder : MonoBehaviour
         Player1RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
         Player1ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
 
-        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) / 20;
+        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) /*/ 10*/;
         RestaurantWaypointTriggerEnter.player1TimeScore = dist;
         RestaurantWaypointTriggerEnter.player1TimeScoreMax = dist;
 

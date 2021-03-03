@@ -129,15 +129,29 @@ public class GameManager : MonoBehaviour
         }
 
         TimeRemainingInRound();
-
-        if (ScoreList[0].score >= 0)
+        //
+        int playerEntryIndex = entryForName("Player 1");
+        if (playerEntryIndex != -1 && ScoreList[playerEntryIndex].score >= 0)
         {
-            if (player1TotalOrders > 0)
+            if (player1TotalOrders > 0 )
             {
-                ScoreList[0].score = Mathf.RoundToInt(player1ScoreTotal / player1TotalOrders);
-
+                ScoreList[playerEntryIndex].score = Mathf.RoundToInt(player1ScoreTotal / player1TotalOrders);
             }
         }
+        //
+    }
+
+    int entryForName(string nameToMatch)
+    {
+        for (int i = 0; i < ScoreList.Count; i++)
+        {
+            if (ScoreList[i].name == nameToMatch)
+            {
+                return i;
+            }
+        }
+        Debug.Log("No Match Found in Score List for: " + nameToMatch);
+        return -1;
     }
 
     void TimeRemainingInRound()
