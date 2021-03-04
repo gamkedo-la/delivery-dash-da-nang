@@ -193,8 +193,8 @@ public class GameManager : MonoBehaviour
             player4.SetActive(false);
 
             player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
-            player2Cam.rect = new Rect(0.5f, 0.5f, 1f, 1);
-            player3Cam.rect = new Rect(0.5f, -.5f, 1f, 1);
+            player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
+            player3Cam.rect = new Rect(0.5f, -.5f, .5f, .5f);
         }
 
 
@@ -205,10 +205,10 @@ public class GameManager : MonoBehaviour
             player3.SetActive(true);
             player4.SetActive(true);
 
-            player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
-            player2Cam.rect = new Rect(0.5f, 0.5f, 1f, 1);
-            player3Cam.rect = new Rect(-.5f, -.5f, 1f, 1);
-            player4Cam.rect = new Rect(0.5f, -.5f, 1f, 1);
+            player1Cam.rect = new Rect(0f, 0.5f, 0.5f, .5f);
+            player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
+            player3Cam.rect = new Rect(0f, 0f, .5f, .5f);
+            player4Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
         }
     }
 }
