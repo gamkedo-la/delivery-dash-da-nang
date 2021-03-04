@@ -172,35 +172,41 @@ public class GameManager : MonoBehaviour
             player4.SetActive(false);
 
             player1Cam.rect = new Rect(0f, 0f, 1f, 1);
+
+            player1Cam.farClipPlane = 500;
         }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("2 Player");
             player2.SetActive(true);
             player3.SetActive(false);
             player4.SetActive(false);
 
             player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
             player2Cam.rect = new Rect(0.5f, 0f, 0.5f, 1);
+
+            player1Cam.farClipPlane = 400;
+            player2Cam.farClipPlane = 400;
         }
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            Debug.Log("3 Player");
             player2.SetActive(true);
             player3.SetActive(true);
             player4.SetActive(false);
 
             player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
             player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
-            player3Cam.rect = new Rect(0.5f, -.5f, .5f, .5f);
+            player3Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
+
+            player1Cam.farClipPlane = 300;
+            player2Cam.farClipPlane = 300;
+            player3Cam.farClipPlane = 300;
         }
 
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("4 Player");
             player2.SetActive(true);
             player3.SetActive(true);
             player4.SetActive(true);
@@ -209,6 +215,11 @@ public class GameManager : MonoBehaviour
             player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
             player3Cam.rect = new Rect(0f, 0f, .5f, .5f);
             player4Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
+
+            player1Cam.farClipPlane = 200;
+            player2Cam.farClipPlane = 200;
+            player3Cam.farClipPlane = 200;
+            player4Cam.farClipPlane = 200;
         }
     }
 }
