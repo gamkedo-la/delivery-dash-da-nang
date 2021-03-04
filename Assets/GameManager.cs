@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject Enemy2, Enemy3, Enemy4;
 
+    //Multiplayer
+    public GameObject player2, player3, player4;
+    public Camera player1Cam, player2Cam, player3Cam, player4Cam;
+
     private void Start()
     {
         if (easy)
@@ -102,16 +106,8 @@ public class GameManager : MonoBehaviour
         }
 
         TimeRemainingInRound();
-        /*
-        int playerEntryIndex = entryForName("Player1");
-        if (playerEntryIndex != -1 && ScoreList[playerEntryIndex].score >= 0)
-        {
-            if (player1TotalOrders > 0 )
-            {
-                ScoreList[playerEntryIndex].score = Mathf.RoundToInt(player1ScoreTotal / player1TotalOrders);
-            }
-        }
-        */
+
+        ToggleMultiplayer();
     }
 
     int entryForName(string nameToMatch)
@@ -164,5 +160,55 @@ public class GameManager : MonoBehaviour
     {
         driverList.Sort();
         driverList.Reverse();
+    }
+
+    void ToggleMultiplayer()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            Debug.Log("1 Player");
+            player2.SetActive(false);
+            player3.SetActive(false);
+            player4.SetActive(false);
+
+            player1Cam.rect = new Rect(0f, 0f, 1f, 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("2 Player");
+            player2.SetActive(true);
+            player3.SetActive(false);
+            player4.SetActive(false);
+
+            player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
+            player2Cam.rect = new Rect(0.5f, 0f, 0.5f, 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.Log("3 Player");
+            player2.SetActive(true);
+            player3.SetActive(true);
+            player4.SetActive(false);
+
+            player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
+            player2Cam.rect = new Rect(0.5f, 0.5f, 1f, 1);
+            player3Cam.rect = new Rect(0.5f, -.5f, 1f, 1);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("4 Player");
+            player2.SetActive(true);
+            player3.SetActive(true);
+            player4.SetActive(true);
+
+            player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
+            player2Cam.rect = new Rect(0.5f, 0.5f, 1f, 1);
+            player3Cam.rect = new Rect(-.5f, -.5f, 1f, 1);
+            player4Cam.rect = new Rect(0.5f, -.5f, 1f, 1);
+        }
     }
 }

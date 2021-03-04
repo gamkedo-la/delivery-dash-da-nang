@@ -21,7 +21,7 @@ public class DeliveryDriver : MonoBehaviour, IComparable<DeliveryDriver>
     {
         score += orderScore;
         totalOrders++;
-        Debug.Log(characterName + " completed an order, now has a score of: " + score + "/" + totalOrders);
+        //Debug.Log(characterName + " completed an order, now has a score of: " + score + "/" + totalOrders);
     }
 
     public int CompareTo(DeliveryDriver toCompare)
