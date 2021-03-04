@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
     public GameObject player2, player3, player4;
     public Camera player1Cam, player2Cam, player3Cam, player4Cam;
 
+    public float LowQuality, MedQuality, HighQuality, UltraQuality;
+
     private void Start()
     {
         if (easy)
@@ -173,7 +175,7 @@ public class GameManager : MonoBehaviour
 
             player1Cam.rect = new Rect(0f, 0f, 1f, 1);
 
-            player1Cam.farClipPlane = 500;
+            player1Cam.farClipPlane = UltraQuality;
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -185,8 +187,8 @@ public class GameManager : MonoBehaviour
             player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
             player2Cam.rect = new Rect(0.5f, 0f, 0.5f, 1);
 
-            player1Cam.farClipPlane = 400;
-            player2Cam.farClipPlane = 400;
+            player1Cam.farClipPlane = HighQuality;
+            player2Cam.farClipPlane = HighQuality;
         }
 
         if (Input.GetKeyDown(KeyCode.O))
@@ -199,9 +201,9 @@ public class GameManager : MonoBehaviour
             player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
             player3Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
 
-            player1Cam.farClipPlane = 300;
-            player2Cam.farClipPlane = 300;
-            player3Cam.farClipPlane = 300;
+            player1Cam.farClipPlane = MedQuality;
+            player2Cam.farClipPlane = MedQuality;
+            player3Cam.farClipPlane = MedQuality;
         }
 
 
@@ -216,10 +218,10 @@ public class GameManager : MonoBehaviour
             player3Cam.rect = new Rect(0f, 0f, .5f, .5f);
             player4Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
 
-            player1Cam.farClipPlane = 200;
-            player2Cam.farClipPlane = 200;
-            player3Cam.farClipPlane = 200;
-            player4Cam.farClipPlane = 200;
+            player1Cam.farClipPlane = LowQuality;
+            player2Cam.farClipPlane = LowQuality;
+            player3Cam.farClipPlane = LowQuality;
+            player4Cam.farClipPlane = LowQuality;
         }
     }
 }
