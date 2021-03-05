@@ -8,6 +8,7 @@ public class DeliveryDriver : MonoBehaviour, IComparable<DeliveryDriver>
     public string characterName = "";
     public int score = 0;
     public int totalOrders = 0;
+    public int phoneScore = 0;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class DeliveryDriver : MonoBehaviour, IComparable<DeliveryDriver>
     {
         score += orderScore;
         totalOrders++;
+        phoneScore = (int) score / totalOrders;
         //Debug.Log(characterName + " completed an order, now has a score of: " + score + "/" + totalOrders);
     }
 

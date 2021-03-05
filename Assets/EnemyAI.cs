@@ -168,7 +168,6 @@ public class EnemyAI : MonoBehaviour
                 if (!orderCompleted)
                 {
                     myDriver.IncreaseOrderTotal((int)orderScore);
-                    print("how many times am i printing this?");
                     orderScore = 0;
                     orderCompleted = true;
                 }

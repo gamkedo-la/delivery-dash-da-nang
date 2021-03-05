@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
 
             for (int i = 0; i < driverList.Count; i++)
             {
-                rankUITextInGame[i].text = driverList[i].characterName + "     " + driverList[i].score.ToString("F0");
+                rankUITextInGame[i].text = driverList[i].characterName + ":" + driverList[i].phoneScore.ToString("F0") ;
             }
         }
 
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
 
             for (int i = 0; i < driverList.Count; i++)
             {
-                rankUIText[i].text = driverList[i].characterName + "     " + driverList[i].score.ToString("F0");
+                rankUIText[i].text = driverList[i].characterName + ":" + driverList[i].phoneScore.ToString("F0") + " (" + driverList[i].score.ToString("F0") + "/" + driverList[i].totalOrders.ToString("F0") + ")";
             }
         }
     }
