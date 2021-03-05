@@ -37,6 +37,8 @@ public class PrefabOrder : MonoBehaviour
     private AudioClip phoneButtonPressedAudioClip;
     private PhoneScript phoneScript;
 
+    public float minOrderTime = 35;
+
     private void Start()
     {
         phoneScript = GameObject.Find("Canvas - PlayerPhone").GetComponent<PhoneScript>();
@@ -121,9 +123,17 @@ public class PrefabOrder : MonoBehaviour
         Player1RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
         Player1ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
 
-        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) / 10;
-        RestaurantWaypointTriggerEnter.player1TimeScore = dist;
-        RestaurantWaypointTriggerEnter.player1TimeScoreMax = dist;
+        float dist = Vector3.Distance(Player1RestaurantTransform.position, Player1ApartmentTransform.position) / 5;
+
+        if (dist < minOrderTime)
+        {
+            RestaurantWaypointTriggerEnter.player1TimeScore = minOrderTime;
+            RestaurantWaypointTriggerEnter.player1TimeScoreMax = minOrderTime;
+        }
+        else {
+            RestaurantWaypointTriggerEnter.player1TimeScore = dist;
+            RestaurantWaypointTriggerEnter.player1TimeScoreMax = dist;
+        }
 
         player1WayPoint.transform.position = Player1RestaurantTransform.transform.position;
 
