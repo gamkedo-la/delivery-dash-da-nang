@@ -35,6 +35,8 @@ public class EnemyAI : MonoBehaviour
 
     private DeliveryDriver myDriver;
 
+    bool orderCompleted;
+
     void Start() {
         myDriver = GetComponent<DeliveryDriver>();
 
@@ -163,10 +165,13 @@ public class EnemyAI : MonoBehaviour
             {
                 target.GetComponent<BoxCollider>().enabled = false;
                 //print("Order Delivered");
-                myDriver.IncreaseOrderTotal((int)orderScore);
-
-                orderScore = 0;
-
+                if (!orderCompleted)
+                {
+                    myDriver.IncreaseOrderTotal((int)orderScore);
+                    print("how many times am i printing this?");
+                    orderScore = 0;
+                    orderCompleted = true;
+                }
                 StartCoroutine(Waiting());
             }
         }
@@ -186,6 +191,7 @@ public class EnemyAI : MonoBehaviour
                     //print("This is the apt to go to   " + apartmentToGoTo.name);
                     target.transform.position = apartmentToGoTo.transform.position;
                     //
+                    orderCompleted = false;
                     StartCoroutine(Waiting2());
                     orderPickedUp = true;
                 }                
