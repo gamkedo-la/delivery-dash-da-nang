@@ -61,10 +61,10 @@ public class ScooterDrive : MonoBehaviour
     public GameObject physicalOrder;
 
     public GameObject TotalScore, star1, star2, star3, star4, star5;
-    public double star2threshold = .2;
-    public double star3threshold = .4;
-    public double star4threshold = .6;
-    public double star5threshold = .8;
+    public double star2threshold = 20;
+    public double star3threshold = 50;
+    public double star4threshold = 70;
+    public double star5threshold = 85;
     public RatingsManager ratingsManager;
     public AudioClip bikeIdleAudioClip, bikeAccelleratingAudioClip, bikeLetOffGasAudioClip, bikeTopSpeedClip, phoneInOutAudioClip;
     private AudioSource bikeCurrentAudioSource;
@@ -88,6 +88,8 @@ public class ScooterDrive : MonoBehaviour
 
     private GameObject homeScreen;
     public bool phoneActive = false;
+
+    DeliveryDriver driverID;
 
     private void Awake()
     {
@@ -143,6 +145,7 @@ public class ScooterDrive : MonoBehaviour
     void Start()
     {
         //RestartAtSpawn();
+        driverID = GetComponent<DeliveryDriver>();
 
         scootersRigidbodyComponent = gameObject.GetComponent<Rigidbody>();
         if (scootersRigidbodyComponent == null)
@@ -533,49 +536,41 @@ public class ScooterDrive : MonoBehaviour
         GameManager.player1OrderDelivered = true;
         physicalOrder.SetActive(false);
 
-        //food health / 100
-        float tempFoodHealthScore = FoodHealth.currentHealth / 100;
-        //time remaining / total time
-        float tempTimeScore = DashAppScript.totalTimeRemaining;
-        // (% + %) / 2
-        float tempTotalScore = (tempFoodHealthScore + tempTimeScore) / 2;
+        float tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth) / 2;
 
-        //total score displayed in stars
-        GameManager.player1ScoreOnOrder = tempTotalScore;
         int starsAwarded = 0;
 
         //total score added to macrototal score
         TotalScore.SetActive(true);
-        if (GameManager.player1ScoreOnOrder < star2threshold)
+        if (tempScore < star2threshold && tempScore > 0)
         {
             star1.SetActive(true);
             starsAwarded++;
         }
-        if (GameManager.player1ScoreOnOrder < star3threshold)
+        if (tempScore > star2threshold)
         {
             star2.SetActive(true);
             starsAwarded++;
         }
-        if (GameManager.player1ScoreOnOrder < star4threshold)
+        if (tempScore > star3threshold)
         {
             star3.SetActive(true);
             starsAwarded++;
         }
-        if (GameManager.player1ScoreOnOrder < star5threshold)
+        if (tempScore > star4threshold)
         {
             star4.SetActive(true);
             starsAwarded++;
         }
-        if (GameManager.player1ScoreOnOrder > star5threshold)
+        if (tempScore > star5threshold)
         {
             star5.SetActive(true);
             starsAwarded++;
         }
+        print(tempScore + ":" + driverID.scoreOnOrder + "+" + FoodHealth.currentHealth);
 
         var rating = ratingsManager.CreateRating(starsAwarded);
         ratingsManager.AddRating(rating);
-
-        print(GameManager.player1ScoreOnOrder);
 
         StartCoroutine(Waiting());
         //display score

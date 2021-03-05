@@ -45,7 +45,6 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                     chachingSFX.Play();
                     GameManager.Player1OrderSelected = false;
                     gpsScript.ClearPath();
-                    player.GetComponent<ScooterDrive>().AssignStars();
                 }
 
                 if (!player1OrderPickedUp && player.GetComponent<ScooterDrive>().currentSpeed == 0)
@@ -67,23 +66,20 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     {
         if (PrefabOrder.orderHasBeenTaken && player1OrderPickedUp && player1OrderDelivered)
         {
+            player.GetComponent<ScooterDrive>().AssignStars();
             float score = (player1TimeScore / player1TimeScoreMax) * 100;
             float score2 = FoodHealth.currentHealth;
             finalScore = (score + score2) / 2;
             //
             if (receivedDriver != null)
             {
-                receivedDriver.IncreaseOrderTotal((int)finalScore);
+                receivedDriver.PlayerIncreaseOrderTotal((int)finalScore);
             }
             else
             {                
                 Debug.LogWarning("The driver can't be found"); 
             }
-            //   GameManager.player1ScoreTotal += (int)finalScore;
-            //   GameManager.player1TotalOrders++;
 
-            //  print(GameManager.player1ScoreTotal + "/" + GameManager.player1TotalOrders);
-            //
             DisplayScore();
             PrefabOrder.orderHasBeenTaken = false;
             player1OrderPickedUp = false;

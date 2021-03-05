@@ -7,6 +7,7 @@ public class DeliveryDriver : MonoBehaviour, IComparable<DeliveryDriver>
 {
     public string characterName = "";
     public int score = 0;
+    public int scoreOnOrder = 0;
     public int totalOrders = 0;
     public int phoneScore = 0;
 
@@ -23,6 +24,16 @@ public class DeliveryDriver : MonoBehaviour, IComparable<DeliveryDriver>
         score += orderScore;
         totalOrders++;
         phoneScore = (int) score / totalOrders;
+        //Debug.Log(characterName + " completed an order, now has a score of: " + score + "/" + totalOrders);
+    }
+
+    public void PlayerIncreaseOrderTotal(int orderScore)
+    {
+        scoreOnOrder += orderScore;
+        score += scoreOnOrder;
+      //  scoreOnOrder = 0;
+        totalOrders++;
+        phoneScore = (int)score / totalOrders;
         //Debug.Log(characterName + " completed an order, now has a score of: " + score + "/" + totalOrders);
     }
 
