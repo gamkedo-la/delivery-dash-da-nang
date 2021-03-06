@@ -8200,6 +8200,8 @@ GameObject:
   - component: {fileID: 1552412753975505719}
   - component: {fileID: 1552412753975505712}
   - component: {fileID: 906759460684708527}
+  - component: {fileID: 4005676914254687524}
+  - component: {fileID: 5099970864241052019}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -8342,6 +8344,16 @@ MonoBehaviour:
   collisionPercent: 25
   bike: {fileID: 7262024837220054690}
   playerModel: {fileID: 1822320664379010611}
+  playerIndex: 0
+  isAccelerating: 0
+  acceleratingCompleted: 0
+  turnLeft: 0
+  turnRight: 0
+  isBraking: 0
+  isBrakingCompleted: 0
+  isReversing: 0
+  isReversingCompleted: 0
+  accelerateValue: 0
   phoneActive: 0
 --- !u!195 &1552412753975505712
 NavMeshAgent:
@@ -8379,6 +8391,187 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: 
   score: 0
+  scoreOnOrder: 0
+  totalOrders: 0
+  phoneScore: 0
+--- !u!114 &4005676914254687524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822320664954261115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 79e03657ffcdc624f992a201bc4f5a94,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnBrake
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ce31eaac-89cb-43ff-9d85-35e52a0d003f
+    m_ActionName: Game Play/Brake[/DualShock4GamepadHID/rightTrigger,/Keyboard/leftShift,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnTurnRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ae27927e-dcef-49c6-b990-d36192c14793
+    m_ActionName: Game Play/TurnRight[/Keyboard/d,/DualShock4GamepadHID/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnTurnLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 30f67097-009e-487e-8350-c0e271d66421
+    m_ActionName: Game Play/TurnLeft[/DualShock4GamepadHID/leftStick/left,/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnAccelerate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3727ef0b-e495-4341-aaae-8dce1e5fbce2
+    m_ActionName: Game Play/Accelerate[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnPhoneOutIn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 81db9e80-2761-43b8-9d3f-fa8c82f8c2ba
+    m_ActionName: Game Play/PhoneOutIn[/DualShock4GamepadHID/buttonWest]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnNavigateUIUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 00534eff-b106-4ac2-82fb-ffb0a478a9bc
+    m_ActionName: Game Play/navigateUIUp[/DualShock4GamepadHID/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnNavigateUIRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1525414c-0015-4ced-98c9-67114093a332
+    m_ActionName: Game Play/navigateUIRight[/DualShock4GamepadHID/dpad/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnNavigateUIDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 49fc7d99-dcd2-4fff-adbe-1101ff5d2dca
+    m_ActionName: Game Play/navigateUIDown[/DualShock4GamepadHID/dpad/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5099970864241052019}
+        m_MethodName: OnNavigateUILeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
+    m_ActionName: Game Play/navigateUILeft[/DualShock4GamepadHID/dpad/left]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game Play
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &5099970864241052019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822320664954261115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13711225090ffd1408d755b000a9f8c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2719617212279380729
 GameObject:
   m_ObjectHideFlags: 0

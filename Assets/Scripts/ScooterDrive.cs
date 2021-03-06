@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Linq;
+using System;
 
 public class ScooterDrive : MonoBehaviour
 {
@@ -76,15 +77,17 @@ public class ScooterDrive : MonoBehaviour
     public GameObject bike, playerModel;
 
     //Input Controls
-    private bool isAccelerating = false;
-    private bool acceleratingCompleted = false;
-    private bool turnLeft = false;
-    private bool turnRight = false;
-    private bool isBraking = false;
-    private bool isBrakingCompleted = false;
-    private bool isReversing = false;
-    private bool isReversingCompleted = false;
-    private int accelerateValue;
+    public int playerIndex = 0;
+
+    public bool isAccelerating = false;
+    public bool acceleratingCompleted = false;
+    public bool turnLeft = false;
+    public bool turnRight = false;
+    public bool isBraking = false;
+    public bool isBrakingCompleted = false;
+    public bool isReversing = false;
+    public bool isReversingCompleted = false;
+    public int accelerateValue;
 
     private GameObject homeScreen;
     public bool phoneActive = false;
@@ -93,53 +96,53 @@ public class ScooterDrive : MonoBehaviour
 
     private void Awake()
     {
-        homeScreen = GameObject.Find("HomeScreen");
+        //homeScreen = GameObject.Find("HomeScreen");
         
 
-        controls = new PlayerControls();
+        //controls = new PlayerControls();
 
-        controls.GamePlay.Accelerate.performed += context => { isAccelerating = true; };
-        controls.GamePlay.Accelerate.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
-        //controls.GamePlay.AccelerateStick.performed += context =>
-        //{
-        //        isAccelerating = true; 
-        //        isAcceleratingFromStick = true;
-        //        acceleratingCompleted = false;
+        //controls.GamePlay.Accelerate.performed += context => { isAccelerating = true; };
+        //controls.GamePlay.Accelerate.canceled += context => { isAccelerating = false; acceleratingCompleted = true; };
+        ////controls.GamePlay.AccelerateStick.performed += context =>
+        ////{
+        ////        isAccelerating = true; 
+        ////        isAcceleratingFromStick = true;
+        ////        acceleratingCompleted = false;
+        ////};
+        ////controls.GamePlay.AccelerateStick.canceled += context => { isAccelerating = false; acceleratingCompleted = true; isAcceleratingFromStick = false; };
+        //controls.GamePlay.TurnLeft.performed += context => { /*Debug.Log("left stick recognized");*/ turnLeft = true;  } ;
+        //controls.GamePlay.TurnLeft.canceled += context => { /*Debug.Log("left stick recognized");*/ turnLeft = false; };
+        //controls.GamePlay.TurnRight.performed += context => { /*Debug.Log("left stick recognized");*/ turnRight = true; };
+        //controls.GamePlay.TurnRight.canceled += context => { /*Debug.Log("left stick recognized");*/ turnRight = false; };
+        //controls.GamePlay.Brake.performed += context => { /*Debug.Log("right trigger is recognized");*/ isBraking = true; };
+        //controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
+        //controls.GamePlay.PhoneOutIn.performed += context => { PhoneOutIn(); };
+
+        //controls.GamePlay.navigateUIUp.performed += context => {
+        //    HandleNavigateUIUp();
         //};
-        //controls.GamePlay.AccelerateStick.canceled += context => { isAccelerating = false; acceleratingCompleted = true; isAcceleratingFromStick = false; };
-        controls.GamePlay.TurnLeft.performed += context => { /*Debug.Log("left stick recognized");*/ turnLeft = true;  } ;
-        controls.GamePlay.TurnLeft.canceled += context => { /*Debug.Log("left stick recognized");*/ turnLeft = false; };
-        controls.GamePlay.TurnRight.performed += context => { /*Debug.Log("left stick recognized");*/ turnRight = true; };
-        controls.GamePlay.TurnRight.canceled += context => { /*Debug.Log("left stick recognized");*/ turnRight = false; };
-        controls.GamePlay.Brake.performed += context => { /*Debug.Log("right trigger is recognized");*/ isBraking = true; };
-        controls.GamePlay.Brake.canceled += context => { isBraking = false; isBrakingCompleted = true; };
-        controls.GamePlay.PhoneOutIn.performed += context => { PhoneOutIn(); };
 
-        controls.GamePlay.navigateUIUp.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadUpPressed = true;
-            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
-        };
+        //controls.GamePlay.navigateUIRight.performed += context => {
+        //    HandleNavigateUIRight();
+        //};
 
-        controls.GamePlay.navigateUIRight.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadRightPressed = true; 
-            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
-        };
+        //controls.GamePlay.navigateUIDown.performed += context => {
+        //    HandleNavigateUIDown();
+        //};
 
-        controls.GamePlay.navigateUIDown.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadDownPressed = true; 
-            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
-        };
-
-        controls.GamePlay.navigateUILeft.performed += context => { homeScreen.GetComponent<HomeScreenScript>().dPadLeftPressed = true;
-            homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); CheckIfPhoneIsActive();
-        };
+        //controls.GamePlay.navigateUILeft.performed += context => {
+        //    HandleNavigateUILeft();
+        //};
     }
 
     private void OnEnable()
     {
-        controls.GamePlay.Enable();
+        //controls.GamePlay.Enable();
     }
 
     private void OnDisable()
     {
-        controls.GamePlay.Disable();
+        //controls.GamePlay.Disable();
     }
 
     void Start()
@@ -156,7 +159,7 @@ public class ScooterDrive : MonoBehaviour
 		bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
     }
 
-    void PhoneOutIn()
+    public void PhoneOutIn()
     {
         AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
         phoneToggle = !phoneToggle;
@@ -647,5 +650,33 @@ public class ScooterDrive : MonoBehaviour
             
             currentSpeed = 0;
         }
+    }
+
+    public void HandleNavigateUIUp()
+    {
+        homeScreen.GetComponent<HomeScreenScript>().dPadUpPressed = true;
+        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); 
+        CheckIfPhoneIsActive();
+    }
+
+    public void HandleNavigateUIDown()
+    {
+        homeScreen.GetComponent<HomeScreenScript>().dPadDownPressed = true;
+        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); 
+        CheckIfPhoneIsActive();
+    }
+
+    public void HandleNavigateUILeft()
+    {
+        homeScreen.GetComponent<HomeScreenScript>().dPadLeftPressed = true;
+        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); 
+        CheckIfPhoneIsActive();
+    }
+
+    public void HandleNavigateUIRight()
+    {
+        homeScreen.GetComponent<HomeScreenScript>().dPadRightPressed = true;
+        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation();
+        CheckIfPhoneIsActive();
     }
 }
