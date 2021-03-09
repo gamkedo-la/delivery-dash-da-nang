@@ -55,8 +55,8 @@ public class MainMenu : MonoBehaviour
 
     public void gameCreateBack()
     {
-        main.SetActive(false);
-        gamecreation.SetActive(true);
+        main.SetActive(true);
+        gamecreation.SetActive(false);
     }
 
     public void startGame()
