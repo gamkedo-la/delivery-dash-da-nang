@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2552205802798836026}
   - component: {fileID: 1319268297486683566}
   - component: {fileID: 308183988341671677}
+  - component: {fileID: 666538943453371767}
   m_Layer: 0
   m_Name: Construction-Gravel-and-Sand
   m_TagString: Untagged
@@ -93,3 +94,27 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8
   m_Center: {x: 0.100000024, y: -7, z: 0.100000024}
+--- !u!205 &666538943453371767
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8433625295776367435}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
