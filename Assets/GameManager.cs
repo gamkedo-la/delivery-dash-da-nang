@@ -25,9 +25,14 @@ public class GameManager : MonoBehaviour
     //All this information is being fed from the PrefabOrder.cs and DashAppScript.cs
 
     public static string Player1RestaurantName, Player1ApartmentName, Player1CustomerName, Player1CustomerItemOrdered;
+    public static string Player2RestaurantName, Player2ApartmentName, Player2CustomerName, Player2CustomerItemOrdered;
     public static Transform Player1RestaurantWayPoint, Player1ApartmentWayPoint;
+    public static Transform Player2RestaurantWayPoint, Player2ApartmentWayPoint;
     public static bool Player1OrderSelected;
     public static float player1Distance;
+
+    public static bool Player2OrderSelected;
+    public static float player2Distance;
 
     public GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
 
