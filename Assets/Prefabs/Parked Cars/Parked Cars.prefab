@@ -48,9 +48,9 @@ MonoBehaviour:
   chancePerCar: 0.75
   carSpacing: 25
   prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7612077832819668114, guid: c58af7862715d7d4589dac4db419ea80, type: 3}
+  - {fileID: 7612077832819668114, guid: c58af7862715d7d4589dac4db419ea80, type: 3}
+  - {fileID: 2999463934084427767, guid: 8a8f0fc1799b4d14487cc0d0c2486852, type: 3}
+  - {fileID: 2307558150224161325, guid: 12ba6cf617059554ca6e43f21c9e1238, type: 3}
+  - {fileID: 9195671310909230444, guid: a9b43f3c5164eeb4e8ab5afa5298dfd8, type: 3}
+  - {fileID: 5263494270618960914, guid: 014f60b00f9f8fb42990e9492c8d3088, type: 3}

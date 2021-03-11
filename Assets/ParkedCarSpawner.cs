@@ -37,9 +37,9 @@ public class ParkedCarSpawner : MonoBehaviour
     {
         // Draw a semitransparent cube at the transforms position
         Gizmos.color = new Color(1, 0, 0, 0.25f);
-        Vector3 cubePos = new Vector3(transform.position.x,transform.position.y,
+        Vector3 cubePos = new Vector3(transform.position.x,transform.position.y+2.5f,
             transform.position.z + maxCarCount * carSpacing / 2);
-        Gizmos.DrawCube(cubePos, new Vector3(10, 10, maxCarCount * carSpacing));
+        Gizmos.DrawCube(cubePos, new Vector3(10, 5, maxCarCount * carSpacing));
     }
     
 }
