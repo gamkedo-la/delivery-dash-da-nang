@@ -68,6 +68,26 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (MainMenu.playerCount == 1)
+        {
+            Player1();
+        }
+
+        if (MainMenu.playerCount == 2)
+        {
+            Player2();
+        }
+
+        if (MainMenu.playerCount == 3)
+        {
+            Player3();
+        }
+
+        if (MainMenu.playerCount == 4)
+        {
+            Player4();
+        }
+
         if (easy)
         {
             Easy = true;
@@ -168,60 +188,80 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U))
         {
-            Debug.Log("1 Player");
-            player2.SetActive(false);
-            player3.SetActive(false);
-            player4.SetActive(false);
-
-            player1Cam.rect = new Rect(0f, 0f, 1f, 1);
-
-            player1Cam.farClipPlane = UltraQuality;
+            Player1();
         }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            player2.SetActive(true);
-            player3.SetActive(false);
-            player4.SetActive(false);
-
-            player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
-            player2Cam.rect = new Rect(0.5f, 0f, 0.5f, 1);
-
-            player1Cam.farClipPlane = HighQuality;
-            player2Cam.farClipPlane = HighQuality;
+            Player2();
         }
 
         if (Input.GetKeyDown(KeyCode.O))
         {
-            player2.SetActive(true);
-            player3.SetActive(true);
-            player4.SetActive(false);
-
-            player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
-            player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
-            player3Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
-
-            player1Cam.farClipPlane = MedQuality;
-            player2Cam.farClipPlane = MedQuality;
-            player3Cam.farClipPlane = MedQuality;
+            Player3();
         }
 
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            player2.SetActive(true);
-            player3.SetActive(true);
-            player4.SetActive(true);
-
-            player1Cam.rect = new Rect(0f, 0.5f, 0.5f, .5f);
-            player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
-            player3Cam.rect = new Rect(0f, 0f, .5f, .5f);
-            player4Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
-
-            player1Cam.farClipPlane = LowQuality;
-            player2Cam.farClipPlane = LowQuality;
-            player3Cam.farClipPlane = LowQuality;
-            player4Cam.farClipPlane = LowQuality;
+            Player4();
         }
+    }
+
+    void Player1()
+    {
+        Debug.Log("1 Player");
+        player2.SetActive(false);
+        player3.SetActive(false);
+        player4.SetActive(false);
+
+        player1Cam.rect = new Rect(0f, 0f, 1f, 1);
+
+        player1Cam.farClipPlane = UltraQuality;
+    }
+
+    void Player2()
+    {
+        player2.SetActive(true);
+        player3.SetActive(false);
+        player4.SetActive(false);
+
+        player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
+        player2Cam.rect = new Rect(0.5f, 0f, 0.5f, 1);
+
+        player1Cam.farClipPlane = HighQuality;
+        player2Cam.farClipPlane = HighQuality;
+    }
+
+    void Player3()
+    {
+        player2.SetActive(true);
+        player3.SetActive(true);
+        player4.SetActive(false);
+
+        player1Cam.rect = new Rect(0f, 0f, 0.5f, 1);
+        player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
+        player3Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
+
+        player1Cam.farClipPlane = MedQuality;
+        player2Cam.farClipPlane = MedQuality;
+        player3Cam.farClipPlane = MedQuality;
+    }
+
+    void Player4()
+    {
+        player2.SetActive(true);
+        player3.SetActive(true);
+        player4.SetActive(true);
+
+        player1Cam.rect = new Rect(0f, 0.5f, 0.5f, .5f);
+        player2Cam.rect = new Rect(0.5f, 0.5f, .5f, .5f);
+        player3Cam.rect = new Rect(0f, 0f, .5f, .5f);
+        player4Cam.rect = new Rect(0.5f, 0f, .5f, .5f);
+
+        player1Cam.farClipPlane = LowQuality;
+        player2Cam.farClipPlane = LowQuality;
+        player3Cam.farClipPlane = LowQuality;
+        player4Cam.farClipPlane = LowQuality;
     }
 }

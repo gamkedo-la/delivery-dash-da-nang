@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject main, gamecreation;
 
-    public int playerCount;
+    public static int playerCount;
     public Text playerCountstring;
 
     public GameObject player1, player2, player3, player4;
+
+    private void Start()
+    {
+        playerCount = 1;
+    }
 
     private void Update()
     {
@@ -61,9 +67,10 @@ public class MainMenu : MonoBehaviour
 
     public void startGame()
     {
-        //save player character
-        //save player count
-        //load scene
+        //save player character 
+        //save player count (this is stored in playerCount)
+        print(playerCount);
+        SceneManager.LoadScene("DaytimeDaNang");
     }
 
     public void increasePlayerCount()
