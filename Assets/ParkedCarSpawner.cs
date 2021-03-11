@@ -24,7 +24,7 @@ public class ParkedCarSpawner : MonoBehaviour
                 Debug.Log("Spawning parked car " + picked + " at dist " + dist);
                 GameObject clone = Instantiate(prefabs[picked], new Vector3(0f,0f,0f), Quaternion.identity);
                 clone.transform.SetParent(transform); // be a child of this object
-                clone.transform.localPosition = new Vector3(0f,0f,dist);
+                clone.transform.localPosition = new Vector3(0f,0f,dist+(carSpacing/2));
             } 
             // otherwise we leave a parking space
 

@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4cef6735d4a0f54b9de42bdb26f758d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCarCount: 6
-  chancePerCar: 0.5
+  minCarCount: 3
+  maxCarCount: 8
+  chancePerCar: 0.75
   carSpacing: 25
   prefabs:
   - {fileID: 0}
