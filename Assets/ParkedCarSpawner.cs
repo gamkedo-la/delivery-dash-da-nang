@@ -21,7 +21,7 @@ public class ParkedCarSpawner : MonoBehaviour
             
             if (Random.value < chancePerCar) {
                 int picked = Random.Range(0,prefabs.Count);
-                Debug.Log("Spawning parked car " + picked + " at dist " + dist);
+                //Debug.Log("Spawning parked car " + picked + " at dist " + dist);
                 GameObject clone = Instantiate(prefabs[picked], new Vector3(0f,0f,0f), Quaternion.identity);
                 clone.transform.SetParent(transform); // be a child of this object
                 clone.transform.localPosition = new Vector3(0f,0f,dist+(carSpacing/2));

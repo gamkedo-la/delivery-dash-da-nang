@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carToChoose:
-  - {fileID: 4337797495290799591}
+  - {fileID: 7673871342905940500}
 --- !u!65 &7978933635715060261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -455,6 +455,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df8564097249d464887ee71b3bd9fc96, type: 3}
+--- !u!1 &7673871342905940500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df8564097249d464887ee71b3bd9fc96,
+    type: 3}
+  m_PrefabInstance: {fileID: 7403487354129246021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7004436593767678126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: df8564097249d464887ee71b3bd9fc96,
