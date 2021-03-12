@@ -43,7 +43,7 @@ public class RestaurantWaypoint2 : MonoBehaviour
                 {
                     player2OrderDelivered = true;
                     chachingSFX.Play();
-                    GameManager.Player1OrderSelected = false;
+                    GameManager.Player2OrderSelected = false;
                     gpsScript.ClearPath();
                 }
 
@@ -51,8 +51,8 @@ public class RestaurantWaypoint2 : MonoBehaviour
                 {
                     player2OrderPickedUp = true;
                     orderPickedUpSFX.Play();
-                    this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
-                    orders.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";
+                    this.gameObject.transform.position = GameObject.Find("Player2Apartment").transform.position;
+                    orders.text = "Deliver " + GameManager.Player2CustomerItemOrdered + " to " + GameManager.Player2CustomerName + " at " + $"<color=yellow>{GameManager.Player2ApartmentName}</color>";
                     customerNode = gpsScript.FindNearestNode(gameObject.transform);
                     nodeNearestToPlayer = gpsScript.FindNearestNode(player.transform);
                     gpsScript.FindPath(nodeNearestToPlayer, customerNode);
