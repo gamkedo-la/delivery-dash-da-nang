@@ -11,6 +11,8 @@ public class ScooterDrive : MonoBehaviour
 
     PlayerControls controls;
 
+    public bool player1, player2, player3, player4;
+
     //this variable is used to determine how much force to apply to enviornment objects after collision
     public static float playerCurrentSpeed;
     public static float maxSpeed = 15f;
@@ -536,7 +538,22 @@ public class ScooterDrive : MonoBehaviour
 
     public void AssignStars()
     {
-        GameManager.player1OrderDelivered = true;
+        if (player1)
+        {
+            GameManager.player1OrderDelivered = true;
+        }
+        if (player2)
+        {
+            GameManager.player2OrderDelivered = true;
+        }
+        if (player3)
+        {
+            GameManager.player3OrderDelivered = true;
+        }
+        if (player4)
+        {
+            GameManager.player4OrderDelivered = true;
+        }
         physicalOrder.SetActive(false);
 
         float tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth) / 2;
@@ -594,7 +611,22 @@ public class ScooterDrive : MonoBehaviour
 
         if (other.tag == "WayPointBox")
         {
-            GameManager.player1OrderPickedUp = true;
+            if (player1)
+            {
+                GameManager.player1OrderPickedUp = true;
+            }
+            if (player2)
+            {
+                GameManager.player2OrderPickedUp = true;
+            }
+            if (player3)
+            {
+                GameManager.player3OrderPickedUp = true;
+            }
+            if (player4)
+            {
+                GameManager.player4OrderPickedUp = true;
+            }
             physicalOrder.SetActive(true);
         }
 

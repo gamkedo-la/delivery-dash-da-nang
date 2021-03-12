@@ -40,6 +40,15 @@ public class GameManager : MonoBehaviour
     public static bool player1OrderPickedUp;
     public static bool player1OrderDelivered;
 
+    public static bool player2OrderPickedUp;
+    public static bool player2OrderDelivered;
+
+    public static bool player3OrderPickedUp;
+    public static bool player3OrderDelivered;
+
+    public static bool player4OrderPickedUp;
+    public static bool player4OrderDelivered;
+
     public static int player1TotalOrders;
     public static float player1ScoreOnOrder;
     public static int player1ScoreTotal, player2ScoreTotal, player3ScoreTotal, player4ScoreTotal, enemy2ScoreTotal, enemy3ScoreTotal, enemy4ScoreTotal;
@@ -121,6 +130,15 @@ public class GameManager : MonoBehaviour
 
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
+
+        player2OrderPickedUp = false;
+        player2OrderDelivered = false;
+
+        player3OrderPickedUp = false;
+        player3OrderDelivered = false;
+
+        player4OrderPickedUp = false;
+        player4OrderDelivered = false;
     }
 
     private void Update()
