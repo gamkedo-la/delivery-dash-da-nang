@@ -184,7 +184,10 @@ public class ScooterDrive : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            PhoneOutIn();
+            if (player1)
+            {
+                PhoneOutIn();
+            }
         }
 
         playerCurrentSpeed = currentSpeed;

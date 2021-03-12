@@ -62,6 +62,10 @@ public class GameManager : MonoBehaviour
     public Text[] rankUIText;
     public Text[] rankUITextInGame;
 
+    public Text[] rankUITextInGame2;
+    public Text[] rankUITextInGame3;
+    public Text[] rankUITextInGame4;
+
     public List<DeliveryDriver> driverList= new List<DeliveryDriver>(); 
 
     //This is the macro game timer
@@ -184,6 +188,9 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < driverList.Count; i++)
             {
                 rankUITextInGame[i].text = driverList[i].characterName + ":" + driverList[i].phoneScore.ToString("F0") ;
+                rankUITextInGame2[i].text = driverList[i].characterName + ":" + driverList[i].phoneScore.ToString("F0");
+                rankUITextInGame3[i].text = driverList[i].characterName + ":" + driverList[i].phoneScore.ToString("F0");
+                rankUITextInGame4[i].text = driverList[i].characterName + ":" + driverList[i].phoneScore.ToString("F0");
             }
         }
 
