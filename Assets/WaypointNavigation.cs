@@ -5,9 +5,9 @@ using UnityEngine;
 public class WaypointNavigation : MonoBehaviour
 {
     PedestrianCharacterController controller;
-    public Waypoint currentWaypoint;
-    private Waypoint startingWaypoint;
+    public Waypoint startingWaypointForInstantiation;
     public GameObject carSpawner;
+    public Waypoint currentWaypoint;
     int direction;
 
     //lưdaskgufhaikuhawliukfgha
@@ -26,9 +26,11 @@ public class WaypointNavigation : MonoBehaviour
 
     void Start()
     {
-        startingWaypoint = 
+        int randomChildIdx = Random.Range(0, carSpawner.transform.childCount - 1);
+        //Waypoint startingWaypointForInstantiation = carSpawner.transform.GetChild(randomChildIdx);
+        //startingWaypointForInstantiation = startingWaypointForInstantiation;
         direction = Mathf.RoundToInt(Random.Range(0f, 1f));
-        Debug.Log(currentWaypoint);
+        Debug.Log(startingWaypointForInstantiation);
         if (currentWaypoint != null)
         {
             controller.SetDestination(currentWaypoint.GetPosition());
