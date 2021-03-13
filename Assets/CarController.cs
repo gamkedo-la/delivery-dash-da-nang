@@ -19,6 +19,10 @@ public class CarController : MonoBehaviour
     public float groundRayLength = 0.5f;
     public Transform groundRayPoint;
 
+    public Vector3 destination;
+    Vector3 lastPosition;
+    public bool reachedDestination;
+
     private void Start()
     {
         rb.transform.parent = null;
@@ -76,4 +80,12 @@ public class CarController : MonoBehaviour
             rb.AddForce(Vector3.up * -gravityForce * 100);
         }
     }
+
+    public void SetDestination(Vector3 destination)
+    {
+        this.destination = destination;
+        reachedDestination = false;
+    }
+
+    
 }

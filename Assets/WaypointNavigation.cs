@@ -26,11 +26,11 @@ public class WaypointNavigation : MonoBehaviour
 
     void Start()
     {
-        int randomChildIdx = Random.Range(0, carSpawner.transform.childCount - 1);
+        //int randomChildIdx = Random.Range(0, carSpawner.transform.childCount - 1);
         //Waypoint startingWaypointForInstantiation = carSpawner.transform.GetChild(randomChildIdx);
         //startingWaypointForInstantiation = startingWaypointForInstantiation;
         direction = Mathf.RoundToInt(Random.Range(0f, 1f));
-        Debug.Log(startingWaypointForInstantiation);
+        //Debug.Log(startingWaypointForInstantiation);
         if (currentWaypoint != null)
         {
             controller.SetDestination(currentWaypoint.GetPosition());

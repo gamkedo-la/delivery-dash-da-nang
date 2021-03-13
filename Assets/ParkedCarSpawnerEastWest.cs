@@ -13,19 +13,19 @@ public class ParkedCarSpawnerEastWest: MonoBehaviour
     void Start()
     {
         int count = Random.Range(minCarCount,maxCarCount);
-        Debug.Log("Spawning "+count+" parked cars!");
+        //Debug.Log("Spawning "+count+" parked cars!");
         
         float dist = 0f;
         
         for (int num=0; num<count; num++) {
-            Debug.Log("inside for loop to spawn individual cars");
+            //Debug.Log("inside for loop to spawn individual cars");
             //prefabs[num].transform.RotateAround(transform.position, transform.up, 90f);
 
 
             if (Random.value < chancePerCar) {
-                Debug.Log("inside if Random.value < chancePerCar");
+                //Debug.Log("inside if Random.value < chancePerCar");
                 int picked = Random.Range(0,prefabs.Count);
-                Debug.Log("Spawning parked car " + picked + " at dist " + dist);
+                //Debug.Log("Spawning parked car " + picked + " at dist " + dist);
                 GameObject clone = Instantiate(prefabs[picked], new Vector3(0f,0f,0f), Quaternion.identity);
                 clone.transform.SetParent(transform); // be a child of this object
                 clone.transform.localPosition = new Vector3(0f, 0f, dist + (carSpacing / 2));

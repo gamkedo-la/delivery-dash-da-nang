@@ -21,15 +21,15 @@ public class ObjectSpawner : MonoBehaviour
     int count = 0;
         while (count<objectsToSpawn)
         {
-            if (gameObject.name == "CarSpawner")
-            {
-                Debug.Log("inside while loop of car spawner");
-            }
+            
             GameObject notThisParentPrefabWithTransformOfManyVehicularChildren = Instantiate(notThisParentPrefab);
-            Debug.Log(notThisParentPrefabWithTransformOfManyVehicularChildren);
+            //
             Transform waypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
-            if (gameObject.name == "CarSpawner")
+            
+            if (gameObject.name == "NgoThiSiVehicleWaypoints")
             {
+                Debug.Log("inside car spawner while loop waypointChildFromThisTransform");
+                Debug.Log(notThisParentPrefabWithTransformOfManyVehicularChildren);
                 Debug.Log(waypointChildFromThisTransform);
             }
             waypointChildFromThisTransform.GetComponent<WaypointNavigation>().currentWaypoint = waypointChildFromThisTransform.GetComponent<Waypoint>();
