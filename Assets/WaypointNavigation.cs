@@ -6,8 +6,11 @@ public class WaypointNavigation : MonoBehaviour
 {
     PedestrianCharacterController controller;
     public Waypoint currentWaypoint;
+    private Waypoint startingWaypoint;
+    public GameObject carSpawner;
     int direction;
 
+    //lưdaskgufhaikuhawliukfgha
     //public AudioClip danielleScreamAudioClip, scream2, scream3, scream4;
     //public List<AudioClip> listOfScreams = new List<AudioClip>();
 
@@ -23,8 +26,9 @@ public class WaypointNavigation : MonoBehaviour
 
     void Start()
     {
+        startingWaypoint = 
         direction = Mathf.RoundToInt(Random.Range(0f, 1f));
-        //Debug.Log(currentWaypoint);
+        Debug.Log(currentWaypoint);
         if (currentWaypoint != null)
         {
             controller.SetDestination(currentWaypoint.GetPosition());

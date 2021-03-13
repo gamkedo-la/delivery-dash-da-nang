@@ -26,8 +26,12 @@ public class ObjectSpawner : MonoBehaviour
                 Debug.Log("inside while loop of car spawner");
             }
             GameObject notThisParentPrefabWithTransformOfManyVehicularChildren = Instantiate(notThisParentPrefab);
+            Debug.Log(notThisParentPrefabWithTransformOfManyVehicularChildren);
             Transform waypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
-            Debug.Log(waypointChildFromThisTransform);
+            if (gameObject.name == "CarSpawner")
+            {
+                Debug.Log(waypointChildFromThisTransform);
+            }
             waypointChildFromThisTransform.GetComponent<WaypointNavigation>().currentWaypoint = waypointChildFromThisTransform.GetComponent<Waypoint>();
             //Debug.Log(obj.GetComponent<WaypointNavigation>().currentWaypoint);
             notThisParentPrefabWithTransformOfManyVehicularChildren.transform.position = waypointChildFromThisTransform.position;
