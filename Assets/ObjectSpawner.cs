@@ -32,7 +32,7 @@ public class ObjectSpawner : MonoBehaviour
                 Debug.Log(notThisParentPrefabWithTransformOfManyVehicularChildren);
                 Debug.Log(waypointChildFromThisTransform);
             }
-            waypointChildFromThisTransform.GetComponent<WaypointNavigation>().currentWaypoint = waypointChildFromThisTransform.GetComponent<Waypoint>();
+            //waypointChildFromThisTransform.GetComponent<WaypointNavigation>().currentWaypoint = waypointChildFromThisTransform.GetComponent<Waypoint>();
             //Debug.Log(obj.GetComponent<WaypointNavigation>().currentWaypoint);
             notThisParentPrefabWithTransformOfManyVehicularChildren.transform.position = waypointChildFromThisTransform.position;
 
