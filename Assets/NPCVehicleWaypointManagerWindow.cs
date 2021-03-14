@@ -15,22 +15,22 @@ public class NPCVehicleWaypointManagerWindow : EditorWindow
 
     private void OnGUI()
     {
-        SerializedObject obj = new SerializedObject(this);
+        SerializedObject windowObject = new SerializedObject(this);
 
-        EditorGUILayout.PropertyField(obj.FindProperty("VehicleSpawnerWithWaypointChildren"));
+        EditorGUILayout.PropertyField(windowObject.FindProperty("VehicleSpawnerWithWaypointChildren"));
         Debug.Log("hello OnGUI");
-        //if (VehicleSpawnerWithWaypointChildren == null)
-        //{
-            //EditorGUILayout.HelpBox("Root transform must be selected. Please assign a root transform.", MessageType.Warning);
-        //}    
-        //else
-        //{
+        if (VehicleSpawnerWithWaypointChildren == null)
+        {
+            EditorGUILayout.HelpBox("Root transform must be selected. Please assign a root transform.", MessageType.Warning);
+        }
+        else
+        {
             EditorGUILayout.BeginVertical("box");
             DrawButtons();
             EditorGUILayout.EndVertical();
 
-        //}    
-        obj.ApplyModifiedProperties();
+        }    
+        windowObject.ApplyModifiedProperties();
     }
 
     void DrawButtons()

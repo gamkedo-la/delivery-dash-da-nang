@@ -33,7 +33,7 @@ public class NPCVehicleWaypointNavigation : MonoBehaviour
         //Debug.Log(startingWaypointForInstantiation);
         if (currentWaypoint != null)
         {
-            NPCCarControllerScript.SetDestination(currentWaypoint.GetPosition());
+            NPCCarControllerScript.SetDestination(currentWaypoint.GetRandomPositionOnWaypoint());
         }
     }
 
@@ -83,7 +83,7 @@ public class NPCVehicleWaypointNavigation : MonoBehaviour
         //        }
         //        if (currentWaypoint != null)
         //        {
-        //            NPCCarControllerScript.SetDestination(currentWaypoint.GetPosition());
+        //            NPCCarControllerScript.SetDestination(currentWaypoint.GetRandomPositionOnWaypoint());
         //        }
         //    }
 

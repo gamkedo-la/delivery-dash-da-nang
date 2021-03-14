@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NPCVehicleSpawner : MonoBehaviour
 {
-    public GameObject notThisParentPrefab;
-    public int objectsToSpawn;
+    public GameObject parentObjectWithVehiclesToSpawn;
+    public int vehiclesToSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -19,22 +19,22 @@ public class NPCVehicleSpawner : MonoBehaviour
 
 
         int count = 0;
-        while (count < objectsToSpawn)
+        while (count < vehiclesToSpawn)
         {
 
-            GameObject notThisParentPrefabWithTransformOfManyVehicularChildren = Instantiate(notThisParentPrefab);
+            GameObject ParentObjectWithVehicleWaypointChildren = Instantiate(parentObjectWithVehiclesToSpawn);
             //
-            Transform waypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
+            Transform randomWaypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
 
             if (gameObject.name == "NgoThiSiVehicleWaypoints")
             {
                 Debug.Log("inside car spawner while loop waypointChildFromThisTransform");
-                Debug.Log(notThisParentPrefabWithTransformOfManyVehicularChildren);
-                Debug.Log(waypointChildFromThisTransform);
+                Debug.Log(parentObjectWithVehiclesToSpawn);
+                Debug.Log(randomWaypointChildFromThisTransform);
             }
-            //waypointChildFromThisTransform.GetComponent<NPCVehicleWaypointNavigation>().currentWaypoint = waypointChildFromThisTransform.GetComponent<NPCVehicleWaypoint>();
+            randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypointNavigation>().currentWaypoint = randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypoint>();
             //Debug.Log(obj.GetComponent<WaypointNavigation>().currentWaypoint);
-            notThisParentPrefabWithTransformOfManyVehicularChildren.transform.position = waypointChildFromThisTransform.position;
+            parentObjectWithVehiclesToSpawn.transform.position = randomWaypointChildFromThisTransform.position;
 
             yield return new WaitForEndOfFrame();
 

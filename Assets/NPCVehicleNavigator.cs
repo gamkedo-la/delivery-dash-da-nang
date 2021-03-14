@@ -15,7 +15,7 @@ public class NPCVehicleNavigator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        npcVehicleController.SetDestination(currentNPCVehicleWaypoint.GetPosition());
+        npcVehicleController.SetDestination(currentNPCVehicleWaypoint.GetRandomPositionOnWaypoint());
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class NPCVehicleNavigator : MonoBehaviour
         {
             
             currentNPCVehicleWaypoint = currentNPCVehicleWaypoint.nextWaypoint;
-            npcVehicleController.SetDestination(currentNPCVehicleWaypoint.GetPosition());
+            npcVehicleController.SetDestination(currentNPCVehicleWaypoint.GetRandomPositionOnWaypoint());
         }    
     }
 }
