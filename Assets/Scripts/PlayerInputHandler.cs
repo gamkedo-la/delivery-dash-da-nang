@@ -17,7 +17,14 @@ public class PlayerInputHandler : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         int index = playerInput.playerIndex;
         var allScooterDriveScrpits = FindObjectsOfType<ScooterDrive>();
-        scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index);
+        if (index == 0)
+        {
+            scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index);
+        }
+        else
+        {
+            scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
+        }
         //if (GetComponent<ScooterDrive>().playerIndex == index)
         //{
         //    scooterDriveScript = GetComponent<ScooterDrive>();
