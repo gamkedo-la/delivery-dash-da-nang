@@ -38,7 +38,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
         {
             receivedDriver = other.GetComponent<DeliveryDriver>();
 
-            if (PrefabOrderPlayer4.orderHasBeenTaken2)
+            if (PrefabOrderPlayer4.orderHasBeenTaken4)
             {
                 if (player4OrderPickedUp && !player4OrderDelivered && player.GetComponent<ScooterDrive>().currentSpeed == 0)
                 {
@@ -65,7 +65,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
 
     private void Update()
     {
-        if (PrefabOrderPlayer4.orderHasBeenTaken2 && player4OrderPickedUp && player4OrderDelivered)
+        if (PrefabOrderPlayer4.orderHasBeenTaken4 && player4OrderPickedUp && player4OrderDelivered)
         {
             player.GetComponent<ScooterDrive>().AssignStars();
             float score = (player4TimeScore / player4TimeScoreMax) * 100;
@@ -82,7 +82,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
             }
 
             DisplayScore();
-            PrefabOrderPlayer4.orderHasBeenTaken2 = false;
+            PrefabOrderPlayer4.orderHasBeenTaken4 = false;
             player4OrderPickedUp = false;
             player4OrderDelivered = false;
             food.SetActive(false);
@@ -94,7 +94,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
             StartCoroutine(Waiting());
         }
 
-        if (PrefabOrderPlayer4.orderHasBeenTaken2)
+        if (PrefabOrderPlayer4.orderHasBeenTaken4)
         {
             player4TimeScore -= Time.deltaTime;
             timer.text = player4TimeScore.ToString("F2");
@@ -106,7 +106,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
             orders.text = "Order Not Delivered in Time. Transaction Cancelled.";
             float score = 0;
             timer.text = score.ToString("F2") + "%";
-            PrefabOrderPlayer4.orderHasBeenTaken2 = false;
+            PrefabOrderPlayer4.orderHasBeenTaken4 = false;
             food.SetActive(false);
             this.transform.position = new Vector3(-10000, -10000, -10000);
             player4TimeScore = 0;
@@ -122,7 +122,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
             orders.text = "Order Destroyed in Transit. Transaction Cancelled.";
             float score = 0;
             timer.text = score.ToString("F2") + "%";
-            PrefabOrderPlayer4.orderHasBeenTaken2 = false;
+            PrefabOrderPlayer4.orderHasBeenTaken4 = false;
             food.SetActive(false);
             this.transform.position = new Vector3(-10000, -10000, -10000);
             player4TimeScore = 0;
@@ -142,7 +142,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(1.5f);
-        PrefabOrderPlayer4.orderHasBeenTaken2 = false;
+        PrefabOrderPlayer4.orderHasBeenTaken4 = false;
         player4OrderPickedUp = false;
         player4OrderDelivered = false;
         timer.text = finalScore.ToString("F0") + "%";

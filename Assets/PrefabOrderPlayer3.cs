@@ -22,7 +22,7 @@ public class PrefabOrderPlayer3 : MonoBehaviour
     public Text orderText;
     public Text orderState;
 
-    public static bool orderHasBeenTaken2;
+    public static bool orderHasBeenTaken3;
     public Image orderCondition;
 
     public GameObject accept, decline, displayOrdersText, gameManager;
@@ -98,7 +98,7 @@ public class PrefabOrderPlayer3 : MonoBehaviour
     {
         AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
 
-        orderHasBeenTaken2 = true;
+        orderHasBeenTaken3 = true;
         orderCondition.color = Color.green;
 
         pointer = GameObject.Find("Canvas - Display Orders3").transform.GetChild(2).gameObject;

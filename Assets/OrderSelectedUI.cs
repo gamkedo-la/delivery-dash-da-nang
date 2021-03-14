@@ -5,19 +5,70 @@ using UnityEngine.UI;
 
 public class OrderSelectedUI : MonoBehaviour
 {
+    public bool player1, player2, player3, player4;
+
     public GameObject text;
     void Update()
     {
-        if (PrefabOrder.orderHasBeenTaken)
+
+        if (player1)
         {
-            this.GetComponent<Image>().enabled = true;
-            text.SetActive(true);
+            if (PrefabOrder.orderHasBeenTaken)
+            {
+                this.GetComponent<Image>().enabled = true;
+                text.SetActive(true);
+            }
+
+            else
+            {
+                this.GetComponent<Image>().enabled = false;
+                text.SetActive(false);
+            }
         }
 
-        else
+        if (player2)
         {
-            this.GetComponent<Image>().enabled = false;
-            text.SetActive(false);
+            if (PrefabOrderPlayer2.orderHasBeenTaken2)
+            {
+                this.GetComponent<Image>().enabled = true;
+                text.SetActive(true);
+            }
+
+            else
+            {
+                this.GetComponent<Image>().enabled = false;
+                text.SetActive(false);
+            }
+        }
+
+        if (player3)
+        {
+            if (PrefabOrderPlayer3.orderHasBeenTaken3)
+            {
+                this.GetComponent<Image>().enabled = true;
+                text.SetActive(true);
+            }
+
+            else
+            {
+                this.GetComponent<Image>().enabled = false;
+                text.SetActive(false);
+            }
+        }
+
+        if (player4)
+        {
+            if (PrefabOrderPlayer4.orderHasBeenTaken4)
+            {
+                this.GetComponent<Image>().enabled = true;
+                text.SetActive(true);
+            }
+
+            else
+            {
+                this.GetComponent<Image>().enabled = false;
+                text.SetActive(false);
+            }
         }
     }
 }
