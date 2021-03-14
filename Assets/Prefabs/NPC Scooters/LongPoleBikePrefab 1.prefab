@@ -117,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc8d6338e9f55a4792b3e9b9d3d8695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingWaypointForInstantiation: {fileID: 0}
+  carSpawner: {fileID: 0}
   currentWaypoint: {fileID: 0}
 --- !u!1001 &3530155406674431057
 PrefabInstance:

@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 78506f8f9e3e88f498bbf005325b551f,
         type: 3}
       propertyPath: m_Name
-      value: cub_stacked_styrofoam (1)
+      value: cub_stacked_styrofoam
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2699092741681021261, guid: 78506f8f9e3e88f498bbf005325b551f, type: 3}

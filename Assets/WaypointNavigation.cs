@@ -54,33 +54,33 @@ public class WaypointNavigation : MonoBehaviour
                 {
                     currentWaypoint = currentWaypoint.branches[Random.Range(0, currentWaypoint.branches.Count - 1)];
                 }
-                else
-                {
-                    if (direction == 0)
-                    {
-                        if (currentWaypoint.nextWayPoint != null)
-                        {
-                            currentWaypoint = currentWaypoint.nextWayPoint;
-                        }
-                        else
-                        {
-                            currentWaypoint = currentWaypoint.previousWayPoint;
-                            direction = 1;
-                        }
-                    }
-                    else if (direction == 1)
-                    {
-                        if (currentWaypoint.previousWayPoint != null)
-                        {
-                            currentWaypoint = currentWaypoint.previousWayPoint;
-                        }
-                        else
-                        {
-                            currentWaypoint = currentWaypoint.nextWayPoint;
-                            direction = 0;
-                        }
-                    }
-                }
+                //else
+                //{
+                //    if (direction == 0)
+                //    {
+                //        if (currentWaypoint.nextWayPoint != null)
+                //        {
+                //            currentWaypoint = currentWaypoint.nextWayPoint;
+                //        }
+                //        else
+                //        {
+                //            currentWaypoint = currentWaypoint.previousWayPoint;
+                //            direction = 1;
+                //        }
+                //    }
+                //    else if (direction == 1)
+                //    {
+                //        if (currentWaypoint.previousWayPoint != null)
+                //        {
+                //            currentWaypoint = currentWaypoint.previousWayPoint;
+                //        }
+                //        else
+                //        {
+                //            currentWaypoint = currentWaypoint.nextWayPoint;
+                //            direction = 0;
+                //        }
+                //    }
+                //}
                 if (currentWaypoint != null)
                 {
                     controller.SetDestination(currentWaypoint.GetPosition());

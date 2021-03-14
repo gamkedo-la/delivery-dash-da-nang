@@ -5,11 +5,14 @@ using UnityEngine;
 public class NPCVehicleSpawner : MonoBehaviour
 {
     public GameObject parentObjectWithVehiclesToSpawn;
-    public int vehiclesToSpawn;
+    public int numberOfVehiclesToSpawn;
+    int RandNumber;
+    public GameObject[] carToChoose;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log("numberOfVehiclesToSpawn: " + numberOfVehiclesToSpawn);
         StartCoroutine(Spawn());
     }
 
@@ -19,23 +22,30 @@ public class NPCVehicleSpawner : MonoBehaviour
 
 
         int count = 0;
-        while (count < vehiclesToSpawn)
+        while (count < numberOfVehiclesToSpawn)
         {
-
+            //Debug.Log("numberOfVehiclesToSpawn: " + numberOfVehiclesToSpawn);
             GameObject ParentObjectWithVehicleWaypointChildren = Instantiate(parentObjectWithVehiclesToSpawn);
-            //
+            //Debug.Log("ParentObjectWithVehicleWaypointChildren: " + ParentObjectWithVehicleWaypointChildren);
             Transform randomWaypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
 
-            if (gameObject.name == "NgoThiSiVehicleWaypoints")
-            {
-                Debug.Log("inside car spawner while loop waypointChildFromThisTransform");
-                Debug.Log(parentObjectWithVehiclesToSpawn);
-                Debug.Log(randomWaypointChildFromThisTransform);
-            }
-            randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypointNavigation>().currentWaypoint = randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypoint>();
-            //Debug.Log(obj.GetComponent<WaypointNavigation>().currentWaypoint);
-            parentObjectWithVehiclesToSpawn.transform.position = randomWaypointChildFromThisTransform.position;
+            RandNumber = Random.Range(0, carToChoose.Length);
+            carToChoose[RandNumber].SetActive(true);
+            //Debug.Log("carToChoose[RandNumber]: " + carToChoose[RandNumber]);
 
+            //randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypointNavigation>().currentWaypoint = randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypoint>();
+            //Debug.Log(ParentObjectWithVehicleWaypointChildren.GetComponent<WaypointNavigation>().currentWaypoint);
+            parentObjectWithVehiclesToSpawn.transform.position = randomWaypointChildFromThisTransform.position;
+            //Debug.Log("randomWaypointChildFromThisTransform.position: " + randomWaypointChildFromThisTransform.position);
+            Debug.Log("parentObjectWithVehiclesToSpawn.transform.position: " + parentObjectWithVehiclesToSpawn.transform.position);
+            if (carToChoose[RandNumber].activeSelf)
+            {
+                print("chosen car is Active");
+            }
+            else
+            {
+                print("chosen car is not active");
+            }    
             yield return new WaitForEndOfFrame();
 
             count++;
