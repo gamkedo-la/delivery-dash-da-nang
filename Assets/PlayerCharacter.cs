@@ -10,6 +10,8 @@ public class PlayerCharacter : MonoBehaviour
     public int characterCount = 0;
     public Text characterNameString;
 
+    public bool player1, player2, player3, player4;
+
     public void Left()
     {
         characters[characterCount].SetActive(false);
@@ -19,6 +21,22 @@ public class PlayerCharacter : MonoBehaviour
             characterCount = characters.Length -1;
         }
         characters[characterCount].SetActive(true);
+        if (player1)
+        {
+            MainMenu.player1Character = characterCount;
+        }
+        if (player2)
+        {
+            MainMenu.player2Character = characterCount;
+        }
+        if (player3)
+        {
+            MainMenu.player3Character = characterCount;
+        }
+        if (player4)
+        {
+            MainMenu.player4Character = characterCount;
+        }
     }
 
     public void Right()
@@ -30,6 +48,22 @@ public class PlayerCharacter : MonoBehaviour
             characterCount = 0;
         }
         characters[characterCount].SetActive(true);
+        if (player1)
+        {
+            MainMenu.player1Character = characterCount;
+        }
+        if (player2)
+        {
+            MainMenu.player2Character = characterCount;
+        }
+        if (player3)
+        {
+            MainMenu.player3Character = characterCount;
+        }
+        if (player4)
+        {
+            MainMenu.player4Character = characterCount;
+        }
     }
 
     private void Update()

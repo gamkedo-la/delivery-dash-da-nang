@@ -13,6 +13,8 @@ public class ScooterDrive : MonoBehaviour
 
     public bool player1, player2, player3, player4;
 
+    public GameObject[] playerCharacter;
+
     //this variable is used to determine how much force to apply to enviornment objects after collision
     public static float playerCurrentSpeed;
     public static float maxSpeed = 15f;
@@ -159,6 +161,23 @@ public class ScooterDrive : MonoBehaviour
         }
 
 		bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
+
+        if (player1)
+        {
+            playerCharacter[MainMenu.player1Character].SetActive(true);
+        }
+        if (player2)
+        {
+            playerCharacter[MainMenu.player2Character].SetActive(true);
+        }
+        if (player3)
+        {
+            playerCharacter[MainMenu.player3Character].SetActive(true);
+        }
+        if (player4)
+        {
+            playerCharacter[MainMenu.player4Character].SetActive(true);
+        }
     }
 
     public void PhoneOutIn()
