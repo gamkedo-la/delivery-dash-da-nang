@@ -26,13 +26,23 @@ public class GameManager : MonoBehaviour
 
     public static string Player1RestaurantName, Player1ApartmentName, Player1CustomerName, Player1CustomerItemOrdered;
     public static string Player2RestaurantName, Player2ApartmentName, Player2CustomerName, Player2CustomerItemOrdered;
+    public static string Player3RestaurantName, Player3ApartmentName, Player3CustomerName, Player3CustomerItemOrdered;
+    public static string Player4RestaurantName, Player4ApartmentName, Player4CustomerName, Player4CustomerItemOrdered;
     public static Transform Player1RestaurantWayPoint, Player1ApartmentWayPoint;
     public static Transform Player2RestaurantWayPoint, Player2ApartmentWayPoint;
+    public static Transform Player3RestaurantWayPoint, Player3ApartmentWayPoint;
+    public static Transform Player4RestaurantWayPoint, Player4ApartmentWayPoint;
     public static bool Player1OrderSelected;
     public static float player1Distance;
 
     public static bool Player2OrderSelected;
     public static float player2Distance;
+
+    public static bool Player3OrderSelected;
+    public static float player3Distance;
+
+    public static bool Player4OrderSelected;
+    public static float player4Distance;
 
     public GameObject player1RestaurantWayPoint, player1ApartmentWayPoint;
 
