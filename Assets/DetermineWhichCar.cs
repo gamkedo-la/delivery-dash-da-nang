@@ -6,10 +6,11 @@ public class DetermineWhichCar : MonoBehaviour
 {
     int RandNumber;
     public GameObject[] carToChoose;
-    private GameObject chosenCar;
+    public GameObject chosenCar;
 
     private void Start()
     {
+        
         RandNumber = Random.Range(0, carToChoose.Length);
 
         chosenCar = carToChoose[RandNumber];

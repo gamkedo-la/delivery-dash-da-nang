@@ -25,7 +25,7 @@ public class NPCVehicleSpawner : MonoBehaviour
         while (count < numberOfVehiclesToSpawn)
         {
             //Debug.Log("numberOfVehiclesToSpawn: " + numberOfVehiclesToSpawn);
-            GameObject ParentObjectWithVehicleWaypointChildren = Instantiate(parentObjectWithVehiclesToSpawn);
+            GameObject parentObjectWithVehiclesInstance = Instantiate(parentObjectWithVehiclesToSpawn);
             //Debug.Log("ParentObjectWithVehicleWaypointChildren: " + ParentObjectWithVehicleWaypointChildren);
             Transform randomWaypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
 
@@ -35,8 +35,14 @@ public class NPCVehicleSpawner : MonoBehaviour
 
             //randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypointNavigation>().currentWaypoint = randomWaypointChildFromThisTransform.GetComponent<NPCVehicleWaypoint>();
             //Debug.Log(ParentObjectWithVehicleWaypointChildren.GetComponent<WaypointNavigation>().currentWaypoint);
-            parentObjectWithVehiclesToSpawn.transform.position = randomWaypointChildFromThisTransform.position;
+
+
+            parentObjectWithVehiclesInstance.transform.position = randomWaypointChildFromThisTransform.position;
+
+
             //Debug.Log("randomWaypointChildFromThisTransform.position: " + randomWaypointChildFromThisTransform.position);
+
+
             Debug.Log("parentObjectWithVehiclesToSpawn.transform.position: " + parentObjectWithVehiclesToSpawn.transform.position);
             if (carToChoose[RandNumber].activeSelf)
             {

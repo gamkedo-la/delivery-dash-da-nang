@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    public GameObject notThisParentPrefab;
+    public GameObject parentObjectWithVariedPrefabsPublicHierarchyReference;
     public int objectsToSpawn;
 
     public GameObject testEmptyGameObjectForPositioning;
+    private GameObject testPoint;
 
 
     DetermineWhichCar determineWhichCarScript;
 
     private void Awake()
     {
-        determineWhichCarScript = notThisParentPrefab.GetComponent<DetermineWhichCar>();
+        determineWhichCarScript = parentObjectWithVariedPrefabsPublicHierarchyReference.GetComponent<DetermineWhichCar>();
+        testPoint = GameObject.Find("empty game object test position point");
     }
     // Start is called before the first frame update
     void Start()
@@ -31,15 +33,17 @@ public class ObjectSpawner : MonoBehaviour
         while (count<objectsToSpawn)
         {
             
-            GameObject notThisParentPrefabWithTransformOfManyVehicularChildren = Instantiate(notThisParentPrefab);
+            GameObject parentObjectWithVariedPrefabsInstance = Instantiate(parentObjectWithVariedPrefabsPublicHierarchyReference);
             //
             Transform waypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
-            
-            
-            
+
+
+
             //waypointChildFromThisTransform.GetComponent<WaypointNavigation>().currentWaypoint = waypointChildFromThisTransform.GetComponent<Waypoint>();
             //Debug.Log(obj.GetComponent<WaypointNavigation>().currentWaypoint);
-            notThisParentPrefabWithTransformOfManyVehicularChildren.transform.position = waypointChildFromThisTransform.position;
+            //notThisParentPrefabWithTransformOfManyVehicularChildren.transform.position = waypointChildFromThisTransform.position;
+            //notThisParentPrefabWithTransformOfManyVehicularChildren.transform.position = waypointChildFromThisTransform.position;
+            parentObjectWithVariedPrefabsInstance.transform.position = new Vector3(waypointChildFromThisTransform.position.x, 0, waypointChildFromThisTransform.position.z);
 
             if (gameObject.name == "CarSpawner")
             {
