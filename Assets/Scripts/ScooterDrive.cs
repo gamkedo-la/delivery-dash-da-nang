@@ -487,9 +487,9 @@ public class ScooterDrive : MonoBehaviour
             {
                 currentSpeed = 0;
             }
-            if (currentSpeed > 0.45f)
+            if (currentSpeed > 0.7f)
             {
-                currentSpeed = 0.45f;
+                currentSpeed = 0.7f;
                 //** BELOW TO BE USED WHEN WE HAVE A BETTER TOP SPEED SOUND
                 /*if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
 				{
