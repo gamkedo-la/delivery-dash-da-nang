@@ -26,7 +26,7 @@ public class ScooterDrive : MonoBehaviour
     public float coastToStopSpeed = 0.25f;
 
     public float currentTurnAngle = 0;
-    public float turnAngleRate = 150f;
+    public float turnAngleRate = 200f;
     public float maxTurnAngle = 1000f;
 
     public float maxTiltAngle = 45f;
@@ -350,11 +350,11 @@ public class ScooterDrive : MonoBehaviour
         if (isAccelerating)
         {
 
-            currentSpeed += /*forwardSpeed */ 0.2f * Time.deltaTime /* * (accelerateValue) */; 
+            currentSpeed += /*forwardSpeed */ 0.3f * Time.deltaTime /* * (accelerateValue) */; 
             //Debug.Log("current speed: " + currentSpeed);
-            if (currentSpeed > 0.45f)
+            if (currentSpeed > 0.7f)
             {
-                currentSpeed = 0.45f;
+                currentSpeed = 0.7f;
                 //** BELOW TO BE USED WHEN WE HAVE A BETTER TOP SPEED SOUND
 				/*if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
 				{
