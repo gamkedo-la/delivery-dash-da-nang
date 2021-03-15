@@ -39,8 +39,11 @@ public class PrefabOrderPlayer4 : MonoBehaviour
 
     public float minOrderTime = 35;
 
+    PopulateGrid populateGrid;
+
     private void Start()
     {
+        populateGrid = GameObject.Find("Content4").GetComponent<PopulateGrid>();
         phoneScript = GameObject.Find("Canvas - PlayerPhone4").GetComponent<PhoneScript>();
         phoneButtonPressedAudioClip = phoneScript.phoneButtonPressedAudioClip;
 
@@ -151,6 +154,7 @@ public class PrefabOrderPlayer4 : MonoBehaviour
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(0.5f);
+        populateGrid.DeductCount();
         Destroy(this.gameObject);
     }
 }
