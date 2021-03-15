@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
     public GameObject player1, player2, player3, player4;
     public static int player1Character, player2Character, player3Character, player4Character;
 
+    public GameObject level;
+    LevelLoader levelLoader;
     private void Start()
     {
         playerCount = 1;
@@ -53,7 +55,7 @@ public class MainMenu : MonoBehaviour
             player4.SetActive(true);
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.anyKeyDown)
         {
             GameCreate();
         }
@@ -80,7 +82,9 @@ public class MainMenu : MonoBehaviour
         print("Player2Char:" + player2Character);
         print("Player3Char:" + player3Character);
         print("Player4Char:" + player4Character);
-        SceneManager.LoadScene("DaytimeDaNang");
+        level.SetActive(true);
+        levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+        levelLoader.LoadNextLevel();
     }
 
     public void increasePlayerCount()
