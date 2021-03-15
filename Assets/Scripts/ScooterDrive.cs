@@ -91,6 +91,7 @@ public class ScooterDrive : MonoBehaviour
     public bool isBrakingCompleted = false;
     public bool isReversing = false;
     public bool isReversingCompleted = false;
+    public bool isAbleToReverse = false;
     public int accelerateValue;
 
     private GameObject homeScreen;
@@ -329,16 +330,21 @@ public class ScooterDrive : MonoBehaviour
             brakeSpeed = 0.0f;
         }
 
-        if (isBraking && currentSpeed == 0)
-        {
-            isReversing = true;
-            isReversingCompleted = false;
-        }
-        else if (!isBraking && isReversing )
-        {
-            isReversing = false;
-            isReversingCompleted = true;
-        }
+        //if (isBraking)
+        //{
+        //    isAbleToReverse = currentSpeed > 0 ? false : true;
+        //}
+
+        //if (isAbleToReverse)
+        //{
+        //    isReversing = true;
+        //    isReversingCompleted = false;
+        //}
+        //else if (!isBraking && isReversing )
+        //{
+        //    isReversing = false;
+        //    isReversingCompleted = true;
+        //}
 
         //forward and backwards
         if (isAccelerating)
@@ -481,6 +487,16 @@ public class ScooterDrive : MonoBehaviour
             {
                 currentSpeed = 0;
             }
+            if (currentSpeed > 0.45f)
+            {
+                currentSpeed = 0.45f;
+                //** BELOW TO BE USED WHEN WE HAVE A BETTER TOP SPEED SOUND
+                /*if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
+				{
+					AudioManager.Instance.StopSound(bikeCurrentAudioSource);
+					bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeTopSpeedClip, gameObject, loop: true, volume: 0.25f);
+				}*/
+            }
         }
         else if (isBraking && !isAccelerating)
         {
@@ -490,19 +506,11 @@ public class ScooterDrive : MonoBehaviour
                 //Debug.Log("inside current speed less than 0 check");
                 currentSpeed = 0;
                 isBrakingCompleted = true;
-                return;
             }
 
             brakeLights.SetActive(true);
         }
 
-        if (backingUp)
-        {
-            //Debug.Log("inside backing up check");
-            currentSpeed = backwardSpeed;
-            brakeLights.SetActive(true);
-            return;
-        }
 
         if (isReversing && currentSpeed == 0 && !isAccelerating)
         {
@@ -511,6 +519,14 @@ public class ScooterDrive : MonoBehaviour
         if (isReversingCompleted)
         {
             backingUp = false;
+        }
+
+        if (backingUp)
+        {
+            //Debug.Log("inside backing up check");
+            currentSpeed = backwardSpeed;
+            brakeLights.SetActive(true);
+            return;
         }
 
         if (isBraking || isReversing)

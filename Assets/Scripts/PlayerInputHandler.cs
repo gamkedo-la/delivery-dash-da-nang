@@ -35,12 +35,28 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            scooterDriveScript.isBraking = true;
+            if (scooterDriveScript.currentSpeed > 0)
+            {
+                scooterDriveScript.isBraking = true;
+                scooterDriveScript.isReversingCompleted = true;
+                scooterDriveScript.isReversing = false;
+                scooterDriveScript.isBrakingCompleted = false;
+            }
+            else
+            {
+                scooterDriveScript.isReversing = true;
+                scooterDriveScript.isBraking = false;
+                scooterDriveScript.isBrakingCompleted = true;
+                scooterDriveScript.isReversingCompleted = false;
+            }
+            
         }
         else if (context.canceled)
         {
             scooterDriveScript.isBraking = false;
             scooterDriveScript.isBrakingCompleted = true;
+            scooterDriveScript.isReversing = false;
+            scooterDriveScript.isReversingCompleted = true;
         }
     }
     public void OnTurnRight(CallbackContext context)
