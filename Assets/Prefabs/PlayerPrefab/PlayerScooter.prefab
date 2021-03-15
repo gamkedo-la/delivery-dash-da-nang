@@ -1,5 +1,98 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1079705882414338197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6002020489389873507}
+  - component: {fileID: 1553520767534562484}
+  - component: {fileID: 3817859781941509315}
+  - component: {fileID: 327636076442374207}
+  m_Layer: 0
+  m_Name: Kickstand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6002020489389873507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079705882414338197}
+  m_LocalRotation: {x: 0.19951715, y: -0.05342313, z: 0.25307313, w: 0.94514173}
+  m_LocalPosition: {x: 0.82, y: 0.06, z: -1.49}
+  m_LocalScale: {x: 0.1, y: 1, z: 0.16}
+  m_Children: []
+  m_Father: {fileID: 4946180043679567677}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 23.84, y: 0, z: 29.98}
+--- !u!33 &1553520767534562484
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079705882414338197}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3817859781941509315
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079705882414338197}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 128e4efca527a2740b045e99cc4c11c8, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &327636076442374207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079705882414338197}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
+  m_Center: {x: 0.000061035185, y: 0, z: -0.000030517593}
 --- !u!1 &3630543173429144926
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,13 +118,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3630543173429144926}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.0075225667, y: -0.07529999, z: -0.09912144, w: 0.99219376}
   m_LocalPosition: {x: -0, y: 0, z: -0.35}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 4946180043679567677}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -8.68, z: -11.41}
 --- !u!33 &7206682881338017583
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -390,6 +483,7 @@ Transform:
   - {fileID: 4841059496283443183}
   - {fileID: 4841059495556960230}
   - {fileID: 4841059494295554087}
+  - {fileID: 6002020489389873507}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -434,14 +528,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073f5b5fac2faf94d9052a68f81e6e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: 0
+  player2: 0
+  player3: 0
+  player4: 0
+  playerCharacter: []
   currentSpeed: 0
   forwardSpeed: 0.3
   backwardSpeed: -0.1
+  backingUp: 0
   coastToStopSpeed: 0.35
   currentTurnAngle: 0
   turnAngleRate: 2
   maxTurnAngle: 15
+  maxTiltAngle: 45
+  currentBikeTiltAngle: 0
+  bikeStraightenSpeed: 60
+  bikeMaxTiltAngle: 0.02
+  bikeCrashWithAICarBumbForce: 5
   brakeSpeed: 0.5
+  brakeMaxSpeed: 15
   brakeLights: {fileID: 4841059494295554086}
   restartAt: {fileID: 0}
   bikeModel: {fileID: 0}
@@ -450,6 +556,38 @@ MonoBehaviour:
   previousZ: 0
   collisionParticle: {fileID: 0}
   speedPenaltyPercent: 15
+  physicalOrder: {fileID: 0}
+  TotalScore: {fileID: 0}
+  star1: {fileID: 0}
+  star2: {fileID: 0}
+  star3: {fileID: 0}
+  star4: {fileID: 0}
+  star5: {fileID: 0}
+  star2threshold: 20
+  star3threshold: 50
+  star4threshold: 70
+  star5threshold: 85
+  ratingsManager: {fileID: 0}
+  bikeIdleAudioClip: {fileID: 0}
+  bikeAccelleratingAudioClip: {fileID: 0}
+  bikeLetOffGasAudioClip: {fileID: 0}
+  bikeTopSpeedClip: {fileID: 0}
+  phoneInOutAudioClip: {fileID: 0}
+  textTip: {fileID: 0}
+  collisionPercent: 0
+  bike: {fileID: 0}
+  playerModel: {fileID: 0}
+  playerIndex: 0
+  isAccelerating: 0
+  acceleratingCompleted: 0
+  turnLeft: 0
+  turnRight: 0
+  isBraking: 0
+  isBrakingCompleted: 0
+  isReversing: 0
+  isReversingCompleted: 0
+  accelerateValue: 0
+  phoneActive: 0
 --- !u!195 &4841059496152381660
 NavMeshAgent:
   m_ObjectHideFlags: 0
