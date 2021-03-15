@@ -16,7 +16,7 @@ public class ScooterDrive : MonoBehaviour
     public GameObject[] playerCharacter;
 
     //this variable is used to determine how much force to apply to enviornment objects after collision
-    public static float playerCurrentSpeed;
+    public float playerCurrentSpeed;
     public static float maxSpeed = 15f;
 
     public float currentSpeed;

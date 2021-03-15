@@ -48,29 +48,31 @@ public class PhysicsOnPlayer : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            var scooterDriveScript = other.transform.GetComponent<ScooterDrive>();
+
             RandX = Random.Range(-360, 360);
             RandY = Random.Range(270, 360);
             RandZ = Random.Range(-360, 360);
 
             if (ScooterDrive.isMovingNorth)
             {
-                RandForceZ = Random.Range(-ScooterDrive.playerCurrentSpeed / 8,-ScooterDrive.playerCurrentSpeed / 4);
+                RandForceZ = Random.Range(-scooterDriveScript.playerCurrentSpeed / 8,-scooterDriveScript.playerCurrentSpeed / 4);
             }
             else if (ScooterDrive.isMovingSouth)
             {
-                RandForceZ = Random.Range(ScooterDrive.playerCurrentSpeed / 4 , ScooterDrive.playerCurrentSpeed / 8);
+                RandForceZ = Random.Range(scooterDriveScript.playerCurrentSpeed / 4 , scooterDriveScript.playerCurrentSpeed / 8);
             }
 
             if (ScooterDrive.isMovingEast)
             {
-                RandForceX = Random.Range(-ScooterDrive.playerCurrentSpeed / 8,-ScooterDrive.playerCurrentSpeed / 4);
+                RandForceX = Random.Range(-scooterDriveScript.playerCurrentSpeed / 8,-scooterDriveScript.playerCurrentSpeed / 4);
             }
             else if (ScooterDrive.isMovingWest)
             {
-                RandForceX = Random.Range(ScooterDrive.playerCurrentSpeed / 4 ,ScooterDrive.playerCurrentSpeed / 8);
+                RandForceX = Random.Range(scooterDriveScript.playerCurrentSpeed / 4 , scooterDriveScript.playerCurrentSpeed / 8);
             }
 
-            GetComponent<Rigidbody>().AddForce(new Vector3(RandForceX, ScooterDrive.playerCurrentSpeed, RandForceZ), ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(new Vector3(RandForceX, scooterDriveScript.playerCurrentSpeed, RandForceZ), ForceMode.Impulse);
             this.transform.rotation = Quaternion.Euler(RandX, RandY, RandZ);
             hasBeenKnockedOver = true;
         }

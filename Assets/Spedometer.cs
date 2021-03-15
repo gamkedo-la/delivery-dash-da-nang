@@ -7,7 +7,7 @@ public class Spedometer : MonoBehaviour
 {
     public Text speed;
     public Image SpedometerFill;
-
+    public ScooterDrive scooterDriveScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +17,11 @@ public class Spedometer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speedDisplay = ScooterDrive.playerCurrentSpeed * 20;
+        float speedDisplay = scooterDriveScript.playerCurrentSpeed * 20;
 
-        if (ScooterDrive.playerCurrentSpeed == ScooterDrive.maxSpeed)
+        if (scooterDriveScript.playerCurrentSpeed == ScooterDrive.maxSpeed)
         {
-            speedDisplay = (ScooterDrive.playerCurrentSpeed * 20) + Random.Range(-.5f, .5f);
+            speedDisplay = (scooterDriveScript.playerCurrentSpeed * 20) + Random.Range(-.5f, .5f);
         }
         speed.text = speedDisplay.ToString("F2") + " km/h";
 
