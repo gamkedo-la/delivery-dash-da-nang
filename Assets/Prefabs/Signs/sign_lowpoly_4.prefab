@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4404496303894875712}
   - component: {fileID: 6330090523269515450}
   m_Layer: 0
-  m_Name: sign_lowpoly_1
+  m_Name: sign_lowpoly_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff0c282e183405a4f9b6a2ab9cdc038e, type: 2}
+  - {fileID: 2100000, guid: 058074e359bfa48408fb96cafaca455a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,7 +322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ff0c282e183405a4f9b6a2ab9cdc038e, type: 2}
+  - {fileID: 2100000, guid: 058074e359bfa48408fb96cafaca455a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
