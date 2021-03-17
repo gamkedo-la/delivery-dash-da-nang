@@ -17,6 +17,7 @@ public class GraphPathfinding : MonoBehaviour
 
     public bool showGridConnections = true;
 
+    [SerializeField]
     private Transform playerLocation;
     public GraphNode nearestNode = null;
 
@@ -29,7 +30,6 @@ public class GraphPathfinding : MonoBehaviour
             allNodes.Add(waypointGoes[i].GetComponent<GraphNode>());
         }
 
-        playerLocation = FindObjectOfType<ScooterDrive>().GetComponent<Transform>();
 
     }
 

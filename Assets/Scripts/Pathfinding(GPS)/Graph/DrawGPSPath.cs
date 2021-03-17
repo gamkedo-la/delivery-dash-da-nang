@@ -6,6 +6,7 @@ public class DrawGPSPath : MonoBehaviour
 {
     LineRenderer lineRenderer;
 
+    [SerializeField]
     GraphPathfinding graphPathfinding;
 
 
@@ -13,7 +14,6 @@ public class DrawGPSPath : MonoBehaviour
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        graphPathfinding = FindObjectOfType<GraphPathfinding>();
     }
 
     private void Update()
