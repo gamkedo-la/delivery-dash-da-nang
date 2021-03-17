@@ -454,22 +454,26 @@ public class ScooterDrive : MonoBehaviour
 
             currentTurnAngle = 0;
             //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            if (bikeModel.transform.localRotation.z > 0)
+            if (bikeModel)
             {
-                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -bikeStraightenSpeed);
-            }
-            else if (bikeModel.transform.localRotation.z < 0)
-            {
-                bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * bikeStraightenSpeed);
-            }
+                if (bikeModel.transform.localRotation.z > 0)
+                {
+                    bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -bikeStraightenSpeed);
+                }
+                else if (bikeModel.transform.localRotation.z < 0)
+                {
+                    bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * bikeStraightenSpeed);
+                }
 
-            //Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            if ( bikeModel.transform.localRotation.z < bikeMaxTiltAngle && bikeModel.transform.localRotation.z > -bikeMaxTiltAngle)
-            {
-                //Debug.Log("local rotation being manipulated");
-                // bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.0f);
-                bikeModel.transform.localRotation = Quaternion.identity;
+                //Debug.Log("currentTurnAngle: " + currentTurnAngle);
+                if (bikeModel.transform.localRotation.z < bikeMaxTiltAngle && bikeModel.transform.localRotation.z > -bikeMaxTiltAngle)
+                {
+                    //Debug.Log("local rotation being manipulated");
+                    // bikeModel.transform.localRotation = Quaternion.Euler(0, 0, 0.0f);
+                    bikeModel.transform.localRotation = Quaternion.identity;
+                }
             }
+            
 
         }
 

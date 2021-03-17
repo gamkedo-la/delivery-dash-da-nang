@@ -15,6 +15,6 @@ public class DetermineWhichCar : MonoBehaviour
 
         chosenCar = carToChoose[RandNumber];
         chosenCar.SetActive(true);
-        Debug.Log("chosenCar " + chosenCar);
+        //Debug.Log("chosenCar " + chosenCar);
     }
 }

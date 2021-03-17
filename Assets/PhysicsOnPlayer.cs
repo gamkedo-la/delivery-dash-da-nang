@@ -77,7 +77,7 @@ public class PhysicsOnPlayer : MonoBehaviour
             hasBeenKnockedOver = true;
         }
 
-        if (hitSound != null)
+        if (hitSound != null && hitSound.Length > 0)
         {
 			AudioManager.Instance.PlaySoundSFX(hitSound[Random.Range(0, hitSound.Length)], gameObject);
         }
