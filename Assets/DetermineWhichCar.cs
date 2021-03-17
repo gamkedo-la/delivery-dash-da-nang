@@ -14,7 +14,12 @@ public class DetermineWhichCar : MonoBehaviour
         RandNumber = Random.Range(0, carToChoose.Length);
 
         chosenCar = carToChoose[RandNumber];
-        chosenCar.SetActive(true);
+        //chosenCar.SetActive(true);
+        GameObject newCar = GameObject.Instantiate(chosenCar);
+        newCar.SetActive(true);
+        newCar.transform.parent = transform;
+        newCar.transform.position = transform.position;
+        newCar.transform.rotation = transform.rotation;
         //Debug.Log("chosenCar " + chosenCar);
     }
 }

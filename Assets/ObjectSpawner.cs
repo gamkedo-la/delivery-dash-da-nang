@@ -34,8 +34,10 @@ public class ObjectSpawner : MonoBehaviour
         {
             
             GameObject parentObjectWithVariedPrefabsInstance = Instantiate(parentObjectWithVariedPrefabsPublicHierarchyReference);
+            parentObjectWithVariedPrefabsInstance.name += count + " Cass";
+
             //
-            Transform waypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount - 1));
+            Transform waypointChildFromThisTransform = transform.GetChild(Random.Range(0, transform.childCount));
 
 
 
