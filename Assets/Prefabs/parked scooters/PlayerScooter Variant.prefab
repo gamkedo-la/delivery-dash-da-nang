@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4841059496152381648, guid: 9d26db96235eb894daed008a054b9cd7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4946180043679567677, guid: 9d26db96235eb894daed008a054b9cd7,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 5759976550381770119, guid: 9d26db96235eb894daed008a054b9cd7,
         type: 3}
       propertyPath: m_Name
-      value: PlayerScooter
+      value: PlayerScooter Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d26db96235eb894daed008a054b9cd7, type: 3}

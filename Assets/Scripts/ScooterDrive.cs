@@ -50,6 +50,9 @@ public class ScooterDrive : MonoBehaviour
     public GameObject bikeModel;
 
     public Animator phone;
+
+    public PhoneScript myPhone;
+
     static bool phoneToggle;
 
     public static bool isMovingNorth = false;
@@ -94,7 +97,7 @@ public class ScooterDrive : MonoBehaviour
     public bool isAbleToReverse = false;
     public int accelerateValue;
 
-    private GameObject homeScreen;
+    private HomeScreenScript homeScreen;
     public bool phoneActive = false;
 
     DeliveryDriver driverID;
@@ -160,8 +163,12 @@ public class ScooterDrive : MonoBehaviour
         {
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
+ 
+        myPhone = phone.GetComponentInParent<PhoneScript>();
+        homeScreen = phone.GetComponentInChildren<HomeScreenScript>();
 
-		bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
+
+        bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
 
         if (player1)
         {
@@ -180,6 +187,8 @@ public class ScooterDrive : MonoBehaviour
             playerCharacter[MainMenu.player4Character].SetActive(true);
         }
     }
+
+    //This is the area where you toggle the phone on and off
 
     public void PhoneOutIn()
     {
@@ -728,29 +737,32 @@ public class ScooterDrive : MonoBehaviour
 
     public void HandleNavigateUIUp()
     {
-        homeScreen.GetComponent<HomeScreenScript>().dPadUpPressed = true;
-        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); 
+        Debug.Log(gameObject.name);
+
+
+        homeScreen.dPadUpPressed = true;
+        homeScreen.handleGamepadUINavigation(); 
         CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUIDown()
     {
-        homeScreen.GetComponent<HomeScreenScript>().dPadDownPressed = true;
-        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); 
+        homeScreen.dPadDownPressed = true;
+        homeScreen.handleGamepadUINavigation(); 
         CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUILeft()
     {
-        homeScreen.GetComponent<HomeScreenScript>().dPadLeftPressed = true;
-        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation(); 
+        homeScreen.dPadLeftPressed = true;
+        homeScreen.handleGamepadUINavigation(); 
         CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUIRight()
     {
-        homeScreen.GetComponent<HomeScreenScript>().dPadRightPressed = true;
-        homeScreen.GetComponent<HomeScreenScript>().handleGamepadUINavigation();
+        homeScreen.dPadRightPressed = true;
+        homeScreen.handleGamepadUINavigation();
         CheckIfPhoneIsActive();
     }
 }
