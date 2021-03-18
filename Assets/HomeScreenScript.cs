@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
 
 public class HomeScreenScript : MonoBehaviour
 {
@@ -31,7 +33,9 @@ public class HomeScreenScript : MonoBehaviour
 
     public GameObject scooter;
 
-    
+    public GameObject phoneScript;
+
+    public PlayerInputHandler inputHandler;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +48,8 @@ public class HomeScreenScript : MonoBehaviour
 
         phone = GameObject.Find("Phone");
         homeScreen = GameObject.Find("HomeScreen");
+
+   //     inputHandler.GetComponentInParent<PlayerInputHandler>();
 
         for (int i = 0; i < listOfButtons.Count; i++)
         {
@@ -146,7 +152,6 @@ public class HomeScreenScript : MonoBehaviour
         dPadLeftPressed = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (dPadUpPressed)
@@ -240,6 +245,46 @@ public class HomeScreenScript : MonoBehaviour
             }
             UpdateHighlights();
             dPadLeftPressed = false;
+        }
+
+        /* if (inputHandler.OnAccelerate(CallbackContext context))
+         {
+             ButtonPressed();
+         }*/
+
+        //THIS IS A TEST, PLEASE REMOVE
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            ButtonPressed();
+        }
+        
+    }
+
+    void ButtonPressed()
+    {
+        if (currentActiveButtonIndex == gpsIDX)
+        {
+            phoneScript.GetComponentInParent<PhoneScript>().GPSButtonPressed();
+        }
+
+        if (currentActiveButtonIndex == ordersIDX)
+        {
+            phoneScript.GetComponentInParent<PhoneScript>().GPSButtonPressed();
+        }
+
+        if (currentActiveButtonIndex == ratingsIDX)
+        {
+            phoneScript.GetComponentInParent<PhoneScript>().CustomerScoresPressed();
+        }
+
+        if (currentActiveButtonIndex == currentRateIDX)
+        {
+            phoneScript.GetComponentInParent<PhoneScript>().RatingsButtonPressed();
+        }
+
+        if (currentActiveButtonIndex == alertsIDX)
+        {
+            //phoneScript.THIS ISN'T WRITTEN YET();
         }
     }
 }
