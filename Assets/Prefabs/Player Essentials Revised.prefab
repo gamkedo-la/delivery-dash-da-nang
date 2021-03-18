@@ -1353,6 +1353,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
     m_ActionName: Game Play/navigateUILeft[/DualShock4GamepadHID/dpad/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1151088198490122540}
+        m_MethodName: OnSelectItemFromMenuButtonPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d8a70795-3793-4a6d-9980-74a35ea70b41
+    m_ActionName: Game Play/MenuItemSelection[/Keyboard/m]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: New control scheme
   m_DefaultActionMap: Game Play
@@ -2555,6 +2570,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
     m_ActionName: Game Play/navigateUILeft[/DualShock4GamepadHID/dpad/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1151088198490122540}
+        m_MethodName: OnSelectItemFromMenuButtonPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d8a70795-3793-4a6d-9980-74a35ea70b41
+    m_ActionName: Game Play/MenuItemSelection[/Keyboard/m]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Game Play
@@ -10372,6 +10402,8 @@ MonoBehaviour:
   dPadDownPressed: 0
   dPadLeftPressed: 0
   scooter: {fileID: 5797801889046736420}
+  phoneScript: {fileID: 0}
+  inputHandler: {fileID: 0}
 --- !u!1 &6680113442326415787
 GameObject:
   m_ObjectHideFlags: 0

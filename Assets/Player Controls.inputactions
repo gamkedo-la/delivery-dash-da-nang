@@ -76,6 +76,14 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "MenuItemSelection",
+                    "type": "Button",
+                    "id": "d8a70795-3793-4a6d-9980-74a35ea70b41",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -241,6 +249,28 @@
                     "processors": "",
                     "groups": "New control scheme",
                     "action": "Accelerate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed9fc1d4-c92d-421f-8bf4-085f847b8d1e",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "MenuItemSelection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d9a0b28c-5938-43ab-978f-7c20f113c55a",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "MenuItemSelection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

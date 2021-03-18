@@ -762,4 +762,9 @@ public class ScooterDrive : MonoBehaviour
         homeScreen.handleGamepadUINavigation();
         CheckIfPhoneIsActive();
     }
+
+    public void HandleMenuItemSelectButtonPressed()
+    {
+        homeScreen.ButtonPressed();
+    }
 }

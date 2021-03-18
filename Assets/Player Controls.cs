@@ -89,6 +89,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MenuItemSelection"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8a70795-3793-4a6d-9980-74a35ea70b41"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -256,6 +264,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Accelerate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed9fc1d4-c92d-421f-8bf4-085f847b8d1e"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""MenuItemSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d9a0b28c-5938-43ab-978f-7c20f113c55a"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""MenuItemSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -296,6 +326,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_navigateUIRight = m_GamePlay.FindAction("navigateUIRight", throwIfNotFound: true);
         m_GamePlay_navigateUIDown = m_GamePlay.FindAction("navigateUIDown", throwIfNotFound: true);
         m_GamePlay_navigateUILeft = m_GamePlay.FindAction("navigateUILeft", throwIfNotFound: true);
+        m_GamePlay_MenuItemSelection = m_GamePlay.FindAction("MenuItemSelection", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -354,6 +385,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_navigateUIRight;
     private readonly InputAction m_GamePlay_navigateUIDown;
     private readonly InputAction m_GamePlay_navigateUILeft;
+    private readonly InputAction m_GamePlay_MenuItemSelection;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -367,6 +399,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @navigateUIRight => m_Wrapper.m_GamePlay_navigateUIRight;
         public InputAction @navigateUIDown => m_Wrapper.m_GamePlay_navigateUIDown;
         public InputAction @navigateUILeft => m_Wrapper.m_GamePlay_navigateUILeft;
+        public InputAction @MenuItemSelection => m_Wrapper.m_GamePlay_MenuItemSelection;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -403,6 +436,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @navigateUILeft.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
                 @navigateUILeft.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
                 @navigateUILeft.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
+                @MenuItemSelection.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelection;
+                @MenuItemSelection.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelection;
+                @MenuItemSelection.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelection;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -434,6 +470,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @navigateUILeft.started += instance.OnNavigateUILeft;
                 @navigateUILeft.performed += instance.OnNavigateUILeft;
                 @navigateUILeft.canceled += instance.OnNavigateUILeft;
+                @MenuItemSelection.started += instance.OnMenuItemSelection;
+                @MenuItemSelection.performed += instance.OnMenuItemSelection;
+                @MenuItemSelection.canceled += instance.OnMenuItemSelection;
             }
         }
     }
@@ -467,5 +506,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigateUIRight(InputAction.CallbackContext context);
         void OnNavigateUIDown(InputAction.CallbackContext context);
         void OnNavigateUILeft(InputAction.CallbackContext context);
+        void OnMenuItemSelection(InputAction.CallbackContext context);
     }
 }

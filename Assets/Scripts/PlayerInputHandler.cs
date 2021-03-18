@@ -128,4 +128,11 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.HandleNavigateUILeft();
         }
     }
+    public void OnSelectItemFromMenuButtonPressed(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            scooterDriveScript.HandleMenuItemSelectButtonPressed();
+        }
+    }
 }

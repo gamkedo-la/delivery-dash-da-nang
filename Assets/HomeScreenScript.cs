@@ -253,14 +253,14 @@ public class HomeScreenScript : MonoBehaviour
          }*/
 
         //THIS IS A TEST, PLEASE REMOVE
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            ButtonPressed();
-        }
+        //if (Input.GetKeyDown(KeyCode.M))
+        //{
+        //    ButtonPressed();
+        //}
         
     }
 
-    void ButtonPressed()
+    public void ButtonPressed()
     {
         if (currentActiveButtonIndex == gpsIDX)
         {
