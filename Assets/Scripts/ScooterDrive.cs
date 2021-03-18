@@ -51,8 +51,6 @@ public class ScooterDrive : MonoBehaviour
 
     public Animator phone;
 
-    public PhoneScript myPhone;
-
     static bool phoneToggle;
 
     public static bool isMovingNorth = false;
@@ -164,7 +162,6 @@ public class ScooterDrive : MonoBehaviour
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
  
-        myPhone = phone.GetComponentInParent<PhoneScript>();
         homeScreen = phone.GetComponentInChildren<HomeScreenScript>();
 
 

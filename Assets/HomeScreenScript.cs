@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HomeScreenScript : MonoBehaviour
 {
     public List<GameObject> listOfButtons = new List<GameObject>();
+    List<Image> listOfHighlights = new List<Image>();
     private GameObject OrdersButton;
     private GameObject GPSButton;
     private GameObject AlertsButton;
     private GameObject TBDButton;
     private GameObject CurrentRatingButton;
+
+    private const int ordersIDX = 0;
+    private const int gpsIDX = 1;
+    private const int alertsIDX = 2;
+    private const int ratingsIDX = 3;
+    private const int currentRateIDX = 4;
 
     public bool dPadUpPressed = false;
     public bool dPadRightPressed = false;
@@ -23,18 +31,34 @@ public class HomeScreenScript : MonoBehaviour
 
     public GameObject scooter;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        OrdersButton = listOfButtons[0];
-        GPSButton = listOfButtons[1];
-        AlertsButton = listOfButtons[2];
-        TBDButton = listOfButtons[3];
-        CurrentRatingButton = listOfButtons[4];
+        OrdersButton = listOfButtons[ordersIDX];
+        GPSButton = listOfButtons[gpsIDX];
+        AlertsButton = listOfButtons[alertsIDX];
+        TBDButton = listOfButtons[ratingsIDX];
+        CurrentRatingButton = listOfButtons[currentRateIDX];
 
         phone = GameObject.Find("Phone");
         homeScreen = GameObject.Find("HomeScreen");
 
+        for (int i = 0; i < listOfButtons.Count; i++)
+        {
+            listOfHighlights.Add(listOfButtons[i].GetComponentInChildren<Highlight>().GetComponent<Image>());
+        }
+
+        UpdateHighlights();
+    }
+
+    void UpdateHighlights()
+    {
+        for (int i = 0; i < listOfHighlights.Count; i++)
+        {
+            listOfHighlights[i].gameObject.SetActive(i==currentActiveButtonIndex);
+        }
     }
 
     public void handleGamepadUINavigation()
@@ -125,20 +149,40 @@ public class HomeScreenScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (dPadUpPressed)
+        {
+            switch (currentActiveButtonIndex)
+            {
+                case ordersIDX:
+                    currentActiveButtonIndex = currentRateIDX;
+                    break;
+                case gpsIDX:
+                    currentActiveButtonIndex = ratingsIDX;
+                    break;
+                case alertsIDX:
+                    currentActiveButtonIndex = ordersIDX;
+                    break;
+                case currentRateIDX:
+                    currentActiveButtonIndex = alertsIDX;
+                    break;
+                case ratingsIDX:
+                    currentActiveButtonIndex = gpsIDX;
+                    break;
+            }
+            UpdateHighlights();
+            dPadUpPressed = false; 
+        }
+        if (dPadRightPressed)
+        {
+            dPadRightPressed = false;
+        }
+        if (dPadDownPressed)
+        {
+            dPadDownPressed = false;
+        }
+        if (dPadLeftPressed)
+        {
+            dPadLeftPressed = false;
+        }
     }
-    /*
-     * 
-
-    
-
-    
-
-    
-
-    
-
-    
-     */
-
 }
