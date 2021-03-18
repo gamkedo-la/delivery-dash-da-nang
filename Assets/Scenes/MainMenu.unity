@@ -498,6 +498,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 569409802}
     m_Modifications:
+    - target: {fileID: 73403778403018513, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1190754699057171351, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
         type: 3}
       propertyPath: m_RootOrder
@@ -874,6 +879,90 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 428748315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &436597315
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1975677751}
+    m_Modifications:
+    - target: {fileID: 1181015422662315533, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-0-Scooter2 Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000000074505815
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000000055879363
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
 --- !u!1 &450043372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1477,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518262552}
   m_CullTransparentMesh: 0
+--- !u!1001 &537903989
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1725906117}
+    m_Modifications:
+    - target: {fileID: 1181015422662315533, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-0-Scooter2 Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000000037252894
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000000018626447
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
 --- !u!1 &549774149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 78506f8f9e3e88f498bbf005325b551f,
@@ -2627,6 +2800,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1294114540}
     m_Modifications:
+    - target: {fileID: 73403778403018513, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1190754699057171351, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
         type: 3}
       propertyPath: m_RootOrder
@@ -3671,7 +3849,7 @@ MonoBehaviour:
   - {fileID: 2046031713}
   - {fileID: 705230197}
   characterName:
-  - Brick
+  - Ninja Woman
   - Cub
   - BasePlayer
   characterCount: 0
@@ -3758,6 +3936,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244116144}
   m_CullTransparentMesh: 0
+--- !u!1001 &1253951948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1072787540}
+    m_Modifications:
+    - target: {fileID: 1181015422662315533, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-0-Scooter2 Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000009313226
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
 --- !u!1 &1281092574
 GameObject:
   m_ObjectHideFlags: 0
@@ -4109,7 +4371,7 @@ MonoBehaviour:
   - {fileID: 549774149}
   - {fileID: 1714869169}
   characterName:
-  - Brick
+  - Ninja Woman
   - Cub
   - BasePlayer
   characterCount: 0
@@ -4177,7 +4439,7 @@ MonoBehaviour:
   - {fileID: 1602543505}
   - {fileID: 853767451}
   characterName:
-  - Brick
+  - Ninja Woman
   - Cub
   - BasePlayer
   characterCount: 0
@@ -5166,6 +5428,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 27401100}
     m_Modifications:
+    - target: {fileID: 73403778403018513, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1190754699057171351, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
         type: 3}
       propertyPath: m_RootOrder
@@ -5511,7 +5778,7 @@ MonoBehaviour:
   - {fileID: 1109296931}
   - {fileID: 1849383885}
   characterName:
-  - Brick
+  - Ninja Woman
   - Cub
   - BasePlayer
   characterCount: 0
@@ -5520,6 +5787,90 @@ MonoBehaviour:
   player2: 0
   player3: 1
   player4: 0
+--- !u!1001 &1802144574
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 928543062}
+    m_Modifications:
+    - target: {fileID: 1181015422662315533, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-0-Scooter2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
 --- !u!1001 &1803012387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6423,6 +6774,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 390438625}
     m_Modifications:
+    - target: {fileID: 73403778403018513, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1190754699057171351, guid: aaa1e5e31cd49bd44b66e8d35f8be0aa,
         type: 3}
       propertyPath: m_RootOrder
