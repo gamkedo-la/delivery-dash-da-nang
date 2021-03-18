@@ -174,14 +174,71 @@ public class HomeScreenScript : MonoBehaviour
         }
         if (dPadRightPressed)
         {
+            switch (currentActiveButtonIndex)
+            {
+                case ordersIDX:
+                    currentActiveButtonIndex = gpsIDX;
+                    break;
+                case gpsIDX:
+                    currentActiveButtonIndex = ordersIDX;
+                    break;
+                case alertsIDX:
+                    currentActiveButtonIndex = ratingsIDX;
+                    break;
+                case currentRateIDX:
+                    currentActiveButtonIndex = currentRateIDX;
+                    break;
+                case ratingsIDX:
+                    currentActiveButtonIndex = alertsIDX;
+                    break;
+            }
+            UpdateHighlights();
             dPadRightPressed = false;
         }
         if (dPadDownPressed)
         {
+            switch (currentActiveButtonIndex)
+            {
+                case ordersIDX:
+                    currentActiveButtonIndex = alertsIDX;
+                    break;
+                case gpsIDX:
+                    currentActiveButtonIndex = ratingsIDX;
+                    break;
+                case alertsIDX:
+                    currentActiveButtonIndex = currentRateIDX;
+                    break;
+                case currentRateIDX:
+                    currentActiveButtonIndex = ordersIDX;
+                    break;
+                case ratingsIDX:
+                    currentActiveButtonIndex = gpsIDX;
+                    break;
+            }
+            UpdateHighlights();
             dPadDownPressed = false;
         }
         if (dPadLeftPressed)
         {
+            switch (currentActiveButtonIndex)
+            {
+                case ordersIDX:
+                    currentActiveButtonIndex = gpsIDX;
+                    break;
+                case gpsIDX:
+                    currentActiveButtonIndex = ordersIDX;
+                    break;
+                case alertsIDX:
+                    currentActiveButtonIndex = ratingsIDX;
+                    break;
+                case currentRateIDX:
+                    currentActiveButtonIndex = currentRateIDX;
+                    break;
+                case ratingsIDX:
+                    currentActiveButtonIndex = alertsIDX;
+                    break;
+            }
+            UpdateHighlights();
             dPadLeftPressed = false;
         }
     }
