@@ -31,7 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
         //}
     }
 
-    public void OnBrake(CallbackContext context)
+    public void OnBrakeCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
@@ -59,7 +59,7 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.isReversingCompleted = true;
         }
     }
-    public void OnTurnRight(CallbackContext context)
+    public void OnTurnRightCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
@@ -70,7 +70,7 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.turnRight = false;
         }
     }
-    public void OnTurnLeft(CallbackContext context)
+    public void OnTurnLeftCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
@@ -81,7 +81,7 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.turnLeft = false;
         }
     }
-    public void OnAccelerate(CallbackContext context)
+    public void OnAccelerateCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
@@ -93,42 +93,42 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.acceleratingCompleted = true;
         }
     }
-    public void OnPhoneOutIn(CallbackContext context)
+    public void OnPhoneOutInCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
             scooterDriveScript.PhoneOutIn();
         }
     }
-    public void OnNavigateUIUp(CallbackContext context)
+    public void OnNavigateUIUpCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
             scooterDriveScript.HandleNavigateUIUp();
         }
     }
-    public void OnNavigateUIRight(CallbackContext context)
+    public void OnNavigateUIRightCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
             scooterDriveScript.HandleNavigateUIRight();
         }
     }
-    public void OnNavigateUIDown(CallbackContext context)
+    public void OnNavigateUIDownCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
             scooterDriveScript.HandleNavigateUIDown();
         }
     }
-    public void OnNavigateUILeft(CallbackContext context)
+    public void OnNavigateUILeftCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
             scooterDriveScript.HandleNavigateUILeft();
         }
     }
-    public void OnSelectItemFromMenuButtonPressed(CallbackContext context)
+    public void OnSelectItemFromMenuButtonPressedCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {

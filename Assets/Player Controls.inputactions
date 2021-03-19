@@ -6,7 +6,7 @@
             "id": "0610ce19-76bd-47ba-8b24-669820581245",
             "actions": [
                 {
-                    "name": "Brake",
+                    "name": "BrakeCallbackInputs",
                     "type": "Button",
                     "id": "ce31eaac-89cb-43ff-9d85-35e52a0d003f",
                     "expectedControlType": "Button",
@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "TurnRight",
+                    "name": "TurnRightCallbackInputs",
                     "type": "Button",
                     "id": "ae27927e-dcef-49c6-b990-d36192c14793",
                     "expectedControlType": "Button",
@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "TurnLeft",
+                    "name": "TurnLeftCallbackInputs",
                     "type": "Button",
                     "id": "30f67097-009e-487e-8350-c0e271d66421",
                     "expectedControlType": "Button",
@@ -30,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Accelerate",
+                    "name": "AccelerateCallbackInputs",
                     "type": "Button",
                     "id": "3727ef0b-e495-4341-aaae-8dce1e5fbce2",
                     "expectedControlType": "Button",
@@ -38,7 +38,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "PhoneOutIn",
+                    "name": "PhoneOutInCallbackInputs",
                     "type": "Button",
                     "id": "81db9e80-2761-43b8-9d3f-fa8c82f8c2ba",
                     "expectedControlType": "Button",
@@ -46,7 +46,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "navigateUIUp",
+                    "name": "navigateUIUpCallbackInputs",
                     "type": "Button",
                     "id": "00534eff-b106-4ac2-82fb-ffb0a478a9bc",
                     "expectedControlType": "Button",
@@ -54,7 +54,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "navigateUIRight",
+                    "name": "navigateUIRightCallbackInputs",
                     "type": "Button",
                     "id": "1525414c-0015-4ced-98c9-67114093a332",
                     "expectedControlType": "Button",
@@ -62,7 +62,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "navigateUIDown",
+                    "name": "navigateUIDownCallbackInputs",
                     "type": "Button",
                     "id": "49fc7d99-dcd2-4fff-adbe-1101ff5d2dca",
                     "expectedControlType": "Button",
@@ -70,7 +70,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "navigateUILeft",
+                    "name": "navigateUILeftCallbackInputs",
                     "type": "Button",
                     "id": "96e3032c-1def-4351-bf52-8f3fe9d90c13",
                     "expectedControlType": "Button",
@@ -78,7 +78,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MenuItemSelection",
+                    "name": "MenuItemSelectionCallbackInputs",
                     "type": "Button",
                     "id": "d8a70795-3793-4a6d-9980-74a35ea70b41",
                     "expectedControlType": "Button",
@@ -94,7 +94,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Brake",
+                    "action": "BrakeCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -105,7 +105,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "New control scheme",
-                    "action": "Brake",
+                    "action": "BrakeCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -116,7 +116,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "New control scheme",
-                    "action": "Brake",
+                    "action": "BrakeCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -127,7 +127,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "TurnRight",
+                    "action": "TurnRightCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -138,7 +138,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "TurnRight",
+                    "action": "TurnRightCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -149,7 +149,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "TurnLeft",
+                    "action": "TurnLeftCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -160,7 +160,7 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "TurnLeft",
+                    "action": "TurnLeftCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -171,7 +171,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Accelerate",
+                    "action": "AccelerateCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -182,7 +182,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Accelerate",
+                    "action": "AccelerateCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -193,7 +193,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PhoneOutIn",
+                    "action": "PhoneOutInCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -204,7 +204,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "navigateUIUp",
+                    "action": "navigateUIUpCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -215,7 +215,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "navigateUIRight",
+                    "action": "navigateUIRightCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -226,7 +226,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "navigateUIDown",
+                    "action": "navigateUIDownCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -237,7 +237,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "navigateUILeft",
+                    "action": "navigateUILeftCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -248,7 +248,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "New control scheme",
-                    "action": "Accelerate",
+                    "action": "AccelerateCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -259,7 +259,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "MenuItemSelection",
+                    "action": "MenuItemSelectionCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -270,7 +270,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "New control scheme",
-                    "action": "MenuItemSelection",
+                    "action": "MenuItemSelectionCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

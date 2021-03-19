@@ -19,7 +19,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""0610ce19-76bd-47ba-8b24-669820581245"",
             ""actions"": [
                 {
-                    ""name"": ""Brake"",
+                    ""name"": ""BrakeCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""ce31eaac-89cb-43ff-9d85-35e52a0d003f"",
                     ""expectedControlType"": ""Button"",
@@ -27,7 +27,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""TurnRight"",
+                    ""name"": ""TurnRightCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""ae27927e-dcef-49c6-b990-d36192c14793"",
                     ""expectedControlType"": ""Button"",
@@ -35,7 +35,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""TurnLeft"",
+                    ""name"": ""TurnLeftCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""30f67097-009e-487e-8350-c0e271d66421"",
                     ""expectedControlType"": ""Button"",
@@ -43,7 +43,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Accelerate"",
+                    ""name"": ""AccelerateCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""3727ef0b-e495-4341-aaae-8dce1e5fbce2"",
                     ""expectedControlType"": ""Button"",
@@ -51,7 +51,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""PhoneOutIn"",
+                    ""name"": ""PhoneOutInCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""81db9e80-2761-43b8-9d3f-fa8c82f8c2ba"",
                     ""expectedControlType"": ""Button"",
@@ -59,7 +59,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""navigateUIUp"",
+                    ""name"": ""navigateUIUpCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""00534eff-b106-4ac2-82fb-ffb0a478a9bc"",
                     ""expectedControlType"": ""Button"",
@@ -67,7 +67,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""navigateUIRight"",
+                    ""name"": ""navigateUIRightCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""1525414c-0015-4ced-98c9-67114093a332"",
                     ""expectedControlType"": ""Button"",
@@ -75,7 +75,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""navigateUIDown"",
+                    ""name"": ""navigateUIDownCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""49fc7d99-dcd2-4fff-adbe-1101ff5d2dca"",
                     ""expectedControlType"": ""Button"",
@@ -83,7 +83,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""navigateUILeft"",
+                    ""name"": ""navigateUILeftCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""96e3032c-1def-4351-bf52-8f3fe9d90c13"",
                     ""expectedControlType"": ""Button"",
@@ -91,7 +91,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""MenuItemSelection"",
+                    ""name"": ""MenuItemSelectionCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""d8a70795-3793-4a6d-9980-74a35ea70b41"",
                     ""expectedControlType"": ""Button"",
@@ -107,7 +107,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Brake"",
+                    ""action"": ""BrakeCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -118,7 +118,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
-                    ""action"": ""Brake"",
+                    ""action"": ""BrakeCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -129,7 +129,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
-                    ""action"": ""Brake"",
+                    ""action"": ""BrakeCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -140,7 +140,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""TurnRight"",
+                    ""action"": ""TurnRightCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -151,7 +151,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""TurnRight"",
+                    ""action"": ""TurnRightCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -162,7 +162,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""TurnLeft"",
+                    ""action"": ""TurnLeftCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -173,7 +173,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""TurnLeft"",
+                    ""action"": ""TurnLeftCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -184,7 +184,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Accelerate"",
+                    ""action"": ""AccelerateCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -195,7 +195,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Accelerate"",
+                    ""action"": ""AccelerateCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -206,7 +206,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""PhoneOutIn"",
+                    ""action"": ""PhoneOutInCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -217,7 +217,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""navigateUIUp"",
+                    ""action"": ""navigateUIUpCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -228,7 +228,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""navigateUIRight"",
+                    ""action"": ""navigateUIRightCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -239,7 +239,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""navigateUIDown"",
+                    ""action"": ""navigateUIDownCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -250,7 +250,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""navigateUILeft"",
+                    ""action"": ""navigateUILeftCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -261,7 +261,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
-                    ""action"": ""Accelerate"",
+                    ""action"": ""AccelerateCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -272,7 +272,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""MenuItemSelection"",
+                    ""action"": ""MenuItemSelectionCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -283,7 +283,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
-                    ""action"": ""MenuItemSelection"",
+                    ""action"": ""MenuItemSelectionCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -317,16 +317,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
 }");
         // Game Play
         m_GamePlay = asset.FindActionMap("Game Play", throwIfNotFound: true);
-        m_GamePlay_Brake = m_GamePlay.FindAction("Brake", throwIfNotFound: true);
-        m_GamePlay_TurnRight = m_GamePlay.FindAction("TurnRight", throwIfNotFound: true);
-        m_GamePlay_TurnLeft = m_GamePlay.FindAction("TurnLeft", throwIfNotFound: true);
-        m_GamePlay_Accelerate = m_GamePlay.FindAction("Accelerate", throwIfNotFound: true);
-        m_GamePlay_PhoneOutIn = m_GamePlay.FindAction("PhoneOutIn", throwIfNotFound: true);
-        m_GamePlay_navigateUIUp = m_GamePlay.FindAction("navigateUIUp", throwIfNotFound: true);
-        m_GamePlay_navigateUIRight = m_GamePlay.FindAction("navigateUIRight", throwIfNotFound: true);
-        m_GamePlay_navigateUIDown = m_GamePlay.FindAction("navigateUIDown", throwIfNotFound: true);
-        m_GamePlay_navigateUILeft = m_GamePlay.FindAction("navigateUILeft", throwIfNotFound: true);
-        m_GamePlay_MenuItemSelection = m_GamePlay.FindAction("MenuItemSelection", throwIfNotFound: true);
+        m_GamePlay_BrakeCallbackInputs = m_GamePlay.FindAction("BrakeCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_TurnRightCallbackInputs = m_GamePlay.FindAction("TurnRightCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_TurnLeftCallbackInputs = m_GamePlay.FindAction("TurnLeftCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_AccelerateCallbackInputs = m_GamePlay.FindAction("AccelerateCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_PhoneOutInCallbackInputs = m_GamePlay.FindAction("PhoneOutInCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_navigateUIUpCallbackInputs = m_GamePlay.FindAction("navigateUIUpCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_navigateUIRightCallbackInputs = m_GamePlay.FindAction("navigateUIRightCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_navigateUIDownCallbackInputs = m_GamePlay.FindAction("navigateUIDownCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_navigateUILeftCallbackInputs = m_GamePlay.FindAction("navigateUILeftCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_MenuItemSelectionCallbackInputs = m_GamePlay.FindAction("MenuItemSelectionCallbackInputs", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -376,30 +376,30 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // Game Play
     private readonly InputActionMap m_GamePlay;
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
-    private readonly InputAction m_GamePlay_Brake;
-    private readonly InputAction m_GamePlay_TurnRight;
-    private readonly InputAction m_GamePlay_TurnLeft;
-    private readonly InputAction m_GamePlay_Accelerate;
-    private readonly InputAction m_GamePlay_PhoneOutIn;
-    private readonly InputAction m_GamePlay_navigateUIUp;
-    private readonly InputAction m_GamePlay_navigateUIRight;
-    private readonly InputAction m_GamePlay_navigateUIDown;
-    private readonly InputAction m_GamePlay_navigateUILeft;
-    private readonly InputAction m_GamePlay_MenuItemSelection;
+    private readonly InputAction m_GamePlay_BrakeCallbackInputs;
+    private readonly InputAction m_GamePlay_TurnRightCallbackInputs;
+    private readonly InputAction m_GamePlay_TurnLeftCallbackInputs;
+    private readonly InputAction m_GamePlay_AccelerateCallbackInputs;
+    private readonly InputAction m_GamePlay_PhoneOutInCallbackInputs;
+    private readonly InputAction m_GamePlay_navigateUIUpCallbackInputs;
+    private readonly InputAction m_GamePlay_navigateUIRightCallbackInputs;
+    private readonly InputAction m_GamePlay_navigateUIDownCallbackInputs;
+    private readonly InputAction m_GamePlay_navigateUILeftCallbackInputs;
+    private readonly InputAction m_GamePlay_MenuItemSelectionCallbackInputs;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
         public GamePlayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Brake => m_Wrapper.m_GamePlay_Brake;
-        public InputAction @TurnRight => m_Wrapper.m_GamePlay_TurnRight;
-        public InputAction @TurnLeft => m_Wrapper.m_GamePlay_TurnLeft;
-        public InputAction @Accelerate => m_Wrapper.m_GamePlay_Accelerate;
-        public InputAction @PhoneOutIn => m_Wrapper.m_GamePlay_PhoneOutIn;
-        public InputAction @navigateUIUp => m_Wrapper.m_GamePlay_navigateUIUp;
-        public InputAction @navigateUIRight => m_Wrapper.m_GamePlay_navigateUIRight;
-        public InputAction @navigateUIDown => m_Wrapper.m_GamePlay_navigateUIDown;
-        public InputAction @navigateUILeft => m_Wrapper.m_GamePlay_navigateUILeft;
-        public InputAction @MenuItemSelection => m_Wrapper.m_GamePlay_MenuItemSelection;
+        public InputAction @BrakeCallbackInputs => m_Wrapper.m_GamePlay_BrakeCallbackInputs;
+        public InputAction @TurnRightCallbackInputs => m_Wrapper.m_GamePlay_TurnRightCallbackInputs;
+        public InputAction @TurnLeftCallbackInputs => m_Wrapper.m_GamePlay_TurnLeftCallbackInputs;
+        public InputAction @AccelerateCallbackInputs => m_Wrapper.m_GamePlay_AccelerateCallbackInputs;
+        public InputAction @PhoneOutInCallbackInputs => m_Wrapper.m_GamePlay_PhoneOutInCallbackInputs;
+        public InputAction @navigateUIUpCallbackInputs => m_Wrapper.m_GamePlay_navigateUIUpCallbackInputs;
+        public InputAction @navigateUIRightCallbackInputs => m_Wrapper.m_GamePlay_navigateUIRightCallbackInputs;
+        public InputAction @navigateUIDownCallbackInputs => m_Wrapper.m_GamePlay_navigateUIDownCallbackInputs;
+        public InputAction @navigateUILeftCallbackInputs => m_Wrapper.m_GamePlay_navigateUILeftCallbackInputs;
+        public InputAction @MenuItemSelectionCallbackInputs => m_Wrapper.m_GamePlay_MenuItemSelectionCallbackInputs;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -409,70 +409,70 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_GamePlayActionsCallbackInterface != null)
             {
-                @Brake.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrake;
-                @Brake.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrake;
-                @Brake.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrake;
-                @TurnRight.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnRight;
-                @TurnRight.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnRight;
-                @TurnRight.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnRight;
-                @TurnLeft.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnLeft;
-                @TurnLeft.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnLeft;
-                @TurnLeft.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnLeft;
-                @Accelerate.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
-                @Accelerate.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
-                @Accelerate.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerate;
-                @PhoneOutIn.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
-                @PhoneOutIn.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
-                @PhoneOutIn.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutIn;
-                @navigateUIUp.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUp;
-                @navigateUIUp.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUp;
-                @navigateUIUp.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUp;
-                @navigateUIRight.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRight;
-                @navigateUIRight.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRight;
-                @navigateUIRight.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRight;
-                @navigateUIDown.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDown;
-                @navigateUIDown.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDown;
-                @navigateUIDown.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDown;
-                @navigateUILeft.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
-                @navigateUILeft.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
-                @navigateUILeft.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeft;
-                @MenuItemSelection.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelection;
-                @MenuItemSelection.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelection;
-                @MenuItemSelection.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelection;
+                @BrakeCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrakeCallbackInputs;
+                @BrakeCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrakeCallbackInputs;
+                @BrakeCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBrakeCallbackInputs;
+                @TurnRightCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnRightCallbackInputs;
+                @TurnRightCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnRightCallbackInputs;
+                @TurnRightCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnRightCallbackInputs;
+                @TurnLeftCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnLeftCallbackInputs;
+                @TurnLeftCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnLeftCallbackInputs;
+                @TurnLeftCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTurnLeftCallbackInputs;
+                @AccelerateCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerateCallbackInputs;
+                @AccelerateCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerateCallbackInputs;
+                @AccelerateCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerateCallbackInputs;
+                @PhoneOutInCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutInCallbackInputs;
+                @PhoneOutInCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutInCallbackInputs;
+                @PhoneOutInCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutInCallbackInputs;
+                @navigateUIUpCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUpCallbackInputs;
+                @navigateUIUpCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUpCallbackInputs;
+                @navigateUIUpCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUpCallbackInputs;
+                @navigateUIRightCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRightCallbackInputs;
+                @navigateUIRightCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRightCallbackInputs;
+                @navigateUIRightCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIRightCallbackInputs;
+                @navigateUIDownCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDownCallbackInputs;
+                @navigateUIDownCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDownCallbackInputs;
+                @navigateUIDownCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIDownCallbackInputs;
+                @navigateUILeftCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeftCallbackInputs;
+                @navigateUILeftCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeftCallbackInputs;
+                @navigateUILeftCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeftCallbackInputs;
+                @MenuItemSelectionCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
+                @MenuItemSelectionCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
+                @MenuItemSelectionCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Brake.started += instance.OnBrake;
-                @Brake.performed += instance.OnBrake;
-                @Brake.canceled += instance.OnBrake;
-                @TurnRight.started += instance.OnTurnRight;
-                @TurnRight.performed += instance.OnTurnRight;
-                @TurnRight.canceled += instance.OnTurnRight;
-                @TurnLeft.started += instance.OnTurnLeft;
-                @TurnLeft.performed += instance.OnTurnLeft;
-                @TurnLeft.canceled += instance.OnTurnLeft;
-                @Accelerate.started += instance.OnAccelerate;
-                @Accelerate.performed += instance.OnAccelerate;
-                @Accelerate.canceled += instance.OnAccelerate;
-                @PhoneOutIn.started += instance.OnPhoneOutIn;
-                @PhoneOutIn.performed += instance.OnPhoneOutIn;
-                @PhoneOutIn.canceled += instance.OnPhoneOutIn;
-                @navigateUIUp.started += instance.OnNavigateUIUp;
-                @navigateUIUp.performed += instance.OnNavigateUIUp;
-                @navigateUIUp.canceled += instance.OnNavigateUIUp;
-                @navigateUIRight.started += instance.OnNavigateUIRight;
-                @navigateUIRight.performed += instance.OnNavigateUIRight;
-                @navigateUIRight.canceled += instance.OnNavigateUIRight;
-                @navigateUIDown.started += instance.OnNavigateUIDown;
-                @navigateUIDown.performed += instance.OnNavigateUIDown;
-                @navigateUIDown.canceled += instance.OnNavigateUIDown;
-                @navigateUILeft.started += instance.OnNavigateUILeft;
-                @navigateUILeft.performed += instance.OnNavigateUILeft;
-                @navigateUILeft.canceled += instance.OnNavigateUILeft;
-                @MenuItemSelection.started += instance.OnMenuItemSelection;
-                @MenuItemSelection.performed += instance.OnMenuItemSelection;
-                @MenuItemSelection.canceled += instance.OnMenuItemSelection;
+                @BrakeCallbackInputs.started += instance.OnBrakeCallbackInputs;
+                @BrakeCallbackInputs.performed += instance.OnBrakeCallbackInputs;
+                @BrakeCallbackInputs.canceled += instance.OnBrakeCallbackInputs;
+                @TurnRightCallbackInputs.started += instance.OnTurnRightCallbackInputs;
+                @TurnRightCallbackInputs.performed += instance.OnTurnRightCallbackInputs;
+                @TurnRightCallbackInputs.canceled += instance.OnTurnRightCallbackInputs;
+                @TurnLeftCallbackInputs.started += instance.OnTurnLeftCallbackInputs;
+                @TurnLeftCallbackInputs.performed += instance.OnTurnLeftCallbackInputs;
+                @TurnLeftCallbackInputs.canceled += instance.OnTurnLeftCallbackInputs;
+                @AccelerateCallbackInputs.started += instance.OnAccelerateCallbackInputs;
+                @AccelerateCallbackInputs.performed += instance.OnAccelerateCallbackInputs;
+                @AccelerateCallbackInputs.canceled += instance.OnAccelerateCallbackInputs;
+                @PhoneOutInCallbackInputs.started += instance.OnPhoneOutInCallbackInputs;
+                @PhoneOutInCallbackInputs.performed += instance.OnPhoneOutInCallbackInputs;
+                @PhoneOutInCallbackInputs.canceled += instance.OnPhoneOutInCallbackInputs;
+                @navigateUIUpCallbackInputs.started += instance.OnNavigateUIUpCallbackInputs;
+                @navigateUIUpCallbackInputs.performed += instance.OnNavigateUIUpCallbackInputs;
+                @navigateUIUpCallbackInputs.canceled += instance.OnNavigateUIUpCallbackInputs;
+                @navigateUIRightCallbackInputs.started += instance.OnNavigateUIRightCallbackInputs;
+                @navigateUIRightCallbackInputs.performed += instance.OnNavigateUIRightCallbackInputs;
+                @navigateUIRightCallbackInputs.canceled += instance.OnNavigateUIRightCallbackInputs;
+                @navigateUIDownCallbackInputs.started += instance.OnNavigateUIDownCallbackInputs;
+                @navigateUIDownCallbackInputs.performed += instance.OnNavigateUIDownCallbackInputs;
+                @navigateUIDownCallbackInputs.canceled += instance.OnNavigateUIDownCallbackInputs;
+                @navigateUILeftCallbackInputs.started += instance.OnNavigateUILeftCallbackInputs;
+                @navigateUILeftCallbackInputs.performed += instance.OnNavigateUILeftCallbackInputs;
+                @navigateUILeftCallbackInputs.canceled += instance.OnNavigateUILeftCallbackInputs;
+                @MenuItemSelectionCallbackInputs.started += instance.OnMenuItemSelectionCallbackInputs;
+                @MenuItemSelectionCallbackInputs.performed += instance.OnMenuItemSelectionCallbackInputs;
+                @MenuItemSelectionCallbackInputs.canceled += instance.OnMenuItemSelectionCallbackInputs;
             }
         }
     }
@@ -497,15 +497,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     }
     public interface IGamePlayActions
     {
-        void OnBrake(InputAction.CallbackContext context);
-        void OnTurnRight(InputAction.CallbackContext context);
-        void OnTurnLeft(InputAction.CallbackContext context);
-        void OnAccelerate(InputAction.CallbackContext context);
-        void OnPhoneOutIn(InputAction.CallbackContext context);
-        void OnNavigateUIUp(InputAction.CallbackContext context);
-        void OnNavigateUIRight(InputAction.CallbackContext context);
-        void OnNavigateUIDown(InputAction.CallbackContext context);
-        void OnNavigateUILeft(InputAction.CallbackContext context);
-        void OnMenuItemSelection(InputAction.CallbackContext context);
+        void OnBrakeCallbackInputs(InputAction.CallbackContext context);
+        void OnTurnRightCallbackInputs(InputAction.CallbackContext context);
+        void OnTurnLeftCallbackInputs(InputAction.CallbackContext context);
+        void OnAccelerateCallbackInputs(InputAction.CallbackContext context);
+        void OnPhoneOutInCallbackInputs(InputAction.CallbackContext context);
+        void OnNavigateUIUpCallbackInputs(InputAction.CallbackContext context);
+        void OnNavigateUIRightCallbackInputs(InputAction.CallbackContext context);
+        void OnNavigateUIDownCallbackInputs(InputAction.CallbackContext context);
+        void OnNavigateUILeftCallbackInputs(InputAction.CallbackContext context);
+        void OnMenuItemSelectionCallbackInputs(InputAction.CallbackContext context);
     }
 }
