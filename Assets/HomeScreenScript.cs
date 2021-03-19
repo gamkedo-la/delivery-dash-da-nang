@@ -269,7 +269,7 @@ public class HomeScreenScript : MonoBehaviour
 
         if (currentActiveButtonIndex == ordersIDX)
         {
-            phoneScript.GetComponentInParent<PhoneScript>().GPSButtonPressed();
+            phoneScript.GetComponentInParent<PhoneScript>().OrdersButtonPressed();
         }
 
         if (currentActiveButtonIndex == ratingsIDX)
