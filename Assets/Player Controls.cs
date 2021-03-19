@@ -97,6 +97,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""BackToPhoneHomeScreenCallbackInputs"",
+                    ""type"": ""Button"",
+                    ""id"": ""cbdad06d-1d15-4de2-89af-2909c487231d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -286,6 +294,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MenuItemSelectionCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""be71dcbb-55a6-4460-9cc2-af1f78058e9e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""BackToPhoneHomeScreenCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b1bbdb0-5a6a-4cfe-8bb5-b43927b423e5"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BackToPhoneHomeScreenCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -327,6 +357,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_navigateUIDownCallbackInputs = m_GamePlay.FindAction("navigateUIDownCallbackInputs", throwIfNotFound: true);
         m_GamePlay_navigateUILeftCallbackInputs = m_GamePlay.FindAction("navigateUILeftCallbackInputs", throwIfNotFound: true);
         m_GamePlay_MenuItemSelectionCallbackInputs = m_GamePlay.FindAction("MenuItemSelectionCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_BackToPhoneHomeScreenCallbackInputs = m_GamePlay.FindAction("BackToPhoneHomeScreenCallbackInputs", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -386,6 +417,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_navigateUIDownCallbackInputs;
     private readonly InputAction m_GamePlay_navigateUILeftCallbackInputs;
     private readonly InputAction m_GamePlay_MenuItemSelectionCallbackInputs;
+    private readonly InputAction m_GamePlay_BackToPhoneHomeScreenCallbackInputs;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -400,6 +432,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @navigateUIDownCallbackInputs => m_Wrapper.m_GamePlay_navigateUIDownCallbackInputs;
         public InputAction @navigateUILeftCallbackInputs => m_Wrapper.m_GamePlay_navigateUILeftCallbackInputs;
         public InputAction @MenuItemSelectionCallbackInputs => m_Wrapper.m_GamePlay_MenuItemSelectionCallbackInputs;
+        public InputAction @BackToPhoneHomeScreenCallbackInputs => m_Wrapper.m_GamePlay_BackToPhoneHomeScreenCallbackInputs;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -439,6 +472,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MenuItemSelectionCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -473,6 +509,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MenuItemSelectionCallbackInputs.started += instance.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.performed += instance.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.canceled += instance.OnMenuItemSelectionCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.started += instance.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.performed += instance.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.canceled += instance.OnBackToPhoneHomeScreenCallbackInputs;
             }
         }
     }
@@ -507,5 +546,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigateUIDownCallbackInputs(InputAction.CallbackContext context);
         void OnNavigateUILeftCallbackInputs(InputAction.CallbackContext context);
         void OnMenuItemSelectionCallbackInputs(InputAction.CallbackContext context);
+        void OnBackToPhoneHomeScreenCallbackInputs(InputAction.CallbackContext context);
     }
 }

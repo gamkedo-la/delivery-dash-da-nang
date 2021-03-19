@@ -84,6 +84,14 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "BackToPhoneHomeScreenCallbackInputs",
+                    "type": "Button",
+                    "id": "cbdad06d-1d15-4de2-89af-2909c487231d",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -271,6 +279,28 @@
                     "processors": "",
                     "groups": "New control scheme",
                     "action": "MenuItemSelectionCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be71dcbb-55a6-4460-9cc2-af1f78058e9e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BackToPhoneHomeScreenCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b1bbdb0-5a6a-4cfe-8bb5-b43927b423e5",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BackToPhoneHomeScreenCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
