@@ -49,11 +49,19 @@ public class HomeScreenScript : MonoBehaviour
         phone = GameObject.Find("Phone");
         homeScreen = GameObject.Find("HomeScreen");
 
-   //     inputHandler.GetComponentInParent<PlayerInputHandler>();
-
+        //     inputHandler.GetComponentInParent<PlayerInputHandler>();
+        Debug.Log("listOfHighlights: " + listOfHighlights);
+        Debug.Log("listOfButtons: " + listOfButtons);
+        Debug.Log("highlight child componenet: " + listOfButtons[0].transform.GetChild(1).GetComponent<Image>());
         for (int i = 0; i < listOfButtons.Count; i++)
         {
-            listOfHighlights.Add(listOfButtons[i].GetComponentInChildren<Highlight>().GetComponent<Image>());
+            listOfHighlights.Add(listOfButtons[i].transform.GetChild(1).GetComponent<Image>());
+        }
+
+        Debug.Log("list of highlights for " + gameObject.name);
+        for (int i = 0; i < listOfHighlights.Count; i++)
+        {
+            Debug.Log("individual highlight: " + listOfHighlights[i]);
         }
 
         UpdateHighlights();
@@ -156,6 +164,7 @@ public class HomeScreenScript : MonoBehaviour
     {
         if (dPadUpPressed)
         {
+            //Debug.Log("dpad up pressed recognized in HomeScreenScript Update");
             switch (currentActiveButtonIndex)
             {
                 case ordersIDX:
@@ -246,6 +255,7 @@ public class HomeScreenScript : MonoBehaviour
             UpdateHighlights();
             dPadLeftPressed = false;
         }
+        //Debug.Log("currentActiveButtonIndex: " + currentActiveButtonIndex);
 
         /* if (inputHandler.OnAccelerate(CallbackContext context))
          {
