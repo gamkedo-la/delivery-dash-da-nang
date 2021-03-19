@@ -99,7 +99,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""BackToPhoneHomeScreenCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""cdc4f854-8089-4e04-a1ae-38d9bb222700"",
                     ""expectedControlType"": ""Button"",
@@ -298,11 +298,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2719e938-290a-4f8d-bc1c-2cbd3fcdbead"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""BackToPhoneHomeScreenCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6170a80-b429-48b3-81d9-92fde37d1cbe"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""New action"",
+                    ""action"": ""BackToPhoneHomeScreenCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -346,7 +357,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_navigateUIDownCallbackInputs = m_GamePlay.FindAction("navigateUIDownCallbackInputs", throwIfNotFound: true);
         m_GamePlay_navigateUILeftCallbackInputs = m_GamePlay.FindAction("navigateUILeftCallbackInputs", throwIfNotFound: true);
         m_GamePlay_MenuItemSelectionCallbackInputs = m_GamePlay.FindAction("MenuItemSelectionCallbackInputs", throwIfNotFound: true);
-        m_GamePlay_Newaction = m_GamePlay.FindAction("New action", throwIfNotFound: true);
+        m_GamePlay_BackToPhoneHomeScreenCallbackInputs = m_GamePlay.FindAction("BackToPhoneHomeScreenCallbackInputs", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -406,7 +417,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_navigateUIDownCallbackInputs;
     private readonly InputAction m_GamePlay_navigateUILeftCallbackInputs;
     private readonly InputAction m_GamePlay_MenuItemSelectionCallbackInputs;
-    private readonly InputAction m_GamePlay_Newaction;
+    private readonly InputAction m_GamePlay_BackToPhoneHomeScreenCallbackInputs;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -421,7 +432,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @navigateUIDownCallbackInputs => m_Wrapper.m_GamePlay_navigateUIDownCallbackInputs;
         public InputAction @navigateUILeftCallbackInputs => m_Wrapper.m_GamePlay_navigateUILeftCallbackInputs;
         public InputAction @MenuItemSelectionCallbackInputs => m_Wrapper.m_GamePlay_MenuItemSelectionCallbackInputs;
-        public InputAction @Newaction => m_Wrapper.m_GamePlay_Newaction;
+        public InputAction @BackToPhoneHomeScreenCallbackInputs => m_Wrapper.m_GamePlay_BackToPhoneHomeScreenCallbackInputs;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -461,9 +472,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MenuItemSelectionCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
-                @Newaction.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNewaction;
+                @BackToPhoneHomeScreenCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -498,9 +509,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MenuItemSelectionCallbackInputs.started += instance.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.performed += instance.OnMenuItemSelectionCallbackInputs;
                 @MenuItemSelectionCallbackInputs.canceled += instance.OnMenuItemSelectionCallbackInputs;
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @BackToPhoneHomeScreenCallbackInputs.started += instance.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.performed += instance.OnBackToPhoneHomeScreenCallbackInputs;
+                @BackToPhoneHomeScreenCallbackInputs.canceled += instance.OnBackToPhoneHomeScreenCallbackInputs;
             }
         }
     }
@@ -535,6 +546,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigateUIDownCallbackInputs(InputAction.CallbackContext context);
         void OnNavigateUILeftCallbackInputs(InputAction.CallbackContext context);
         void OnMenuItemSelectionCallbackInputs(InputAction.CallbackContext context);
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnBackToPhoneHomeScreenCallbackInputs(InputAction.CallbackContext context);
     }
 }

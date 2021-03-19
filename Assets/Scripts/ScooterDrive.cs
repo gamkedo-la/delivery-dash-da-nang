@@ -95,7 +95,7 @@ public class ScooterDrive : MonoBehaviour
     public bool isAbleToReverse = false;
     public int accelerateValue;
 
-    private HomeScreenScript homeScreen;
+    private HomeScreenScript homeScreenScript;
     public bool phoneActive = false;
 
     DeliveryDriver driverID;
@@ -161,8 +161,8 @@ public class ScooterDrive : MonoBehaviour
         {
             Debug.Log("Scooter setup incorrectly, no rigidbody found");
         }
- 
-        homeScreen = phone.GetComponentInChildren<HomeScreenScript>();
+
+        homeScreenScript = phone.GetComponentInChildren<HomeScreenScript>();
 
 
         bikeCurrentAudioSource = AudioManager.Instance.PlaySoundSFX(bikeIdleAudioClip, gameObject, loop: true, volume: 0.1f);
@@ -737,34 +737,47 @@ public class ScooterDrive : MonoBehaviour
         Debug.Log(gameObject.name);
 
 
-        homeScreen.dPadUpPressed = true;
-        homeScreen.handleGamepadUINavigation(); 
+        homeScreenScript.dPadUpPressed = true;
+        homeScreenScript.handleGamepadUINavigation(); 
         CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUIDown()
     {
-        homeScreen.dPadDownPressed = true;
-        homeScreen.handleGamepadUINavigation(); 
+        homeScreenScript.dPadDownPressed = true;
+        homeScreenScript.handleGamepadUINavigation(); 
         CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUILeft()
     {
-        homeScreen.dPadLeftPressed = true;
-        homeScreen.handleGamepadUINavigation(); 
+        homeScreenScript.dPadLeftPressed = true;
+        homeScreenScript.handleGamepadUINavigation(); 
         CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUIRight()
     {
-        homeScreen.dPadRightPressed = true;
-        homeScreen.handleGamepadUINavigation();
+        homeScreenScript.dPadRightPressed = true;
+        homeScreenScript.handleGamepadUINavigation();
         CheckIfPhoneIsActive();
     }
 
     public void HandleMenuItemSelectButtonPressed()
     {
-        homeScreen.ButtonPressed();
+        homeScreenScript.ButtonPressed();
+    }
+
+    public void HandleBackToPhoneHomeScreen()
+    {
+        //Debug.Log("gameObject.name: " + gameObject.name);
+        //Debug.Log("gameObject.GetComponentInChildren<PhoneScript>(): " + gameObject.GetComponentInChildren<PhoneScript>());
+        //Debug.Log("gameObject.GetComponentInChildren<PhoneScript>().HomeScreen: " + gameObject.GetComponentInChildren<PhoneScript>().HomeScreen);
+        //gameObject.GetComponentInChildren<PhoneScript>().HomeScreen.SetActive(true);
+        //gameObject.GetComponentInChildren<PhoneScript>().GPSMenu.SetActive(false);
+        //gameObject.GetComponentInChildren<PhoneScript>().OrdersMenu.SetActive(false);
+        //gameObject.GetComponentInChildren<PhoneScript>().RatingsScreen.SetActive(false);
+        //gameObject.GetComponentInChildren<PhoneScript>().CurrentScores.SetActive(false);
+        gameObject.GetComponentInChildren<PhoneScript>().OrdersBack();
     }
 }

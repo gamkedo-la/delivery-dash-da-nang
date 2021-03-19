@@ -50,19 +50,13 @@ public class HomeScreenScript : MonoBehaviour
         homeScreen = GameObject.Find("HomeScreen");
 
         //     inputHandler.GetComponentInParent<PlayerInputHandler>();
-        Debug.Log("listOfHighlights: " + listOfHighlights);
-        Debug.Log("listOfButtons: " + listOfButtons);
-        Debug.Log("highlight child componenet: " + listOfButtons[0].transform.GetChild(1).GetComponent<Image>());
+        
         for (int i = 0; i < listOfButtons.Count; i++)
         {
             listOfHighlights.Add(listOfButtons[i].transform.GetChild(1).GetComponent<Image>());
         }
 
-        Debug.Log("list of highlights for " + gameObject.name);
-        for (int i = 0; i < listOfHighlights.Count; i++)
-        {
-            Debug.Log("individual highlight: " + listOfHighlights[i]);
-        }
+        
 
         UpdateHighlights();
     }

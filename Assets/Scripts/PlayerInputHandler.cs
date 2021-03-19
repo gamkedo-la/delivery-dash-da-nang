@@ -135,4 +135,12 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.HandleMenuItemSelectButtonPressed();
         }
     }
+
+    public void OnBackToPhoneHomeScreenCallbackInputs(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            scooterDriveScript.HandleBackToPhoneHomeScreen();
+        }
+    }
 }

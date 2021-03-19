@@ -86,7 +86,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "New action",
+                    "name": "BackToPhoneHomeScreenCallbackInputs",
                     "type": "Button",
                     "id": "cdc4f854-8089-4e04-a1ae-38d9bb222700",
                     "expectedControlType": "Button",
@@ -285,11 +285,22 @@
                 {
                     "name": "",
                     "id": "2719e938-290a-4f8d-bc1c-2cbd3fcdbead",
-                    "path": "",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "BackToPhoneHomeScreenCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6170a80-b429-48b3-81d9-92fde37d1cbe",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "New action",
+                    "action": "BackToPhoneHomeScreenCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
