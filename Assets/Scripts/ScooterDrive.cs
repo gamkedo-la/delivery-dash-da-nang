@@ -104,6 +104,8 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject phoneGameObject;
 
+    public GameObject homeScreen;
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -738,33 +740,61 @@ public class ScooterDrive : MonoBehaviour
 
     public void HandleNavigateUIUp()
     {
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
 
-
-        homeScreenScript.dPadUpPressed = true;
-        homeScreenScript.handleGamepadUINavigation(); 
-        CheckIfPhoneIsActive();
+        if (homeScreen.activeSelf)
+        {
+            homeScreenScript.dPadUpPressed = true;
+            homeScreenScript.handleGamepadUINavigation();
+        }
+        else
+        {
+            Debug.Log("homescreen inactive: insert other dpad navigation code here");
+        }
+        
+        //CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUIDown()
     {
-        homeScreenScript.dPadDownPressed = true;
-        homeScreenScript.handleGamepadUINavigation(); 
-        CheckIfPhoneIsActive();
+        if (homeScreen.activeSelf)
+        {
+            homeScreenScript.dPadDownPressed = true;
+            homeScreenScript.handleGamepadUINavigation();
+        }
+        else
+        {
+            Debug.Log("homescreen inactive: insert other dpad navigation code here");
+        }
+        //CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUILeft()
     {
-        homeScreenScript.dPadLeftPressed = true;
-        homeScreenScript.handleGamepadUINavigation(); 
-        CheckIfPhoneIsActive();
+            if (homeScreen.activeSelf)
+            {
+                homeScreenScript.dPadLeftPressed = true;
+                homeScreenScript.handleGamepadUINavigation();
+            }
+        else
+        {
+            Debug.Log("homescreen inactive: insert other dpad navigation code here");
+        }
+        //CheckIfPhoneIsActive();
     }
 
     public void HandleNavigateUIRight()
     {
-        homeScreenScript.dPadRightPressed = true;
-        homeScreenScript.handleGamepadUINavigation();
-        CheckIfPhoneIsActive();
+                if (homeScreen.activeSelf)
+                {
+                    homeScreenScript.dPadRightPressed = true;
+                    homeScreenScript.handleGamepadUINavigation();
+                }
+        else
+        {
+            Debug.Log("homescreen inactive: insert other dpad navigation code here");
+        }
+        //CheckIfPhoneIsActive();
     }
 
 
