@@ -33,7 +33,7 @@ public class HomeScreenScript : MonoBehaviour
 
     public GameObject scooter;
 
-    public GameObject phoneScript;
+    public GameObject phoneCanvas;
 
     public PlayerInputHandler inputHandler;
 
@@ -268,22 +268,22 @@ public class HomeScreenScript : MonoBehaviour
     {
         if (currentActiveButtonIndex == gpsIDX)
         {
-            phoneScript.GetComponentInParent<PhoneScript>().GPSButtonPressed();
+            phoneCanvas.GetComponentInParent<PhoneScript>().GPSButtonPressed();
         }
 
         if (currentActiveButtonIndex == ordersIDX)
         {
-            phoneScript.GetComponentInParent<PhoneScript>().OrdersButtonPressed();
+            phoneCanvas.GetComponentInParent<PhoneScript>().OrdersButtonPressed();
         }
 
         if (currentActiveButtonIndex == ratingsIDX)
         {
-            phoneScript.GetComponentInParent<PhoneScript>().CustomerScoresPressed();
+            phoneCanvas.GetComponentInParent<PhoneScript>().CustomerScoresPressed();
         }
 
         if (currentActiveButtonIndex == currentRateIDX)
         {
-            phoneScript.GetComponentInParent<PhoneScript>().RatingsButtonPressed();
+            phoneCanvas.GetComponentInParent<PhoneScript>().RatingsButtonPressed();
         }
 
         if (currentActiveButtonIndex == alertsIDX)
