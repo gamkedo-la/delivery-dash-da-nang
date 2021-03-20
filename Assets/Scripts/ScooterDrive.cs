@@ -823,7 +823,7 @@ public class ScooterDrive : MonoBehaviour
     {
         Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
         //if phone on and homescreen off, we must be on a different screen, so go back to the homescreen
-        if (phone.GetBool("PhoneOn") || !phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
+        if (phone.GetBool("PhoneOn") && !phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
         {
             //go back to home screen
             phoneCanvas.GetComponentInParent<PhoneScript>().HomeScreen.SetActive(true);
@@ -835,7 +835,7 @@ public class ScooterDrive : MonoBehaviour
         }
 
         //if phone on and homescreen on, put the phone away
-        if (phone.GetBool("PhoneOn") || phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
+        else if (phone.GetBool("PhoneOn") && phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
         {
             //put phone away
             AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
