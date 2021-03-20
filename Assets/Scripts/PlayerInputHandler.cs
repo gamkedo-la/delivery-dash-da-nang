@@ -12,7 +12,6 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerInput playerInput;
     private ScooterDrive scooterDriveScript;
 
-    public bool putPhoneInPocketButtonAlreadyPressedThisFrame = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -95,41 +94,6 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.acceleratingCompleted = true;
         }
     }
-    //public void OnPhoneOutInCallbackInputs(CallbackContext context)
-    //{
-    //    if (context.performed)
-    //    {
-    //        scooterDriveScript.PhoneOutIn();
-    //    }
-    //}
-
-    public void OnTakePhoneOutOfPocketCallbackInputs()
-    {
-        //scooterDriveScript.TakePhoneOutOfPocket();
-    }   
-
-    //public void OnPutPhoneInPocket()
-    //{
-    //    //if (putPhoneInPocketButtonAlreadyPressedThisFrame)
-    //    //{
-    //    //    Debug.Log("phone in pocket already pressed this frame");
-    //    //}   
-    //    //else
-    //    //{
-    //    //    Debug.Log("phone in pocket button not pressed yet this frame");
-    //    //}    
-    //    Debug.Log("scooterDriveScript.phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + scooterDriveScript.phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
-        
-    //    if (!scooterDriveScript.phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
-    //    {
-    //        return;
-    //    }   
-    //    else
-    //    {
-    //        scooterDriveScript.PutPhoneInPocket();
-    //    }    
-        
-    //}    
     
     public void OnNavigateUIUpCallbackInputs(CallbackContext context)
     {
