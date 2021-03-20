@@ -100,6 +100,19 @@ public class PrefabOrder : MonoBehaviour
         orderText.text = customerNames[customerName].ToString() + " ordered " + orderedItems[restaurantSelected] + " from " + restaurantName[restaurantSelected].ToString() + " to deliver to " + apartmentName[customerLocation].ToString();
     }
 
+    private void Update()
+    {
+        if (isFocusedOn)
+        {
+            gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color32(11, 63, 156, 125);
+            //gameObject.GetComponent<Image>().color = new Color32(11, 63, 156, 125);
+        }
+        else
+        {
+            gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color32(255, 196, 0, 255);
+            //gameObject.GetComponent<Image>().color = new Color32(255, 196, 0, 255);
+        }
+    }
     public void OrderAccepted()
     {
         AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);

@@ -25,10 +25,10 @@ public class PopulateGrid : MonoBehaviour
             
             newObj = (GameObject)Instantiate(prefab, transform);
             Debug.Log("newObj: " + newObj);
-            if (i == 0)
-            {
+            //if (i == 0)
+            //{
                 newObj.GetComponent<PrefabOrder>().isFocusedOn = true;
-            }
+            //}
             
            // newObj.GetComponent<Image>().color = Random.ColorHSV();
         }
@@ -60,12 +60,12 @@ public class PopulateGrid : MonoBehaviour
 
     public void AddPlayer1()
     {
-        if (player1 && numberToCreate1 <= 3)
-        {
-            int randNew = Random.Range(3, 7);
-            numberToCreate1 += randNew;
+        //if (player1 && numberToCreate1 <= 3)
+        //{
+        //    int randNew = Random.Range(3, 7);
+            //numberToCreate1 += randNew;
             GameObject newObj;
-            for (int i = 0; i < randNew; i++)
+            for (int i = 0; i < numberToCreate1; i++)
             {
                 newObj = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
@@ -75,17 +75,17 @@ public class PopulateGrid : MonoBehaviour
                 
                 // newObj.GetComponent<Image>().color = Random.ColorHSV();
             }
-        }
+       // }
     }
 
     public void AddPlayer2()
     {
-        if (player2 && numberToCreate2 <= 3)
-        {
-            int randNew = Random.Range(3, 7);
-            numberToCreate2 += randNew;
+        //if (player2 && numberToCreate2 <= 3)
+        //{
+        //    int randNew = Random.Range(3, 7);
+            //numberToCreate2 += randNew;
             GameObject newObj;
-            for (int i = 0; i < randNew; i++)
+            for (int i = 0; i < numberToCreate2; i++)
             {
                 newObj = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
@@ -94,17 +94,17 @@ public class PopulateGrid : MonoBehaviour
                 }
                 // newObj.GetComponent<Image>().color = Random.ColorHSV();
             }
-        }
+       // }
     }
 
     public void AddPlayer3()
     {
-        if (player3 && numberToCreate3 <= 3)
-        {
-            int randNew = Random.Range(3, 7);
-            numberToCreate3 += randNew;
+        //if (player3 && numberToCreate3 <= 3)
+        //{
+        //    int randNew = Random.Range(3, 7);
+        //    numberToCreate3 += randNew;
             GameObject newObj;
-            for (int i = 0; i < randNew; i++)
+            for (int i = 0; i < numberToCreate3; i++)
             {
                 newObj = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
@@ -113,17 +113,17 @@ public class PopulateGrid : MonoBehaviour
                 }
                 // newObj.GetComponent<Image>().color = Random.ColorHSV();
             }
-        }
+        //}
     }
 
     public void AddPlayer4()
     {
-        if (player4 && numberToCreate4 <= 3)
-        {
-            int randNew = Random.Range(3, 7);
-            numberToCreate4 += randNew;
+        //if (player4 && numberToCreate4 <= 3)
+        //{
+        //    int randNew = Random.Range(3, 7);
+        //    numberToCreate4 += randNew;
             GameObject newObj;
-            for (int i = 0; i < randNew; i++)
+            for (int i = 0; i < numberToCreate4; i++)
             {
                 newObj = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
@@ -132,6 +132,6 @@ public class PopulateGrid : MonoBehaviour
                 }
                 // newObj.GetComponent<Image>().color = Random.ColorHSV();
             }
-        }
+        //}
     }
 }
