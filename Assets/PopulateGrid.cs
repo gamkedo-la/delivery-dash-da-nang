@@ -25,10 +25,11 @@ public class PopulateGrid : MonoBehaviour
             
             newObj = (GameObject)Instantiate(prefab, transform);
             Debug.Log("newObj: " + newObj);
-            //if (i == 0)
-            //{
+            if (i == 0)
+            {
+                Debug.Log("i == 0 in initial populate");
                 newObj.GetComponent<PrefabOrder>().isFocusedOn = true;
-            //}
+            }
             
            // newObj.GetComponent<Image>().color = Random.ColorHSV();
         }
@@ -70,6 +71,7 @@ public class PopulateGrid : MonoBehaviour
                 newObj = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
                 {
+                Debug.Log("i == 0 in AddPlayer1");
                     newObj.transform.GetComponent<PrefabOrder>().isFocusedOn = true;
                 }
                 
