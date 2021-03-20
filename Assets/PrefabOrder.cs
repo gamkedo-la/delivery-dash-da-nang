@@ -41,8 +41,11 @@ public class PrefabOrder : MonoBehaviour
 
     PopulateGrid populateGrid;
 
+    public bool isFocusedOn = false;
+
     private void Start()
     {
+        //Debug.Log("does this script in fact do anything");
         populateGrid = GameObject.Find("Content").GetComponent<PopulateGrid>();
         phoneScript = GameObject.Find("Canvas - PlayerPhone").GetComponent<PhoneScript>();
         phoneButtonPressedAudioClip = phoneScript.phoneButtonPressedAudioClip;
