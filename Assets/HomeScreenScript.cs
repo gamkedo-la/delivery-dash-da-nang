@@ -71,14 +71,14 @@ public class HomeScreenScript : MonoBehaviour
 
     public void handleGamepadUINavigation()
     {
-        if (scooter.GetComponent<ScooterDrive>().phoneActive)
-        {
-            Debug.Log("Phone screen active reached");
-            if (homeScreen.activeInHierarchy)
-            {
-                Debug.Log("Home Screen active reached");
-            }
-        }
+        //if (scooter.GetComponent<ScooterDrive>().phoneActive)
+        //{
+        //    Debug.Log("Phone screen active reached");
+        //    if (homeScreen.activeInHierarchy)
+        //    {
+        //        Debug.Log("Home Screen active reached");
+        //    }
+        //}
         
     }
 
