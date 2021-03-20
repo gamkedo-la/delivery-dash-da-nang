@@ -13,22 +13,38 @@ public class PopulateGrid : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("does this script in fact do anything?");
         InitialPopulate();
     }
 
     void InitialPopulate()
     {
-        GameObject newObj;
+        GameObject customerOrderPrefab;
         for (int i = 0; i < numberToCreate1; i++)
         {
-            
-            newObj = (GameObject)Instantiate(prefab, transform);
-            Debug.Log("newObj: " + newObj);
+
+            customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
             if (i == 0)
             {
-                Debug.Log("i == 0 in initial populate");
-                newObj.GetComponent<PrefabOrder>().isFocusedOn = true;
+                Debug.Log("customerOrderPrefab: " + customerOrderPrefab);
+                //newObj.GetComponent<PrefabOrder>().isFocusedOn = true;
+                //if (newObj.transform.GetComponent<PrefabOrder>() != null)
+                //{
+                //customerOrderPrefab.transform.GetComponent<PrefabOrder>().isFocusedOn = true;
+                customerOrderPrefab.GetComponent<PrefabOrder>().isFocusedOn = true;
+                //}
+
+                //if (newObj.transform.GetComponent<PrefabOrderPlayer2>() != null)
+                //{
+                //    newObj.transform.GetComponent<PrefabOrderPlayer2>().isFocusedOn = true;
+                //}
+                //if (newObj.transform.GetComponent<PrefabOrderPlayer3>() != null)
+                //{
+                //    newObj.transform.GetComponent<PrefabOrderPlayer3>().isFocusedOn = true;
+                //}
+                //if (newObj.transform.GetComponent<PrefabOrderPlayer4>() != null)
+                //{
+                //    newObj.transform.GetComponent<PrefabOrderPlayer4>().isFocusedOn = true;
+                //}
             }
             
            // newObj.GetComponent<Image>().color = Random.ColorHSV();
@@ -64,14 +80,16 @@ public class PopulateGrid : MonoBehaviour
         //if (player1 && numberToCreate1 <= 3)
         //{
         //    int randNew = Random.Range(3, 7);
-            //numberToCreate1 += randNew;
-            GameObject newObj;
+        //numberToCreate1 += randNew;
+        Debug.Log("inside AddPlayer1 prefab orders");
+        GameObject newObj;
             for (int i = 0; i < numberToCreate1; i++)
             {
                 newObj = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
                 {
                 Debug.Log("i == 0 in AddPlayer1");
+                Debug.Log("inside AddPlayer1 prefab orders");
                     newObj.transform.GetComponent<PrefabOrder>().isFocusedOn = true;
                 }
                 

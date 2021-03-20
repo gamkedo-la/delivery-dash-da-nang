@@ -851,7 +851,6 @@ public class ScooterDrive : MonoBehaviour
     
     public void HandleNavigatePhoneStepOut()
     {
-        Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
         //if phone on and homescreen off, we must be on a different screen, so go back to the homescreen
         if (phone.GetBool("PhoneOn") && !phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
         {

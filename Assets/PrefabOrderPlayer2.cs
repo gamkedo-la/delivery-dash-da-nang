@@ -42,6 +42,8 @@ public class PrefabOrderPlayer2 : MonoBehaviour
 
     PopulateGrid populateGrid;
 
+    public bool isFocusedOn = false;
+
     private void Start()
     {
         populateGrid = GameObject.Find("Content2").GetComponent<PopulateGrid>();
@@ -155,6 +157,8 @@ public class PrefabOrderPlayer2 : MonoBehaviour
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(0.5f);
+        Debug.Log("DeductCount player2 reached");
+
         populateGrid.DeductCount();
         Destroy(this.gameObject);
     }
