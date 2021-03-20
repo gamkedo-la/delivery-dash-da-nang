@@ -102,6 +102,8 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject phoneCanvas;
 
+    public GameObject phoneGameObject;
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -189,13 +191,51 @@ public class ScooterDrive : MonoBehaviour
 
     //This is the area where you toggle the phone on and off
 
-    public void PhoneOutIn()
+    //public void PhoneOutIn()
+    //{
+        
+        
+    //    PhoneActivation();
+    //}
+
+    //void PhoneActivation()
+    //{
+        
+
+        
+    //}
+
+    public void TakePhoneOutOfPocket()
     {
+        if (phone.GetBool("PhoneOn"))
+        {
+            return;
+        }   
+        
         AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
-        phoneToggle = !phoneToggle;
-        textTip.SetActive(phoneToggle == false);
-        PhoneActivation();
-    }
+        
+        phone.SetBool("PhoneOn", true);
+        phoneActive = true;
+    }    
+
+    public void PutPhoneInPocket()
+    {
+        Debug.Log("gameObject.name: " + gameObject.name);
+        Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
+        //check if phone or homescreen is active before attempting to put the phone away
+        Debug.Log("gameObject.activeInHierarchy: " + gameObject.activeInHierarchy);
+        Debug.Log("phone.GetBool('PhoneOn'): " + phone.GetBool("PhoneOn"));
+        if (!phone.GetBool("PhoneOn") || !phoneGameObject.transform.GetChild(3).gameObject.activeSelf || !gameObject.activeInHierarchy)
+        {
+            Debug.Log("returning from phone off or homescreen inactive check");
+            return;
+        }
+
+        AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
+        
+        phone.SetBool("PhoneOn", false);
+        phoneActive = false;
+    }    
 
     // Update is called once per frame
     void Update()
@@ -214,7 +254,11 @@ public class ScooterDrive : MonoBehaviour
         {
             if (player1)
             {
-                PhoneOutIn();
+                if (phone.GetBool("PhoneOn"))
+                {
+                    return;
+                }
+                TakePhoneOutOfPocket();
             }
         }
 
@@ -566,20 +610,7 @@ public class ScooterDrive : MonoBehaviour
         //}
     }
 
-    void PhoneActivation()
-    {
-        if (phoneToggle)
-        {
-            phone.SetBool("PhoneOn", true);
-            phoneActive = true;
-        }
-
-        if (!phoneToggle)
-        {
-            phone.SetBool("PhoneOn", false);
-            phoneActive = false;
-        }
-    }
+    
 
     void CheckIfPhoneIsActive()
     {
@@ -767,6 +798,11 @@ public class ScooterDrive : MonoBehaviour
 
     public void HandleMenuItemSelectButtonPressed()
     {
+        if (!phone.GetBool("PhoneOn") || !phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
+        {
+            Debug.Log("returning from button pressed while phone or home screen inactive");
+            return;
+        }
         homeScreenScript.ButtonPressed();
     }
 
@@ -781,6 +817,10 @@ public class ScooterDrive : MonoBehaviour
         //gameObject.GetComponentInChildren<PhoneScript>().RatingsScreen.SetActive(false);
         //gameObject.GetComponentInChildren<PhoneScript>().CurrentScores.SetActive(false);
         //gameObject.GetComponentInChildren<PhoneScript>().OrdersBack();
+        if (!phone.GetBool("PhoneOn") || phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
+        {
+            return;
+        }
         phoneCanvas.GetComponentInParent<PhoneScript>().HomeScreen.SetActive(true);
         phoneCanvas.GetComponentInParent<PhoneScript>().GPSMenu.SetActive(false);
         phoneCanvas.GetComponentInParent<PhoneScript>().OrdersMenu.SetActive(false);

@@ -92,13 +92,29 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "TakePhoneOutOfPocketCallbackInputs",
+                    "type": "Button",
+                    "id": "eeb052d3-7302-4cf4-9ffb-016e61b8fd2f",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "PutPhoneInPocketCallbackInputs",
+                    "type": "Button",
+                    "id": "aaa5a70c-3f48-43cb-8f6c-b88d6cfed737",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "97cdcc78-c364-48e6-a313-1ad5857e1d40",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "Gamepad",
@@ -263,7 +279,7 @@
                 {
                     "name": "",
                     "id": "ed9fc1d4-c92d-421f-8bf4-085f847b8d1e",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -296,11 +312,33 @@
                 {
                     "name": "",
                     "id": "b6170a80-b429-48b3-81d9-92fde37d1cbe",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "BackToPhoneHomeScreenCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28819c24-f48a-4e4b-8ffc-8ccf7884e4cd",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "TakePhoneOutOfPocketCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3db67aff-52d5-4508-addb-40c7552ce31e",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "PutPhoneInPocketCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
