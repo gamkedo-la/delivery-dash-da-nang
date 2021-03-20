@@ -11,6 +11,8 @@ public class PopulateGrid : MonoBehaviour
 
     public bool player1, player2, player3, player4;
 
+    public GameObject whichPlayerIsThis;
+
     private void Start()
     {
         InitialPopulate();
@@ -19,60 +21,99 @@ public class PopulateGrid : MonoBehaviour
     void InitialPopulate()
     {
         GameObject customerOrderPrefab;
-        for (int i = 0; i < numberToCreate1; i++)
+        if (whichPlayerIsThis.name == "Player1")
         {
-
-            customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
-            if (i == 0)
+            for (int i = 0; i < numberToCreate1; i++)
             {
-                Debug.Log("customerOrderPrefab: " + customerOrderPrefab);
-                //newObj.GetComponent<PrefabOrder>().isFocusedOn = true;
-                //if (newObj.transform.GetComponent<PrefabOrder>() != null)
-                //{
-                //customerOrderPrefab.transform.GetComponent<PrefabOrder>().isFocusedOn = true;
-                customerOrderPrefab.GetComponent<PrefabOrder>().isFocusedOn = true;
-                //}
 
-                //if (newObj.transform.GetComponent<PrefabOrderPlayer2>() != null)
-                //{
-                //    newObj.transform.GetComponent<PrefabOrderPlayer2>().isFocusedOn = true;
-                //}
-                //if (newObj.transform.GetComponent<PrefabOrderPlayer3>() != null)
-                //{
-                //    newObj.transform.GetComponent<PrefabOrderPlayer3>().isFocusedOn = true;
-                //}
-                //if (newObj.transform.GetComponent<PrefabOrderPlayer4>() != null)
-                //{
-                //    newObj.transform.GetComponent<PrefabOrderPlayer4>().isFocusedOn = true;
-                //}
+                customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
+                if (i == 0)
+                {
+                    Debug.Log("customerOrderPrefab: " + customerOrderPrefab);
+
+                    customerOrderPrefab.GetComponent<PrefabOrder>().isFocusedOn = true;
+
+                }
             }
-            
-           // newObj.GetComponent<Image>().color = Random.ColorHSV();
         }
+        else if (whichPlayerIsThis.name == "Player2")
+        {
+            for (int i = 0; i < numberToCreate2; i++)
+            {
+
+                customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
+                if (i == 0)
+                {
+                    Debug.Log("customerOrderPrefab: " + customerOrderPrefab);
+
+                    customerOrderPrefab.GetComponent<PrefabOrderPlayer2>().isFocusedOn = true;
+
+                }
+            }
+        }
+        else if (whichPlayerIsThis.name == "Player3")
+        {
+            for (int i = 0; i < numberToCreate3; i++)
+            {
+
+                customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
+                if (i == 0)
+                {
+                    Debug.Log("customerOrderPrefab: " + customerOrderPrefab);
+
+                    customerOrderPrefab.GetComponent<PrefabOrderPlayer3>().isFocusedOn = true;
+
+                }
+            }
+        }
+        else if (whichPlayerIsThis.name == "Player4")
+        {
+            for (int i = 0; i < numberToCreate4; i++)
+            {
+
+                customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
+                if (i == 0)
+                {
+                    Debug.Log("customerOrderPrefab: " + customerOrderPrefab);
+
+                    customerOrderPrefab.GetComponent<PrefabOrderPlayer4>().isFocusedOn = true;
+                    
+                }
+            }
+        }
+
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
+        //    if (i == 0)
+        //    {
+        //        customerOrderPrefab.GetComponent<PrefabOrder>().isFocusedOn = true;
+        //    }
+        //}
     }
 
     public void DeductCount()
     {
-        if (player1)
-        {
-            numberToCreate1--;
-            AddPlayer1();
-        }
-        if (player2)
-        {
-            numberToCreate2--;
-            AddPlayer2();
-        }
-        if (player3)
-        {
-            numberToCreate3--;
-            AddPlayer3();
-        }
-        if (player4)
-        {
-            numberToCreate4--;
-            AddPlayer4();
-        }
+        //if (player1)
+        //{
+        //    numberToCreate1--;
+        //    AddPlayer1();
+        //}
+        //if (player2)
+        //{
+        //    numberToCreate2--;
+        //    AddPlayer2();
+        //}
+        //if (player3)
+        //{
+        //    numberToCreate3--;
+        //    AddPlayer3();
+        //}
+        //if (player4)
+        //{
+        //    numberToCreate4--;
+        //    AddPlayer4();
+        //}
     }
 
     public void AddPlayer1()
