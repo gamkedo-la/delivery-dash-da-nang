@@ -51,14 +51,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""PhoneOutInCallbackInputs"",
-                    ""type"": ""Button"",
-                    ""id"": ""81db9e80-2761-43b8-9d3f-fa8c82f8c2ba"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": ""StickDeadzone"",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""navigateUIUpCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""00534eff-b106-4ac2-82fb-ffb0a478a9bc"",
@@ -91,23 +83,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""MenuItemSelectionCallbackInputs"",
-                    ""type"": ""Button"",
-                    ""id"": ""d8a70795-3793-4a6d-9980-74a35ea70b41"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": ""StickDeadzone"",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""BackToPhoneHomeScreenCallbackInputs"",
-                    ""type"": ""Button"",
-                    ""id"": ""cdc4f854-8089-4e04-a1ae-38d9bb222700"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": ""StickDeadzone"",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""TakePhoneOutOfPocketCallbackInputs"",
+                    ""name"": ""NavigatePhoneStepInCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""eeb052d3-7302-4cf4-9ffb-016e61b8fd2f"",
                     ""expectedControlType"": ""Button"",
@@ -115,7 +91,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""PutPhoneInPocketCallbackInputs"",
+                    ""name"": ""NavigatePhoneStepOutCallbackInputs"",
                     ""type"": ""Button"",
                     ""id"": ""aaa5a70c-3f48-43cb-8f6c-b88d6cfed737"",
                     ""expectedControlType"": ""Button"",
@@ -225,17 +201,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""61f993ba-1a0f-444d-af9f-e3d7c686f06c"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PhoneOutInCallbackInputs"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ba289ce8-3860-407a-95e8-3c0cfe0d53fb"",
                     ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
@@ -291,56 +256,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ed9fc1d4-c92d-421f-8bf4-085f847b8d1e"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""MenuItemSelectionCallbackInputs"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d9a0b28c-5938-43ab-978f-7c20f113c55a"",
-                    ""path"": ""<Keyboard>/m"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""New control scheme"",
-                    ""action"": ""MenuItemSelectionCallbackInputs"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2719e938-290a-4f8d-bc1c-2cbd3fcdbead"",
-                    ""path"": ""<Keyboard>/b"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""New control scheme"",
-                    ""action"": ""BackToPhoneHomeScreenCallbackInputs"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b6170a80-b429-48b3-81d9-92fde37d1cbe"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""BackToPhoneHomeScreenCallbackInputs"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""28819c24-f48a-4e4b-8ffc-8ccf7884e4cd"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""TakePhoneOutOfPocketCallbackInputs"",
+                    ""action"": ""NavigatePhoneStepInCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -351,7 +272,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""PutPhoneInPocketCallbackInputs"",
+                    ""action"": ""NavigatePhoneStepOutCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -389,15 +310,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_TurnRightCallbackInputs = m_GamePlay.FindAction("TurnRightCallbackInputs", throwIfNotFound: true);
         m_GamePlay_TurnLeftCallbackInputs = m_GamePlay.FindAction("TurnLeftCallbackInputs", throwIfNotFound: true);
         m_GamePlay_AccelerateCallbackInputs = m_GamePlay.FindAction("AccelerateCallbackInputs", throwIfNotFound: true);
-        m_GamePlay_PhoneOutInCallbackInputs = m_GamePlay.FindAction("PhoneOutInCallbackInputs", throwIfNotFound: true);
         m_GamePlay_navigateUIUpCallbackInputs = m_GamePlay.FindAction("navigateUIUpCallbackInputs", throwIfNotFound: true);
         m_GamePlay_navigateUIRightCallbackInputs = m_GamePlay.FindAction("navigateUIRightCallbackInputs", throwIfNotFound: true);
         m_GamePlay_navigateUIDownCallbackInputs = m_GamePlay.FindAction("navigateUIDownCallbackInputs", throwIfNotFound: true);
         m_GamePlay_navigateUILeftCallbackInputs = m_GamePlay.FindAction("navigateUILeftCallbackInputs", throwIfNotFound: true);
-        m_GamePlay_MenuItemSelectionCallbackInputs = m_GamePlay.FindAction("MenuItemSelectionCallbackInputs", throwIfNotFound: true);
-        m_GamePlay_BackToPhoneHomeScreenCallbackInputs = m_GamePlay.FindAction("BackToPhoneHomeScreenCallbackInputs", throwIfNotFound: true);
-        m_GamePlay_TakePhoneOutOfPocketCallbackInputs = m_GamePlay.FindAction("TakePhoneOutOfPocketCallbackInputs", throwIfNotFound: true);
-        m_GamePlay_PutPhoneInPocketCallbackInputs = m_GamePlay.FindAction("PutPhoneInPocketCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_NavigatePhoneStepInCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepInCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_NavigatePhoneStepOutCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepOutCallbackInputs", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -451,15 +369,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_TurnRightCallbackInputs;
     private readonly InputAction m_GamePlay_TurnLeftCallbackInputs;
     private readonly InputAction m_GamePlay_AccelerateCallbackInputs;
-    private readonly InputAction m_GamePlay_PhoneOutInCallbackInputs;
     private readonly InputAction m_GamePlay_navigateUIUpCallbackInputs;
     private readonly InputAction m_GamePlay_navigateUIRightCallbackInputs;
     private readonly InputAction m_GamePlay_navigateUIDownCallbackInputs;
     private readonly InputAction m_GamePlay_navigateUILeftCallbackInputs;
-    private readonly InputAction m_GamePlay_MenuItemSelectionCallbackInputs;
-    private readonly InputAction m_GamePlay_BackToPhoneHomeScreenCallbackInputs;
-    private readonly InputAction m_GamePlay_TakePhoneOutOfPocketCallbackInputs;
-    private readonly InputAction m_GamePlay_PutPhoneInPocketCallbackInputs;
+    private readonly InputAction m_GamePlay_NavigatePhoneStepInCallbackInputs;
+    private readonly InputAction m_GamePlay_NavigatePhoneStepOutCallbackInputs;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -468,15 +383,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @TurnRightCallbackInputs => m_Wrapper.m_GamePlay_TurnRightCallbackInputs;
         public InputAction @TurnLeftCallbackInputs => m_Wrapper.m_GamePlay_TurnLeftCallbackInputs;
         public InputAction @AccelerateCallbackInputs => m_Wrapper.m_GamePlay_AccelerateCallbackInputs;
-        public InputAction @PhoneOutInCallbackInputs => m_Wrapper.m_GamePlay_PhoneOutInCallbackInputs;
         public InputAction @navigateUIUpCallbackInputs => m_Wrapper.m_GamePlay_navigateUIUpCallbackInputs;
         public InputAction @navigateUIRightCallbackInputs => m_Wrapper.m_GamePlay_navigateUIRightCallbackInputs;
         public InputAction @navigateUIDownCallbackInputs => m_Wrapper.m_GamePlay_navigateUIDownCallbackInputs;
         public InputAction @navigateUILeftCallbackInputs => m_Wrapper.m_GamePlay_navigateUILeftCallbackInputs;
-        public InputAction @MenuItemSelectionCallbackInputs => m_Wrapper.m_GamePlay_MenuItemSelectionCallbackInputs;
-        public InputAction @BackToPhoneHomeScreenCallbackInputs => m_Wrapper.m_GamePlay_BackToPhoneHomeScreenCallbackInputs;
-        public InputAction @TakePhoneOutOfPocketCallbackInputs => m_Wrapper.m_GamePlay_TakePhoneOutOfPocketCallbackInputs;
-        public InputAction @PutPhoneInPocketCallbackInputs => m_Wrapper.m_GamePlay_PutPhoneInPocketCallbackInputs;
+        public InputAction @NavigatePhoneStepInCallbackInputs => m_Wrapper.m_GamePlay_NavigatePhoneStepInCallbackInputs;
+        public InputAction @NavigatePhoneStepOutCallbackInputs => m_Wrapper.m_GamePlay_NavigatePhoneStepOutCallbackInputs;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -498,9 +410,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @AccelerateCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerateCallbackInputs;
                 @AccelerateCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerateCallbackInputs;
                 @AccelerateCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnAccelerateCallbackInputs;
-                @PhoneOutInCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutInCallbackInputs;
-                @PhoneOutInCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutInCallbackInputs;
-                @PhoneOutInCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPhoneOutInCallbackInputs;
                 @navigateUIUpCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUpCallbackInputs;
                 @navigateUIUpCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUpCallbackInputs;
                 @navigateUIUpCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUIUpCallbackInputs;
@@ -513,18 +422,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @navigateUILeftCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeftCallbackInputs;
                 @navigateUILeftCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeftCallbackInputs;
                 @navigateUILeftCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigateUILeftCallbackInputs;
-                @MenuItemSelectionCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
-                @MenuItemSelectionCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
-                @MenuItemSelectionCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnMenuItemSelectionCallbackInputs;
-                @BackToPhoneHomeScreenCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
-                @BackToPhoneHomeScreenCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
-                @BackToPhoneHomeScreenCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnBackToPhoneHomeScreenCallbackInputs;
-                @TakePhoneOutOfPocketCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTakePhoneOutOfPocketCallbackInputs;
-                @TakePhoneOutOfPocketCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTakePhoneOutOfPocketCallbackInputs;
-                @TakePhoneOutOfPocketCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTakePhoneOutOfPocketCallbackInputs;
-                @PutPhoneInPocketCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPutPhoneInPocketCallbackInputs;
-                @PutPhoneInPocketCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPutPhoneInPocketCallbackInputs;
-                @PutPhoneInPocketCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPutPhoneInPocketCallbackInputs;
+                @NavigatePhoneStepInCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepInCallbackInputs;
+                @NavigatePhoneStepInCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepInCallbackInputs;
+                @NavigatePhoneStepInCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepInCallbackInputs;
+                @NavigatePhoneStepOutCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepOutCallbackInputs;
+                @NavigatePhoneStepOutCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepOutCallbackInputs;
+                @NavigatePhoneStepOutCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepOutCallbackInputs;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -541,9 +444,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @AccelerateCallbackInputs.started += instance.OnAccelerateCallbackInputs;
                 @AccelerateCallbackInputs.performed += instance.OnAccelerateCallbackInputs;
                 @AccelerateCallbackInputs.canceled += instance.OnAccelerateCallbackInputs;
-                @PhoneOutInCallbackInputs.started += instance.OnPhoneOutInCallbackInputs;
-                @PhoneOutInCallbackInputs.performed += instance.OnPhoneOutInCallbackInputs;
-                @PhoneOutInCallbackInputs.canceled += instance.OnPhoneOutInCallbackInputs;
                 @navigateUIUpCallbackInputs.started += instance.OnNavigateUIUpCallbackInputs;
                 @navigateUIUpCallbackInputs.performed += instance.OnNavigateUIUpCallbackInputs;
                 @navigateUIUpCallbackInputs.canceled += instance.OnNavigateUIUpCallbackInputs;
@@ -556,18 +456,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @navigateUILeftCallbackInputs.started += instance.OnNavigateUILeftCallbackInputs;
                 @navigateUILeftCallbackInputs.performed += instance.OnNavigateUILeftCallbackInputs;
                 @navigateUILeftCallbackInputs.canceled += instance.OnNavigateUILeftCallbackInputs;
-                @MenuItemSelectionCallbackInputs.started += instance.OnMenuItemSelectionCallbackInputs;
-                @MenuItemSelectionCallbackInputs.performed += instance.OnMenuItemSelectionCallbackInputs;
-                @MenuItemSelectionCallbackInputs.canceled += instance.OnMenuItemSelectionCallbackInputs;
-                @BackToPhoneHomeScreenCallbackInputs.started += instance.OnBackToPhoneHomeScreenCallbackInputs;
-                @BackToPhoneHomeScreenCallbackInputs.performed += instance.OnBackToPhoneHomeScreenCallbackInputs;
-                @BackToPhoneHomeScreenCallbackInputs.canceled += instance.OnBackToPhoneHomeScreenCallbackInputs;
-                @TakePhoneOutOfPocketCallbackInputs.started += instance.OnTakePhoneOutOfPocketCallbackInputs;
-                @TakePhoneOutOfPocketCallbackInputs.performed += instance.OnTakePhoneOutOfPocketCallbackInputs;
-                @TakePhoneOutOfPocketCallbackInputs.canceled += instance.OnTakePhoneOutOfPocketCallbackInputs;
-                @PutPhoneInPocketCallbackInputs.started += instance.OnPutPhoneInPocketCallbackInputs;
-                @PutPhoneInPocketCallbackInputs.performed += instance.OnPutPhoneInPocketCallbackInputs;
-                @PutPhoneInPocketCallbackInputs.canceled += instance.OnPutPhoneInPocketCallbackInputs;
+                @NavigatePhoneStepInCallbackInputs.started += instance.OnNavigatePhoneStepInCallbackInputs;
+                @NavigatePhoneStepInCallbackInputs.performed += instance.OnNavigatePhoneStepInCallbackInputs;
+                @NavigatePhoneStepInCallbackInputs.canceled += instance.OnNavigatePhoneStepInCallbackInputs;
+                @NavigatePhoneStepOutCallbackInputs.started += instance.OnNavigatePhoneStepOutCallbackInputs;
+                @NavigatePhoneStepOutCallbackInputs.performed += instance.OnNavigatePhoneStepOutCallbackInputs;
+                @NavigatePhoneStepOutCallbackInputs.canceled += instance.OnNavigatePhoneStepOutCallbackInputs;
             }
         }
     }
@@ -596,14 +490,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnTurnRightCallbackInputs(InputAction.CallbackContext context);
         void OnTurnLeftCallbackInputs(InputAction.CallbackContext context);
         void OnAccelerateCallbackInputs(InputAction.CallbackContext context);
-        void OnPhoneOutInCallbackInputs(InputAction.CallbackContext context);
         void OnNavigateUIUpCallbackInputs(InputAction.CallbackContext context);
         void OnNavigateUIRightCallbackInputs(InputAction.CallbackContext context);
         void OnNavigateUIDownCallbackInputs(InputAction.CallbackContext context);
         void OnNavigateUILeftCallbackInputs(InputAction.CallbackContext context);
-        void OnMenuItemSelectionCallbackInputs(InputAction.CallbackContext context);
-        void OnBackToPhoneHomeScreenCallbackInputs(InputAction.CallbackContext context);
-        void OnTakePhoneOutOfPocketCallbackInputs(InputAction.CallbackContext context);
-        void OnPutPhoneInPocketCallbackInputs(InputAction.CallbackContext context);
+        void OnNavigatePhoneStepInCallbackInputs(InputAction.CallbackContext context);
+        void OnNavigatePhoneStepOutCallbackInputs(InputAction.CallbackContext context);
     }
 }

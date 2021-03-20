@@ -7,7 +7,7 @@ public class WayPointCheatTeleportMe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.LogWarning("TeleportCheatScript is available. Remove before Release. Press 'J' to activate");
+        //Debug.LogWarning("TeleportCheatScript is available. Remove before Release. Press 'J' to activate");
     }
 
     // Update is called once per frame

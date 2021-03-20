@@ -38,14 +38,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "PhoneOutInCallbackInputs",
-                    "type": "Button",
-                    "id": "81db9e80-2761-43b8-9d3f-fa8c82f8c2ba",
-                    "expectedControlType": "Button",
-                    "processors": "StickDeadzone",
-                    "interactions": ""
-                },
-                {
                     "name": "navigateUIUpCallbackInputs",
                     "type": "Button",
                     "id": "00534eff-b106-4ac2-82fb-ffb0a478a9bc",
@@ -78,23 +70,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MenuItemSelectionCallbackInputs",
-                    "type": "Button",
-                    "id": "d8a70795-3793-4a6d-9980-74a35ea70b41",
-                    "expectedControlType": "Button",
-                    "processors": "StickDeadzone",
-                    "interactions": ""
-                },
-                {
-                    "name": "BackToPhoneHomeScreenCallbackInputs",
-                    "type": "Button",
-                    "id": "cdc4f854-8089-4e04-a1ae-38d9bb222700",
-                    "expectedControlType": "Button",
-                    "processors": "StickDeadzone",
-                    "interactions": ""
-                },
-                {
-                    "name": "TakePhoneOutOfPocketCallbackInputs",
+                    "name": "NavigatePhoneStepInCallbackInputs",
                     "type": "Button",
                     "id": "eeb052d3-7302-4cf4-9ffb-016e61b8fd2f",
                     "expectedControlType": "Button",
@@ -102,7 +78,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "PutPhoneInPocketCallbackInputs",
+                    "name": "NavigatePhoneStepOutCallbackInputs",
                     "type": "Button",
                     "id": "aaa5a70c-3f48-43cb-8f6c-b88d6cfed737",
                     "expectedControlType": "Button",
@@ -212,17 +188,6 @@
                 },
                 {
                     "name": "",
-                    "id": "61f993ba-1a0f-444d-af9f-e3d7c686f06c",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PhoneOutInCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "ba289ce8-3860-407a-95e8-3c0cfe0d53fb",
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
@@ -278,56 +243,12 @@
                 },
                 {
                     "name": "",
-                    "id": "ed9fc1d4-c92d-421f-8bf4-085f847b8d1e",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "MenuItemSelectionCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d9a0b28c-5938-43ab-978f-7c20f113c55a",
-                    "path": "<Keyboard>/m",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "New control scheme",
-                    "action": "MenuItemSelectionCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2719e938-290a-4f8d-bc1c-2cbd3fcdbead",
-                    "path": "<Keyboard>/b",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "New control scheme",
-                    "action": "BackToPhoneHomeScreenCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b6170a80-b429-48b3-81d9-92fde37d1cbe",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "BackToPhoneHomeScreenCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "28819c24-f48a-4e4b-8ffc-8ccf7884e4cd",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "TakePhoneOutOfPocketCallbackInputs",
+                    "action": "NavigatePhoneStepInCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -338,7 +259,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "PutPhoneInPocketCallbackInputs",
+                    "action": "NavigatePhoneStepOutCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

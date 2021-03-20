@@ -105,22 +105,31 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnTakePhoneOutOfPocketCallbackInputs()
     {
-        scooterDriveScript.TakePhoneOutOfPocket();
+        //scooterDriveScript.TakePhoneOutOfPocket();
     }   
 
-    public void OnPutPhoneInPocket()
-    {
-        if (putPhoneInPocketButtonAlreadyPressedThisFrame)
-        {
-            Debug.Log("phone in pocket already pressed this frame");
-        }   
-        else
-        {
-            Debug.Log("phone in pocket button not pressed yet this frame");
-        }    
+    //public void OnPutPhoneInPocket()
+    //{
+    //    //if (putPhoneInPocketButtonAlreadyPressedThisFrame)
+    //    //{
+    //    //    Debug.Log("phone in pocket already pressed this frame");
+    //    //}   
+    //    //else
+    //    //{
+    //    //    Debug.Log("phone in pocket button not pressed yet this frame");
+    //    //}    
+    //    Debug.Log("scooterDriveScript.phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + scooterDriveScript.phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
         
-        //scooterDriveScript.PutPhoneInPocket();
-    }    
+    //    if (!scooterDriveScript.phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
+    //    {
+    //        return;
+    //    }   
+    //    else
+    //    {
+    //        scooterDriveScript.PutPhoneInPocket();
+    //    }    
+        
+    //}    
     
     public void OnNavigateUIUpCallbackInputs(CallbackContext context)
     {
@@ -150,19 +159,19 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.HandleNavigateUILeft();
         }
     }
-    public void OnSelectItemFromMenuButtonPressedCallbackInputs(CallbackContext context)
+    public void OnNavigatePhoneStepInCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
-            scooterDriveScript.HandleMenuItemSelectButtonPressed();
+            scooterDriveScript.HandleNavigatePhoneStepIn();
         }
     }
 
-    public void OnBackToPhoneHomeScreenCallbackInputs(CallbackContext context)
+    public void OnNavigatePhoneStepOutCallbackInputs(CallbackContext context)
     {
         if (context.performed)
         {
-            scooterDriveScript.HandleBackToPhoneHomeScreen();
+            scooterDriveScript.HandleNavigatePhoneStepOut();
         }
     }
 }

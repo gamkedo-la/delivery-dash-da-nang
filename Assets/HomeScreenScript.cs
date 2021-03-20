@@ -82,78 +82,6 @@ public class HomeScreenScript : MonoBehaviour
         
     }
 
-    public void handleHomeScreenGamepadNavigation()
-    {
-        if (OrdersButton.activeInHierarchy)
-        {
-            Debug.Log("yooooo");
-            //if (dPadRightPressed)
-            //{
-            //    OrdersButton.transform.GetChild(1).SetActive(false);
-            //}
-        }
-        //        GPSButton.transform.GetChild(1).SetActive(true);
-        //    }
-
-        //    else if (dPadPressedDown)
-        //    {
-        //        AlertsButton.transform.GetChild(1).SetActive(true);
-        //        OrdersButton.transform.GetChild(1).SetActive(false);
-        //    }
-
-        //    else
-        //    {
-        //        dPadUpPressed = false;
-        //        dPadRightPressed = false;
-        //        dPadDownPressed = false;
-        //        dpadLeftPressed = false;
-        //        return;
-        //    }
-        //}
-
-        //else if (GPSButton.transform.GetChild(1).active)
-        //{
-        //    if (dPadLeftPressed)
-        //    {
-        //        OrdersButton.transform.GetChild(1).SetActive(true);
-        //        GPSButton.transform.GetChild(1).SetActive(false);
-        //    }
-        //    else if (dPadDownPressed)
-        //    {
-        //        GPSButton.transform.GetChild(1).SetActive(false);
-        //        TBDButton.transform.GetChild(1).SetActive(true);
-        //    }
-
-        //    else
-        //    {
-        //        dPadUpPressed = false;
-        //        dPadRightPressed = false;
-        //        dPadDownPressed = false;
-        //        dpadLeftPressed = false;
-        //        return;
-        //    }
-        //}
-
-        //else if (AlertsButton.transform.GetChild(1).active)
-        //{
-        //    if (dPadUpPressed)
-        //    {
-        //        OrdersButton.transform.GetChild(1).SetActive(true);
-        //        AlertsButton.transform.GetChild(1).SetActive(false);
-        //    }
-        //    else if (dPadRightPressed)
-        //    {
-
-        //    }
-        //}
-
-
-        dPadUpPressed = false;
-        dPadRightPressed = false;
-        dPadDownPressed = false;
-        dPadLeftPressed = false;
-    }
-
     void Update()
     {
         if (dPadUpPressed)
@@ -248,20 +176,7 @@ public class HomeScreenScript : MonoBehaviour
             }
             UpdateHighlights();
             dPadLeftPressed = false;
-        }
-        //Debug.Log("currentActiveButtonIndex: " + currentActiveButtonIndex);
-
-        /* if (inputHandler.OnAccelerate(CallbackContext context))
-         {
-             ButtonPressed();
-         }*/
-
-        //THIS IS A TEST, PLEASE REMOVE
-        //if (Input.GetKeyDown(KeyCode.M))
-        //{
-        //    ButtonPressed();
-        //}
-        
+        }        
     }
 
     public void ButtonPressed()

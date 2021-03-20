@@ -157,6 +157,7 @@ public class ScooterDrive : MonoBehaviour
 
     void Start()
     {
+        phone.SetBool("PhoneOn", false);
         //RestartAtSpawn();
         driverID = GetComponent<DeliveryDriver>();
 
@@ -205,37 +206,7 @@ public class ScooterDrive : MonoBehaviour
         
     //}
 
-    public void TakePhoneOutOfPocket()
-    {
-        if (phone.GetBool("PhoneOn"))
-        {
-            return;
-        }   
-        
-        AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
-        
-        phone.SetBool("PhoneOn", true);
-        phoneActive = true;
-    }    
-
-    public void PutPhoneInPocket()
-    {
-        Debug.Log("gameObject.name: " + gameObject.name);
-        Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
-        //check if phone or homescreen is active before attempting to put the phone away
-        Debug.Log("gameObject.activeInHierarchy: " + gameObject.activeInHierarchy);
-        Debug.Log("phone.GetBool('PhoneOn'): " + phone.GetBool("PhoneOn"));
-        if (!phone.GetBool("PhoneOn") || !phoneGameObject.transform.GetChild(3).gameObject.activeSelf || !gameObject.activeInHierarchy)
-        {
-            Debug.Log("returning from phone off or homescreen inactive check");
-            return;
-        }
-
-        AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
-        
-        phone.SetBool("PhoneOn", false);
-        phoneActive = false;
-    }    
+    
 
     // Update is called once per frame
     void Update()
@@ -258,7 +229,7 @@ public class ScooterDrive : MonoBehaviour
                 {
                     return;
                 }
-                TakePhoneOutOfPocket();
+                //TakePhoneOutOfPocket();
             }
         }
 
@@ -796,36 +767,104 @@ public class ScooterDrive : MonoBehaviour
         CheckIfPhoneIsActive();
     }
 
-    public void HandleMenuItemSelectButtonPressed()
-    {
-        if (!phone.GetBool("PhoneOn") || !phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
-        {
-            Debug.Log("returning from button pressed while phone or home screen inactive");
-            return;
-        }
-        homeScreenScript.ButtonPressed();
-    }
 
-    public void HandleBackToPhoneHomeScreen()
-    {
-        //Debug.Log("gameObject.name: " + gameObject.name);
-        //Debug.Log("gameObject.GetComponentInChildren<PhoneScript>(): " + gameObject.GetComponentInChildren<PhoneScript>());
-        //Debug.Log("gameObject.GetComponentInChildren<PhoneScript>().HomeScreen: " + gameObject.GetComponentInChildren<PhoneScript>().HomeScreen);
-        //gameObject.GetComponentInChildren<PhoneScript>().HomeScreen.SetActive(true);
-        //gameObject.GetComponentInChildren<PhoneScript>().GPSMenu.SetActive(false);
-        //gameObject.GetComponentInChildren<PhoneScript>().OrdersMenu.SetActive(false);
-        //gameObject.GetComponentInChildren<PhoneScript>().RatingsScreen.SetActive(false);
-        //gameObject.GetComponentInChildren<PhoneScript>().CurrentScores.SetActive(false);
-        //gameObject.GetComponentInChildren<PhoneScript>().OrdersBack();
-        if (!phone.GetBool("PhoneOn") || phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
-        {
-            return;
-        }
-        phoneCanvas.GetComponentInParent<PhoneScript>().HomeScreen.SetActive(true);
-        phoneCanvas.GetComponentInParent<PhoneScript>().GPSMenu.SetActive(false);
-        phoneCanvas.GetComponentInParent<PhoneScript>().OrdersMenu.SetActive(false);
-        phoneCanvas.GetComponentInParent<PhoneScript>().RatingsScreen.SetActive(false);
-        phoneCanvas.GetComponentInParent<PhoneScript>().CurrentScores.SetActive(false);
+    //public void TakePhoneOutOfPocket()
+    //{
         
-    }
+
+        
+    //}
+
+    //public void PutPhoneInPocket()
+    //{
+    //    //Debug.Log("gameObject.name: " + gameObject.name);
+    //    //Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
+    //    //check if phone or homescreen is active before attempting to put the phone away
+    //    //Debug.Log("gameObject.activeInHierarchy: " + gameObject.activeInHierarchy);
+    //    //Debug.Log("phone.GetBool('PhoneOn'): " + phone.GetBool("PhoneOn"));
+
+    //    //4 5 11 12... if any of this stuff is open, the home screen should not be active
+    //    if (
+    //        phoneGameObject.transform.GetChild(4).gameObject.activeSelf ||  //orders menu
+    //        phoneGameObject.transform.GetChild(5).gameObject.activeSelf ||  //gps screen 
+    //        phoneGameObject.transform.GetChild(11).gameObject.activeSelf ||  //ratings screen
+    //        phoneGameObject.transform.GetChild(12).gameObject.activeSelf // scores screen
+    //        )
+    //    {
+    //        phone.SetBool("PhoneOn", false);
+    //        phoneGameObject.transform.GetChild(3).gameObject.SetActive(false);
+    //    }
+
+    //    if (!phone.GetBool("PhoneOn") || !phoneGameObject.transform.GetChild(3).gameObject.activeSelf/* || !gameObject.activeInHierarchy*/)
+    //    {
+    //        //Debug.Log("returning from phone off or homescreen inactive check");
+    //        return;
+    //    }
+
+        
+    //}
+
+    public void HandleNavigatePhoneStepIn()
+    {
+        
+        if (!phone.GetBool("PhoneOn"))
+        {
+            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
+            phone.SetBool("PhoneOn", true);
+            phoneActive = true;
+        }    
+        else if (phone.GetBool("PhoneOn") && phoneGameObject.transform.GetChild(3).gameObject.activeSelf)//homescreen
+        {
+            homeScreenScript.ButtonPressed();
+        }    
+    }   
+    
+    public void HandleNavigatePhoneStepOut()
+    {
+        //if phone on and homescreen off, we must be on a different screen, so go back to the homescreen
+        if (phone.GetBool("PhoneOn") || !phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
+        {
+            //go back to home screen
+            phoneCanvas.GetComponentInParent<PhoneScript>().HomeScreen.SetActive(true);
+            phoneCanvas.GetComponentInParent<PhoneScript>().GPSMenu.SetActive(false);
+            phoneCanvas.GetComponentInParent<PhoneScript>().OrdersMenu.SetActive(false);
+            phoneCanvas.GetComponentInParent<PhoneScript>().RatingsScreen.SetActive(false);
+            phoneCanvas.GetComponentInParent<PhoneScript>().CurrentScores.SetActive(false);
+        }
+
+        //if phone on and homescreen on, put the phone away
+        if (phone.GetBool("PhoneOn") || phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
+        {
+            //put phone away
+            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
+            phone.SetBool("PhoneOn", false);
+            phoneActive = false;
+        }    
+    }    
+    //public void HandleMenuItemSelectButtonPressed()
+    //{
+    //    //Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
+    //    //if (!phone.GetBool("PhoneOn"))
+    //    //{
+    //    //    Debug.Log("returning from button pressed while phone or home screen inactive");
+    //    //    return;
+    //    //}
+        
+    //}
+
+    //public void HandleBackToPhoneHomeScreen()
+    //{
+    //    //Debug.Log("gameObject.name: " + gameObject.name);
+    //    //Debug.Log("gameObject.GetComponentInChildren<PhoneScript>(): " + gameObject.GetComponentInChildren<PhoneScript>());
+    //    //Debug.Log("gameObject.GetComponentInChildren<PhoneScript>().HomeScreen: " + gameObject.GetComponentInChildren<PhoneScript>().HomeScreen);
+    //    //gameObject.GetComponentInChildren<PhoneScript>().HomeScreen.SetActive(true);
+    //    //gameObject.GetComponentInChildren<PhoneScript>().GPSMenu.SetActive(false);
+    //    //gameObject.GetComponentInChildren<PhoneScript>().OrdersMenu.SetActive(false);
+    //    //gameObject.GetComponentInChildren<PhoneScript>().RatingsScreen.SetActive(false);
+    //    //gameObject.GetComponentInChildren<PhoneScript>().CurrentScores.SetActive(false);
+    //    //gameObject.GetComponentInChildren<PhoneScript>().OrdersBack();
+        
+        
+        
+    //}
 }
