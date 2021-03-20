@@ -901,6 +901,62 @@ public class ScooterDrive : MonoBehaviour
         {
             homeScreenScript.ButtonPressed();
         }    
+        else if (phone.GetBool("PhoneOn") && ordersScreen.activeSelf)//ordersScreen
+        {
+            Debug.Log("inside ordersScreen ActiveSelf check");
+            if (gameObject.name == "Player1")
+            {
+                Debug.Log("inside check for Player1");
+                for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
+                {
+                    if (individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrder>().isFocusedOn)
+                    {
+                        individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrder>().OrderAccepted();
+                        return;
+                    }
+                }
+            }
+            else if (gameObject.name == "Player2")
+            {
+                Debug.Log("inside check for Player2");
+
+                for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
+                {
+                    if (individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrderPlayer2>().isFocusedOn)
+                    {
+                        individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrderPlayer2>().OrderAccepted();
+                        return;
+                    }
+                }
+            }
+            else if (gameObject.name == "Player3")
+            {
+                Debug.Log("inside check for Player3");
+
+                for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
+                {
+                    if (individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrderPlayer3>().isFocusedOn)
+                    {
+                        individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrderPlayer3>().OrderAccepted();
+                        return;
+                    }
+                }
+            }
+            else if (gameObject.name == "Player4")
+            {
+                Debug.Log("inside check for Player4");
+
+                for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
+                {
+                    if (individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrderPlayer4>().isFocusedOn)
+                    {
+                        individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrderPlayer4>().OrderAccepted();
+                        return;
+                    }
+                }
+            }
+
+        }
     }   
     
     public void HandleNavigatePhoneStepOut()
