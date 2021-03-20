@@ -100,6 +100,8 @@ public class ScooterDrive : MonoBehaviour
 
     DeliveryDriver driverID;
 
+    public GameObject phoneCanvas;
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -778,7 +780,12 @@ public class ScooterDrive : MonoBehaviour
         //gameObject.GetComponentInChildren<PhoneScript>().OrdersMenu.SetActive(false);
         //gameObject.GetComponentInChildren<PhoneScript>().RatingsScreen.SetActive(false);
         //gameObject.GetComponentInChildren<PhoneScript>().CurrentScores.SetActive(false);
-        gameObject.GetComponentInChildren<PhoneScript>().OrdersBack();
+        //gameObject.GetComponentInChildren<PhoneScript>().OrdersBack();
+        phoneCanvas.GetComponentInParent<PhoneScript>().HomeScreen.SetActive(true);
+        phoneCanvas.GetComponentInParent<PhoneScript>().GPSMenu.SetActive(false);
+        phoneCanvas.GetComponentInParent<PhoneScript>().OrdersMenu.SetActive(false);
+        phoneCanvas.GetComponentInParent<PhoneScript>().RatingsScreen.SetActive(false);
+        phoneCanvas.GetComponentInParent<PhoneScript>().CurrentScores.SetActive(false);
         
     }
 }
