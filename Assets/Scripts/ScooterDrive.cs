@@ -105,6 +105,9 @@ public class ScooterDrive : MonoBehaviour
     public GameObject phoneGameObject;
 
     public GameObject homeScreen;
+    public GameObject ordersScreen;
+    public GameObject individualOrdersHolder;
+    public int focusedOrderIndex = 0;
 
     private void Awake()
     {
@@ -747,9 +750,35 @@ public class ScooterDrive : MonoBehaviour
             homeScreenScript.dPadUpPressed = true;
             homeScreenScript.handleGamepadUINavigation();
         }
-        else
+        else if (ordersScreen.activeSelf)
         {
-            Debug.Log("homescreen inactive: insert other dpad navigation code here");
+            
+            
+            focusedOrderIndex--;
+            if (focusedOrderIndex < 0)
+            {
+                focusedOrderIndex = 0;
+            }
+            if (gameObject.name == "Player1")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrder>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex + 1).GetComponent<PrefabOrder>().isFocusedOn = false;
+            }
+            else if (gameObject.name == "Player2")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrderPlayer2>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex + 1).GetComponent<PrefabOrderPlayer2>().isFocusedOn = false;
+            }
+            else if (gameObject.name == "Player3")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrderPlayer3>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex + 1).GetComponent<PrefabOrderPlayer3>().isFocusedOn = false;
+            }
+            else if (gameObject.name == "Player4")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrderPlayer4>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex + 1).GetComponent<PrefabOrderPlayer4>().isFocusedOn = false;
+            }
         }
         
         //CheckIfPhoneIsActive();
@@ -762,9 +791,34 @@ public class ScooterDrive : MonoBehaviour
             homeScreenScript.dPadDownPressed = true;
             homeScreenScript.handleGamepadUINavigation();
         }
-        else
+        else if (ordersScreen.activeSelf)
         {
-            Debug.Log("homescreen inactive: insert other dpad navigation code here");
+            focusedOrderIndex++;
+            if (focusedOrderIndex > individualOrdersHolder.transform.childCount - 1)
+            {
+                focusedOrderIndex = individualOrdersHolder.transform.childCount - 1;
+            }
+
+            if (gameObject.name == "Player1")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrder>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex - 1).GetComponent<PrefabOrder>().isFocusedOn = false;
+            }
+            else if (gameObject.name == "Player2")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrderPlayer2>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex - 1).GetComponent<PrefabOrderPlayer2>().isFocusedOn = false;
+            }
+            else if (gameObject.name == "Player3")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrderPlayer3>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex - 1).GetComponent<PrefabOrderPlayer3>().isFocusedOn = false;
+            }
+            else if (gameObject.name == "Player4")
+            {
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex).GetComponent<PrefabOrderPlayer4>().isFocusedOn = true;
+                individualOrdersHolder.transform.GetChild(focusedOrderIndex - 1).GetComponent<PrefabOrderPlayer4>().isFocusedOn = false;
+            }
         }
         //CheckIfPhoneIsActive();
     }
