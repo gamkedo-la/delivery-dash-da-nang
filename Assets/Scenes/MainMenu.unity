@@ -796,6 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuCamera: {fileID: 1122746529}
+  isEnterPressed: 0
 --- !u!114 &400290782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4974,6 +4975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuCamera: {fileID: 1122746529}
+  isEnterPressed: 0
 --- !u!114 &1240551875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5798,6 +5800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuCamera: {fileID: 1122746529}
+  isEnterPressed: 0
 --- !u!114 &1353952858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6127,7 +6130,18 @@ MonoBehaviour:
     m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1386241845}
+        m_MethodName: OnStartGameCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e5111e09-fef1-444d-97a4-8cff302ac9f3
     m_ActionName: Main Menu/StartGameCallbackBindings[/XInputControllerWindows/start,/XInputControllerWindows/start,/XInputControllerWindows/start,/XInputControllerWindows/start]
   - m_PersistentCalls:
@@ -6152,6 +6166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuCamera: {fileID: 1122746529}
+  isEnterPressed: 0
 --- !u!1001 &1398214007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8032,6 +8047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuCamera: {fileID: 1122746529}
+  isEnterPressed: 0
 --- !u!114 &1794982041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9901,7 +9917,7 @@ MonoBehaviour:
     m_ActionName: Main Menu/BackToTitleScreenCallbackBindings[/XInputControllerWindows/select,/XInputControllerWindows/select,/XInputControllerWindows/select,/XInputControllerWindows/select]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
-  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_DefaultActionMap: Main Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &2123415380

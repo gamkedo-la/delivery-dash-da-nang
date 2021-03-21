@@ -101,6 +101,7 @@ public class MainMenu : MonoBehaviour
         }
         else if (gamecreation.activeSelf)
         {
+            Debug.Log("inside gamecreation.activeSelf check");
             startGame();
         }
     }

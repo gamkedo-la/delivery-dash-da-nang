@@ -12,6 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerInput playerInput;
     private ScooterDrive scooterDriveScript;
     public GameObject mainMenuCamera;
+    public bool isEnterPressed = false;
 
     // Start is called before the first frame update
     private void Awake()
@@ -199,8 +200,30 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnStartGameCallbackBindings(CallbackContext context)
     {
+        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        {
+            return;
+        }
+        
         if (context.performed)
         {
+            Debug.Log("enter key being recognized");
+            if (Input.GetKeyDown(KeyCode.KeypadEnter) && !isEnterPressed)
+            {
+                isEnterPressed = true;
+                // TODO
+                // your logic here when button pressed
+                GameObject.Find("Main Camera").GetComponent<MainMenu>().HandleStartButton();
+                return;
+            }
+
+            else if (Input.GetKeyUp(KeyCode.KeypadEnter) && isEnterPressed)
+            {
+                isEnterPressed = false;
+                // TODO
+                // your logic here when button released
+                return;
+            }
             GameObject.Find("Main Camera").GetComponent<MainMenu>().HandleStartButton();
         }
     }
@@ -209,6 +232,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.performed)
         {
+
             GameObject.Find("Main Camera").GetComponent<MainMenu>().gameCreateBack();
         }
     }
