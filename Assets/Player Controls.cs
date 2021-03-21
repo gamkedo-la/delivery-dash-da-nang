@@ -389,6 +389,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d1ba3918-96b4-4d9d-abd4-37f404a2d00f"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""StartGameCallbackBindings"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""67a49bf2-c246-4ede-894b-3596c28412c2"",
                     ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",

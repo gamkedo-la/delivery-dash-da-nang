@@ -31,7 +31,8 @@ public class PlayerInputHandler : MonoBehaviour
             }
 
         }
-        
+
+        Debug.Log("anything");
         //if (GetComponent<ScooterDrive>().playerIndex == index)
         //{
         //    scooterDriveScript = GetComponent<ScooterDrive>();
@@ -198,9 +199,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnStartGameCallbackBindings(CallbackContext context)
     {
-        Debug.Log("anything");
+        Debug.Log("anything from start button callback bindings");
         if (context.performed)
         {
+            Debug.Log("anything from start button context.performed");
+
             Debug.Log(GameObject.Find("Main Camera"));
             GameObject.Find("Main Camera").GetComponent<MainMenu>().HandleStartButton();
         }
