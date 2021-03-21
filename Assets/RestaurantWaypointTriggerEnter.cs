@@ -68,7 +68,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         {
             player.GetComponent<ScooterDrive>().AssignStars();
             float score = (player1TimeScore / player1TimeScoreMax) * 100;
-            float score2 = FoodHealth.currentHealth;
+            float score2 = FoodHealth.currentHealth1;
             finalScore = (score + score2) / 2;
             //
             if (receivedDriver != null)
@@ -115,7 +115,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
         }
 
-        if (FoodHealth.currentHealth < 0)
+        if (FoodHealth.currentHealth1 < 0)
         {
             //Order failed on Time
             orders.text = "Order Destroyed in Transit. Transaction Cancelled.";

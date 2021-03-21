@@ -109,6 +109,8 @@ public class ScooterDrive : MonoBehaviour
     public GameObject individualOrdersHolder;
     public int focusedOrderIndex = 0;
 
+    float tempScore;
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -613,7 +615,25 @@ public class ScooterDrive : MonoBehaviour
         }
         physicalOrder.SetActive(false);
 
-        float tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth) / 2;
+        if (player1)
+        {
+            tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth1) / 2;
+        }
+
+        if (player2)
+        {
+            tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth2) / 2;
+        }
+
+        if (player3)
+        {
+            tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth3) / 2;
+        }
+
+        if (player4)
+        {
+            tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth4) / 2;
+        }
 
         int starsAwarded = 0;
 
@@ -644,7 +664,7 @@ public class ScooterDrive : MonoBehaviour
             star5.SetActive(true);
             starsAwarded++;
         }
-        print(tempScore + ":" + driverID.scoreOnOrder + "+" + FoodHealth.currentHealth);
+       // print(tempScore + ":" + driverID.scoreOnOrder + "+" + FoodHealth.currentHealth);
 
         var rating = ratingsManager.CreateRating(starsAwarded);
         ratingsManager.AddRating(rating);
@@ -662,7 +682,23 @@ public class ScooterDrive : MonoBehaviour
         {
             Instantiate(collisionParticle, other.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position), transform.rotation);
             playerCurrentSpeed -= speedPenaltyPercent;
-            FoodHealth.currentHealth -= 5f;
+            if (player1)
+            {
+                FoodHealth.currentHealth1 -= 5f;
+            }
+            if (player2)
+            {
+                FoodHealth.currentHealth2 -= 5f;
+            }
+            if (player3)
+            {
+                FoodHealth.currentHealth3 -= 5f;
+            }
+            if (player4)
+            {
+                FoodHealth.currentHealth4 -= 5f;
+            }
+
             //print(playerCurrentSpeed);
         }
 
@@ -690,17 +726,63 @@ public class ScooterDrive : MonoBehaviour
         if (other.tag == "Building")
         {
             currentSpeed = 0;
+            if (player1)
+            {
+                FoodHealth.currentHealth1 -= 5f;
+            }
+            if (player2)
+            {
+                FoodHealth.currentHealth2 -= 5f;
+            }
+            if (player3)
+            {
+                FoodHealth.currentHealth3 -= 5f;
+            }
+            if (player4)
+            {
+                FoodHealth.currentHealth4 -= 5f;
+            }
         }
 
         if (other.tag == "Pedestrian")
         {
             currentSpeed = 0;
-            FoodHealth.currentHealth -= 5f;
+            if (player1)
+            {
+                FoodHealth.currentHealth1 -= 5f;
+            }
+            if (player2)
+            {
+                FoodHealth.currentHealth2 -= 5f;
+            }
+            if (player3)
+            {
+                FoodHealth.currentHealth3 -= 5f;
+            }
+            if (player4)
+            {
+                FoodHealth.currentHealth4 -= 5f;
+            }
         }
 
         if (other.tag == "AICar")
         {
-            FoodHealth.currentHealth -= 5f;
+            if (player1)
+            {
+                FoodHealth.currentHealth1 -= 5f;
+            }
+            if (player2)
+            {
+                FoodHealth.currentHealth2 -= 5f;
+            }
+            if (player3)
+            {
+                FoodHealth.currentHealth3 -= 5f;
+            }
+            if (player4)
+            {
+                FoodHealth.currentHealth4 -= 5f;
+            }
             currentSpeed = 0;
         }
     }
