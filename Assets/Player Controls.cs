@@ -408,6 +408,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""BackToTitleScreenCallbackBindings"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""575b93d9-97d2-488a-8fe4-52e3b5607df0"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""BackToTitleScreenCallbackBindings"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

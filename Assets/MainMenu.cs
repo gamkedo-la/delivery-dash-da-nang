@@ -95,8 +95,10 @@ public class MainMenu : MonoBehaviour
 
     public void HandleStartButton()
     {
+        Debug.Log("inside HandleStartButton");
         if (main.activeSelf)
         {
+            Debug.Log("inside main.activeSelfCheck");
             GameCreate();
         }
         else if (gamecreation.activeSelf)

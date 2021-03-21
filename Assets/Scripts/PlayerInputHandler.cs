@@ -13,6 +13,7 @@ public class PlayerInputHandler : MonoBehaviour
     private ScooterDrive scooterDriveScript;
     public GameObject mainMenuCamera;
     public bool isEnterPressed = false;
+    public bool isBackspacePressed = false;
 
     // Start is called before the first frame update
     private void Awake()
@@ -200,10 +201,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnStartGameCallbackBindings(CallbackContext context)
     {
-        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
-        {
-            return;
-        }
+        //if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        //{
+        //    return;
+        //}
         
         if (context.performed)
         {
@@ -232,7 +233,22 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.performed)
         {
+            if (Input.GetKeyDown(KeyCode.Backspace) && !isBackspacePressed)
+            {
+                isBackspacePressed = true;
+                // TODO
+                // your logic here when button pressed
+                GameObject.Find("Main Camera").GetComponent<MainMenu>().gameCreateBack();
+                return;
+            }
 
+            else if (Input.GetKeyUp(KeyCode.Backspace) && isBackspacePressed)
+            {
+                isBackspacePressed = false;
+                // TODO
+                // your logic here when button released
+                return;
+            }
             GameObject.Find("Main Camera").GetComponent<MainMenu>().gameCreateBack();
         }
     }
