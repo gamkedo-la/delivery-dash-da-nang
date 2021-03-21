@@ -313,6 +313,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""StartGameCallbackBindings"",
+                    ""type"": ""Button"",
+                    ""id"": ""e5111e09-fef1-444d-97a4-8cff302ac9f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""BackToTitleScreenCallbackBindings"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec061e4a-66e8-4489-bb3b-2d1d228c0fe0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -357,6 +373,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""CharacterSelectRightCallbackBindings"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a763c1d-95f8-4a1a-8e4f-28fd3b907d56"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""StartGameCallbackBindings"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67a49bf2-c246-4ede-894b-3596c28412c2"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""BackToTitleScreenCallbackBindings"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -406,6 +444,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_MainMenu_IncreasePlayerCountCallbackBindings = m_MainMenu.FindAction("IncreasePlayerCountCallbackBindings", throwIfNotFound: true);
         m_MainMenu_CharacterSelectLeftCallbackBindings = m_MainMenu.FindAction("CharacterSelectLeftCallbackBindings", throwIfNotFound: true);
         m_MainMenu_CharacterSelectRightCallbackBindings = m_MainMenu.FindAction("CharacterSelectRightCallbackBindings", throwIfNotFound: true);
+        m_MainMenu_StartGameCallbackBindings = m_MainMenu.FindAction("StartGameCallbackBindings", throwIfNotFound: true);
+        m_MainMenu_BackToTitleScreenCallbackBindings = m_MainMenu.FindAction("BackToTitleScreenCallbackBindings", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -564,6 +604,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_MainMenu_IncreasePlayerCountCallbackBindings;
     private readonly InputAction m_MainMenu_CharacterSelectLeftCallbackBindings;
     private readonly InputAction m_MainMenu_CharacterSelectRightCallbackBindings;
+    private readonly InputAction m_MainMenu_StartGameCallbackBindings;
+    private readonly InputAction m_MainMenu_BackToTitleScreenCallbackBindings;
     public struct MainMenuActions
     {
         private @PlayerControls m_Wrapper;
@@ -572,6 +614,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @IncreasePlayerCountCallbackBindings => m_Wrapper.m_MainMenu_IncreasePlayerCountCallbackBindings;
         public InputAction @CharacterSelectLeftCallbackBindings => m_Wrapper.m_MainMenu_CharacterSelectLeftCallbackBindings;
         public InputAction @CharacterSelectRightCallbackBindings => m_Wrapper.m_MainMenu_CharacterSelectRightCallbackBindings;
+        public InputAction @StartGameCallbackBindings => m_Wrapper.m_MainMenu_StartGameCallbackBindings;
+        public InputAction @BackToTitleScreenCallbackBindings => m_Wrapper.m_MainMenu_BackToTitleScreenCallbackBindings;
         public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -593,6 +637,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @CharacterSelectRightCallbackBindings.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectRightCallbackBindings;
                 @CharacterSelectRightCallbackBindings.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectRightCallbackBindings;
                 @CharacterSelectRightCallbackBindings.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectRightCallbackBindings;
+                @StartGameCallbackBindings.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnStartGameCallbackBindings;
+                @StartGameCallbackBindings.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnStartGameCallbackBindings;
+                @StartGameCallbackBindings.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnStartGameCallbackBindings;
+                @BackToTitleScreenCallbackBindings.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBackToTitleScreenCallbackBindings;
+                @BackToTitleScreenCallbackBindings.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBackToTitleScreenCallbackBindings;
+                @BackToTitleScreenCallbackBindings.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnBackToTitleScreenCallbackBindings;
             }
             m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -609,6 +659,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @CharacterSelectRightCallbackBindings.started += instance.OnCharacterSelectRightCallbackBindings;
                 @CharacterSelectRightCallbackBindings.performed += instance.OnCharacterSelectRightCallbackBindings;
                 @CharacterSelectRightCallbackBindings.canceled += instance.OnCharacterSelectRightCallbackBindings;
+                @StartGameCallbackBindings.started += instance.OnStartGameCallbackBindings;
+                @StartGameCallbackBindings.performed += instance.OnStartGameCallbackBindings;
+                @StartGameCallbackBindings.canceled += instance.OnStartGameCallbackBindings;
+                @BackToTitleScreenCallbackBindings.started += instance.OnBackToTitleScreenCallbackBindings;
+                @BackToTitleScreenCallbackBindings.performed += instance.OnBackToTitleScreenCallbackBindings;
+                @BackToTitleScreenCallbackBindings.canceled += instance.OnBackToTitleScreenCallbackBindings;
             }
         }
     }
@@ -650,5 +706,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnIncreasePlayerCountCallbackBindings(InputAction.CallbackContext context);
         void OnCharacterSelectLeftCallbackBindings(InputAction.CallbackContext context);
         void OnCharacterSelectRightCallbackBindings(InputAction.CallbackContext context);
+        void OnStartGameCallbackBindings(InputAction.CallbackContext context);
+        void OnBackToTitleScreenCallbackBindings(InputAction.CallbackContext context);
     }
 }

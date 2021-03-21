@@ -195,4 +195,20 @@ public class PlayerInputHandler : MonoBehaviour
             gameObject.GetComponent<PlayerCharacter>().HandleLeftAnalogPressedRight();
         }
     }
+
+    public void OnStartGameCallbackBindings(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            GameObject.Find("Main Camera").GetComponent<MainMenu>().startGame();
+        }
+    }
+
+    public void OnBackToTitleScreenCallbackBindings(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            GameObject.Find("Main Camera").GetComponent<MainMenu>().gameCreateBack();
+        }
+    }
 }

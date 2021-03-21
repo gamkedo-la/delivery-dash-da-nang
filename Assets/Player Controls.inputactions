@@ -300,6 +300,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "StartGameCallbackBindings",
+                    "type": "Button",
+                    "id": "e5111e09-fef1-444d-97a4-8cff302ac9f3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "BackToTitleScreenCallbackBindings",
+                    "type": "Button",
+                    "id": "ec061e4a-66e8-4489-bb3b-2d1d228c0fe0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -344,6 +360,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "CharacterSelectRightCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a763c1d-95f8-4a1a-8e4f-28fd3b907d56",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "StartGameCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67a49bf2-c246-4ede-894b-3596c28412c2",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BackToTitleScreenCallbackBindings",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
