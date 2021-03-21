@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &92894943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538196697377313910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &502963705127773561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53,17 +66,17 @@ PrefabInstance:
     - target: {fileID: 4035237400061456653, guid: 65e465a7c1b013644b5fd8b6a9870afe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1128.05
+      value: 134.55148
       objectReference: {fileID: 0}
     - target: {fileID: 4035237400061456653, guid: 65e465a7c1b013644b5fd8b6a9870afe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 140.00711
       objectReference: {fileID: 0}
     - target: {fileID: 4035237400061456653, guid: 65e465a7c1b013644b5fd8b6a9870afe,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -244
+      value: -213.5
       objectReference: {fileID: 0}
     - target: {fileID: 4035237400061456653, guid: 65e465a7c1b013644b5fd8b6a9870afe,
         type: 3}
@@ -105,5 +118,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parked Cars (76) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4035237400061456655, guid: 65e465a7c1b013644b5fd8b6a9870afe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65e465a7c1b013644b5fd8b6a9870afe, type: 3}
+--- !u!1 &4538196697377313910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4035237400061456655, guid: 65e465a7c1b013644b5fd8b6a9870afe,
+    type: 3}
+  m_PrefabInstance: {fileID: 502963705127773561}
+  m_PrefabAsset: {fileID: 0}
