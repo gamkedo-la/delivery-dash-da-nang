@@ -4002,7 +4002,7 @@ MonoBehaviour:
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_DefaultActionMap: Main Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1244116144
@@ -4671,7 +4671,7 @@ MonoBehaviour:
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_DefaultActionMap: Main Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1386241841
@@ -4873,7 +4873,7 @@ MonoBehaviour:
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_DefaultActionMap: Main Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1386241845
@@ -6372,7 +6372,7 @@ MonoBehaviour:
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_DefaultActionMap: Main Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1001 &1802144574
