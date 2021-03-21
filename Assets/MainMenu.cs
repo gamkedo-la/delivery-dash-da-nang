@@ -95,22 +95,18 @@ public class MainMenu : MonoBehaviour
 
     public void HandleStartButton()
     {
-        Debug.Log("inside HandleStartButton");
         if (main.activeSelf)
         {
-            Debug.Log("inside main.activeSelfCheck");
             GameCreate();
         }
         else if (gamecreation.activeSelf)
         {
-            Debug.Log("inside gamecreation.activeSelf check");
             startGame();
         }
     }
 
     public void increasePlayerCount()
     {
-        Debug.Log("increasePlayerCount triggered");
         playerCount++;
         if (playerCount > 4)
         {
@@ -121,7 +117,6 @@ public class MainMenu : MonoBehaviour
 
     public void decreasePlayerCount()
     {
-        Debug.Log("decreasePlayerCount triggered");
 
         playerCount--;
         if (playerCount < 1)

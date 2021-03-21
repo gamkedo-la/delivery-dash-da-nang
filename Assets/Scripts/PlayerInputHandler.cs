@@ -33,8 +33,7 @@ public class PlayerInputHandler : MonoBehaviour
             }
 
         }
-
-        Debug.Log("anything");
+        
         //if (GetComponent<ScooterDrive>().playerIndex == index)
         //{
         //    scooterDriveScript = GetComponent<ScooterDrive>();
@@ -208,7 +207,6 @@ public class PlayerInputHandler : MonoBehaviour
         
         if (context.performed)
         {
-            Debug.Log("enter key being recognized");
             if (Input.GetKeyDown(KeyCode.KeypadEnter) && !isEnterPressed)
             {
                 isEnterPressed = true;
