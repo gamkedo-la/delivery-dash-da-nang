@@ -58,10 +58,10 @@ public class MainMenu : MonoBehaviour
             player4.SetActive(true);
         }
 
-        if (Input.anyKeyDown)
-        {
-            GameCreate();
-        }
+        //if (Input.anyKeyDown)
+        //{
+        //    GameCreate();
+        //}
     }
 
     public void GameCreate()
@@ -80,25 +80,29 @@ public class MainMenu : MonoBehaviour
 
     public void startGame()
     {
-        if (!characterSelectionScreenIsActuallyFocusedOn)
+
+        //save player character 
+        //save player count (this is stored in playerCount)
+        print("PlayerCount:" + playerCount);
+        print("Player1Char:" + player1Character);
+        print("Player2Char:" + player2Character);
+        print("Player3Char:" + player3Character);
+        print("Player4Char:" + player4Character);
+        level.SetActive(true);
+        levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+        levelLoader.LoadNextLevel();
+    }
+
+    public void HandleStartButton()
+    {
+        if (main.activeSelf)
         {
-            Debug.Log("game recognizes that the character select screen is not focused on");
+            GameCreate();
         }
-        if (characterSelectionScreenIsActuallyFocusedOn)
+        else if (gamecreation.activeSelf)
         {
-            Debug.Log("character select is focused on");
-            //save player character 
-            //save player count (this is stored in playerCount)
-            //print("PlayerCount:" + playerCount);
-            //print("Player1Char:" + player1Character);
-            //print("Player2Char:" + player2Character);
-            //print("Player3Char:" + player3Character);
-            //print("Player4Char:" + player4Character);
-            //level.SetActive(true);
-            //levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
-            //levelLoader.LoadNextLevel();
+            startGame();
         }
-        
     }
 
     public void increasePlayerCount()

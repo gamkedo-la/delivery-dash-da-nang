@@ -198,9 +198,11 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnStartGameCallbackBindings(CallbackContext context)
     {
+        Debug.Log("anything");
         if (context.performed)
         {
-            GameObject.Find("Main Camera").GetComponent<MainMenu>().startGame();
+            Debug.Log(GameObject.Find("Main Camera"));
+            GameObject.Find("Main Camera").GetComponent<MainMenu>().HandleStartButton();
         }
     }
 
