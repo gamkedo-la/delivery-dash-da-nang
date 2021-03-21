@@ -277,6 +277,74 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Main Menu"",
+            ""id"": ""97cce64f-284c-4ff8-870e-211f48f8eba2"",
+            ""actions"": [
+                {
+                    ""name"": ""DecreasePlayerCountCallbackInputs"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb7bd35f-f346-46e4-a5cc-909efa8bf8f5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""IncreasePlayerCountCallbackInputs"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7aea94a-682b-4409-8e32-b8dedc0fd6a2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ec2a86a4-6c09-4239-aa52-67b663c92ce4"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""IncreasePlayerCountCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""858bb4cb-6377-42ae-84e8-db7dd84dd057"",
+                    ""path"": ""<Keyboard>/equals"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""IncreasePlayerCountCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03c3e2fe-a707-47f3-a3d9-e974a9135413"",
+                    ""path"": ""<Keyboard>/minus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""DecreasePlayerCountCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f0c786a-2ea5-45e2-a616-27289f80c7d2"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""DecreasePlayerCountCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -316,6 +384,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_navigateUILeftCallbackInputs = m_GamePlay.FindAction("navigateUILeftCallbackInputs", throwIfNotFound: true);
         m_GamePlay_NavigatePhoneStepInCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepInCallbackInputs", throwIfNotFound: true);
         m_GamePlay_NavigatePhoneStepOutCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepOutCallbackInputs", throwIfNotFound: true);
+        // Main Menu
+        m_MainMenu = asset.FindActionMap("Main Menu", throwIfNotFound: true);
+        m_MainMenu_DecreasePlayerCountCallbackInputs = m_MainMenu.FindAction("DecreasePlayerCountCallbackInputs", throwIfNotFound: true);
+        m_MainMenu_IncreasePlayerCountCallbackInputs = m_MainMenu.FindAction("IncreasePlayerCountCallbackInputs", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -466,6 +538,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public GamePlayActions @GamePlay => new GamePlayActions(this);
+
+    // Main Menu
+    private readonly InputActionMap m_MainMenu;
+    private IMainMenuActions m_MainMenuActionsCallbackInterface;
+    private readonly InputAction m_MainMenu_DecreasePlayerCountCallbackInputs;
+    private readonly InputAction m_MainMenu_IncreasePlayerCountCallbackInputs;
+    public struct MainMenuActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MainMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @DecreasePlayerCountCallbackInputs => m_Wrapper.m_MainMenu_DecreasePlayerCountCallbackInputs;
+        public InputAction @IncreasePlayerCountCallbackInputs => m_Wrapper.m_MainMenu_IncreasePlayerCountCallbackInputs;
+        public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMainMenuActions instance)
+        {
+            if (m_Wrapper.m_MainMenuActionsCallbackInterface != null)
+            {
+                @DecreasePlayerCountCallbackInputs.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnDecreasePlayerCountCallbackInputs;
+                @DecreasePlayerCountCallbackInputs.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnDecreasePlayerCountCallbackInputs;
+                @DecreasePlayerCountCallbackInputs.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnDecreasePlayerCountCallbackInputs;
+                @IncreasePlayerCountCallbackInputs.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnIncreasePlayerCountCallbackInputs;
+                @IncreasePlayerCountCallbackInputs.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnIncreasePlayerCountCallbackInputs;
+                @IncreasePlayerCountCallbackInputs.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnIncreasePlayerCountCallbackInputs;
+            }
+            m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @DecreasePlayerCountCallbackInputs.started += instance.OnDecreasePlayerCountCallbackInputs;
+                @DecreasePlayerCountCallbackInputs.performed += instance.OnDecreasePlayerCountCallbackInputs;
+                @DecreasePlayerCountCallbackInputs.canceled += instance.OnDecreasePlayerCountCallbackInputs;
+                @IncreasePlayerCountCallbackInputs.started += instance.OnIncreasePlayerCountCallbackInputs;
+                @IncreasePlayerCountCallbackInputs.performed += instance.OnIncreasePlayerCountCallbackInputs;
+                @IncreasePlayerCountCallbackInputs.canceled += instance.OnIncreasePlayerCountCallbackInputs;
+            }
+        }
+    }
+    public MainMenuActions @MainMenu => new MainMenuActions(this);
     private int m_GamepadSchemeIndex = -1;
     public InputControlScheme GamepadScheme
     {
@@ -496,5 +609,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigateUILeftCallbackInputs(InputAction.CallbackContext context);
         void OnNavigatePhoneStepInCallbackInputs(InputAction.CallbackContext context);
         void OnNavigatePhoneStepOutCallbackInputs(InputAction.CallbackContext context);
+    }
+    public interface IMainMenuActions
+    {
+        void OnDecreasePlayerCountCallbackInputs(InputAction.CallbackContext context);
+        void OnIncreasePlayerCountCallbackInputs(InputAction.CallbackContext context);
     }
 }

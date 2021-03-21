@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private PlayerInput playerInput;
     private ScooterDrive scooterDriveScript;
+    public GameObject mainMenuCamera;
 
     // Start is called before the first frame update
     private void Awake()
@@ -136,6 +137,24 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.performed)
         {
             scooterDriveScript.HandleNavigatePhoneStepOut();
+        }
+    }
+
+    public void OnIncreasePlayerCountCallbackInputs(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("right shoulder being recognized");
+            mainMenuCamera.GetComponent<InputControlsCharacterSelectScreen>().HandleRightShoulderButton();
+        }
+    }
+
+    public void OnDecreasePlayerCountCallbackInputs(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("left shoulder being recognized");
+            mainMenuCamera.GetComponent<InputControlsCharacterSelectScreen>().HandleLeftShoulderButton();
         }
     }
 }
