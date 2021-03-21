@@ -147,16 +147,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnIncreasePlayerCountCallbackInputs(CallbackContext context)
     {
-        //if (context.phase == InputActionPhase.Started || context.phase == InputActionPhase.Canceled)
-        //{
-        //    Debug.Log("phase is either started or canceled");
-        //}
-        //if (context.started || context.canceled)
-        //{
-        //    return;
-        //}
-        //Debug.Log(context.phase.ToString());
-
         if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
         {
             return;
@@ -170,15 +160,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnDecreasePlayerCountCallbackInputs(CallbackContext context)
     {
-        //if (context.phase == InputActionPhase.Started || context.phase == InputActionPhase.Canceled)
-        //{
-        //    Debug.Log("phase is either started or canceled");
-        //}
-        //if (context.started || context.canceled)
-        //{
-        //    return;
-        //}
-        //Debug.Log(context.phase);
         if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
         {
             return;
@@ -187,6 +168,33 @@ public class PlayerInputHandler : MonoBehaviour
         {
             Debug.Log("left shoulder being recognized");
             gameObject.GetComponent<PlayerCharacter>().HandleLeftShoulderButton();
+        }
+    }
+
+    public void OnCharacterSelectLeftCallbackBindings(CallbackContext context)
+    {
+        Debug.Log("inside character select left");
+        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        {
+            return;
+        }
+        else if (context.performed)
+        {
+            gameObject.GetComponent<PlayerCharacter>().HandleLeftAnalogPressedLeft();
+        }
+    }
+
+    public void OnCharacterSelectRightCallbackBindings(CallbackContext context)
+    {
+        Debug.Log("inside character select right");
+
+        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        {
+            return;
+        }
+        else if (context.performed)
+        {
+            gameObject.GetComponent<PlayerCharacter>().HandleLeftAnalogPressedRight();
         }
     }
 }

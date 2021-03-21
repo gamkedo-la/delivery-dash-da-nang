@@ -297,6 +297,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""CharacterSelectLeftCallbackBindings"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a1294a9-705f-4bb3-9703-1f0bd091b18e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CharacterSelectRightCallbackBindings"",
+                    ""type"": ""Button"",
+                    ""id"": ""1853c6b1-acdc-4c0a-b0d6-975264cae8ee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -319,6 +335,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""IncreasePlayerCountCallbackBindings"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2f30543-197d-4663-a041-dc11e0a2c3df"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""CharacterSelectLeftCallbackBindings"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63024c86-01b8-4709-9849-8665c871c3d1"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""CharacterSelectRightCallbackBindings"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -366,6 +404,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_MainMenu = asset.FindActionMap("Main Menu", throwIfNotFound: true);
         m_MainMenu_DecreasePlayerCountCallbackBindings = m_MainMenu.FindAction("DecreasePlayerCountCallbackBindings", throwIfNotFound: true);
         m_MainMenu_IncreasePlayerCountCallbackBindings = m_MainMenu.FindAction("IncreasePlayerCountCallbackBindings", throwIfNotFound: true);
+        m_MainMenu_CharacterSelectLeftCallbackBindings = m_MainMenu.FindAction("CharacterSelectLeftCallbackBindings", throwIfNotFound: true);
+        m_MainMenu_CharacterSelectRightCallbackBindings = m_MainMenu.FindAction("CharacterSelectRightCallbackBindings", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -522,12 +562,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IMainMenuActions m_MainMenuActionsCallbackInterface;
     private readonly InputAction m_MainMenu_DecreasePlayerCountCallbackBindings;
     private readonly InputAction m_MainMenu_IncreasePlayerCountCallbackBindings;
+    private readonly InputAction m_MainMenu_CharacterSelectLeftCallbackBindings;
+    private readonly InputAction m_MainMenu_CharacterSelectRightCallbackBindings;
     public struct MainMenuActions
     {
         private @PlayerControls m_Wrapper;
         public MainMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @DecreasePlayerCountCallbackBindings => m_Wrapper.m_MainMenu_DecreasePlayerCountCallbackBindings;
         public InputAction @IncreasePlayerCountCallbackBindings => m_Wrapper.m_MainMenu_IncreasePlayerCountCallbackBindings;
+        public InputAction @CharacterSelectLeftCallbackBindings => m_Wrapper.m_MainMenu_CharacterSelectLeftCallbackBindings;
+        public InputAction @CharacterSelectRightCallbackBindings => m_Wrapper.m_MainMenu_CharacterSelectRightCallbackBindings;
         public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -543,6 +587,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @IncreasePlayerCountCallbackBindings.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnIncreasePlayerCountCallbackBindings;
                 @IncreasePlayerCountCallbackBindings.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnIncreasePlayerCountCallbackBindings;
                 @IncreasePlayerCountCallbackBindings.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnIncreasePlayerCountCallbackBindings;
+                @CharacterSelectLeftCallbackBindings.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectLeftCallbackBindings;
+                @CharacterSelectLeftCallbackBindings.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectLeftCallbackBindings;
+                @CharacterSelectLeftCallbackBindings.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectLeftCallbackBindings;
+                @CharacterSelectRightCallbackBindings.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectRightCallbackBindings;
+                @CharacterSelectRightCallbackBindings.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectRightCallbackBindings;
+                @CharacterSelectRightCallbackBindings.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnCharacterSelectRightCallbackBindings;
             }
             m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -553,6 +603,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @IncreasePlayerCountCallbackBindings.started += instance.OnIncreasePlayerCountCallbackBindings;
                 @IncreasePlayerCountCallbackBindings.performed += instance.OnIncreasePlayerCountCallbackBindings;
                 @IncreasePlayerCountCallbackBindings.canceled += instance.OnIncreasePlayerCountCallbackBindings;
+                @CharacterSelectLeftCallbackBindings.started += instance.OnCharacterSelectLeftCallbackBindings;
+                @CharacterSelectLeftCallbackBindings.performed += instance.OnCharacterSelectLeftCallbackBindings;
+                @CharacterSelectLeftCallbackBindings.canceled += instance.OnCharacterSelectLeftCallbackBindings;
+                @CharacterSelectRightCallbackBindings.started += instance.OnCharacterSelectRightCallbackBindings;
+                @CharacterSelectRightCallbackBindings.performed += instance.OnCharacterSelectRightCallbackBindings;
+                @CharacterSelectRightCallbackBindings.canceled += instance.OnCharacterSelectRightCallbackBindings;
             }
         }
     }
@@ -592,5 +648,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnDecreasePlayerCountCallbackBindings(InputAction.CallbackContext context);
         void OnIncreasePlayerCountCallbackBindings(InputAction.CallbackContext context);
+        void OnCharacterSelectLeftCallbackBindings(InputAction.CallbackContext context);
+        void OnCharacterSelectRightCallbackBindings(InputAction.CallbackContext context);
     }
 }

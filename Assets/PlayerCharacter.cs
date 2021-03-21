@@ -91,4 +91,14 @@ public class PlayerCharacter : MonoBehaviour
 
         mainMenuScript.increasePlayerCount();
     }
+
+    public void HandleLeftAnalogPressedRight()
+    {
+        Right();
+    }
+
+    public void HandleLeftAnalogPressedLeft()
+    {
+        Left();
+    }
 }

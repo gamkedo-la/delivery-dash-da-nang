@@ -2171,7 +2171,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695767232}
-  - component: {fileID: 695767233}
   m_Layer: 5
   m_Name: GameCreate
   m_TagString: Untagged
@@ -2208,107 +2207,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &695767233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695767231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 79e03657ffcdc624f992a201bc4f5a94,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ce31eaac-89cb-43ff-9d85-35e52a0d003f
-    m_ActionName: Game Play/BrakeCallbackInputs[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/Keyboard/leftShift,/Keyboard/k]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ae27927e-dcef-49c6-b990-d36192c14793
-    m_ActionName: Game Play/TurnRightCallbackInputs[/Keyboard/d,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 30f67097-009e-487e-8350-c0e271d66421
-    m_ActionName: Game Play/TurnLeftCallbackInputs[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/Keyboard/a]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3727ef0b-e495-4341-aaae-8dce1e5fbce2
-    m_ActionName: Game Play/AccelerateCallbackInputs[/Keyboard/space,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 00534eff-b106-4ac2-82fb-ffb0a478a9bc
-    m_ActionName: Game Play/navigateUIUpCallbackInputs[/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1525414c-0015-4ced-98c9-67114093a332
-    m_ActionName: Game Play/navigateUIRightCallbackInputs[/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 49fc7d99-dcd2-4fff-adbe-1101ff5d2dca
-    m_ActionName: Game Play/navigateUIDownCallbackInputs[/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
-    m_ActionName: Game Play/navigateUILeftCallbackInputs[/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: eeb052d3-7302-4cf4-9ffb-016e61b8fd2f
-    m_ActionName: Game Play/NavigatePhoneStepInCallbackInputs[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: aaa5a70c-3f48-43cb-8f6c-b88d6cfed737
-    m_ActionName: Game Play/NavigatePhoneStepOutCallbackInputs[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1386241845}
-        m_MethodName: OnDecreasePlayerCountCallbackInputs
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e941b729-581c-4628-b6e2-2162f924e217
-    m_ActionName: Main Menu/DecreasePlayerCountCallbackBindings[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1386241845}
-        m_MethodName: OnIncreasePlayerCountCallbackInputs
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9c4511b7-b9b1-4326-920d-b5d1a681f33e
-    m_ActionName: Main Menu/IncreasePlayerCountCallbackBindings[/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Main Menu
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &697076964
 GameObject:
   m_ObjectHideFlags: 0
@@ -3903,6 +3801,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1240551872}
   - component: {fileID: 1240551873}
+  - component: {fileID: 1240551875}
+  - component: {fileID: 1240551874}
   m_Layer: 5
   m_Name: Player2
   m_TagString: Untagged
@@ -3960,7 +3860,151 @@ MonoBehaviour:
   player2: 1
   player3: 0
   player4: 0
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 1122746529}
+--- !u!114 &1240551874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240551871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13711225090ffd1408d755b000a9f8c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuCamera: {fileID: 1122746529}
+--- !u!114 &1240551875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240551871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 79e03657ffcdc624f992a201bc4f5a94,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce31eaac-89cb-43ff-9d85-35e52a0d003f
+    m_ActionName: Game Play/BrakeCallbackInputs[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/Keyboard/leftShift,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ae27927e-dcef-49c6-b990-d36192c14793
+    m_ActionName: Game Play/TurnRightCallbackInputs[/Keyboard/d,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 30f67097-009e-487e-8350-c0e271d66421
+    m_ActionName: Game Play/TurnLeftCallbackInputs[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3727ef0b-e495-4341-aaae-8dce1e5fbce2
+    m_ActionName: Game Play/AccelerateCallbackInputs[/Keyboard/space,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00534eff-b106-4ac2-82fb-ffb0a478a9bc
+    m_ActionName: Game Play/navigateUIUpCallbackInputs[/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1525414c-0015-4ced-98c9-67114093a332
+    m_ActionName: Game Play/navigateUIRightCallbackInputs[/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 49fc7d99-dcd2-4fff-adbe-1101ff5d2dca
+    m_ActionName: Game Play/navigateUIDownCallbackInputs[/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
+    m_ActionName: Game Play/navigateUILeftCallbackInputs[/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eeb052d3-7302-4cf4-9ffb-016e61b8fd2f
+    m_ActionName: Game Play/NavigatePhoneStepInCallbackInputs[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aaa5a70c-3f48-43cb-8f6c-b88d6cfed737
+    m_ActionName: Game Play/NavigatePhoneStepOutCallbackInputs[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1240551874}
+        m_MethodName: OnDecreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e941b729-581c-4628-b6e2-2162f924e217
+    m_ActionName: Main Menu/DecreasePlayerCountCallbackBindings[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1240551874}
+        m_MethodName: OnIncreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9c4511b7-b9b1-4326-920d-b5d1a681f33e
+    m_ActionName: Main Menu/IncreasePlayerCountCallbackBindings[/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1240551874}
+        m_MethodName: OnCharacterSelectLeftCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a1294a9-705f-4bb3-9703-1f0bd091b18e
+    m_ActionName: Main Menu/CharacterSelectLeftCallbackBindings[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1240551874}
+        m_MethodName: OnCharacterSelectRightCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
+    m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1244116144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,6 +4470,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1353952855}
   - component: {fileID: 1353952856}
+  - component: {fileID: 1353952858}
+  - component: {fileID: 1353952857}
   m_Layer: 5
   m_Name: Player4
   m_TagString: Untagged
@@ -4483,7 +4529,151 @@ MonoBehaviour:
   player2: 0
   player3: 0
   player4: 1
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 1122746529}
+--- !u!114 &1353952857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353952854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13711225090ffd1408d755b000a9f8c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuCamera: {fileID: 1122746529}
+--- !u!114 &1353952858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353952854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 79e03657ffcdc624f992a201bc4f5a94,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce31eaac-89cb-43ff-9d85-35e52a0d003f
+    m_ActionName: Game Play/BrakeCallbackInputs[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/Keyboard/leftShift,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ae27927e-dcef-49c6-b990-d36192c14793
+    m_ActionName: Game Play/TurnRightCallbackInputs[/Keyboard/d,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 30f67097-009e-487e-8350-c0e271d66421
+    m_ActionName: Game Play/TurnLeftCallbackInputs[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3727ef0b-e495-4341-aaae-8dce1e5fbce2
+    m_ActionName: Game Play/AccelerateCallbackInputs[/Keyboard/space,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00534eff-b106-4ac2-82fb-ffb0a478a9bc
+    m_ActionName: Game Play/navigateUIUpCallbackInputs[/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1525414c-0015-4ced-98c9-67114093a332
+    m_ActionName: Game Play/navigateUIRightCallbackInputs[/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 49fc7d99-dcd2-4fff-adbe-1101ff5d2dca
+    m_ActionName: Game Play/navigateUIDownCallbackInputs[/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
+    m_ActionName: Game Play/navigateUILeftCallbackInputs[/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eeb052d3-7302-4cf4-9ffb-016e61b8fd2f
+    m_ActionName: Game Play/NavigatePhoneStepInCallbackInputs[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aaa5a70c-3f48-43cb-8f6c-b88d6cfed737
+    m_ActionName: Game Play/NavigatePhoneStepOutCallbackInputs[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1353952857}
+        m_MethodName: OnDecreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e941b729-581c-4628-b6e2-2162f924e217
+    m_ActionName: Main Menu/DecreasePlayerCountCallbackBindings[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1353952857}
+        m_MethodName: OnIncreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9c4511b7-b9b1-4326-920d-b5d1a681f33e
+    m_ActionName: Main Menu/IncreasePlayerCountCallbackBindings[/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1353952857}
+        m_MethodName: OnCharacterSelectLeftCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a1294a9-705f-4bb3-9703-1f0bd091b18e
+    m_ActionName: Main Menu/CharacterSelectLeftCallbackBindings[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1353952857}
+        m_MethodName: OnCharacterSelectRightCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
+    m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1386241841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,6 +4685,7 @@ GameObject:
   - component: {fileID: 1386241842}
   - component: {fileID: 1386241843}
   - component: {fileID: 1386241845}
+  - component: {fileID: 1386241844}
   m_Layer: 5
   m_Name: Player1
   m_TagString: Untagged
@@ -4554,6 +4745,137 @@ MonoBehaviour:
   player3: 0
   player4: 0
   mainCamera: {fileID: 1122746529}
+--- !u!114 &1386241844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386241841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 79e03657ffcdc624f992a201bc4f5a94,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce31eaac-89cb-43ff-9d85-35e52a0d003f
+    m_ActionName: Game Play/BrakeCallbackInputs[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/Keyboard/leftShift,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ae27927e-dcef-49c6-b990-d36192c14793
+    m_ActionName: Game Play/TurnRightCallbackInputs[/Keyboard/d,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 30f67097-009e-487e-8350-c0e271d66421
+    m_ActionName: Game Play/TurnLeftCallbackInputs[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3727ef0b-e495-4341-aaae-8dce1e5fbce2
+    m_ActionName: Game Play/AccelerateCallbackInputs[/Keyboard/space,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00534eff-b106-4ac2-82fb-ffb0a478a9bc
+    m_ActionName: Game Play/navigateUIUpCallbackInputs[/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1525414c-0015-4ced-98c9-67114093a332
+    m_ActionName: Game Play/navigateUIRightCallbackInputs[/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 49fc7d99-dcd2-4fff-adbe-1101ff5d2dca
+    m_ActionName: Game Play/navigateUIDownCallbackInputs[/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
+    m_ActionName: Game Play/navigateUILeftCallbackInputs[/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eeb052d3-7302-4cf4-9ffb-016e61b8fd2f
+    m_ActionName: Game Play/NavigatePhoneStepInCallbackInputs[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aaa5a70c-3f48-43cb-8f6c-b88d6cfed737
+    m_ActionName: Game Play/NavigatePhoneStepOutCallbackInputs[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1386241845}
+        m_MethodName: OnDecreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e941b729-581c-4628-b6e2-2162f924e217
+    m_ActionName: Main Menu/DecreasePlayerCountCallbackBindings[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1386241845}
+        m_MethodName: OnIncreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9c4511b7-b9b1-4326-920d-b5d1a681f33e
+    m_ActionName: Main Menu/IncreasePlayerCountCallbackBindings[/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1386241845}
+        m_MethodName: OnCharacterSelectLeftCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a1294a9-705f-4bb3-9703-1f0bd091b18e
+    m_ActionName: Main Menu/CharacterSelectLeftCallbackBindings[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1386241845}
+        m_MethodName: OnCharacterSelectRightCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
+    m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &1386241845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5849,6 +6171,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1794982038}
   - component: {fileID: 1794982039}
+  - component: {fileID: 1794982041}
+  - component: {fileID: 1794982040}
   m_Layer: 5
   m_Name: Player3
   m_TagString: Untagged
@@ -5906,7 +6230,151 @@ MonoBehaviour:
   player2: 0
   player3: 1
   player4: 0
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 1122746529}
+--- !u!114 &1794982040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794982037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13711225090ffd1408d755b000a9f8c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuCamera: {fileID: 1122746529}
+--- !u!114 &1794982041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794982037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 79e03657ffcdc624f992a201bc4f5a94,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce31eaac-89cb-43ff-9d85-35e52a0d003f
+    m_ActionName: Game Play/BrakeCallbackInputs[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest,/Keyboard/leftShift,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ae27927e-dcef-49c6-b990-d36192c14793
+    m_ActionName: Game Play/TurnRightCallbackInputs[/Keyboard/d,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 30f67097-009e-487e-8350-c0e271d66421
+    m_ActionName: Game Play/TurnLeftCallbackInputs[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3727ef0b-e495-4341-aaae-8dce1e5fbce2
+    m_ActionName: Game Play/AccelerateCallbackInputs[/Keyboard/space,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00534eff-b106-4ac2-82fb-ffb0a478a9bc
+    m_ActionName: Game Play/navigateUIUpCallbackInputs[/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1525414c-0015-4ced-98c9-67114093a332
+    m_ActionName: Game Play/navigateUIRightCallbackInputs[/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 49fc7d99-dcd2-4fff-adbe-1101ff5d2dca
+    m_ActionName: Game Play/navigateUIDownCallbackInputs[/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 96e3032c-1def-4351-bf52-8f3fe9d90c13
+    m_ActionName: Game Play/navigateUILeftCallbackInputs[/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eeb052d3-7302-4cf4-9ffb-016e61b8fd2f
+    m_ActionName: Game Play/NavigatePhoneStepInCallbackInputs[/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aaa5a70c-3f48-43cb-8f6c-b88d6cfed737
+    m_ActionName: Game Play/NavigatePhoneStepOutCallbackInputs[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794982040}
+        m_MethodName: OnDecreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e941b729-581c-4628-b6e2-2162f924e217
+    m_ActionName: Main Menu/DecreasePlayerCountCallbackBindings[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794982040}
+        m_MethodName: OnIncreasePlayerCountCallbackInputs
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9c4511b7-b9b1-4326-920d-b5d1a681f33e
+    m_ActionName: Main Menu/IncreasePlayerCountCallbackBindings[/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794982040}
+        m_MethodName: OnCharacterSelectLeftCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a1294a9-705f-4bb3-9703-1f0bd091b18e
+    m_ActionName: Main Menu/CharacterSelectLeftCallbackBindings[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1794982040}
+        m_MethodName: OnCharacterSelectRightCallbackBindings
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
+    m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 97cce64f-284c-4ff8-870e-211f48f8eba2
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1802144574
 PrefabInstance:
   m_ObjectHideFlags: 0

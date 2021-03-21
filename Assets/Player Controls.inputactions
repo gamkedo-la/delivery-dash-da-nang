@@ -284,6 +284,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "CharacterSelectLeftCallbackBindings",
+                    "type": "Button",
+                    "id": "8a1294a9-705f-4bb3-9703-1f0bd091b18e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CharacterSelectRightCallbackBindings",
+                    "type": "Button",
+                    "id": "1853c6b1-acdc-4c0a-b0d6-975264cae8ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -306,6 +322,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "IncreasePlayerCountCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2f30543-197d-4663-a041-dc11e0a2c3df",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "CharacterSelectLeftCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63024c86-01b8-4709-9849-8665c871c3d1",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "CharacterSelectRightCallbackBindings",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
