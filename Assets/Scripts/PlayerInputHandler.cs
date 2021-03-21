@@ -153,7 +153,6 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else if (context.performed)
         {
-            Debug.Log("right shoulder being recognized");
             gameObject.GetComponent<PlayerCharacter>().HandleRightShoulderButton();
         }
     }
@@ -166,7 +165,6 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else if (context.performed)
         {
-            Debug.Log("left shoulder being recognized");
             gameObject.GetComponent<PlayerCharacter>().HandleLeftShoulderButton();
         }
     }

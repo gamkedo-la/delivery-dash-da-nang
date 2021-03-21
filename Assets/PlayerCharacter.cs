@@ -81,14 +81,11 @@ public class PlayerCharacter : MonoBehaviour
 
     public void HandleLeftShoulderButton()
     {
-        Debug.Log("HandleLeftShoulderButton triggered");
         mainMenuScript.decreasePlayerCount();
     }
 
     public void HandleRightShoulderButton()
     {
-        Debug.Log("HandleLeftShoulderButton triggered");
-
         mainMenuScript.increasePlayerCount();
     }
 
