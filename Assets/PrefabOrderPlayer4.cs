@@ -38,6 +38,7 @@ public class PrefabOrderPlayer4 : MonoBehaviour
     private PhoneScript phoneScript;
 
     public float minOrderTime = 35;
+    public float maxOrderTime = 125;
 
     PopulateGrid populateGrid;
 
@@ -149,6 +150,11 @@ public class PrefabOrderPlayer4 : MonoBehaviour
         {
             RestaurantWaypoint4.player4TimeScore = minOrderTime;
             RestaurantWaypoint4.player4TimeScoreMax = minOrderTime;
+        }
+        if (dist > maxOrderTime)
+        {
+            RestaurantWaypoint4.player4TimeScore = maxOrderTime;
+            RestaurantWaypoint4.player4TimeScoreMax = maxOrderTime;
         }
         else
         {
