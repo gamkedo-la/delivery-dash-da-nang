@@ -17,16 +17,21 @@ public class PlayerInputHandler : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        int index = playerInput.playerIndex;
-        var allScooterDriveScrpits = FindObjectsOfType<ScooterDrive>();
-        if (index == 0)
+        if (playerInput != null)
         {
-            scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index);
+            int index = playerInput.playerIndex;
+            var allScooterDriveScrpits = FindObjectsOfType<ScooterDrive>();
+            if (index == 0)
+            {
+                scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index);
+            }
+            else
+            {
+                scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
+            }
+
         }
-        else
-        {
-            scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
-        }
+        
         //if (GetComponent<ScooterDrive>().playerIndex == index)
         //{
         //    scooterDriveScript = GetComponent<ScooterDrive>();
@@ -142,19 +147,46 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnIncreasePlayerCountCallbackInputs(CallbackContext context)
     {
-        if (context.performed)
+        //if (context.phase == InputActionPhase.Started || context.phase == InputActionPhase.Canceled)
+        //{
+        //    Debug.Log("phase is either started or canceled");
+        //}
+        //if (context.started || context.canceled)
+        //{
+        //    return;
+        //}
+        //Debug.Log(context.phase.ToString());
+
+        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        {
+            return;
+        }
+        else if (context.performed)
         {
             Debug.Log("right shoulder being recognized");
-            mainMenuCamera.GetComponent<InputControlsCharacterSelectScreen>().HandleRightShoulderButton();
+            gameObject.GetComponent<PlayerCharacter>().HandleRightShoulderButton();
         }
     }
 
     public void OnDecreasePlayerCountCallbackInputs(CallbackContext context)
     {
-        if (context.performed)
+        //if (context.phase == InputActionPhase.Started || context.phase == InputActionPhase.Canceled)
+        //{
+        //    Debug.Log("phase is either started or canceled");
+        //}
+        //if (context.started || context.canceled)
+        //{
+        //    return;
+        //}
+        //Debug.Log(context.phase);
+        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        {
+            return;
+        }
+        else if (context.performed)
         {
             Debug.Log("left shoulder being recognized");
-            mainMenuCamera.GetComponent<InputControlsCharacterSelectScreen>().HandleLeftShoulderButton();
+            gameObject.GetComponent<PlayerCharacter>().HandleLeftShoulderButton();
         }
     }
 }

@@ -16,13 +16,5 @@ public class InputControlsCharacterSelectScreen : MonoBehaviour
         Debug.Log(currentScene.name);
     }
 
-    public void HandleLeftShoulderButton()
-    {
-        mainMenuScript.decreasePlayerCount();
-    }
-
-    public void HandleRightShoulderButton()
-    {
-        mainMenuScript.increasePlayerCount();
-    }
+    
 }

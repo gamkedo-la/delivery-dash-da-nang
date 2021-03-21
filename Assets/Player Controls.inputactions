@@ -270,64 +270,42 @@
             "id": "97cce64f-284c-4ff8-870e-211f48f8eba2",
             "actions": [
                 {
-                    "name": "DecreasePlayerCountCallbackInputs",
+                    "name": "DecreasePlayerCountCallbackBindings",
                     "type": "Button",
-                    "id": "bb7bd35f-f346-46e4-a5cc-909efa8bf8f5",
+                    "id": "e941b729-581c-4628-b6e2-2162f924e217",
                     "expectedControlType": "Button",
-                    "processors": "StickDeadzone",
+                    "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "IncreasePlayerCountCallbackInputs",
+                    "name": "IncreasePlayerCountCallbackBindings",
                     "type": "Button",
-                    "id": "e7aea94a-682b-4409-8e32-b8dedc0fd6a2",
+                    "id": "9c4511b7-b9b1-4326-920d-b5d1a681f33e",
                     "expectedControlType": "Button",
-                    "processors": "StickDeadzone",
+                    "processors": "",
                     "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "ec2a86a4-6c09-4239-aa52-67b663c92ce4",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "IncreasePlayerCountCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "858bb4cb-6377-42ae-84e8-db7dd84dd057",
-                    "path": "<Keyboard>/equals",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "New control scheme",
-                    "action": "IncreasePlayerCountCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "03c3e2fe-a707-47f3-a3d9-e974a9135413",
-                    "path": "<Keyboard>/minus",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "New control scheme",
-                    "action": "DecreasePlayerCountCallbackInputs",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5f0c786a-2ea5-45e2-a616-27289f80c7d2",
+                    "id": "b27328bb-a57c-466b-9b5c-cb29c864e583",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "DecreasePlayerCountCallbackInputs",
+                    "action": "DecreasePlayerCountCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12555897-5a79-43d3-b51a-cf44eb513f21",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "IncreasePlayerCountCallbackBindings",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

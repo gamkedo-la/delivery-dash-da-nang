@@ -12,6 +12,14 @@ public class PlayerCharacter : MonoBehaviour
 
     public bool player1, player2, player3, player4;
 
+    public GameObject mainCamera;
+    MainMenu mainMenuScript;
+
+    private void Awake()
+    {
+        mainMenuScript = mainCamera.GetComponent<MainMenu>();
+    }
+
     public void Left()
     {
         characters[characterCount].SetActive(false);
@@ -69,5 +77,18 @@ public class PlayerCharacter : MonoBehaviour
     private void Update()
     {
         characterNameString.text = characterName[characterCount];
+    }
+
+    public void HandleLeftShoulderButton()
+    {
+        Debug.Log("HandleLeftShoulderButton triggered");
+        mainMenuScript.decreasePlayerCount();
+    }
+
+    public void HandleRightShoulderButton()
+    {
+        Debug.Log("HandleLeftShoulderButton triggered");
+
+        mainMenuScript.increasePlayerCount();
     }
 }

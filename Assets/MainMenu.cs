@@ -89,6 +89,7 @@ public class MainMenu : MonoBehaviour
 
     public void increasePlayerCount()
     {
+        Debug.Log("increasePlayerCount triggered");
         playerCount++;
         if (playerCount > 4)
         {
@@ -99,6 +100,8 @@ public class MainMenu : MonoBehaviour
 
     public void decreasePlayerCount()
     {
+        Debug.Log("decreasePlayerCount triggered");
+
         playerCount--;
         if (playerCount < 1)
         {
