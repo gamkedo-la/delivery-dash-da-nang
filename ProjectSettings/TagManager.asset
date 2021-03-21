@@ -32,10 +32,10 @@ TagManager:
   - Node
   - Editor Only
   - InvisibleInWorld
-  - 
-  - 
-  - 
-  - 
+  - P1Waypoint
+  - P2Waypoint
+  - P3Waypoint
+  - P4Waypoint
   - 
   - 
   - 
