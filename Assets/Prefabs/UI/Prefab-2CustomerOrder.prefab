@@ -380,27 +380,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restaurantName:
-  - Hannahs
-  - Naruto Ramen
-  - Fune Sushi
+  - Annas
+  - Anime Ramen
+  - Fume
+  - pinkBrother
+  - Punta
+  - AamerBakery
+  - MudBistro
+  - Bros
+  - BikiniBottom
   apartmentName:
   - Chips Homestay
   - Seasand Apartments
+  - Rio
+  - Da Nang Beach Apartments
+  - Vacation Beach Hotel
   customerNames:
-  - Franklin D.
-  - Chini C.
-  - Danh V.
-  - Tuyen L.
-  - Marie L.
-  - Vinh N.
-  - Alexander K.
-  - Katina M.
-  - William A.
-  - Olivia K.
+  - Chorz M
+  - Stoven
+  - Brian Quixote
+  - Me Again
+  - Fabulous Theo
+  - Liz Taylor
+  - King Crasha
+  - Mama J
+  - Lushious Liam
+  - Gabbing Gabby
   orderedItems:
-  - sandwiches
-  - ramen
-  - sushi
+  - '''Almost'' Chicken Parm'
+  - HUUUUUGE Ramen
+  - Drunken Sushi
+  - Chicken Feet
+  - Slooooow Noodles
+  - Happy Mushrooms
+  - Only Plants
+  - Heart Attack Burger
+  - Nom Burger
   restaurantSelected: 0
   customerLocation: 0
   customerName: 0
@@ -412,6 +427,7 @@ MonoBehaviour:
   displayOrdersText: {fileID: 0}
   gameManager: {fileID: 0}
   minOrderTime: 35
+  maxOrderTime: 125
   isFocusedOn: 0
 --- !u!1 &6396596059393788344
 GameObject:

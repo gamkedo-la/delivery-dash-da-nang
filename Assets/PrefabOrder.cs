@@ -65,7 +65,7 @@ public class PrefabOrder : MonoBehaviour
         Player1RestaurantTransform = GameObject.Find("Player1Restaurant").transform;
         Player1ApartmentTransform = GameObject.Find("Player1Apartment").transform;
 
-        restaurantLocations = new Transform[3];
+        restaurantLocations = new Transform[9];
         
                 restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
        // restaurantLocations[0].position = new Vector3(1450f, 2.1f, 250.9f);
@@ -76,16 +76,28 @@ public class PrefabOrder : MonoBehaviour
 
         restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
 
-       // restaurantLocations[2].position = new Vector3(1450f, 2.1f, 250.9f);
+        // restaurantLocations[2].position = new Vector3(1450f, 2.1f, 250.9f);
+
+        restaurantLocations[3] = GameObject.Find("PinkBrotherWaypoint").transform;
+        restaurantLocations[4] = GameObject.Find("PunaWaypoint").transform;
+        restaurantLocations[5] = GameObject.Find("AamerBakeryWaypoint").transform;
+        restaurantLocations[6] = GameObject.Find("MudBistroWaypoint").transform;
+        restaurantLocations[7] = GameObject.Find("BrosWaypoint").transform;
+        restaurantLocations[8] = GameObject.Find("BikiniBottomWaypoint").transform;
 
 
-        apartmentLocations = new Transform[2];
+        
+                        apartmentLocations = new Transform[5];
 
         apartmentLocations[0] = GameObject.Find("ChipsWayPoint").transform;
         apartmentLocations[1] = GameObject.Find("SeasandWayPoint").transform;
+        apartmentLocations[2] = GameObject.Find("RioWaypoint").transform;
+        apartmentLocations[3] = GameObject.Find("Da Nang Beach Apartment Waypoint").transform;
+        apartmentLocations[4] = GameObject.Find("Vacation Beach Hotel Waypoint").transform;
 
-      // apartmentLocations[0].position = new Vector3(1550f, 2.1f, 250.9f);
-       // apartmentLocations[1].position = new Vector3(1550f, 2.1f, 250.9f);
+        
+        // apartmentLocations[0].position = new Vector3(1550f, 2.1f, 250.9f);
+        // apartmentLocations[1].position = new Vector3(1550f, 2.1f, 250.9f);
         //  apartmentLocations[2] = GameObject.Find("28 Apartment Waypoint").transform;
         //  apartmentLocations[3] = GameObject.Find("Halina WayPoint").transform;
 
