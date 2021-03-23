@@ -16,6 +16,7 @@ TagManager:
   - building
   - Building
   - Pedestrian
+  - Right Turn Vehicle
   layers:
   - Default
   - TransparentFX

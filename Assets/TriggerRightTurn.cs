@@ -4,31 +4,18 @@ using UnityEngine;
 
 public class TriggerRightTurn : MonoBehaviour
 {
-    public GameObject NPCScooter;
-    //public NPCScooterDrive NPCScooterDriveScript;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //NPCScooterDriveScript = NPCScooter.GetComponent<NPCScooterDrive>();
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.gameObject.tag == "RightTurnVehicle")
+        {
+            other.transform.Rotate(0, 90, 0);
+        }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        other.GetComponent<NPCScooterDrive>().turnRight();
-
-        //NPCScooterDriveScript.turnRight();
-    }
+    
 
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
