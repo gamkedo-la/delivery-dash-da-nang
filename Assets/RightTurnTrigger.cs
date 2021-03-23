@@ -6,10 +6,7 @@ public class RightTurnTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "LongPoleBikePrefab 2")
-        {
-            Debug.Log("anything");
-        }
+        
         if (other.transform.GetComponent<RightTurnTagScript>() != null)
         {
             other.transform.Rotate(0, 90, 0);
