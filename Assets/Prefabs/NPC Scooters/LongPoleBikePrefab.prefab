@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 3019617040726081237}
   - component: {fileID: 7947819211248660360}
   - component: {fileID: 1071147827729120094}
-  - component: {fileID: 2441666214167334375}
-  - component: {fileID: 6838160345897706835}
+  - component: {fileID: 6819135872120358113}
   m_Layer: 0
   m_Name: LongPoleBikePrefab
   m_TagString: Untagged
@@ -80,7 +79,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2441666214167334375
+--- !u!114 &6819135872120358113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,35 +88,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6403599547950340069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a64096258a7e4b248a6881204e37748a, type: 3}
+  m_Script: {fileID: 11500000, guid: 65bcbe452b1051c4e918dd705b093228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
-  reachedDestination: 0
-  stopDistance: 1
-  rotationSpeed: 0
-  minSpeed: 0
-  maxSpeed: 0
-  movementSpeed: 0
-  isCar: 0
-  danielleScreamAudioClip: {fileID: 0}
-  scream2: {fileID: 0}
-  scream3: {fileID: 0}
-  scream4: {fileID: 0}
-  listOfScreams: []
---- !u!114 &6838160345897706835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6403599547950340069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc8d6338e9f55a4792b3e9b9d3d8695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentWaypoint: {fileID: 0}
 --- !u!1001 &2664611822480955964
 PrefabInstance:
   m_ObjectHideFlags: 0
