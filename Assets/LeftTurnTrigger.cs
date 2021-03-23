@@ -7,6 +7,7 @@ public class LeftTurnTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("anything");
         if (other.transform.GetComponent<LeftTurnTagScript>() != null)
         {
             other.transform.Rotate(0, -90, 0);
