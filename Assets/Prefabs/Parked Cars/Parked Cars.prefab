@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4035237400061456653}
   - component: {fileID: 4035237400061456652}
-  - component: {fileID: 260400215101408502}
   m_Layer: 0
   m_Name: Parked Cars
   m_TagString: Building
@@ -44,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4cef6735d4a0f54b9de42bdb26f758d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NorthSouth: 1
   minCarCount: 3
   maxCarCount: 8
   chancePerCar: 0.75
@@ -55,16 +55,3 @@ MonoBehaviour:
   - {fileID: 2307558150224161325, guid: 12ba6cf617059554ca6e43f21c9e1238, type: 3}
   - {fileID: 9195671310909230444, guid: a9b43f3c5164eeb4e8ab5afa5298dfd8, type: 3}
   - {fileID: 5263494270618960914, guid: 014f60b00f9f8fb42990e9492c8d3088, type: 3}
---- !u!65 &260400215101408502
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4035237400061456655}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.08, y: 3, z: 6.49}
-  m_Center: {x: 0, y: 1.66, z: 0}
