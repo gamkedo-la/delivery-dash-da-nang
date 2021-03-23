@@ -192,6 +192,7 @@ public class GameManager : MonoBehaviour
             float seconds = Mathf.FloorToInt(TimeRemaining % 60);
 
             TimeUI.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            print(string.Format("{0:00}:{1:00}", minutes, seconds));
 
             SortScores();
 
@@ -206,7 +207,7 @@ public class GameManager : MonoBehaviour
 
         else
         {
-
+            Player1();
             RoundOverObject.SetActive(true);
 
             SortScores();

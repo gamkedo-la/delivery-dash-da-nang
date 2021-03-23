@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
 
 public class ScooterDrive : MonoBehaviour
 {
@@ -1064,7 +1065,19 @@ public class ScooterDrive : MonoBehaviour
             phone.SetBool("PhoneOn", false);
             phoneActive = false;
         }    
-    }    
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene("MainMenu");
+        //Clear bools and static values
+    }
+
+    public void ReturnToMain()
+    {
+        SceneManager.LoadScene("DaytmieDaNang");
+        //Clear bools and static values
+    }
     //public void HandleMenuItemSelectButtonPressed()
     //{
     //    //Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
