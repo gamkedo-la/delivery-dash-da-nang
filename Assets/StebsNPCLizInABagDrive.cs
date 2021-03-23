@@ -10,5 +10,7 @@ public class StebsNPCLizInABagDrive : MonoBehaviour
     {
         Vector3 distanceToTranslate = new Vector3(0, 0, lizInABagSpeed);
         transform.Translate(distanceToTranslate);
+
+        transform.Rotate(0, -1f, 0);
     }
 }
