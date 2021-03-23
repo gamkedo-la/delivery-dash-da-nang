@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &8208054709044256794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592253573986907064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.98, y: 4.91, z: 5.7}
+  m_Center: {x: 0, y: 2.17, z: 0}
 --- !u!114 &4584822432079980616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,6 +26,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stackedStyrofoamSpeed: 0.44
+--- !u!65 &3109614571035051459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786950411110311859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33.3, y: 9.72, z: 1}
+  m_Center: {x: 7.3, y: 4.99, z: 0}
+--- !u!65 &6602693864062947898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309944780409123922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.8, y: 27.11, z: 10.88}
+  m_Center: {x: -0.64, y: -4.02, z: 0}
 --- !u!1001 &358443733554613993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cub_stacked_styrofoam
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78506f8f9e3e88f498bbf005325b551f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2699092741681021261, guid: 78506f8f9e3e88f498bbf005325b551f, type: 3}
@@ -192,8 +236,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: styrofoamBox1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a8a726e50c011a47a4cb76b3290ea12,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a8a726e50c011a47a4cb76b3290ea12, type: 3}
+--- !u!1 &786950411110311859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a8a726e50c011a47a4cb76b3290ea12,
+    type: 3}
+  m_PrefabInstance: {fileID: 444351043008912098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2390884651414358275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,8 +331,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: styrofoamBox1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a8a726e50c011a47a4cb76b3290ea12,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a8a726e50c011a47a4cb76b3290ea12, type: 3}
+--- !u!1 &3309944780409123922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a8a726e50c011a47a4cb76b3290ea12,
+    type: 3}
+  m_PrefabInstance: {fileID: 2390884651414358275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4032290402777516241
 PrefabInstance:
   m_ObjectHideFlags: 0

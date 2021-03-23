@@ -89,9 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8159918554658215639}
   - component: {fileID: 651053574241888507}
+  - component: {fileID: 6427752272833440007}
   m_Layer: 0
   m_Name: npc-deliverytruck
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5ca7d3c4edfd14f8752ca3fc766f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  truckSpeed: 0.66
+--- !u!65 &6427752272833440007
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824251642304384109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.78, y: 7.85, z: 9.19}
+  m_Center: {x: 0.3, y: 4.73, z: 0.03}

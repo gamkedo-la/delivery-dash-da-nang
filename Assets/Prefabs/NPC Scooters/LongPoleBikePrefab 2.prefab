@@ -69,6 +69,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   longPoleSpeed: 0.44
+--- !u!65 &2755624767331978959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180016506331139560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.76, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8048559029030048511
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,9 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5870665483788302263}
   - component: {fileID: 8048559029030048510}
+  - component: {fileID: 1071599766095269985}
   m_Layer: 0
   m_Name: LongPoleBikePrefab 2
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +130,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   longPoleSpeed: 0.44
+--- !u!65 &1071599766095269985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048559029030048511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.89, y: 5.46, z: 6.33}
+  m_Center: {x: 0, y: -2.16, z: 0}
 --- !u!1 &8404741191322138388
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,8 +323,19 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b34cf8d519b6dbf439059d510fa93f4b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34cf8d519b6dbf439059d510fa93f4b, type: 3}
+--- !u!1 &2180016506331139560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b34cf8d519b6dbf439059d510fa93f4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1333506014772080825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1516351719090116434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b34cf8d519b6dbf439059d510fa93f4b,
