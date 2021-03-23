@@ -635,6 +635,7 @@ public class ScooterDrive : MonoBehaviour
             tempScore = (driverID.scoreOnOrder + FoodHealth.currentHealth4) / 2;
         }
 
+/*
         int starsAwarded = 0;
 
         //total score added to macrototal score
@@ -668,7 +669,7 @@ public class ScooterDrive : MonoBehaviour
 
         var rating = ratingsManager.CreateRating(starsAwarded);
         ratingsManager.AddRating(rating);
-
+*/
         StartCoroutine(Waiting());
         //display score
         //turn off player1OrderPickedUp and player1OrderDelivered
