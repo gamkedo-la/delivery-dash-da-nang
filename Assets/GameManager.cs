@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+
         if (MainMenu.playerCount == 1)
         {
             Player1();
