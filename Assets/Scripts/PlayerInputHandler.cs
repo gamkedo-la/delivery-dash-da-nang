@@ -14,6 +14,7 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject mainMenuCamera;
     public bool isEnterPressed = false;
     public bool isBackspacePressed = false;
+    [SerializeField] private int playerindexTest;
 
     // Start is called before the first frame update
     private void Awake()
@@ -31,6 +32,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
             }
+            playerindexTest = scooterDriveScript.playerIndex;
 
         }
         

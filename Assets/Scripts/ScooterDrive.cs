@@ -430,25 +430,35 @@ public class ScooterDrive : MonoBehaviour
             if (maxLeftTurnHeld || maxRightTurnHeld)
             {
                 Debug.Log("maxTurnReached");
-                return;
+                //return;
             }
-
-            //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-
-            currentBikeTiltAngle = bikeModel.transform.localRotation.z;
-            if (currentBikeTiltAngle < (-maxTiltAngle))
+            else
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle*100);
-                maxRightTurnHeld = true;
-            }
+                //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
 
-            bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 20);
+                currentBikeTiltAngle = bikeModel.transform.localRotation.z;
+                if (currentBikeTiltAngle < (-maxTiltAngle))
+                {
+                    bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle * 100);
+                    maxRightTurnHeld = true;
+                }
 
-            //Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            currentTurnAngle += Time.deltaTime * turnAngleRate;
-            if (currentTurnAngle > maxTurnAngle)
-            {
-                currentTurnAngle = maxTurnAngle;
+                if (bikeModel.transform.localRotation.z > 0)
+                {
+                    bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * -bikeStraightenSpeed);
+                    currentTurnAngle = 0;
+                }
+                else
+                {
+                    bikeModel.transform.Rotate(-Vector3.forward * Time.deltaTime * 20);
+
+                    //Debug.Log("currentTurnAngle: " + currentTurnAngle);
+                    currentTurnAngle += Time.deltaTime * turnAngleRate;
+                    if (currentTurnAngle > maxTurnAngle)
+                    {
+                        currentTurnAngle = maxTurnAngle;
+                    }
+                }
             }
         }
         
@@ -456,26 +466,35 @@ public class ScooterDrive : MonoBehaviour
         {
             if (maxLeftTurnHeld || maxRightTurnHeld)
             {
-                return;
+                //return;
             }
-
-            //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
-            //Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
-
-            currentBikeTiltAngle = bikeModel.transform.localRotation.z;
-            if (currentBikeTiltAngle > (maxTiltAngle))
+            else
             {
-                bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle * 100);
-                maxLeftTurnHeld = true;
-            }
+                //Debug.Log("bikeModel.transform.localRotation: " + bikeModel.transform.localRotation);
+                //Debug.Log("bikeTiltAngle: " + bikeModel.transform.localRotation.z);
 
-            bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 20);
+                currentBikeTiltAngle = bikeModel.transform.localRotation.z;
+                if (currentBikeTiltAngle > (maxTiltAngle))
+                {
+                    bikeModel.transform.localRotation = Quaternion.Euler(0, 0, currentBikeTiltAngle * 100);
+                    maxLeftTurnHeld = true;
+                }
 
-            // Debug.Log("currentTurnAngle: " + currentTurnAngle);
-            currentTurnAngle += -Time.deltaTime * turnAngleRate;
-            if (currentTurnAngle < -maxTurnAngle)
-            {
-                currentTurnAngle = -maxTurnAngle;
+                if (bikeModel.transform.localRotation.z < 0)
+                {
+                    bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * bikeStraightenSpeed);
+                    currentTurnAngle = 0;
+                }
+                else
+                {
+                    bikeModel.transform.Rotate(Vector3.forward * Time.deltaTime * 20);
+                    // Debug.Log("currentTurnAngle: " + currentTurnAngle);
+                    currentTurnAngle += -Time.deltaTime * turnAngleRate;
+                    if (currentTurnAngle < -maxTurnAngle)
+                    {
+                        currentTurnAngle = -maxTurnAngle;
+                    }
+                }
             }
         }
         if (!turnRight && !turnLeft)
