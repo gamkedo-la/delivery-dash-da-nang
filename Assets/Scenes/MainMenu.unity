@@ -174,6 +174,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1471291489}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &79893512
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1253951949}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-1-Player2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b604ac188c844b04bb7b954107bf1d96, type: 3}
 --- !u!1 &89818999
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +471,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115040531}
   m_CullTransparentMesh: 0
+--- !u!1001 &127322449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 436597316}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-1-Player2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b604ac188c844b04bb7b954107bf1d96, type: 3}
 --- !u!1001 &151610394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -798,6 +936,7 @@ MonoBehaviour:
   mainMenuCamera: {fileID: 1122746529}
   isEnterPressed: 0
   isBackspacePressed: 0
+  playerindexTest: 0
 --- !u!114 &400290782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1344,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
+--- !u!4 &436597316 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 436597315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &450043372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +2078,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
+--- !u!4 &537903990 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 537903989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &549774149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 78506f8f9e3e88f498bbf005325b551f,
@@ -2906,7 +3057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &695767232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4978,6 +5129,7 @@ MonoBehaviour:
   mainMenuCamera: {fileID: 1122746529}
   isEnterPressed: 0
   isBackspacePressed: 0
+  playerindexTest: 0
 --- !u!114 &1240551875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5104,6 +5256,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e5111e09-fef1-444d-97a4-8cff302ac9f3
+    m_ActionName: Main Menu/StartGameCallbackBindings[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec061e4a-66e8-4489-bb3b-2d1d228c0fe0
+    m_ActionName: Main Menu/BackToTitleScreenCallbackBindings[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Main Menu
@@ -5271,6 +5431,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
+--- !u!4 &1253951949 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1393912304977241583, guid: 7e79682a77940b041b82ddcfa62949fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1253951948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1281092574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,6 +5970,7 @@ MonoBehaviour:
   mainMenuCamera: {fileID: 1122746529}
   isEnterPressed: 0
   isBackspacePressed: 0
+  playerindexTest: 0
 --- !u!114 &1353952858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5930,6 +6097,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e5111e09-fef1-444d-97a4-8cff302ac9f3
+    m_ActionName: Main Menu/StartGameCallbackBindings[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec061e4a-66e8-4489-bb3b-2d1d228c0fe0
+    m_ActionName: Main Menu/BackToTitleScreenCallbackBindings[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Main Menu
@@ -6182,6 +6357,7 @@ MonoBehaviour:
   mainMenuCamera: {fileID: 1122746529}
   isEnterPressed: 0
   isBackspacePressed: 0
+  playerindexTest: 0
 --- !u!1001 &1398214007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6485,6 +6661,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441486894}
   m_CullTransparentMesh: 0
+--- !u!1001 &1460187441
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1802144575}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-1-Player2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b604ac188c844b04bb7b954107bf1d96, type: 3}
 --- !u!1001 &1471291489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8064,6 +8309,7 @@ MonoBehaviour:
   mainMenuCamera: {fileID: 1122746529}
   isEnterPressed: 0
   isBackspacePressed: 0
+  playerindexTest: 0
 --- !u!114 &1794982041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8190,6 +8436,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1853c6b1-acdc-4c0a-b0d6-975264cae8ee
     m_ActionName: Main Menu/CharacterSelectRightCallbackBindings[/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e5111e09-fef1-444d-97a4-8cff302ac9f3
+    m_ActionName: Main Menu/StartGameCallbackBindings[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec061e4a-66e8-4489-bb3b-2d1d228c0fe0
+    m_ActionName: Main Menu/BackToTitleScreenCallbackBindings[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Main Menu
@@ -8279,6 +8533,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e79682a77940b041b82ddcfa62949fe, type: 3}
+--- !u!4 &1802144575 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1956849126309876919, guid: 7e79682a77940b041b82ddcfa62949fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 1802144574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1803012387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9175,6 +9435,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942071213}
   m_CullTransparentMesh: 0
+--- !u!1001 &1944708956
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 537903990}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b604ac188c844b04bb7b954107bf1d96,
+        type: 3}
+      propertyPath: m_Name
+      value: player-ninjawoman-1-Player2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b604ac188c844b04bb7b954107bf1d96, type: 3}
 --- !u!1 &1957557640
 GameObject:
   m_ObjectHideFlags: 0
