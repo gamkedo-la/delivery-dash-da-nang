@@ -14,6 +14,8 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject mainMenuCamera;
     public bool isEnterPressed = false;
     public bool isBackspacePressed = false;
+    public GameObject thisPlayersPauseMenu;
+
     [SerializeField] private int playerindexTest;
 
     // Start is called before the first frame update
@@ -32,7 +34,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
             }
-            playerindexTest = scooterDriveScript.playerIndex;
+            //playerindexTest = scooterDriveScript.playerIndex;
 
         }
         
@@ -226,6 +228,55 @@ public class PlayerInputHandler : MonoBehaviour
                 return;
             }
             GameObject.Find("Main Camera").GetComponent<MainMenu>().HandleStartButton();
+        }
+    }
+
+    public void OnPauseMenuCallbackBindings(CallbackContext context)
+    {
+        //if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        //{
+        //    return;
+        //}
+
+        if (context.performed)
+        {
+            if (Input.GetKeyDown(KeyCode.KeypadEnter) && !isEnterPressed)
+            {
+                isEnterPressed = true;
+                // TODO
+                // your logic here when button pressed
+                if (!thisPlayersPauseMenu.activeSelf)
+                {
+                    thisPlayersPauseMenu.SetActive(true);
+                }
+                else if (thisPlayersPauseMenu.activeSelf)
+                {
+                    thisPlayersPauseMenu.SetActive(false);
+                }
+                return;
+            }
+
+            else if (Input.GetKeyUp(KeyCode.KeypadEnter) && isEnterPressed)
+            {
+                isEnterPressed = false;
+                // TODO
+                // your logic here when button released
+                return;
+            }
+
+            Debug.Log("start button for pause menu being recognized");
+            if (!thisPlayersPauseMenu.activeSelf)
+            {
+                Debug.Log("inside if pause menu is on check");
+                thisPlayersPauseMenu.SetActive(true);
+                GameObject.Find("GameManager").GetComponent<GameManager>().GameIsPaused = true;
+            }
+            else if (thisPlayersPauseMenu.activeSelf)
+            {
+                Debug.Log("inside if pause menu is on check");
+                thisPlayersPauseMenu.SetActive(false);
+                GameObject.Find("GameManager").GetComponent<GameManager>().GameIsPaused = false;
+            }
         }
     }
 

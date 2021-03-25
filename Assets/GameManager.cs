@@ -96,6 +96,8 @@ public class GameManager : MonoBehaviour
 
     public static bool roundOver;
 
+    public bool GameIsPaused = false;
+
     private void Start()
     {
         roundOver = false;
@@ -170,6 +172,15 @@ public class GameManager : MonoBehaviour
         TimeRemainingInRound();
 
         ToggleMultiplayer();
+
+        if (GameIsPaused)
+        {
+            Time.timeScale = 0f;
+        }    
+        else if (!GameIsPaused)
+        {
+            Time.timeScale = 1f;
+        }    
     }
 
     int entryForName(string nameToMatch)

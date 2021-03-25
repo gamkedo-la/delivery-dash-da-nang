@@ -84,6 +84,14 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "PauseMenuActivationCallbackInputs",
+                    "type": "Button",
+                    "id": "18797b1d-26bb-4acd-b352-a4020b864654",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -326,6 +334,28 @@
                     "processors": "",
                     "groups": "New control scheme",
                     "action": "NavigatePhoneStepOutCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88924bcb-77d0-4946-891c-a909764f17b0",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "PauseMenuActivationCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b247128a-2815-4c0b-ae79-96c5b34aaab5",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "PauseMenuActivationCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

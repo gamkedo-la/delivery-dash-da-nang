@@ -97,6 +97,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseMenuActivationCallbackInputs"",
+                    ""type"": ""Button"",
+                    ""id"": ""18797b1d-26bb-4acd-b352-a4020b864654"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -341,6 +349,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""NavigatePhoneStepOutCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88924bcb-77d0-4946-891c-a909764f17b0"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""PauseMenuActivationCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b247128a-2815-4c0b-ae79-96c5b34aaab5"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""PauseMenuActivationCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -526,6 +556,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_navigateUILeftCallbackInputs = m_GamePlay.FindAction("navigateUILeftCallbackInputs", throwIfNotFound: true);
         m_GamePlay_NavigatePhoneStepInCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepInCallbackInputs", throwIfNotFound: true);
         m_GamePlay_NavigatePhoneStepOutCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepOutCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_PauseMenuActivationCallbackInputs = m_GamePlay.FindAction("PauseMenuActivationCallbackInputs", throwIfNotFound: true);
         // Main Menu
         m_MainMenu = asset.FindActionMap("Main Menu", throwIfNotFound: true);
         m_MainMenu_DecreasePlayerCountCallbackBindings = m_MainMenu.FindAction("DecreasePlayerCountCallbackBindings", throwIfNotFound: true);
@@ -593,6 +624,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_navigateUILeftCallbackInputs;
     private readonly InputAction m_GamePlay_NavigatePhoneStepInCallbackInputs;
     private readonly InputAction m_GamePlay_NavigatePhoneStepOutCallbackInputs;
+    private readonly InputAction m_GamePlay_PauseMenuActivationCallbackInputs;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -607,6 +639,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @navigateUILeftCallbackInputs => m_Wrapper.m_GamePlay_navigateUILeftCallbackInputs;
         public InputAction @NavigatePhoneStepInCallbackInputs => m_Wrapper.m_GamePlay_NavigatePhoneStepInCallbackInputs;
         public InputAction @NavigatePhoneStepOutCallbackInputs => m_Wrapper.m_GamePlay_NavigatePhoneStepOutCallbackInputs;
+        public InputAction @PauseMenuActivationCallbackInputs => m_Wrapper.m_GamePlay_PauseMenuActivationCallbackInputs;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -646,6 +679,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @NavigatePhoneStepOutCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepOutCallbackInputs;
                 @NavigatePhoneStepOutCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepOutCallbackInputs;
                 @NavigatePhoneStepOutCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnNavigatePhoneStepOutCallbackInputs;
+                @PauseMenuActivationCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivationCallbackInputs;
+                @PauseMenuActivationCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivationCallbackInputs;
+                @PauseMenuActivationCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivationCallbackInputs;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -680,6 +716,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @NavigatePhoneStepOutCallbackInputs.started += instance.OnNavigatePhoneStepOutCallbackInputs;
                 @NavigatePhoneStepOutCallbackInputs.performed += instance.OnNavigatePhoneStepOutCallbackInputs;
                 @NavigatePhoneStepOutCallbackInputs.canceled += instance.OnNavigatePhoneStepOutCallbackInputs;
+                @PauseMenuActivationCallbackInputs.started += instance.OnPauseMenuActivationCallbackInputs;
+                @PauseMenuActivationCallbackInputs.performed += instance.OnPauseMenuActivationCallbackInputs;
+                @PauseMenuActivationCallbackInputs.canceled += instance.OnPauseMenuActivationCallbackInputs;
             }
         }
     }
@@ -787,6 +826,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigateUILeftCallbackInputs(InputAction.CallbackContext context);
         void OnNavigatePhoneStepInCallbackInputs(InputAction.CallbackContext context);
         void OnNavigatePhoneStepOutCallbackInputs(InputAction.CallbackContext context);
+        void OnPauseMenuActivationCallbackInputs(InputAction.CallbackContext context);
     }
     public interface IMainMenuActions
     {
