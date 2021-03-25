@@ -219,7 +219,7 @@ public class ScooterDrive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CountdownImagesController.canDrive)
+        if (CountdownImagesController.canDrive && !GameManager.roundOver)
         {
             HandleControlKeys();
             MoveBikeForwardOrBackward();
@@ -1090,13 +1090,13 @@ public class ScooterDrive : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("DaytimeDaNang");
         //Clear bools and static values
     }
 
     public void ReturnToMain()
     {
-        SceneManager.LoadScene("DaytmieDaNang");
+        SceneManager.LoadScene("MainMenu");
         //Clear bools and static values
     }
     //public void HandleMenuItemSelectButtonPressed()

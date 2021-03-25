@@ -52,8 +52,6 @@ public class CountdownImagesController : MonoBehaviour
         {
             canDrive = true;
         }
-
-        print(canDrive);
     }
 
     IEnumerator CountdownToStart()

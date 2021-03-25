@@ -94,9 +94,11 @@ public class GameManager : MonoBehaviour
 
     public float LowQuality, MedQuality, HighQuality, UltraQuality;
 
+    public static bool roundOver;
+
     private void Start()
     {
-
+        roundOver = false;
         if (MainMenu.playerCount == 1)
         {
             Player1();
@@ -208,6 +210,7 @@ public class GameManager : MonoBehaviour
 
         else
         {
+            roundOver = true;
             Player1();
             RoundOverObject.SetActive(true);
 
