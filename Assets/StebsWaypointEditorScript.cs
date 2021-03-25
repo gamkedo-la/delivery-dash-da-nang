@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityEditor;
 
 
+#if UNITY_EDITOR
 [DrawGizmo(GizmoType.NonSelected | GizmoType.Selected | GizmoType.Pickable)]
+#endif
 public class StebsWaypointEditorScript : MonoBehaviour
 {
+#if UNITY_EDITOR
     public static void OnDrawSceneGizmo(StebsWaypoint2 waypoint, GizmoType gizmoType)
     {
         
@@ -39,5 +42,5 @@ public class StebsWaypointEditorScript : MonoBehaviour
             Gizmos.DrawLine(waypoint.transform.position, waypoint.stebsNextWaypoint.transform.position);
         }
     }
-    
+#endif    
 }
