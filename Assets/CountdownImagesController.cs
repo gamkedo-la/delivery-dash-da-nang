@@ -22,6 +22,9 @@ public class CountdownImagesController : MonoBehaviour
 
     private AudioSource countdownImagesAudioSource;
 
+    public static bool canDrive;
+
+    int countdownTime = 3;
 
     public void Awake()
     {
@@ -33,6 +36,7 @@ public class CountdownImagesController : MonoBehaviour
 
     private void Start()
     {
+        canDrive = false;
         //Debug.Log("anything");
         if (countdownAudioClipsList.Length != 0)
         {
@@ -42,11 +46,18 @@ public class CountdownImagesController : MonoBehaviour
         StartCoroutine(CountdownToStart());
     }
 
+    public void Update()
+    {
+        if (countdownTime <= 0)
+        {
+            canDrive = true;
+        }
+
+        print(canDrive);
+    }
+
     IEnumerator CountdownToStart()
     {
-        int countdownTime = 3;
-        
-       
         while (countdownTime > -1)
         {
             yield return new WaitForSeconds(1f);

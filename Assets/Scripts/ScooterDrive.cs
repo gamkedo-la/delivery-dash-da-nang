@@ -219,41 +219,43 @@ public class ScooterDrive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        HandleControlKeys();
-        MoveBikeForwardOrBackward();
-        TurnBikeLeftOrRight();
-        if (currentTurnAngle != 0)
+        if (CountdownImagesController.canDrive)
         {
-            
-        }
-        updateDirectionBools();
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            if (player1)
+            HandleControlKeys();
+            MoveBikeForwardOrBackward();
+            TurnBikeLeftOrRight();
+            if (currentTurnAngle != 0)
             {
-                if (phone.GetBool("PhoneOn"))
-                {
-                    return;
-                }
-                //TakePhoneOutOfPocket();
+
             }
-        }
+            updateDirectionBools();
 
-        playerCurrentSpeed = currentSpeed;
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (player1)
+                {
+                    if (phone.GetBool("PhoneOn"))
+                    {
+                        return;
+                    }
+                    //TakePhoneOutOfPocket();
+                }
+            }
 
-        previousX = gameObject.transform.position.x;
-        previousZ = gameObject.transform.position.z;
+            playerCurrentSpeed = currentSpeed;
 
-        if (currentSpeed >= ((collisionPercent / 100) * maxSpeed))
-        {
-            canBeCollided = true;
-        }
+            previousX = gameObject.transform.position.x;
+            previousZ = gameObject.transform.position.z;
 
-        else
-        {
-            canBeCollided = false;
+            if (currentSpeed >= ((collisionPercent / 100) * maxSpeed))
+            {
+                canBeCollided = true;
+            }
+
+            else
+            {
+                canBeCollided = false;
+            }
         }
     }// end of update(){}
 
