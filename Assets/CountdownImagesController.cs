@@ -11,6 +11,8 @@ public class CountdownImagesController : MonoBehaviour
     public GameObject currentSprite;
 
     public Image imageComponent;
+
+    public bool player1;
     
 
     public AudioClip[] countdownAudioClipsList;
@@ -29,16 +31,16 @@ public class CountdownImagesController : MonoBehaviour
     public void Awake()
     {
         currentSprite = countdownSpritesList[3];
-        
-        currentAudioClip = countdownAudioClipsList[3];
-        countdownImagesAudioSource = transform.GetComponent<AudioSource>();
+
+            currentAudioClip = countdownAudioClipsList[3];
+            countdownImagesAudioSource = transform.GetComponent<AudioSource>();
     }
 
     private void Start()
     {
         canDrive = false;
         //Debug.Log("anything");
-        if (countdownAudioClipsList.Length != 0)
+        if (countdownAudioClipsList.Length != 0 && player1)
         {
             countdownImagesAudioSource.PlayOneShot(currentAudioClip);
         }    
@@ -65,11 +67,15 @@ public class CountdownImagesController : MonoBehaviour
             {
                 countdownSpritesList[countdownTime + 1].SetActive(false);
                 countdownSpritesList[countdownTime].SetActive(true);
-                currentAudioClip = countdownAudioClipsList[countdownTime];
 
-                if (countdownAudioClipsList.Length != 0)
+                if (player1)
                 {
-                    countdownImagesAudioSource.PlayOneShot(currentAudioClip);
+                    currentAudioClip = countdownAudioClipsList[countdownTime];
+
+                    if (countdownAudioClipsList.Length != 0)
+                    {
+                        countdownImagesAudioSource.PlayOneShot(currentAudioClip);
+                    }
                 }
             }
         }
