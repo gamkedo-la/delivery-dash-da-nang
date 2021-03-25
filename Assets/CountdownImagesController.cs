@@ -7,8 +7,8 @@ public class CountdownImagesController : MonoBehaviour
 {
     public Image countdownDisplay;
 
-    public Sprite[] countdownSpritesList;
-    public Sprite currentSprite;
+    public GameObject[] countdownSpritesList;
+    public GameObject currentSprite;
 
     public Image imageComponent;
     
@@ -22,23 +22,13 @@ public class CountdownImagesController : MonoBehaviour
 
     private AudioSource countdownImagesAudioSource;
 
-    public Camera thisPlayersCamera;
-
 
     public void Awake()
     {
-        //Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 10)); imageComponent = transform.GetComponent<Image>();
-        //transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-
-        thisPlayersCamera.ViewportToWorldPoint(new Vector3(1, 1, thisPlayersCamera.nearClipPlane));
         currentSprite = countdownSpritesList[3];
-            imageComponent.sprite = currentSprite;
         
         currentAudioClip = countdownAudioClipsList[3];
         countdownImagesAudioSource = transform.GetComponent<AudioSource>();
-        
-            //AudioManager.Instance.PlaySoundSFX(currentAudioClip, gameObject, loop: false, volume: 1f);
-        //audioManager.PlaySoundSFX(currentAudioClip, gameObject);
     }
 
     private void Start()
@@ -48,17 +38,10 @@ public class CountdownImagesController : MonoBehaviour
         {
             countdownImagesAudioSource.PlayOneShot(currentAudioClip);
         }    
-            
         
         StartCoroutine(CountdownToStart());
     }
 
-    private void Update()
-    {
-        //transform.position = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        Debug.Log(Screen.width);
-        Debug.Log(Screen.height);
-    }
     IEnumerator CountdownToStart()
     {
         int countdownTime = 3;
@@ -67,25 +50,19 @@ public class CountdownImagesController : MonoBehaviour
         while (countdownTime > -1)
         {
             yield return new WaitForSeconds(1f);
-            Debug.Log(countdownTime);
             countdownTime--;
             
             if (countdownTime >= 0)
             {
-                
-                    imageComponent.sprite = countdownSpritesList[countdownTime];
-                    currentAudioClip = countdownAudioClipsList[countdownTime];
-
+                countdownSpritesList[countdownTime + 1].SetActive(false);
+                countdownSpritesList[countdownTime].SetActive(true);
+                currentAudioClip = countdownAudioClipsList[countdownTime];
 
                 if (countdownAudioClipsList.Length != 0)
                 {
                     countdownImagesAudioSource.PlayOneShot(currentAudioClip);
                 }
-                
             }
-
-
-            //Debug.Log("CountdownToStart() called");
         }
         
         gameObject.SetActive(false);
