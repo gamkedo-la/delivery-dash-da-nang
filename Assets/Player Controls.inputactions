@@ -92,6 +92,22 @@
                     "expectedControlType": "Button",
                     "processors": "StickDeadzone",
                     "interactions": ""
+                },
+                {
+                    "name": "ThrowWeaponCallbackInputs",
+                    "type": "Button",
+                    "id": "f7d31a70-adc4-4696-8610-65209a76e7b1",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
+                },
+                {
+                    "name": "ClearCameraObstructionCallbackInputs",
+                    "type": "Button",
+                    "id": "6f3deb08-a596-47d4-ae84-d4e2aeb8ee4e",
+                    "expectedControlType": "Button",
+                    "processors": "StickDeadzone",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -356,6 +372,28 @@
                     "processors": "",
                     "groups": "New control scheme",
                     "action": "PauseMenuActivationCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "baa23f79-0910-4f44-a5de-0cd7bc5d007a",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ThrowWeaponCallbackInputs",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59c4be28-e08e-4e3c-a695-76b603832f73",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ClearCameraObstructionCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -37,7 +37,7 @@ public class PlayerInputHandler : MonoBehaviour
             //playerindexTest = scooterDriveScript.playerIndex;
 
         }
-        
+
         //if (GetComponent<ScooterDrive>().playerIndex == index)
         //{
         //    scooterDriveScript = GetComponent<ScooterDrive>();
@@ -62,7 +62,7 @@ public class PlayerInputHandler : MonoBehaviour
                 scooterDriveScript.isBrakingCompleted = true;
                 scooterDriveScript.isReversingCompleted = false;
             }
-            
+
         }
         else if (context.canceled)
         {
@@ -106,7 +106,7 @@ public class PlayerInputHandler : MonoBehaviour
             scooterDriveScript.acceleratingCompleted = true;
         }
     }
-    
+
     public void OnNavigateUIUpCallbackInputs(CallbackContext context)
     {
         if (context.performed)
@@ -208,7 +208,7 @@ public class PlayerInputHandler : MonoBehaviour
         //{
         //    return;
         //}
-        
+
         if (context.performed)
         {
             if (Input.GetKeyDown(KeyCode.KeypadEnter) && !isEnterPressed)
@@ -301,6 +301,30 @@ public class PlayerInputHandler : MonoBehaviour
                 return;
             }
             GameObject.Find("Main Camera").GetComponent<MainMenu>().gameCreateBack();
+        }
+    }
+
+    public void OnThrowWeaponCallbackInputs(CallbackContext context)
+    {
+        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        {
+            return;
+        }
+        else if (context.performed)
+        {
+            gameObject.GetComponent<ScooterDrive>().HandleRightTrigger();
+        }
+    }
+
+    public void OnClearCameraObstructionCallbackInputs(CallbackContext context)
+    {
+        if (context.phase.ToString() == "Started" || context.phase.ToString() == "Canceled")
+        {
+            return;
+        }
+        else if (context.performed)
+        {
+            gameObject.GetComponent<ScooterDrive>().HandleLeftTrigger();
         }
     }
 }

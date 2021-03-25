@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using System.Linq;
 using System;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class ScooterDrive : MonoBehaviour
 {
@@ -111,6 +112,11 @@ public class ScooterDrive : MonoBehaviour
     public int focusedOrderIndex = 0;
 
     float tempScore;
+
+    public bool hasARat = false;
+    public Image ratObstructionImage;
+
+    public bool cameraIsObstructed = false;
 
     private void Awake()
     {
@@ -1099,6 +1105,46 @@ public class ScooterDrive : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         //Clear bools and static values
     }
+
+    public void HandleRightTrigger()
+    {
+        if (hasARat)
+        {
+            int totalNumberOfActivePlayers = MainMenu.playerCount;
+
+            int randomPlayerToObstructNumber = Random.Range(2, totalNumberOfActivePlayers);
+            
+            GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
+            
+            if (playerToObstruct.name == "Player1")
+            {
+                playerToObstruct.transform.parent.gameObject.transform.Find("Canvas - PlayerPhone").transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                playerToObstruct.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+            }
+            else
+            {              
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.parent.transform.parent.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+            }
+
+            
+        }
+    }
+
+    public void HandleLeftTrigger()
+    {
+        Debug.Log("inside handle left trigger");
+        if (!cameraIsObstructed)
+        {
+            return;
+        }    
+        else
+        {
+            ratObstructionImage.gameObject.SetActive(false);
+        }    
+    }    
+
+
     //public void HandleMenuItemSelectButtonPressed()
     //{
     //    //Debug.Log("phoneGameObject.transform.GetChild(3).gameObject.activeSelf: " + phoneGameObject.transform.GetChild(3).gameObject.activeSelf);
@@ -1107,7 +1153,7 @@ public class ScooterDrive : MonoBehaviour
     //    //    Debug.Log("returning from button pressed while phone or home screen inactive");
     //    //    return;
     //    //}
-        
+
     //}
 
     //public void HandleBackToPhoneHomeScreen()
@@ -1121,8 +1167,8 @@ public class ScooterDrive : MonoBehaviour
     //    //gameObject.GetComponentInChildren<PhoneScript>().RatingsScreen.SetActive(false);
     //    //gameObject.GetComponentInChildren<PhoneScript>().CurrentScores.SetActive(false);
     //    //gameObject.GetComponentInChildren<PhoneScript>().OrdersBack();
-        
-        
-        
+
+
+
     //}
 }

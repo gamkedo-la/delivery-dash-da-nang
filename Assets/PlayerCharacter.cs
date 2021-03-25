@@ -98,4 +98,6 @@ public class PlayerCharacter : MonoBehaviour
     {
         Left();
     }
+
+    
 }

@@ -105,6 +105,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ThrowWeaponCallbackInputs"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7d31a70-adc4-4696-8610-65209a76e7b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ClearCameraObstructionCallbackInputs"",
+                    ""type"": ""Button"",
+                    ""id"": ""6f3deb08-a596-47d4-ae84-d4e2aeb8ee4e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": ""StickDeadzone"",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -371,6 +387,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""PauseMenuActivationCallbackInputs"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""baa23f79-0910-4f44-a5de-0cd7bc5d007a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ThrowWeaponCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59c4be28-e08e-4e3c-a695-76b603832f73"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ClearCameraObstructionCallbackInputs"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -557,6 +595,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_GamePlay_NavigatePhoneStepInCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepInCallbackInputs", throwIfNotFound: true);
         m_GamePlay_NavigatePhoneStepOutCallbackInputs = m_GamePlay.FindAction("NavigatePhoneStepOutCallbackInputs", throwIfNotFound: true);
         m_GamePlay_PauseMenuActivationCallbackInputs = m_GamePlay.FindAction("PauseMenuActivationCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_ThrowWeaponCallbackInputs = m_GamePlay.FindAction("ThrowWeaponCallbackInputs", throwIfNotFound: true);
+        m_GamePlay_ClearCameraObstructionCallbackInputs = m_GamePlay.FindAction("ClearCameraObstructionCallbackInputs", throwIfNotFound: true);
         // Main Menu
         m_MainMenu = asset.FindActionMap("Main Menu", throwIfNotFound: true);
         m_MainMenu_DecreasePlayerCountCallbackBindings = m_MainMenu.FindAction("DecreasePlayerCountCallbackBindings", throwIfNotFound: true);
@@ -625,6 +665,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_NavigatePhoneStepInCallbackInputs;
     private readonly InputAction m_GamePlay_NavigatePhoneStepOutCallbackInputs;
     private readonly InputAction m_GamePlay_PauseMenuActivationCallbackInputs;
+    private readonly InputAction m_GamePlay_ThrowWeaponCallbackInputs;
+    private readonly InputAction m_GamePlay_ClearCameraObstructionCallbackInputs;
     public struct GamePlayActions
     {
         private @PlayerControls m_Wrapper;
@@ -640,6 +682,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @NavigatePhoneStepInCallbackInputs => m_Wrapper.m_GamePlay_NavigatePhoneStepInCallbackInputs;
         public InputAction @NavigatePhoneStepOutCallbackInputs => m_Wrapper.m_GamePlay_NavigatePhoneStepOutCallbackInputs;
         public InputAction @PauseMenuActivationCallbackInputs => m_Wrapper.m_GamePlay_PauseMenuActivationCallbackInputs;
+        public InputAction @ThrowWeaponCallbackInputs => m_Wrapper.m_GamePlay_ThrowWeaponCallbackInputs;
+        public InputAction @ClearCameraObstructionCallbackInputs => m_Wrapper.m_GamePlay_ClearCameraObstructionCallbackInputs;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -682,6 +726,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @PauseMenuActivationCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivationCallbackInputs;
                 @PauseMenuActivationCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivationCallbackInputs;
                 @PauseMenuActivationCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPauseMenuActivationCallbackInputs;
+                @ThrowWeaponCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnThrowWeaponCallbackInputs;
+                @ThrowWeaponCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnThrowWeaponCallbackInputs;
+                @ThrowWeaponCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnThrowWeaponCallbackInputs;
+                @ClearCameraObstructionCallbackInputs.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClearCameraObstructionCallbackInputs;
+                @ClearCameraObstructionCallbackInputs.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClearCameraObstructionCallbackInputs;
+                @ClearCameraObstructionCallbackInputs.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClearCameraObstructionCallbackInputs;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -719,6 +769,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @PauseMenuActivationCallbackInputs.started += instance.OnPauseMenuActivationCallbackInputs;
                 @PauseMenuActivationCallbackInputs.performed += instance.OnPauseMenuActivationCallbackInputs;
                 @PauseMenuActivationCallbackInputs.canceled += instance.OnPauseMenuActivationCallbackInputs;
+                @ThrowWeaponCallbackInputs.started += instance.OnThrowWeaponCallbackInputs;
+                @ThrowWeaponCallbackInputs.performed += instance.OnThrowWeaponCallbackInputs;
+                @ThrowWeaponCallbackInputs.canceled += instance.OnThrowWeaponCallbackInputs;
+                @ClearCameraObstructionCallbackInputs.started += instance.OnClearCameraObstructionCallbackInputs;
+                @ClearCameraObstructionCallbackInputs.performed += instance.OnClearCameraObstructionCallbackInputs;
+                @ClearCameraObstructionCallbackInputs.canceled += instance.OnClearCameraObstructionCallbackInputs;
             }
         }
     }
@@ -827,6 +883,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnNavigatePhoneStepInCallbackInputs(InputAction.CallbackContext context);
         void OnNavigatePhoneStepOutCallbackInputs(InputAction.CallbackContext context);
         void OnPauseMenuActivationCallbackInputs(InputAction.CallbackContext context);
+        void OnThrowWeaponCallbackInputs(InputAction.CallbackContext context);
+        void OnClearCameraObstructionCallbackInputs(InputAction.CallbackContext context);
     }
     public interface IMainMenuActions
     {
