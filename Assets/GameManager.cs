@@ -98,6 +98,8 @@ public class GameManager : MonoBehaviour
 
     public bool GameIsPaused = false;
 
+    public GameObject[] phones;
+
     private void Start()
     {
         roundOver = false;
@@ -224,6 +226,11 @@ public class GameManager : MonoBehaviour
             roundOver = true;
             Player1();
             RoundOverObject.SetActive(true);
+
+            for (int i = 0; i < phones.Length; i++)
+            {
+                phones[i].SetActive(false);
+            }
 
             SortScores();
 
