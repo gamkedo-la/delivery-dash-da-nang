@@ -1118,7 +1118,7 @@ public class ScooterDrive : MonoBehaviour
 
     public void HandleRightTrigger()
     {
-        if (hasARat)
+        if (gameObject.name == "Player1" && gameManager.GetComponent<GameManager>().player1HasARat)
         {
             int totalNumberOfActivePlayers = MainMenu.playerCount;
 
@@ -1137,6 +1137,72 @@ public class ScooterDrive : MonoBehaviour
                 GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.Find("RatObstructionImage").gameObject.SetActive(true);
                 GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.parent.transform.parent.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
                 
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
+            }
+        }
+        else if (gameObject.name == "Player2" && gameManager.GetComponent<GameManager>().player2HasARat)
+        {
+            int totalNumberOfActivePlayers = MainMenu.playerCount;
+
+            int randomPlayerToObstructNumber = Random.Range(2, 4);
+            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
+            GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
+
+            if (playerToObstruct.name == "Player1")
+            {
+                playerToObstruct.transform.parent.gameObject.transform.Find("Canvas - PlayerPhone").transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                playerToObstruct.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
+            }
+            else
+            {
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.parent.transform.parent.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
+            }
+        }
+        else if (gameObject.name == "Player3" && gameManager.GetComponent<GameManager>().player3HasARat)
+        {
+            int totalNumberOfActivePlayers = MainMenu.playerCount;
+
+            int randomPlayerToObstructNumber = Random.Range(2, 4);
+            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
+            GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
+
+            if (playerToObstruct.name == "Player1")
+            {
+                playerToObstruct.transform.parent.gameObject.transform.Find("Canvas - PlayerPhone").transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                playerToObstruct.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
+            }
+            else
+            {
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.parent.transform.parent.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
+            }
+        }
+        else if (gameObject.name == "Player4" && gameManager.GetComponent<GameManager>().player4HasARat)
+        {
+            int totalNumberOfActivePlayers = MainMenu.playerCount;
+
+            int randomPlayerToObstructNumber = Random.Range(2, 4);
+            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
+            GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
+
+            if (playerToObstruct.name == "Player1")
+            {
+                playerToObstruct.transform.parent.gameObject.transform.Find("Canvas - PlayerPhone").transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                playerToObstruct.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
+            }
+            else
+            {
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.Find("RatObstructionImage").gameObject.SetActive(true);
+                GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.parent.transform.parent.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
         }

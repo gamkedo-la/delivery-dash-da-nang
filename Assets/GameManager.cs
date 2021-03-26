@@ -105,6 +105,11 @@ public class GameManager : MonoBehaviour
     public static bool player3CanRemoveCameraObstruction = false;
     public static bool player4CanRemoveCameraObstruction = false;
 
+    public  bool player1HasARat = false;
+    public  bool player2HasARat = false;
+    public  bool player3HasARat = false;
+    public  bool player4HasARat = false;
+
 
     private void Start()
     {
