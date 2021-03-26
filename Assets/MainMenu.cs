@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+
+        Time.timeScale = 0;
         playerCount = 1;
     }
 

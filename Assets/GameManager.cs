@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         roundOver = false;
         if (MainMenu.playerCount == 1)
         {
@@ -182,7 +183,13 @@ public class GameManager : MonoBehaviour
         else if (!GameIsPaused)
         {
             Time.timeScale = 1f;
-        }    
+        }
+
+        if (TimeRemaining <= 0)
+        {
+
+            Time.timeScale = 0;
+        }
     }
 
     int entryForName(string nameToMatch)
@@ -273,7 +280,6 @@ public class GameManager : MonoBehaviour
 
     void Player1()
     {
-        Debug.Log("1 Player");
         player2.SetActive(false);
         player3.SetActive(false);
         player4.SetActive(false);
