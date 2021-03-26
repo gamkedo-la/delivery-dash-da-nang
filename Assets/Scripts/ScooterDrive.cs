@@ -117,8 +117,10 @@ public class ScooterDrive : MonoBehaviour
     public Image ratObstructionImage;
 
     public bool cameraIsObstructed = false;
-
+    public bool ableToRemoveObstruction = false;
     public GameObject levelLoader;
+
+    public GameObject gameManager;
 
     private void Awake()
     {
@@ -1120,37 +1122,139 @@ public class ScooterDrive : MonoBehaviour
         {
             int totalNumberOfActivePlayers = MainMenu.playerCount;
 
-            int randomPlayerToObstructNumber = Random.Range(2, totalNumberOfActivePlayers);
-            
+            int randomPlayerToObstructNumber = Random.Range(2, 4);
+            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
             
             if (playerToObstruct.name == "Player1")
             {
                 playerToObstruct.transform.parent.gameObject.transform.Find("Canvas - PlayerPhone").transform.Find("RatObstructionImage").gameObject.SetActive(true);
                 playerToObstruct.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
             else
             {              
                 GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.Find("RatObstructionImage").gameObject.SetActive(true);
                 GameObject.Find("Canvas - PlayerPhone" + randomPlayerToObstructNumber.ToString()).transform.parent.transform.parent.transform.GetComponent<ScooterDrive>().cameraIsObstructed = true;
+                
+                StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
+        }
+    }
 
-            
+    IEnumerator flipAbleToRemoveObstructionBool(GameObject obstructedPlayer)
+    {
+        yield return new WaitForSeconds(3);
+        Debug.Log("obstructedPlayer.name: " + obstructedPlayer.name);//.GetComponent<ScooterDrive>()
+        //obstructedPlayer.GetComponent<ScooterDrive>().ableToRemoveObstruction = true;
+        if (obstructedPlayer.name == "Player1")
+        {
+            Debug.Log("flipping obstruction bool Player1");
+            GameManager.player1CanRemoveCameraObstruction = true;
+        }
+        else if (obstructedPlayer.name == "Player2")
+        {
+            Debug.Log("flipping obstruction bool Player2");
+
+            GameManager.player2CanRemoveCameraObstruction = true;
+
+        }
+        else if (obstructedPlayer.name == "Player3")
+        {
+            Debug.Log("flipping obstruction bool Player3");
+
+            GameManager.player3CanRemoveCameraObstruction = true;
+
+        }
+        else if (obstructedPlayer.name == "Player4")
+        {
+            Debug.Log("flipping obstruction bool Player4");
+
+            GameManager.player4CanRemoveCameraObstruction = true;
+
         }
     }
 
     public void HandleLeftTrigger()
     {
-        Debug.Log("inside handle left trigger");
-        if (!cameraIsObstructed)
+        Debug.Log("left trigger being recognized");
+        if (gameObject.name == "Player1")
         {
-            return;
-        }    
-        else
+            if (!cameraIsObstructed && !GameManager.player1CanRemoveCameraObstruction)
+            {
+                Debug.Log("returning from player1 left trigger, check if able to remove obstruction");
+                return;
+            }    
+            else 
+            {
+                Debug.Log("should be turning off obstruction image player1");
+                Debug.Log("ratObstructionImage: " + ratObstructionImage);
+
+                ratObstructionImage.gameObject.SetActive(false);
+            }
+        }
+        else if (gameObject.name == "Player2")
         {
-            ratObstructionImage.gameObject.SetActive(false);
-        }    
+            if (!cameraIsObstructed && !GameManager.player2CanRemoveCameraObstruction)
+            {
+                Debug.Log("returning from player2 left trigger, check if able to remove obstruction");
+
+                return;
+            }
+            else
+            {
+                Debug.Log("should be turning off obstruction image player2");
+                ratObstructionImage.gameObject.SetActive(false);
+                Debug.Log("ratObstructionImage: " + ratObstructionImage);
+
+            }
+        }
+        else if (gameObject.name == "Player3")
+        {
+            if (!cameraIsObstructed && !GameManager.player3CanRemoveCameraObstruction)
+            {
+                Debug.Log("returning from player3 left trigger, check if able to remove obstruction");
+
+                return;
+            }
+            else
+            {
+                Debug.Log("should be turning off obstruction image player3");
+                Debug.Log("ratObstructionImage: " + ratObstructionImage);
+
+                ratObstructionImage.gameObject.SetActive(false);
+            }
+        }
+        else if (gameObject.name == "Player4")
+        {
+            if (!cameraIsObstructed && !GameManager.player3CanRemoveCameraObstruction)
+            {
+                Debug.Log("returning from player4 left trigger, check if able to remove obstruction");
+
+                return;
+            }
+            else
+            {
+                Debug.Log("should be turning off obstruction image player4");
+                Debug.Log("ratObstructionImage: " + ratObstructionImage);
+                ratObstructionImage.gameObject.SetActive(false);
+            }
+        }
+        
+        //if (!cameraIsObstructed || !)
+        //{
+        //    Debug.Log("returning from handle left trigger");
+        //    return;
+        //}    
+        //else
+        //{
+        //    Debug.Log("should be removing obstruction image");
+
+        //    ratObstructionImage.gameObject.SetActive(false);
+        //}    
     }
+
+    
 
     IEnumerator LevelLoading()
     {

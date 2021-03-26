@@ -100,6 +100,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] phones;
 
+    public static bool player1CanRemoveCameraObstruction = false;
+    public static bool player2CanRemoveCameraObstruction = false;
+    public static bool player3CanRemoveCameraObstruction = false;
+    public static bool player4CanRemoveCameraObstruction = false;
+
+
     private void Start()
     {
         Time.timeScale = 1;

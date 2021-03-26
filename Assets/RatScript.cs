@@ -14,7 +14,6 @@ public class RatScript : MonoBehaviour
             
             other.transform.parent.gameObject.transform.Find("Canvas - PlayerPhone").transform.Find("WeaponIcon").GetComponent<Image>().sprite = ratIconSprite;
             other.transform.GetComponent<ScooterDrive>().hasARat = true;
-            Debug.Log("other.transform.GetComponent<ScooterDrive>().hasARat: " + other.transform.GetComponent<ScooterDrive>().hasARat);
 
             gameObject.SetActive(false);            
         }     
