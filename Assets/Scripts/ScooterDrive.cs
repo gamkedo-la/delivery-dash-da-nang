@@ -122,10 +122,12 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject gameManager;
 
+    List<int> possiblePlayerNumbers;
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
-        
+
 
         //controls = new PlayerControls();
 
@@ -161,6 +163,7 @@ public class ScooterDrive : MonoBehaviour
         //controls.GamePlay.navigateUILeft.performed += context => {
         //    HandleNavigateUILeft();
         //};
+        possiblePlayerNumbers = new List<int>();
     }
 
     private void OnEnable()
@@ -1121,8 +1124,22 @@ public class ScooterDrive : MonoBehaviour
         if (gameObject.name == "Player1" && gameManager.GetComponent<GameManager>().player1HasARat)
         {
             int totalNumberOfActivePlayers = MainMenu.playerCount;
+            if (possiblePlayerNumbers.Count > 0)
+            {
+                possiblePlayerNumbers.RemoveAt(0);
+                possiblePlayerNumbers.RemoveAt(1);
+                possiblePlayerNumbers.RemoveAt(2);
+            }    
+            
 
-            int randomPlayerToObstructNumber = Random.Range(2, 4);
+            possiblePlayerNumbers.Add(2);
+            possiblePlayerNumbers.Add(3);
+            possiblePlayerNumbers.Add(4);
+
+            Debug.Log(possiblePlayerNumbers);
+
+            int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
+            int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
             Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
             
@@ -1143,8 +1160,22 @@ public class ScooterDrive : MonoBehaviour
         else if (gameObject.name == "Player2" && gameManager.GetComponent<GameManager>().player2HasARat)
         {
             int totalNumberOfActivePlayers = MainMenu.playerCount;
+            if (possiblePlayerNumbers.Count > 0)
+            {
+                possiblePlayerNumbers.RemoveAt(0);
+                possiblePlayerNumbers.RemoveAt(1);
+                possiblePlayerNumbers.RemoveAt(2);
+            }
 
-            int randomPlayerToObstructNumber = Random.Range(2, 4);
+
+            possiblePlayerNumbers.Add(1);
+            possiblePlayerNumbers.Add(3);
+            possiblePlayerNumbers.Add(4);
+
+            Debug.Log(possiblePlayerNumbers);
+
+            int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
+            int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
             Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
 
@@ -1165,8 +1196,22 @@ public class ScooterDrive : MonoBehaviour
         else if (gameObject.name == "Player3" && gameManager.GetComponent<GameManager>().player3HasARat)
         {
             int totalNumberOfActivePlayers = MainMenu.playerCount;
+            if (possiblePlayerNumbers.Count > 0)
+            {
+                possiblePlayerNumbers.RemoveAt(0);
+                possiblePlayerNumbers.RemoveAt(1);
+                possiblePlayerNumbers.RemoveAt(2);
+            }
 
-            int randomPlayerToObstructNumber = Random.Range(2, 4);
+
+            possiblePlayerNumbers.Add(1);
+            possiblePlayerNumbers.Add(2);
+            possiblePlayerNumbers.Add(4);
+
+            Debug.Log(possiblePlayerNumbers);
+
+            int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
+            int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
             Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
 
@@ -1187,8 +1232,22 @@ public class ScooterDrive : MonoBehaviour
         else if (gameObject.name == "Player4" && gameManager.GetComponent<GameManager>().player4HasARat)
         {
             int totalNumberOfActivePlayers = MainMenu.playerCount;
+            if (possiblePlayerNumbers.Count > 0)
+            {
+                possiblePlayerNumbers.RemoveAt(0);
+                possiblePlayerNumbers.RemoveAt(1);
+                possiblePlayerNumbers.RemoveAt(2);
+            }
 
-            int randomPlayerToObstructNumber = Random.Range(2, 4);
+
+            possiblePlayerNumbers.Add(1);
+            possiblePlayerNumbers.Add(2);
+            possiblePlayerNumbers.Add(3);
+
+            Debug.Log(possiblePlayerNumbers);
+
+            int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
+            int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
             Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
 
