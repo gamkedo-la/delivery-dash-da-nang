@@ -1314,6 +1314,7 @@ public class ScooterDrive : MonoBehaviour
             {
                 Debug.Log("should be turning off obstruction image player1");
                 Debug.Log("ratObstructionImage: " + ratObstructionImage);
+                GameManager.player1CanRemoveCameraObstruction = true;
 
                 ratObstructionImage.gameObject.SetActive(false);
             }
@@ -1330,6 +1331,8 @@ public class ScooterDrive : MonoBehaviour
             {
                 Debug.Log("should be turning off obstruction image player2");
                 ratObstructionImage.gameObject.SetActive(false);
+                GameManager.player2CanRemoveCameraObstruction = true;
+
                 Debug.Log("ratObstructionImage: " + ratObstructionImage);
 
             }
@@ -1346,8 +1349,9 @@ public class ScooterDrive : MonoBehaviour
             {
                 Debug.Log("should be turning off obstruction image player3");
                 Debug.Log("ratObstructionImage: " + ratObstructionImage);
-
-                ratObstructionImage.gameObject.SetActive(false);
+                GameManager.player3CanRemoveCameraObstruction = true;
+                GameObject.Find("Canvas - PlayerPhone3").transform.Find("RatObstructionImage").gameObject.SetActive(false);
+                //ratObstructionImage.gameObject.SetActive(false);
             }
         }
         else if (gameObject.name == "Player4")
@@ -1362,6 +1366,8 @@ public class ScooterDrive : MonoBehaviour
             {
                 Debug.Log("should be turning off obstruction image player4");
                 Debug.Log("ratObstructionImage: " + ratObstructionImage);
+                GameManager.player4CanRemoveCameraObstruction = true;
+
                 ratObstructionImage.gameObject.SetActive(false);
             }
         }
