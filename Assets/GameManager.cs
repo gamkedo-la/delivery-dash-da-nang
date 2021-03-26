@@ -184,12 +184,6 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
-
-        if (TimeRemaining <= 0)
-        {
-
-            Time.timeScale = 0;
-        }
     }
 
     int entryForName(string nameToMatch)

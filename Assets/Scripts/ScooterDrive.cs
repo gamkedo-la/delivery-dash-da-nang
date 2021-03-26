@@ -118,6 +118,8 @@ public class ScooterDrive : MonoBehaviour
 
     public bool cameraIsObstructed = false;
 
+    public GameObject levelLoader;
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -1096,12 +1098,18 @@ public class ScooterDrive : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("DaytimeDaNang");
+        GameManager.roundOver = false;
+        Time.timeScale = 1;
+        levelLoader.SetActive(true);
+        print("here3");
+        StartCoroutine(LevelLoading());
         //Clear bools and static values
     }
 
     public void ReturnToMain()
     {
+        GameManager.roundOver = false;
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
         //Clear bools and static values
     }
@@ -1142,7 +1150,16 @@ public class ScooterDrive : MonoBehaviour
         {
             ratObstructionImage.gameObject.SetActive(false);
         }    
-    }    
+    }
+
+    IEnumerator LevelLoading()
+    {
+        print("here2.5");
+        yield return new WaitForSeconds(3);
+        print("here2");
+        SceneManager.LoadScene("DaytimeDaNang");
+        print("here");
+    }
 
 
     //public void HandleMenuItemSelectButtonPressed()

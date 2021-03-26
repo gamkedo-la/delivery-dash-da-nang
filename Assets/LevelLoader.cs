@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-
     public Animator transition;
 
     public void LoadNextLevel()
@@ -15,9 +14,9 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        transition.SetTrigger("Start");
+            transition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("DaytimeDaNang");
+            yield return new WaitForSeconds(1);
+            SceneManager.LoadScene("DaytimeDaNang");
     }
 }
