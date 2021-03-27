@@ -47,7 +47,7 @@ public class WayPointEditor
             foreach (Waypoint branch in waypoint.branches)
             {
                 Gizmos.color = Color.blue;
-                Gizmos.DrawLine(waypoint.transform.position, branch.transform.position);
+             //   Gizmos.DrawLine(waypoint.transform.position, branch.transform.position);
             }
         }
     }

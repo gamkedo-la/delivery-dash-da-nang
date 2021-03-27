@@ -56,6 +56,11 @@ public class PedestrianCharacterController : MonoBehaviour
                 var fwdDotProduct = Vector3.Dot(transform.forward, velocity);
                 var rightDotProduct = Vector3.Dot(transform.right, velocity);
             }
+
+            else
+            {
+                reachedDestination = true;
+            }
         }
     }
 
