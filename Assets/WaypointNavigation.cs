@@ -11,16 +11,17 @@ public class WaypointNavigation : MonoBehaviour
     public Waypoint currentWaypoint;
     int direction;
 
-    public Waypoint[] waypointOptions;
+   // public Waypoint[] waypointOptions;
 
     private void Awake()
     {
         controller = GetComponent<PedestrianCharacterController>();
         GetComponent<NavMeshAgent>().enabled = false;
-        int RandPosition = Random.Range(0, waypointOptions.Length - 1);
+    /*    int RandPosition = Random.Range(0, waypointOptions.Length - 1);
         controller.transform.position = waypointOptions[RandPosition].transform.position;
         currentWaypoint = waypointOptions[RandPosition];
-        GetComponent<NavMeshAgent>().enabled = true;
+    */
+        StartCoroutine(Waiting());
     }
 
     void Start()
@@ -39,5 +40,11 @@ public class WaypointNavigation : MonoBehaviour
             currentWaypoint = currentWaypoint.nextWayPoint;
             controller.SetDestination(currentWaypoint.GetPosition());
         }
+    }
+
+    IEnumerator Waiting()
+    {
+        yield return new WaitForSeconds(1);
+        GetComponent<NavMeshAgent>().enabled = true;
     }
 }
