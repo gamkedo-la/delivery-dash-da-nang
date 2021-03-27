@@ -1038,7 +1038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -8.516001, y: -31.181002, z: 3.1260002}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -736.7278, y: 164.16248}
+  m_AnchoredPosition: {x: -736.7278, y: -57.83754}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400290780
@@ -3603,7 +3603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 290}
+  m_AnchoredPosition: {x: 0, y: 68}
   m_SizeDelta: {x: 378.61328, y: 299.94925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710518769
@@ -5278,7 +5278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -222}
   m_SizeDelta: {x: 378.61328, y: -17.334229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166389698
@@ -6098,7 +6098,7 @@ RectTransform:
   m_GameObject: {fileID: 1281092574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 710518768}
   - {fileID: 1166389697}
@@ -6109,7 +6109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -172}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281092576
@@ -7366,7 +7366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1439469127
@@ -8437,7 +8437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1666351963
@@ -10838,10 +10838,10 @@ RectTransform:
   m_Father: {fileID: 1164940260}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936896668
 MonoBehaviour:
@@ -11847,7 +11847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2135778351
@@ -11909,12 +11909,11 @@ MonoBehaviour:
     player selection menu\n\nChrister \"McFunkypants\" Kaitila: parked car placement,
     litter system, LODs (signs, trees, vehicles), baked occlusion optimization placement,
     filler buildings, hotel restaurant, major performance improvements, sky/fog/lighting,
-    road work props, texture material reuse\n\n\u2022 Tyler Funk: Customer ratings
-    screen app for phone, phone scroll view, review messages based on ratings\n\n\u2022
-    Gabriel Cornish: Generic apartment models, early scene lighting, initial post-processing
-    effects\n\n\u2022 Vince McKeown: 2D driving prototype track\n\nGame developed
-    by members of HomeTeamGameDev.com (Apollo community) - apply today to make games
-    with us!"
+    road work props, texture material reuse\n\nTyler Funk: Customer ratings screen
+    app for phone, phone scroll view, review messages based on ratings\n\nGabriel
+    Cornish: Generic apartment models, early scene lighting, initial post-processing
+    effects\n\nVince McKeown: 2D driving prototype track\n\nGame developed by members
+    of HomeTeamGameDev.com (Apollo community) - apply today to make games with us!"
 --- !u!222 &2135778352
 CanvasRenderer:
   m_ObjectHideFlags: 0
