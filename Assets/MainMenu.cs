@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public GameObject player1, player2, player3, player4;
     public static int player1Character, player2Character, player3Character, player4Character;
-
+     
     public GameObject level;
     LevelLoader levelLoader;
 
@@ -85,11 +85,11 @@ public class MainMenu : MonoBehaviour
 
         //save player character 
         //save player count (this is stored in playerCount)
-        //print("PlayerCount:" + playerCount);
-        //print("Player1Char:" + player1Character);
-        //print("Player2Char:" + player2Character);
-        //print("Player3Char:" + player3Character);
-        //print("Player4Char:" + player4Character);
+        print("PlayerCount:" + playerCount);
+        print("Player1Char:" + player1Character);
+        print("Player2Char:" + player2Character);
+        print("Player3Char:" + player3Character);
+        print("Player4Char:" + player4Character);
         level.SetActive(true);
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         levelLoader.LoadNextLevel();
