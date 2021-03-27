@@ -756,7 +756,7 @@ public class ScooterDrive : MonoBehaviour
             {
                 GameManager.player4OrderPickedUp = true;
             }
-            physicalOrder.SetActive(true);
+           // physicalOrder.SetActive(true);
         }
 
         if (other.tag == "Building")

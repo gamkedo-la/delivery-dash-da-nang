@@ -50,6 +50,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                 if (!player1OrderPickedUp && player.GetComponent<ScooterDrive>().currentSpeed == 0)
                 {
                     player1OrderPickedUp = true;
+                    food.SetActive(true);
                     orderPickedUpSFX.Play();
                     this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
                     orders.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";
