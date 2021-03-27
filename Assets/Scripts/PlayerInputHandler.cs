@@ -10,7 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
 
     private PlayerInput playerInput;
-    private ScooterDrive scooterDriveScript;
+    public ScooterDrive scooterDriveScript;
     public GameObject mainMenuCamera;
     public bool isEnterPressed = false;
     public bool isBackspacePressed = false;
@@ -21,20 +21,25 @@ public class PlayerInputHandler : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        if (scooterDriveScript == null)
+        {
+            this.enabled = false;
+        }
+
         playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
-            int index = playerInput.playerIndex;
-            Debug.Log("index from playerInput component: " + index);
-            var allScooterDriveScrpits = FindObjectsOfType<ScooterDrive>();
-            if (index == 0)
-            {
-                scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index);
-            }
-            else
-            {
-                scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
-            }
+            //int index = playerInput.playerIndex;
+            //Debug.Log("index from playerInput component: " + index);
+            //var allScooterDriveScrpits = FindObjectsOfType<ScooterDrive>();
+            //if (index == 0)
+            //{
+            //    scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index);
+            //}
+            //else
+            //{
+            //    scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
+            //}
             //playerindexTest = scooterDriveScript.playerIndex;
 
         }
