@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
 
         TimeRemainingInRound();
 
-        ToggleMultiplayer();
+       // ToggleMultiplayer();
 
         if (GameIsPaused)
         {
