@@ -26,6 +26,8 @@ public class WaypointNavigation : MonoBehaviour
 
     void Start()
     {
+        direction = Mathf.RoundToInt(Random.Range(0f, 1f));
+
         if (currentWaypoint != null)
         {
             controller.SetDestination(currentWaypoint.GetPosition());
@@ -37,7 +39,14 @@ public class WaypointNavigation : MonoBehaviour
     {
         if (controller.reachedDestination)
         {
-            currentWaypoint = currentWaypoint.nextWayPoint;
+            if (direction == 0)
+            {
+                currentWaypoint = currentWaypoint.nextWayPoint;
+            }
+            if (direction == 1)
+            {
+                currentWaypoint = currentWaypoint.previousWayPoint;
+            }
             controller.SetDestination(currentWaypoint.GetPosition());
         }
     }
