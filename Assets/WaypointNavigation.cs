@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WaypointNavigation : MonoBehaviour
 {
@@ -10,9 +11,16 @@ public class WaypointNavigation : MonoBehaviour
     public Waypoint currentWaypoint;
     int direction;
 
+    public Waypoint[] waypointOptions;
+
     private void Awake()
     {
         controller = GetComponent<PedestrianCharacterController>();
+        GetComponent<NavMeshAgent>().enabled = false;
+        int RandPosition = Random.Range(0, waypointOptions.Length - 1);
+        controller.transform.position = waypointOptions[RandPosition].transform.position;
+        currentWaypoint = waypointOptions[RandPosition];
+        GetComponent<NavMeshAgent>().enabled = true;
     }
 
     void Start()
