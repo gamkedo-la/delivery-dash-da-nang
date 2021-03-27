@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
 
-        Time.timeScale = 0;
+        Time.timeScale = 1;
         playerCount = 1;
     }
 
