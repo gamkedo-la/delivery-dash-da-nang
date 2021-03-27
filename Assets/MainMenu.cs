@@ -85,11 +85,11 @@ public class MainMenu : MonoBehaviour
 
         //save player character 
         //save player count (this is stored in playerCount)
-        print("PlayerCount:" + playerCount);
-        print("Player1Char:" + player1Character);
-        print("Player2Char:" + player2Character);
-        print("Player3Char:" + player3Character);
-        print("Player4Char:" + player4Character);
+        //print("PlayerCount:" + playerCount);
+        //print("Player1Char:" + player1Character);
+        //print("Player2Char:" + player2Character);
+        //print("Player3Char:" + player3Character);
+        //print("Player4Char:" + player4Character);
         level.SetActive(true);
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         levelLoader.LoadNextLevel();

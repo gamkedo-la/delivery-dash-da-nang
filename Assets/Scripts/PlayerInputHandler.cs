@@ -25,6 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (playerInput != null)
         {
             int index = playerInput.playerIndex;
+            Debug.Log("index from playerInput component: " + index);
             var allScooterDriveScrpits = FindObjectsOfType<ScooterDrive>();
             if (index == 0)
             {
@@ -42,6 +43,26 @@ public class PlayerInputHandler : MonoBehaviour
         //{
         //    scooterDriveScript = GetComponent<ScooterDrive>();
         //}
+    }
+
+    private void Start()
+    {
+        //playerInput = GetComponent<PlayerInput>();
+        //if (playerInput != null)
+        //{
+        //    int index = playerInput.playerIndex;
+        //    var allScooterDriveScrpits = FindObjectsOfType<ScooterDrive>();
+        //    if (index == 0)
+        //    {
+        //        scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index);
+        //    }
+        //    else
+        //    {
+        //        scooterDriveScript = allScooterDriveScrpits.FirstOrDefault(x => x.playerIndex == index - 1);
+        //    }
+            //playerindexTest = scooterDriveScript.playerIndex;
+
+        
     }
 
     public void OnBrakeCallbackInputs(CallbackContext context)
@@ -98,6 +119,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.performed)
         {
+            Debug.Log("should be accelerating, player input handler script");
             scooterDriveScript.isAccelerating = true;
         }
         else if (context.canceled)
