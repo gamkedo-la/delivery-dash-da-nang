@@ -11908,29 +11908,30 @@ MonoBehaviour:
     washing machine), assorted environment art props, signs, multiplayer phone-style
     menu support, scene cleanup, traffic system prototype, screen mode transition
     controls, phone orders navigation\n\nCassidy Noble: Project co-lead (technical),
-    delivery mechanics, additional sound hookups, NPC vehicles, camera code, nav
-    mesh setup, UI resizing, destructible object particles, physical delivery display,
-    order mechanics, countdown, initial light baking, UI & phone bug fixing, scoring,
-    competing delivery NPC AI, pedestrian system, additional co-op multiplayer functionality,
-    many bug fixes and tweaks\n\nJeff \"Axphin\" Hanlon: co-lead (art), title logo,
-    vehicles (scooter with riders, bahn bao guy, expat bike rider, taxi, car, motorcycle,
-    delivery truck, van, pickup truck), buildings (shop A, Chip's Apartment), props
-    (street sign, tables, chairs, trees, rat), ground (road and sidewalk variations,
-    crosswalks, grass), GPS arrow, screen UI phases, filler building material, static
-    mesh optimizations\n\nMichael \"Misha\" Fewkes: co-lead (audio), main songs (3)
-    with variations, music manager, audio integration, music bug repairs, audio zones,
-    vocal adjustment, intro beat boxing sketch\n\nBrian Nielsen: GPS feature, minimap,
-    pathfinding, AI optimizations, pathing node placement\n\nBar\u0131\u015F K\xF6kl\xFC:
-    Gamepad input, text message order changes for accepted orders, exposed scooter
-    tuning, keyboard input refactor to new system, local co-op support, input improvements,
-    player selection menu\n\nChrister \"McFunkypants\" Kaitila: parked car placement,
-    litter system, LODs (signs, trees, vehicles), baked occlusion optimization placement,
-    filler buildings, hotel restaurant, major performance improvements, sky/fog/lighting,
-    road work props, texture material reuse\n\nTyler Funk: Customer ratings screen
-    app for phone, phone scroll view, review messages based on ratings\n\nGabriel
-    Cornish: Generic apartment models, early scene lighting, initial post-processing
-    effects\n\nVince McKeown: 2D driving prototype track\n\nGame developed by members
-    of HomeTeamGameDev.com (Apollo community) - apply today to make games with us!"
+    delivery mechanics, NPC vehicles, camera code, nav mesh setup, order mechanics,
+    countdown, initial light baking, UI & phone bug fixing, scoring, competing delivery
+    NPC AI, pedestrian system, additional co-op multiplayer functionality, additional
+    sound hookups, UI resizing, destructible object particles, physical delivery
+    display, many bug fixes and tweaks\n\nJeff \"Axphin\" Hanlon: co-lead (art),
+    title logo, vehicles (scooter with riders, bahn bao guy, expat bike rider, taxi,
+    car, motorcycle, delivery truck, van, pickup truck), buildings (shop A, Chip's
+    Apartment), props (street sign, tables, chairs, trees, rat), ground (road and
+    sidewalk variations, crosswalks, grass), GPS arrow, screen UI phases, filler
+    building material, static mesh optimizations\n\nMichael \"Misha\" Fewkes: co-lead
+    (audio), main songs (3) with variations, music manager, audio integration, music
+    bug repairs, audio zones, vocal adjustment, intro beat boxing sketch\n\nBrian
+    Nielsen: GPS feature, minimap, pathfinding, AI optimizations, pathing node placement\n\nBar\u0131\u015F
+    K\xF6kl\xFC: Gamepad input, text message order changes for accepted orders, exposed
+    scooter tuning, keyboard input refactor to new system, local co-op support, input
+    improvements, player selection menu\n\nChrister \"McFunkypants\" Kaitila: parked
+    car placement, litter system, LODs (signs, trees, vehicles), baked occlusion
+    optimization placement, filler buildings, hotel restaurant, major performance
+    improvements, sky/fog/lighting, road work props, texture material reuse\n\nTyler
+    Funk: Customer ratings screen app for phone, phone scroll view, review messages
+    based on ratings\n\nGabriel Cornish: Generic apartment models, early scene lighting,
+    initial post-processing effects\n\nVince McKeown: 2D driving prototype track\n\nGame
+    developed by members of HomeTeamGameDev.com (Apollo community) - apply today
+    to make games with us!"
 --- !u!222 &2135778352
 CanvasRenderer:
   m_ObjectHideFlags: 0
