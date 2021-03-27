@@ -111,6 +111,8 @@ public class GameManager : MonoBehaviour
     public  bool player4HasARat = false;
 
 
+    GameObject audioManager;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -134,6 +136,9 @@ public class GameManager : MonoBehaviour
         {
             Player4();
         }
+
+        audioManager = GameObject.Find("Background Music");
+        audioManager.SetActive(true);
 
         if (easy)
         {

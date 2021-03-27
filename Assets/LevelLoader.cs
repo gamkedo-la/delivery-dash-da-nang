@@ -15,8 +15,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator Waiting()
     {
             transition.SetTrigger("Start");
-
-            yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
             SceneManager.LoadScene("DaytimeDaNang");
     }
 }

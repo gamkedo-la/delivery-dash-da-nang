@@ -19,11 +19,15 @@ public class MainMenu : MonoBehaviour
 
     public bool characterSelectionScreenIsActuallyFocusedOn = false;
 
+    public GameObject audioManager;
+
     private void Start()
     {
 
         Time.timeScale = 1;
         playerCount = 1;
+
+        audioManager.SetActive(false);
     }
 
     private void Update()
@@ -93,6 +97,7 @@ public class MainMenu : MonoBehaviour
         level.SetActive(true);
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         levelLoader.LoadNextLevel();
+        audioManager.SetActive(true);
     }
 
     public void HandleStartButton()
