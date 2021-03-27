@@ -22,6 +22,7 @@ public class PedestrianSpawner : MonoBehaviour
             Transform child = transform.GetChild(Random.Range(0, transform.childCount - 1));
             obj.GetComponent<WaypointNavigation>().currentWaypoint = child.GetComponent<Waypoint>();
             obj.transform.position = child.position;
+            print("Obj: " + obj.transform.position + "child:" + child.position);
 
             yield return new WaitForEndOfFrame();
 
