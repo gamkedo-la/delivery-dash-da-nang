@@ -61,19 +61,35 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         #region Setting locations
-        Restaurants = new Transform[3];
+        Restaurants = new Transform[9];
 
         Restaurants[0] = GameObject.Find("HannahsWayPoint").transform;
+        // restaurantLocations[0].position = new Vector3(1450f, 2.1f, 250.9f);
+
         Restaurants[1] = GameObject.Find("RamenWayPoint").transform;
+
+        // restaurantLocations[1].position = new Vector3(1450f, 2.1f, 250.9f);
+
         Restaurants[2] = GameObject.Find("SushiWayPoint").transform;
 
-        Apartments = new Transform[2];
+        // restaurantLocations[2].position = new Vector3(1450f, 2.1f, 250.9f);
+
+        Restaurants[3] = GameObject.Find("PinkBrotherWaypoint").transform;
+        Restaurants[4] = GameObject.Find("PunaWaypoint").transform;
+        Restaurants[5] = GameObject.Find("AamerBakeryWaypoint").transform;
+        Restaurants[6] = GameObject.Find("MudBistroWaypoint").transform;
+        Restaurants[7] = GameObject.Find("BrosWaypoint").transform;
+        Restaurants[8] = GameObject.Find("BikiniBottomWaypoint").transform;
+
+
+
+        Apartments = new Transform[5];
 
         Apartments[0] = GameObject.Find("ChipsWayPoint").transform;
         Apartments[1] = GameObject.Find("SeasandWayPoint").transform;
-        //Apartments[2] = GameObject.Find("28 Apartment Waypoint").transform;
-        //Apartments[2] = GameObject.Find("Halina WayPoint").transform;
-        // FIXME: some of the above objects do not exist
+        Apartments[2] = GameObject.Find("RioWaypoint").transform;
+        Apartments[3] = GameObject.Find("Da Nang Beach Apartment Waypoint").transform;
+        Apartments[4] = GameObject.Find("Vacation Beach Hotel Waypoint").transform;
 
         #endregion
         ChooseAnOrder();
@@ -90,7 +106,7 @@ public class EnemyAI : MonoBehaviour
 
         restaurantToGoTo = Restaurants[Rselection];
         apartmentToGoTo = Apartments[Aselection];
-        //Debug.Log("apartmentToGoTo: " + apartmentToGoTo);
+      //  Debug.Log("restaurantToGoTo:" + restaurantToGoTo + "     " +  "apartmentToGoTo: " + apartmentToGoTo);
 
         orderScore = 100; 
         orderSelected = true;
