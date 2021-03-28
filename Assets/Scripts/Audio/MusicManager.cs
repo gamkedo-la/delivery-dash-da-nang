@@ -77,6 +77,7 @@ public class MusicManager : MonoBehaviour {
 	public void PlayTrack(MusicTrack newTrack) {
 		nextTrack = newTrack;
 		PlanNextSchedual();
+		
 	}
 
 	private void PlanNextSchedual() {
@@ -183,5 +184,22 @@ public class MusicManager : MonoBehaviour {
 			source.volume = Mathf.Lerp(startVolume, newVolume, currentTime/fadeTime);
 			yield return null;
 		}
+	}
+
+	public IEnumerator StebsFadeIn(AudioSource audioSource, float FadeTime)
+	{
+		Debug.Log("fade out coroutine being called");
+		float startVolume = audioSource.volume;
+
+		while (audioSource.volume > 0)
+		{
+			Debug.Log("audioSource.volume: " + audioSource.volume);
+			audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+			yield return null;
+		}
+
+		audioSource.Stop();
+		audioSource.volume = startVolume;
 	}
 }

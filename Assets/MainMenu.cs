@@ -21,9 +21,15 @@ public class MainMenu : MonoBehaviour
 
     public GameObject audioManager;
 
+
+    public GameObject titleScreenMusic;
+    public AudioSource titleScreenMusicAudioSource;
+    TitleScreenFadeOut titleScreenFadeOutScript;
+
     private void Start()
     {
-
+        titleScreenFadeOutScript = titleScreenMusic.GetComponent<TitleScreenFadeOut>();
+        titleScreenMusicAudioSource = titleScreenMusic.GetComponent<AudioSource>();
         Time.timeScale = 1;
         playerCount = 1;
 
@@ -98,6 +104,15 @@ public class MainMenu : MonoBehaviour
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         levelLoader.LoadNextLevel();
         audioManager.SetActive(true);
+        //audioManager.GetComponent<MusicManager>().
+
+        GameObject backgroundMusic = GameObject.Find("Background Music");
+        MusicManager musicManagerScript = backgroundMusic.GetComponent<MusicManager>();
+        StartCoroutine(musicManagerScript.StebsFadeIn(backgroundMusic.GetComponent<AudioSource>(), 3f));
+        //StartCoroutine()
+            //.musicPrefab.GetComponent<AudioSource>()
+        StartCoroutine(TitleScreenFadeOut.FadeOut(titleScreenMusicAudioSource, 1f));
+            
     }
 
     public void HandleStartButton()
