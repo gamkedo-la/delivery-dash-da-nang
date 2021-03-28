@@ -380,7 +380,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b247128a-2815-4c0b-ae79-96c5b34aaab5"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
