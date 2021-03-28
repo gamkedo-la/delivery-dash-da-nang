@@ -103,16 +103,28 @@ public class MainMenu : MonoBehaviour
         level.SetActive(true);
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         levelLoader.LoadNextLevel();
-        audioManager.SetActive(true);
+
         //audioManager.GetComponent<MusicManager>().
 
-        GameObject backgroundMusic = GameObject.Find("Background Music");
-        MusicManager musicManagerScript = backgroundMusic.GetComponent<MusicManager>();
-        StartCoroutine(musicManagerScript.StebsFadeIn(backgroundMusic.GetComponent<AudioSource>(), 3f));
+
         //StartCoroutine()
-            //.musicPrefab.GetComponent<AudioSource>()
+        //.musicPrefab.GetComponent<AudioSource>()
+        
+        
+        MusicManager musicManagerScript = audioManager.GetComponent<MusicManager>();
+
         StartCoroutine(TitleScreenFadeOut.FadeOut(titleScreenMusicAudioSource, 1f));
-            
+        StartCoroutine(DelayMainMusicBecauseLoadingTime());
+
+        //StartCoroutine(musicManagerScript.StebsFadeIn(musicManagerScript.currentAudioSource, 9f, audioManager));
+        StartCoroutine(musicManagerScript.FadeIn(musicManagerScript.musicPrefab.GetComponent<AudioSource>(), 5f));
+    }
+
+    IEnumerator DelayMainMusicBecauseLoadingTime()
+    {
+        yield return new WaitForSeconds(1.5f);
+        audioManager.SetActive(true);
+        
     }
 
     public void HandleStartButton()

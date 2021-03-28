@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayTrackOnAwake : MonoBehaviour {
 	public MusicTrack track;
 
-	private void Start() {
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+    private void Start() {
 		MusicManager.Instance.PlayTrack(track);
 	}
 }

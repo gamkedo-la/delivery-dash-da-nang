@@ -19,7 +19,7 @@ public class MusicManager : MonoBehaviour {
 	private int nextCueIndex = 0;
 	private int nextTrackIndex = 0;
 
-	private AudioSource currentAudioSource = null;
+	public AudioSource currentAudioSource = null;
 
 	public GameObject musicPrefab;
 	public bool isPlaying = false;
@@ -160,7 +160,7 @@ public class MusicManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator FadeIn(AudioSource source, float fadeTime) {
+	public IEnumerator FadeIn(AudioSource source, float fadeTime) {
 		float startTime = Time.time;
 		float currentTime = 0f;
 		float startVolume = source.volume;
@@ -186,20 +186,20 @@ public class MusicManager : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator StebsFadeIn(AudioSource audioSource, float FadeTime)
+	public IEnumerator StebsFadeIn(AudioSource audioSource, float FadeTime, GameObject mainMusic)
 	{
+		DontDestroyOnLoad(this.gameObject);
 		Debug.Log("fade out coroutine being called");
-		float startVolume = audioSource.volume;
+		audioSource.volume = 0;
 
-		while (audioSource.volume > 0)
+		while (audioSource.volume < 1)
 		{
 			Debug.Log("audioSource.volume: " + audioSource.volume);
-			audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+			audioSource.volume += 6 * Time.deltaTime / FadeTime;
 
 			yield return null;
 		}
 
-		audioSource.Stop();
-		audioSource.volume = startVolume;
+		
 	}
 }
