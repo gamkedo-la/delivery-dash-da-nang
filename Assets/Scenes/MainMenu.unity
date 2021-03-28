@@ -3686,7 +3686,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b5143343b1185254db778c12099af394, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.744
+  m_Volume: 0.644
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -12140,6 +12140,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ec061e4a-66e8-4489-bb3b-2d1d228c0fe0
     m_ActionName: Main Menu/BackToTitleScreenCallbackBindings[/XInputControllerWindows/select,/XInputControllerWindows/select,/XInputControllerWindows/select,/XInputControllerWindows/select]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18797b1d-26bb-4acd-b352-a4020b864654
+    m_ActionName: Game Play/PauseMenuActivationCallbackInputs[/XInputControllerWindows/start,/XInputControllerWindows/start,/XInputControllerWindows/start,/XInputControllerWindows/start,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f7d31a70-adc4-4696-8610-65209a76e7b1
+    m_ActionName: Game Play/ThrowWeaponCallbackInputs[/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightTrigger,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f3deb08-a596-47d4-ae84-d4e2aeb8ee4e
+    m_ActionName: Game Play/ClearCameraObstructionCallbackInputs[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Main Menu
