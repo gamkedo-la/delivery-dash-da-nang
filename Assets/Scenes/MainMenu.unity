@@ -12402,7 +12402,7 @@ GameObject:
   - component: {fileID: 2135778352}
   - component: {fileID: 2135778351}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Credits Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12465,18 +12465,20 @@ MonoBehaviour:
     apartments, beach hotel), destroyable bins, brake lights, text tips, street signs,
     majority of building placement, fences, additional input work, NPC car and pedestrian
     spawning, delivery item models (long pole, fridge, signs, speaker, bag, TV, microwave,
-    washing machine), assorted environment art props, signs, multiplayer phone-style
-    menu support, scene cleanup, traffic system prototype, screen mode transition
-    controls, phone orders navigation\n\nCassidy Noble: Project co-lead (technical),
-    delivery mechanics, NPC vehicles, camera code, nav mesh setup, order mechanics,
-    countdown, initial light baking, UI & phone bug fixing, scoring, competing delivery
-    NPC AI, pedestrian system, additional co-op multiplayer functionality, additional
-    sound hookups, UI resizing, destructible object particles, physical delivery
-    display, many bug fixes and tweaks\n\nJeff \"Axphin\" Hanlon: co-lead (art),
-    title logo, vehicles (scooter with riders, bahn bao guy, expat bike rider, taxi,
-    car, motorcycle, delivery truck, van, pickup truck), buildings (shop A, Chip's
-    Apartment), props (street sign, tables, chairs, trees, rat), ground (road and
-    sidewalk variations, crosswalks, grass), GPS arrow, screen UI phases, filler
+    washing machine, beer boxes), assorted environment art props, signs, multiplayer
+    phone-style menu support, scene cleanup, traffic system prototype, screen mode
+    transition controls, phone orders navigation, pedestrian masks and hats, more
+    scooter variations, title song vocals and guitar\n\nCassidy Noble: Project co-lead
+    (technical), delivery mechanics, NPC vehicles, camera code, nav mesh setup, order
+    mechanics, countdown, initial light baking, UI & phone bug fixing, scoring, competing
+    delivery NPC AI, pedestrian system, additional co-op multiplayer functionality,
+    additional sound hookups, UI resizing, destructible object particles, physical
+    delivery display, many bug fixes and tweaks, title screen touch up, scene song
+    transition, solved multiplayer timing bug\n\nJeff \"Axphin\" Hanlon: co-lead
+    (art), title logo, vehicles (scooter with riders, bahn bao guy, expat bike rider,
+    taxi, car, motorcycle, delivery truck, van, pickup truck), buildings (shop A,
+    Chip's Apartment), props (street sign, tables, chairs, trees, rat), ground (road
+    and sidewalk variations, crosswalks, grass), GPS arrow, screen UI phases, filler
     building material, static mesh optimizations\n\nMichael \"Misha\" Fewkes: co-lead
     (audio), main songs (3) with variations, music manager, audio integration, music
     bug repairs, audio zones, vocal adjustment, intro beat boxing sketch\n\nBrian
