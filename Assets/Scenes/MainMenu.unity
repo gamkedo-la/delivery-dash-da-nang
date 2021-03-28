@@ -6551,6 +6551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5395859dd31ce5e48b03855d89a45aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAudioSource: {fileID: 0}
   musicPrefab: {fileID: 6517499288137942425, guid: f75ad67cc24cfa543a3a68226db242ab,
     type: 3}
   isPlaying: 0
