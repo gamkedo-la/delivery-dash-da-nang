@@ -910,10 +910,10 @@ RectTransform:
   m_Father: {fileID: 1654634473}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -256, y: -95}
-  m_SizeDelta: {x: 290.4, y: 529}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 201, y: 124}
+  m_SizeDelta: {x: 370.38925, y: 227.7492}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264798162
 MonoBehaviour:
@@ -938,39 +938,34 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 30fb22a449da3294f9673d2d27bd05a1, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Gameplay controls
+  m_Text: 'Player 1 keys (or use gamepad!)
 
-    Spacebar - accel
+    Space - Drive
 
-    K - brake
+    K - Brake
 
-    A - Turn left
+    A/D
+    - Steer
 
-    D
-    - Turn Right
+    C - Open phone, confirm phone
 
-    C - take out phone/press phone button
+    X - Lower phone, cancel on phone
 
-    Arrow keys - navigate
-    phone UI
+    Arrows
+    - Phone menus
 
-    X - Back to home screen on phone/put phone away
+    J- Throw rat at other driver
 
-    J- Throw Rat
-    at other player
-
-    L - Clear rat from face
-
-'
+    L - Clear rat from face'
 --- !u!222 &264798163
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13005,7 +13000,7 @@ PrefabInstance:
     - target: {fileID: 8688477360831784412, guid: 9c6b79aff79677b4bb51dc710c28d4b3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8688477361319570452, guid: 9c6b79aff79677b4bb51dc710c28d4b3,
         type: 3}
