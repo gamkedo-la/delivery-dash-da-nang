@@ -1278,6 +1278,7 @@ MonoBehaviour:
   isEnterPressed: 0
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
+  creditsPanel: {fileID: 0}
   playerindexTest: 0
 --- !u!114 &400290782
 MonoBehaviour:
@@ -3552,7 +3553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &695767232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6321,6 +6322,7 @@ MonoBehaviour:
   isEnterPressed: 0
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
+  creditsPanel: {fileID: 0}
   playerindexTest: 0
 --- !u!114 &1240551875
 MonoBehaviour:
@@ -7258,6 +7260,7 @@ MonoBehaviour:
   isEnterPressed: 0
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
+  creditsPanel: {fileID: 0}
   playerindexTest: 0
 --- !u!114 &1353952858
 MonoBehaviour:
@@ -7673,6 +7676,7 @@ MonoBehaviour:
   isEnterPressed: 0
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
+  creditsPanel: {fileID: 0}
   playerindexTest: 0
 --- !u!1001 &1398214007
 PrefabInstance:
@@ -10418,6 +10422,7 @@ MonoBehaviour:
   isEnterPressed: 0
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
+  creditsPanel: {fileID: 0}
   playerindexTest: 0
 --- !u!114 &1794982041
 MonoBehaviour:
