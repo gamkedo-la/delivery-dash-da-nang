@@ -488,11 +488,33 @@
                 },
                 {
                     "name": "",
+                    "id": "d1410d47-1f4b-4bc4-a97b-76ed261b0217",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "DecreasePlayerCountCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "12555897-5a79-43d3-b51a-cf44eb513f21",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "IncreasePlayerCountCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82fefa81-c5bf-42bd-ba0c-ac8da34184ab",
+                    "path": "<Keyboard>/equals",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
                     "action": "IncreasePlayerCountCallbackBindings",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -510,11 +532,33 @@
                 },
                 {
                     "name": "",
+                    "id": "3a940eb2-2fb6-4c4d-99d1-ef5c43cf78f1",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
+                    "action": "CharacterSelectLeftCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "63024c86-01b8-4709-9849-8665c871c3d1",
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "CharacterSelectRightCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4f1515d1-c90c-4bcc-a842-fa23f6fda774",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New control scheme",
                     "action": "CharacterSelectRightCallbackBindings",
                     "isComposite": false,
                     "isPartOfComposite": false
