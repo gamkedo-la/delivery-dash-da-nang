@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject main, gamecreation;
+    public GameObject clickStartButtonInvisible, creditsButton;
 
     public static int playerCount;
     public Text playerCountstring;
@@ -129,6 +130,12 @@ public class MainMenu : MonoBehaviour
 
     public void HandleStartButton()
     {
+        if(clickStartButtonInvisible) {
+            clickStartButtonInvisible.SetActive(false);
+        }
+        if(creditsButton) {
+            creditsButton.SetActive(false);
+        }
         if (main.activeSelf)
         {
             GameCreate();

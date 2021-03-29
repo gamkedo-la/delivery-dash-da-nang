@@ -2781,6 +2781,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1439469125}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1425599209}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &583905756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5297,6 +5319,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main: {fileID: 1281092574}
   gamecreation: {fileID: 695767231}
+  clickStartButtonInvisible: {fileID: 1425599209}
+  creditsButton: {fileID: 1439469125}
   playerCountstring: {fileID: 1942071215}
   player1: {fileID: 1386241841}
   player2: {fileID: 1240551871}
@@ -5588,6 +5612,7 @@ RectTransform:
   - {fileID: 695767232}
   - {fileID: 1439469126}
   - {fileID: 85964839}
+  - {fileID: 1425599210}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7552,6 +7577,135 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2100470128}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1425599209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425599210}
+  - component: {fileID: 1425599213}
+  - component: {fileID: 1425599212}
+  - component: {fileID: 1425599211}
+  m_Layer: 5
+  m_Name: Click to Start (Invisible Button)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1425599210
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425599209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1164940260}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 480, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1425599211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425599209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1425599212}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1122746533}
+        m_MethodName: HandleStartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1425599212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425599209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1425599213
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425599209}
+  m_CullTransparentMesh: 0
 --- !u!1 &1426488796
 GameObject:
   m_ObjectHideFlags: 0
@@ -7843,6 +7997,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1425599209}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1439469128
 MonoBehaviour:
@@ -8998,6 +9163,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1425599209}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1666351964
 MonoBehaviour:
@@ -12474,26 +12650,26 @@ MonoBehaviour:
     delivery NPC AI, pedestrian system, additional co-op multiplayer functionality,
     additional sound hookups, UI resizing, destructible object particles, physical
     delivery display, many bug fixes and tweaks, title screen touch up, scene song
-    transition, solved multiplayer timing bug\n\nJeff \"Axphin\" Hanlon: co-lead
-    (art), title logo, vehicles (scooter with riders, bahn bao guy, expat bike rider,
-    taxi, car, motorcycle, delivery truck, van, pickup truck), buildings (shop A,
-    Chip's Apartment), props (street sign, tables, chairs, trees, rat), ground (road
-    and sidewalk variations, crosswalks, grass), GPS arrow, screen UI phases, filler
-    building material, static mesh optimizations\n\nMichael \"Misha\" Fewkes: co-lead
-    (audio), main songs (3) with variations, music manager, audio integration, music
-    bug repairs, audio zones, vocal adjustment, intro beat boxing sketch\n\nBrian
-    Nielsen: GPS feature, minimap, pathfinding, AI optimizations, pathing node placement\n\nBar\u0131\u015F
-    K\xF6kl\xFC: Gamepad input, text message order changes for accepted orders, exposed
-    scooter tuning, keyboard input refactor to new system, local co-op support, input
-    improvements, player selection menu\n\nChrister \"McFunkypants\" Kaitila: parked
-    car placement, litter system, LODs (signs, trees, vehicles), baked occlusion
-    optimization placement, filler buildings, hotel restaurant, major performance
-    improvements, sky/fog/lighting, road work props, texture material reuse\n\nTyler
-    Funk: Customer ratings screen app for phone, phone scroll view, review messages
-    based on ratings\n\nGabriel Cornish: Generic apartment models, early scene lighting,
-    initial post-processing effects\n\nVince McKeown: 2D driving prototype track\n\nGame
-    developed by members of HomeTeamGameDev.com (Apollo community) - apply today
-    to make games with us!"
+    transition, solved multiplayer timing bug\n\nJeff \"Axphin\" Hanlon: Project
+    co-lead (art), title logo, vehicles (scooter with riders, bahn bao guy, expat
+    bike rider, taxi, car, motorcycle, delivery truck, van, pickup truck), buildings
+    (shop A, Chip's Apartment), props (street sign, tables, chairs, trees, rat),
+    ground (road and sidewalk variations, crosswalks, grass), GPS arrow, screen UI
+    phases, filler building material, static mesh optimizations\n\nMichael \"Misha\"
+    Fewkes: Project co-lead (audio), main songs (3) with variations, music manager,
+    audio integration, music bug repairs, audio zones, vocal adjustment, intro beat
+    boxing sketch\n\nBrian Nielsen: GPS feature, minimap, pathfinding, AI optimizations,
+    pathing node placement\n\nBar\u0131\u015F K\xF6kl\xFC: Gamepad input, text message
+    order changes for accepted orders, exposed scooter tuning, keyboard input refactor
+    to new system, local co-op support, input improvements, player selection menu\n\nChrister
+    \"McFunkypants\" Kaitila: Parked car placement, litter system, LODs (signs, trees,
+    vehicles), baked occlusion optimization placement, filler buildings, hotel restaurant,
+    major performance improvements, sky/fog/lighting, road work props, texture material
+    reuse\n\nTyler Funk: Customer ratings screen app for phone, phone scroll view,
+    review messages based on ratings\n\nGabriel Cornish: Generic apartment models,
+    early scene lighting, initial post-processing effects\n\nVince McKeown: 2D driving
+    prototype track\n\nGame developed by members of HomeTeamGameDev.com (Apollo community)
+    - apply today to make games with us!"
 --- !u!222 &2135778352
 CanvasRenderer:
   m_ObjectHideFlags: 0
