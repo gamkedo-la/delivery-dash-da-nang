@@ -472,6 +472,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "CreditsCallbackInputs",
+                    "type": "Button",
+                    "id": "1524ae79-a5ff-417e-9029-12d749e8ba05",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -604,6 +612,17 @@
                     "processors": "",
                     "groups": "New control scheme",
                     "action": "BackToTitleScreenCallbackBindings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "512c3d12-208d-408b-b255-a43e02ef4946",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CreditsCallbackInputs",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

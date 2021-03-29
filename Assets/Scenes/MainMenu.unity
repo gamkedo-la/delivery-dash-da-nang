@@ -3557,7 +3557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &695767232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3916,8 +3916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -284, y: 246}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -284, y: 205}
+  m_SizeDelta: {x: 223.3, y: 549.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761734618
 MonoBehaviour:
@@ -3940,7 +3940,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 30fb22a449da3294f9673d2d27bd05a1, type: 3}
-    m_FontSize: 28
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -3951,7 +3951,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: '+ for more players
+
+    -for less players
+
+    a - character select left
+
+    d
+    - character select right
+
+    enter - start game
+
+    backspace - title screen
+
+    c
+    - credits'
 --- !u!222 &761734619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13005,7 +13019,7 @@ PrefabInstance:
     - target: {fileID: 8688477360831784412, guid: 9c6b79aff79677b4bb51dc710c28d4b3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8688477361319570452, guid: 9c6b79aff79677b4bb51dc710c28d4b3,
         type: 3}

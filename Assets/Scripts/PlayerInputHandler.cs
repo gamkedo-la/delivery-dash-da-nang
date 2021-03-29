@@ -16,6 +16,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool isBackspacePressed = false;
     public GameObject thisPlayersPauseMenu;
 
+    public GameObject creditsPanel;
+
     [SerializeField] private int playerindexTest;
 
     // Start is called before the first frame update
@@ -352,6 +354,22 @@ public class PlayerInputHandler : MonoBehaviour
         else if (context.performed)
         {
             gameObject.GetComponent<ScooterDrive>().HandleLeftTrigger();
+        }
+    }
+
+    public void OnCreditsCallbackInputs(CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("credits callbacks called");
+            if (!creditsPanel.activeSelf)
+            {
+                creditsPanel.SetActive(true);
+            }
+            else
+            {
+                creditsPanel.SetActive(false);
+            }
         }
     }
 }
