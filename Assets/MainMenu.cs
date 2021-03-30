@@ -27,6 +27,11 @@ public class MainMenu : MonoBehaviour
     public AudioSource titleScreenMusicAudioSource;
     TitleScreenFadeOut titleScreenFadeOutScript;
 
+    public AudioClip phoneButtonPressedAudioClip;
+
+    public GameObject invisibleButton;
+
+
     private void Start()
     {
         titleScreenFadeOutScript = titleScreenMusic.GetComponent<TitleScreenFadeOut>();
@@ -82,6 +87,7 @@ public class MainMenu : MonoBehaviour
         main.SetActive(false);
         gamecreation.SetActive(true);
         characterSelectionScreenIsActuallyFocusedOn = true;
+        //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, main, volume: 0.5f);
     }
 
     public void gameCreateBack()
@@ -148,6 +154,8 @@ public class MainMenu : MonoBehaviour
 
     public void increasePlayerCount()
     {
+        //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+
         playerCount++;
         if (playerCount > 4)
         {
@@ -158,6 +166,7 @@ public class MainMenu : MonoBehaviour
 
     public void decreasePlayerCount()
     {
+        //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
 
         playerCount--;
         if (playerCount < 1)

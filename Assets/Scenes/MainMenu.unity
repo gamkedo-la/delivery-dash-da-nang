@@ -1279,6 +1279,8 @@ MonoBehaviour:
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
   creditsPanel: {fileID: 0}
+  phoneButtonPressedAudioClip: {fileID: 8300000, guid: 62632ea65fd94154bbb8c8a5be554a2c,
+    type: 3}
   playerindexTest: 0
 --- !u!114 &400290782
 MonoBehaviour:
@@ -1437,6 +1439,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6f3deb08-a596-47d4-ae84-d4e2aeb8ee4e
     m_ActionName: Game Play/ClearCameraObstructionCallbackInputs
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1524ae79-a5ff-417e-9029-12d749e8ba05
+    m_ActionName: Main Menu/CreditsCallbackInputs
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: New control scheme
   m_DefaultActionMap: Main Menu
@@ -4365,6 +4371,7 @@ GameObject:
   - component: {fileID: 826251586}
   - component: {fileID: 826251585}
   - component: {fileID: 826251584}
+  - component: {fileID: 826251587}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4380,7 +4387,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826251582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 4134}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 490249090}
@@ -4483,6 +4490,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826251582}
   m_CullTransparentMesh: 0
+--- !u!82 &826251587
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826251582}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 62632ea65fd94154bbb8c8a5be554a2c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &853767451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 96970ec506aae324abd1a2f8112ea1b0,
@@ -5715,6 +5818,9 @@ MonoBehaviour:
   audioManager: {fileID: 1332221054}
   titleScreenMusic: {fileID: 781698491}
   titleScreenMusicAudioSource: {fileID: 0}
+  phoneButtonPressedAudioClip: {fileID: 8300000, guid: 62632ea65fd94154bbb8c8a5be554a2c,
+    type: 3}
+  invisibleButton: {fileID: 826251582}
 --- !u!1001 &1141244779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6515,6 +6621,7 @@ MonoBehaviour:
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
   creditsPanel: {fileID: 0}
+  phoneButtonPressedAudioClip: {fileID: 0}
   playerindexTest: 0
 --- !u!114 &1240551875
 MonoBehaviour:
@@ -6989,6 +7096,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6f3deb08-a596-47d4-ae84-d4e2aeb8ee4e
     m_ActionName: Game Play/ClearCameraObstructionCallbackInputs
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1524ae79-a5ff-417e-9029-12d749e8ba05
+    m_ActionName: Main Menu/CreditsCallbackInputs
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Game Play
@@ -7453,6 +7564,7 @@ MonoBehaviour:
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
   creditsPanel: {fileID: 0}
+  phoneButtonPressedAudioClip: {fileID: 0}
   playerindexTest: 0
 --- !u!114 &1353952858
 MonoBehaviour:
@@ -7869,6 +7981,7 @@ MonoBehaviour:
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
   creditsPanel: {fileID: 0}
+  phoneButtonPressedAudioClip: {fileID: 0}
   playerindexTest: 0
 --- !u!1001 &1398214007
 PrefabInstance:
@@ -10711,6 +10824,7 @@ MonoBehaviour:
   isBackspacePressed: 0
   thisPlayersPauseMenu: {fileID: 0}
   creditsPanel: {fileID: 0}
+  phoneButtonPressedAudioClip: {fileID: 0}
   playerindexTest: 0
 --- !u!114 &1794982041
 MonoBehaviour:
@@ -13117,6 +13231,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6f3deb08-a596-47d4-ae84-d4e2aeb8ee4e
     m_ActionName: Game Play/ClearCameraObstructionCallbackInputs[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1524ae79-a5ff-417e-9029-12d749e8ba05
+    m_ActionName: Main Menu/CreditsCallbackInputs
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Main Menu

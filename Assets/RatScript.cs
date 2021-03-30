@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class RatScript : MonoBehaviour
 {
@@ -14,7 +15,15 @@ public class RatScript : MonoBehaviour
 
     private GameObject gameManager;
 
-    
+    public AudioClip youGotARatAudioClip;
+
+    private void Awake()
+    {
+        youGotARatAudioClip = (AudioClip)AssetDatabase.LoadAssetAtPath("Assets/Audio/SFX/voice over/youGotARat.mp3", typeof(AudioClip));
+        gameObject.transform.GetComponent<AudioSource>().clip = youGotARatAudioClip;
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         gameManager = GameObject.Find("GameManager");
@@ -29,9 +38,11 @@ public class RatScript : MonoBehaviour
             other.transform.GetComponent<ScooterDrive>().hasARat = true;
             gameManager.GetComponent<GameManager>().player1HasARat = true;
 
-            gameObject.SetActive(false);            
-        }    
-        
+            gameObject.SetActive(false);
+
+            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+        }
+
         else if (other.name == "Player2")
         {
             //Debug.Log(GameObject.Find("Canvas - PlayerPhone2").transform.Find);
@@ -39,6 +50,8 @@ public class RatScript : MonoBehaviour
             //player2.transform.GetComponent<ScooterDrive>().hasARat = true;
             gameManager.GetComponent<GameManager>().player2HasARat = true;
             gameObject.SetActive(false);
+            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+
         }
         else if (other.name == "Player3")
         {
@@ -47,6 +60,8 @@ public class RatScript : MonoBehaviour
             gameManager.GetComponent<GameManager>().player3HasARat = true;
 
             gameObject.SetActive(false);
+            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+
         }
         else if (other.name == "Player4")
         {
@@ -55,6 +70,8 @@ public class RatScript : MonoBehaviour
             gameManager.GetComponent<GameManager>().player4HasARat = true;
 
             gameObject.SetActive(false);
+            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+
         }
     }
 }

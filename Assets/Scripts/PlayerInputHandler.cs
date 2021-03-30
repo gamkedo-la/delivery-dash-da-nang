@@ -18,6 +18,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     public GameObject creditsPanel;
 
+    public AudioClip phoneButtonPressedAudioClip;
+
+
     [SerializeField] private int playerindexTest;
 
     // Start is called before the first frame update
@@ -188,6 +191,8 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else if (context.performed)
         {
+            //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+
             gameObject.GetComponent<PlayerCharacter>().HandleRightShoulderButton();
         }
     }
@@ -200,6 +205,8 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else if (context.performed)
         {
+            //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+
             gameObject.GetComponent<PlayerCharacter>().HandleLeftShoulderButton();
         }
     }
@@ -315,6 +322,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Backspace) && !isBackspacePressed)
             {
+
                 isBackspacePressed = true;
                 // TODO
                 // your logic here when button pressed

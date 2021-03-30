@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 5070254983555415312, guid: f8f2377ab76759045bd52f16a086e9af,
         type: 3}
       propertyPath: m_Name
-      value: yellowWallWithWhiteSlatsPiece (22)
+      value: yellowWallWithWhiteSlatsPiece (22) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5070254983555415312, guid: f8f2377ab76759045bd52f16a086e9af,
         type: 3}

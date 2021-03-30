@@ -15,6 +15,7 @@ public class PlayerCharacter : MonoBehaviour
     public GameObject mainCamera;
     MainMenu mainMenuScript;
 
+
     private void Awake()
     {
         mainMenuScript = mainCamera.GetComponent<MainMenu>();

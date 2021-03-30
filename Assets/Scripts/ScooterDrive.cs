@@ -125,7 +125,13 @@ public class ScooterDrive : MonoBehaviour
     List<int> possiblePlayerNumbers;
 
     public AudioClip phoneButtonPressedAudioClip;
+    public AudioClip ratsAudioClip;
+    public AudioClip getOffMeAudioClip;
+    public AudioClip youGotARatAudioClip;
 
+    public AudioClip bsuiAudioClip;
+
+    public AudioClip[] collisionSFXList;
 
     private void Awake()
     {
@@ -275,6 +281,12 @@ public class ScooterDrive : MonoBehaviour
         }
     }// end of update(){}
 
+    public void playRandomCollisionSound()
+    {
+        int randomCollisionSoundListIndex = Random.Range(0, collisionSFXList.Length - 1);
+        AudioClip randomCollisionClip = collisionSFXList[randomCollisionSoundListIndex];
+        AudioManager.Instance.PlaySoundSFX(randomCollisionClip, gameObject, volume: 1f);
+    }
     public void updateDirectionBools()
     {
         if (gameObject.transform.position.z > previousZ)
@@ -764,6 +776,7 @@ public class ScooterDrive : MonoBehaviour
 
         if (other.tag == "Building")
         {
+            playRandomCollisionSound();
             currentSpeed = 0;
             if (player1)
             {
@@ -806,6 +819,8 @@ public class ScooterDrive : MonoBehaviour
 
         if (other.tag == "AICar")
         {
+            playRandomCollisionSound();
+
             if (player1)
             {
                 FoodHealth.currentHealth1 -= 5f;
@@ -870,11 +885,13 @@ public class ScooterDrive : MonoBehaviour
         {
             homeScreenScript.dPadUpPressed = true;
             homeScreenScript.handleGamepadUINavigation();
+            AudioManager.Instance.PlaySoundSFX(bsuiAudioClip, gameObject, volume: 0.1f);
         }
         else if (ordersScreen.activeSelf)
         {
-            
-            
+            AudioManager.Instance.PlaySoundSFX(bsuiAudioClip, gameObject, volume: 0.1f);
+
+
             focusedOrderIndex--;
             if (focusedOrderIndex < 0)
             {
@@ -909,11 +926,15 @@ public class ScooterDrive : MonoBehaviour
     {
         if (homeScreen.activeSelf)
         {
+            AudioManager.Instance.PlaySoundSFX(bsuiAudioClip, gameObject, volume: 0.1f);
+
             homeScreenScript.dPadDownPressed = true;
             homeScreenScript.handleGamepadUINavigation();
         }
         else if (ordersScreen.activeSelf)
         {
+            AudioManager.Instance.PlaySoundSFX(bsuiAudioClip, gameObject, volume: 0.1f);
+
             focusedOrderIndex++;
             if (focusedOrderIndex > individualOrdersHolder.transform.childCount - 1)
             {
@@ -948,7 +969,9 @@ public class ScooterDrive : MonoBehaviour
     {
             if (homeScreen.activeSelf)
             {
-                homeScreenScript.dPadLeftPressed = true;
+            AudioManager.Instance.PlaySoundSFX(bsuiAudioClip, gameObject, volume: 0.1f);
+
+            homeScreenScript.dPadLeftPressed = true;
                 homeScreenScript.handleGamepadUINavigation();
             }
         else
@@ -962,7 +985,9 @@ public class ScooterDrive : MonoBehaviour
     {
                 if (homeScreen.activeSelf)
                 {
-                    homeScreenScript.dPadRightPressed = true;
+            AudioManager.Instance.PlaySoundSFX(bsuiAudioClip, gameObject, volume: 0.1f);
+
+            homeScreenScript.dPadRightPressed = true;
                     homeScreenScript.handleGamepadUINavigation();
                 }
         else
@@ -1127,6 +1152,8 @@ public class ScooterDrive : MonoBehaviour
     {
         if (gameObject.name == "Player1" && gameManager.GetComponent<GameManager>().player1HasARat)
         {
+            AudioManager.Instance.PlaySoundSFX(ratsAudioClip, gameObject, 0.5f);
+
             int totalNumberOfActivePlayers = MainMenu.playerCount;
             if (possiblePlayerNumbers.Count > 0)
             {
@@ -1144,7 +1171,6 @@ public class ScooterDrive : MonoBehaviour
 
             int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
             int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
-            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
             
             if (playerToObstruct.name == "Player1")
@@ -1163,6 +1189,8 @@ public class ScooterDrive : MonoBehaviour
         }
         else if (gameObject.name == "Player2" && gameManager.GetComponent<GameManager>().player2HasARat)
         {
+            AudioManager.Instance.PlaySoundSFX(ratsAudioClip, gameObject, 0.5f);
+
             int totalNumberOfActivePlayers = MainMenu.playerCount;
             if (possiblePlayerNumbers.Count > 0)
             {
@@ -1180,7 +1208,6 @@ public class ScooterDrive : MonoBehaviour
 
             int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
             int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
-            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
 
             if (playerToObstruct.name == "Player1")
@@ -1199,6 +1226,8 @@ public class ScooterDrive : MonoBehaviour
         }
         else if (gameObject.name == "Player3" && gameManager.GetComponent<GameManager>().player3HasARat)
         {
+            AudioManager.Instance.PlaySoundSFX(ratsAudioClip, gameObject, 0.5f);
+
             int totalNumberOfActivePlayers = MainMenu.playerCount;
             if (possiblePlayerNumbers.Count > 0)
             {
@@ -1216,7 +1245,6 @@ public class ScooterDrive : MonoBehaviour
 
             int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
             int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
-            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
 
             if (playerToObstruct.name == "Player1")
@@ -1235,6 +1263,8 @@ public class ScooterDrive : MonoBehaviour
         }
         else if (gameObject.name == "Player4" && gameManager.GetComponent<GameManager>().player4HasARat)
         {
+            AudioManager.Instance.PlaySoundSFX(ratsAudioClip, gameObject, 0.5f);
+
             int totalNumberOfActivePlayers = MainMenu.playerCount;
             if (possiblePlayerNumbers.Count > 0)
             {
@@ -1252,7 +1282,6 @@ public class ScooterDrive : MonoBehaviour
 
             int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
             int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
-            Debug.Log("randomPlayerToObstructNumber: " + randomPlayerToObstructNumber);
             GameObject playerToObstruct = GameObject.Find("Player" + randomPlayerToObstructNumber);
 
             if (playerToObstruct.name == "Player1")
@@ -1274,30 +1303,25 @@ public class ScooterDrive : MonoBehaviour
     IEnumerator flipAbleToRemoveObstructionBool(GameObject obstructedPlayer)
     {
         yield return new WaitForSeconds(3);
-        Debug.Log("obstructedPlayer.name: " + obstructedPlayer.name);//.GetComponent<ScooterDrive>()
         //obstructedPlayer.GetComponent<ScooterDrive>().ableToRemoveObstruction = true;
         if (obstructedPlayer.name == "Player1")
         {
-            Debug.Log("flipping obstruction bool Player1");
             GameManager.player1CanRemoveCameraObstruction = true;
         }
         else if (obstructedPlayer.name == "Player2")
         {
-            Debug.Log("flipping obstruction bool Player2");
 
             GameManager.player2CanRemoveCameraObstruction = true;
 
         }
         else if (obstructedPlayer.name == "Player3")
         {
-            Debug.Log("flipping obstruction bool Player3");
 
             GameManager.player3CanRemoveCameraObstruction = true;
 
         }
         else if (obstructedPlayer.name == "Player4")
         {
-            Debug.Log("flipping obstruction bool Player4");
 
             GameManager.player4CanRemoveCameraObstruction = true;
 
@@ -1306,38 +1330,34 @@ public class ScooterDrive : MonoBehaviour
 
     public void HandleLeftTrigger()
     {
-        Debug.Log("left trigger being recognized");
         if (gameObject.name == "Player1")
         {
             if (!cameraIsObstructed && !GameManager.player1CanRemoveCameraObstruction)
             {
-                Debug.Log("returning from player1 left trigger, check if able to remove obstruction");
                 return;
             }    
             else 
             {
-                Debug.Log("should be turning off obstruction image player1");
-                Debug.Log("ratObstructionImage: " + ratObstructionImage);
                 GameManager.player1CanRemoveCameraObstruction = true;
 
                 ratObstructionImage.gameObject.SetActive(false);
+                AudioManager.Instance.PlaySoundSFX(getOffMeAudioClip, gameObject, 0.5f);
+
             }
         }
         else if (gameObject.name == "Player2")
         {
             if (!cameraIsObstructed && !GameManager.player2CanRemoveCameraObstruction)
             {
-                Debug.Log("returning from player2 left trigger, check if able to remove obstruction");
 
                 return;
             }
             else
             {
-                Debug.Log("should be turning off obstruction image player2");
                 ratObstructionImage.gameObject.SetActive(false);
                 GameManager.player2CanRemoveCameraObstruction = true;
+                AudioManager.Instance.PlaySoundSFX(getOffMeAudioClip, gameObject, 0.5f);
 
-                Debug.Log("ratObstructionImage: " + ratObstructionImage);
 
             }
         }
@@ -1345,14 +1365,11 @@ public class ScooterDrive : MonoBehaviour
         {
             if (!cameraIsObstructed && !GameManager.player3CanRemoveCameraObstruction)
             {
-                Debug.Log("returning from player3 left trigger, check if able to remove obstruction");
 
                 return;
             }
             else
             {
-                Debug.Log("should be turning off obstruction image player3");
-                Debug.Log("ratObstructionImage: " + ratObstructionImage);
                 GameManager.player3CanRemoveCameraObstruction = true;
                 GameObject.Find("Canvas - PlayerPhone3").transform.Find("RatObstructionImage").gameObject.SetActive(false);
                 //ratObstructionImage.gameObject.SetActive(false);
@@ -1362,15 +1379,13 @@ public class ScooterDrive : MonoBehaviour
         {
             if (!cameraIsObstructed && !GameManager.player3CanRemoveCameraObstruction)
             {
-                Debug.Log("returning from player4 left trigger, check if able to remove obstruction");
 
                 return;
             }
             else
             {
-                Debug.Log("should be turning off obstruction image player4");
-                Debug.Log("ratObstructionImage: " + ratObstructionImage);
                 GameManager.player4CanRemoveCameraObstruction = true;
+                AudioManager.Instance.PlaySoundSFX(getOffMeAudioClip, gameObject, 0.5f);
 
                 ratObstructionImage.gameObject.SetActive(false);
             }
@@ -1389,7 +1404,12 @@ public class ScooterDrive : MonoBehaviour
         //}    
     }
 
-    
+    public void playYouGotARatAudioClip()
+    {
+        AudioManager.Instance.PlaySoundSFX(youGotARatAudioClip, gameObject, 0.5f);
+    }
+
+
 
     IEnumerator LevelLoading()
     {
