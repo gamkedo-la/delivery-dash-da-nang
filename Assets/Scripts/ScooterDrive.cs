@@ -1011,7 +1011,7 @@ public class ScooterDrive : MonoBehaviour
         
         if (!phone.GetBool("PhoneOn"))
         {
-            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
+            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject, 0.5f);
             phone.SetBool("PhoneOn", true);
             phoneActive = true;
         }    
@@ -1095,7 +1095,7 @@ public class ScooterDrive : MonoBehaviour
         else if (phone.GetBool("PhoneOn") && phoneGameObject.transform.GetChild(3).gameObject.activeSelf)
         {
             //put phone away
-            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject);
+            AudioManager.Instance.PlaySoundSFX(phoneInOutAudioClip, gameObject, 0.5f);
             phone.SetBool("PhoneOn", false);
             phoneActive = false;
         }    
