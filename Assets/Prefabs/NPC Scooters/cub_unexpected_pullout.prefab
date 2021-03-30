@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentScooter: {fileID: 2746749697551487035}
+  otherParentTriggerObject: {fileID: 5325890771261487681}
 --- !u!54 &2780573940674021907
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentScooter: {fileID: 2746749697551487035}
+  otherParentTriggerObject: {fileID: 1286272291113179545}
 --- !u!1001 &1367246929770379849
 PrefabInstance:
   m_ObjectHideFlags: 0
