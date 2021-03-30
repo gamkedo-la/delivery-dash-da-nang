@@ -124,6 +124,9 @@ public class ScooterDrive : MonoBehaviour
 
     List<int> possiblePlayerNumbers;
 
+    public AudioClip phoneButtonPressedAudioClip;
+
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -1088,6 +1091,7 @@ public class ScooterDrive : MonoBehaviour
             phoneCanvas.GetComponentInParent<PhoneScript>().OrdersMenu.SetActive(false);
             phoneCanvas.GetComponentInParent<PhoneScript>().RatingsScreen.SetActive(false);
             phoneCanvas.GetComponentInParent<PhoneScript>().CurrentScores.SetActive(false);
+            AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
             return;
         }
 
