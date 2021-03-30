@@ -3,7 +3,14 @@ guid: 342f4e790067e1f4388d1daa20a80c76
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ratIconSprite: {instanceID: 0}
+  - player1: {instanceID: 0}
+  - player2: {instanceID: 0}
+  - player3: {instanceID: 0}
+  - player4: {instanceID: 0}
+  - youGotARatAudioClip: {fileID: 8300000, guid: babf1f7f2c2aee44c814493f0789ee24,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

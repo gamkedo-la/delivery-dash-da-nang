@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSourcePrefab: {fileID: 3833581776491342568, guid: 6e2474645d2acf249b984f52db9989de,
     type: 3}
+  danielleScream: {fileID: 8300000, guid: af9953df5bc28ef4198cdca8c9f8e84d, type: 3}
 --- !u!81 &8320477572648996979
 AudioListener:
   m_ObjectHideFlags: 0

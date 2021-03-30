@@ -17,12 +17,6 @@ public class RatScript : MonoBehaviour
 
     public AudioClip youGotARatAudioClip;
 
-    private void Awake()
-    {
-        youGotARatAudioClip = (AudioClip)AssetDatabase.LoadAssetAtPath("Assets/Audio/SFX/voice over/youGotARat.mp3", typeof(AudioClip));
-        gameObject.transform.GetComponent<AudioSource>().clip = youGotARatAudioClip;
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,7 +34,8 @@ public class RatScript : MonoBehaviour
 
             gameObject.SetActive(false);
 
-            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			//other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			AudioManager.Instance.PlaySoundSFX(youGotARatAudioClip, other.gameObject);
         }
 
         else if (other.name == "Player2")
@@ -50,9 +45,10 @@ public class RatScript : MonoBehaviour
             //player2.transform.GetComponent<ScooterDrive>().hasARat = true;
             gameManager.GetComponent<GameManager>().player2HasARat = true;
             gameObject.SetActive(false);
-            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			//other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			AudioManager.Instance.PlaySoundSFX(youGotARatAudioClip, other.gameObject);
 
-        }
+		}
         else if (other.name == "Player3")
         {
             GameObject.Find("Canvas - PlayerPhone3").transform.Find("RatObstructionImage").GetComponent<Image>().sprite = ratIconSprite;
@@ -60,9 +56,10 @@ public class RatScript : MonoBehaviour
             gameManager.GetComponent<GameManager>().player3HasARat = true;
 
             gameObject.SetActive(false);
-            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			//other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			AudioManager.Instance.PlaySoundSFX(youGotARatAudioClip, other.gameObject);
 
-        }
+		}
         else if (other.name == "Player4")
         {
             GameObject.Find("Canvas - PlayerPhone4").transform.Find("RatObstructionImage").GetComponent<Image>().sprite = ratIconSprite;
@@ -70,8 +67,9 @@ public class RatScript : MonoBehaviour
             gameManager.GetComponent<GameManager>().player4HasARat = true;
 
             gameObject.SetActive(false);
-            //other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			//other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
+			AudioManager.Instance.PlaySoundSFX(youGotARatAudioClip, other.gameObject);
 
-        }
+		}
     }
 }

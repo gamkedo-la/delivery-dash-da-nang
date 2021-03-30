@@ -81,7 +81,7 @@ MonoBehaviour:
   player2: {fileID: 0}
   player3: {fileID: 0}
   player4: {fileID: 0}
-  youGotARatAudioClip: {fileID: 0}
+  youGotARatAudioClip: {fileID: 8300000, guid: babf1f7f2c2aee44c814493f0789ee24, type: 3}
 --- !u!82 &5172006898043027632
 AudioSource:
   m_ObjectHideFlags: 0

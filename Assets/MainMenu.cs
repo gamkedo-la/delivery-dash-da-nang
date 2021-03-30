@@ -20,8 +20,6 @@ public class MainMenu : MonoBehaviour
 
     public bool characterSelectionScreenIsActuallyFocusedOn = false;
 
-    public GameObject audioManager;
-
 
     public GameObject titleScreenMusic;
     public AudioSource titleScreenMusicAudioSource;
@@ -38,8 +36,6 @@ public class MainMenu : MonoBehaviour
         titleScreenMusicAudioSource = titleScreenMusic.GetComponent<AudioSource>();
         Time.timeScale = 1;
         playerCount = 1;
-
-        audioManager.SetActive(false);
     }
 
     private void Update()
@@ -87,7 +83,7 @@ public class MainMenu : MonoBehaviour
         main.SetActive(false);
         gamecreation.SetActive(true);
         characterSelectionScreenIsActuallyFocusedOn = true;
-        //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, main, volume: 0.5f);
+        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, main, volume: 0.5f);
     }
 
     public void gameCreateBack()
@@ -111,27 +107,7 @@ public class MainMenu : MonoBehaviour
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
         levelLoader.LoadNextLevel();
 
-        //audioManager.GetComponent<MusicManager>().
-
-
-        //StartCoroutine()
-        //.musicPrefab.GetComponent<AudioSource>()
-        
-        
-        MusicManager musicManagerScript = audioManager.GetComponent<MusicManager>();
-
         StartCoroutine(TitleScreenFadeOut.FadeOut(titleScreenMusicAudioSource, 1f));
-        StartCoroutine(DelayMainMusicBecauseLoadingTime());
-
-        //StartCoroutine(musicManagerScript.StebsFadeIn(musicManagerScript.currentAudioSource, 9f, audioManager));
-        StartCoroutine(musicManagerScript.FadeIn(musicManagerScript.musicPrefab.GetComponent<AudioSource>(), 5f));
-    }
-
-    IEnumerator DelayMainMusicBecauseLoadingTime()
-    {
-        yield return new WaitForSeconds(1.5f);
-        audioManager.SetActive(true);
-        
     }
 
     public void HandleStartButton()
@@ -154,7 +130,7 @@ public class MainMenu : MonoBehaviour
 
     public void increasePlayerCount()
     {
-        //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
 
         playerCount++;
         if (playerCount > 4)
@@ -166,7 +142,7 @@ public class MainMenu : MonoBehaviour
 
     public void decreasePlayerCount()
     {
-        //AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
 
         playerCount--;
         if (playerCount < 1)
