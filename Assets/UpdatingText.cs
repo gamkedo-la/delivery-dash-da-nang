@@ -16,7 +16,7 @@ public class UpdatingText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  print(currentTime);
+        //print("hello");
         if (currentTime < 1)
         {
             currentTime += Time.deltaTime * 2;
