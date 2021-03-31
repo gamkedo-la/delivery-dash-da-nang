@@ -369,7 +369,7 @@ public class ScooterDrive : MonoBehaviour
         }
         else if (isAccelerating)
         {
-            //accelerateValue = 1;
+            accelerateValue = 1;
         }
         else if (!isAccelerating && (isReversing || isBraking))
         {
