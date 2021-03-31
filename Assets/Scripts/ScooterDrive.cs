@@ -133,6 +133,9 @@ public class ScooterDrive : MonoBehaviour
 
     public AudioClip[] collisionSFXList;
 
+    public GameObject controlsScreen;
+    public GameObject pauseMenu;
+
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -1146,6 +1149,26 @@ public class ScooterDrive : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
         //Clear bools and static values
+    }
+
+    public void GoToControlsScreen()
+    {
+        controlsScreen.SetActive(true);
+        pauseMenu.transform.GetChild(0).gameObject.SetActive(false);
+        pauseMenu.transform.GetChild(1).gameObject.SetActive(false);
+        pauseMenu.transform.GetChild(2).gameObject.SetActive(false);
+        pauseMenu.transform.GetChild(3).gameObject.SetActive(false);
+
+    }
+
+    public void BackToPauseMenue()
+    {
+        Debug.Log("triggering back to pause menue");
+        controlsScreen.SetActive(false);
+        pauseMenu.transform.GetChild(0).gameObject.SetActive(true);
+        pauseMenu.transform.GetChild(1).gameObject.SetActive(true);
+        pauseMenu.transform.GetChild(2).gameObject.SetActive(true);
+        pauseMenu.transform.GetChild(3).gameObject.SetActive(true);
     }
 
     public void HandleRightTrigger()
