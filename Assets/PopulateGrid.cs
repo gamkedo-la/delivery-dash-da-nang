@@ -29,7 +29,7 @@ public class PopulateGrid : MonoBehaviour
                 customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
                 {
-                    Debug.Log("i == 0 for player1");
+                    //Debug.Log("i == 0 for player1");
 
                     customerOrderPrefab.GetComponent<PrefabOrder>().isFocusedOn = true;
 
@@ -44,7 +44,7 @@ public class PopulateGrid : MonoBehaviour
                 customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
                 {
-                    Debug.Log("i == 0 for player2");
+                    //Debug.Log("i == 0 for player2");
 
                     customerOrderPrefab.GetComponent<PrefabOrderPlayer2>().isFocusedOn = true;
 
@@ -59,7 +59,7 @@ public class PopulateGrid : MonoBehaviour
                 customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
                 {
-                    Debug.Log("i == 0 for player3");
+                    //Debug.Log("i == 0 for player3");
 
                     customerOrderPrefab.GetComponent<PrefabOrderPlayer3>().isFocusedOn = true;
 
@@ -74,7 +74,7 @@ public class PopulateGrid : MonoBehaviour
                 customerOrderPrefab = (GameObject)Instantiate(prefab, transform);
                 if (i == 0)
                 {
-                    Debug.Log("i == 0 for player4");
+                    //Debug.Log("i == 0 for player4");
 
                     customerOrderPrefab.GetComponent<PrefabOrderPlayer4>().isFocusedOn = true;
                     

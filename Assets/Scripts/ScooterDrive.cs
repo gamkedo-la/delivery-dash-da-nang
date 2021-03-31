@@ -462,7 +462,6 @@ public class ScooterDrive : MonoBehaviour
         {
             if (maxLeftTurnHeld || maxRightTurnHeld)
             {
-                Debug.Log("maxTurnReached");
                 //return;
             }
             else
@@ -1052,10 +1051,8 @@ public class ScooterDrive : MonoBehaviour
         }    
         else if (phone.GetBool("PhoneOn") && ordersScreen.activeSelf)//ordersScreen
         {
-            Debug.Log("inside ordersScreen ActiveSelf check");
             if (gameObject.name == "Player1")
             {
-                Debug.Log("inside check for Player1");
                 for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
                 {
                     if (individualOrdersHolder.transform.GetChild(i).GetComponent<PrefabOrder>().isFocusedOn)
@@ -1067,7 +1064,6 @@ public class ScooterDrive : MonoBehaviour
             }
             else if (gameObject.name == "Player2")
             {
-                Debug.Log("inside check for Player2");
 
                 for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
                 {
@@ -1080,7 +1076,6 @@ public class ScooterDrive : MonoBehaviour
             }
             else if (gameObject.name == "Player3")
             {
-                Debug.Log("inside check for Player3");
 
                 for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
                 {
@@ -1093,7 +1088,6 @@ public class ScooterDrive : MonoBehaviour
             }
             else if (gameObject.name == "Player4")
             {
-                Debug.Log("inside check for Player4");
 
                 for (int i = 0; i < individualOrdersHolder.transform.childCount; i++)
                 {

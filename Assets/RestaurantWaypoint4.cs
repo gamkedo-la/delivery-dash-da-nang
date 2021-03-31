@@ -52,6 +52,7 @@ public class RestaurantWaypoint4 : MonoBehaviour
                 {
                     player4OrderPickedUp = true;
                     orderPickedUpSFX.Play();
+                    food.SetActive(true);
                     this.gameObject.transform.position = GameObject.Find("Player4Apartment").transform.position;
                     orders.text = "Deliver " + GameManager.Player4CustomerItemOrdered + " to " + GameManager.Player4CustomerName + " at " + $"<color=yellow>{GameManager.Player4ApartmentName}</color>";
                     customerNode = gpsScript.FindNearestNode(gameObject.transform);

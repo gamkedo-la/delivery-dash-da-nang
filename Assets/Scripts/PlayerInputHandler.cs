@@ -129,7 +129,6 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("should be accelerating, player input handler script");
             scooterDriveScript.isAccelerating = true;
         }
         else if (context.canceled)
