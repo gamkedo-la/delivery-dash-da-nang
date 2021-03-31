@@ -1203,6 +1203,7 @@ public class ScooterDrive : MonoBehaviour
                 
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
+            gameManager.GetComponent<GameManager>().player1HasARat = false;
         }
         else if (gameObject.name == "Player2" && gameManager.GetComponent<GameManager>().player2HasARat)
         {
@@ -1240,6 +1241,7 @@ public class ScooterDrive : MonoBehaviour
 
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
+            gameManager.GetComponent<GameManager>().player2HasARat = false;
         }
         else if (gameObject.name == "Player3" && gameManager.GetComponent<GameManager>().player3HasARat)
         {
@@ -1277,6 +1279,7 @@ public class ScooterDrive : MonoBehaviour
 
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
+            gameManager.GetComponent<GameManager>().player3HasARat = false;
         }
         else if (gameObject.name == "Player4" && gameManager.GetComponent<GameManager>().player4HasARat)
         {
@@ -1314,6 +1317,7 @@ public class ScooterDrive : MonoBehaviour
 
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
+            gameManager.GetComponent<GameManager>().player4HasARat = false;
         }
     }
 
@@ -1359,7 +1363,7 @@ public class ScooterDrive : MonoBehaviour
 
                 ratObstructionImage.gameObject.SetActive(false);
                 AudioManager.Instance.PlaySoundSFX(getOffMeAudioClip, gameObject, 0.5f);
-
+                cameraIsObstructed = false;
             }
         }
         else if (gameObject.name == "Player2")
@@ -1375,6 +1379,7 @@ public class ScooterDrive : MonoBehaviour
                 GameManager.player2CanRemoveCameraObstruction = true;
                 AudioManager.Instance.PlaySoundSFX(getOffMeAudioClip, gameObject, 0.5f);
 
+                cameraIsObstructed = false;
 
             }
         }
@@ -1389,7 +1394,11 @@ public class ScooterDrive : MonoBehaviour
             {
                 GameManager.player3CanRemoveCameraObstruction = true;
                 GameObject.Find("Canvas - PlayerPhone3").transform.Find("RatObstructionImage").gameObject.SetActive(false);
+                AudioManager.Instance.PlaySoundSFX(getOffMeAudioClip, gameObject, 0.5f);
+
                 //ratObstructionImage.gameObject.SetActive(false);
+                cameraIsObstructed = false;
+
             }
         }
         else if (gameObject.name == "Player4")
@@ -1405,6 +1414,8 @@ public class ScooterDrive : MonoBehaviour
                 AudioManager.Instance.PlaySoundSFX(getOffMeAudioClip, gameObject, 0.5f);
 
                 ratObstructionImage.gameObject.SetActive(false);
+                cameraIsObstructed = false;
+
             }
         }
         
