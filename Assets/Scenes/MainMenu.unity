@@ -4261,7 +4261,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: aa2677a9b3f78284daf524d50b37563f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.644
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4353,7 +4353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781698491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -414.5299, y: 25.088367, z: 75.54606}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12025,7 +12025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 174, y: -196}
+  m_AnchoredPosition: {x: 174, y: -178}
   m_SizeDelta: {x: 138.5, y: 79.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925035300
