@@ -1187,21 +1187,21 @@ MonoBehaviour:
 
     Space - Drive
 
-    K - Brake
+    A/D - Steer
 
-    A/D
-    - Steer
+    C
+    - Open or use on phone
 
-    C - Open phone, confirm phone
+    X - Close or back on phone
 
-    X - Lower phone, cancel on phone
+    Arrows - Phone menus
 
-    Arrows
-    - Phone menus
+    K
+    - Brake
 
-    J- Throw rat at other driver
+    J- Throw rat at competitor
 
-    L - Clear rat from face'
+    L - Clear rat attack'
 --- !u!222 &264798163
 CanvasRenderer:
   m_ObjectHideFlags: 0
