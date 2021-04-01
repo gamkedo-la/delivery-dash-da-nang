@@ -34,12 +34,13 @@ public class RestaurantWaypoint3 : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.name == "Player3")
         {
             receivedDriver = other.GetComponent<DeliveryDriver>();
-
+            Debug.Log("PrefabOrderPlayer3.orderHasBeenTaken3: " + PrefabOrderPlayer3.orderHasBeenTaken3);
             if (PrefabOrderPlayer3.orderHasBeenTaken3)
             {
+                
                 if (player3OrderPickedUp && !player3OrderDelivered && player.GetComponent<ScooterDrive>().currentSpeed == 0)
                 {
                     player3OrderDelivered = true;

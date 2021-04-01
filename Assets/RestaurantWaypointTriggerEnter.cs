@@ -34,7 +34,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.name == "Player1")
         {
             receivedDriver = other.GetComponent<DeliveryDriver>();
             if (PrefabOrder.orderHasBeenTaken)

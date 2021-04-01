@@ -34,7 +34,7 @@ public class RestaurantWaypoint2 : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.name == "Player2")
         {
             receivedDriver = other.GetComponent<DeliveryDriver>();
 
