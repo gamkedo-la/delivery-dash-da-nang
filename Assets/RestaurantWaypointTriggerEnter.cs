@@ -156,4 +156,6 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         timer.text = finalScore.ToString("F0") + "%";
     }
+
+    //comment for extra commit
 }
