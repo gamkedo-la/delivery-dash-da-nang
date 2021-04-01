@@ -41,7 +41,7 @@ public class RatScript : MonoBehaviour
         else if (other.name == "Player2")
         {
             //Debug.Log(GameObject.Find("Canvas - PlayerPhone2").transform.Find);
-            GameObject.Find("Canvas - PlayerPhone2").transform.Find("RatObstructionImage").GetComponent<Image>().sprite = ratIconSprite;
+            GameObject.Find("Canvas - PlayerPhone2").transform.Find("WeaponIcon").GetComponent<Image>().sprite = ratIconSprite;
             //player2.transform.GetComponent<ScooterDrive>().hasARat = true;
             gameManager.GetComponent<GameManager>().player2HasARat = true;
             gameObject.SetActive(false);
@@ -51,7 +51,7 @@ public class RatScript : MonoBehaviour
 		}
         else if (other.name == "Player3")
         {
-            GameObject.Find("Canvas - PlayerPhone3").transform.Find("RatObstructionImage").GetComponent<Image>().sprite = ratIconSprite;
+            GameObject.Find("Canvas - PlayerPhone3").transform.Find("WeaponIcon").GetComponent<Image>().sprite = ratIconSprite;
             //player3.transform.GetComponent<ScooterDrive>().hasARat = true;
             gameManager.GetComponent<GameManager>().player3HasARat = true;
 
@@ -62,7 +62,7 @@ public class RatScript : MonoBehaviour
 		}
         else if (other.name == "Player4")
         {
-            GameObject.Find("Canvas - PlayerPhone4").transform.Find("RatObstructionImage").GetComponent<Image>().sprite = ratIconSprite;
+            GameObject.Find("Canvas - PlayerPhone4").transform.Find("WeaponIcon").GetComponent<Image>().sprite = ratIconSprite;
             //player4.transform.GetComponent<ScooterDrive>().hasARat = true;
             gameManager.GetComponent<GameManager>().player4HasARat = true;
 

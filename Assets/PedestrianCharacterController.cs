@@ -100,7 +100,6 @@ public class PedestrianCharacterController : MonoBehaviour
     private void playRandomScream()
     {
         var randomScreamListIndex = Random.Range(0, listOfScreams.Count);
-        Debug.Log("randomScreamListIndex: " + randomScreamListIndex);
         AudioManager.Instance.PlaySoundSFX(listOfScreams[randomScreamListIndex], gameObject, volume: 0.5f);
         hasScreamedThisCollision = true;
 

@@ -37,7 +37,6 @@ public class RestaurantWaypoint3 : MonoBehaviour
         if (other.tag == "Player" && other.name == "Player3")
         {
             receivedDriver = other.GetComponent<DeliveryDriver>();
-            Debug.Log("PrefabOrderPlayer3.orderHasBeenTaken3: " + PrefabOrderPlayer3.orderHasBeenTaken3);
             if (PrefabOrderPlayer3.orderHasBeenTaken3)
             {
                 

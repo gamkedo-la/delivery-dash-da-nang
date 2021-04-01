@@ -135,6 +135,8 @@ public class ScooterDrive : MonoBehaviour
 
     public GameObject controlsScreen;
     public GameObject pauseMenu;
+    public GameObject weaponIcon;
+    public Sprite emptyWeaponImage;
 
     private void Awake()
     {
@@ -1204,6 +1206,7 @@ public class ScooterDrive : MonoBehaviour
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
             gameManager.GetComponent<GameManager>().player1HasARat = false;
+            weaponIcon.GetComponent<Image>().sprite = emptyWeaponImage;
         }
         else if (gameObject.name == "Player2" && gameManager.GetComponent<GameManager>().player2HasARat)
         {
@@ -1221,8 +1224,6 @@ public class ScooterDrive : MonoBehaviour
             possiblePlayerNumbers.Add(1);
             possiblePlayerNumbers.Add(3);
             possiblePlayerNumbers.Add(4);
-
-            Debug.Log(possiblePlayerNumbers);
 
             int randomPossiblePlayersNumberIndex = Random.Range(0, 3);
             int randomPlayerToObstructNumber = possiblePlayerNumbers[randomPossiblePlayersNumberIndex];
@@ -1242,6 +1243,8 @@ public class ScooterDrive : MonoBehaviour
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
             gameManager.GetComponent<GameManager>().player2HasARat = false;
+            weaponIcon.GetComponent<Image>().sprite = emptyWeaponImage;
+
         }
         else if (gameObject.name == "Player3" && gameManager.GetComponent<GameManager>().player3HasARat)
         {
@@ -1280,6 +1283,8 @@ public class ScooterDrive : MonoBehaviour
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
             gameManager.GetComponent<GameManager>().player3HasARat = false;
+            weaponIcon.GetComponent<Image>().sprite = emptyWeaponImage;
+
         }
         else if (gameObject.name == "Player4" && gameManager.GetComponent<GameManager>().player4HasARat)
         {
@@ -1318,6 +1323,8 @@ public class ScooterDrive : MonoBehaviour
                 StartCoroutine(flipAbleToRemoveObstructionBool(playerToObstruct));
             }
             gameManager.GetComponent<GameManager>().player4HasARat = false;
+            weaponIcon.GetComponent<Image>().sprite = emptyWeaponImage;
+
         }
     }
 

@@ -51,7 +51,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
                 {
                     player1OrderPickedUp = true;
                     food.SetActive(true);
-                    Debug.Log("physical order object for this player: " + food);
+
                     orderPickedUpSFX.Play();
                     this.gameObject.transform.position = GameObject.Find("Player1Apartment").transform.position;
                     orders.text = "Deliver " + GameManager.Player1CustomerItemOrdered + " to " + GameManager.Player1CustomerName + " at " + $"<color=yellow>{GameManager.Player1ApartmentName}</color>";

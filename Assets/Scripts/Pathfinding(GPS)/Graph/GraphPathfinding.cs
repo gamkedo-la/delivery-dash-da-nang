@@ -130,7 +130,7 @@ public class GraphPathfinding : MonoBehaviour
         }
         path.Add(startNode);
         path.Reverse();
-        Debug.Log(path);
+        //Debug.Log(path);
     }
 
     private void OnDrawGizmos()
