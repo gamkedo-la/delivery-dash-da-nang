@@ -98,16 +98,34 @@ public class RestaurantWaypoint4 : MonoBehaviour
         if (PrefabOrderPlayer4.orderHasBeenTaken4)
         {
             player4TimeScore -= Time.deltaTime;
+            if (player4TimeScore < 10f)
+            {
+                player4TimeScore = 10f;
+            }    
             timer.text = player4TimeScore.ToString("F2");
         }
 
         if (player4TimeScore < 0)
         {
+            player.GetComponent<ScooterDrive>().AssignStars();
             //Order failed on Time
+            if (receivedDriver != null)
+            {
+                receivedDriver.PlayerIncreaseOrderTotal((int)finalScore);
+            }
+            else
+            {
+                Debug.LogWarning("The driver can't be found");
+            }
+
             orders.text = "Order Not Delivered in Time. Transaction Cancelled.";
             float score = 0;
             timer.text = score.ToString("F2") + "%";
             PrefabOrderPlayer4.orderHasBeenTaken4 = false;
+            Debug.Log("PrefabOrderPlayer4.orderHasBeenTaken4: " + PrefabOrderPlayer4.orderHasBeenTaken4);
+            GameManager.Player4OrderSelected = false;
+            player4OrderPickedUp = false;
+            player4OrderDelivered = false;
             food.SetActive(false);
             this.transform.position = new Vector3(-10000, -10000, -10000);
             player4TimeScore = 0;
@@ -119,11 +137,25 @@ public class RestaurantWaypoint4 : MonoBehaviour
 
         if (FoodHealth.currentHealth4 < 0)
         {
+            player.GetComponent<ScooterDrive>().AssignStars();
             //Order failed on Time
+            if (receivedDriver != null)
+            {
+                receivedDriver.PlayerIncreaseOrderTotal((int)finalScore);
+            }
+            else
+            {
+                Debug.LogWarning("The driver can't be found");
+            }
+
             orders.text = "Order Destroyed in Transit. Transaction Cancelled.";
             float score = 0;
             timer.text = score.ToString("F2") + "%";
             PrefabOrderPlayer4.orderHasBeenTaken4 = false;
+            Debug.Log("PrefabOrderPlayer4.orderHasBeenTaken4: " + PrefabOrderPlayer4.orderHasBeenTaken4);
+            GameManager.Player4OrderSelected = false;
+            player4OrderPickedUp = false;
+            player4OrderDelivered = false;
             food.SetActive(false);
             this.transform.position = new Vector3(-10000, -10000, -10000);
             player4TimeScore = 0;

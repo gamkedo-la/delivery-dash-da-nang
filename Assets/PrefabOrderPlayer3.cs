@@ -191,7 +191,7 @@ public class PrefabOrderPlayer3 : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Debug.Log("DeductCount player3 reached");
-        populateGrid.DeductCount();
-        Destroy(this.gameObject);
+        //populateGrid.DeductCount();
+        //Destroy(this.gameObject);
     }
 }

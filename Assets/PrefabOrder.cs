@@ -194,7 +194,7 @@ public class PrefabOrder : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Debug.Log("DeductCount in prefab order reached");
 
-        populateGrid.DeductCount();
-        Destroy(this.gameObject);
+        //populateGrid.DeductCount();
+        //Destroy(this.gameObject);
     }
 }

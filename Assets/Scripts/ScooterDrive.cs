@@ -740,19 +740,29 @@ public class ScooterDrive : MonoBehaviour
             playerCurrentSpeed -= speedPenaltyPercent;
             if (player1)
             {
-                FoodHealth.currentHealth1 -= 5f;
+                FoodHealth.currentHealth1 -= 1f;
+                if (FoodHealth.currentHealth1 < 10f)
+                {
+                    FoodHealth.currentHealth1 = 10f;
+                }    
             }
             if (player2)
             {
-                FoodHealth.currentHealth2 -= 5f;
+                FoodHealth.currentHealth2 -= 1f;
+                FoodHealth.currentHealth2 = 10f;
+
             }
             if (player3)
             {
-                FoodHealth.currentHealth3 -= 5f;
+                FoodHealth.currentHealth3 -= 1f;
+                FoodHealth.currentHealth3 = 10f;
+
             }
             if (player4)
             {
-                FoodHealth.currentHealth4 -= 5f;
+                FoodHealth.currentHealth4 -= 1f;
+                FoodHealth.currentHealth4 = 10f;
+
             }
 
             //print(playerCurrentSpeed);

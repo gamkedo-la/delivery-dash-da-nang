@@ -193,7 +193,7 @@ public class PrefabOrderPlayer4 : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        populateGrid.DeductCount();
-        Destroy(this.gameObject);
+        //populateGrid.DeductCount();
+        //Destroy(this.gameObject);
     }
 }
