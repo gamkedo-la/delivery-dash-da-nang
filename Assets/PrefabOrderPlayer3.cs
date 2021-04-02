@@ -162,15 +162,15 @@ public class PrefabOrderPlayer3 : MonoBehaviour
                 RestaurantWaypoint3.player3TimeScore = minOrderTime;
                 RestaurantWaypoint3.player3TimeScoreMax = minOrderTime;
             }
-            if (dist > maxOrderTime)
+            else if (dist > maxOrderTime)
             {
                 RestaurantWaypoint3.player3TimeScore = maxOrderTime;
                 RestaurantWaypoint3.player3TimeScoreMax = maxOrderTime;
             }
             else
             {
-                RestaurantWaypoint3.player3TimeScore = dist;
-                RestaurantWaypoint3.player3TimeScoreMax = dist;
+                RestaurantWaypoint3.player3TimeScore = 125f;
+                RestaurantWaypoint3.player3TimeScoreMax = 125f;
             }
 
             player2WayPoint.transform.position = Player2RestaurantTransform.transform.position;

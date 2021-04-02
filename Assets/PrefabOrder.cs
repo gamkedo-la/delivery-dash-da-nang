@@ -171,8 +171,8 @@ public class PrefabOrder : MonoBehaviour
             }
             else
             {
-                RestaurantWaypointTriggerEnter.player1TimeScore = dist;
-                RestaurantWaypointTriggerEnter.player1TimeScoreMax = dist;
+                RestaurantWaypointTriggerEnter.player1TimeScore = 125f;
+                RestaurantWaypointTriggerEnter.player1TimeScoreMax = 125f;
             }
 
             player1WayPoint.transform.position = Player1RestaurantTransform.transform.position;

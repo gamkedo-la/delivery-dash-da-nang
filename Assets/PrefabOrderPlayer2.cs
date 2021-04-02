@@ -172,8 +172,8 @@ public class PrefabOrderPlayer2 : MonoBehaviour
             }
             else
             {
-                RestaurantWaypoint2.player2TimeScore = dist;
-                RestaurantWaypoint2.player2TimeScoreMax = dist;
+                RestaurantWaypoint2.player2TimeScore = 125f;
+                RestaurantWaypoint2.player2TimeScoreMax = 125f;
             }
 
             player2WayPoint.transform.position = Player2RestaurantTransform.transform.position;
