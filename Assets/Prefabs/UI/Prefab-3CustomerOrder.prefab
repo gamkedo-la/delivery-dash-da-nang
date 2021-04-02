@@ -319,11 +319,11 @@ MonoBehaviour:
   - Vacation Beach Hotel
   customerNames:
   - Chorz M
-  - Stoven
+  - Tarah ColorFabric
   - Brian Quixote
   - Me Again
   - Fabulous Theo
-  - Liz Taylor
+  - Broseph Shreiberts
   - King Crasha
   - Mama J
   - Lushious Liam
@@ -348,7 +348,7 @@ MonoBehaviour:
   decline: {fileID: 3049525337006559602}
   displayOrdersText: {fileID: 0}
   gameManager: {fileID: 0}
-  minOrderTime: 35
+  minOrderTime: 75
   maxOrderTime: 125
   isFocusedOn: 0
 --- !u!1 &3049525337507322622

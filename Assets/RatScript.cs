@@ -35,7 +35,7 @@ public class RatScript : MonoBehaviour
             gameObject.SetActive(false);
 
 			//other.transform.GetComponent<ScooterDrive>().playYouGotARatAudioClip();
-			AudioManager.Instance.PlaySoundSFX(youGotARatAudioClip, other.gameObject);
+			AudioManager.Instance.PlaySoundSFX(youGotARatAudioClip, other.gameObject, 0.5f);
         }
 
         else if (other.name == "Player2")

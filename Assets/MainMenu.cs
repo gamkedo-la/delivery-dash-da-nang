@@ -83,7 +83,7 @@ public class MainMenu : MonoBehaviour
         main.SetActive(false);
         gamecreation.SetActive(true);
         characterSelectionScreenIsActuallyFocusedOn = true;
-        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, main, volume: 0.5f);
+        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, main, volume: 0.25f);
     }
 
     public void gameCreateBack()
@@ -130,7 +130,7 @@ public class MainMenu : MonoBehaviour
 
     public void increasePlayerCount()
     {
-        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.25f);
 
         playerCount++;
         if (playerCount > 4)
@@ -142,7 +142,7 @@ public class MainMenu : MonoBehaviour
 
     public void decreasePlayerCount()
     {
-        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
+        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.25f);
 
         playerCount--;
         if (playerCount < 1)

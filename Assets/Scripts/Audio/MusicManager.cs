@@ -36,7 +36,13 @@ public class MusicManager : MonoBehaviour {
 		if (Instance == this) DontDestroyOnLoad(gameObject);
 	}
 
-	void Update() {
+    private void Start()
+    {
+		//currentAudiosSource = 
+		currentAudioSource.Play();
+    }
+
+    void Update() {
 		timeNow = (float)AudioSettings.dspTime;
 		countDown = (float)nextCueTime - timeNow;
 

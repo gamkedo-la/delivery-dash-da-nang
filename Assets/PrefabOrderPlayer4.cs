@@ -37,7 +37,7 @@ public class PrefabOrderPlayer4 : MonoBehaviour
     private AudioClip phoneButtonPressedAudioClip;
     private PhoneScript phoneScript;
 
-    public float minOrderTime = 35;
+    public float minOrderTime = 75;
     public float maxOrderTime = 125;
 
     PopulateGrid populateGrid;
@@ -128,61 +128,65 @@ public class PrefabOrderPlayer4 : MonoBehaviour
 
     public void OrderAccepted()
     {
-        AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
-
-        orderHasBeenTaken4 = true;
-        orderCondition.color = Color.green;
-
-        pointer = GameObject.Find("Canvas - Display Orders4").transform.GetChild(2).gameObject;
-        pointer.SetActive(true);
-        pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
-
-        pointerCube = pointer.transform.GetChild(2).gameObject;
-        pointerCube.SetActive(false);
-        //    pointToObjectiveScript.customerOrder = gameObject;
-        //Debug.Log("restaurant name: " + restaurantName);
-
-
-
-        GameManager.Player4OrderSelected = true;
-        //print(GameManager.Player1OrderSelected);
-
-        GameManager.Player4CustomerItemOrdered = orderedItems[restaurantSelected].ToString();
-        GameManager.Player4ApartmentName = apartmentName[customerLocation].ToString();
-        GameManager.Player4CustomerName = customerNames[customerName].ToString();
-        GameManager.Player4RestaurantName = restaurantName[restaurantSelected].ToString();
-
-        Player2RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
-        Player2ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
-
-        float dist = Vector3.Distance(Player2RestaurantTransform.position, Player2ApartmentTransform.position) / 5;
-
-        if (dist < minOrderTime)
+        if (!orderHasBeenTaken4)
         {
-            RestaurantWaypoint4.player4TimeScore = minOrderTime;
-            RestaurantWaypoint4.player4TimeScoreMax = minOrderTime;
-        }
-        if (dist > maxOrderTime)
-        {
-            RestaurantWaypoint4.player4TimeScore = maxOrderTime;
-            RestaurantWaypoint4.player4TimeScoreMax = maxOrderTime;
-        }
-        else
-        {
-            RestaurantWaypoint4.player4TimeScore = dist;
-            RestaurantWaypoint4.player4TimeScoreMax = dist;
-        }
+            AudioManager.Instance.PlaySoundSFX(phoneButtonPressedAudioClip, gameObject, volume: 0.5f);
 
-        player2WayPoint.transform.position = Player2RestaurantTransform.transform.position;
+            orderHasBeenTaken4 = true;
+            orderCondition.color = Color.green;
 
-        RestaurantWaypoint4.player4OrderPickedUp = false;
-        RestaurantWaypoint4.player4OrderDelivered = false;
+            pointer = GameObject.Find("Canvas - Display Orders4").transform.GetChild(2).gameObject;
+            pointer.SetActive(true);
+            pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
 
-        playerLocation = FindObjectOfType<ScooterDrive>().transform;
-        restaurantNode = restaurantLocations[restaurantSelected].GetComponent<GraphNode>();
-        gpsScript.FindPath(gpsScript.FindNearestNode(playerLocation), restaurantNode);
+            pointerCube = pointer.transform.GetChild(2).gameObject;
+            pointerCube.SetActive(false);
+            //    pointToObjectiveScript.customerOrder = gameObject;
+            //Debug.Log("restaurant name: " + restaurantName);
 
-        StartCoroutine(Waiting());
+
+
+            GameManager.Player4OrderSelected = true;
+            //print(GameManager.Player1OrderSelected);
+
+            GameManager.Player4CustomerItemOrdered = orderedItems[restaurantSelected].ToString();
+            GameManager.Player4ApartmentName = apartmentName[customerLocation].ToString();
+            GameManager.Player4CustomerName = customerNames[customerName].ToString();
+            GameManager.Player4RestaurantName = restaurantName[restaurantSelected].ToString();
+
+            Player2RestaurantTransform.transform.position = restaurantLocations[restaurantSelected].transform.position;
+            Player2ApartmentTransform.transform.position = apartmentLocations[customerLocation].transform.position;
+
+            float dist = Vector3.Distance(Player2RestaurantTransform.position, Player2ApartmentTransform.position) / 5;
+
+            if (dist < minOrderTime)
+            {
+                RestaurantWaypoint4.player4TimeScore = minOrderTime;
+                RestaurantWaypoint4.player4TimeScoreMax = minOrderTime;
+            }
+            if (dist > maxOrderTime)
+            {
+                RestaurantWaypoint4.player4TimeScore = maxOrderTime;
+                RestaurantWaypoint4.player4TimeScoreMax = maxOrderTime;
+            }
+            else
+            {
+                RestaurantWaypoint4.player4TimeScore = dist;
+                RestaurantWaypoint4.player4TimeScoreMax = dist;
+            }
+
+            player2WayPoint.transform.position = Player2RestaurantTransform.transform.position;
+
+            RestaurantWaypoint4.player4OrderPickedUp = false;
+            RestaurantWaypoint4.player4OrderDelivered = false;
+
+            playerLocation = FindObjectOfType<ScooterDrive>().transform;
+            restaurantNode = restaurantLocations[restaurantSelected].GetComponent<GraphNode>();
+            gpsScript.FindPath(gpsScript.FindNearestNode(playerLocation), restaurantNode);
+
+            StartCoroutine(Waiting());
+        }    
+        
     }
 
     IEnumerator Waiting()

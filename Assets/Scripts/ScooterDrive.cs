@@ -138,6 +138,7 @@ public class ScooterDrive : MonoBehaviour
     public GameObject weaponIcon;
     public Sprite emptyWeaponImage;
 
+    public GameObject backgroundMusic;
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -290,7 +291,7 @@ public class ScooterDrive : MonoBehaviour
     {
         int randomCollisionSoundListIndex = Random.Range(0, collisionSFXList.Length - 1);
         AudioClip randomCollisionClip = collisionSFXList[randomCollisionSoundListIndex];
-        AudioManager.Instance.PlaySoundSFX(randomCollisionClip, gameObject, volume: 1f);
+        AudioManager.Instance.PlaySoundSFX(randomCollisionClip, gameObject, volume: 0.8f);
     }
     public void updateDirectionBools()
     {
@@ -1144,6 +1145,7 @@ public class ScooterDrive : MonoBehaviour
         GameManager.roundOver = false;
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+        //backgroundMusic.GetComponent<MusicManager>().currentAudioSource.Stop();
         //Clear bools and static values
     }
 
