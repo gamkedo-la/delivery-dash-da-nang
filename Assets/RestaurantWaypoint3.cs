@@ -122,7 +122,7 @@ public class RestaurantWaypoint3 : MonoBehaviour
             float score = 0;
             timer.text = score.ToString("F2") + "%";
             PrefabOrderPlayer3.orderHasBeenTaken3 = false;
-            Debug.Log("PrefabOrderPlayer4.orderHasBeenTaken3: " + PrefabOrderPlayer4.orderHasBeenTaken4);
+            Debug.Log("PrefabOrderPlayer3.orderHasBeenTaken3: " + PrefabOrderPlayer3.orderHasBeenTaken3);
             GameManager.Player3OrderSelected = false;
             player3OrderPickedUp = false;
             player3OrderDelivered = false;
@@ -152,7 +152,7 @@ public class RestaurantWaypoint3 : MonoBehaviour
             float score = 0;
             timer.text = score.ToString("F2") + "%";
             PrefabOrderPlayer3.orderHasBeenTaken3 = false;
-            Debug.Log("PrefabOrderPlayer3.orderHasBeenTaken4: " + PrefabOrderPlayer4.orderHasBeenTaken4);
+            Debug.Log("PrefabOrderPlayer3.orderHasBeenTaken3: " + PrefabOrderPlayer3.orderHasBeenTaken3);
             GameManager.Player3OrderSelected = false;
             player3OrderPickedUp = false;
             player3OrderDelivered = false;

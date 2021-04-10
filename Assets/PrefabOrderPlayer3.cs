@@ -67,16 +67,8 @@ public class PrefabOrderPlayer3 : MonoBehaviour
         restaurantLocations = new Transform[9];
 
         restaurantLocations[0] = GameObject.Find("HannahsWayPoint").transform;
-        // restaurantLocations[0].position = new Vector3(1450f, 2.1f, 250.9f);
-
         restaurantLocations[1] = GameObject.Find("RamenWayPoint").transform;
-
-        // restaurantLocations[1].position = new Vector3(1450f, 2.1f, 250.9f);
-
         restaurantLocations[2] = GameObject.Find("SushiWayPoint").transform;
-
-        // restaurantLocations[2].position = new Vector3(1450f, 2.1f, 250.9f);
-
         restaurantLocations[3] = GameObject.Find("PinkBrotherWaypoint").transform;
         restaurantLocations[4] = GameObject.Find("PunaWaypoint").transform;
         restaurantLocations[5] = GameObject.Find("AamerBakeryWaypoint").transform;
