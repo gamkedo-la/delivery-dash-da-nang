@@ -98,10 +98,10 @@ public class RestaurantWaypoint4 : MonoBehaviour
         if (PrefabOrderPlayer4.orderHasBeenTaken4)
         {
             player4TimeScore -= Time.deltaTime;
-            if (player4TimeScore < 10f)
-            {
-                player4TimeScore = 10f;
-            }    
+            //if (player4TimeScore < 10f)
+            //{
+            //    player4TimeScore = 10f;
+            //}    
             timer.text = player4TimeScore.ToString("F2");
         }
 

@@ -37,8 +37,8 @@ public class PrefabOrderPlayer4 : MonoBehaviour
     private AudioClip phoneButtonPressedAudioClip;
     private PhoneScript phoneScript;
 
-    public float minOrderTime = 75;
-    public float maxOrderTime = 125;
+    public float minOrderTime = 10;
+    public float maxOrderTime = 10;
 
     PopulateGrid populateGrid;
 

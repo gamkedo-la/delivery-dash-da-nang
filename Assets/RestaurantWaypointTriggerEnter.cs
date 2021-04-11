@@ -98,10 +98,10 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
         if (PrefabOrder.orderHasBeenTaken)
         {
             player1TimeScore -= Time.deltaTime;
-            if (player1TimeScore < 10f)
-            {
-                player1TimeScore = 10f;
-            }
+            //if (player1TimeScore < 10f)
+            //{
+            //    player1TimeScore = 10f;
+            //}
             timer.text = player1TimeScore.ToString("F2");
         }
 
