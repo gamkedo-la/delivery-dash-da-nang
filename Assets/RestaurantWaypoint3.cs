@@ -176,6 +176,7 @@ public class RestaurantWaypoint3 : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         PrefabOrderPlayer3.orderHasBeenTaken3 = false;
+        FoodHealth.currentHealth3 = 1000;
         player3OrderPickedUp = false;
         player3OrderDelivered = false;
         timer.text = finalScore.ToString("F0") + "%";

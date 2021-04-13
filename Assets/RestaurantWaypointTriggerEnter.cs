@@ -137,7 +137,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
 
         if (FoodHealth.currentHealth1 < 0)
         {
-            //Order failed on Time
+            //Order destroyed
             player.GetComponent<ScooterDrive>().AssignStars();
             if (receivedDriver != null)
             {
@@ -176,6 +176,7 @@ public class RestaurantWaypointTriggerEnter : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         PrefabOrder.orderHasBeenTaken = false;
+        FoodHealth.currentHealth1 = 1000;
         player1OrderPickedUp = false;
         player1OrderDelivered = false;
         timer.text = finalScore.ToString("F0") + "%";
