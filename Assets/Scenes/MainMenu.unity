@@ -8408,8 +8408,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -215, y: -83}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -138.13, y: -83}
+  m_SizeDelta: {x: 83.12689, y: 29.764477}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1439469127
 MonoBehaviour:
@@ -8830,7 +8830,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Who made this game?
+  m_Text: Credits
 --- !u!222 &1519839428
 CanvasRenderer:
   m_ObjectHideFlags: 0
