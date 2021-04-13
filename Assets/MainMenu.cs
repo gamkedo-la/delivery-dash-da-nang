@@ -30,8 +30,7 @@ public class MainMenu : MonoBehaviour
     public GameObject invisibleButton;
 
     public static bool normal, hard;
-    public Text difficulty; 
-
+    public Text difficulty;
 
     private void Start()
     {

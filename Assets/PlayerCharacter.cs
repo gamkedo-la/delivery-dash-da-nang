@@ -15,6 +15,8 @@ public class PlayerCharacter : MonoBehaviour
     public GameObject mainCamera;
     MainMenu mainMenuScript;
 
+    public Text playerstats;
+
 
     private void Awake()
     {
@@ -46,6 +48,23 @@ public class PlayerCharacter : MonoBehaviour
         {
             MainMenu.player4Character = characterCount;
         }
+
+        if (characterCount == 0)
+        {
+            playerstats.text = "70   33    12   30";
+        }
+        if (characterCount == 1)
+        {
+            playerstats.text = "50   45    30    50";
+        }
+        if (characterCount == 2)
+        {
+            playerstats.text = "90   20     5    20";
+        }
+        if (characterCount == 3)
+        {
+            playerstats.text = "60   50    15    30";
+        }
     }
 
     public void Right()
@@ -72,6 +91,23 @@ public class PlayerCharacter : MonoBehaviour
         if (player4)
         {
             MainMenu.player4Character = characterCount;
+        }
+
+        if (characterCount == 0)
+        {
+            playerstats.text = "70   33   12   30";
+        }
+        if (characterCount == 1)
+        {
+            playerstats.text = "50   45    30    50";
+        }
+        if (characterCount == 2)
+        {
+            playerstats.text = "90   20     5    20";
+        }
+        if (characterCount == 3)
+        {
+            playerstats.text = "60   50    15    30";
         }
     }
 
