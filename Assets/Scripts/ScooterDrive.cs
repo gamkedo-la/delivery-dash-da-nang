@@ -139,6 +139,8 @@ public class ScooterDrive : MonoBehaviour
     public Sprite emptyWeaponImage;
 
     public GameObject backgroundMusic;
+
+    public float maxSpeedBike, accel; 
     private void Awake()
     {
         //homeScreen = GameObject.Find("HomeScreen");
@@ -211,18 +213,130 @@ public class ScooterDrive : MonoBehaviour
         if (player1)
         {
             playerCharacter[MainMenu.player1Character].SetActive(true);
+            if (MainMenu.player1Character == 0)
+            {
+                maxSpeedBike = .7f;
+                maxTiltAngle = .33f;
+                backwardSpeed = -.125f;
+                accel = .3f;
+            }
+            if (MainMenu.player1Character == 1)
+            {
+                maxSpeedBike = .5f;
+                maxTiltAngle = .45f;
+                backwardSpeed = -.3f;
+                accel = .5f;
+            }
+            if (MainMenu.player1Character == 2)
+            {
+                maxSpeedBike = .9f;
+                maxTiltAngle = .2f;
+                backwardSpeed = -.05f;
+                accel = .2f;
+            }
+            if (MainMenu.player1Character == 3)
+            {
+                maxSpeedBike = .6f;
+                maxTiltAngle = .5f;
+                backwardSpeed = -.15f;
+                accel = .3f;
+            }
         }
         if (player2)
         {
             playerCharacter[MainMenu.player2Character].SetActive(true);
+            if (MainMenu.player2Character == 0)
+            {
+                maxSpeedBike = .7f;
+                maxTiltAngle = .33f;
+                backwardSpeed = -.125f;
+                accel = .3f;
+            }
+            if (MainMenu.player2Character == 1)
+            {
+                maxSpeedBike = .5f;
+                maxTiltAngle = .45f;
+                backwardSpeed = -.3f;
+                accel = .5f;
+            }
+            if (MainMenu.player2Character == 2)
+            {
+                maxSpeedBike = .9f;
+                maxTiltAngle = .2f;
+                backwardSpeed = -.05f;
+                accel = .2f;
+            }
+            if (MainMenu.player2Character == 3)
+            {
+                maxSpeedBike = .6f;
+                maxTiltAngle = .5f;
+                backwardSpeed = -.15f;
+                accel = .3f;
+            }
         }
         if (player3)
         {
             playerCharacter[MainMenu.player3Character].SetActive(true);
+            if (MainMenu.player3Character == 0)
+            {
+                maxSpeedBike = .7f;
+                maxTiltAngle = .33f;
+                backwardSpeed = -.125f;
+                accel = .3f;
+            }
+            if (MainMenu.player3Character == 1)
+            {
+                maxSpeedBike = .5f;
+                maxTiltAngle = .45f;
+                backwardSpeed = -.3f;
+                accel = .5f;
+            }
+            if (MainMenu.player3Character == 2)
+            {
+                maxSpeedBike = .9f;
+                maxTiltAngle = .2f;
+                backwardSpeed = -.05f;
+                accel = .2f;
+            }
+            if (MainMenu.player3Character == 3)
+            {
+                maxSpeedBike = .6f;
+                maxTiltAngle = .5f;
+                backwardSpeed = -.15f;
+                accel = .3f;
+            }
         }
         if (player4)
         {
             playerCharacter[MainMenu.player4Character].SetActive(true);
+            if (MainMenu.player4Character == 0)
+            {
+                maxSpeedBike = .7f;
+                maxTiltAngle = .33f;
+                backwardSpeed = -.125f;
+                accel = .3f;
+            }
+            if (MainMenu.player4Character == 1)
+            {
+                maxSpeedBike = .5f;
+                maxTiltAngle = .45f;
+                backwardSpeed = -.3f;
+                accel = .5f;
+            }
+            if (MainMenu.player4Character == 2)
+            {
+                maxSpeedBike = .9f;
+                maxTiltAngle = .2f;
+                backwardSpeed = -.05f;
+                accel = .2f;
+            }
+            if (MainMenu.player4Character == 3)
+            {
+                maxSpeedBike = .6f;
+                maxTiltAngle = .5f;
+                backwardSpeed = -.15f;
+                accel = .3f;
+            }
         }
     }
 
@@ -417,11 +531,11 @@ public class ScooterDrive : MonoBehaviour
         if (isAccelerating)
         {
 
-            currentSpeed += /*forwardSpeed */ 0.3f * Time.deltaTime /* * (accelerateValue) */; 
+            currentSpeed += /*forwardSpeed */ accel * Time.deltaTime /* * (accelerateValue) */; 
             //Debug.Log("current speed: " + currentSpeed);
-            if (currentSpeed > 0.7f)
+            if (currentSpeed > maxSpeedBike)
             {
-                currentSpeed = 0.7f;
+                currentSpeed = maxSpeedBike;
                 //** BELOW TO BE USED WHEN WE HAVE A BETTER TOP SPEED SOUND
 				/*if (bikeCurrentAudioSource.clip != bikeTopSpeedClip) 
 				{
