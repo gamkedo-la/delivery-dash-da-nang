@@ -29,9 +29,13 @@ public class MainMenu : MonoBehaviour
 
     public GameObject invisibleButton;
 
+    public static bool normal, hard;
+    public Text difficulty; 
+
 
     private void Start()
     {
+        normal = true;
         titleScreenFadeOutScript = titleScreenMusic.GetComponent<TitleScreenFadeOut>();
         titleScreenMusicAudioSource = titleScreenMusic.GetComponent<AudioSource>();
         Time.timeScale = 1;
@@ -151,5 +155,34 @@ public class MainMenu : MonoBehaviour
         }
 
         playerCountstring.text = "Player Count: " + playerCount.ToString();
+    }
+
+    public void DifLeft()
+    {
+        normal = !normal;
+        hard = !hard;
+
+        print(normal);
+        if (normal)
+        {
+            difficulty.text = "Normal";
+        }
+        else
+            difficulty.text = "Hard";
+    }
+
+    public void DifRight()
+    {
+        normal = !normal;
+        hard = !hard;
+
+        print(normal);
+
+        if (normal)
+        {
+            difficulty.text = "Normal";
+        }
+        else
+            difficulty.text = "Hard";
     }
 }

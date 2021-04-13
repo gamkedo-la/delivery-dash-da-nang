@@ -127,12 +127,15 @@ public class PrefabOrderPlayer4 : MonoBehaviour
             orderHasBeenTaken4 = true;
             orderCondition.color = Color.green;
 
-            pointer = GameObject.Find("Canvas - Display Orders4").transform.GetChild(2).gameObject;
-            pointer.SetActive(true);
-            pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
+            if (MainMenu.normal)
+            {
+                pointer = GameObject.Find("Canvas - Display Orders").transform.GetChild(2).gameObject;
+                pointer.SetActive(true);
+                pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
 
-            pointerCube = pointer.transform.GetChild(2).gameObject;
-            pointerCube.SetActive(false);
+                pointerCube = pointer.transform.GetChild(2).gameObject;
+                pointerCube.SetActive(false);
+            }
             //    pointToObjectiveScript.customerOrder = gameObject;
             //Debug.Log("restaurant name: " + restaurantName);
 

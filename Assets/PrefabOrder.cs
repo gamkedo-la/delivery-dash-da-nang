@@ -126,13 +126,15 @@ public class PrefabOrder : MonoBehaviour
 
             orderHasBeenTaken = true;
             orderCondition.color = Color.green;
+            if (MainMenu.normal)
+            {
+                pointer = GameObject.Find("Canvas - Display Orders").transform.GetChild(2).gameObject;
+                pointer.SetActive(true);
+                pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
 
-            pointer = GameObject.Find("Canvas - Display Orders").transform.GetChild(2).gameObject;
-            pointer.SetActive(true);
-            pointToObjectiveScript = pointer.GetComponent<PointToObjective>();
-
-            pointerCube = pointer.transform.GetChild(2).gameObject;
-            pointerCube.SetActive(false);
+                pointerCube = pointer.transform.GetChild(2).gameObject;
+                pointerCube.SetActive(false);
+            }
             //    pointToObjectiveScript.customerOrder = gameObject;
             //Debug.Log("restaurant name: " + restaurantName);
 

@@ -16,21 +16,30 @@ public class PointToObjective : MonoBehaviour
 
     private void Start()
     {
-        if (isPlayer1)
+
+            if (isPlayer1)
+            {
+                player1WayPointBox = GameObject.Find("WayPointBox - Restaurant");
+            }
+            if (isPlayer2)
+            {
+                player2WayPointBox = GameObject.Find("WayPointBox - Restaurant2");
+            }
+            if (isPlayer3)
+            {
+                player3WayPointBox = GameObject.Find("WayPointBox - Restaurant3");
+            }
+            if (isPlayer4)
+            {
+                player4WayPointBox = GameObject.Find("WayPointBox - Restaurant4");
+            }
+
+        if (!MainMenu.normal)
         {
-            player1WayPointBox = GameObject.Find("WayPointBox - Restaurant");
-        }
-        if (isPlayer2)
-        {
-            player2WayPointBox = GameObject.Find("WayPointBox - Restaurant2");
-        }
-        if (isPlayer3)
-        {
-            player3WayPointBox = GameObject.Find("WayPointBox - Restaurant3");
-        }
-        if (isPlayer4)
-        {
-            player4WayPointBox = GameObject.Find("WayPointBox - Restaurant4");
+            player1WayPointBox.SetActive(false);
+            player2WayPointBox.SetActive(false);
+            player3WayPointBox.SetActive(false);
+            player4WayPointBox.SetActive(false);
         }
     }
 
